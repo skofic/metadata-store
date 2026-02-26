@@ -16,6 +16,9 @@ Icon
 *~
 .apdisk
 
+# Project
+scrapbook/
+
 # Logs
 logs
 *.log

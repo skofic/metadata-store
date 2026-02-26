@@ -1,0 +1,683 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+Metadata Store is a database-hosted metadata repository and data dictionary. It is hosted in an **ArangoDB** database and contains the data and code needed to populate a data dictionary core and ancillary data standards.
+
+## Architecture
+
+- **Database**: ArangoDB (NoSQL document/graph database)
+- **Purpose**: Define and serve a data dictionary and metadata repository
+
+## Project Status
+
+This project is in early initialization. No source code exists yet. The `.gitignore` is prepared for a Node.js/TypeScript ecosystem (npm/yarn, Vite, Next.js, etc.), suggesting the Foxx services will be written in JavaScript/TypeScript.
+
+## Development Notes
+
+- The `scrapbook/Notes.txt` file is for informal developer notes and scratch content.
+
+---
+
+## Session Progress
+
+> This section is maintained by Claude and updated at the end of each working session to allow seamless resumption across sessions.
+
+### Completed
+- `_code` section — fully documented, including:
+  - Core properties (`_gid`, `_lid`, `_nid`) with computation rules and JSON examples for all three cases
+  - Secondary properties (`_aid`, `_pid`, `_name`, `_symbol`)
+  - `_symbol` format decision: LaTeX string (superset of plain UTF-8), rendered with KaTeX on the frontend
+- `_info` section — fully documented, including:
+  - Multilingual key/value structure (language `_gid` → string)
+  - Core properties (`_title`, `_definition`, `_description`) with value types and required status
+  - Secondary properties (`_examples`, `_notes`, `_url`, `_citation`, `_provider`)
+  - Alias term exception for omitting `_info`
+- `_data` section — introduction, `_scalar`, `_array`, and `_set` subsections fully documented, including:
+  - Data shape overview (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`)
+  - All `_type` variants with properties, constraints, and examples
+  - `_type_object` `_kind` mechanism: references term `_gid`s whose `_rule` section defines the object structure
+  - `_any-enum` clarified: the `_key` of any term that is an element or the root of a controlled vocabulary graph
+  - `_decimals` removed from `_type_number_integer` (integers have no decimals)
+
+### In Progress
+- Nothing currently in progress.
+
+### Pending
+- `_data` section — remaining shape subsections: `_tuple`, `_dict`
+- Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), a controlled vocabulary element (enumeration graph node), and an enumeration type (enumeration graph root)
+- `_rule` section
+
+---
+
+## Project Roadmap
+
+> This section records the planned sequence of work phases for the project, providing orientation across sessions.
+
+### Phase 1 — Term section documentation *(current)*
+Describe all four term sections (`_code`, `_info`, `_data`, `_rule`) in full in CLAUDE.md. This establishes the source of truth for the dictionary structure before any data or code is written.
+
+### Phase 2 — Core terms: import and synthesis
+The owner will provide the dictionary core terms as JSON records. Claude will:
+- Compare the provided implementation against the concepts documented in Phase 1.
+- Identify and resolve any discrepancies.
+- Synthesise CLAUDE.md into a tighter, more precise reference that reflects the real implementation.
+
+### Phase 3 — `_info` authoring and translation
+Write clear, accurate, and accessible `_info` sections (`_title`, `_definition`, `_description`, etc.) for all core dictionary terms. Once the English content is approved, translate each `_info` section into additional languages.
+
+### Phase 4 — Graph mechanics and ontology documentation
+The owner will describe how terms relate to one another to form graphs and ontologies. Claude will document the graph inner workings in CLAUDE.md, covering edge types, traversal semantics, enumeration graphs, alias resolution, and any other relationship mechanisms.
+
+### Phase 5 — Edge relationships for core terms
+Apply the graph model documented in Phase 4 to the core terms: add edge records that encode the relationships between terms (namespaces, enumerations, aliases, schema inheritance, etc.).
+
+### Phase 6 — Validation and manipulation library
+Develop a JavaScript/TypeScript library (targeting ArangoDB Foxx or a standalone Node.js package) that:
+- Validates datasets against the dictionary's type and schema definitions.
+- Serves as a programmatic ontology for querying and navigating term relationships.
+
+### Phase 7 — Dictionary management user interface
+Build a UI for managing the dictionary that:
+- Minimises the risk of structural errors when creating or editing terms.
+- Provides intuitive navigation across all aspects of the data dictionary (terms, graphs, enumerations, schemas).
+
+---
+
+## Data Dictionary Rules
+
+This section is the **source of truth** for the data dictionary structure. All code, data files, and resources generated for this project must conform to these rules.
+
+### Core Concepts
+
+- The dictionary is a collection of **terms** stored as nodes in an ArangoDB directed graph.
+- **Terms** are stored in document collections; **relationships** between terms are stored in edge collections.
+- Terms represent namespaces, controlled vocabularies, descriptors, and other items.
+- The dictionary is **self-describing and recursive**: the fields and structures that make up the dictionary are themselves terms. The dictionary describes both external data and itself.
+
+### Term Structure
+
+A term is a document with top-level **sections**. Sections are objects that contain a set of properties. Which sections a term contains determines its function and behaviour.
+
+The four core sections are:
+
+| Section  | Purpose                                        | Required by                        |
+|----------|------------------------------------------------|------------------------------------|
+| `_code`  | Identifiers and codes by which the term is referenced | All terms                          |
+| `_info`  | Description of what the term represents        | Most terms                         |
+| `_data`  | Data type and shape of the referenced data     | Descriptor / data variable terms   |
+| `_rule`  | Structure schema rules (required/forbidden fields, etc.) | Schema terms                       |
+
+### `_code` Section
+
+The `_code` section provides a series of identifiers for the term.
+
+#### Core properties
+
+| Property | Required  | Description |
+|----------|-----------|-------------|
+| `_gid`   | Computed  | Global unique identifier across all database terms. Copied to the ArangoDB `_key` field before saving. |
+| `_lid`   | Yes       | Local identifier within the term's namespace. Regex: `^[a-zA-Z0-9_\-:.@+,=;$!*'%()]{1,254}$` |
+| `_nid`   | No        | Namespace of the term. Its value is the `_gid` of the term that represents the namespace. |
+
+- **`_gid`**: The global unique identifier of the term, shared by no other term in the database. It is computed as the concatenation of `_nid` and `_lid` separated by the hardcoded underscore `_` separator. Before saving the term, `_gid` is copied to the top-level `_key` field (the ArangoDB primary key), enforcing uniqueness.
+- **`_lid`**: The local identifier of the term within its namespace. Required on all terms.
+- **`_nid`**: The term's namespace, used to disambiguate terms that share the same `_lid`. Optional.
+
+#### `_gid` computation rules
+
+The underscore `_` is the hardcoded separator between namespace and local identifier.
+
+| `_nid` value          | `_gid` formula         | Example                                    |
+|-----------------------|------------------------|--------------------------------------------|
+| Present and non-empty | `_nid` + `_` + `_lid` | `iso_3166` + `_` + `ITA` → `iso_3166_ITA` |
+| Empty string `""`     | `_` + `_lid`           | `""` + `_` + `code` → `_code`             |
+| Omitted               | `_lid`                 | `iso`                                      |
+
+**Example 1 — standard namespaced term** (`_nid` present and non-empty):
+
+`iso_3166_ITA` is the ISO 3166 3-character country code for Italy. `ITA` is the `_lid`, `iso_3166` is the namespace. The namespace `iso_3166` is itself a term whose `_nid` is `iso` and `_lid` is `3166`, demonstrating how namespaces form chains from general to specific.
+
+```json
+{
+    "_key": "iso_3166_ITA",
+    "_code": {
+        "_nid": "iso_3166",
+        "_lid": "ITA",
+        "_gid": "iso_3166_ITA"
+    }
+}
+```
+
+**Example 2 — dictionary building block** (`_nid` is empty string `""`):
+
+When `_nid` is an empty string, the term is a **core building block of the data dictionary itself**. This is the exception to the rule that all namespaces must refer to an existing term. The leading underscore in the resulting `_gid` distinguishes these structural terms from terms describing external data (e.g., `_code`, `_info`, `_data`, `_rule`). Note that the `_code` term itself has a `_code` section — the dictionary is self-describing.
+
+```json
+{
+    "_key": "_code",
+    "_code": {
+        "_nid": "",
+        "_lid": "code",
+        "_gid": "_code"
+    }
+}
+```
+
+**Example 3 — top-level namespace term** (`_nid` omitted):
+
+When `_nid` is absent, the term defines a top-level namespace with no parent. For example, `iso` defines the International Standards Organisation namespace.
+
+```json
+{
+    "_key": "iso",
+    "_code": {
+        "_lid": "iso",
+        "_gid": "iso"
+    }
+}
+```
+
+#### Secondary properties
+
+These optional properties support searching and organising terms.
+
+| Property  | Required | Description |
+|-----------|----------|-------------|
+| `_aid`    | No       | "All identifiers" — the set of official identifiers for the term. |
+| `_pid`    | No       | "Provided identifiers" — custom identifiers used by data providers. |
+| `_name`   | No       | A string containing the name of the term. |
+| `_symbol` | No       | A formatted string containing the symbol of the term (e.g., a currency symbol, mathematical expression). |
+
+- **`_aid`** ("all identifiers"): The set of all *official* identifiers by which the term can be identified — i.e., identifiers that are considered standards beyond this dictionary. By default it should contain the term's own `_lid`, plus the `_lid` of any alias terms pointing to the current term. This property should be **omitted** if the term has no official standard identifier and no alias terms. It should be **included** if the term has a standard identifier, or if alias terms with different `_lid` values point to it — in which case it lists the current `_lid`, any standard identifier(s), and the `_lid` values of all aliases.
+- **`_pid`** ("provided identifiers"): Custom identifiers used by data providers. This dictionary is used to apply standards and metadata to a repository of datasets. When receiving datasets that lack metadata, this field can be searched to match unknown variable names to known terms.
+- **`_name`**: The term's name. Used when a term has an official or unique human-readable name distinct from its identifier.
+- **`_symbol`**: The term's symbol, stored as a **LaTeX string**. LaTeX is a superset of plain UTF-8 text, so simple symbols can be stored as plain Unicode characters (e.g., `€`, `μ`, `°C`) while complex expressions use LaTeX syntax (e.g., `\bar{x} \pm \sigma`, `\frac{n!}{k!(n-k)!}`). The frontend renders this field using **KaTeX**, which handles both plain Unicode and LaTeX syntax seamlessly.
+
+### `_info` Section
+
+The `_info` section contains human-oriented information about the term: what it represents, how and why it is used, external references, and display text for forms and reports. All properties in this section are **multilingual**: each property's value is a key/value object where the key is the `_gid` of a language term and the value is a string.
+
+```json
+{
+    "_info": {
+        "_title": {
+            "iso_639_3_eng": "Title",
+            "iso_639_3_ita": "Titolo",
+            "iso_639_3_fra": "Titre"
+        }
+    }
+}
+```
+
+#### Core properties
+
+| Property      | Required         | Value type           | Description |
+|---------------|------------------|----------------------|-------------|
+| `_title`      | Yes              | Plain UTF-8 string   | The title or label of the term. |
+| `_definition` | Yes              | Plain UTF-8 string   | The definition of the term. |
+| `_description`| Usually required | Markdown/HTML string | Full description for a general audience. |
+
+- **`_title`**: The name, title or label of the term — the label used when displaying an input form in which the term represents a variable. Should be short, specific, and no more than one sentence, usually without punctuation.
+- **`_definition`**: The definition of the term. Should provide the minimum summary necessary for an informed audience to understand what the term represents, in two or three sentences.
+- **`_description`**: Full description aimed at a non-expert audience. Should explain what the term is, how it is used, why it is used, and provide links to external documentation for those who want more detail. Expressed as a **Markdown or HTML string** to allow links and images. Required except in rare cases where the definition alone is sufficient to explain the term beyond any conceivable doubt.
+
+#### Secondary properties
+
+| Property     | Required | Value type                    | Description |
+|--------------|----------|-------------------------------|-------------|
+| `_examples`  | No       | Markdown/HTML string          | Usage examples. |
+| `_notes`     | No       | Markdown/HTML string          | Notes, comments and curator feedback. |
+| `_url`       | No       | Array of Markdown/HTML strings| Internet references. |
+| `_citation`  | No       | Array of Markdown/HTML strings| Citations required when using the term. |
+| `_provider`  | No       | Array of Markdown/HTML strings| Contact information for metadata curators. |
+
+- **`_examples`**: Samples of the term's usage, helping users understand how the term or its value can be used. Expressed as a Markdown/HTML string (same format as `_description`).
+- **`_notes`**: Additional information that does not belong in other properties. Acts as a scrapbook for the metadata curator. Expressed as a Markdown/HTML string.
+- **`_url`**: A set of internet references linking to external information. Each entry is a Markdown or HTML string.
+- **`_citation`**: A set of citations that must be referenced when using the term. Each entry is a Markdown or HTML string.
+- **`_provider`**: Contact information for the curators responsible for the term's metadata. Each entry is a Markdown or HTML string.
+
+#### Alias terms and omitting `_info`
+
+The `_info` section should be present on all terms, with one exception: **alias terms**.
+
+An alias term is created when two terms share identical content except for their `_code` section. For example, `iso_639_3_eng` and `iso_639_1_en` both represent the English language, differing only in their codes (ISO 639-3 vs ISO 639-1). Duplicating the full `_info` content across both terms would be wasteful and would create multiple sources of truth.
+
+In this case, `iso_639_1_en` is defined as an alias of `iso_639_3_eng`: it retains only its `_code` section, while `iso_639_3_eng` holds the full content. When the dictionary resolves `iso_639_1_en`, it returns `iso_639_3_eng` instead. This mechanism is described further in the graph section.
+
+### `_data` Section
+
+The `_data` section is used by terms that represent data variables. It describes and documents the data that the term represents. If the section is an **empty object**, the value of the referenced term can be of any shape and type.
+
+#### Data shape (top-level structure)
+
+The top level of the data description defines the **shape** of the data. Exactly one of the following properties is present:
+
+| Property  | Description |
+|-----------|-------------|
+| `_scalar` | A single value. |
+| `_array`  | An ordered list of values of the same type. |
+| `_set`    | An unordered list of *unique* values of the same type. |
+| `_tuple`  | An ordered list of values whose data type is defined by position. |
+| `_dict`   | A key/value dictionary. The key is defined by a scalar string variant; the value is recursively defined by a `_data` section. |
+
+Each of these properties is described in detail in the subsections below.
+
+#### `_scalar`
+
+`_scalar` is an object property that defines and documents a scalar value. If the object is **empty** (`"_scalar": {}`), the value can be any generic boolean, number, string, or structure.
+
+##### `_scalar` properties
+
+| Property               | Required                     | Description |
+|------------------------|------------------------------|-------------|
+| `_type`                | Yes (if `_scalar` not empty) | The scalar data type. |
+| `_kind`                | No                           | Data kind; relevant to `_type_string_key`, `_type_string_enum`, and `_type_object`. |
+| `_format`              | No                           | String format; relevant to string types. |
+| `_unit`                | No                           | Data unit, expressed as a controlled vocabulary element. |
+| `_unit-name`           | No                           | Unit name, used when `_unit` is absent. |
+| `_unit-symbol`         | No                           | Unit symbol, used when `_unit` is absent. |
+| `_regexp`              | No                           | Regular expression to validate string values. |
+| `_decimals`            | No                           | Number of decimals to display; relevant to `_type_number` only. |
+| `_valid-range`         | No                           | Valid numeric range for the value. |
+| `_valid-range_string`  | No                           | Valid string range for the value. |
+| `_valid-range_date`    | No                           | Valid date string range for the value. |
+| `_normal-range`        | No                           | Normal numeric range for the value. |
+| `_normal-range_string` | No                           | Normal string range for the value. |
+| `_normal-range_date`   | No                           | Normal date string range for the value. |
+
+##### `_type` enumeration
+
+`_type` is required whenever `_scalar` is not empty. It defines the scalar data type:
+
+| Value                    | Description |
+|--------------------------|-------------|
+| `_type_boolean`          | A true/false boolean value. |
+| `_type_number`           | A generic number (float or integer), stored as a double. |
+| `_type_number_integer`   | An integer (no decimals). |
+| `_type_number_timestamp` | A number representing a UNIX timestamp. |
+| `_type_string`           | A generic UTF-8 string. |
+| `_type_string_key`       | A string representing the `_key` of a document. |
+| `_type_string_handle`    | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
+| `_type_string_enum`      | A string representing the `_gid` of a controlled vocabulary element. |
+| `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
+| `_type_struct`           | An object with indeterminate properties (may be empty). |
+| `_type_object`           | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
+| `_type_object_geojson`   | A GeoJSON object (may **not** be empty). |
+
+---
+
+**`_type_boolean`**
+
+Stored as a native boolean in ArangoDB (`true` or `false`). No other `_scalar` properties are normally needed.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_boolean"
+    }
+}
+```
+
+---
+
+**`_type_number`**
+
+A float or integer stored as a double in ArangoDB. May include:
+- `_unit`, `_unit-name`, `_unit-symbol`: value unit.
+- `_decimals`: number of decimals to display.
+- `_valid-range`, `_normal-range`: numeric value ranges.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_number",
+        "_unit": "_unit_length_cm",
+        "_decimals": 2,
+        "_valid-range": {
+            "_min-range-inclusive": 5.0,
+            "_max-range-exclusive": 7.5
+        }
+    }
+}
+```
+
+---
+
+**`_type_number_integer`**
+
+An integer (no decimals). May include:
+- `_unit`, `_unit-name`, `_unit-symbol`: value unit.
+- `_valid-range`, `_normal-range`: numeric value ranges.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_number_integer",
+        "_unit": "_unit_length_cm",
+        "_valid-range": {
+            "_min-range-inclusive": 0,
+            "_max-range-exclusive": 10
+        }
+    }
+}
+```
+
+---
+
+**`_type_number_timestamp`**
+
+A number used as a UNIX timestamp. May include `_valid-range` and `_normal-range`.
+
+---
+
+**`_type_string`**
+
+A generic UTF-8 string. May include:
+- `_format`: the string format, from the following controlled vocabulary:
+
+| Format value        | Description |
+|---------------------|-------------|
+| `_format_markdown`  | Markdown string. |
+| `_format_html`      | HTML string. |
+| `_format_uri`       | Uniform Resource Identifier (equivalent to JSON Schema `uri`). |
+| `_format_hex`       | Hexadecimal string. |
+| `_format_svg`       | SVG image string. |
+| `_format_email`     | Email address. |
+| `_format_date`      | Date string (equivalent to JSON Schema `date`). |
+| `_format_time`      | Time string (equivalent to JSON Schema `time`). |
+| `_format_date-time` | Date-time string (equivalent to JSON Schema `date-time`). |
+| `_format_hostname`  | Internet hostname (equivalent to JSON Schema `hostname`). |
+| `_format_ipv4`      | IPv4 address per RFC 2673 §3.2 (equivalent to JSON Schema `ipv4`). |
+| `_format_ipv6`      | IPv6 address per RFC 2373 §2.2 (equivalent to JSON Schema `ipv6`). |
+
+- `_unit`, `_unit-name`, `_unit-symbol`: if the string value carries a unit.
+- `_regexp`: regular expression to validate the string.
+- `_valid-range_string`, `_normal-range_string`: valid and normal string ranges.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_string",
+        "_format": "_format_hex",
+        "_valid-range_string": {
+            "_min-range-inclusive_string": "0A",
+            "_max-range-exclusive_string": "A5"
+        }
+    }
+}
+```
+
+---
+
+**`_type_string_key`**
+
+A string representing the `_key` of a document. If `_kind` is absent, the key can refer to a document in any collection of the database. If `_kind` is present, it is an array constraining the key to specific term types:
+
+| `_kind` value     | Meaning |
+|-------------------|---------|
+| `_any-term`       | The `_key` can refer to any term. |
+| `_any-enum`       | The `_key` can refer to any term that is an element or the root of a controlled vocabulary graph. |
+| `_any-descriptor` | The `_key` must refer to a term that represents a data variable (has a `_data` section). |
+| `_any-object`     | The `_key` must refer to a term that represents an object definition (has a `_rule` section). |
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_string_key",
+        "_kind": ["_any-term"]
+    }
+}
+```
+
+---
+
+**`_type_string_handle`**
+
+A string representing the `_id` of an ArangoDB document, in the form `<collection name>/<_key>`. No additional `_scalar` properties.
+
+---
+
+**`_type_string_enum`**
+
+A string representing the `_gid` of a controlled vocabulary element. The `_kind` property is an array of term `_key`s identifying the controlled vocabulary root(s) that define the valid value domain.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_string_enum",
+        "_kind": ["iso_639_3"]
+    }
+}
+```
+
+---
+
+**`_type_string_date`**
+
+A date string in YYYYMMDD format, which may be expressed partially as YYYY or YYYYMM. May include `_valid-range_date` and `_normal-range_date`.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_string_date",
+        "_valid-range_date": {
+            "_min-range-inclusive": "200501",
+            "_max-range-exclusive": "20050728"
+        }
+    }
+}
+```
+
+---
+
+**`_type_struct`**
+
+An object with indeterminate properties. May be empty.
+
+---
+
+**`_type_object`**
+
+An object whose properties must correspond to descriptor term `_gid`s. May be empty. The `_kind` property, if present, is an array of term `_gid`s whose `_rule` section defines the allowed structure of the object.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_object",
+        "_kind": ["_range_string"]
+    }
+}
+```
+
+---
+
+**`_type_object_geojson`**
+
+A GeoJSON object. May **not** be empty.
+
+---
+
+#### `_array`
+
+`_array` is an object property that defines and documents an array value — an ordered list of elements of the same type. If the object is **empty** (`"_array": {}`), the array may contain any number of elements of any type.
+
+Arrays are **recursive**: an `_array` may contain other arrays, sets, or dictionaries as its elements, forming nested structures. The recursion terminates when a `_scalar` or `_dict` leaf node is reached.
+
+##### `_array` properties
+
+`_elements` may always be present. Exactly one shape sub-property must also be present (unless `_array` is empty):
+
+| Property   | Required | Description |
+|------------|----------|-------------|
+| `_elements`| No       | Minimum and maximum number of elements in the array. |
+| `_scalar`  | No*      | Array elements are scalar values of the defined type. |
+| `_array`   | No*      | Array elements are themselves arrays (recursive). |
+| `_set`     | No*      | Array elements are themselves sets — arrays of unique, comparable elements (not recursive). |
+| `_dict`    | No*      | Array elements are key/value dictionary structures. |
+
+\* Exactly one of `_scalar`, `_array`, `_set`, or `_dict` must be present when `_array` is not empty.
+
+##### `_elements`
+
+`_elements` constrains the number of items in the array. Both sub-properties are optional; omitting one creates an open interval.
+
+| Property     | Required | Description |
+|--------------|----------|-------------|
+| `_min-items` | No       | Minimum number of elements (inclusive lower bound). |
+| `_max-items` | No       | Maximum number of elements (inclusive upper bound). |
+
+```json
+{
+    "_array": {
+        "_elements": {
+            "_min-items": 1,
+            "_max-items": 10
+        },
+        "_scalar": {
+            "_type": "_type_string"
+        }
+    }
+}
+```
+
+##### Shape sub-properties
+
+---
+
+**`_scalar`**
+
+Array elements are scalar values. The `_scalar` object follows the same rules as documented in the [`_scalar`](#_scalar) section.
+
+```json
+{
+    "_array": {
+        "_elements": {
+            "_min-items": 1
+        },
+        "_scalar": {
+            "_type": "_type_number",
+            "_unit": "_unit_length_cm"
+        }
+    }
+}
+```
+
+---
+
+**`_array`**
+
+Array elements are themselves arrays. The structure is recursive: each nested `_array` follows the same rules as its parent, until a `_scalar` or `_dict` leaf is reached.
+
+```json
+{
+    "_array": {
+        "_array": {
+            "_scalar": {
+                "_type": "_type_number_integer"
+            }
+        }
+    }
+}
+```
+
+---
+
+**`_set`**
+
+Array elements are themselves sets — arrays of unique, comparable elements. Unlike `_array`, `_set` is **not** recursive: because uniqueness requires comparability, the element type is constrained to a comparable scalar (via `_set_scalar`, not `_scalar`). See the [`_set`](#_set) section for the full definition.
+
+```json
+{
+    "_array": {
+        "_set": {
+            "_set_scalar": {
+                "_set_type": "_type_string_enum",
+                "_kind": ["iso_639_3"]
+            }
+        }
+    }
+}
+```
+
+---
+
+**`_dict`**
+
+Array elements are key/value dictionary structures. The `_dict` property is described in its own subsection. Note that the value side of a `_dict` entry is itself defined by a full `_data` section, making the overall structure equivalently recursive.
+
+---
+
+#### `_set`
+
+`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive.
+
+##### `_set` properties
+
+`_elements` may always be present. `_set_scalar` is the only permitted shape sub-property:
+
+| Property      | Required | Description |
+|---------------|----------|-------------|
+| `_elements`   | No       | Minimum and maximum number of elements in the set. Same structure as in `_array`. |
+| `_set_scalar` | No*      | Defines the data type of the set elements. |
+
+\* `_set_scalar` must be present when `_set` is not empty.
+
+##### `_set_scalar`
+
+`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_set_type`** instead of `_type`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_geojson`, which are not comparable).
+
+###### `_set_scalar` properties
+
+| Property               | Required                          | Description |
+|------------------------|-----------------------------------|-------------|
+| `_set_type`            | Yes (if `_set_scalar` not empty)  | The data type of the set element. |
+| `_kind`                | No                                | Data kind; relevant to `_type_string_key` and `_type_string_enum`. |
+| `_format`              | No                                | String format; relevant to string types. |
+| `_unit`                | No                                | Data unit, expressed as a controlled vocabulary element. |
+| `_unit-name`           | No                                | Unit name, used when `_unit` is absent. |
+| `_unit-symbol`         | No                                | Unit symbol, used when `_unit` is absent. |
+| `_regexp`              | No                                | Regular expression to validate string values. |
+| `_decimals`            | No                                | Number of decimals to display; relevant to `_type_number` only. |
+| `_valid-range`         | No                                | Valid numeric range for the value. |
+| `_valid-range_string`  | No                                | Valid string range for the value. |
+| `_valid-range_date`    | No                                | Valid date string range for the value. |
+| `_normal-range`        | No                                | Normal numeric range for the value. |
+| `_normal-range_string` | No                                | Normal string range for the value. |
+| `_normal-range_date`   | No                                | Normal date string range for the value. |
+
+###### `_set_type` enumeration
+
+`_set_type` accepts the same values as `_type` except for non-comparable types:
+
+| Value                    | Description |
+|--------------------------|-------------|
+| `_type_boolean`          | A true/false boolean value. |
+| `_type_number`           | A generic number (float or integer), stored as a double. |
+| `_type_number_integer`   | An integer (no decimals). |
+| `_type_number_timestamp` | A number representing a UNIX timestamp. |
+| `_type_string`           | A generic UTF-8 string. |
+| `_type_string_key`       | A string representing the `_key` of a document. |
+| `_type_string_handle`    | A string containing the `_id` of an ArangoDB document. |
+| `_type_string_enum`      | A string representing the `_gid` of a controlled vocabulary element. |
+| `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
+
+`_type_struct`, `_type_object`, and `_type_object_geojson` are excluded because objects are not comparable and cannot be tested for uniqueness.
+
+```json
+{
+    "_set": {
+        "_elements": {
+            "_min-items": 1,
+            "_max-items": 5
+        },
+        "_set_scalar": {
+            "_set_type": "_type_string_enum",
+            "_kind": ["iso_639_3"]
+        }
+    }
+}
+```
