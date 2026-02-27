@@ -46,9 +46,8 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- `_data` section — complete.
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
-- `_rule` section
+- `_rule` section — inserted, pending review and possible redesign
 
 ---
 
@@ -933,3 +932,132 @@ The semantics of each type, and of `_kind`, are identical to those described in 
 ```
 
 The example above describes the multilingual structure used throughout the `_info` section: keys are ISO 639-3 language `_gid`s (e.g. `iso_639_3_eng`), values are plain strings.
+
+---
+
+### `_rule` Section
+
+The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
+
+#### Top-level properties
+
+One or more of the following properties may be present:
+
+| Property        | Description |
+|-----------------|-------------|
+| `_required`     | Defines which properties must be present in the object, expressed using selection structures. |
+| `_banned`       | Defines which properties must not be present in the object. |
+| `_computed`     | Properties whose values are automatically set by the system if not provided by the user. |
+| `_locked`       | Properties whose values are entirely managed by the system and cannot be set or modified by users. |
+| `_immutable`    | Properties that, once set, cannot be modified or deleted. |
+| `_default-value`| Key/value dictionary mapping properties to their default values, applied at insertion time. |
+
+#### Selection structures
+
+`_required` expresses its conditions using **selection structures** — objects that specify which descriptors must be present according to a particular cardinality rule. The following selection structures are available:
+
+| Property                            | Description |
+|-------------------------------------|-------------|
+| `_selection-descriptors_one`        | **One of**: exactly one descriptor from the set must be present. |
+| `_selection-descriptors_one-none`   | **One or none**: zero or one descriptor from the set may be present. |
+| `_selection-descriptors_one-none-of`| **One of any in list**: zero or one descriptor from each set in a list of sets. |
+| `_selection-descriptors_any`        | **Any of**: one or more descriptors from the set must be present. |
+| `_selection-descriptors_all`        | **All of**: all descriptors from the set must be present. |
+
+#### `_required`
+
+`_required` is an object that may contain any combination of the selection structures above. The object being validated must satisfy all selection structures present simultaneously.
+
+```json
+{
+    "_rule": {
+        "_required": {
+            "_selection-descriptors_one": ["one", "two", "three"],
+            "_selection-descriptors_any": ["red", "green", "blue"],
+            "_selection-descriptors_all": ["mon", "tue", "wed"]
+        }
+    }
+}
+```
+
+This rule imposes the following conditions:
+
+- Exactly one of `one`, `two`, `three` must be present.
+- At least one of `red`, `green`, `blue` must be present.
+- All of `mon`, `tue`, `wed` must be present.
+
+#### `_banned`
+
+`_banned` is an array of descriptor references. If any of the listed descriptors are present in the object, the object is considered invalid.
+
+```json
+{
+    "_rule": {
+        "_banned": ["one", "two", "three"]
+    }
+}
+```
+
+This rule indicates that the object must not contain any of the properties `one`, `two`, or `three`.
+
+#### `_computed`
+
+`_computed` is an array of descriptor references whose values are automatically set by the system if not explicitly provided by the user. A computed property is typically paired with `_immutable` to prevent modification after the system sets it.
+
+```json
+{
+    "_rule": {
+        "_computed": ["_key"],
+        "_immutable": ["_key"]
+    }
+}
+```
+
+This rule indicates that `_key` is set by the system if absent, and cannot be modified once set.
+
+#### `_locked`
+
+`_locked` is an array of descriptor references whose values are entirely managed by the system. Unlike `_computed` properties — where the user may optionally supply the value — locked properties are fully opaque to users and cannot be set or modified by them.
+
+```json
+{
+    "_rule": {
+        "_computed": ["_id"],
+        "_locked": ["_id"]
+    }
+}
+```
+
+This rule indicates that `_id` is computed and set exclusively by the system.
+
+#### `_immutable`
+
+`_immutable` is an array of descriptor references whose values, once set — whether by the user or by the system — cannot be modified or deleted.
+
+```json
+{
+    "_rule": {
+        "_required": {
+            "_selection-descriptors_all": ["_lid"]
+        },
+        "_immutable": ["_lid"]
+    }
+}
+```
+
+This rule indicates that `_lid` is required and, once set, is permanent.
+
+#### `_default-value`
+
+`_default-value` is a key/value dictionary where each key is a descriptor `_gid` and each value is the default to be applied if that property is absent at insertion time. This allows objects with missing optional fields to be silently completed with known defaults.
+
+```json
+{
+    "_rule": {
+        "_default-value": {
+            "chr_status": "active",
+            "chr_confidence": 1.0
+        }
+    }
+}
+```
