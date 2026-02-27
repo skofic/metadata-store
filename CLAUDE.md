@@ -35,19 +35,19 @@ This project is in early initialization. No source code exists yet. The `.gitign
   - Core properties (`_title`, `_definition`, `_description`) with value types and required status
   - Secondary properties (`_examples`, `_notes`, `_url`, `_citation`, `_provider`)
   - Alias term exception for omitting `_info`
-- `_data` section — introduction, `_scalar`, `_array`, and `_set` subsections fully documented, including:
+- `_data` section — introduction, `_scalar`, `_array`, `_set`, and `_tuple` subsections fully documented, including:
   - Data shape overview (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`)
   - All `_type` variants with properties, constraints, and examples
   - `_type_object` `_kind` mechanism: references term `_gid`s whose `_rule` section defines the object structure
-  - `_any-enum` clarified: the `_key` of any term that is an element or the root of a controlled vocabulary graph
+  - `_any-enum` clarified: the `_key` of any term that is an element or the root of an enumeration graph
   - `_decimals` removed from `_type_number_integer` (integers have no decimals)
 
 ### In Progress
 - Nothing currently in progress.
 
 ### Pending
-- `_data` section — remaining shape subsections: `_tuple`, `_dict`
-- Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), a controlled vocabulary element (enumeration graph node), and an enumeration type (enumeration graph root)
+- `_data` section — remaining shape subsection: `_dict`
+- Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
 - `_rule` section
 
 ---
@@ -92,9 +92,18 @@ This section is the **source of truth** for the data dictionary structure. All c
 
 ### Core Concepts
 
+#### Terminology
+
+Two pairs of synonyms appear throughout this document. The preferred term is used consistently from here on:
+
+| Preferred term | Synonym(s) | Meaning |
+|----------------|------------|---------|
+| **enumeration** | controlled vocabulary | A set of terms organised as a graph whose root defines the value domain and whose nodes are the allowed values. |
+| **descriptor**  | data variable, variable term | A term that carries a `_data` section, describing the type and shape of the data it represents. |
+
 - The dictionary is a collection of **terms** stored as nodes in an ArangoDB directed graph.
 - **Terms** are stored in document collections; **relationships** between terms are stored in edge collections.
-- Terms represent namespaces, controlled vocabularies, descriptors, and other items.
+- Terms represent namespaces, enumerations, descriptors, and other items.
 - The dictionary is **self-describing and recursive**: the fields and structures that make up the dictionary are themselves terms. The dictionary describes both external data and itself.
 
 ### Term Structure
@@ -107,7 +116,7 @@ The four core sections are:
 |----------|------------------------------------------------|------------------------------------|
 | `_code`  | Identifiers and codes by which the term is referenced | All terms                          |
 | `_info`  | Description of what the term represents        | Most terms                         |
-| `_data`  | Data type and shape of the referenced data     | Descriptor / data variable terms   |
+| `_data`  | Data type and shape of the referenced data     | Descriptor terms                   |
 | `_rule`  | Structure schema rules (required/forbidden fields, etc.) | Schema terms                       |
 
 ### `_code` Section
@@ -190,11 +199,15 @@ These optional properties support searching and organising terms.
 | `_pid`    | No       | "Provided identifiers" — custom identifiers used by data providers. |
 | `_name`   | No       | A string containing the name of the term. |
 | `_symbol` | No       | A formatted string containing the symbol of the term (e.g., a currency symbol, mathematical expression). |
+| `_regexp` | No       | A regular expression used to validate the `_lid` of this term. |
+| `_emoji`  | No       | An emoji character used as a visual icon for the term. |
 
 - **`_aid`** ("all identifiers"): The set of all *official* identifiers by which the term can be identified — i.e., identifiers that are considered standards beyond this dictionary. By default it should contain the term's own `_lid`, plus the `_lid` of any alias terms pointing to the current term. This property should be **omitted** if the term has no official standard identifier and no alias terms. It should be **included** if the term has a standard identifier, or if alias terms with different `_lid` values point to it — in which case it lists the current `_lid`, any standard identifier(s), and the `_lid` values of all aliases.
 - **`_pid`** ("provided identifiers"): Custom identifiers used by data providers. This dictionary is used to apply standards and metadata to a repository of datasets. When receiving datasets that lack metadata, this field can be searched to match unknown variable names to known terms.
 - **`_name`**: The term's name. Used when a term has an official or unique human-readable name distinct from its identifier.
 - **`_symbol`**: The term's symbol, stored as a **LaTeX string**. LaTeX is a superset of plain UTF-8 text, so simple symbols can be stored as plain Unicode characters (e.g., `€`, `μ`, `°C`) while complex expressions use LaTeX syntax (e.g., `\bar{x} \pm \sigma`, `\frac{n!}{k!(n-k)!}`). The frontend renders this field using **KaTeX**, which handles both plain Unicode and LaTeX syntax seamlessly.
+- **`_regexp`**: A regular expression that validates the `_lid` of this term. When present, the term's own `_lid` must satisfy the expression. It serves as a format constraint on the local identifier and has no relation to namespacing. The same `_regexp` property is also used in the `_data` section to validate string values.
+- **`_emoji`**: An emoji character used as a visual icon for the term. For example, ISO 3166 country terms may carry their national flag emoji (e.g., 🇮🇹 for Italy, 🇫🇷 for France).
 
 ### `_info` Section
 
@@ -250,7 +263,7 @@ In this case, `iso_639_1_en` is defined as an alias of `iso_639_3_eng`: it retai
 
 ### `_data` Section
 
-The `_data` section is used by terms that represent data variables. It describes and documents the data that the term represents. If the section is an **empty object**, the value of the referenced term can be of any shape and type.
+The `_data` section is used by descriptor terms. It describes and documents the data that the term represents. If the section is an **empty object**, the value of the referenced term can be of any shape and type.
 
 #### Data shape (top-level structure)
 
@@ -277,7 +290,7 @@ Each of these properties is described in detail in the subsections below.
 | `_type`                | Yes (if `_scalar` not empty) | The scalar data type. |
 | `_kind`                | No                           | Data kind; relevant to `_type_string_key`, `_type_string_enum`, and `_type_object`. |
 | `_format`              | No                           | String format; relevant to string types. |
-| `_unit`                | No                           | Data unit, expressed as a controlled vocabulary element. |
+| `_unit`                | No                           | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No                           | Unit name, used when `_unit` is absent. |
 | `_unit-symbol`         | No                           | Unit symbol, used when `_unit` is absent. |
 | `_regexp`              | No                           | Regular expression to validate string values. |
@@ -302,7 +315,7 @@ Each of these properties is described in detail in the subsections below.
 | `_type_string`           | A generic UTF-8 string. |
 | `_type_string_key`       | A string representing the `_key` of a document. |
 | `_type_string_handle`    | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
-| `_type_string_enum`      | A string representing the `_gid` of a controlled vocabulary element. |
+| `_type_string_enum`      | A string representing the `_gid` of an enumeration element. |
 | `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
 | `_type_struct`           | An object with indeterminate properties (may be empty). |
 | `_type_object`           | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
@@ -377,7 +390,7 @@ A number used as a UNIX timestamp. May include `_valid-range` and `_normal-range
 **`_type_string`**
 
 A generic UTF-8 string. May include:
-- `_format`: the string format, from the following controlled vocabulary:
+- `_format`: the string format, from the following enumeration:
 
 | Format value        | Description |
 |---------------------|-------------|
@@ -420,8 +433,8 @@ A string representing the `_key` of a document. If `_kind` is absent, the key ca
 | `_kind` value     | Meaning |
 |-------------------|---------|
 | `_any-term`       | The `_key` can refer to any term. |
-| `_any-enum`       | The `_key` can refer to any term that is an element or the root of a controlled vocabulary graph. |
-| `_any-descriptor` | The `_key` must refer to a term that represents a data variable (has a `_data` section). |
+| `_any-enum`       | The `_key` can refer to any term that is an element or the root of an enumeration graph. |
+| `_any-descriptor` | The `_key` must refer to a descriptor (has a `_data` section). |
 | `_any-object`     | The `_key` must refer to a term that represents an object definition (has a `_rule` section). |
 
 ```json
@@ -443,7 +456,7 @@ A string representing the `_id` of an ArangoDB document, in the form `<collectio
 
 **`_type_string_enum`**
 
-A string representing the `_gid` of a controlled vocabulary element. The `_kind` property is an array of term `_key`s identifying the controlled vocabulary root(s) that define the valid value domain.
+A string representing the `_gid` of an enumeration element. The `_kind` property is an array of term `_key`s identifying the enumeration root(s) that define the valid value domain.
 
 ```json
 {
@@ -637,7 +650,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 | `_set_type`            | Yes (if `_set_scalar` not empty)  | The data type of the set element. |
 | `_kind`                | No                                | Data kind; relevant to `_type_string_key` and `_type_string_enum`. |
 | `_format`              | No                                | String format; relevant to string types. |
-| `_unit`                | No                                | Data unit, expressed as a controlled vocabulary element. |
+| `_unit`                | No                                | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No                                | Unit name, used when `_unit` is absent. |
 | `_unit-symbol`         | No                                | Unit symbol, used when `_unit` is absent. |
 | `_regexp`              | No                                | Regular expression to validate string values. |
@@ -662,7 +675,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 | `_type_string`           | A generic UTF-8 string. |
 | `_type_string_key`       | A string representing the `_key` of a document. |
 | `_type_string_handle`    | A string containing the `_id` of an ArangoDB document. |
-| `_type_string_enum`      | A string representing the `_gid` of a controlled vocabulary element. |
+| `_type_string_enum`      | A string representing the `_gid` of an enumeration element. |
 | `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
 
 `_type_struct`, `_type_object`, and `_type_object_geojson` are excluded because objects are not comparable and cannot be tested for uniqueness.
@@ -677,6 +690,65 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
         "_set_scalar": {
             "_set_type": "_type_string_enum",
             "_kind": ["iso_639_3"]
+        }
+    }
+}
+```
+
+---
+
+#### `_tuple`
+
+`_tuple` is an object property that defines and documents an ordered list in which each element may have a different data type. Unlike `_array` and `_set`, which apply a single type uniformly to all elements, a tuple is **positional**: the type at index *n* in `_tuple_types` applies to the value at index *n* in the tuple array.
+
+##### `_tuple` properties
+
+| Property       | Required | Description |
+|----------------|----------|-------------|
+| `_tuple_types` | Yes      | Ordered list of descriptor `_gid`s defining the data type of each tuple position. |
+| `_elements`    | No       | Minimum and maximum number of elements the tuple may contain. |
+
+##### `_tuple_types`
+
+`_tuple_types` is an array of descriptor `_gid`s. Each entry references a descriptor term whose `_data` section defines the expected type for the corresponding tuple position. Order is significant: position *n* in `_tuple_types` governs position *n* in the tuple value.
+
+```json
+{
+    "_tuple": {
+        "_tuple_types": [
+            "iso_3166_1_a2",
+            "chr_birth_date",
+            "chr_body_weight"
+        ]
+    }
+}
+```
+
+##### `_elements`
+
+`_elements` constrains how many elements a tuple value may contain. The length of `_tuple_types` acts as an absolute upper bound: neither `_min-items` nor `_max-items` may exceed it.
+
+- If `_elements` is **omitted**, the tuple must contain exactly as many elements as `_tuple_types`.
+- If `_elements` is **present**, the tuple length is governed by its sub-properties.
+
+| Property     | Required | Description |
+|--------------|----------|-------------|
+| `_min-items` | No       | Minimum number of elements (inclusive). Cannot exceed the length of `_tuple_types`. If omitted, the minimum is zero. |
+| `_max-items` | No       | Maximum number of elements (inclusive). Cannot exceed the length of `_tuple_types`. If omitted, the maximum equals the length of `_tuple_types`. |
+
+When the tuple contains fewer elements than `_tuple_types`, the types for the trailing positions are simply not applied — the tuple is treated as a prefix of the full type sequence.
+
+```json
+{
+    "_tuple": {
+        "_tuple_types": [
+            "iso_3166_1_a2",
+            "chr_birth_date",
+            "chr_body_weight"
+        ],
+        "_elements": {
+            "_min-items": 1,
+            "_max-items": 3
         }
     }
 }
