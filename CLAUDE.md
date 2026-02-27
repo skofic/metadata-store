@@ -385,6 +385,17 @@ An integer (no decimals). May include:
 
 A number used as a UNIX timestamp. May include `_valid-range` and `_normal-range`.
 
+```json
+{
+    "_scalar": {
+        "_type": "_type_number_timestamp",
+        "_valid-range": {
+            "_min-range-inclusive": 0
+        }
+    }
+}
+```
+
 ---
 
 **`_type_string`**
@@ -478,8 +489,8 @@ A date string in YYYYMMDD format, which may be expressed partially as YYYY or YY
     "_scalar": {
         "_type": "_type_string_date",
         "_valid-range_date": {
-            "_min-range-inclusive": "200501",
-            "_max-range-exclusive": "20050728"
+            "_min-range-inclusive_date": "200501",
+            "_max-range-exclusive_date": "20050728"
         }
     }
 }
@@ -490,6 +501,14 @@ A date string in YYYYMMDD format, which may be expressed partially as YYYY or YY
 **`_type_struct`**
 
 An object with indeterminate properties. May be empty.
+
+```json
+{
+    "_scalar": {
+        "_type": "_type_struct"
+    }
+}
+```
 
 ---
 
@@ -512,13 +531,86 @@ An object whose properties must correspond to descriptor term `_gid`s. May be em
 
 A GeoJSON object. May **not** be empty.
 
+```json
+{
+    "_scalar": {
+        "_type": "_type_object_geojson"
+    }
+}
+```
+
+---
+
+##### Range properties
+
+Two families of range properties exist, serving different purposes:
+
+- **Valid range** (`_valid-range`, `_valid-range_string`, `_valid-range_date`): defines the hard boundaries of acceptable values. Any value falling outside a valid range is considered an **error** and must be rejected. For example, a temperature expressed in Kelvin must not be negative, so its valid range would have a lower bound of zero.
+- **Normal range** (`_normal-range`, `_normal-range_string`, `_normal-range_date`): defines the boundaries of expected or typical values, analogous to a normal distribution. A value outside a normal range is not necessarily wrong, but should be **flagged as an outlier** for review. For example, a human body temperature above 42 °C is physiologically possible but warrants a double-check.
+
+All six range properties share the same structure: each is an object with up to four sub-properties defining the lower and upper bounds of the interval. At most one min-property and one max-property should be present; omitting a bound leaves that end of the interval open.
+
+**Numeric ranges** — used with `_valid-range` and `_normal-range`:
+
+| Property               | Description                       |
+|------------------------|-----------------------------------|
+| `_min-range-inclusive` | Lower bound, value included (≥). |
+| `_min-range-exclusive` | Lower bound, value excluded (>). |
+| `_max-range-inclusive` | Upper bound, value included (≤). |
+| `_max-range-exclusive` | Upper bound, value excluded (<). |
+
+```json
+{
+    "_valid-range": {
+        "_min-range-inclusive": 0,
+        "_max-range-exclusive": 100
+    }
+}
+```
+
+**String ranges** — used with `_valid-range_string` and `_normal-range_string`:
+
+| Property                      | Description                       |
+|-------------------------------|-----------------------------------|
+| `_min-range-inclusive_string` | Lower bound, value included. |
+| `_min-range-exclusive_string` | Lower bound, value excluded. |
+| `_max-range-inclusive_string` | Upper bound, value included. |
+| `_max-range-exclusive_string` | Upper bound, value excluded. |
+
+```json
+{
+    "_valid-range_string": {
+        "_min-range-inclusive_string": "A",
+        "_max-range-exclusive_string": "Z"
+    }
+}
+```
+
+**Date ranges** — used with `_valid-range_date` and `_normal-range_date`:
+
+| Property                    | Description                       |
+|-----------------------------|-----------------------------------|
+| `_min-range-inclusive_date` | Lower bound, value included. |
+| `_min-range-exclusive_date` | Lower bound, value excluded. |
+| `_max-range-inclusive_date` | Upper bound, value included. |
+| `_max-range-exclusive_date` | Upper bound, value excluded. |
+
+```json
+{
+    "_valid-range_date": {
+        "_min-range-inclusive_date": "20000101",
+        "_max-range-exclusive_date": "20231231"
+    }
+}
+```
+
 ---
 
 #### `_array`
 
 `_array` is an object property that defines and documents an array value — an ordered list of elements of the same type. If the object is **empty** (`"_array": {}`), the array may contain any number of elements of any type.
 
-Arrays are **recursive**: an `_array` may contain other arrays, sets, or dictionaries as its elements, forming nested structures. The recursion terminates when a `_scalar` or `_dict` leaf node is reached.
+Arrays are **recursive**: an `_array` may contain other arrays, sets, tuples, or dictionaries as its elements, forming nested structures. The recursion terminates when a `_scalar` leaf node is reached.
 
 ##### `_array` properties
 
@@ -529,10 +621,11 @@ Arrays are **recursive**: an `_array` may contain other arrays, sets, or diction
 | `_elements`| No       | Minimum and maximum number of elements in the array. |
 | `_scalar`  | No*      | Array elements are scalar values of the defined type. |
 | `_array`   | No*      | Array elements are themselves arrays (recursive). |
-| `_set`     | No*      | Array elements are themselves sets — arrays of unique, comparable elements (not recursive). |
+| `_set`     | No*      | Array elements are themselves sets — arrays of unique, comparable elements. |
+| `_tuple`   | No*      | Array elements are themselves tuples — ordered lists with positionally-typed elements. |
 | `_dict`    | No*      | Array elements are key/value dictionary structures. |
 
-\* Exactly one of `_scalar`, `_array`, `_set`, or `_dict` must be present when `_array` is not empty.
+\* Exactly one of `_scalar`, `_array`, `_set`, `_tuple`, or `_dict` must be present when `_array` is not empty.
 
 ##### `_elements`
 
@@ -618,6 +711,25 @@ Array elements are themselves sets — arrays of unique, comparable elements. Un
 
 ---
 
+**`_tuple`**
+
+Array elements are themselves tuples — ordered lists with positionally-typed elements. Each element's type is defined by the corresponding position in `_tuple_types`. See the [`_tuple`](#_tuple) section for the full definition.
+
+```json
+{
+    "_array": {
+        "_tuple": {
+            "_tuple_types": [
+                "iso_3166_1_a2",
+                "chr_body_weight"
+            ]
+        }
+    }
+}
+```
+
+---
+
 **`_dict`**
 
 Array elements are key/value dictionary structures. The `_dict` property is described in its own subsection. Note that the value side of a `_dict` entry is itself defined by a full `_data` section, making the overall structure equivalently recursive.
@@ -680,6 +792,8 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 `_type_struct`, `_type_object`, and `_type_object_geojson` are excluded because objects are not comparable and cannot be tested for uniqueness.
 
+The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`, `_valid-range_date`, `_normal-range_date`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
+
 ```json
 {
     "_set": {
@@ -710,7 +824,9 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 ##### `_tuple_types`
 
-`_tuple_types` is an array of descriptor `_gid`s. Each entry references a descriptor term whose `_data` section defines the expected type for the corresponding tuple position. Order is significant: position *n* in `_tuple_types` governs position *n* in the tuple value.
+`_tuple_types` is an array of descriptor `_gid`s. The type definition for each tuple position is **not written inline**: each entry is the `_gid` of a descriptor term, and it is that term's `_data` section that defines the expected type for the corresponding position. Order is significant: position *n* in `_tuple_types` governs position *n* in the tuple value.
+
+This indirection means that tuple positions reuse existing descriptor definitions from the dictionary rather than duplicating type information. The type of a tuple element is fully resolved by looking up the referenced descriptor and reading its `_data` section.
 
 ```json
 {
