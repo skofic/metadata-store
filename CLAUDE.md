@@ -35,7 +35,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
   - Core properties (`_title`, `_definition`, `_description`) with value types and required status
   - Secondary properties (`_examples`, `_notes`, `_url`, `_citation`, `_provider`)
   - Alias term exception for omitting `_info`
-- `_data` section — introduction, `_scalar`, `_array`, `_set`, and `_tuple` subsections fully documented, including:
+- `_data` section — fully documented, including all five shape subsections (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`), including:
   - Data shape overview (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`)
   - All `_type` variants with properties, constraints, and examples
   - `_type_object` `_kind` mechanism: references term `_gid`s whose `_rule` section defines the object structure
@@ -46,7 +46,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- `_data` section — remaining shape subsection: `_dict`
+- `_data` section — complete.
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
 - `_rule` section
 
@@ -753,3 +753,67 @@ When the tuple contains fewer elements than `_tuple_types`, the types for the tr
     }
 }
 ```
+
+---
+
+#### `_dict`
+
+`_dict` is an object property that defines and documents a key/value structure. Unlike `_type_struct` (indeterminate properties) and `_type_object` (properties are descriptor `_gid`s), a dictionary has **explicitly typed keys and values**: the key type is defined by `_dict_key` and the value type is defined by `_dict_value`. Both properties are required.
+
+##### `_dict` properties
+
+| Property      | Required | Description |
+|---------------|----------|-------------|
+| `_dict_key`   | Yes      | Defines the data type of the dictionary keys. |
+| `_dict_value` | Yes      | Defines the data type of the dictionary values. Equivalent to a full `_data` section. |
+
+##### `_dict_key`
+
+`_dict_key` is a structure that defines the type of the dictionary key. Because dictionary keys must be compatible with object property names, the permitted types are restricted to string variants. It mirrors the structure of `_scalar` but uses `_type_key` instead of `_type`, and omits non-string types.
+
+###### `_dict_key` properties
+
+| Property      | Required | Description |
+|---------------|----------|-------------|
+| `_type_key`   | Yes      | The data type of the dictionary key. |
+| `_kind`       | No       | Data kind; relevant only to `_type_string_key` and `_type_string_enum`. |
+| `_unit`       | No       | Key unit, expressed as an enumeration element. |
+| `_unit-name`  | No       | Unit name, used when `_unit` is absent. |
+| `_unit-symbol`| No       | Unit symbol, used when `_unit` is absent. |
+| `_regexp`     | No       | Regular expression to validate the key format. |
+
+###### `_type_key` enumeration
+
+`_type_key` accepts only string-compatible types, as dictionary keys must be valid object property names:
+
+| Value               | Description |
+|---------------------|-------------|
+| `_type_string`      | A generic UTF-8 string. |
+| `_type_string_key`  | A string representing the `_key` of a term. |
+| `_type_string_handle` | A string representing the `_id` of an ArangoDB document. |
+| `_type_string_enum` | A string representing the `_gid` of an enumeration element. |
+| `_type_string_date` | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
+
+The semantics of each type, and of `_kind`, are identical to those described in the [`_scalar`](#_scalar) section.
+
+##### `_dict_value`
+
+`_dict_value` is equivalent to a full `_data` section: it may contain exactly one shape property (`_scalar`, `_array`, `_set`, `_tuple`, or `_dict`), making the dictionary structure fully recursive. An empty `_dict_value` object (`"_dict_value": {}`) means the value can be of any shape and type.
+
+```json
+{
+    "_dict": {
+        "_dict_key": {
+            "_type_key": "_type_string_enum",
+            "_kind": ["iso_639_3"]
+        },
+        "_dict_value": {
+            "_scalar": {
+                "_type": "_type_string"
+            }
+        }
+    }
+}
+```
+
+The example above describes the multilingual structure used throughout the `_info` section: keys are ISO 639-3 language `_gid`s (e.g. `iso_639_3_eng`), values are plain strings.
