@@ -47,7 +47,8 @@ This project is in early initialization. No source code exists yet. The `.gitign
 
 ### Pending
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
-- `_rule` section — inserted, pending review and possible redesign
+- `_rule` section — inserted, reviewed; open design questions recorded in the section itself
+- **Next topic (Monday)**: Conditional rules in `_rule` — depending on the value of specific properties (e.g. `_type`), other properties become relevant or irrelevant. Need to design a mechanism to express these conditional constraints.
 
 ---
 
@@ -77,6 +78,7 @@ Apply the graph model documented in Phase 4 to the core terms: add edge records 
 Develop a JavaScript/TypeScript library (targeting ArangoDB Foxx or a standalone Node.js package) that:
 - Validates datasets against the dictionary's type and schema definitions.
 - Serves as a programmatic ontology for querying and navigating term relationships.
+- **Note**: before or during this phase, a closed schema mechanism must be added to `_rule` (a whitelist of permitted properties) to support strict validation of external objects. The current open-by-default design is sufficient for internal dictionary terms but not for external data documentation.
 
 ### Phase 7 — Dictionary management user interface
 Build a UI for managing the dictionary that:
@@ -939,6 +941,10 @@ The example above describes the multilingual structure used throughout the `_inf
 
 The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
 
+> **Conditional rules (pending):** The current `_rule` design has no mechanism for conditional constraints — rules that apply only when a specific property has a specific value. For example, if `_type` is `_type_string`, then `_format` and `_regexp` become relevant; if `_type` is `_type_number`, then `_decimals` and `_valid-range` become relevant. A conditional rule mechanism needs to be designed and added to `_rule` to cover these cases.
+
+> **Open schema by design (current phase):** The current implementation is open — any property not explicitly banned is permitted. This is intentional while the dictionary is defining its own internal terms, which benefit from flexibility and extensibility. When the dictionary is later used to document external objects, a closed schema mechanism (a whitelist of permitted properties) will need to be added to `_rule`. This is a known future requirement.
+
 #### Top-level properties
 
 One or more of the following properties may be present:
@@ -954,19 +960,36 @@ One or more of the following properties may be present:
 
 #### Selection structures
 
-`_required` expresses its conditions using **selection structures** — objects that specify which descriptors must be present according to a particular cardinality rule. The following selection structures are available:
+`_required` expresses its conditions using **selection structures** — properties that specify which descriptors must be present according to a particular cardinality rule. Four of the five selectors take a **flat set of descriptor keys** as their value. The fifth, `_selection-descriptors_one-none-of`, takes an **array of sets** — the constraint is applied independently to each set in the list.
 
-| Property                            | Description |
-|-------------------------------------|-------------|
-| `_selection-descriptors_one`        | **One of**: exactly one descriptor from the set must be present. |
-| `_selection-descriptors_one-none`   | **One or none**: zero or one descriptor from the set may be present. |
-| `_selection-descriptors_one-none-of`| **One of any in list**: zero or one descriptor from each set in a list of sets. |
-| `_selection-descriptors_any`        | **Any of**: one or more descriptors from the set must be present. |
-| `_selection-descriptors_all`        | **All of**: all descriptors from the set must be present. |
+| Property                             | Value shape          | Description |
+|--------------------------------------|----------------------|-------------|
+| `_selection-descriptors_one`         | Set of descriptor keys | **One of**: exactly one descriptor from the set must be present; the rest must be absent. |
+| `_selection-descriptors_one-none`    | Set of descriptor keys | **One or none**: zero or one descriptor from the set may be present. |
+| `_selection-descriptors_any`         | Set of descriptor keys | **Any of**: one or more descriptors from the set must be present. |
+| `_selection-descriptors_all`         | Set of descriptor keys | **All of**: all descriptors from the set must be present. |
+| `_selection-descriptors_one-none-of` | Array of sets of descriptor keys | **One of any in list**: from each set in the list, zero or one descriptor may be present. |
+
+The structural difference of `_selection-descriptors_one-none-of` is significant: where the other four selectors evaluate a single group of descriptors, this selector evaluates each group in the list independently. For example:
+
+```json
+{
+    "_rule": {
+        "_required": {
+            "_selection-descriptors_one-none-of": [
+                ["first_name", "full_name"],
+                ["phone", "email"]
+            ]
+        }
+    }
+}
+```
+
+This rule allows zero or one of `first_name`/`full_name`, and independently zero or one of `phone`/`email`. Each group is evaluated on its own.
 
 #### `_required`
 
-`_required` is an object that may contain any combination of the selection structures above. The object being validated must satisfy all selection structures present simultaneously.
+`_required` is an object that must contain **at least one** selection structure. It may contain any combination of the five selectors, but at least one must be present — an empty `_required` object is invalid. When multiple selectors are present, **all of them must be satisfied simultaneously**: the selectors are ANDed together, not ORed. Note that `_default-value` is applied before `_required` is checked, so a property with a default value will always satisfy a requirement for it.
 
 ```json
 {
@@ -982,7 +1005,7 @@ One or more of the following properties may be present:
 
 This rule imposes the following conditions:
 
-- Exactly one of `one`, `two`, `three` must be present.
+- Exactly one of `one`, `two`, `three` must be present; the others must be absent.
 - At least one of `red`, `green`, `blue` must be present.
 - All of `mon`, `tue`, `wed` must be present.
 
@@ -1049,7 +1072,7 @@ This rule indicates that `_lid` is required and, once set, is permanent.
 
 #### `_default-value`
 
-`_default-value` is a key/value dictionary where each key is a descriptor `_gid` and each value is the default to be applied if that property is absent at insertion time. This allows objects with missing optional fields to be silently completed with known defaults.
+`_default-value` is a key/value dictionary where each key is a descriptor `_gid` and each value is the default to be applied if that property is absent at insertion time. Defaults are applied **before** `_required` is checked — this means a property can be both listed in `_default-value` and required: if the user omits it, the default fills it in, and validation then succeeds. This makes `_default-value` a way to guarantee required properties are always present without forcing the user to supply them explicitly.
 
 ```json
 {
