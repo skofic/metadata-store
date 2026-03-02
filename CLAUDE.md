@@ -26,23 +26,11 @@ This project is in early initialization. No source code exists yet. The `.gitign
 > This section is maintained by Claude and updated at the end of each working session to allow seamless resumption across sessions.
 
 ### Completed
-- `_code` section — fully documented, including:
-  - Core properties (`_gid`, `_lid`, `_nid`) with computation rules and JSON examples for all three cases
-  - Secondary properties (`_aid`, `_pid`, `_name`, `_symbol`)
-  - `_symbol` format decision: LaTeX string (superset of plain UTF-8), rendered with KaTeX on the frontend
-- `_info` section — fully documented, including:
-  - Multilingual key/value structure (language `_gid` → string)
-  - Core properties (`_title`, `_definition`, `_description`) with value types and required status
-  - Secondary properties (`_examples`, `_notes`, `_url`, `_citation`, `_provider`)
-  - Alias term exception for omitting `_info`
-- `_data` section — fully documented, including all five shape subsections (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`), including:
-  - Data shape overview (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`)
-  - All `_type` variants with properties, constraints, and examples
-  - `_type_object` `_kind` mechanism: references term `_gid`s whose `_rule` section defines the object structure
-  - `_any-enum` clarified: the `_key` of any term that is an element or the root of an enumeration graph
-  - `_decimals` removed from `_type_number_integer` (integers have no decimals)
-- `_rule` section — fully documented, including all six top-level properties and all five selection structures
-- Graphs section — fully documented, including edge structure, `_path`/`_path_data` mechanics, functional and non-functional predicates, sections, bridge graphs, and traversal semantics
+- `_code` section — identifiers (`_gid`, `_lid`, `_nid`), computation rules, secondary properties (`_aid`, `_pid`, `_name`, `_symbol`, `_regexp`, `_emoji`)
+- `_info` section — multilingual structure, core and secondary properties, alias term exception
+- `_data` section — all five shapes (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`), all `_type` variants, range properties
+- `_rule` section — all properties (`_required`, `_recommended`, `_banned`, `_computed`, `_locked`, `_immutable`, `_default-value`), selection structures, open/closed schema design, `_banned` precedence
+- Graphs section — edge structure, `_path`/`_path_data`, functional and non-functional predicates, sections, bridge graphs, alias resolution, `_predicate_value-of` conditional rules, traversal semantics
 
 ### In Progress
 - Nothing currently in progress.
@@ -50,14 +38,13 @@ This project is in early initialization. No source code exists yet. The `.gitign
 ### Pending
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
 - **Design decisions made — implementation pending:**
-  1. **Open vs closed schema**: direction decided. `_rule` will carry an open/closed flag; the property graph provides the whitelist for closed schemas. Implementation follows once cardinality predicates are defined.
-  2. **Conditional rules**: direction decided. Conditions are graph roots; conditional properties are nodes under them via cardinality predicates. *User is designing the specific mechanism — will return with a proposal.*
-  3. **`_rule` simplification**: direction decided. Selection structures retire; `_rule` retains only the open/closed flag and operational properties (`_computed`, `_locked`, `_immutable`, `_default-value`, possibly `_banned`). Implementation follows conditional rules design.
+  1. **Open vs closed schema**: direction decided. `_rule` will carry an open/closed flag; `_recommended` is the whitelist (advisory when open, enforced when closed). Implementation pending.
+  2. **Conditional rules**: mechanism designed. `_predicate_value-of` edges carry context-specific `_rule`-like structures in `_path_data`, keyed by path root. Selection structures remain in `_rule` (not retired). Implementation pending.
+  3. **`_banned` precedence**: decided. `_banned` is unconditional and absolute — no conditional rule can activate a banned property. Conflicts between conditional rules and `_banned` are detectable at edge insertion time.
 - **Open design questions** (still to be resolved):
-  1. **Cardinality predicates**: define the new predicates (e.g. `_predicate_required-of`, `_predicate_optional-of`) and specify their exact semantics, including how group-level cardinality ("exactly one of this set") is expressed without abusing grouping nodes.
-  2. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
-  3. **Conflict detection**: when terms or graphs are modified, contradictory rules may arise. A detection and reporting mechanism needs to be designed.
-- **Next topic**: User returns with a proposal for conditional rules via graphs.
+  1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
+  2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
+- **Next topic**: Implement `_predicate_value-of` conditional rules and the open/closed schema flag.
 
 ---
 
@@ -65,34 +52,28 @@ This project is in early initialization. No source code exists yet. The `.gitign
 
 > This section records the planned sequence of work phases for the project, providing orientation across sessions.
 
-### Phase 1 — Term section documentation *(current)*
-Describe all four term sections (`_code`, `_info`, `_data`, `_rule`) in full in CLAUDE.md. This establishes the source of truth for the dictionary structure before any data or code is written.
+### Phase 1 — Term section documentation *(complete)*
+Documented all four term sections (`_code`, `_info`, `_data`, `_rule`) and graph mechanics in this file. Source of truth for the dictionary structure is established.
 
-### Phase 2 — Core terms: import and synthesis
-The owner will provide the dictionary core terms as JSON records. Claude will:
-- Compare the provided implementation against the concepts documented in Phase 1.
-- Identify and resolve any discrepancies.
-- Synthesise CLAUDE.md into a tighter, more precise reference that reflects the real implementation.
+### Phase 2 — Core terms *(current)*
+Create `data/core/` with JSON term files for the dictionary's own building blocks. Working instructions in `data/core/CLAUDE.md`. Starting point: `collections.json` containing terms for the top-level structures (term object, edge object, `_code`/`_info`/`_data`/`_rule` sections, predicates, types, and other core enumerations). Claude writes and corrects `_info` content in English for all core terms.
 
-### Phase 3 — `_info` authoring and translation
-Write clear, accurate, and accessible `_info` sections (`_title`, `_definition`, `_description`, etc.) for all core dictionary terms. Once the English content is approved, translate each `_info` section into additional languages.
+### Phase 3 — Standards
+Create `data/standards/` with ISO and other standards as dictionary terms. Working instructions in `data/standards/CLAUDE.md`. Primary source: [Debian iso-codes](https://salsa.debian.org/iso-codes-team/iso-codes) (ISO 639, 3166, 4217, 15924, and others, including curated translations). Supplementary sources:
+- [mledoze/countries](https://github.com/mledoze/countries): supplementary country data (informational, treat as secondary).
+- [flag-icons](https://github.com/lipis/flag-icons) or [hampusborgos/country-flags](https://github.com/hampusborgos/country-flags): SVG country flags.
 
-### Phase 4 — Graph mechanics and ontology documentation
-The owner will describe how terms relate to one another to form graphs and ontologies. Claude will document the graph inner workings in CLAUDE.md, covering edge types, traversal semantics, enumeration graphs, alias resolution, and any other relationship mechanisms.
+### Phase 4 — Translations
+Add translations to all `_info` sections using the Debian iso-codes translations as the baseline language coverage.
 
-### Phase 5 — Edge relationships for core terms
-Apply the graph model documented in Phase 4 to the core terms: add edge records that encode the relationships between terms (namespaces, enumerations, aliases, schema inheritance, etc.).
+### Phase 5 — Edge relationships
+Add edge records encoding relationships between terms: namespaces, enumerations, aliases, schema inheritance, conditional rules, and property graphs.
 
 ### Phase 6 — Validation and manipulation library
-Develop a JavaScript/TypeScript library (targeting ArangoDB Foxx or a standalone Node.js package) that:
-- Validates datasets against the dictionary's type and schema definitions.
-- Serves as a programmatic ontology for querying and navigating term relationships.
-- **Note**: before or during this phase, a closed schema mechanism must be added to `_rule` (a whitelist of permitted properties) to support strict validation of external objects. The current open-by-default design is sufficient for internal dictionary terms but not for external data documentation.
+Develop a JavaScript/TypeScript library (ArangoDB Foxx or standalone Node.js) that validates datasets against the dictionary, enforces open/closed schema rules and conditional rule graphs, and serves as a programmatic ontology for navigating term relationships.
 
 ### Phase 7 — Dictionary management user interface
-Build a UI for managing the dictionary that:
-- Minimises the risk of structural errors when creating or editing terms.
-- Provides intuitive navigation across all aspects of the data dictionary (terms, graphs, enumerations, schemas).
+Build a UI for creating and editing terms, navigating graphs and enumerations, and enforcing structural correctness.
 
 ---
 
@@ -948,13 +929,11 @@ The example above describes the multilingual structure used throughout the `_inf
 
 ### `_rule` Section
 
-The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
+The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, recommended, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
 
-> **Conditional rules — graph-based solution identified:** Conditional constraints will be implemented using graphs rather than inline `_rule` properties. The condition is the graph root. For example, the properties relevant when `_type` is `_type_string` will be expressed as a property graph rooted at `_type_string`, with `_format`, `_regexp`, etc. as `_predicate_property-of` (or cardinality-specific predicate) nodes under it. When a descriptor's `_type` resolves to a specific value, the system traverses the corresponding graph to discover the conditional properties. Design and implementation are pending.
+Conditional constraints that apply only when a specific property holds a specific value are expressed in the graph layer using the `_predicate_value-of` predicate — see the Graphs section. The `_rule` section handles structural constraints that apply unconditionally; the graph layer handles value-dependent constraints.
 
-> **Open vs closed schema:** The `_rule` section will carry a flag indicating whether the schema is open or closed. In a closed schema, only properties reachable via the property graph are permitted — the graph provides the whitelist. In an open schema, properties not in the graph are still allowed. The current open-by-default behaviour is intentional for the dictionary's internal terms.
-
-> **`_rule` scope going forward:** The selection structures (`_required` and its five selectors) will be retired and replaced by graph-based cardinality predicates (e.g. `_predicate_required-of`, `_predicate_optional-of`). The `_rule` section will be slimmed to: (1) the open/closed schema flag, and (2) operational properties: `_computed`, `_locked`, `_immutable`, `_default-value`, and possibly `_banned`. Property lists, requirement cardinality, and conditional rules all move to graphs.
+A boolean open/closed flag will be added to `_rule`. When closed, only properties listed in `_recommended` are permitted. When open, `_recommended` is advisory. `_banned` is unconditional in both modes.
 
 #### Top-level properties
 
@@ -963,7 +942,8 @@ One or more of the following properties may be present:
 | Property        | Description |
 |-----------------|-------------|
 | `_required`     | Defines which properties must be present in the object, expressed using selection structures. |
-| `_banned`       | Defines which properties must not be present in the object. |
+| `_recommended`  | Defines the whitelist of properties permitted in the object. Advisory when open; enforced as a strict whitelist when closed. |
+| `_banned`       | Defines which properties must never be present in the object. Unconditional — takes precedence over all other rules including conditional graph rules. |
 | `_computed`     | Properties whose values are automatically set by the system if not provided by the user. |
 | `_locked`       | Properties whose values are entirely managed by the system and cannot be set or modified by users. |
 | `_immutable`    | Properties that, once set, cannot be modified or deleted. |
@@ -1022,7 +1002,7 @@ This rule imposes the following conditions:
 
 #### `_banned`
 
-`_banned` is an array of descriptor references. If any of the listed descriptors are present in the object, the object is considered invalid.
+`_banned` is an array of descriptor references. If any of the listed descriptors are present in the object, the object is considered invalid. `_banned` is **unconditional and absolute**: it takes precedence over all other rules, including graph-based conditional rules. No `_predicate_value-of` edge can activate a property that `_banned` prohibits. If a conditional rule's `_path_data` requires a banned property, that is a **conflict** — detectable at edge insertion time, not at data validation time.
 
 ```json
 {
@@ -1032,7 +1012,26 @@ This rule imposes the following conditions:
 }
 ```
 
-This rule indicates that the object must not contain any of the properties `one`, `two`, or `three`.
+This rule indicates that the object must never contain any of the properties `one`, `two`, or `three`, regardless of any conditional rules that may otherwise apply.
+
+#### `_recommended`
+
+`_recommended` is an array of descriptor references listing the properties that are permitted in the structure. Its effect depends on the schema mode (open or closed, indicated by a flag to be added to `_rule`):
+
+- **Open schema** (default): `_recommended` is advisory — it documents the expected properties for form generation and display, but does not reject unlisted properties.
+- **Closed schema**: `_recommended` is enforced as a strict whitelist — only listed properties may be present; any unlisted property is rejected.
+
+When `_recommended` is absent, all non-banned properties are permitted regardless of schema mode. `_recommended` and `_banned` are complementary: `_recommended` defines what is expected or allowed; `_banned` defines what is never permitted. A property should not appear in both.
+
+```json
+{
+    "_rule": {
+        "_recommended": ["_type", "_kind", "_format", "_unit", "_unit-name", "_unit-symbol", "_regexp", "_decimals", "_valid-range", "_normal-range"]
+    }
+}
+```
+
+Conditional rules (via `_predicate_value-of` graph edges) may supplement `_recommended` for specific value contexts — adding properties to the effective permitted set when a property holds a particular value. They cannot remove properties from `_recommended` or lift a `_banned` constraint.
 
 #### `_computed`
 
@@ -1342,6 +1341,43 @@ To resolve an alias directly (without full traversal):
 2. The `_from` of that edge (`terms/iso_639_3_eng`) is the canonical term.
 
 > **Note:** `iso_639_3_eng` remains a member of its own native graph (`iso_639_3`) via a separate, independent edge. The alias edges are scoped to the `iso_639_1` graph and do not affect the `iso_639_3` graph. The same canonical term may appear in multiple graphs simultaneously through separate edge sets.
+
+---
+
+**Conditional rules**
+
+Conditional rules express constraints that activate only when a specific property holds a specific value within a specific structural context. They use a dedicated predicate, `_predicate_value-of`, and store the activated rules in `_path_data`.
+
+| Predicate               | Description |
+|-------------------------|-------------|
+| `_predicate_value-of`   | `_from` is a possible value of the property `_to`. When `_to` holds value `_from` within the structural context identified by `_path`, the rules in `_path_data[path_root]` apply. |
+
+The edge encodes: **what** (the value, in `_from`), **of which property** (in `_to`), **in which structural context** (in `_path`), **with what consequences** (in `_path_data[path_root]`).
+
+```json
+{
+    "_key": "<edge hash>",
+    "_from": "terms/_type_string_enum",
+    "_predicate": "_predicate_value-of",
+    "_to": "terms/_type",
+    "_path": ["terms/_scalar"],
+    "_path_data": {
+        "terms/_scalar": {
+            "_required": {
+                "_selection-descriptors_any": ["_kind"]
+            }
+        }
+    }
+}
+```
+
+This edge states: within a `_scalar` structure, when `_type` holds the value `_type_string_enum`, the property `_kind` becomes required.
+
+`_from` (`_type_string_enum`) is already part of the edge's primary key (`_from`/`_predicate`/`_to`), so it is not repeated as a `_path_data` key. The `_path_data` key is the path root handle (`terms/_scalar`), which identifies the structural context — consistent with how `_path_data` is keyed throughout the graph model.
+
+**Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_string_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_set_scalar` (path root `terms/_set_scalar`). Each carries its own `_path_data` with context-appropriate rules.
+
+**Precedence**: conditional rules can only add constraints — they may make previously optional properties required, or expand the recommended set. They cannot remove a `_banned` constraint or override structural-level `_rule` properties. If a conditional rule's `_path_data` requires a property listed in the structure's `_rule._banned`, this is a conflict detectable at edge insertion time.
 
 #### Graph Traversal
 
