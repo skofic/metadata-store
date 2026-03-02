@@ -41,14 +41,23 @@ This project is in early initialization. No source code exists yet. The `.gitign
   - `_type_object` `_kind` mechanism: references term `_gid`s whose `_rule` section defines the object structure
   - `_any-enum` clarified: the `_key` of any term that is an element or the root of an enumeration graph
   - `_decimals` removed from `_type_number_integer` (integers have no decimals)
+- `_rule` section — fully documented, including all six top-level properties and all five selection structures
+- Graphs section — fully documented, including edge structure, `_path`/`_path_data` mechanics, functional and non-functional predicates, sections, bridge graphs, and traversal semantics
 
 ### In Progress
 - Nothing currently in progress.
 
 ### Pending
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
-- `_rule` section — inserted, reviewed; open design questions recorded in the section itself
-- **Next topic (Monday)**: Conditional rules in `_rule` — depending on the value of specific properties (e.g. `_type`), other properties become relevant or irrelevant. Need to design a mechanism to express these conditional constraints.
+- **Design decisions made — implementation pending:**
+  1. **Open vs closed schema**: direction decided. `_rule` will carry an open/closed flag; the property graph provides the whitelist for closed schemas. Implementation follows once cardinality predicates are defined.
+  2. **Conditional rules**: direction decided. Conditions are graph roots; conditional properties are nodes under them via cardinality predicates. *User is designing the specific mechanism — will return with a proposal.*
+  3. **`_rule` simplification**: direction decided. Selection structures retire; `_rule` retains only the open/closed flag and operational properties (`_computed`, `_locked`, `_immutable`, `_default-value`, possibly `_banned`). Implementation follows conditional rules design.
+- **Open design questions** (still to be resolved):
+  1. **Cardinality predicates**: define the new predicates (e.g. `_predicate_required-of`, `_predicate_optional-of`) and specify their exact semantics, including how group-level cardinality ("exactly one of this set") is expressed without abusing grouping nodes.
+  2. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
+  3. **Conflict detection**: when terms or graphs are modified, contradictory rules may arise. A detection and reporting mechanism needs to be designed.
+- **Next topic**: User returns with a proposal for conditional rules via graphs.
 
 ---
 
@@ -941,9 +950,11 @@ The example above describes the multilingual structure used throughout the `_inf
 
 The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
 
-> **Conditional rules (pending):** The current `_rule` design has no mechanism for conditional constraints — rules that apply only when a specific property has a specific value. For example, if `_type` is `_type_string`, then `_format` and `_regexp` become relevant; if `_type` is `_type_number`, then `_decimals` and `_valid-range` become relevant. A conditional rule mechanism needs to be designed and added to `_rule` to cover these cases.
+> **Conditional rules — graph-based solution identified:** Conditional constraints will be implemented using graphs rather than inline `_rule` properties. The condition is the graph root. For example, the properties relevant when `_type` is `_type_string` will be expressed as a property graph rooted at `_type_string`, with `_format`, `_regexp`, etc. as `_predicate_property-of` (or cardinality-specific predicate) nodes under it. When a descriptor's `_type` resolves to a specific value, the system traverses the corresponding graph to discover the conditional properties. Design and implementation are pending.
 
-> **Open schema by design (current phase):** The current implementation is open — any property not explicitly banned is permitted. This is intentional while the dictionary is defining its own internal terms, which benefit from flexibility and extensibility. When the dictionary is later used to document external objects, a closed schema mechanism (a whitelist of permitted properties) will need to be added to `_rule`. This is a known future requirement.
+> **Open vs closed schema:** The `_rule` section will carry a flag indicating whether the schema is open or closed. In a closed schema, only properties reachable via the property graph are permitted — the graph provides the whitelist. In an open schema, properties not in the graph are still allowed. The current open-by-default behaviour is intentional for the dictionary's internal terms.
+
+> **`_rule` scope going forward:** The selection structures (`_required` and its five selectors) will be retired and replaced by graph-based cardinality predicates (e.g. `_predicate_required-of`, `_predicate_optional-of`). The `_rule` section will be slimmed to: (1) the open/closed schema flag, and (2) operational properties: `_computed`, `_locked`, `_immutable`, `_default-value`, and possibly `_banned`. Property lists, requirement cardinality, and conditional rules all move to graphs.
 
 #### Top-level properties
 
@@ -1084,3 +1095,272 @@ This rule indicates that `_lid` is required and, once set, is permanent.
     }
 }
 ```
+
+---
+
+### Graphs
+
+Graphs are implemented using ArangoDB **edge collection** documents. Each edge document describes a directed relationship between two nodes (terms or other documents) and belongs to one or more named graphs.
+
+#### Edge Document Structure
+
+##### Built-in ArangoDB properties
+
+| Property | Type                  | Required | Description |
+|----------|-----------------------|----------|-------------|
+| `_from`  | `_type_string_handle` | Yes      | Document handle of the relationship **source** node. |
+| `_to`    | `_type_string_handle` | Yes      | Document handle of the relationship **destination** node. |
+
+##### Custom edge properties
+
+| Property     | Type                             | Required | Default | Description |
+|--------------|----------------------------------|----------|---------|-------------|
+| `_predicate` | `_type_string_enum`              | Yes      | —       | The relationship predicate; qualifies the kind of relationship between `_from` and `_to`. |
+| `_path`      | Set of `_type_string_handle`     | Yes      | —       | The set of graph root handles whose traversal passes through this edge. |
+| `_path_data` | Open dictionary (`_type_struct`) | Yes      | `{}`    | Data associated with the edge, scoped by path or node context. |
+
+#### Edge Uniqueness and Key Computation
+
+No two edges may share the same `_from`/`_predicate`/`_to` combination. The `_key` of an edge document is computed as the **MD5 hash** of the concatenation `_from + "/" + _predicate + "/" + _to`.
+
+This uniqueness constraint is the foundation of the `_path` mechanism: when multiple graphs share the same directed relationship (same source, same predicate, same destination), they do not create separate edge documents — they share a single edge, and each graph's root handle is added to the `_path` set.
+
+#### The `_path` Property
+
+`_path` is a set of document handles, each identifying a graph by its **root node**. A graph is defined by its root: all edges reachable from that root, following edges whose `_path` contains the root handle, form the graph.
+
+Filtering edges by a value present in `_path` isolates the edges belonging to a specific graph. Combined with database indexing, this enables efficient traversal and element lookup within any named graph without creating redundant edge documents.
+
+#### The `_path_data` Property
+
+`_path_data` is an open dictionary (`_type_struct`) that associates data with the edge, scoped by context. Keys are document handles or descriptor `_gid`s:
+
+| Key pattern                      | Meaning |
+|----------------------------------|---------|
+| Graph root handle (from `_path`) | Data specific to this edge **within that graph** (e.g. cost, duration, weight for a particular traversal path). |
+| `_from` or `_to` handle          | Data related to a **node** at one end of the relationship, independent of which graph is traversed. |
+| Descriptor `_gid`                | General-purpose data associated with the edge as a whole. |
+
+`_path_data` is initialised to an empty dictionary `{}` at insertion. Its open structure allows any graph-specific or edge-specific data to be attached without schema changes.
+
+```json
+{
+    "_key": "<edge hash>",
+    "_from": "locations/Roma",
+    "_predicate": "_predicate_travel-to",
+    "_to": "locations/Milano",
+    "_path": ["airlines/airline-A", "airlines/airline-B"],
+    "_path_data": {
+        "airlines/airline-A": {
+            "price": 150,
+            "duration": 75
+        },
+        "airlines/airline-B": {
+            "price": 200,
+            "duration": 45
+        },
+        "locations/Roma": {
+            "taxi": 70,
+            "duration": 45
+        },
+        "locations/Milano": {
+            "taxi": 90,
+            "duration": 30
+        },
+        "passengers": 1247
+    }
+}
+```
+
+In this example, two airline graphs share the Rome → Milan edge. `_path_data` contains price/duration data scoped to each airline, taxi data scoped to the departure and arrival cities, and a general `passengers` count attached to the edge itself.
+
+#### Predicates
+
+The predicate (`_predicate`) qualifies the nature of the relationship. All predicates are enumeration terms in the dictionary. They fall into two categories: **functional** (carry domain meaning; followed during traversal) and **non-functional** (structural aids that modify traversal behaviour).
+
+All predicates follow a **many-to-one direction**: `_from` is the leaf (child, member, element) and `_to` is the root (parent, container, category).
+
+##### Functional Predicates
+
+Functional predicates carry domain meaning and are followed during graph traversal and element lookup.
+
+| Predicate                | Description |
+|--------------------------|-------------|
+| `_predicate_enum-of`     | `_from` is a valid enumeration element of the `_to` controlled vocabulary. |
+| `_predicate_property-of` | `_from` descriptor is a property of the `_to` schema term. Used to link descriptors to object definitions. |
+| `_predicate_field-of`    | `_from` descriptor is a field of the `_to` term. Used to define form layouts or data table columns. |
+
+```json
+{
+    "_key": "<edge hash>",
+    "_from": "terms/iso_3166_3_ITA",
+    "_predicate": "_predicate_enum-of",
+    "_to": "terms/iso_3166_3",
+    "_path": ["terms/iso_3166_3"],
+    "_path_data": {}
+}
+```
+
+Italy (`terms/iso_3166_3_ITA`) is declared a valid enumeration element of the ISO 3166-3 country vocabulary (`terms/iso_3166_3`).
+
+##### Non-Functional Predicates
+
+Non-functional predicates are structural aids. They do not carry domain meaning and are either skipped or handled specially during traversal.
+
+| Predicate               | Description |
+|-------------------------|-------------|
+| `_predicate_section-of` | `_from` is a **section** (disclosure group) within the `_to` graph. Sections are skipped during validation traversal but used as grouping headers during display. |
+| `_predicate_bridge-of`  | `_from` is a **bridge** pointing into another graph. The bridge node is skipped during traversal; the traversal continues into the referenced graph's elements via the `_path` mechanism. |
+
+---
+
+**Sections**
+
+A section groups elements within a graph under a named heading. During functional traversal (validation, lookup), sections are ignored; during display, they serve as collapsible groups.
+
+```json
+{
+    "_key": "<edge A>",
+    "_from": "terms/iso_3166_3_ITA",
+    "_predicate": "_predicate_enum-of",
+    "_to": "terms/EUROPE",
+    "_path": ["terms/iso_3166_3"],
+    "_path_data": {}
+},
+{
+    "_key": "<edge B>",
+    "_from": "terms/EUROPE",
+    "_predicate": "_predicate_section-of",
+    "_to": "terms/iso_3166_3",
+    "_path": ["terms/iso_3166_3"],
+    "_path_data": {}
+}
+```
+
+Italy is an element of the `EUROPE` section; `EUROPE` is a section of the `iso_3166_3` graph. When validating a value, sections are ignored and only `_predicate_enum-of` edges are followed. When displaying the vocabulary, countries are grouped by region.
+
+> **Note:** Enumerations in this dictionary are **hierarchical**. If `_predicate_section-of` were replaced by `_predicate_enum-of`, then `EUROPE` itself would become a valid selectable value alongside its member elements. Both patterns are valid; the choice determines whether intermediate grouping nodes are selectable.
+
+---
+
+**Bridge graphs**
+
+A bridge allows a custom graph to include a subset of elements from an existing complete graph, without duplicating edge documents. The bridge node points to the complete graph with `_predicate_bridge-of`; individual elements are shared by adding the custom graph root to their `_path` set.
+
+```json
+{
+    "_key": "<edge A>",
+    "_from": "terms/iso_3166_3_ITA",
+    "_predicate": "_predicate_enum-of",
+    "_to": "terms/iso_3166_3",
+    "_path": ["terms/iso_3166_3", "terms/MyCountries"],
+    "_path_data": {}
+},
+{
+    "_key": "<edge B>",
+    "_from": "terms/iso_3166_3",
+    "_predicate": "_predicate_bridge-of",
+    "_to": "terms/MyCountries",
+    "_path": ["terms/MyCountries"],
+    "_path_data": {}
+}
+```
+
+`terms/MyCountries` is a custom vocabulary. Edge B connects `MyCountries` to the complete `iso_3166_3` graph via a bridge. Edge A (which already existed for `iso_3166_3`) gains `MyCountries` in its `_path`. When traversing `MyCountries`, the bridge node (`iso_3166_3`) is skipped; Italy is found directly through edge A.
+
+Additional custom vocabularies can share the same elements by each adding their root to the `_path` set of the relevant edges. A second vocabulary `YourCountries` that also includes Italy adds `terms/YourCountries` to edge A's `_path` and creates its own bridge edge (edge C):
+
+```json
+{
+    "_key": "<edge A>",
+    "_from": "terms/iso_3166_3_ITA",
+    "_predicate": "_predicate_enum-of",
+    "_to": "terms/iso_3166_3",
+    "_path": ["terms/iso_3166_3", "terms/MyCountries", "terms/YourCountries"],
+    "_path_data": {}
+},
+{
+    "_key": "<edge B>",
+    "_from": "terms/iso_3166_3",
+    "_predicate": "_predicate_bridge-of",
+    "_to": "terms/MyCountries",
+    "_path": ["terms/MyCountries"],
+    "_path_data": {}
+},
+{
+    "_key": "<edge C>",
+    "_from": "terms/iso_3166_3",
+    "_predicate": "_predicate_bridge-of",
+    "_to": "terms/YourCountries",
+    "_path": ["terms/YourCountries"],
+    "_path_data": {}
+}
+```
+
+For large enumerations with many custom subsets, this sharing mechanism avoids duplicating edge documents: each element edge exists once, carrying all applicable graph roots in its `_path` set.
+
+---
+
+**Alias resolution**
+
+An alias term carries no content of its own (no `_info`, no `_data`) and acts as an alternative identifier for a canonical term. The alias mechanism reuses the existing `_predicate_bridge-of` and `_predicate_enum-of` predicates — no additional predicate is required.
+
+Example: `iso_639_1_en` (ISO 639-1 code for English) is an alias for `iso_639_3_eng` (ISO 639-3 code for English). Both represent the same language; only the coding standard differs.
+
+```json
+{
+    "_key": "<edge hash A>",
+    "_from": "terms/iso_639_3_eng",
+    "_predicate": "_predicate_enum-of",
+    "_to": "terms/iso_639_1_en",
+    "_path": ["terms/iso_639_1"],
+    "_path_data": {}
+},
+{
+    "_key": "<edge hash B>",
+    "_from": "terms/iso_639_1_en",
+    "_predicate": "_predicate_bridge-of",
+    "_to": "terms/iso_639_1",
+    "_path": ["terms/iso_639_1"],
+    "_path_data": {}
+}
+```
+
+The two edges implement the alias:
+
+- **Edge B** connects the alias node (`iso_639_1_en`) to the `iso_639_1` graph root with `_predicate_bridge-of`. This marks `iso_639_1_en` as a bridge: it is to be skipped during traversal, not treated as a valid value.
+- **Edge A** connects the canonical node (`iso_639_3_eng`) to the alias node with `_predicate_enum-of`. This declares `iso_639_3_eng` as the valid enumeration element within the `iso_639_1` graph, reachable through `iso_639_1_en`.
+
+When traversing the `iso_639_1` graph outward from the root (one-to-many direction):
+
+1. Start at root `terms/iso_639_1`. Follow edge B reversed: reach `terms/iso_639_1_en` via `_predicate_bridge-of` → **skip** (bridge node).
+2. Follow edge A reversed: reach `terms/iso_639_3_eng` via `_predicate_enum-of` → **valid element; return this term**.
+
+To resolve an alias directly (without full traversal):
+
+1. Look up edges where `_to = terms/iso_639_1_en` AND `_predicate = _predicate_enum-of`.
+2. The `_from` of that edge (`terms/iso_639_3_eng`) is the canonical term.
+
+> **Note:** `iso_639_3_eng` remains a member of its own native graph (`iso_639_3`) via a separate, independent edge. The alias edges are scoped to the `iso_639_1` graph and do not affect the `iso_639_3` graph. The same canonical term may appear in multiple graphs simultaneously through separate edge sets.
+
+#### Graph Traversal
+
+Traversal always moves in the **many-to-one direction** (leaf → root). The governing rule is: follow edges where `_path` contains the target graph root handle, filtered by the predicate type appropriate to the current operation.
+
+| Operation          | Predicates followed                                    | Predicates skipped          |
+|--------------------|--------------------------------------------------------|-----------------------------|
+| Element validation | `_predicate_enum-of`                                   | `_predicate_section-of`     |
+| Display (tree)     | `_predicate_enum-of`, `_predicate_section-of`          | —                           |
+| Bridge resolution  | `_predicate_bridge-of` (then switch `_path` context)   | —                           |
+
+**Finding an element in a graph (example — is Italy in `iso_3166_3`?):**
+
+1. Filter edges where `_path` contains `terms/iso_3166_3` AND `_predicate` is `_predicate_enum-of`.
+2. If any edge has `_from = terms/iso_3166_3_ITA`, the element is found.
+3. If a bridge edge is encountered (`_predicate_bridge-of`), switch the `_path` filter to the referenced graph root and continue traversal there.
+
+**Finding an element in a bridge graph (example — is Italy in `MyCountries`?):**
+
+1. Find the edge with `_to = terms/MyCountries` and `_path` containing `terms/MyCountries`. This is the bridge edge (edge B above).
+2. `_from` of the bridge edge is `terms/iso_3166_3`. Switch the traversal context: now filter edges where `_path` contains `terms/MyCountries` AND `_predicate` is `_predicate_enum-of`.
+3. Edge A satisfies both conditions and has `_from = terms/iso_3166_3_ITA`. Italy is found.
