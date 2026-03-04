@@ -36,7 +36,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- Core Concepts — multi-role concept: a term can simultaneously be a descriptor (`_data` section), an object schema (`_rule` section), an enumeration element (enumeration graph node), and an enumeration root
+- Core Concepts — multi-role concept: a term can simultaneously be a descriptor, an object schema, an enumeration element, and an enumeration root. Design rationale: `_term_descriptor` and `_term_object` exist as explicit validation targets — use them when a procedure must confirm that a term IS a descriptor or IS an object definition.
 - **Design decisions made — implementation pending:**
   1. **Open vs closed schema**: direction decided. `_rule` will carry an open/closed flag; `_recommended` is the whitelist (advisory when open, enforced when closed). Implementation pending.
   2. **Conditional rules**: mechanism designed. `_predicate_value-of` edges carry context-specific `_rule`-like structures in `_path_data`, keyed by path root. Selection structures remain in `_rule` (not retired). Implementation pending.
@@ -44,7 +44,10 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - **Open design questions** (still to be resolved):
   1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
   2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
-- **Next topic**: Implement `_predicate_value-of` conditional rules and the open/closed schema flag.
+- **Next topic (Phase 2)**:
+  1. Design and implement Markdown card generator — produces a `terms/<_gid>.md` card for each term in a JSON file.
+  2. Review `_info` content in `data/core/containers.json`.
+  3. Continue populating remaining core term files.
 
 ---
 
@@ -119,7 +122,7 @@ The `_code` section provides a series of identifiers for the term.
 | Property | Required  | Description |
 |----------|-----------|-------------|
 | `_gid`   | Computed  | Global unique identifier across all database terms. Copied to the ArangoDB `_key` field before saving. |
-| `_lid`   | Yes       | Local identifier within the term's namespace. Regex: `^[a-zA-Z0-9_\-:.@+,=;$!*'%()]{1,254}$` |
+| `_lid`   | Yes       | Local identifier within the term's namespace. Regex: `^[a-zA-Z0-9\-:.@+,=;$!*'%()]{1,254}$` |
 | `_nid`   | No        | Namespace of the term. Its value is the `_gid` of the term that represents the namespace. |
 
 - **`_gid`**: The global unique identifier of the term, shared by no other term in the database. It is computed as the concatenation of `_nid` and `_lid` separated by the hardcoded underscore `_` separator. Before saving the term, `_gid` is copied to the top-level `_key` field (the ArangoDB primary key), enforcing uniqueness.
