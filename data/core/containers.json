@@ -9,8 +9,8 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Term"},
 			"_definition": {"iso_639_3_eng": "The fundamental unit of the data dictionary. A term identifies, classifies, and optionally documents a concept, data variable, schema, or enumeration value. Every element of the dictionary — including the structural rules that govern the dictionary itself — is represented as a term."},
-			"_description": {"iso_639_3_eng": "Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md) and a [documentation section](_info.md). It may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable (descriptor) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.\n\nThe dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms."},
-			"_examples": {"iso_639_3_eng": "Generic term example:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"namespace\",\n\t\t\"_lid\": \"local-identifier\",\n\t\t\"_gid\": \"namespace_local-identifier\",\n\t\t\"_aid\": [\"local-identifier\"]\n\t},\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"iso_639_3_eng\": \"Title, name or label\",\n\t\t\t\"iso_639_3_ita\": \"Titolo, nome o etichetta\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"iso_639_3_eng\": \"Definition\",\n\t\t\t\"iso_639_3_ita\": \"Definizione\"\n\t\t},\n\t\t\"_description\": {\n\t\t\t\"iso_639_3_eng\": \"Full description.\",\n\t\t\t\"iso_639_3_ita\": \"Descrizione completa.\"\n\t\t}\n\t}\n}\n```"}
+			"_description": {"iso_639_3_eng": "Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md). A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only an identification section and delegating all documentation to the canonical term they point to. A term may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable (descriptor) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.\n\nThe dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms."},
+			"_examples": {"iso_639_3_eng": "Generic term example:\n\n```json\n\t{\n\t\t\"_code\": {\n\t\t\t\"_nid\": \"iso_3166_3\",\n\t\t\t\"_lid\": \"ITA\",\n\t\t\t\"_gid\": \"iso_3166_3_ITA\",\n\t\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\t\"_name\": \"Italia\",\n\t\t\t\"_emoji\": \"🇮🇹\"\n\t\t},\n\t\t\"_info\": {\n\t\t\t\"_title\": {\n\t\t\t\t\"iso_639_3_eng\": \"Italy\",\n\t\t\t\t\"iso_639_3_ita\": \"Italia\"\n\t\t\t},\n\t\t\t\"_definition\": {\n\t\t\t\t\"iso_639_3_eng\": \"Italian Republic\",\n\t\t\t\t\"iso_639_3_ita\": \"Repubblica Italiana\"\n\t\t\t}\n\t\t}\n\t}\n```\n\nThis term represents the country Italy. Its namespace chain (`iso` → `iso_3166` → `iso_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes."}
 		},
 		"_data": {
 			"_scalar": {
@@ -20,9 +20,9 @@
 		},
 		"_rule": {
 			"_required": {
-				"_selection-descriptors_all": ["_code", "_info"]
+				"_selection-descriptors_all": ["_key", "_code"]
 			},
-			"_recommended": ["_data", "_rule"],
+			"_recommended": ["_info", "_data", "_rule"],
 			"_computed": ["_key"],
 			"_immutable": ["_key"]
 		}
@@ -37,7 +37,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Descriptor"},
 			"_definition": {"iso_639_3_eng": "A term that represents a typed data variable. Descriptors carry a data type section that defines the type, shape, and constraints of the value they document."},
-			"_description": {"iso_639_3_eng": "A descriptor is a [term](_term.md) whose primary role is to define the type and shape of a data value. The [data type section](_data.md) is mandatory in a descriptor and specifies whether the value is a scalar, array, set, tuple, or dictionary, along with its precise type, format, units, and valid range.\n\nDescriptors are referenced by object schema terms to define which properties an object may contain, and by enumeration graphs to constrain the type of their elements. The term *descriptor* is synonymous with *data variable* and *variable term*."}
+			"_description": {"iso_639_3_eng": "A descriptor is a [term](_term.md) whose primary role is to define the type and shape of a data value. The [data type section](_data.md) is mandatory in a *descriptor* and specifies whether the value is a [scalar](_scalar.md), [array](_array.md), [set](_set.md), [tuple](_tuple.md), or [dictionary](_dict.md), along with its precise type, format, units, and valid range.\n\nDescriptors are referenced by object schema terms to define which properties an object may contain, and by enumeration graphs to constrain the type of their elements. The term *descriptor* is synonymous with *data variable* and *variable term*."}
 		},
 		"_data": {
 			"_scalar": {
@@ -47,7 +47,7 @@
 		},
 		"_rule": {
 			"_required": {
-				"_selection-descriptors_all": ["_code", "_info", "_data"]
+				"_selection-descriptors_all": ["_key", "_code", "_info", "_data"]
 			},
 			"_recommended": ["_rule"],
 			"_computed": ["_key"],
@@ -74,13 +74,14 @@
 		},
 		"_rule": {
 			"_required": {
-				"_selection-descriptors_all": ["_code", "_info", "_rule"]
+				"_selection-descriptors_all": ["_key", "_code", "_info", "_rule"]
 			},
 			"_recommended": ["_data"],
 			"_computed": ["_key"],
 			"_immutable": ["_key"]
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "",
@@ -91,7 +92,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Edge"},
 			"_definition": {"iso_639_3_eng": "An ArangoDB edge document representing a directed relationship between two nodes in the dictionary graph. Edges encode the relationship type, graph membership, and optional relationship-specific data for a source–destination pair."},
-			"_description": {"iso_639_3_eng": "Edges are the building blocks of all graphs in the data dictionary. Each edge connects a source node (`_from`) to a destination node (`_to`) via a typed relationship (`_predicate`), and declares which graphs traverse it (`_path`). The `_path_data` property carries any data associated with the relationship within a specific graph or node context.\n\nEdge documents are uniquely identified by their source, predicate, and destination: no two edges may share the same `_from`/`_predicate`/`_to` combination. The document key is computed as the MD5 hash of this triple.\n\nAll predicates follow a many-to-one direction: `_from` is the leaf node (child, element, member) and `_to` is the root node (parent, container, category)."}
+			"_description": {"iso_639_3_eng": "Edges are the building blocks of all graphs in the data dictionary. Each edge connects a [source node](_from.md) (`_from`) to a [destination node](_to.md) (`_to`) via a typed [relationship](_predicate.md) (`_predicate`), and declares which [graphs](_path.md) traverse it (`_path`). The `_path_data` [property](_path_data.md) carries any data associated with the relationship within a specific graph or node context.\n\nEdge documents are uniquely identified by their [source](_from.md), [predicate](_predicate-md), and [destination](_to.md): no two edges may share the same `_from`/`_predicate`/`_to` combination. The document key is computed as the MD5 hash of this triple.\n\nAll predicates follow a *many-to-one* direction: `_from` is the leaf node (child, element, member) and `_to` is the root node (parent, container, category)."}
 		},
 		"_data": {
 			"_scalar": {
@@ -101,13 +102,14 @@
 		},
 		"_rule": {
 			"_required": {
-				"_selection-descriptors_all": ["_from", "_to", "_predicate", "_path", "_path_data"]
+				"_selection-descriptors_all": ["_key", "_from", "_to", "_predicate", "_path", "_path_data"]
 			},
 			"_default-value": {"_path_data": {}},
 			"_computed": ["_key"],
 			"_immutable": ["_key", "_from", "_to", "_predicate"]
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "",
@@ -118,7 +120,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Identification Section"},
 			"_definition": {"iso_639_3_eng": "The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary."},
-			"_description": {"iso_639_3_eng": "The identification section is mandatory in every [term](_term.md). It provides the identifiers that locate the term within the dictionary's namespace hierarchy.\n\nThe local identifier (`_lid`) is the term's name within its namespace and is the only property the user must always supply. The namespace (`_nid`) optionally scopes the term under a parent term, enabling hierarchical organisation from general to specific (e.g. `iso` → `iso_3166` → `iso_3166_ITA`). The global identifier (`_gid`) is computed by concatenating `_nid` and `_lid` with an underscore separator; it is unique across all terms and is copied to the ArangoDB document key (`_key`) before the term is saved.\n\nTerms with an empty-string namespace (`_nid: \"\"`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` (e.g. `_code`, `_info`). Terms with no `_nid` property define top-level namespaces (e.g. `iso`)."}
+			"_description": {"iso_639_3_eng": "The identification section is mandatory in every [term](_term.md). It provides the identifiers that locate the term within the dictionary's namespace hierarchy.\n\nThe [local identifier](_lid.md) is the term's name within its [namespace](_nid.md) and is the only property the user must always supply. The namespace optionally scopes the term under a parent term, enabling hierarchical organisation from general to specific (e.g. `iso` → `iso_3166` → `iso_3166_ITA`). The [global identifier](_gid.md) is computed by concatenating `_nid` and `_lid` with an underscore separator (`_`); it is unique across all terms and is copied to the ArangoDB document key (`_key`) before the term is saved.\n\nTerms with an empty-string namespace (`_nid: \"\"`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` (e.g. `_code`, `_info`). Terms with no `_nid` property define top-level namespaces (e.g. `iso`)."}
 		},
 		"_data": {
 			"_scalar": {
@@ -145,7 +147,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Documentation Section"},
 			"_definition": {"iso_639_3_eng": "The section of a term that provides human-readable information about what the term represents: its title, definition, full description, usage examples, and supplementary notes and references."},
-			"_description": {"iso_639_3_eng": "The documentation section is mandatory in most [terms](_term.md). All its properties are multilingual: each property's value is a key–value object where the key is the `_gid` of a language term (e.g. `iso_639_3_eng` for English) and the value is a plain or formatted string.\n\nThe `_title` and `_definition` properties are always required. The full description (`_description`) is strongly recommended for all but the simplest terms. Additional properties — `_examples`, `_notes`, `_url`, `_citation`, and `_provider` — are optional and should be included whenever they add value.\n\nAlias terms are the only exception to the documentation section requirement: an alias [term](_term.md) carries only an [identification section](_code.md), delegating all documentation to the canonical term it points to."}
+			"_description": {"iso_639_3_eng": "The documentation section is mandatory in most [terms](_term.md). All its properties are multilingual: each property's value is a *key–value* object where the *key* is the [global identifier](_gid.md) of a language term (e.g. `iso_639_3_eng` for English) and the *value* is a plain or formatted string.\n\nThe [title](_title.md) and [definition](_definition.md) properties are always required. The full [description](_description.md) is strongly recommended for all but the simplest terms. Additional properties — [examples](_examples.md), [notes](_notes.md), [URLs](_url.md), [citation](_citation.md) and [provider](_provider.md) — are optional and should be included whenever they add value.\n\nAlias terms are the only exception to the documentation section requirement: an alias [term](_term.md) carries only an [identification section](_code.md), delegating all documentation to the canonical term it points to."}
 		},
 		"_data": {
 			"_scalar": {
@@ -163,6 +165,37 @@
 	{
 		"_code": {
 			"_nid": "",
+			"_lid": "data",
+			"_gid": "_data",
+			"_aid": ["data"]
+		},
+		"_info": {
+			"_title": {"iso_639_3_eng": "Data Section"},
+			"_definition": {"iso_639_3_eng": "The section of a term that defines the shape and data type of the value the term represents. Its presence marks the term as a descriptor — a typed data variable. When empty, the descriptor accepts a value of any shape and type."},
+			"_description": {"iso_639_3_eng": "Any term that carries this section is a [descriptor](_term_descriptor.md). A term may simultaneously be a descriptor, an object definition, an enumeration element, or a namespace — these roles are not mutually exclusive. This object may contain *at most one* of the following shape properties (it may also be empty, in which case the descriptor accepts any shape and type):\n\n- [Scalar shape](_scalar.md): Defines the *data type* and *constraints* for a *scalar value*.\n- [Array shape](_array.md): Defines the *data type* and *constraints* for an *ordered list* of values of the *same type*.\n- [Set shape](_set.md): Defines the *data type* and *constraints* for an *unordered list* of *unique* values of the *same type*.\n- [Tuple shape](_tuple.md): Defines the *data type* for each position of an *ordered list* where each element may have a *different type*.\n- [Dictionary shape](_dict.md): Defines the *key* and *value* types and *constraints* for a *key/value dictionary*."},
+			"_examples": {"iso_639_3_eng": "```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {\n\t\t\t\"_type\": \"_type_number_integer\",\n\t\t\t\"_valid-range\": {\n\t\t\t\t\"_min-range-inclusive\": 5,\n\t\t\t\t\"_max-range-inclusive\": 10\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe above example describes a [scalar](_scalar.md) discrete [integer](_type_number_integer.md) value in the range from `5` to `10` inclusive.\n\n\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type\": \"_type_number\",\n\t\t\t\t\"_valid-range\": {\n\t\t\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\t\t\"_max-range-exclusive\": 100.0\n\t\t\t\t},\n\t\t\t\t\"_unit\": \"qudt_unit_CentiM\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe above example describes a [list](_array.md) of [continuous](_type_number.md) values *greater or equal* to `0.0` and *less than* `100.0` representing a *length* in *centimetres*.\n\n\n\n```json\n{\n\t\"_data\": {\n\t\t\"_set\": {\n\t\t\t\"_set_scalar\": {\n\t\t\t\t\"_set_type\": \"_type_string_enum\",\n\t\t\t\t\"_kind\": [\"iso_639_3\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe above example describes *list* of [unique elements](_set.md) belonging to the `iso_639_3` controlled vocabulary.\n\n\n\n```json\n{\n\t\"_data\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_type_key\": \"_type_string_enum\",\n\t\t\t\t\"_kind\": [\"iso_3166_1\", \"iso_3166_3\"]\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_dict\": {\n\t\t\t\t\t\"_dict_key\": {\n\t\t\t\t\t\t\"_type_key\": \"_type_string_enum\",\n\t\t\t\t\t\t\"_kind\": [\"iso_639_3\"]\n\t\t\t\t\t},\n\t\t\t\t\t\"_dict_value\": {\n\t\t\t\t\t\t\"_array\": {\n\t\t\t\t\t\t\t\"_elements\": {\n\t\t\t\t\t\t\t\t\"_min-items\": 5,\n\t\t\t\t\t\t\t\t\"_max-items\": 10\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\t\t\t\"_type\": \"_type_object\",\n\t\t\t\t\t\t\t\t\"_kind\": [\"some_object_definition\"]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe above example describes a [dictionary](_dict.md) whose *keys* are the [global identifiers](_gid.md) of the ISO 3166 part 1 or part 3 country *controlled vocabulary elements*, and the values are *another dictionary* whose keys are ISO 639 languages and whose *values* are *arrays* that correspond to the `some_object_definition` *data structure type*; these *array* values must have a *minimum* of `5` elements and a *maximum* of `10` elements. This is an example of a recursive dictionary definition.\n\n\n\n```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {}\n\t}\n}\n```\n\nThis example shows the *data definition* for a *descriptor* that can take *only* [scalar](_scalar.md) values of any [type](_type.md).\n\n\n\n```json\n{\n\t\"_data\": {}\n}\n```\n\nThis example shows the *data definition* for a *descriptor* that can take *any data shape* or *value*."}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_object",
+				"_kind": ["_data"]
+			}
+		},
+		"_rule": {
+			"_required": {
+				"_selection-descriptors_one-none": [
+					"_scalar",
+					"_array",
+					"_set",
+					"_tuple",
+					"_dict"
+				]
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
 			"_lid": "rule",
 			"_gid": "_rule",
 			"_aid": ["rule"]
@@ -170,7 +203,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Structure Rules Section"},
 			"_definition": {"iso_639_3_eng": "The section of a term that defines the structural constraints governing an object: which properties are required, recommended, or forbidden, which are managed by the system, and what default values apply at insertion time."},
-			"_description": {"iso_639_3_eng": "The structure rules section is present in [object definition terms](_term_object.md). It constrains how a compliant object must be composed.\n\nRequired properties are specified using selection structures that express precise cardinality constraints: exactly one of a set, any of a set, all of a set, and so on. Recommended properties form the whitelist used when the schema operates in closed mode — in closed mode only the listed properties are permitted; in open mode they are advisory. Banned properties are unconditionally excluded and take precedence over all other rules, including any conditional rules expressed in the graph layer.\n\nConditional constraints — rules that activate only when a specific property holds a specific value — are expressed in the graph layer using the `_predicate_value-of` predicate, not in this section. The structure rules section handles only unconditional constraints."}
+			"_description": {"iso_639_3_eng": "The structure rules section is present in [object definition terms](_term_object.md). It constrains how a compliant object must be composed.\n\nRequired properties are specified using selection structures that express precise cardinality constraints: [exactly one of a set](_selection-descriptors_one.md), [any of a set](_selection-descriptors_any.md), [all of a set](_selection-descriptors_all.md), and so on. [Recommended](_recommended.md) properties form the whitelist used when the schema operates in closed mode — in closed mode only the listed properties are permitted; in open mode they are advisory. [Banned](_banned.md) properties are unconditionally excluded and take precedence over all other rules, including any conditional rules expressed in the graph layer.\n\nConditional constraints — rules that activate only when a specific property holds a specific value — are expressed in the graph layer using the `_predicate_value-of` predicate, not in this section. The structure rules section handles only unconditional constraints."}
 		},
 		"_data": {
 			"_scalar": {

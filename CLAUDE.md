@@ -1038,7 +1038,7 @@ Conditional rules (via `_predicate_value-of` graph edges) may supplement `_recom
 
 #### `_computed`
 
-`_computed` is an array of descriptor references whose values are automatically set by the system if not explicitly provided by the user. A computed property is typically paired with `_immutable` to prevent modification after the system sets it.
+`_computed` is an array of descriptor references whose values are automatically set by the system if not explicitly provided by the user. Computed properties are resolved before `_required` is checked — this means a property can be both listed in `_computed` and required: the system sets the value first, and validation then confirms its presence. A computed property is typically paired with `_immutable` to prevent modification after the system sets it.
 
 ```json
 {
