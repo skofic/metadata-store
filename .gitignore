@@ -19,6 +19,13 @@ Icon
 # Project
 scrapbook/
 
+# Swift Package Manager
+# The .build directory contains all compiled objects, intermediates, and binaries.
+# It is generated locally by `swift build` / `swift run` and must not be committed.
+# Package.resolved (the dependency lock file) is committed for executable targets
+# to ensure reproducible builds across machines.
+.build/
+
 # Logs
 logs
 *.log
