@@ -132,7 +132,7 @@
 			"_required": {
 				"_selection-descriptors_all": ["_lid"]
 			},
-			"_recommended": ["_nid", "_gid", "_aid", "_pid", "_name", "_symbol", "_regexp", "_emoji"],
+			"_recommended": ["_nid", "_gid", "_aid", "_pid", "_name", "_symbol", "_emoji"],
 			"_computed": ["_gid"],
 			"_immutable": ["_lid", "_nid", "_gid"]
 		}
