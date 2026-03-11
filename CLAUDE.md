@@ -104,7 +104,7 @@ Two pairs of synonyms appear throughout this document. The preferred term is use
 
 A term is a document with top-level **sections**. Sections are objects that contain a set of properties. Which sections a term contains determines its function and behaviour.
 
-The four core sections are:
+The six term sections are:
 
 | Section  | Purpose                                        | Required by                        |
 |----------|------------------------------------------------|------------------------------------|
@@ -112,6 +112,8 @@ The four core sections are:
 | `_info`  | Description of what the term represents        | Most terms                         |
 | `_data`  | Data type and shape of the referenced data     | Descriptor terms                   |
 | `_rule`  | Structure schema rules (required/forbidden fields, etc.) | Schema terms                       |
+| `_prop`  | Concrete attributes of the real-world entity the term represents | Optional                |
+| `_domn`  | Categorical classification of the term (domain, measurement type, etc.) | Optional       |
 
 ### `_code` Section
 

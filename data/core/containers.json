@@ -9,7 +9,7 @@
 		"_info": {
 			"_title": {"iso_639_3_eng": "Term"},
 			"_definition": {"iso_639_3_eng": "The fundamental unit of the data dictionary. A term identifies, classifies, and optionally documents a concept, data variable, schema, or enumeration value. Every element of the dictionary — including the structural rules that govern the dictionary itself — is represented as a term."},
-			"_description": {"iso_639_3_eng": "Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md). A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only an identification section and delegating all documentation to the canonical term they point to. A term may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable (descriptor) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.\n\nThe dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms."},
+			"_description": {"iso_639_3_eng": "Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md). A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only an identification section and delegating all documentation to the canonical term they point to. A term may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable ([descriptor](_term_descriptor.md)) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.\n\nTwo further optional sections may also be present. The [properties section](_prop.md) carries concrete attributes of the real-world entity the term represents, turning a classification term into a structured instance record. The [domains section](_domn.md) classifies the term across categorical dimensions, recording the subject domain, measurement type, or other classification axes relevant to the term's usage.\n\nThe dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms."},
 			"_examples": {"iso_639_3_eng": "Generic term example:\n\n```json\n\t{\n\t\t\"_code\": {\n\t\t\t\"_nid\": \"iso_3166_3\",\n\t\t\t\"_lid\": \"ITA\",\n\t\t\t\"_gid\": \"iso_3166_3_ITA\",\n\t\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\t\"_name\": \"Italia\",\n\t\t\t\"_emoji\": \"🇮🇹\"\n\t\t},\n\t\t\"_info\": {\n\t\t\t\"_title\": {\n\t\t\t\t\"iso_639_3_eng\": \"Italy\",\n\t\t\t\t\"iso_639_3_ita\": \"Italia\"\n\t\t\t},\n\t\t\t\"_definition\": {\n\t\t\t\t\"iso_639_3_eng\": \"Italian Republic\",\n\t\t\t\t\"iso_639_3_ita\": \"Repubblica Italiana\"\n\t\t\t}\n\t\t}\n\t}\n```\n\nThis term represents the country Italy. Its namespace chain (`iso` → `iso_3166` → `iso_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes."}
 		},
 		"_data": {
@@ -22,7 +22,7 @@
 			"_required": {
 				"_selection-descriptors_all": ["_key", "_code"]
 			},
-			"_recommended": ["_info", "_data", "_rule"],
+			"_recommended": ["_info", "_data", "_rule", "_prop", "_domn"],
 			"_computed": ["_key"],
 			"_immutable": ["_key"]
 		}
@@ -213,6 +213,44 @@
 		},
 		"_rule": {
 			"_recommended": ["_required", "_recommended", "_banned", "_computed", "_locked", "_immutable", "_default-value"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domn",
+			"_gid": "_domn",
+			"_aid": ["domn"]
+		},
+		"_info": {
+			"_title": {"iso_639_3_eng": "Domains Section"},
+			"_definition": {"iso_639_3_eng": "The section of a term that classifies it across one or more categorical dimensions. Each property must be a descriptor defined in the dictionary, and its value is typically an enumeration element drawn from a controlled vocabulary identifying the category to which the term belongs."},
+			"_description": {"iso_639_3_eng": "The domains section provides a principled mechanism for categorising a [term](_term.md) according to dimensions such as subject domain, measurement type, statistical class, or intended application context. Each property in this section must be a [descriptor](_term_descriptor.md) defined in the dictionary; its value must conform to that descriptor's type definition and is typically an element of a controlled vocabulary.\n\nThis section is used primarily for user-defined terms — [descriptors](_term_descriptor.md), object [schemas](_term_object.md), and custom enumerations — where the nature and intended usage of the term need to be recorded alongside its definition to support discovery and filtering. Core dictionary building blocks — the structural terms that define the dictionary itself — generally do not require this section.\n\nThe section is optional and its schema is open: any dictionary-defined descriptor may appear as a property. When the term object operates in closed mode, only descriptors listed in the term's [structure rules](_rule.md) are permitted."},
+			"_examples": {"iso_639_3_eng": "```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"iso_3166_1\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"iso_3166_1_ITA\",\n\t\t\"_aid\": [\n\t\t\t\"IT\",\n\t\t\t\"ITA\",\n\t\t\t\"380\"\n\t\t],\n\t\t\"_emoji\": \"🇮🇹\"\n\t},\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"iso_639_3_eng\": \"Italy\",\n\t\t\t\"iso_639_3_amh\": \"ጣሑ።ን\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"iso_639_3_eng\": \"Italian Republic\",\n\t\t\t\"iso_639_3_amh\": \"ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ\"\n\t\t}\n\t},\n\t\"_domn\": {\n\t\t\"std_country_region\": {\n\t\t\t\"iso_639_3_eng\": \"Europe\"\n\t\t},\n\t\t\"std_country_sub-region\": {\n\t\t\t\"iso_639_3_eng\": \"Southern Europe\"\n\t\t}\n\t},\n\t\"_prop\": {\n\t\t\"iso_3166_alpha3\": \"ITA\",\n\t\t\"iso_3166_alpha2\": \"IT\",\n\t\t\"iso_3166_numeric\": \"380\",\n\t\t\"std_country_ioc\": \"ITA\",\n\t\t\"std_country_tld\": [\n\t\t\t\".it\"\n\t\t],\n\t\t\"std_country_tel\": [\n\t\t\t\"+39\"\n\t\t],\n\t\t\"std_country_area\": 301336,\n\t\t\"std_country_languages\": [\n\t\t\t\"iso_639_3_ita\"\n\t\t],\n\t\t\"std_country_currencies\": [\n\t\t\t\"iso_4217_EUR\"\n\t\t],\n\t\t\"std_country_borders\": [\n\t\t\t\"iso_3166_1_AUT\",\n\t\t\t\"iso_3166_1_FRA\",\n\t\t\t\"iso_3166_1_SMR\",\n\t\t\t\"iso_3166_1_SVN\",\n\t\t\t\"iso_3166_1_CHE\",\n\t\t\t\"iso_3166_1_VAT\"\n\t\t]\n\t}\n}\n```\n\nThis example represents the country *Italy*. The *code* and *information* sections provide respectively the identification and documentation of the enumeration term.\n\nThe domains section, `_domn`, provides the *domains* and *categories* associated with the *term* Italy, such as the country region and sub-region."}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_object"
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "prop",
+			"_gid": "_prop",
+			"_aid": ["prop"]
+		},
+		"_info": {
+			"_title": {"iso_639_3_eng": "Properties Section"},
+			"_definition": {"iso_639_3_eng": "The section of a term that carries concrete attributes of the real-world entity the term represents. Where the other sections identify, document, and type the term, this section instantiates it — providing the factual properties of the thing the term stands for."},
+			"_description": {"iso_639_3_eng": "The properties section turns a classification [term](_term.md) into a structured instance record. Consider a term representing the country Italy: its [identification section](_code.md) gives the ISO 3166 code, its [documentation section](_info.md) provides the human-readable definition, and the [data section](_data.md) of the descriptor may type it as an enumeration element. The properties section is where Italy's actual attributes live — its international dialling code, geographical area, population, capital city, flag symbol, and any other factual data relevant to the entity.\n\nThis design allows the dictionary to function as a knowledge base as well as a schema registry: the same term that serves as a value in a controlled vocabulary also carries a rich, structured profile of the real-world entity it identifies. Each property in this section must be a [descriptor](_term_descriptor.md) defined in the dictionary; its value must conform to that descriptor's type definition.\n\nThe section is optional and its schema is open: any dictionary-defined descriptor may appear as a property."},
+			"_examples": {"iso_639_3_eng": "```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"iso_3166_1\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"iso_3166_1_ITA\",\n\t\t\"_aid\": [\n\t\t\t\"IT\",\n\t\t\t\"ITA\",\n\t\t\t\"380\"\n\t\t],\n\t\t\"_emoji\": \"🇮🇹\"\n\t},\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"iso_639_3_eng\": \"Italy\",\n\t\t\t\"iso_639_3_amh\": \"ጣሑ።ን\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"iso_639_3_eng\": \"Italian Republic\",\n\t\t\t\"iso_639_3_amh\": \"ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ\"\n\t\t}\n\t},\n\t\"_domn\": {\n\t\t\"std_country_region\": {\n\t\t\t\"iso_639_3_eng\": \"Europe\"\n\t\t},\n\t\t\"std_country_sub-region\": {\n\t\t\t\"iso_639_3_eng\": \"Southern Europe\"\n\t\t}\n\t},\n\t\"_prop\": {\n\t\t\"iso_3166_alpha3\": \"ITA\",\n\t\t\"iso_3166_alpha2\": \"IT\",\n\t\t\"iso_3166_numeric\": \"380\",\n\t\t\"std_country_ioc\": \"ITA\",\n\t\t\"std_country_tld\": [\n\t\t\t\".it\"\n\t\t],\n\t\t\"std_country_tel\": [\n\t\t\t\"+39\"\n\t\t],\n\t\t\"std_country_area\": 301336,\n\t\t\"std_country_languages\": [\n\t\t\t\"iso_639_3_ita\"\n\t\t],\n\t\t\"std_country_currencies\": [\n\t\t\t\"iso_4217_EUR\"\n\t\t],\n\t\t\"std_country_borders\": [\n\t\t\t\"iso_3166_1_AUT\",\n\t\t\t\"iso_3166_1_FRA\",\n\t\t\t\"iso_3166_1_SMR\",\n\t\t\t\"iso_3166_1_SVN\",\n\t\t\t\"iso_3166_1_CHE\",\n\t\t\t\"iso_3166_1_VAT\"\n\t\t]\n\t}\n}\n```\n\nThis example represents the country *Italy*. The *code* and *information* sections provide respectively the identification and documentation of the enumeration term.\n\nThe properties section, `_prop`, provides the data associated with the *country* Italy, rather than with the *term* Italy, such as its codes, telephone area code, country area, spoken languages, used currencies, bordering countries and the country flag in SVG format."}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_object"
+			}
 		}
 	}
 ]

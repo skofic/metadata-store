@@ -10,7 +10,9 @@ The fundamental unit of the data dictionary. A term identifies, classifies, and 
 
 **`_description`**
 
-Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md). A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only an identification section and delegating all documentation to the canonical term they point to. A term may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable (descriptor) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.
+Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum an [identification section](_code.md). A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only an identification section and delegating all documentation to the canonical term they point to. A term may additionally carry a [data type section](_data.md) — present when the term represents a typed data variable ([descriptor](_term_descriptor.md)) — and a [structure rules section](_rule.md) — present when the term defines the schema of an object.
+
+Two further optional sections may also be present. The [properties section](_prop.md) carries concrete attributes of the real-world entity the term represents, turning a classification term into a structured instance record. The [domains section](_domn.md) classifies the term across categorical dimensions, recording the subject domain, measurement type, or other classification axes relevant to the term's usage.
 
 The dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms.
 
