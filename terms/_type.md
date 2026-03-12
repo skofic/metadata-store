@@ -2,33 +2,79 @@
 
 **`_title`**
 
-Data type
+Data Type
 
 **`_definition`**
 
-The data type of the descriptor's value.
+The data type of the value in a scalar section. This property is required whenever the scalar section is not empty, and constrains what kind of value the descriptor represents. Valid values form an enumeration whose elements define all supported scalar types.
 
 **`_description`**
 
-The *data type* defines the *type* that the *value* or *values* held by the *descriptor* should have. This type applies to the [scalar](_scalar.md) dimension of the *value*, this means that, in the case of an [array](_array.md) or [set](_set.md), the type *applies* to the list *elements*.
+This property defines the *data type* of the value in a [`_scalar`](_scalar.md) section. It is required whenever [`_scalar`](_scalar.md) is not empty, and its value must be one of the following enumeration elements:
 
-These are the possible values:
+- [`_type_boolean`](_type_boolean.md): The value is a `true` or `false` boolean. No other [`_scalar`](_scalar.md) properties are expected.
 
-- [Boolean](_type_boolean.md): *True* or *false* value. No other [data section](_data.md) properties are expected.
-- [Integer](_type_number_integer.md): *Numeric discrete* value. The [data section](_data.md) can include the following properties: [unit](_unit.md), [unit name](_unit-name.md), [range](_range.md), [valid range](_valid-range.md) and [normal range](_normal-range.md).
-- [Numeric](_type_number.md): *Numeric discrete* or *continuous* value; will be considered a *floating point number*. The [data section](_data.md) can include the following properties: [unit](_unit.md), [unit name](_unit-name.md), [range](_range.md), [valid range](_valid-range.md) and [normal range](_normal-range.md).
-- [Time-stamp](_type_number_timestamp.md): A [numeric](_type_number.md) Unix Timestamp, it is used to indicate a *precise moment in time*. The [data section](_data.md) can include the following properties: [range](_range.md), [valid range](_valid-range.md) and [normal range](_normal-range.md).
-- [String](_type_string.md): A *character* or *text* encoded in UTF-8. The [data section](_data.md) can include the following properties: [format](_format.md), [unit](_unit.md), [unit name](_unit-name.md) and [regular expression](_regexp.md).
-- [Key reference](_type_string_key.md): A [string](_type_string.md) representing the [global identifier](_gid.md) of a *document* from the *terms collection*. The [data section](_data.md) is *required* to include the [data kind](_kind.md) field which specifies the *kind of term*, these are the allowed choices:
-    - [Any term](_any-term.md): The value can reference *any term* in the *terms collection*.
-    - [Any enumeration](_any-enum.md): The value can reference *any term* *belonging* to a *controlled vocabulary*, this means that the *term* must be *referenced* in at least one *edge* with the [enumeration](_predicate_enum-of.md) [predicate](_predicate.md).
-    - [Any structure](_any-object.md): The value can reference *any term* that *defines* an *object data structure*: such terms must have the [rules section](_rule.md) property.
-    - [Any descriptor](_any-descriptor.md): The value can reference *any term* that *defines* a *descriptor*: such terms must have the [data section](_data.md) property.
-- [Document handle](_type_string_handle.md): A [string](_type_string.md) representing the [document handle](_id.md) of a *record* belonging to *any collection*. No other [data section](_data.md) properties are expected.
-- [Enumeration](_type_string_enum.md): A [string](_type_string.md) representing the [global identifier](_gid.md) of a *document* belonging to the *terms collection* that is part of a *controlled vocabulary*. The [data section](_data.md) can include the following properties: [format](_format.md), [unit](_unit.md), [unit name](_unit-name.md) and [regular expression](_regexp.md). In addition, the [data section](_data.md) *requires* the [data kind](_kind.md) field, that is *must* *specify* from which *controlled vocabulary* the value must be *chosen*.
-- [Object](_type_object.md): An *object data structure*. The [data section](_data.md) is required to contain the [data kind](_kind.md) field, and these are the allowed choices:
-    - *A [global identifier](_gid.md)*: It must be one or more [key references](_type_string_key.md) to *terms* that define a *data structure type*, the term *must include* the [rules section](_rule.md). This means that the value *must* be an *object* of *that type*.
-    - [Any structure](_any-object.md): The value can be an *object* of *any type*, but its *properties* will be *parsed* and *validated*. This means that only the *constraints* at the *object level* will be *ignored*.
-- [GeoJSON geometry](_type_object_geojson.md): An *object data structure* representing a *geographic structure* encoded in the [GeoJSON](https://geojson.org) data format. No other [data section](_data.md) properties are expected.
+- [`_type_number`](_type_number.md): The value is a generic numeric value stored as a double-precision floating-point number; both integer and fractional values are accepted. The [`_scalar`](_scalar.md) section may include the following additional properties:
+  - [`_unit`](_unit.md): The unit in which the number is expressed, drawn from the unit enumeration.
+  - [`_unit-name`](_unit-name.md): A free-text unit name, used when the required unit is not available in the unit enumeration.
+  - [`_unit-symbol`](_unit-symbol.md): A unit symbol expressed as a [LaTeX](https://www.latex-project.org) string, used when the required unit is not available in the unit enumeration.
+  - [`_decimals`](_decimals.md): The number of decimal places to display when rendering the value. The stored value is not rounded.
+  - [`_valid-range`](_valid-range.md): The numeric bounds outside which the value is considered invalid.
+  - [`_normal-range`](_normal-range.md): The numeric bounds outside which the value is considered an outlier.
 
-If *this property* is *omitted*, it means that the *value* can be of *any scalar type*.
+- [`_type_number_integer`](_type_number_integer.md): The value is an integer — a whole number with no decimal part. The [`_scalar`](_scalar.md) section may include the following additional properties:
+  - [`_unit`](_unit.md): The unit in which the integer is expressed.
+  - [`_unit-name`](_unit-name.md): A free-text unit name, used when the required unit is not available in the unit enumeration.
+  - [`_unit-symbol`](_unit-symbol.md): A unit symbol as a [LaTeX](https://www.latex-project.org) string, used when the required unit is not available in the unit enumeration.
+  - [`_valid-range`](_valid-range.md): The numeric bounds outside which the value is considered invalid.
+  - [`_normal-range`](_normal-range.md): The numeric bounds outside which the value is considered an outlier.
+
+- [`_type_number_timestamp`](_type_number_timestamp.md): The value is a [Unix timestamp](https://www.unixtimestamp.com) — a number representing a precise moment in time as seconds elapsed since 1 January 1970 UTC. The [`_scalar`](_scalar.md) section may include:
+  - [`_valid-range`](_valid-range.md): The timestamp bounds outside which the value is considered invalid.
+  - [`_normal-range`](_normal-range.md): The timestamp bounds outside which the value is considered an outlier.
+
+- [`_type_string`](_type_string.md): The value is a UTF-8 string. The [`_scalar`](_scalar.md) section may include the following additional properties:
+  - [`_format`](_format.md): The encoding format of the string, drawn from the following enumeration:
+    - [`_format_markdown`](_format_markdown.md): The string is in [Markdown](https://www.markdownguide.org/getting-started/) format.
+    - [`_format_html`](_format_html.md): The string is in [HTML](https://en.wikipedia.org/wiki/HTML) format.
+    - [`_format_uri`](_format_uri.md): The string is a [Uniform Resource Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (URI).
+    - [`_format_hex`](_format_hex.md): The string is a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) value.
+    - [`_format_svg`](_format_svg.md): The string is an [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) image.
+    - [`_format_email`](_format_email.md): The string is an [email address](https://en.wikipedia.org/wiki/Email_address).
+    - [`_format_date`](_format_date.md): The string is a date, equivalent to the JSON Schema `date` format.
+    - [`_format_time`](_format_time.md): The string is a time, equivalent to the JSON Schema `time` format.
+    - [`_format_date-time`](_format_date-time.md): The string is a date and time, equivalent to the JSON Schema `date-time` format.
+    - [`_format_hostname`](_format_hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
+    - [`_format_ipv4`](_format_ipv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
+    - [`_format_ipv6`](_format_ipv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).
+  - [`_unit`](_unit.md): The unit in which the string value is expressed.
+  - [`_unit-name`](_unit-name.md): A free-text unit name.
+  - [`_unit-symbol`](_unit-symbol.md): A unit symbol as a LaTeX string.
+  - [`_regexp`](_regexp.md): A [regular expression](https://en.wikipedia.org/wiki/Regular_expression) in ECMA 262 dialect used to validate the string value.
+  - [`_valid-range_string`](_valid-range_string.md): The string bounds outside which the value is considered invalid.
+  - [`_normal-range_string`](_normal-range_string.md): The string bounds outside which the value is considered an outlier.
+
+- [`_type_string_key`](_type_string_key.md): The value is a string representing the [`_key`](_key.md) of a document in any collection of the database. The [`_scalar`](_scalar.md) section may include:
+  - [`_kind`](_kind.md): An array of enumeration values constraining which type of term the key may reference:
+    - [`_any-term`](_any-term.md): The key may reference any term.
+    - [`_any-enum`](_any-enum.md): The key may reference any term that is an element of a controlled vocabulary — i.e., any term connected to an enumeration root via a [`_predicate_enum-of`](_predicate_enum-of.md) edge.
+    - [`_any-object`](_any-object.md): The key may reference any term that defines an object schema — i.e., any term with a [`_rule`](_rule.md) section.
+    - [`_any-descriptor`](_any-descriptor.md): The key may reference any descriptor — i.e., any term with a [`_data`](_data.md) section.
+
+- [`_type_string_handle`](_type_string_handle.md): The value is a string representing the [`_id`](_id.md) (document handle in `<collection>/<_key>` form) of a record in any collection. No other [`_scalar`](_scalar.md) properties are expected.
+
+- [`_type_string_enum`](_type_string_enum.md): The value is a string representing the [`_gid`](_gid.md) of a term that is an element of a controlled vocabulary. The [`_scalar`](_scalar.md) section may include the following property:
+  - [`_kind`](_kind.md): An array of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn. The value must be a valid element of at least one of the listed roots. When omitted, the value may be any enumeration element from any controlled vocabulary.
+
+- [`_type_string_date`](_type_string_date.md): The value is a string representing a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. The [`_scalar`](_scalar.md) section may include:
+  - [`_valid-range_date`](_valid-range_date.md): The date bounds outside which the value is considered invalid.
+  - [`_normal-range_date`](_normal-range_date.md): The date bounds outside which the value is considered an outlier.
+
+- [`_type_struct`](_type_struct.md): The value is a free-form object whose properties need not be defined in the dictionary. No other [`_scalar`](_scalar.md) properties are expected.
+
+- [`_type_object`](_type_object.md): The value is an object whose properties must correspond to descriptor `_gid`s defined in the dictionary. The [`_scalar`](_scalar.md) section may include:
+  - [`_kind`](_kind.md): An array of `_gid`s of object definition terms. The value must conform to at least one of the listed definitions.
+
+- [`_type_object_geojson`](_type_object_geojson.md): The value is a [GeoJSON](https://geojson.org) object representing a geographic feature. The object must not be empty, and no other [`_scalar`](_scalar.md) properties are expected.
+
+When `_type` is omitted, the [`_scalar`](_scalar.md) section must be empty, meaning the value may be of any scalar type without constraint.

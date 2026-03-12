@@ -463,7 +463,7 @@ A string representing the `_id` of an ArangoDB document, in the form `<collectio
 
 **`_type_string_enum`**
 
-A string representing the `_gid` of an enumeration element. The `_kind` property is an array of term `_key`s identifying the enumeration root(s) that define the valid value domain.
+A string representing the `_gid` of an enumeration element. The optional `_kind` property is an array of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn; the value must belong to at least one of the listed roots. When `_kind` is absent, the value may be any enumeration element from any controlled vocabulary.
 
 ```json
 {
@@ -510,7 +510,7 @@ An object with indeterminate properties. May be empty.
 
 **`_type_object`**
 
-An object whose properties must correspond to descriptor term `_gid`s. May be empty. The `_kind` property, if present, is an array of term `_gid`s whose `_rule` section defines the allowed structure of the object.
+An object whose properties must correspond to descriptor term `_gid`s. May be empty. The optional `_kind` property is an array of `_gid`s of object definition terms; the value must conform to at least one of the listed definitions — meaning it is valid if it satisfies any one of the referenced `_rule` schemas.
 
 ```json
 {
