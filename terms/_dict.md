@@ -28,7 +28,7 @@ This property defines the *shape* and *type* of a *key/value dictionary*. Keys a
 				},
 				"_scalar": {
 					"_type": "_type_object",
-					"_kind": ["some_object_definition"]
+					"_kind_object": ["some_object_definition"]
 				}
 			}
 		}
@@ -45,7 +45,7 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 	"_dict": {
 		"_dict_key": {
 			"_type_key": "_type_string_enum",
-			"_kind": ["iso_639_3"]
+			"_kind_string_enum": ["iso_639_3"]
 		},
 		"_dict_value": {
 			"_scalar": {
@@ -66,13 +66,13 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 	"_dict": {
 		"_dict_key": {
 			"_type_key": "_type_string_enum",
-			"_kind": ["iso_3166_1"]
+			"_kind_string_enum": ["iso_3166_1"]
 		},
 		"_dict_value": {
 			"_dict": {
 				"_dict_key": {
 					"_type_key": "_type_string_enum",
-					"_kind": ["iso_639_3"]
+					"_kind_string_enum": ["iso_639_3"]
 				},
 				"_dict_value": {
 					"_array": {
@@ -82,7 +82,7 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 						},
 						"_scalar": {
 							"_type": "_type_object",
-							"_kind": ["some_object_definition"]
+							"_kind_object": ["some_object_definition"]
 						}
 					}
 				}
@@ -106,3 +106,38 @@ This example describes a recursive dictionary. The outer keys are [ISO 3166-1](i
 ```
 
 This example describes a dictionary whose keys can be any string and whose values can be of any shape or type.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_dict"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_banned" : [
+    "_scalar",
+    "_array",
+    "_set",
+    "_tuple",
+    "_dict"
+  ],
+  "_required" : {
+    "_selection-descriptors_all" : [
+      "_dict_key",
+      "_dict_value"
+    ]
+  }
+}
+```

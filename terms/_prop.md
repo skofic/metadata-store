@@ -82,3 +82,15 @@ The section is optional and its schema is open: any dictionary-defined descripto
 This example represents the country *Italy*. The *code* and *information* sections provide respectively the identification and documentation of the enumeration term.
 
 The properties section, `_prop`, provides the data associated with the *country* Italy, rather than with the *term* Italy, such as its codes, telephone area code, country area, spoken languages, used currencies, bordering countries and the country flag in SVG format.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_type" : "_type_object"
+  }
+}
+```

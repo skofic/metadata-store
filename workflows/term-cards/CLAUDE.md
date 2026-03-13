@@ -13,6 +13,7 @@ Each card contains:
 2. One labelled section per `_info` property, rendered in this order:
    `_title`, `_definition`, `_description`, `_examples`, `_notes`, `_url`, `_citation`, `_provider`.
    Unrecognised properties follow in alphabetical order.
+3. A horizontal rule (`---`) followed by pretty-printed JSON blocks for `_data` and `_rule`, if present.
 
 Property labels use the format **\`_property_name\`**.
 

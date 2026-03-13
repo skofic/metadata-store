@@ -15,3 +15,49 @@ Edges are the building blocks of all graphs in the data dictionary. Each edge co
 Edge documents are uniquely identified by their [source](_from.md), [predicate](_predicate-md), and [destination](_to.md): no two edges may share the same `_from`/`_predicate`/`_to` combination. The document key is computed as the MD5 hash of this triple.
 
 All predicates follow a *many-to-one* direction: `_from` is the leaf node (child, element, member) and `_to` is the root node (parent, container, category).
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_edge"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_computed" : [
+    "_key"
+  ],
+  "_default-value" : {
+    "_path_data" : {
+
+    }
+  },
+  "_immutable" : [
+    "_key",
+    "_from",
+    "_to",
+    "_predicate"
+  ],
+  "_required" : {
+    "_selection-descriptors_all" : [
+      "_key",
+      "_from",
+      "_to",
+      "_predicate",
+      "_path",
+      "_path_data"
+    ]
+  }
+}
+```

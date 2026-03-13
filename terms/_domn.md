@@ -82,3 +82,15 @@ The section is optional and its schema is open: any dictionary-defined descripto
 This example represents the country *Italy*. The *code* and *information* sections provide respectively the identification and documentation of the enumeration term.
 
 The domains section, `_domn`, provides the *domains* and *categories* associated with the *term* Italy, such as the country region and sub-region.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_type" : "_type_object"
+  }
+}
+```

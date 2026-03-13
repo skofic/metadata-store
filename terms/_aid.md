@@ -32,3 +32,17 @@ Keep this set restricted to *official* or *widely recognised* standards. Includi
 ```
 
 `ITA` is the primary code for Italy under ISO 3166-1 alpha-3, and `IT` is the corresponding alpha-2 code. Both are official ISO identifiers, so both appear in `_aid`.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_set" : {
+    "_set_scalar" : {
+      "_set_type" : "_type_string"
+    }
+  }
+}
+```

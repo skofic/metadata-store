@@ -132,3 +132,34 @@ This example shows the *data definition* for a *descriptor* that can take *only*
 ```
 
 This example shows the *data definition* for a *descriptor* that can take *any data shape* or *value*.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_data"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_required" : {
+    "_selection-descriptors_one-none" : [
+      "_scalar",
+      "_array",
+      "_set",
+      "_tuple",
+      "_dict"
+    ]
+  }
+}
+```

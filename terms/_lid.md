@@ -42,3 +42,16 @@ This property is *required* on every term and is *immutable* once set — changi
 ```
 
 This term has no [namespace](_nid.md): the local identifier and global identifier share the same value, `iso`.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_regexp" : "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$",
+    "_type" : "_type_string"
+  }
+}
+```

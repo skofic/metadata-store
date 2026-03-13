@@ -115,12 +115,27 @@ func extractStringArray(_ value: Any) -> [String]? {
 ///   Definition text …
 ///   … (one section per _info property)
 ///
-/// Known properties are rendered in the order defined by `infoPropertyOrder`.
+///   ---
+///
+///   **`_data`**
+///   ```json
+///   { … }
+///   ```
+///
+///   **`_rule`**
+///   ```json
+///   { … }
+///   ```
+///
+/// Known _info properties are rendered in the order defined by `infoPropertyOrder`.
 /// Any additional properties found in the _info dict are appended alphabetically,
 /// ensuring the renderer does not silently drop future or non-standard keys.
 ///
+/// If the term has a _data or _rule section, each is appended after a horizontal
+/// rule as a pretty-printed JSON fenced code block.
+///
 /// The output always ends with exactly one newline so diffs are clean.
-func renderCard(gid: String, info: [String: Any]) -> String {
+func renderCard(gid: String, info: [String: Any], term: [String: Any]) -> String {
     var lines: [String] = []
 
     // H1 heading: the global identifier of the term, in code style.
@@ -142,6 +157,32 @@ func renderCard(gid: String, info: [String: Any]) -> String {
     for key in remaining.keys.sorted() {
         guard let value = remaining[key] else { continue }
         appendProperty(key: key, value: value, to: &lines)
+    }
+
+    // Append _data and _rule sections as pretty-printed JSON, if present.
+    // A horizontal rule separates the human-readable _info content above
+    // from the machine-readable structural sections below.
+    let structuralSections = ["_data", "_rule"]
+    let presentSections = structuralSections.filter { term[$0] != nil }
+    if !presentSections.isEmpty {
+        while lines.last == "" { lines.removeLast() }
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+        for key in presentSections {
+            guard let section = term[key] else { continue }
+            lines.append("**`\(key)`**")
+            lines.append("")
+            if let jsonData = try? JSONSerialization.data(
+                withJSONObject: section,
+                options: [.prettyPrinted, .sortedKeys]
+            ), let jsonString = String(data: jsonData, encoding: .utf8) {
+                lines.append("```json")
+                lines.append(jsonString)
+                lines.append("```")
+            }
+            lines.append("")
+        }
     }
 
     // Normalise trailing whitespace: strip any trailing blank lines, then
@@ -249,7 +290,7 @@ func run() throws {
         // the canonical term they point to. No card is generated for them.
         guard let info = term["_info"] as? [String: Any] else { continue }
 
-        let content = renderCard(gid: gid, info: info)
+        let content = renderCard(gid: gid, info: info, term: term)
         let fileURL = termsURL.appendingPathComponent("\(gid).md")
         generatedGids.insert(gid)
 

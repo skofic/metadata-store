@@ -51,3 +51,40 @@ This example describes a pair of coordinates where the first element is a decima
 ```
 
 This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitude, a geodetic datum, and an optional surface area. The first three elements are required; the fourth is optional.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_tuple"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_banned" : [
+    "_scalar",
+    "_array",
+    "_set",
+    "_tuple",
+    "_dict"
+  ],
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : {
+    "_selection-descriptors_all" : [
+      "_tuple_types"
+    ]
+  }
+}
+```

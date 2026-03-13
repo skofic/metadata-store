@@ -28,3 +28,15 @@ Mathematical expressions stored as LaTeX strings:
 
 - `\bar{x} \pm \sigma` — sample mean plus or minus one standard deviation
 - `\frac{n!}{k!(n-k)!}` — binomial coefficient
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_type" : "_type_string"
+  }
+}
+```

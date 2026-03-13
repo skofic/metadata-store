@@ -15,3 +15,39 @@ The documentation section is mandatory in most [terms](_term.md). All its proper
 The [title](_title.md) and [definition](_definition.md) properties are always required. The full [description](_description.md) is strongly recommended for all but the simplest terms. Additional properties — [examples](_examples.md), [notes](_notes.md), [URLs](_url.md), [citation](_citation.md) and [provider](_provider.md) — are optional and should be included whenever they add value.
 
 Alias terms are the only exception to the documentation section requirement: an alias [term](_term.md) carries only an [identification section](_code.md), delegating all documentation to the canonical term it points to.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_info"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_recommended" : [
+    "_description",
+    "_examples",
+    "_notes",
+    "_url",
+    "_citation",
+    "_provider"
+  ],
+  "_required" : {
+    "_selection-descriptors_all" : [
+      "_title",
+      "_definition"
+    ]
+  }
+}
+```

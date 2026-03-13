@@ -54,3 +54,18 @@ This term, with [global identifier](_gid.md) `iso_3166_1_ITA`, represents the IS
 ```
 
 This term has no namespace — it is itself the top-level `iso` namespace, with no parent.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_string_key" : [
+      "_any-term"
+    ],
+    "_type" : "_type_string_key"
+  }
+}
+```

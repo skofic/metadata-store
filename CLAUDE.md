@@ -284,7 +284,9 @@ Each of these properties is described in detail in the subsections below.
 | Property               | Required                     | Description |
 |------------------------|------------------------------|-------------|
 | `_type`                | Yes (if `_scalar` not empty) | The scalar data type. |
-| `_kind`                | No                           | Data kind; relevant to `_type_string_key`, `_type_string_enum`, and `_type_object`. |
+| `_kind_string_key`     | No                           | Constrains the type of document the key may reference; relevant to `_type_string_key`. |
+| `_kind_string_enum`    | No                           | Constrains the controlled vocabulary the enumeration value must belong to; relevant to `_type_string_enum`. |
+| `_kind_object`         | No                           | Constrains the object schema the value must conform to; relevant to `_type_object`. |
 | `_format`              | No                           | String format; relevant to string types. |
 | `_unit`                | No                           | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No                           | Unit name, used when `_unit` is absent. |
@@ -435,14 +437,15 @@ A generic UTF-8 string. May include:
 
 **`_type_string_key`**
 
-A string representing the `_key` of a document. If `_kind` is absent, the key can refer to a document in any collection of the database. If `_kind` is present, it is an array constraining the key to specific term types:
+A string representing the `_key` of a document. If `_kind_string_key` is absent, the key can refer to a document in any collection of the database. If `_kind_string_key` is present, it is an array constraining the key to specific term types:
 
-| `_kind` value     | Meaning |
-|-------------------|---------|
-| `_any-term`       | The `_key` can refer to any term. |
-| `_any-enum`       | The `_key` can refer to any term that is an element or the root of an enumeration graph. |
-| `_any-descriptor` | The `_key` must refer to a descriptor (has a `_data` section). |
-| `_any-object`     | The `_key` must refer to a term that represents an object definition (has a `_rule` section). |
+| `_kind_string_key` value | Meaning |
+|--------------------------|---------|
+| `_any-term`              | The `_key` can refer to any term. |
+| `_any-enum`              | The `_key` must refer to an enumeration type — i.e., the root of a controlled vocabulary graph. |
+| `_any-enum_element`      | The `_key` must refer to an enumeration element — i.e., a valid choice within a controlled vocabulary. |
+| `_any-descriptor`        | The `_key` must refer to a descriptor (has a `_data` section). |
+| `_any-object`            | The `_key` must refer to a term that represents an object definition (has a `_rule` section). |
 
 ```json
 {
@@ -463,7 +466,7 @@ A string representing the `_id` of an ArangoDB document, in the form `<collectio
 
 **`_type_string_enum`**
 
-A string representing the `_gid` of an enumeration element. The optional `_kind` property is an array of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn; the value must belong to at least one of the listed roots. When `_kind` is absent, the value may be any enumeration element from any controlled vocabulary.
+A string representing the `_gid` of an enumeration element. The optional `_kind_string_enum` property is an array of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn; the value must belong to at least one of the listed roots. When `_kind_string_enum` is absent, the value may be any enumeration element from any controlled vocabulary.
 
 ```json
 {
@@ -510,7 +513,7 @@ An object with indeterminate properties. May be empty.
 
 **`_type_object`**
 
-An object whose properties must correspond to descriptor term `_gid`s. May be empty. The optional `_kind` property is an array of `_gid`s of object definition terms; the value must conform to at least one of the listed definitions — meaning it is valid if it satisfies any one of the referenced `_rule` schemas.
+An object whose properties must correspond to descriptor term `_gid`s. May be empty. The optional `_kind_object` property is an array of `_gid`s of object definition terms; the value must conform to at least one of the listed definitions — meaning it is valid if it satisfies any one of the referenced `_rule` schemas. When `_kind_object` is absent, the only requirement is that all properties are defined as descriptors in the dictionary.
 
 ```json
 {

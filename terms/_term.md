@@ -44,3 +44,44 @@ Generic term example:
 ```
 
 This term represents the country Italy. Its namespace chain (`iso` → `iso_3166` → `iso_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_term"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_computed" : [
+    "_key"
+  ],
+  "_immutable" : [
+    "_key"
+  ],
+  "_recommended" : [
+    "_info",
+    "_data",
+    "_rule",
+    "_prop",
+    "_domn"
+  ],
+  "_required" : {
+    "_selection-descriptors_all" : [
+      "_key",
+      "_code"
+    ]
+  }
+}
+```

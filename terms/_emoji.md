@@ -21,3 +21,15 @@ Emoji are displayed alongside the term's textual label wherever it is rendered i
 - 🇮🇹 — Italian flag, used on the ISO 3166 term for Italy
 - 🇫🇷 — French flag, used on the ISO 3166 term for France
 - 🇺🇳 — United Nations flag, used on a supranational organisation term
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_type" : "_type_string"
+  }
+}
+```

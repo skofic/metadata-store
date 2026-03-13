@@ -20,3 +20,15 @@ This property is a plain string with no language tag: it records the name as it 
 **`_examples`**
 
 粵語 / 粤语 — the native name of the Cantonese language, written in Cantonese script.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_type" : "_type_string"
+  }
+}
+```

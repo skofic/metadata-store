@@ -40,3 +40,16 @@ This value is also *copied* to the [document key](_key.md), making it the primar
 ```
 
 This is the `iso` top-level namespace term. It has no [namespace](_nid.md), so the local identifier and global identifier share the same value, `iso`.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_regexp" : "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$",
+    "_type" : "_type_string_key"
+  }
+}
+```

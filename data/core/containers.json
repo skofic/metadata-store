@@ -15,7 +15,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_term"]
+				"_kind_object": ["_term"]
 			}
 		},
 		"_rule": {
@@ -42,7 +42,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_term_descriptor"]
+				"_kind_object": ["_term_descriptor"]
 			}
 		},
 		"_rule": {
@@ -69,7 +69,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_term_object"]
+				"_kind_object": ["_term_object"]
 			}
 		},
 		"_rule": {
@@ -97,7 +97,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_edge"]
+				"_kind_object": ["_edge"]
 			}
 		},
 		"_rule": {
@@ -125,7 +125,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_code"]
+				"_kind_object": ["_code"]
 			}
 		},
 		"_rule": {
@@ -152,7 +152,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_info"]
+				"_kind_object": ["_info"]
 			}
 		},
 		"_rule": {
@@ -178,7 +178,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_data"]
+				"_kind_object": ["_data"]
 			}
 		},
 		"_rule": {
@@ -208,7 +208,7 @@
 		"_data": {
 			"_scalar": {
 				"_type": "_type_object",
-				"_kind": ["_rule"]
+				"_kind_object": ["_rule"]
 			}
 		},
 		"_rule": {

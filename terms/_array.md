@@ -81,7 +81,7 @@ This example shows a two levels of nested arrays. The top level array may have a
 		"_set": {
 			"_set_scalar": {
 				"_set_type": "_type_string_enum",
-				"_kind": ["iso_639_3"]
+				"_kind_string_enum": ["iso_639_3"]
 			}
 		}
 	}
@@ -100,12 +100,12 @@ The array, and the set, may have any number of elements.
 		"_dict": {
 			"_dict_key": {
 				"_type_key": "_type_string_enum",
-				"_kind": ["iso_3166_1"]
+				"_kind_string_enum": ["iso_3166_1"]
 			},
 			"_dict_value": {
 				"_scalar": {
 					"_type": "_type_object",
-					"_kind": ["my_struct_definition"]
+					"_kind_object": ["my_struct_definition"]
 				}
 			}
 		}
@@ -126,3 +126,37 @@ In this example the array may have any number of elements.
 ```
 
 This example describes an array that may contain any number of elements of any shape or type.
+
+---
+
+**`_data`**
+
+```json
+{
+  "_scalar" : {
+    "_kind_object" : [
+      "_array"
+    ],
+    "_type" : "_type_object"
+  }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : {
+    "_selection-descriptors_one-none" : [
+      "_scalar",
+      "_array",
+      "_set",
+      "_tuple",
+      "_dict"
+    ]
+  }
+}
+```
