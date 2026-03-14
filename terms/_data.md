@@ -24,7 +24,8 @@ Any term that carries this section is a [descriptor](_term_descriptor.md). A ter
 {
 	"_data": {
 		"_scalar": {
-			"_type": "_type_number_integer",
+			"_type": "_type_number",
+			"_kind_number": ["_kind_number_integer"],
 			"_valid-range": {
 				"_min-range-inclusive": 5,
 				"_max-range-inclusive": 10
@@ -34,7 +35,7 @@ Any term that carries this section is a [descriptor](_term_descriptor.md). A ter
 }
 ```
 
-The above example describes a [scalar](_scalar.md) discrete [integer](_type_number_integer.md) value in the range from `5` to `10` inclusive.
+The above example describes a [scalar](_scalar.md) [integer](_kind_number_integer.md) value in the range from `5` to `10` inclusive.
 
 
 
@@ -44,6 +45,7 @@ The above example describes a [scalar](_scalar.md) discrete [integer](_type_numb
 		"_array": {
 			"_scalar": {
 				"_type": "_type_number",
+				"_kind_number": ["_kind_number_float"],
 				"_valid-range": {
 					"_min-range-inclusive": 0.0,
 					"_max-range-exclusive": 100.0
@@ -55,7 +57,7 @@ The above example describes a [scalar](_scalar.md) discrete [integer](_type_numb
 }
 ```
 
-The above example describes a [list](_array.md) of [continuous](_type_number.md) values *greater or equal* to `0.0` and *less than* `100.0` representing a *length* in *centimetres*.
+The above example describes a [list](_array.md) of [floating-point](_kind_number_float.md) values *greater or equal* to `0.0` and *less than* `100.0` representing a *length* in *centimetres*.
 
 
 
@@ -64,15 +66,15 @@ The above example describes a [list](_array.md) of [continuous](_type_number.md)
 	"_data": {
 		"_set": {
 			"_set_scalar": {
-				"_set_type": "_type_string_enum",
-				"_kind": ["iso_639_3"]
+				"_set_type": "_type_enum",
+				"_kind_enum": ["iso_639_3"]
 			}
 		}
 	}
 }
 ```
 
-The above example describes *list* of [unique elements](_set.md) belonging to the `iso_639_3` controlled vocabulary.
+The above example describes a [set](_set.md) of unique [enumeration](_type_enum.md) elements belonging to the `iso_639_3` controlled vocabulary.
 
 
 
@@ -81,14 +83,14 @@ The above example describes *list* of [unique elements](_set.md) belonging to th
 	"_data": {
 		"_dict": {
 			"_dict_key": {
-				"_type_key": "_type_string_enum",
-				"_kind": ["iso_3166_1", "iso_3166_3"]
+				"_type_key": "_type_enum",
+				"_kind_enum": ["iso_3166_1", "iso_3166_3"]
 			},
 			"_dict_value": {
 				"_dict": {
 					"_dict_key": {
-						"_type_key": "_type_string_enum",
-						"_kind": ["iso_639_3"]
+						"_type_key": "_type_enum",
+						"_kind_enum": ["iso_639_3"]
 					},
 					"_dict_value": {
 						"_array": {
@@ -98,7 +100,7 @@ The above example describes *list* of [unique elements](_set.md) belonging to th
 							},
 							"_scalar": {
 								"_type": "_type_object",
-								"_kind": ["some_object_definition"]
+								"_kind_object": ["some_object_definition"]
 							}
 						}
 					}
@@ -109,7 +111,7 @@ The above example describes *list* of [unique elements](_set.md) belonging to th
 }
 ```
 
-The above example describes a [dictionary](_dict.md) whose *keys* are the [global identifiers](_gid.md) of the ISO 3166 part 1 or part 3 country *controlled vocabulary elements*, and the values are *another dictionary* whose keys are ISO 639 languages and whose *values* are *arrays* that correspond to the `some_object_definition` *data structure type*; these *array* values must have a *minimum* of `5` elements and a *maximum* of `10` elements. This is an example of a recursive dictionary definition.
+The above example describes a [dictionary](_dict.md) whose *keys* are the [global identifiers](_gid.md) of ISO 3166 part 1 or part 3 country *controlled vocabulary elements*, and the values are *another dictionary* whose keys are ISO 639 languages and whose *values* are *arrays* that correspond to the `some_object_definition` *data structure type*; these *array* values must have a *minimum* of `5` elements and a *maximum* of `10` elements. This is an example of a recursive dictionary definition.
 
 
 

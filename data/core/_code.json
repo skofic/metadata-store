@@ -14,8 +14,8 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_string_key",
-				"_kind_string_key": ["_any-term"]
+				"_type": "_type_key",
+				"_kind_key": ["_kind_key_term"]
 			}
 		}
 	},

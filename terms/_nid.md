@@ -62,10 +62,10 @@ This term has no namespace — it is itself the top-level `iso` namespace, with 
 ```json
 {
   "_scalar" : {
-    "_kind_string_key" : [
-      "_any-term"
+    "_kind_key" : [
+      "_kind_key_term"
     ],
-    "_type" : "_type_string_key"
+    "_type" : "_type_key"
   }
 }
 ```

@@ -49,7 +49,7 @@ This is the `iso` top-level namespace term. It has no [namespace](_nid.md), so t
 {
   "_scalar" : {
     "_regexp" : "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$",
-    "_type" : "_type_string_key"
+    "_type" : "_type_string"
   }
 }
 ```

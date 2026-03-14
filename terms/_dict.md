@@ -44,20 +44,20 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 {
 	"_dict": {
 		"_dict_key": {
-			"_type_key": "_type_string_enum",
-			"_kind_string_enum": ["iso_639_3"]
+			"_type_key": "_type_enum",
+			"_kind_enum": ["iso_639_3"]
 		},
 		"_dict_value": {
 			"_scalar": {
 				"_type": "_type_string",
-				"_format": "_format_markdown"
+				"_kind_string": "_kind_string_markdown"
 			}
 		}
 	}
 }
 ```
 
-This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [global identifiers](_gid.md) of [ISO 639-3](iso_639_3.md) language codes, and whose *values*, [`_dict_value`](_dict_value.md), are [Markdown](_format_markdown.md) text strings — a pattern used to implement multilingual styled text.
+This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [global identifiers](_gid.md) of [ISO 639-3](iso_639_3.md) language codes, and whose *values*, [`_dict_value`](_dict_value.md), are [Markdown](_kind_string_markdown.md) text strings — a pattern used to implement multilingual styled text.
 
 
 
@@ -65,14 +65,14 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 {
 	"_dict": {
 		"_dict_key": {
-			"_type_key": "_type_string_enum",
-			"_kind_string_enum": ["iso_3166_1"]
+			"_type_key": "_type_enum",
+			"_kind_enum": ["iso_3166_1"]
 		},
 		"_dict_value": {
 			"_dict": {
 				"_dict_key": {
-					"_type_key": "_type_string_enum",
-					"_kind_string_enum": ["iso_639_3"]
+					"_type_key": "_type_enum",
+					"_kind_enum": ["iso_639_3"]
 				},
 				"_dict_value": {
 					"_array": {

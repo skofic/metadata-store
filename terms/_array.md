@@ -34,7 +34,8 @@ When the property is an *empty object*, the array may contain any number of elem
 			"_max-items": 5
 		},
 		"_scalar": {
-			"_type": "_type_number_integer",
+			"_type": "_type_number",
+			"_kind_number": ["_kind_number_integer"],
 			"_valid-range": {
 				"_min-range-inclusive": 5,
 				"_max-range-inclusive": 10
@@ -44,7 +45,7 @@ When the property is an *empty object*, the array may contain any number of elem
 }
 ```
 
-This example describes an array of [scalar](_scalar.md) [integer](_type_number_integer.md) values in the range from `5` to `10` inclusive. The array must have at least 1 element and at most 5 elements.
+This example describes an array of [scalar](_scalar.md) [integer](_kind_number_integer.md) values in the range from `5` to `10` inclusive. The array must have at least 1 element and at most 5 elements.
 
 
 
@@ -58,6 +59,7 @@ This example describes an array of [scalar](_scalar.md) [integer](_type_number_i
       },
 			"_scalar": {
 				"_type": "_type_number",
+				"_kind_number": ["_kind_number_float"],
 				"_valid-range": {
 					"_min-range-inclusive": 0.0,
 					"_max-range-exclusive": 100.0
@@ -69,9 +71,9 @@ This example describes an array of [scalar](_scalar.md) [integer](_type_number_i
 }
 ```
 
-This example describes a list of arrays of [continuous](_type_number.md) numeric values greater than or equal to `0.0` and less than `100.0`, representing lengths in [centimetres](_unit_length_cm.md).
+This example describes a list of arrays of [floating-point](_kind_number_float.md) numeric values greater than or equal to `0.0` and less than `100.0`, representing lengths in [centimetres](_unit_length_cm.md).
 
-This example shows a two levels of nested arrays. The top level array may have any number of elements, the second level array can be empty, but must have at most 10 elements.
+This example shows two levels of nested arrays. The top level array may have any number of elements; the second level array can be empty but must have at most 10 elements.
 
 
 
@@ -80,15 +82,15 @@ This example shows a two levels of nested arrays. The top level array may have a
 	"_array": {
 		"_set": {
 			"_set_scalar": {
-				"_set_type": "_type_string_enum",
-				"_kind_string_enum": ["iso_639_3"]
+				"_set_type": "_type_enum",
+				"_kind_enum": ["iso_639_3"]
 			}
 		}
 	}
 }
 ```
 
-This example describes an array of [sets](_set.md) whose elements are [enumeration](_type_string_enum.md) values from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
+This example describes an array of [sets](_set.md) whose elements are [enumeration](_type_enum.md) values from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
 
 The array, and the set, may have any number of elements.
 
@@ -99,8 +101,8 @@ The array, and the set, may have any number of elements.
 	"_array": {
 		"_dict": {
 			"_dict_key": {
-				"_type_key": "_type_string_enum",
-				"_kind_string_enum": ["iso_3166_1"]
+				"_type_key": "_type_enum",
+				"_kind_enum": ["iso_3166_1"]
 			},
 			"_dict_value": {
 				"_scalar": {
@@ -113,7 +115,7 @@ The array, and the set, may have any number of elements.
 }
 ```
 
-This example describes an array of [key/value dictionaries](_dict.md). The [dictionary keys](_dict_key.md) are [enumeration](_type_string_enum.md) values from the [ISO 3166-1](iso_3166_1.md) country code vocabulary. The dictionary values are [objects](_type_object.md) conforming to the `my_struct_definition` schema.
+This example describes an array of [key/value dictionaries](_dict.md). The [dictionary keys](_dict_key.md) are [enumeration](_type_enum.md) values from the [ISO 3166-1](iso_3166_1.md) country code vocabulary. The dictionary values are [objects](_type_object.md) conforming to the `my_struct_definition` schema.
 
 In this example the array may have any number of elements.
 

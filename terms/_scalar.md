@@ -12,14 +12,15 @@ The shape property for a single, indivisible value of any type. When empty, the 
 
 This property defines the *shape* and *type* of a *scalar value* — a single, indivisible datum. A [*number*](_type_number.md), a [*boolean*](_type_boolean.md), or a [*string*](_type_string.md) are examples of scalar values; an [*array*](_array.md) of elements, a [*set*](_set.md), a [*tuple*](_tuple.md), or a key/value [*dictionary*](_dict.md) are not.
 
-When `_scalar` is an *empty object*, the descriptor accepts any scalar value of any type. When it contains a [`_type`](_type.md) property, that type constraint is enforced, and additional properties such as [`_kind_string_key`](_kind_string_key.md), [`_kind_string_enum`](_kind_string_enum.md), [`_kind_object`](_kind_object.md), [`_format`](_format.md), [`_unit`](_unit.md), or range properties may further constrain or document the value.
+When `_scalar` is an *empty object*, the descriptor accepts any scalar value of any type. When it contains a [`_type`](_type.md) property, that type constraint is enforced. Depending on the type, a companion kind property — [`_kind_number`](_kind_number.md), [`_kind_string`](_kind_string.md), [`_kind_key`](_kind_key.md), [`_kind_enum`](_kind_enum.md), or [`_kind_object`](_kind_object.md) — may further qualify the type, and additional properties such as [`_unit`](_unit.md) or range properties may constrain or document the value.
 
 **`_examples`**
 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_number_integer",
+		"_type": "_type_number",
+		"_kind_number": ["_kind_number_integer"],
 		"_valid-range": {
 			"_min-range-inclusive": 5,
 			"_max-range-inclusive": 10
@@ -27,7 +28,7 @@ When `_scalar` is an *empty object*, the descriptor accepts any scalar value of 
 	}
 }
 ```
-This example describes a scalar discrete [integer](_type_number_integer.md) value in the range from `5` to `10` inclusive.
+This example describes a scalar [integer](_kind_number_integer.md) value in the range from `5` to `10` inclusive.
 
 
 
@@ -35,6 +36,7 @@ This example describes a scalar discrete [integer](_type_number_integer.md) valu
 {
 	"_scalar": {
 		"_type": "_type_number",
+		"_kind_number": ["_kind_number_float"],
 		"_valid-range": {
 			"_min-range-inclusive": 0.0,
 			"_max-range-exclusive": 100.0
@@ -43,19 +45,19 @@ This example describes a scalar discrete [integer](_type_number_integer.md) valu
 	}
 }
 ```
-This example describes a [continuous](_type_number.md) numeric value greater than or equal to `0.0` and less than `100.0`, representing a length in [centimetres](_unit_length_cm.md).
+This example describes a [floating-point](_kind_number_float.md) numeric value greater than or equal to `0.0` and less than `100.0`, representing a length in [centimetres](_unit_length_cm.md).
 
 
 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_string_enum",
-		"_kind_string_enum": ["iso_639_3"]
+		"_type": "_type_enum",
+		"_kind_enum": ["iso_639_3"]
 	}
 }
 ```
-This example describes an [enumeration](_type_string_enum.md) value that must be chosen from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
+This example describes an [enumeration](_type_enum.md) value that must be chosen from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
 
 
 
@@ -63,11 +65,11 @@ This example describes an [enumeration](_type_string_enum.md) value that must be
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_format": "_format_markdown"
+		"_kind_string": "_kind_string_markdown"
 	}
 }
 ```
-This example describes a [text](_type_string.md) value encoded in [Markdown](_format_markdown.md) format.
+This example describes a [text](_type_string.md) value encoded in [Markdown](_kind_string_markdown.md) format.
 
 
 
@@ -106,10 +108,11 @@ This example describes a descriptor that accepts a scalar value of any type. The
   ],
   "_recommended" : [
     "_type",
-    "_kind_string_key",
-    "_kind_string_enum",
+    "_kind_number",
+    "_kind_string",
+    "_kind_key",
+    "_kind_enum",
     "_kind_object",
-    "_format",
     "_unit",
     "_unit-name",
     "_unit-symbol",
@@ -117,10 +120,8 @@ This example describes a descriptor that accepts a scalar value of any type. The
     "_decimals",
     "_valid-range",
     "_valid-range_string",
-    "_valid-range_date",
     "_normal-range",
-    "_normal-range_string",
-    "_normal-range_date"
+    "_normal-range_string"
   ]
 }
 ```

@@ -281,49 +281,46 @@ Each of these properties is described in detail in the subsections below.
 
 ##### `_scalar` properties
 
-| Property               | Required                     | Description |
-|------------------------|------------------------------|-------------|
-| `_type`                | Yes (if `_scalar` not empty) | The scalar data type. |
-| `_kind_string_key`     | No                           | Constrains the type of document the key may reference; relevant to `_type_string_key`. |
-| `_kind_string_enum`    | No                           | Constrains the controlled vocabulary the enumeration value must belong to; relevant to `_type_string_enum`. |
-| `_kind_object`         | No                           | Constrains the object schema the value must conform to; relevant to `_type_object`. |
-| `_format`              | No                           | String format; relevant to string types. |
-| `_unit`                | No                           | Data unit, expressed as an enumeration element. |
-| `_unit-name`           | No                           | Unit name, used when `_unit` is absent. |
-| `_unit-symbol`         | No                           | Unit symbol, used when `_unit` is absent. |
-| `_regexp`              | No                           | Regular expression to validate string values. |
-| `_decimals`            | No                           | Number of decimals to display; relevant to `_type_number` only. |
-| `_valid-range`         | No                           | Valid numeric range for the value. |
-| `_valid-range_string`  | No                           | Valid string range for the value. |
-| `_valid-range_date`    | No                           | Valid date string range for the value. |
-| `_normal-range`        | No                           | Normal numeric range for the value. |
-| `_normal-range_string` | No                           | Normal string range for the value. |
-| `_normal-range_date`   | No                           | Normal date string range for the value. |
+| Property               | Required                        | Description |
+|------------------------|---------------------------------|-------------|
+| `_type`                | Yes (if `_scalar` not empty)    | The scalar data type. |
+| `_kind_number`         | Yes (if `_type` is `_type_number`) | Qualifies the numeric type; a non-empty set of `_kind_number_float` and/or `_kind_number_integer`. |
+| `_kind_string`         | No                              | Qualifies the string encoding or format; relevant to `_type_string`. Scalar enumeration element. |
+| `_kind_key`            | No                              | Constrains the type of term the key may reference; relevant to `_type_key`. Set of enumeration elements. |
+| `_kind_enum`           | No                              | Constrains the controlled vocabulary the enumeration value must belong to; relevant to `_type_enum`. Set of enumeration type `_gid`s. |
+| `_kind_object`         | No                              | Constrains the object schema the value must conform to; relevant to `_type_object`. Set of object definition `_gid`s. |
+| `_unit`                | No                              | Data unit, expressed as an enumeration element. |
+| `_unit-name`           | No                              | Unit name, used when `_unit` is absent. |
+| `_unit-symbol`         | No                              | Unit symbol, used when `_unit` is absent. |
+| `_regexp`              | No                              | Regular expression to validate string values; only valid when `_kind_string` is absent. |
+| `_decimals`            | No                              | Number of decimals to display; relevant to `_kind_number_float` only. |
+| `_valid-range`         | No                              | Valid numeric range for the value. |
+| `_valid-range_string`  | No                              | Valid string range for the value. |
+| `_normal-range`        | No                              | Normal numeric range for the value. |
+| `_normal-range_string` | No                              | Normal string range for the value. |
 
 ##### `_type` enumeration
 
 `_type` is required whenever `_scalar` is not empty. It defines the scalar data type:
 
-| Value                    | Description |
-|--------------------------|-------------|
-| `_type_boolean`          | A true/false boolean value. |
-| `_type_number`           | A generic number (float or integer), stored as a double. |
-| `_type_number_integer`   | An integer (no decimals). |
-| `_type_number_timestamp` | A number representing a UNIX timestamp. |
-| `_type_string`           | A generic UTF-8 string. |
-| `_type_string_key`       | A string representing the `_key` of a document. |
-| `_type_string_handle`    | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
-| `_type_string_enum`      | A string representing the `_gid` of an enumeration element. |
-| `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
-| `_type_struct`           | An object with indeterminate properties (may be empty). |
-| `_type_object`           | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
-| `_type_object_geojson`   | A GeoJSON object (may **not** be empty). |
+| Value                  | Description |
+|------------------------|-------------|
+| `_type_boolean`        | A true/false boolean value. |
+| `_type_number`         | A number; `_kind_number` (set) is required. |
+| `_type_string`         | A UTF-8 string; `_kind_string` (scalar) optionally qualifies the format. |
+| `_type_key`            | A string representing the `_key` of a document. |
+| `_type_handle`         | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
+| `_type_enum`           | A string representing the `_gid` of an enumeration element. |
+| `_type_object`         | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
+| `_type_struct`         | An object with indeterminate properties (may be empty). |
+| `_type_timestamp`      | An integer representing a Unix timestamp. |
+| `_type_object_geojson` | A GeoJSON object (may **not** be empty). |
 
 ---
 
 **`_type_boolean`**
 
-Stored as a native boolean in ArangoDB (`true` or `false`). No other `_scalar` properties are normally needed.
+Stored as a native boolean in ArangoDB (`true` or `false`). No other `_scalar` properties are needed.
 
 ```json
 {
@@ -337,15 +334,20 @@ Stored as a native boolean in ArangoDB (`true` or `false`). No other `_scalar` p
 
 **`_type_number`**
 
-A float or integer stored as a double in ArangoDB. May include:
-- `_unit`, `_unit-name`, `_unit-symbol`: value unit.
-- `_decimals`: number of decimals to display.
-- `_valid-range`, `_normal-range`: numeric value ranges.
+A numeric value stored as a double-precision floating-point number. `_kind_number` is **required** and must be a non-empty set:
+
+| `_kind_number` value   | Description | Extra properties |
+|------------------------|-------------|------------------|
+| `_kind_number_float`   | Floating-point number. | `_decimals` (display precision), `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range`, `_normal-range` |
+| `_kind_number_integer` | Integer — no decimal part. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range`, `_normal-range` |
+
+When both values are present in `_kind_number`, both floating-point and integer values are accepted.
 
 ```json
 {
     "_scalar": {
         "_type": "_type_number",
+        "_kind_number": ["_kind_number_float"],
         "_unit": "_unit_length_cm",
         "_decimals": 2,
         "_valid-range": {
@@ -358,73 +360,34 @@ A float or integer stored as a double in ArangoDB. May include:
 
 ---
 
-**`_type_number_integer`**
-
-An integer (no decimals). May include:
-- `_unit`, `_unit-name`, `_unit-symbol`: value unit.
-- `_valid-range`, `_normal-range`: numeric value ranges.
-
-```json
-{
-    "_scalar": {
-        "_type": "_type_number_integer",
-        "_unit": "_unit_length_cm",
-        "_valid-range": {
-            "_min-range-inclusive": 0,
-            "_max-range-exclusive": 10
-        }
-    }
-}
-```
-
----
-
-**`_type_number_timestamp`**
-
-A number used as a UNIX timestamp. May include `_valid-range` and `_normal-range`.
-
-```json
-{
-    "_scalar": {
-        "_type": "_type_number_timestamp",
-        "_valid-range": {
-            "_min-range-inclusive": 0
-        }
-    }
-}
-```
-
----
-
 **`_type_string`**
 
-A generic UTF-8 string. May include:
-- `_format`: the string format, from the following enumeration:
+A UTF-8 string. The optional `_kind_string` property specifies the string encoding or format:
 
-| Format value        | Description |
-|---------------------|-------------|
-| `_format_markdown`  | Markdown string. |
-| `_format_html`      | HTML string. |
-| `_format_uri`       | Uniform Resource Identifier (equivalent to JSON Schema `uri`). |
-| `_format_hex`       | Hexadecimal string. |
-| `_format_svg`       | SVG image string. |
-| `_format_email`     | Email address. |
-| `_format_date`      | Date string (equivalent to JSON Schema `date`). |
-| `_format_time`      | Time string (equivalent to JSON Schema `time`). |
-| `_format_date-time` | Date-time string (equivalent to JSON Schema `date-time`). |
-| `_format_hostname`  | Internet hostname (equivalent to JSON Schema `hostname`). |
-| `_format_ipv4`      | IPv4 address per RFC 2673 §3.2 (equivalent to JSON Schema `ipv4`). |
-| `_format_ipv6`      | IPv6 address per RFC 2373 §2.2 (equivalent to JSON Schema `ipv6`). |
+| `_kind_string` value      | Description | Extra properties |
+|---------------------------|-------------|------------------|
+| *(absent)*                | Generic string. | `_regexp`, `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_markdown`   | Markdown text. | — |
+| `_kind_string_html`       | HTML text. | — |
+| `_kind_string_uri`        | Uniform Resource Identifier. | — |
+| `_kind_string_hex`        | Hexadecimal value. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_svg`        | SVG image. | — |
+| `_kind_string_email`      | Email address. | — |
+| `_kind_string_date`       | Date (JSON Schema `date` format). | `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_time`       | Time (JSON Schema `time` format). | `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_date-time`  | Date-time (JSON Schema `date-time` format). | `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_ymd`        | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). | `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_hostname`   | Internet hostname. | — |
+| `_kind_string_ipv4`       | IPv4 address. | — |
+| `_kind_string_ipv6`       | IPv6 address. | — |
 
-- `_unit`, `_unit-name`, `_unit-symbol`: if the string value carries a unit.
-- `_regexp`: regular expression to validate the string.
-- `_valid-range_string`, `_normal-range_string`: valid and normal string ranges.
+`_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it.
 
 ```json
 {
     "_scalar": {
         "_type": "_type_string",
-        "_format": "_format_hex",
+        "_kind_string": "_kind_string_hex",
         "_valid-range_string": {
             "_min-range-inclusive_string": "0A",
             "_max-range-exclusive_string": "A5"
@@ -435,62 +398,59 @@ A generic UTF-8 string. May include:
 
 ---
 
-**`_type_string_key`**
+**`_type_key`**
 
-A string representing the `_key` of a document. If `_kind_string_key` is absent, the key can refer to a document in any collection of the database. If `_kind_string_key` is present, it is an array constraining the key to specific term types:
+A string representing the `_key` of a document. If `_kind_key` is absent, the key can refer to a document in any collection. If `_kind_key` is present, it is a set constraining the key to specific term types:
 
-| `_kind_string_key` value | Meaning |
-|--------------------------|---------|
-| `_any-term`              | The `_key` can refer to any term. |
-| `_any-enum`              | The `_key` must refer to an enumeration type — i.e., the root of a controlled vocabulary graph. |
-| `_any-enum_element`      | The `_key` must refer to an enumeration element — i.e., a valid choice within a controlled vocabulary. |
-| `_any-descriptor`        | The `_key` must refer to a descriptor (has a `_data` section). |
-| `_any-object`            | The `_key` must refer to a term that represents an object definition (has a `_rule` section). |
+| `_kind_key` value          | Meaning |
+|----------------------------|---------|
+| `_kind_key_term`           | The key may reference any term. |
+| `_kind_key_term_enum`      | The key must reference an enumeration type — i.e., the root of a controlled vocabulary graph. |
+| `_kind_key_term_enum_element` | The key must reference an enumeration element — i.e., a valid choice within a controlled vocabulary. |
+| `_kind_key_term_descriptor`| The key must reference a descriptor (has a `_data` section). |
+| `_kind_key_term_object`    | The key must reference a term that represents an object definition (has a `_rule` section). |
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_string_key",
-        "_kind": ["_any-term"]
+        "_type": "_type_key",
+        "_kind_key": ["_kind_key_term"]
     }
 }
 ```
 
 ---
 
-**`_type_string_handle`**
+**`_type_handle`**
 
 A string representing the `_id` of an ArangoDB document, in the form `<collection name>/<_key>`. No additional `_scalar` properties.
 
 ---
 
-**`_type_string_enum`**
+**`_type_enum`**
 
-A string representing the `_gid` of an enumeration element. The optional `_kind_string_enum` property is an array of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn; the value must belong to at least one of the listed roots. When `_kind_string_enum` is absent, the value may be any enumeration element from any controlled vocabulary.
+A string representing the `_gid` of an enumeration element. The optional `_kind_enum` property is a set of enumeration root `_gid`s identifying the controlled vocabularies from which the value must be drawn; the value must belong to at least one of the listed roots. When `_kind_enum` is absent, the value may be any enumeration element from any controlled vocabulary.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_string_enum",
-        "_kind": ["iso_639_3"]
+        "_type": "_type_enum",
+        "_kind_enum": ["iso_639_3"]
     }
 }
 ```
 
 ---
 
-**`_type_string_date`**
+**`_type_object`**
 
-A date string in YYYYMMDD format, which may be expressed partially as YYYY or YYYYMM. May include `_valid-range_date` and `_normal-range_date`.
+An object whose properties must correspond to descriptor term `_gid`s. May be empty. The optional `_kind_object` property is a set of `_gid`s of object definition terms; the value must conform to at least one of the listed definitions. When `_kind_object` is absent, the only requirement is that all properties are defined as descriptors in the dictionary.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_string_date",
-        "_valid-range_date": {
-            "_min-range-inclusive_date": "200501",
-            "_max-range-exclusive_date": "20050728"
-        }
+        "_type": "_type_object",
+        "_kind_object": ["_range_string"]
     }
 }
 ```
@@ -499,7 +459,7 @@ A date string in YYYYMMDD format, which may be expressed partially as YYYY or YY
 
 **`_type_struct`**
 
-An object with indeterminate properties. May be empty.
+An object with indeterminate properties. May be empty. No other `_scalar` properties are expected.
 
 ```json
 {
@@ -511,15 +471,17 @@ An object with indeterminate properties. May be empty.
 
 ---
 
-**`_type_object`**
+**`_type_timestamp`**
 
-An object whose properties must correspond to descriptor term `_gid`s. May be empty. The optional `_kind_object` property is an array of `_gid`s of object definition terms; the value must conform to at least one of the listed definitions — meaning it is valid if it satisfies any one of the referenced `_rule` schemas. When `_kind_object` is absent, the only requirement is that all properties are defined as descriptors in the dictionary.
+An integer representing a Unix timestamp — the number of seconds elapsed since 1 January 1970 UTC. May include `_valid-range` and `_normal-range`.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_object",
-        "_kind": ["_range_string"]
+        "_type": "_type_timestamp",
+        "_valid-range": {
+            "_min-range-inclusive": 0
+        }
     }
 }
 ```
@@ -528,7 +490,7 @@ An object whose properties must correspond to descriptor term `_gid`s. May be em
 
 **`_type_object_geojson`**
 
-A GeoJSON object. May **not** be empty.
+A GeoJSON object. May **not** be empty. No other `_scalar` properties are expected.
 
 ```json
 {
@@ -544,10 +506,10 @@ A GeoJSON object. May **not** be empty.
 
 Two families of range properties exist, serving different purposes:
 
-- **Valid range** (`_valid-range`, `_valid-range_string`, `_valid-range_date`): defines the hard boundaries of acceptable values. Any value falling outside a valid range is considered an **error** and must be rejected. For example, a temperature expressed in Kelvin must not be negative, so its valid range would have a lower bound of zero.
-- **Normal range** (`_normal-range`, `_normal-range_string`, `_normal-range_date`): defines the boundaries of expected or typical values, analogous to a normal distribution. A value outside a normal range is not necessarily wrong, but should be **flagged as an outlier** for review. For example, a human body temperature above 42 °C is physiologically possible but warrants a double-check.
+- **Valid range** (`_valid-range`, `_valid-range_string`): defines the hard boundaries of acceptable values. Any value falling outside a valid range is considered an **error** and must be rejected. For example, a temperature expressed in Kelvin must not be negative, so its valid range would have a lower bound of zero.
+- **Normal range** (`_normal-range`, `_normal-range_string`): defines the boundaries of expected or typical values, analogous to a normal distribution. A value outside a normal range is not necessarily wrong, but should be **flagged as an outlier** for review. For example, a human body temperature above 42 °C is physiologically possible but warrants a double-check.
 
-All six range properties share the same structure: each is an object with up to four sub-properties defining the lower and upper bounds of the interval. At most one min-property and one max-property should be present; omitting a bound leaves that end of the interval open.
+All four range properties share the same structure: each is an object with up to four sub-properties defining the lower and upper bounds of the interval. At most one min-property and one max-property should be present; omitting a bound leaves that end of the interval open.
 
 **Numeric ranges** — used with `_valid-range` and `_normal-range`:
 
@@ -581,24 +543,6 @@ All six range properties share the same structure: each is an object with up to 
     "_valid-range_string": {
         "_min-range-inclusive_string": "A",
         "_max-range-exclusive_string": "Z"
-    }
-}
-```
-
-**Date ranges** — used with `_valid-range_date` and `_normal-range_date`:
-
-| Property                    | Description                       |
-|-----------------------------|-----------------------------------|
-| `_min-range-inclusive_date` | Lower bound, value included. |
-| `_min-range-exclusive_date` | Lower bound, value excluded. |
-| `_max-range-inclusive_date` | Upper bound, value included. |
-| `_max-range-exclusive_date` | Upper bound, value excluded. |
-
-```json
-{
-    "_valid-range_date": {
-        "_min-range-inclusive_date": "20000101",
-        "_max-range-exclusive_date": "20231231"
     }
 }
 ```
@@ -756,42 +700,42 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 ###### `_set_scalar` properties
 
+`_set_scalar` follows the same rules as `_scalar`, with `_set_type` in place of `_type`. The same kind properties apply (`_kind_number`, `_kind_string`, `_kind_key`, `_kind_enum`). The range and unit properties are identical.
+
 | Property               | Required                          | Description |
 |------------------------|-----------------------------------|-------------|
 | `_set_type`            | Yes (if `_set_scalar` not empty)  | The data type of the set element. |
-| `_kind`                | No                                | Data kind; relevant to `_type_string_key` and `_type_string_enum`. |
-| `_format`              | No                                | String format; relevant to string types. |
+| `_kind_number`         | Yes (if `_set_type` is `_type_number`) | Qualifies the numeric type. |
+| `_kind_string`         | No                                | Qualifies the string format; relevant to `_type_string`. |
+| `_kind_key`            | No                                | Constrains the term type the key may reference; relevant to `_type_key`. |
+| `_kind_enum`           | No                                | Constrains the controlled vocabulary; relevant to `_type_enum`. |
 | `_unit`                | No                                | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No                                | Unit name, used when `_unit` is absent. |
 | `_unit-symbol`         | No                                | Unit symbol, used when `_unit` is absent. |
-| `_regexp`              | No                                | Regular expression to validate string values. |
-| `_decimals`            | No                                | Number of decimals to display; relevant to `_type_number` only. |
+| `_regexp`              | No                                | Regular expression; only valid when `_kind_string` is absent. |
+| `_decimals`            | No                                | Number of decimals to display; relevant to `_kind_number_float` only. |
 | `_valid-range`         | No                                | Valid numeric range for the value. |
 | `_valid-range_string`  | No                                | Valid string range for the value. |
-| `_valid-range_date`    | No                                | Valid date string range for the value. |
 | `_normal-range`        | No                                | Normal numeric range for the value. |
 | `_normal-range_string` | No                                | Normal string range for the value. |
-| `_normal-range_date`   | No                                | Normal date string range for the value. |
 
 ###### `_set_type` enumeration
 
 `_set_type` accepts the same values as `_type` except for non-comparable types:
 
-| Value                    | Description |
-|--------------------------|-------------|
-| `_type_boolean`          | A true/false boolean value. |
-| `_type_number`           | A generic number (float or integer), stored as a double. |
-| `_type_number_integer`   | An integer (no decimals). |
-| `_type_number_timestamp` | A number representing a UNIX timestamp. |
-| `_type_string`           | A generic UTF-8 string. |
-| `_type_string_key`       | A string representing the `_key` of a document. |
-| `_type_string_handle`    | A string containing the `_id` of an ArangoDB document. |
-| `_type_string_enum`      | A string representing the `_gid` of an enumeration element. |
-| `_type_string_date`      | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
+| Value                  | Description |
+|------------------------|-------------|
+| `_type_boolean`        | A true/false boolean value. |
+| `_type_number`         | A number; `_kind_number` is required. |
+| `_type_string`         | A UTF-8 string; `_kind_string` optionally qualifies the format. |
+| `_type_key`            | A string representing the `_key` of a document. |
+| `_type_handle`         | A string containing the `_id` of an ArangoDB document. |
+| `_type_enum`           | A string representing the `_gid` of an enumeration element. |
+| `_type_timestamp`      | An integer representing a Unix timestamp. |
 
 `_type_struct`, `_type_object`, and `_type_object_geojson` are excluded because objects are not comparable and cannot be tested for uniqueness.
 
-The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`, `_valid-range_date`, `_normal-range_date`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
+The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
 
 ```json
 {
@@ -801,8 +745,8 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
             "_max-items": 5
         },
         "_set_scalar": {
-            "_set_type": "_type_string_enum",
-            "_kind": ["iso_639_3"]
+            "_set_type": "_type_enum",
+            "_kind_enum": ["iso_639_3"]
         }
     }
 }
@@ -884,32 +828,32 @@ When the tuple contains fewer elements than `_tuple_types`, the types for the tr
 
 ##### `_dict_key`
 
-`_dict_key` is a structure that defines the type of the dictionary key. Because dictionary keys must be compatible with object property names, the permitted types are restricted to string variants. It mirrors the structure of `_scalar` but uses `_type_key` instead of `_type`, and omits non-string types.
+`_dict_key` is a structure that defines the type of the dictionary key. Because dictionary keys must be compatible with object property names, the permitted types are restricted to string-compatible variants. It mirrors the structure of `_scalar` but uses `_type_key` instead of `_type`, and omits non-string types.
 
 ###### `_dict_key` properties
 
 | Property      | Required | Description |
 |---------------|----------|-------------|
 | `_type_key`   | Yes      | The data type of the dictionary key. |
-| `_kind`       | No       | Data kind; relevant only to `_type_string_key` and `_type_string_enum`. |
+| `_kind_key`   | No       | Constrains the term type the key may reference; relevant to `_type_key`. |
+| `_kind_enum`  | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
 | `_unit`       | No       | Key unit, expressed as an enumeration element. |
 | `_unit-name`  | No       | Unit name, used when `_unit` is absent. |
 | `_unit-symbol`| No       | Unit symbol, used when `_unit` is absent. |
-| `_regexp`     | No       | Regular expression to validate the key format. |
+| `_regexp`     | No       | Regular expression to validate the key format; only valid when `_kind_string` is absent. |
 
 ###### `_type_key` enumeration
 
 `_type_key` accepts only string-compatible types, as dictionary keys must be valid object property names:
 
-| Value               | Description |
-|---------------------|-------------|
-| `_type_string`      | A generic UTF-8 string. |
-| `_type_string_key`  | A string representing the `_key` of a term. |
-| `_type_string_handle` | A string representing the `_id` of an ArangoDB document. |
-| `_type_string_enum` | A string representing the `_gid` of an enumeration element. |
-| `_type_string_date` | A string representing a full or partial date (YYYY, YYYYMM, or YYYYMMDD). |
+| Value          | Description |
+|----------------|-------------|
+| `_type_string` | A generic UTF-8 string. |
+| `_type_key`    | A string representing the `_key` of a term. |
+| `_type_handle` | A string representing the `_id` of an ArangoDB document. |
+| `_type_enum`   | A string representing the `_gid` of an enumeration element. |
 
-The semantics of each type, and of `_kind`, are identical to those described in the [`_scalar`](#_scalar) section.
+The semantics of each type, and of the kind properties, are identical to those described in the [`_scalar`](#_scalar) section.
 
 ##### `_dict_value`
 
@@ -919,8 +863,8 @@ The semantics of each type, and of `_kind`, are identical to those described in 
 {
     "_dict": {
         "_dict_key": {
-            "_type_key": "_type_string_enum",
-            "_kind": ["iso_639_3"]
+            "_type_key": "_type_enum",
+            "_kind_enum": ["iso_639_3"]
         },
         "_dict_value": {
             "_scalar": {
