@@ -65,11 +65,11 @@ This example describes an [enumeration](_type_enum.md) value that must be chosen
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_markdown"
+		"_kind_string": "_kind_string_Markdown"
 	}
 }
 ```
-This example describes a [text](_type_string.md) value encoded in [Markdown](_kind_string_markdown.md) format.
+This example describes a [text](_type_string.md) value encoded in [Markdown](_kind_string_Markdown.md) format.
 
 
 

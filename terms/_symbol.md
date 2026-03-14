@@ -36,6 +36,7 @@ Mathematical expressions stored as LaTeX strings:
 ```json
 {
   "_scalar" : {
+    "_kind_string" : "_kind_string_LaTeX",
     "_type" : "_type_string"
   }
 }

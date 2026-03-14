@@ -53,10 +53,10 @@ This example describes an array of [scalar](_scalar.md) [integer](_kind_number_i
 {
 	"_array": {
 		"_array": {
-      "_elements": {
-        "_min-items": 0,
-        "_max-items": 10
-      },
+			"_elements": {
+				"_min-items": 0,
+				"_max-items": 10
+			},
 			"_scalar": {
 				"_type": "_type_number",
 				"_kind_number": ["_kind_number_float"],
@@ -64,7 +64,8 @@ This example describes an array of [scalar](_scalar.md) [integer](_kind_number_i
 					"_min-range-inclusive": 0.0,
 					"_max-range-exclusive": 100.0
 				},
-				"_unit": "_unit_length_cm"
+				"_unit-symbol": "cm.",
+				"_unit-name": {"iso_639_3_eng": "Centimeters"}
 			}
 		}
 	}

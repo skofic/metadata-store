@@ -290,7 +290,7 @@ Each of these properties is described in detail in the subsections below.
 | `_kind_enum`           | No                              | Constrains the controlled vocabulary the enumeration value must belong to; relevant to `_type_enum`. Set of enumeration type `_gid`s. |
 | `_kind_object`         | No                              | Constrains the object schema the value must conform to; relevant to `_type_object`. Set of object definition `_gid`s. |
 | `_unit`                | No                              | Data unit, expressed as an enumeration element. |
-| `_unit-name`           | No                              | Unit name, used when `_unit` is absent. |
+| `_unit-name`           | No                              | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
 | `_unit-symbol`         | No                              | Unit symbol, used when `_unit` is absent. |
 | `_regexp`              | No                              | Regular expression to validate string values; only valid when `_kind_string` is absent. |
 | `_decimals`            | No                              | Number of decimals to display; relevant to `_kind_number_float` only. |
@@ -380,6 +380,7 @@ A UTF-8 string. The optional `_kind_string` property specifies the string encodi
 | `_kind_string_hostname`   | Internet hostname. | — |
 | `_kind_string_ipv4`       | IPv4 address. | — |
 | `_kind_string_ipv6`       | IPv6 address. | — |
+| `_kind_string_LaTeX`      | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. | — |
 
 `_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it.
 
@@ -710,7 +711,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 | `_kind_key`            | No                                | Constrains the term type the key may reference; relevant to `_type_key`. |
 | `_kind_enum`           | No                                | Constrains the controlled vocabulary; relevant to `_type_enum`. |
 | `_unit`                | No                                | Data unit, expressed as an enumeration element. |
-| `_unit-name`           | No                                | Unit name, used when `_unit` is absent. |
+| `_unit-name`           | No                                | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
 | `_unit-symbol`         | No                                | Unit symbol, used when `_unit` is absent. |
 | `_regexp`              | No                                | Regular expression; only valid when `_kind_string` is absent. |
 | `_decimals`            | No                                | Number of decimals to display; relevant to `_kind_number_float` only. |
@@ -838,7 +839,7 @@ When the tuple contains fewer elements than `_tuple_types`, the types for the tr
 | `_kind_key`   | No       | Constrains the term type the key may reference; relevant to `_type_key`. |
 | `_kind_enum`  | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
 | `_unit`       | No       | Key unit, expressed as an enumeration element. |
-| `_unit-name`  | No       | Unit name, used when `_unit` is absent. |
+| `_unit-name`  | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
 | `_unit-symbol`| No       | Unit symbol, used when `_unit` is absent. |
 | `_regexp`     | No       | Regular expression to validate the key format; only valid when `_kind_string` is absent. |
 

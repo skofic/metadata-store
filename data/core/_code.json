@@ -134,7 +134,8 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_string"
+				"_type": "_type_string",
+				"_kind_string": "_kind_string_LaTeX"
 			}
 		}
 	},

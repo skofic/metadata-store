@@ -17,22 +17,24 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
 - [`_type_number`](_type_number.md): The value is a numeric value stored as a double-precision floating-point number. The companion property [`_kind_number`](_kind_number.md) is **required** and must be a non-empty set selecting at least one of the following:
   - [`_kind_number_float`](_kind_number_float.md): The value is a floating-point number. The [`_scalar`](_scalar.md) section may additionally include [`_decimals`](_decimals.md) to specify the number of decimal places to display when rendering the value; the stored value is not rounded.
   - [`_kind_number_integer`](_kind_number_integer.md): The value is an integer — a whole number with no decimal part.
-  When both values are present in `_kind_number`, both floating-point and integer values are accepted. All number kinds may additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
+  When both values are present in `_kind_number`, both floating-point and integer values are accepted. All number kinds may additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md) (a multilingual name keyed by language `_gid`), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
 
 - [`_type_string`](_type_string.md): The value is a UTF-8 string. The optional companion property [`_kind_string`](_kind_string.md) specifies the encoding or format of the string, selecting one of the following:
-  - [`_kind_string_markdown`](_kind_string_markdown.md): The string is in [Markdown](https://www.markdownguide.org/getting-started/) format.
-  - [`_kind_string_html`](_kind_string_html.md): The string is in [HTML](https://en.wikipedia.org/wiki/HTML) format.
-  - [`_kind_string_uri`](_kind_string_uri.md): The string is a [Uniform Resource Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (URI).
-  - [`_kind_string_hex`](_kind_string_hex.md): The string is a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) value. May additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_svg`](_kind_string_svg.md): The string is an [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) image.
+  - [`_kind_string_Markdown`](_kind_string_Markdown.md): The string is in [Markdown](https://www.markdownguide.org/getting-started/) format.
+  - [`_kind_string_HTML`](_kind_string_HTML.md): The string is in [HTML](https://en.wikipedia.org/wiki/HTML) format.
+  - [`_kind_string_URI`](_kind_string_URI.md): The string is a [Uniform Resource Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) (URI).
+  - [`_kind_string_HEX`](_kind_string_HEX.md): The string is a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) value. May additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
+  - [`_kind_string_SVG`](_kind_string_SVG.md): The string is an [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) image.
   - [`_kind_string_email`](_kind_string_email.md): The string is an [email address](https://en.wikipedia.org/wiki/Email_address).
   - [`_kind_string_date`](_kind_string_date.md): The string is a date, equivalent to the JSON Schema `date` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_time`](_kind_string_time.md): The string is a time, equivalent to the JSON Schema `time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_date-time`](_kind_string_date-time.md): The string is a date and time, equivalent to the JSON Schema `date-time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_ymd`](_kind_string_ymd.md): The string is a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_hostname`](_kind_string_hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
-  - [`_kind_string_ipv4`](_kind_string_ipv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
-  - [`_kind_string_ipv6`](_kind_string_ipv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).
+  - [`_kind_string_Hostname`](_kind_string_Hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
+  - [`_kind_string_IPv4`](_kind_string_IPv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
+  - [`_kind_string_IPv6`](_kind_string_IPv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).
+  - [`_kind_string_LaTeX`](_kind_string_LaTeX.md): The string is a [LaTeX](https://www.latex-project.org) expression. [LaTeX](https://www.latex-project.org) is a superset of plain UTF-8 text: simple symbols such as `€` or `°C` can be stored as plain Unicode characters, while complex mathematical expressions use LaTeX syntax. The frontend renders `_kind_string_LaTeX` strings using [KaTeX](https://katex.org).
+
   When `_kind_string` is absent, the string is generic. In this case the [`_scalar`](_scalar.md) section may include [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range_string`](_valid-range_string.md), and [`_normal-range_string`](_normal-range_string.md). The [`_regexp`](_regexp.md) property is not available when `_kind_string` is present — the data kind is self-defining and a regular expression could contradict it.
 
 - [`_type_key`](_type_key.md): The value is a string representing the [`_key`](_key.md) of a document in any collection of the database. The optional companion property [`_kind_key`](_kind_key.md) is a set constraining which type of term the key may reference:
