@@ -18,16 +18,16 @@ This value is also *copied* to the [document key](_key.md), making it the primar
 
 ```json
 {
-	"_nid": "iso_3166_1",
+	"_nid": "ISO_3166_1",
 	"_lid": "ITA",
-	"_gid": "iso_3166_1_ITA",
+	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
 	"_regexp": "[A-Z]{3,3}"
 }
 ```
 
-`iso_3166_1_ITA` is the global identifier of this term: the concatenation of the namespace `iso_3166_1` and the local identifier `ITA`, joined by an underscore.
+`ISO_3166_1_ITA` is the global identifier of this term: the concatenation of the namespace `ISO_3166_1` and the local identifier `ITA`, joined by an underscore.
 
 
 
@@ -39,7 +39,7 @@ This value is also *copied* to the [document key](_key.md), making it the primar
 }
 ```
 
-This is the `iso` top-level namespace term. It has no [namespace](_nid.md), so the local identifier and global identifier share the same value, `iso`.
+This is the `ISO` top-level namespace term. It has no [namespace](_nid.md), so the local identifier and global identifier share the same value, `ISO`.
 
 ---
 

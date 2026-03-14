@@ -19,7 +19,7 @@ The *document key* is the *unique identifier* of a document *within its collecti
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string_key"
+    "_type" : "_type_key"
   }
 }
 ```

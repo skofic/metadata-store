@@ -67,14 +67,14 @@ The above example describes a [list](_array.md) of [floating-point](_kind_number
 		"_set": {
 			"_set_scalar": {
 				"_set_type": "_type_enum",
-				"_kind_enum": ["iso_639_3"]
+				"_kind_enum": ["ISO_639_3"]
 			}
 		}
 	}
 }
 ```
 
-The above example describes a [set](_set.md) of unique [enumeration](_type_enum.md) elements belonging to the `iso_639_3` controlled vocabulary.
+The above example describes a [set](_set.md) of unique [enumeration](_type_enum.md) elements belonging to the `ISO_639_3` controlled vocabulary.
 
 
 
@@ -84,13 +84,13 @@ The above example describes a [set](_set.md) of unique [enumeration](_type_enum.
 		"_dict": {
 			"_dict_key": {
 				"_type_key": "_type_enum",
-				"_kind_enum": ["iso_3166_1", "iso_3166_3"]
+				"_kind_enum": ["ISO_3166_1", "ISO_3166_3"]
 			},
 			"_dict_value": {
 				"_dict": {
 					"_dict_key": {
 						"_type_key": "_type_enum",
-						"_kind_enum": ["iso_639_3"]
+						"_kind_enum": ["ISO_639_3"]
 					},
 					"_dict_value": {
 						"_array": {

@@ -137,21 +137,21 @@ The underscore `_` is the hardcoded separator between namespace and local identi
 
 | `_nid` value          | `_gid` formula         | Example                                    |
 |-----------------------|------------------------|--------------------------------------------|
-| Present and non-empty | `_nid` + `_` + `_lid` | `iso_3166` + `_` + `ITA` → `iso_3166_ITA` |
+| Present and non-empty | `_nid` + `_` + `_lid` | `ISO_3166` + `_` + `ITA` → `ISO_3166_ITA` |
 | Empty string `""`     | `_` + `_lid`           | `""` + `_` + `code` → `_code`             |
-| Omitted               | `_lid`                 | `iso`                                      |
+| Omitted               | `_lid`                 | `ISO`                                      |
 
 **Example 1 — standard namespaced term** (`_nid` present and non-empty):
 
-`iso_3166_ITA` is the ISO 3166 3-character country code for Italy. `ITA` is the `_lid`, `iso_3166` is the namespace. The namespace `iso_3166` is itself a term whose `_nid` is `iso` and `_lid` is `3166`, demonstrating how namespaces form chains from general to specific.
+`ISO_3166_ITA` is the ISO 3166 3-character country code for Italy. `ITA` is the `_lid`, `ISO_3166` is the namespace. The namespace `ISO_3166` is itself a term whose `_nid` is `ISO` and `_lid` is `3166`, demonstrating how namespaces form chains from general to specific.
 
 ```json
 {
-    "_key": "iso_3166_ITA",
+    "_key": "ISO_3166_ITA",
     "_code": {
-        "_nid": "iso_3166",
+        "_nid": "ISO_3166",
         "_lid": "ITA",
-        "_gid": "iso_3166_ITA"
+        "_gid": "ISO_3166_ITA"
     }
 }
 ```
@@ -173,14 +173,14 @@ When `_nid` is an empty string, the term is a **core building block of the data 
 
 **Example 3 — top-level namespace term** (`_nid` omitted):
 
-When `_nid` is absent, the term defines a top-level namespace with no parent. For example, `iso` defines the International Standards Organisation namespace.
+When `_nid` is absent, the term defines a top-level namespace with no parent. For example, `ISO` defines the International Standards Organisation namespace.
 
 ```json
 {
-    "_key": "iso",
+    "_key": "ISO",
     "_code": {
-        "_lid": "iso",
-        "_gid": "iso"
+        "_lid": "ISO",
+        "_gid": "ISO"
     }
 }
 ```
@@ -213,9 +213,9 @@ The `_info` section contains human-oriented information about the term: what it 
 {
     "_info": {
         "_title": {
-            "iso_639_3_eng": "Title",
-            "iso_639_3_ita": "Titolo",
-            "iso_639_3_fra": "Titre"
+            "ISO_639_3_eng": "Title",
+            "ISO_639_3_ita": "Titolo",
+            "ISO_639_3_fra": "Titre"
         }
     }
 }
@@ -242,20 +242,22 @@ The `_info` section contains human-oriented information about the term: what it 
 | `_url`       | No       | Array of Markdown/HTML strings| Internet references. |
 | `_citation`  | No       | Array of Markdown/HTML strings| Citations required when using the term. |
 | `_provider`  | No       | Array of Markdown/HTML strings| Contact information for metadata curators. |
+| `_methods`   | No       | Markdown/HTML string          | Measurement conditions and methods associated with the descriptor. |
 
 - **`_examples`**: Samples of the term's usage, helping users understand how the term or its value can be used. Expressed as a Markdown/HTML string (same format as `_description`).
 - **`_notes`**: Additional information that does not belong in other properties. Acts as a scrapbook for the metadata curator. Expressed as a Markdown/HTML string.
 - **`_url`**: A set of internet references linking to external information. Each entry is a Markdown or HTML string.
 - **`_citation`**: A set of citations that must be referenced when using the term. Each entry is a Markdown or HTML string.
 - **`_provider`**: Contact information for the curators responsible for the term's metadata. Each entry is a Markdown or HTML string.
+- **`_methods`**: Measurement conditions and methods associated with the descriptor. Used to distinguish apparently similar variables that must be treated as distinct because they are produced by different measurement protocols or under different conditions — for example, body weight measured fasted vs. non-fasted, or blood pressure measured at rest vs. after exercise. Expressed as a Markdown/HTML string (same format as `_description`). Relevant primarily for descriptor terms in scientific datasets.
 
 #### Alias terms and omitting `_info`
 
 The `_info` section should be present on all terms, with one exception: **alias terms**.
 
-An alias term is created when two terms share identical content except for their `_code` section. For example, `iso_639_3_eng` and `iso_639_1_en` both represent the English language, differing only in their codes (ISO 639-3 vs ISO 639-1). Duplicating the full `_info` content across both terms would be wasteful and would create multiple sources of truth.
+An alias term is created when two terms share identical content except for their `_code` section. For example, `ISO_639_3_eng` and `ISO_639_1_en` both represent the English language, differing only in their codes (ISO 639-3 vs ISO 639-1). Duplicating the full `_info` content across both terms would be wasteful and would create multiple sources of truth.
 
-In this case, `iso_639_1_en` is defined as an alias of `iso_639_3_eng`: it retains only its `_code` section, while `iso_639_3_eng` holds the full content. When the dictionary resolves `iso_639_1_en`, it returns `iso_639_3_eng` instead. This mechanism is described further in the graph section.
+In this case, `ISO_639_1_en` is defined as an alias of `ISO_639_3_eng`: it retains only its `_code` section, while `ISO_639_3_eng` holds the full content. When the dictionary resolves `ISO_639_1_en`, it returns `ISO_639_3_eng` instead. This mechanism is described further in the graph section.
 
 ### `_data` Section
 
@@ -436,7 +438,7 @@ A string representing the `_gid` of an enumeration element. The optional `_kind_
 {
     "_scalar": {
         "_type": "_type_enum",
-        "_kind_enum": ["iso_639_3"]
+        "_kind_enum": ["ISO_639_3"]
     }
 }
 ```
@@ -646,7 +648,7 @@ Array elements are themselves sets — arrays of unique, comparable elements. Un
         "_set": {
             "_set_scalar": {
                 "_set_type": "_type_string_enum",
-                "_kind": ["iso_639_3"]
+                "_kind": ["ISO_639_3"]
             }
         }
     }
@@ -664,7 +666,7 @@ Array elements are themselves tuples — ordered lists with positionally-typed e
     "_array": {
         "_tuple": {
             "_tuple_types": [
-                "iso_3166_1_a2",
+                "ISO_3166_1_a2",
                 "chr_body_weight"
             ]
         }
@@ -682,18 +684,14 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 #### `_set`
 
-`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive.
+`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive. Unlike `_array`, `_set` cannot be empty: `_set_scalar` is always required, because without a declared element type there is no basis for enforcing uniqueness.
 
 ##### `_set` properties
 
-`_elements` may always be present. `_set_scalar` is the only permitted shape sub-property:
-
 | Property      | Required | Description |
 |---------------|----------|-------------|
+| `_set_scalar` | Yes      | Defines the data type of the set elements. |
 | `_elements`   | No       | Minimum and maximum number of elements in the set. Same structure as in `_array`. |
-| `_set_scalar` | No*      | Defines the data type of the set elements. |
-
-\* `_set_scalar` must be present when `_set` is not empty.
 
 ##### `_set_scalar`
 
@@ -705,7 +703,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 | Property               | Required                          | Description |
 |------------------------|-----------------------------------|-------------|
-| `_set_type`            | Yes (if `_set_scalar` not empty)  | The data type of the set element. |
+| `_set_type`            | Yes                               | The data type of the set element. |
 | `_kind_number`         | Yes (if `_set_type` is `_type_number`) | Qualifies the numeric type. |
 | `_kind_string`         | No                                | Qualifies the string format; relevant to `_type_string`. |
 | `_kind_key`            | No                                | Constrains the term type the key may reference; relevant to `_type_key`. |
@@ -747,7 +745,7 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
         },
         "_set_scalar": {
             "_set_type": "_type_enum",
-            "_kind_enum": ["iso_639_3"]
+            "_kind_enum": ["ISO_639_3"]
         }
     }
 }
@@ -776,7 +774,7 @@ This indirection means that tuple positions reuse existing descriptor definition
 {
     "_tuple": {
         "_tuple_types": [
-            "iso_3166_1_a2",
+            "ISO_3166_1_a2",
             "chr_birth_date",
             "chr_body_weight"
         ]
@@ -802,7 +800,7 @@ When the tuple contains fewer elements than `_tuple_types`, the types for the tr
 {
     "_tuple": {
         "_tuple_types": [
-            "iso_3166_1_a2",
+            "ISO_3166_1_a2",
             "chr_birth_date",
             "chr_body_weight"
         ],
@@ -865,7 +863,7 @@ The semantics of each type, and of the kind properties, are identical to those d
     "_dict": {
         "_dict_key": {
             "_type_key": "_type_enum",
-            "_kind_enum": ["iso_639_3"]
+            "_kind_enum": ["ISO_639_3"]
         },
         "_dict_value": {
             "_scalar": {
@@ -876,7 +874,7 @@ The semantics of each type, and of the kind properties, are identical to those d
 }
 ```
 
-The example above describes the multilingual structure used throughout the `_info` section: keys are ISO 639-3 language `_gid`s (e.g. `iso_639_3_eng`), values are plain strings.
+The example above describes the multilingual structure used throughout the `_info` section: keys are ISO 639-3 language `_gid`s (e.g. `ISO_639_3_eng`), values are plain strings.
 
 ---
 
@@ -1060,15 +1058,15 @@ Graphs are implemented using ArangoDB **edge collection** documents. Each edge d
 
 | Property | Type                  | Required | Description |
 |----------|-----------------------|----------|-------------|
-| `_from`  | `_type_string_handle` | Yes      | Document handle of the relationship **source** node. |
-| `_to`    | `_type_string_handle` | Yes      | Document handle of the relationship **destination** node. |
+| `_from`  | `_type_handle` | Yes      | Document handle of the relationship **source** node. |
+| `_to`    | `_type_handle` | Yes      | Document handle of the relationship **destination** node. |
 
 ##### Custom edge properties
 
 | Property     | Type                             | Required | Default | Description |
 |--------------|----------------------------------|----------|---------|-------------|
 | `_predicate` | `_type_string_enum`              | Yes      | —       | The relationship predicate; qualifies the kind of relationship between `_from` and `_to`. |
-| `_path`      | Set of `_type_string_handle`     | Yes      | —       | The set of graph root handles whose traversal passes through this edge. |
+| `_path`      | Set of `_type_handle`     | Yes      | —       | The set of graph root handles whose traversal passes through this edge. |
 | `_path_data` | Open dictionary (`_type_struct`) | Yes      | `{}`    | Data associated with the edge, scoped by path or node context. |
 
 #### Edge Uniqueness and Key Computation
@@ -1145,15 +1143,15 @@ Functional predicates carry domain meaning and are followed during graph travers
 ```json
 {
     "_key": "<edge hash>",
-    "_from": "terms/iso_3166_3_ITA",
+    "_from": "terms/ISO_3166_3_ITA",
     "_predicate": "_predicate_enum-of",
-    "_to": "terms/iso_3166_3",
-    "_path": ["terms/iso_3166_3"],
+    "_to": "terms/ISO_3166_3",
+    "_path": ["terms/ISO_3166_3"],
     "_path_data": {}
 }
 ```
 
-Italy (`terms/iso_3166_3_ITA`) is declared a valid enumeration element of the ISO 3166-3 country vocabulary (`terms/iso_3166_3`).
+Italy (`terms/ISO_3166_3_ITA`) is declared a valid enumeration element of the ISO 3166-3 country vocabulary (`terms/ISO_3166_3`).
 
 ##### Non-Functional Predicates
 
@@ -1173,23 +1171,23 @@ A section groups elements within a graph under a named heading. During functiona
 ```json
 {
     "_key": "<edge A>",
-    "_from": "terms/iso_3166_3_ITA",
+    "_from": "terms/ISO_3166_3_ITA",
     "_predicate": "_predicate_enum-of",
     "_to": "terms/EUROPE",
-    "_path": ["terms/iso_3166_3"],
+    "_path": ["terms/ISO_3166_3"],
     "_path_data": {}
 },
 {
     "_key": "<edge B>",
     "_from": "terms/EUROPE",
     "_predicate": "_predicate_section-of",
-    "_to": "terms/iso_3166_3",
-    "_path": ["terms/iso_3166_3"],
+    "_to": "terms/ISO_3166_3",
+    "_path": ["terms/ISO_3166_3"],
     "_path_data": {}
 }
 ```
 
-Italy is an element of the `EUROPE` section; `EUROPE` is a section of the `iso_3166_3` graph. When validating a value, sections are ignored and only `_predicate_enum-of` edges are followed. When displaying the vocabulary, countries are grouped by region.
+Italy is an element of the `EUROPE` section; `EUROPE` is a section of the `ISO_3166_3` graph. When validating a value, sections are ignored and only `_predicate_enum-of` edges are followed. When displaying the vocabulary, countries are grouped by region.
 
 > **Note:** Enumerations in this dictionary are **hierarchical**. If `_predicate_section-of` were replaced by `_predicate_enum-of`, then `EUROPE` itself would become a valid selectable value alongside its member elements. Both patterns are valid; the choice determines whether intermediate grouping nodes are selectable.
 
@@ -1202,15 +1200,15 @@ A bridge allows a custom graph to include a subset of elements from an existing 
 ```json
 {
     "_key": "<edge A>",
-    "_from": "terms/iso_3166_3_ITA",
+    "_from": "terms/ISO_3166_3_ITA",
     "_predicate": "_predicate_enum-of",
-    "_to": "terms/iso_3166_3",
-    "_path": ["terms/iso_3166_3", "terms/MyCountries"],
+    "_to": "terms/ISO_3166_3",
+    "_path": ["terms/ISO_3166_3", "terms/MyCountries"],
     "_path_data": {}
 },
 {
     "_key": "<edge B>",
-    "_from": "terms/iso_3166_3",
+    "_from": "terms/ISO_3166_3",
     "_predicate": "_predicate_bridge-of",
     "_to": "terms/MyCountries",
     "_path": ["terms/MyCountries"],
@@ -1218,22 +1216,22 @@ A bridge allows a custom graph to include a subset of elements from an existing 
 }
 ```
 
-`terms/MyCountries` is a custom vocabulary. Edge B connects `MyCountries` to the complete `iso_3166_3` graph via a bridge. Edge A (which already existed for `iso_3166_3`) gains `MyCountries` in its `_path`. When traversing `MyCountries`, the bridge node (`iso_3166_3`) is skipped; Italy is found directly through edge A.
+`terms/MyCountries` is a custom vocabulary. Edge B connects `MyCountries` to the complete `ISO_3166_3` graph via a bridge. Edge A (which already existed for `ISO_3166_3`) gains `MyCountries` in its `_path`. When traversing `MyCountries`, the bridge node (`ISO_3166_3`) is skipped; Italy is found directly through edge A.
 
 Additional custom vocabularies can share the same elements by each adding their root to the `_path` set of the relevant edges. A second vocabulary `YourCountries` that also includes Italy adds `terms/YourCountries` to edge A's `_path` and creates its own bridge edge (edge C):
 
 ```json
 {
     "_key": "<edge A>",
-    "_from": "terms/iso_3166_3_ITA",
+    "_from": "terms/ISO_3166_3_ITA",
     "_predicate": "_predicate_enum-of",
-    "_to": "terms/iso_3166_3",
-    "_path": ["terms/iso_3166_3", "terms/MyCountries", "terms/YourCountries"],
+    "_to": "terms/ISO_3166_3",
+    "_path": ["terms/ISO_3166_3", "terms/MyCountries", "terms/YourCountries"],
     "_path_data": {}
 },
 {
     "_key": "<edge B>",
-    "_from": "terms/iso_3166_3",
+    "_from": "terms/ISO_3166_3",
     "_predicate": "_predicate_bridge-of",
     "_to": "terms/MyCountries",
     "_path": ["terms/MyCountries"],
@@ -1241,7 +1239,7 @@ Additional custom vocabularies can share the same elements by each adding their 
 },
 {
     "_key": "<edge C>",
-    "_from": "terms/iso_3166_3",
+    "_from": "terms/ISO_3166_3",
     "_predicate": "_predicate_bridge-of",
     "_to": "terms/YourCountries",
     "_path": ["terms/YourCountries"],
@@ -1257,43 +1255,43 @@ For large enumerations with many custom subsets, this sharing mechanism avoids d
 
 An alias term carries no content of its own (no `_info`, no `_data`) and acts as an alternative identifier for a canonical term. The alias mechanism reuses the existing `_predicate_bridge-of` and `_predicate_enum-of` predicates — no additional predicate is required.
 
-Example: `iso_639_1_en` (ISO 639-1 code for English) is an alias for `iso_639_3_eng` (ISO 639-3 code for English). Both represent the same language; only the coding standard differs.
+Example: `ISO_639_1_en` (ISO 639-1 code for English) is an alias for `ISO_639_3_eng` (ISO 639-3 code for English). Both represent the same language; only the coding standard differs.
 
 ```json
 {
     "_key": "<edge hash A>",
-    "_from": "terms/iso_639_3_eng",
+    "_from": "terms/ISO_639_3_eng",
     "_predicate": "_predicate_enum-of",
-    "_to": "terms/iso_639_1_en",
-    "_path": ["terms/iso_639_1"],
+    "_to": "terms/ISO_639_1_en",
+    "_path": ["terms/ISO_639_1"],
     "_path_data": {}
 },
 {
     "_key": "<edge hash B>",
-    "_from": "terms/iso_639_1_en",
+    "_from": "terms/ISO_639_1_en",
     "_predicate": "_predicate_bridge-of",
-    "_to": "terms/iso_639_1",
-    "_path": ["terms/iso_639_1"],
+    "_to": "terms/ISO_639_1",
+    "_path": ["terms/ISO_639_1"],
     "_path_data": {}
 }
 ```
 
 The two edges implement the alias:
 
-- **Edge B** connects the alias node (`iso_639_1_en`) to the `iso_639_1` graph root with `_predicate_bridge-of`. This marks `iso_639_1_en` as a bridge: it is to be skipped during traversal, not treated as a valid value.
-- **Edge A** connects the canonical node (`iso_639_3_eng`) to the alias node with `_predicate_enum-of`. This declares `iso_639_3_eng` as the valid enumeration element within the `iso_639_1` graph, reachable through `iso_639_1_en`.
+- **Edge B** connects the alias node (`ISO_639_1_en`) to the `ISO_639_1` graph root with `_predicate_bridge-of`. This marks `ISO_639_1_en` as a bridge: it is to be skipped during traversal, not treated as a valid value.
+- **Edge A** connects the canonical node (`ISO_639_3_eng`) to the alias node with `_predicate_enum-of`. This declares `ISO_639_3_eng` as the valid enumeration element within the `ISO_639_1` graph, reachable through `ISO_639_1_en`.
 
-When traversing the `iso_639_1` graph outward from the root (one-to-many direction):
+When traversing the `ISO_639_1` graph outward from the root (one-to-many direction):
 
-1. Start at root `terms/iso_639_1`. Follow edge B reversed: reach `terms/iso_639_1_en` via `_predicate_bridge-of` → **skip** (bridge node).
-2. Follow edge A reversed: reach `terms/iso_639_3_eng` via `_predicate_enum-of` → **valid element; return this term**.
+1. Start at root `terms/ISO_639_1`. Follow edge B reversed: reach `terms/ISO_639_1_en` via `_predicate_bridge-of` → **skip** (bridge node).
+2. Follow edge A reversed: reach `terms/ISO_639_3_eng` via `_predicate_enum-of` → **valid element; return this term**.
 
 To resolve an alias directly (without full traversal):
 
-1. Look up edges where `_to = terms/iso_639_1_en` AND `_predicate = _predicate_enum-of`.
-2. The `_from` of that edge (`terms/iso_639_3_eng`) is the canonical term.
+1. Look up edges where `_to = terms/ISO_639_1_en` AND `_predicate = _predicate_enum-of`.
+2. The `_from` of that edge (`terms/ISO_639_3_eng`) is the canonical term.
 
-> **Note:** `iso_639_3_eng` remains a member of its own native graph (`iso_639_3`) via a separate, independent edge. The alias edges are scoped to the `iso_639_1` graph and do not affect the `iso_639_3` graph. The same canonical term may appear in multiple graphs simultaneously through separate edge sets.
+> **Note:** `ISO_639_3_eng` remains a member of its own native graph (`ISO_639_3`) via a separate, independent edge. The alias edges are scoped to the `ISO_639_1` graph and do not affect the `ISO_639_3` graph. The same canonical term may appear in multiple graphs simultaneously through separate edge sets.
 
 ---
 
@@ -1342,14 +1340,14 @@ Traversal always moves in the **many-to-one direction** (leaf → root). The gov
 | Display (tree)     | `_predicate_enum-of`, `_predicate_section-of`          | —                           |
 | Bridge resolution  | `_predicate_bridge-of` (then switch `_path` context)   | —                           |
 
-**Finding an element in a graph (example — is Italy in `iso_3166_3`?):**
+**Finding an element in a graph (example — is Italy in `ISO_3166_3`?):**
 
-1. Filter edges where `_path` contains `terms/iso_3166_3` AND `_predicate` is `_predicate_enum-of`.
-2. If any edge has `_from = terms/iso_3166_3_ITA`, the element is found.
+1. Filter edges where `_path` contains `terms/ISO_3166_3` AND `_predicate` is `_predicate_enum-of`.
+2. If any edge has `_from = terms/ISO_3166_3_ITA`, the element is found.
 3. If a bridge edge is encountered (`_predicate_bridge-of`), switch the `_path` filter to the referenced graph root and continue traversal there.
 
 **Finding an element in a bridge graph (example — is Italy in `MyCountries`?):**
 
 1. Find the edge with `_to = terms/MyCountries` and `_path` containing `terms/MyCountries`. This is the bridge edge (edge B above).
-2. `_from` of the bridge edge is `terms/iso_3166_3`. Switch the traversal context: now filter edges where `_path` contains `terms/MyCountries` AND `_predicate` is `_predicate_enum-of`.
-3. Edge A satisfies both conditions and has `_from = terms/iso_3166_3_ITA`. Italy is found.
+2. `_from` of the bridge edge is `terms/ISO_3166_3`. Switch the traversal context: now filter edges where `_path` contains `terms/MyCountries` AND `_predicate` is `_predicate_enum-of`.
+3. Edge A satisfies both conditions and has `_from = terms/ISO_3166_3_ITA`. Italy is found.

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="150" font-family="monospace" font-size="13" fill="#222">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#cc6644"/>
+    </marker>
+  </defs>
+
+  <!-- Left box (_from) -->
+  <rect x="10" y="20" width="200" height="52" rx="6" fill="#fff4ee" stroke="#cc6644" stroke-width="1.5"/>
+  <text x="110" y="42" text-anchor="middle" fill="#555" font-size="11">terms/</text>
+  <text x="110" y="61" text-anchor="middle" font-weight="bold">ISO_3166_3</text>
+
+  <!-- Right box (_to) -->
+  <rect x="470" y="20" width="200" height="52" rx="6" fill="#fff4ee" stroke="#cc6644" stroke-width="1.5"/>
+  <text x="570" y="42" text-anchor="middle" fill="#555" font-size="11">terms/</text>
+  <text x="570" y="61" text-anchor="middle" font-weight="bold">MyCountries</text>
+
+  <!-- Arrow -->
+  <line x1="211" y1="46" x2="468" y2="46" stroke="#cc6644" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="340" y="36" text-anchor="middle" fill="#cc6644" font-size="12">_predicate_bridge-of</text>
+
+  <!-- _from / _to labels -->
+  <text x="110" y="88" text-anchor="middle" fill="#888" font-size="11">_from</text>
+  <text x="570" y="88" text-anchor="middle" fill="#888" font-size="11">_to</text>
+
+  <!-- Path info -->
+  <text x="10" y="115" fill="#444" font-size="12">_path:      ["terms/MyCountries"]</text>
+  <text x="10" y="135" fill="#444" font-size="12">_path_data: {}</text>
+</svg>

@@ -19,7 +19,7 @@ The value represents the [document handle](_id.md) of the node that represents t
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string_handle"
+    "_type" : "_type_handle"
   }
 }
 ```

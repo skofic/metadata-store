@@ -22,9 +22,9 @@ Keep this set restricted to *official* or *widely recognised* standards. Includi
 
 ```json
 {
-	"_nid": "iso_3166_1",
+	"_nid": "ISO_3166_1",
 	"_lid": "ITA",
-	"_gid": "iso_3166_1_ITA",
+	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
 	"_regexp": "[A-Z]{3,3}"

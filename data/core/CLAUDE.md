@@ -54,7 +54,7 @@ Every term in this directory must have:
 
 ## `_info` Content Standards
 
-**Language**: English only in this phase. Use `"iso_639_3_eng"` as the language key for all `_info` string values. Translations are added in Phase 4.
+**Language**: English only in this phase. Use `"ISO_639_3_eng"` as the language key for all `_info` string values. Translations are added in Phase 4.
 
 **`_title`**: Short label, no punctuation. One to five words.
 

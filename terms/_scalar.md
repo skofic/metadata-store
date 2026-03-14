@@ -53,11 +53,11 @@ This example describes a [floating-point](_kind_number_float.md) numeric value g
 {
 	"_scalar": {
 		"_type": "_type_enum",
-		"_kind_enum": ["iso_639_3"]
+		"_kind_enum": ["ISO_639_3"]
 	}
 }
 ```
-This example describes an [enumeration](_type_enum.md) value that must be chosen from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
+This example describes an [enumeration](_type_enum.md) value that must be chosen from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes.
 
 
 

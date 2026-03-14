@@ -17,7 +17,7 @@ Each card contains:
 
 Property labels use the format **\`_property_name\`**.
 
-Multilingual values: only the `iso_639_3_eng` entry is rendered in this phase.
+Multilingual values: only the `ISO_639_3_eng` entry is rendered in this phase.
 Array properties (`_url`, `_citation`, `_provider`): rendered as a Markdown bullet list.
 
 Terms that have no `_info` section (alias terms) produce no card.

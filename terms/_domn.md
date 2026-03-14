@@ -12,7 +12,7 @@ The section of a term that classifies it across one or more categorical dimensio
 
 The domains section provides a principled mechanism for categorising a [term](_term.md) according to dimensions such as subject domain, measurement type, statistical class, or intended application context. Each property in this section must be a [descriptor](_term_descriptor.md) defined in the dictionary; its value must conform to that descriptor's type definition and is typically an element of a controlled vocabulary.
 
-This section is used primarily for user-defined terms — [descriptors](_term_descriptor.md), object [schemas](_term_object.md), and custom enumerations — where the nature and intended usage of the term need to be recorded alongside its definition to support discovery and filtering. Core dictionary building blocks — the structural terms that define the dictionary itself — generally do not require this section.
+This section applies to any term in the dictionary — including core dictionary building blocks — and serves two complementary purposes. First, it classifies the term within meaningful subject or application domains. Second, and crucially, it records the *roles* the term may play within the dictionary: for example, whether it functions as a [descriptor](_term_descriptor.md), an enumeration element, a namespace, an object schema definition, or any combination of these. Storing roles explicitly in `_domn` enables a consumer to determine immediately what a term can be used for, without traversing the graph to infer its function from its relationships.
 
 The section is optional and its schema is open: any dictionary-defined descriptor may appear as a property. When the term object operates in closed mode, only descriptors listed in the term's [structure rules](_rule.md) are permitted.
 
@@ -21,9 +21,9 @@ The section is optional and its schema is open: any dictionary-defined descripto
 ```json
 {
 	"_code": {
-		"_nid": "iso_3166_1",
+		"_nid": "ISO_3166_1",
 		"_lid": "ITA",
-		"_gid": "iso_3166_1_ITA",
+		"_gid": "ISO_3166_1_ITA",
 		"_aid": [
 			"IT",
 			"ITA",
@@ -33,26 +33,26 @@ The section is optional and its schema is open: any dictionary-defined descripto
 	},
 	"_info": {
 		"_title": {
-			"iso_639_3_eng": "Italy",
-			"iso_639_3_amh": "ጣሑ።ን"
+			"ISO_639_3_eng": "Italy",
+			"ISO_639_3_amh": "ጣሑ።ን"
 		},
 		"_definition": {
-			"iso_639_3_eng": "Italian Republic",
-			"iso_639_3_amh": "ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ"
+			"ISO_639_3_eng": "Italian Republic",
+			"ISO_639_3_amh": "ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ"
 		}
 	},
 	"_domn": {
 		"std_country_region": {
-			"iso_639_3_eng": "Europe"
+			"ISO_639_3_eng": "Europe"
 		},
 		"std_country_sub-region": {
-			"iso_639_3_eng": "Southern Europe"
+			"ISO_639_3_eng": "Southern Europe"
 		}
 	},
 	"_prop": {
-		"iso_3166_alpha3": "ITA",
-		"iso_3166_alpha2": "IT",
-		"iso_3166_numeric": "380",
+		"ISO_3166_alpha3": "ITA",
+		"ISO_3166_alpha2": "IT",
+		"ISO_3166_numeric": "380",
 		"std_country_ioc": "ITA",
 		"std_country_tld": [
 			".it"
@@ -62,18 +62,18 @@ The section is optional and its schema is open: any dictionary-defined descripto
 		],
 		"std_country_area": 301336,
 		"std_country_languages": [
-			"iso_639_3_ita"
+			"ISO_639_3_ita"
 		],
 		"std_country_currencies": [
-			"iso_4217_EUR"
+			"ISO_4217_EUR"
 		],
 		"std_country_borders": [
-			"iso_3166_1_AUT",
-			"iso_3166_1_FRA",
-			"iso_3166_1_SMR",
-			"iso_3166_1_SVN",
-			"iso_3166_1_CHE",
-			"iso_3166_1_VAT"
+			"ISO_3166_1_AUT",
+			"ISO_3166_1_FRA",
+			"ISO_3166_1_SMR",
+			"ISO_3166_1_SVN",
+			"ISO_3166_1_CHE",
+			"ISO_3166_1_VAT"
 		]
 	}
 }

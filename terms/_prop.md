@@ -21,9 +21,9 @@ The section is optional and its schema is open: any dictionary-defined descripto
 ```json
 {
 	"_code": {
-		"_nid": "iso_3166_1",
+		"_nid": "ISO_3166_1",
 		"_lid": "ITA",
-		"_gid": "iso_3166_1_ITA",
+		"_gid": "ISO_3166_1_ITA",
 		"_aid": [
 			"IT",
 			"ITA",
@@ -33,26 +33,26 @@ The section is optional and its schema is open: any dictionary-defined descripto
 	},
 	"_info": {
 		"_title": {
-			"iso_639_3_eng": "Italy",
-			"iso_639_3_amh": "ጣሑ።ን"
+			"ISO_639_3_eng": "Italy",
+			"ISO_639_3_amh": "ጣሑ።ን"
 		},
 		"_definition": {
-			"iso_639_3_eng": "Italian Republic",
-			"iso_639_3_amh": "ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ"
+			"ISO_639_3_eng": "Italian Republic",
+			"ISO_639_3_amh": "ፘመጢጘለኢፄ ጐፔሱጢ ሱፐብሑጤ"
 		}
 	},
 	"_domn": {
 		"std_country_region": {
-			"iso_639_3_eng": "Europe"
+			"ISO_639_3_eng": "Europe"
 		},
 		"std_country_sub-region": {
-			"iso_639_3_eng": "Southern Europe"
+			"ISO_639_3_eng": "Southern Europe"
 		}
 	},
 	"_prop": {
-		"iso_3166_alpha3": "ITA",
-		"iso_3166_alpha2": "IT",
-		"iso_3166_numeric": "380",
+		"ISO_3166_alpha3": "ITA",
+		"ISO_3166_alpha2": "IT",
+		"ISO_3166_numeric": "380",
 		"std_country_ioc": "ITA",
 		"std_country_tld": [
 			".it"
@@ -62,18 +62,18 @@ The section is optional and its schema is open: any dictionary-defined descripto
 		],
 		"std_country_area": 301336,
 		"std_country_languages": [
-			"iso_639_3_ita"
+			"ISO_639_3_ita"
 		],
 		"std_country_currencies": [
-			"iso_4217_EUR"
+			"ISO_4217_EUR"
 		],
 		"std_country_borders": [
-			"iso_3166_1_AUT",
-			"iso_3166_1_FRA",
-			"iso_3166_1_SMR",
-			"iso_3166_1_SVN",
-			"iso_3166_1_CHE",
-			"iso_3166_1_VAT"
+			"ISO_3166_1_AUT",
+			"ISO_3166_1_FRA",
+			"ISO_3166_1_SMR",
+			"ISO_3166_1_SVN",
+			"ISO_3166_1_CHE",
+			"ISO_3166_1_VAT"
 		]
 	}
 }

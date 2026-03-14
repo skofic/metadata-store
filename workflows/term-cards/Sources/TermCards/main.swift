@@ -26,7 +26,7 @@ import Foundation
 /// The language key used to extract _info text in Phase 2.
 /// All core terms are authored in English only during this phase; translations
 /// are added in Phase 4 using Debian iso-codes as the baseline coverage.
-let defaultLanguage = "iso_639_3_eng"
+let defaultLanguage = "ISO_639_3_eng"
 
 /// The order in which _info properties are rendered inside each card.
 /// This mirrors the canonical order defined in the top-level CLAUDE.md:
@@ -70,7 +70,7 @@ func findRepoRoot(from start: URL) -> URL? {
 /// Extracts a single string value from a multilingual scalar dict.
 ///
 /// In this dictionary every _info scalar property has the shape:
-///   { "iso_639_3_eng": "text", "iso_639_3_ita": "testo", ... }
+///   { "ISO_639_3_eng": "text", "ISO_639_3_ita": "testo", ... }
 ///
 /// This function returns the value for `defaultLanguage`. If that key is absent
 /// (e.g. a term authored in a different language only), it falls back to the first
@@ -85,7 +85,7 @@ func extractString(_ value: Any) -> String? {
 /// Extracts an array of strings from a multilingual array dict.
 ///
 /// Array-valued _info properties (_url, _citation, _provider) have the shape:
-///   { "iso_639_3_eng": ["item one", "item two"], ... }
+///   { "ISO_639_3_eng": ["item one", "item two"], ... }
 ///
 /// The outer dict key is still the language tag; the value is an array of strings
 /// rather than a plain string. This function unwraps that structure.

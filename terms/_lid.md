@@ -20,16 +20,16 @@ This property is *required* on every term and is *immutable* once set — changi
 
 ```json
 {
-	"_nid": "iso_3166_1",
+	"_nid": "ISO_3166_1",
 	"_lid": "ITA",
-	"_gid": "iso_3166_1_ITA",
+	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
 	"_regexp": "[A-Z]{3,3}"
 }
 ```
 
-`ITA` is the local identifier of this term. Concatenated with the namespace `iso_3166_1` and separated by an underscore, it forms the [global identifier](_gid.md) `iso_3166_1_ITA`.
+`ITA` is the local identifier of this term. Concatenated with the namespace `ISO_3166_1` and separated by an underscore, it forms the [global identifier](_gid.md) `ISO_3166_1_ITA`.
 
 
 
@@ -41,7 +41,7 @@ This property is *required* on every term and is *immutable* once set — changi
 }
 ```
 
-This term has no [namespace](_nid.md): the local identifier and global identifier share the same value, `iso`.
+This term has no [namespace](_nid.md): the local identifier and global identifier share the same value, `ISO`.
 
 ---
 

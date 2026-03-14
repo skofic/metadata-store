@@ -23,27 +23,27 @@ Generic term example:
 ```json
 	{
 		"_code": {
-			"_nid": "iso_3166_3",
+			"_nid": "ISO_3166_3",
 			"_lid": "ITA",
-			"_gid": "iso_3166_3_ITA",
+			"_gid": "ISO_3166_3_ITA",
 			"_aid": ["ITA", "IT", "I"],
 			"_name": "Italia",
 			"_emoji": "🇮🇹"
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Italy",
-				"iso_639_3_ita": "Italia"
+				"ISO_639_3_eng": "Italy",
+				"ISO_639_3_ita": "Italia"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Italian Republic",
-				"iso_639_3_ita": "Repubblica Italiana"
+				"ISO_639_3_eng": "Italian Republic",
+				"ISO_639_3_ita": "Repubblica Italiana"
 			}
 		}
 	}
 ```
 
-This term represents the country Italy. Its namespace chain (`iso` → `iso_3166` → `iso_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes.
+This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166` → `ISO_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes.
 
 ---
 

@@ -65,7 +65,7 @@ This example describes an array of [scalar](_scalar.md) [integer](_kind_number_i
 					"_max-range-exclusive": 100.0
 				},
 				"_unit-symbol": "cm.",
-				"_unit-name": {"iso_639_3_eng": "Centimeters"}
+				"_unit-name": {"ISO_639_3_eng": "Centimeters"}
 			}
 		}
 	}
@@ -84,14 +84,14 @@ This example shows two levels of nested arrays. The top level array may have any
 		"_set": {
 			"_set_scalar": {
 				"_set_type": "_type_enum",
-				"_kind_enum": ["iso_639_3"]
+				"_kind_enum": ["ISO_639_3"]
 			}
 		}
 	}
 }
 ```
 
-This example describes an array of [sets](_set.md) whose elements are [enumeration](_type_enum.md) values from the [ISO 639-3](iso_639_3.md) controlled vocabulary of language codes.
+This example describes an array of [sets](_set.md) whose elements are [enumeration](_type_enum.md) values from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes.
 
 The array, and the set, may have any number of elements.
 
@@ -103,7 +103,7 @@ The array, and the set, may have any number of elements.
 		"_dict": {
 			"_dict_key": {
 				"_type_key": "_type_enum",
-				"_kind_enum": ["iso_3166_1"]
+				"_kind_enum": ["ISO_3166_1"]
 			},
 			"_dict_value": {
 				"_scalar": {
@@ -116,7 +116,7 @@ The array, and the set, may have any number of elements.
 }
 ```
 
-This example describes an array of [key/value dictionaries](_dict.md). The [dictionary keys](_dict_key.md) are [enumeration](_type_enum.md) values from the [ISO 3166-1](iso_3166_1.md) country code vocabulary. The dictionary values are [objects](_type_object.md) conforming to the `my_struct_definition` schema.
+This example describes an array of [key/value dictionaries](_dict.md). The [dictionary keys](_dict_key.md) are [enumeration](_type_enum.md) values from the [ISO 3166-1](ISO_3166_1.md) country code vocabulary. The dictionary values are [objects](_type_object.md) conforming to the `my_struct_definition` schema.
 
 In this example the array may have any number of elements.
 

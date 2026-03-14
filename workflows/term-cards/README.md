@@ -168,7 +168,7 @@ Usage examples …
 
 Properties appear in the order: `_title`, `_definition`, `_description`, `_examples`, `_notes`, `_url`, `_citation`, `_provider`. Any unrecognised `_info` properties follow alphabetically. Array properties (`_url`, `_citation`, `_provider`) are rendered as Markdown bullet lists.
 
-In Phase 2, only the `iso_639_3_eng` (English) value is rendered. Translations are added in Phase 4.
+In Phase 2, only the `ISO_639_3_eng` (English) value is rendered. Translations are added in Phase 4.
 
 ---
 

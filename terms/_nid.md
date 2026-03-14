@@ -21,27 +21,27 @@ Three distinct cases exist depending on the value of this property:
 - **Absent**: the term defines a *top-level namespace* with no parent.
 
 Any term's [global identifier](_gid.md) may serve as a namespace for other terms, allowing namespaces to form chains from general to specific
-(for example `iso` → `iso_3166` → `iso_3166_1`).
+(for example `ISO` → `ISO_3166` → `ISO_3166_1`).
 
 **`_examples`**
 
 
 ```json
 {
-	"_nid": "iso_3166_1",
+	"_nid": "ISO_3166_1",
 	"_lid": "ITA",
-	"_gid": "iso_3166_1_ITA",
+	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
 	"_regexp": "[A-Z]{3,3}"
 }
 ```
 
-This term, with [global identifier](_gid.md) `iso_3166_1_ITA`, represents the ISO country code for [Italy](`iso_3166_1_ITA`.md). Its [local identifier](_lid.md) is `ITA`, its namespace is `iso_3166_1`, and its `_regexp` validates that all local identifiers in this namespace consist of exactly three uppercase letters. The namespace `iso_3166_1` is itself composed of chained namespaces:
+This term, with [global identifier](_gid.md) `ISO_3166_1_ITA`, represents the ISO country code for [Italy](`ISO_3166_1_ITA`.md). Its [local identifier](_lid.md) is `ITA`, its namespace is `ISO_3166_1`, and its `_regexp` validates that all local identifiers in this namespace consist of exactly three uppercase letters. The namespace `ISO_3166_1` is itself composed of chained namespaces:
 
-- `iso`: The *[International Standards Organisation](iso.md)* root namespace (no parent namespace).
-- `iso_3166`: The namespace for *[codes for the representation of names of countries and their subdivisions](iso_3166.md)*, with `iso` as its namespace.
-- `iso_3166_1`: The namespace for *[Part 1: Country codes](iso_3166_1.md)*, with `iso_3166` as its namespace.
+- `ISO`: The *[International Standards Organisation](ISO.md)* root namespace (no parent namespace).
+- `ISO_3166`: The namespace for *[codes for the representation of names of countries and their subdivisions](ISO_3166.md)*, with `ISO` as its namespace.
+- `ISO_3166_1`: The namespace for *[Part 1: Country codes](ISO_3166_1.md)*, with `ISO_3166` as its namespace.
 
 
 
@@ -53,7 +53,7 @@ This term, with [global identifier](_gid.md) `iso_3166_1_ITA`, represents the IS
 }
 ```
 
-This term has no namespace — it is itself the top-level `iso` namespace, with no parent.
+This term has no namespace — it is itself the top-level `ISO` namespace, with no parent.
 
 ---
 

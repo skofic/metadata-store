@@ -45,7 +45,7 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 	"_dict": {
 		"_dict_key": {
 			"_type_key": "_type_enum",
-			"_kind_enum": ["iso_639_3"]
+			"_kind_enum": ["ISO_639_3"]
 		},
 		"_dict_value": {
 			"_scalar": {
@@ -57,7 +57,7 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 }
 ```
 
-This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [global identifiers](_gid.md) of [ISO 639-3](iso_639_3.md) language codes, and whose *values*, [`_dict_value`](_dict_value.md), are [Markdown](_kind_string_Markdown.md) text strings — a pattern used to implement multilingual styled text.
+This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [global identifiers](_gid.md) of [ISO 639-3](ISO_639_3.md) language codes, and whose *values*, [`_dict_value`](_dict_value.md), are [Markdown](_kind_string_Markdown.md) text strings — a pattern used to implement multilingual styled text.
 
 
 
@@ -66,13 +66,13 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 	"_dict": {
 		"_dict_key": {
 			"_type_key": "_type_enum",
-			"_kind_enum": ["iso_3166_1"]
+			"_kind_enum": ["ISO_3166_1"]
 		},
 		"_dict_value": {
 			"_dict": {
 				"_dict_key": {
 					"_type_key": "_type_enum",
-					"_kind_enum": ["iso_639_3"]
+					"_kind_enum": ["ISO_639_3"]
 				},
 				"_dict_value": {
 					"_array": {
@@ -92,7 +92,7 @@ This example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), a
 }
 ```
 
-This example describes a recursive dictionary. The outer keys are [ISO 3166-1](iso_3166_1.md) country codes; the values are inner dictionaries keyed by [ISO 639-3](iso_639_3.md) language codes, whose values are arrays of 5 to 10 objects conforming to `some_object_definition`.
+This example describes a recursive dictionary. The outer keys are [ISO 3166-1](ISO_3166_1.md) country codes; the values are inner dictionaries keyed by [ISO 639-3](ISO_639_3.md) language codes, whose values are arrays of 5 to 10 objects conforming to `some_object_definition`.
 
 
 
