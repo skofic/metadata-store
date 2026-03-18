@@ -14,10 +14,9 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
 
 - [`_type_boolean`](_type_boolean.md): The value is a `true` or `false` boolean. No other [`_scalar`](_scalar.md) properties are expected.
 
-- [`_type_number`](_type_number.md): The value is a numeric value stored as a double-precision floating-point number. The companion property [`_kind_number`](_kind_number.md) is **required** and must be a non-empty set selecting at least one of the following:
+- [`_type_number`](_type_number.md): The value is a numeric value stored as a double-precision floating-point number. The [`_scalar`](_scalar.md) section may additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md) (a multilingual name keyed by language `_gid`), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md). The companion property [`_kind_number`](_kind_number.md) is **required**: it is a set and may contain one or both of the following values — when both are present, both floating-point and integer values are accepted:
   - [`_kind_number_float`](_kind_number_float.md): The value is a floating-point number. The [`_scalar`](_scalar.md) section may additionally include [`_decimals`](_decimals.md) to specify the number of decimal places to display when rendering the value; the stored value is not rounded.
   - [`_kind_number_integer`](_kind_number_integer.md): The value is an integer — a whole number with no decimal part.
-  When both values are present in `_kind_number`, both floating-point and integer values are accepted. All number kinds may additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md) (a multilingual name keyed by language `_gid`), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
 
 - [`_type_string`](_type_string.md): The value is a UTF-8 string. The optional companion property [`_kind_string`](_kind_string.md) specifies the encoding or format of the string, selecting one of the following:
   - [`_kind_string_Markdown`](_kind_string_Markdown.md): The string is in [Markdown](https://www.markdownguide.org/getting-started/) format.
@@ -59,7 +58,149 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
 
 When `_type` is omitted, the [`_scalar`](_scalar.md) section must be empty, meaning the value may be of any scalar type without constraint.
 
+**`_examples`**
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_boolean"
+	}
+}
+```
+
+This [data section](_data.md) defines a descriptor that holds [boolean](_type_boolean.md) values.
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_number",
+		"_kind_number": ["_kind_number_float"],
+		"_decimals": 1,
+		"_unit": "qudt_unit_CentiM",
+		"_normal-range": {
+			"_min-range-inclusive": 10.0,
+			"_max-range-exclusive": 40.0
+		}
+	}
+}
+```
+
+This descriptor defines a [floating point](_kind_number_float.md) [numeric](_type_number.md) value that should be *displayed* with one [decimal](_decimals.md) at most, and with a [normal range](_normal-range.md) starting at 10 and less than 40 [centimeters](qudt_unit_CentiM.md).
+
+For instance `39.85`.
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_string",
+		"_regexp": "^[A-Z]{3}$"
+	}
+}
+```
+
+This descriptor defines a [string](_type_string.md) that must made of [three capital letters](_regexp.md).
+
+For instance: `ITA`.
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_key",
+		"_kind_key": ["_kind_key_term_enum_element"]
+	}
+}
+```
+
+This descriptor defines a [document key](_key.md) that must correspond to a [term](_term.md) that represents a valid [enumeration choice of any type](_kind_key_term_enum_element.md).
+
+For instance: `ISO_639_3_tlh`, which represents the [ISO standard language](`ISO_639_3.md) code for [Klingon](ISO_639_3_tlh.md) (*I bet you didn't know that Klingon is an ISO standard. ;-*).
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_enum",
+		"_kind_enum": ["ISO_3166_1"]
+	}
+}
+```
+
+This descriptor defines a [valid enumeration choice](_type_enum.md) belonging to the [ISO 3166 controlled vocabulary](ISO_316_1.md).
+
+For instance: `ISO_3166_1_FRA`, which represents the country [France](ISO_3166_1_FRA.md) in the [3166 ISO standard](ISO_3166_1.md).
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_object",
+		"_kind_object": ["_range"]
+	}
+}
+```
+
+This descriptor defines an [object structure](_type_object.md) that must represent a [range](_range.md).
+
+For instance look at [`_normal-range`](_normal-range.md) in the first example.
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_struct"
+	}
+}
+```
+
+This descriptor defines an [object structure](_type_struct.md) of any type.
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_handle"
+	}
+}
+```
+
+This descriptor defines a [document handle](_id.md).
+
+
+
+```json
+{
+	"_scalar": {
+		"_type": "_type_timestamp"
+	}
+}
+```
+
+This descriptor defines a [timestamp](_type_timestamp.md).
+
 ---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "type"
+  ],
+  "_gid" : "_type",
+  "_lid" : "type",
+  "_nid" : ""
+}
+```
 
 **`_data`**
 

@@ -18,6 +18,19 @@ Conditional constraints — rules that activate only when a specific property ho
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "rule"
+  ],
+  "_gid" : "_rule",
+  "_lid" : "rule",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

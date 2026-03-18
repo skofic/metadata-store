@@ -14,6 +14,19 @@ The *document key* is the *unique identifier* of a document *within its collecti
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "key"
+  ],
+  "_gid" : "_key",
+  "_lid" : "key",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

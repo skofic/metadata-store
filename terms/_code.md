@@ -18,6 +18,19 @@ Terms with an empty-string namespace (`_nid: ""`) are core dictionary building b
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "code"
+  ],
+  "_gid" : "_code",
+  "_lid" : "code",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

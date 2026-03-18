@@ -14,6 +14,19 @@ The *document handle* is the record unique identifier in [ArangoDB](https://www.
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "id"
+  ],
+  "_gid" : "_id",
+  "_lid" : "id",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

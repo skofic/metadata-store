@@ -82,6 +82,19 @@ This example describes a descriptor that accepts a scalar value of any type. The
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "scalar"
+  ],
+  "_gid" : "_scalar",
+  "_lid" : "scalar",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

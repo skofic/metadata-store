@@ -137,6 +137,19 @@ This example shows the *data definition* for a *descriptor* that can take *any d
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_data",
+  "_lid" : "data",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

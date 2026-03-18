@@ -14,6 +14,19 @@ The *document revision* is an opaque string assigned and updated by [ArangoDB](h
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "rev"
+  ],
+  "_gid" : "_rev",
+  "_lid" : "rev",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

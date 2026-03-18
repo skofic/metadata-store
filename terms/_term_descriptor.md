@@ -16,6 +16,19 @@ Descriptors are referenced by object schema terms to define which properties an 
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "descriptor"
+  ],
+  "_gid" : "_term_descriptor",
+  "_lid" : "descriptor",
+  "_nid" : "_term"
+}
+```
+
 **`_data`**
 
 ```json

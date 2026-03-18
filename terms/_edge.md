@@ -32,6 +32,19 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "edge"
+  ],
+  "_gid" : "_edge",
+  "_lid" : "edge",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

@@ -16,6 +16,19 @@ Any descriptor can reference an object definition term via the `_kind` property 
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_term_object",
+  "_lid" : "object",
+  "_nid" : "_term"
+}
+```
+
 **`_data`**
 
 ```json

@@ -25,7 +25,6 @@ Any term's [global identifier](_gid.md) may serve as a namespace for other terms
 
 **`_examples`**
 
-
 ```json
 {
 	"_nid": "ISO_3166_1",
@@ -33,7 +32,8 @@ Any term's [global identifier](_gid.md) may serve as a namespace for other terms
 	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
-	"_regexp": "[A-Z]{3,3}"
+	"_regexp": "[A-Z]{3,3}",
+	"_emoji": "🇮🇹"
 }
 ```
 
@@ -47,15 +47,28 @@ This term, with [global identifier](_gid.md) `ISO_3166_1_ITA`, represents the IS
 
 ```json
 {
-	"_lid": "iso",
-	"_gid": "iso",
-	"_aid": ["iso"]
+	"_lid": "ISO",
+	"_gid": "ISO",
+	"_aid": ["ISO"]
 }
 ```
 
 This term has no namespace — it is itself the top-level `ISO` namespace, with no parent.
 
 ---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "nid"
+  ],
+  "_gid" : "_nid",
+  "_lid" : "nid",
+  "_nid" : ""
+}
+```
 
 **`_data`**
 

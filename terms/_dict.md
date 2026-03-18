@@ -109,6 +109,19 @@ This example describes a dictionary whose keys can be any string and whose value
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "dict"
+  ],
+  "_gid" : "_dict",
+  "_lid" : "dict",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

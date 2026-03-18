@@ -47,6 +47,19 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "term"
+  ],
+  "_gid" : "_term",
+  "_lid" : "term",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

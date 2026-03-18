@@ -31,6 +31,19 @@ Mathematical expressions stored as LaTeX strings:
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "symbol"
+  ],
+  "_gid" : "_symbol",
+  "_lid" : "symbol",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

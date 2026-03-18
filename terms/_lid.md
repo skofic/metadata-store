@@ -25,7 +25,8 @@ This property is *required* on every term and is *immutable* once set — changi
 	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
-	"_regexp": "[A-Z]{3,3}"
+	"_regexp": "[A-Z]{3,3}",
+	"_emoji": "🇮🇹"
 }
 ```
 
@@ -35,15 +36,28 @@ This property is *required* on every term and is *immutable* once set — changi
 
 ```json
 {
-	"_lid": "iso",
-	"_gid": "iso",
-	"_aid": ["iso"]
+	"_lid": "ISO",
+	"_gid": "ISO",
+	"_aid": ["ISO"]
 }
 ```
 
 This term has no [namespace](_nid.md): the local identifier and global identifier share the same value, `ISO`.
 
 ---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "lid"
+  ],
+  "_gid" : "_lid",
+  "_lid" : "lid",
+  "_nid" : ""
+}
+```
 
 **`_data`**
 

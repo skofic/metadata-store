@@ -18,6 +18,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 ## Development Notes
 
 - The `scrapbook/Notes.txt` file is for informal developer notes and scratch content.
+- If something goes sideways, stop and re-plan immediately — do not keep pushing in the wrong direction.
 
 ---
 
@@ -45,9 +46,20 @@ This project is in early initialization. No source code exists yet. The `.gitign
   1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
   2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
 - **Next topic (Phase 2)**:
-  1. Design and implement Markdown card generator — produces a `terms/<_gid>.md` card for each term in a JSON file.
-  2. Review `_info` content in `data/core/containers.json`.
-  3. Continue populating remaining core term files.
+  1. Review `_info` content in `data/core/containers.json`.
+  2. Continue populating remaining core term files.
+
+### Recent session (2026-03-18)
+- Added `_methods` optional property to `_info` section (Markdown/HTML, same format as `_description`; for measurement conditions and protocols on descriptor terms).
+- Renamed all `iso_` namespace prefixes to `ISO_` across all source files; standalone `"iso"` identifier also uppercased to `"ISO"`.
+- Fixed all remaining `_type_string_handle` → `_type_handle` and `_type_string_key` → `_type_key` references.
+- Added SVG edge diagrams to `terms/images/` (`edge-basic.svg`, `edge-shared.svg`, `edge-bridge.svg`) and updated `_edge._examples` to reference them.
+- Updated `_edge._description`: MD5 key formula now mentions `/` separator; "All predicates" → "Most predicates".
+- Updated `_domn._description`: removed restriction to user-defined terms; `_domn` now serves as a general role/usage classifier for any term.
+- Corrected `_set`: `_set_scalar` is now required (not optional); updated `_definition`, `_description`, and `_rule` accordingly.
+- Revised `_set._description` to reference `_type` as the basis for `_set_type`, naming only the three excluded types.
+- Added `_code` section to term card output (before `_data` and `_rule`).
+- Restructured `_type_number` paragraph in `_type._description`: shared optional properties (`_unit`, `_unit-name`, etc.) now appear at the top level; `_kind_number` introduced after; `_decimals` remains only under `_kind_number_float`.
 
 ---
 

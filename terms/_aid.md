@@ -27,13 +27,27 @@ Keep this set restricted to *official* or *widely recognised* standards. Includi
 	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
-	"_regexp": "[A-Z]{3,3}"
+	"_regexp": "[A-Z]{3,3}",
+	"_emoji": "🇮🇹"
 }
 ```
 
 `ITA` is the primary code for Italy under ISO 3166-1 alpha-3, and `IT` is the corresponding alpha-2 code. Both are official ISO identifiers, so both appear in `_aid`.
 
 ---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "aid"
+  ],
+  "_gid" : "_aid",
+  "_lid" : "aid",
+  "_nid" : ""
+}
+```
 
 **`_data`**
 

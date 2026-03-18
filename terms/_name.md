@@ -23,6 +23,19 @@ This property is a plain string with no language tag: it records the name as it 
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "name"
+  ],
+  "_gid" : "_name",
+  "_lid" : "name",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

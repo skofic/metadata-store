@@ -85,6 +85,19 @@ The domains section, `_domn`, provides the *domains* and *categories* associated
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "domn"
+  ],
+  "_gid" : "_domn",
+  "_lid" : "domn",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

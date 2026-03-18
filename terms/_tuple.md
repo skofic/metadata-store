@@ -54,6 +54,19 @@ This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitu
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "tuple"
+  ],
+  "_gid" : "_tuple",
+  "_lid" : "tuple",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

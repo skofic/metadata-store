@@ -132,6 +132,19 @@ This example describes an array that may contain any number of elements of any s
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "array"
+  ],
+  "_gid" : "_array",
+  "_lid" : "array",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

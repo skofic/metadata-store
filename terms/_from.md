@@ -14,6 +14,19 @@ The value represents the [document handle](_id.md) of the node that represents t
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "from"
+  ],
+  "_gid" : "_from",
+  "_lid" : "from",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

@@ -23,7 +23,8 @@ This value is also *copied* to the [document key](_key.md), making it the primar
 	"_gid": "ISO_3166_1_ITA",
 	"_aid": ["ITA", "IT"],
 	"_name": "Italia",
-	"_regexp": "[A-Z]{3,3}"
+	"_regexp": "[A-Z]{3,3}",
+	"_emoji": "🇮🇹"
 }
 ```
 
@@ -33,15 +34,28 @@ This value is also *copied* to the [document key](_key.md), making it the primar
 
 ```json
 {
-	"_lid": "iso",
-	"_gid": "iso",
-	"_aid": ["iso"]
+	"_lid": "ISO",
+	"_gid": "ISO",
+	"_aid": ["ISO"]
 }
 ```
 
 This is the `ISO` top-level namespace term. It has no [namespace](_nid.md), so the local identifier and global identifier share the same value, `ISO`.
 
 ---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "gid"
+  ],
+  "_gid" : "_gid",
+  "_lid" : "gid",
+  "_nid" : ""
+}
+```
 
 **`_data`**
 

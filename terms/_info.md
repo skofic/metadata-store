@@ -18,6 +18,19 @@ Alias terms are the only exception to the documentation section requirement: an 
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "info"
+  ],
+  "_gid" : "_info",
+  "_lid" : "info",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

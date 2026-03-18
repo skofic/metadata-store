@@ -24,6 +24,19 @@ Emoji are displayed alongside the term's textual label wherever it is rendered i
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "emoji"
+  ],
+  "_gid" : "_emoji",
+  "_lid" : "emoji",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

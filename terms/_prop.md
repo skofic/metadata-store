@@ -85,6 +85,19 @@ The properties section, `_prop`, provides the data associated with the *country*
 
 ---
 
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "prop"
+  ],
+  "_gid" : "_prop",
+  "_lid" : "prop",
+  "_nid" : ""
+}
+```
+
 **`_data`**
 
 ```json

@@ -131,8 +131,8 @@ func extractStringArray(_ value: Any) -> [String]? {
 /// Any additional properties found in the _info dict are appended alphabetically,
 /// ensuring the renderer does not silently drop future or non-standard keys.
 ///
-/// If the term has a _data or _rule section, each is appended after a horizontal
-/// rule as a pretty-printed JSON fenced code block.
+/// If the term has a _code, _data or _rule section, each is appended after a horizontal
+/// rule as a pretty-printed JSON fenced code block, in that order.
 ///
 /// The output always ends with exactly one newline so diffs are clean.
 func renderCard(gid: String, info: [String: Any], term: [String: Any]) -> String {
@@ -159,10 +159,10 @@ func renderCard(gid: String, info: [String: Any], term: [String: Any]) -> String
         appendProperty(key: key, value: value, to: &lines)
     }
 
-    // Append _data and _rule sections as pretty-printed JSON, if present.
+    // Append _code, _data and _rule sections as pretty-printed JSON, if present.
     // A horizontal rule separates the human-readable _info content above
     // from the machine-readable structural sections below.
-    let structuralSections = ["_data", "_rule"]
+    let structuralSections = ["_code", "_data", "_rule"]
     let presentSections = structuralSections.filter { term[$0] != nil }
     if !presentSections.isEmpty {
         while lines.last == "" { lines.removeLast() }
