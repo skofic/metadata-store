@@ -17,6 +17,7 @@ The `_kind_key` property qualifies the [`_type_key`](_type_key.md) data type by 
 - [`_kind_key_term_enum_element`](_kind_key_term_enum_element.md): The key must reference an enumeration element — a term that is a valid choice within a controlled vocabulary, connected to its root via a [`_predicate_enum-of`](_predicate_enum-of.md) edge.
 - [`_kind_key_term_object`](_kind_key_term_object.md): The key must reference an object definition term — a term carrying a [`_rule`](_rule.md) section.
 - [`_kind_key_term_descriptor`](_kind_key_term_descriptor.md): The key must reference a descriptor — a term carrying a [`_data`](_data.md) section.
+- [`_kind_key_term_predicate`](_kind_key_term_predicate.md): The key must reference a predicate term — a term used as the `_predicate` property of an edge document.
 
 When `_kind_key` is absent, the key may reference a document in any collection of the database.
 
