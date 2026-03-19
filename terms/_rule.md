@@ -6,15 +6,50 @@ Structure Rules Section
 
 **`_definition`**
 
-The section of a term that defines the structural constraints governing an object: which properties are required, recommended, or forbidden, which are managed by the system, and what default values apply at insertion time.
+The section of a term that defines the structural constraints governing an object: which properties are required, recommended, forbidden, or system-managed. Its presence in a term signals that the term is an object definition. An empty `_rule` section is valid and means that all structural constraints are expressed in the graph layer rather than here.
 
 **`_description`**
 
-The structure rules section is present in [object definition terms](_term_object.md). It constrains how a compliant object must be composed.
+The `_rule` section is present in object definition terms. Its mere presence — even when empty — signals that the term defines an object structure. This is analogous to how an empty [`_scalar`](_scalar.md) section signals a scalar value of any type.
 
-Required properties are specified using selection structures that express precise cardinality constraints: [exactly one of a set](_selection-descriptors_one.md), [any of a set](_selection-descriptors_any.md), [all of a set](_selection-descriptors_all.md), and so on. [Recommended](_recommended.md) properties form the whitelist used when the schema operates in closed mode — in closed mode only the listed properties are permitted; in open mode they are advisory. [Banned](_banned.md) properties are unconditionally excluded and take precedence over all other rules, including any conditional rules expressed in the graph layer.
+When non-empty, `_rule` carries unconditional structural constraints:
 
-Conditional constraints — rules that activate only when a specific property holds a specific value — are expressed in the graph layer using the `_predicate_value-of` predicate, not in this section. The structure rules section handles only unconditional constraints.
+- [`_required`](_required.md): which properties must always be present, expressed using descriptor selection structures.
+- [`_recommended`](_recommended.md): the whitelist of permitted properties — advisory in open schemas, enforced in closed schemas.
+- [`_closed`](_closed.md): when true, switches `_recommended` from advisory to a strict whitelist.
+- [`_banned`](_banned.md): properties that must never be present; unconditional and absolute.
+- [`_computed`](_computed.md): properties the system fills in automatically when absent.
+- [`_locked`](_locked.md): properties the system manages exclusively; users cannot touch them.
+- [`_immutable`](_immutable.md): properties that, once set, cannot be modified or deleted.
+- [`_default-value`](_default-value.md): default values applied at insertion time before `_required` is checked.
+
+**Empty `_rule`**: when `_rule` is present but empty (`_rule: {}`), it means the term is an object definition whose structural constraints are entirely expressed in the graph layer via `_predicate_value-of` edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.
+
+Conditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. The `_rule` section handles only constraints that apply unconditionally, regardless of property values.
+
+```json
+{
+	"_rule": {
+		"_required": {
+			"_selection-descriptors_all": ["_lid"]
+		},
+		"_recommended": ["_nid", "_lid", "_gid", "_aid"],
+		"_closed": true,
+		"_computed": ["_gid"],
+		"_immutable": ["_lid", "_gid"]
+	}
+}
+```
+
+An object definition where `_lid` is always required and immutable, `_gid` is computed and immutable, the schema is closed to the four listed properties, and all constraints are unconditional.
+
+```json
+{
+	"_rule": {}
+}
+```
+
+An object definition with no unconditional constraints — all rules are in the graph.
 
 ---
 
@@ -51,6 +86,7 @@ Conditional constraints — rules that activate only when a specific property ho
   "_recommended" : [
     "_required",
     "_recommended",
+    "_closed",
     "_banned",
     "_computed",
     "_locked",

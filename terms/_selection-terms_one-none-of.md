@@ -1,0 +1,73 @@
+# `_selection-terms_one-none-of`
+
+**`_title`**
+
+Any one of
+
+**`_definition`**
+
+The selection should include one element from each of list of sets and one or more of the elements from that selection will become the result.
+
+**`_description`**
+
+This descriptor contains a *parent array* that contains a *list* of *sets*: the rule determines that at most *one element* should be selected from *each* of the *child sets* and *one* or *more* elements of that selection will become the *result*. It is like combining an [any](_selection-terms_any) selection with a [one](_selection-terms_one) selection.
+
+The *terms* in the *child sets* are represented by their [global identifiers](_gid).
+
+**`_examples`**
+
+```json
+{
+	"_selection-terms_one-none-of": [
+		["red", "green", "blue"],
+		["Monday", "Tuesday"]
+	]
+}
+```
+
+This example implements a selection of colours for Monday or Tuesday:
+
+- In the *child sets* selection you choose *one* from each, that is: `red`, `green` or `blue` from the *first* set of colours and `Monday` or `Tuesday` fron the `second` weekdays set.
+  
+- Once the selection of elements in the *child sets* has been done, the result will become *one* or *more* elements of the *child sets selection*.
+  
+
+So some possible results could be:
+
+- `["red", "Monday"]`
+- `["green"]`
+- `[Tuesday"]`
+- `["blue", "Tuesday"]`
+
+---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "one-none-of"
+  ],
+  "_gid" : "_selection-terms_one-none-of",
+  "_lid" : "one-none-of",
+  "_nid" : "_selection-terms"
+}
+```
+
+**`_data`**
+
+```json
+{
+  "_array" : {
+    "_set" : {
+      "_set_scalar" : {
+        "_kind" : [
+          "_any-term"
+        ],
+        "_set_type" : "_type_string_key"
+      }
+    }
+  },
+  "_class" : "_class_reference"
+}
+```

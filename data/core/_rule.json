@@ -1,0 +1,440 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "required",
+			"_gid": "_required",
+			"_aid": [
+				"required"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Required Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An object containing one or more descriptor selection structures that express which properties must be present in an object for it to be considered valid. All selection structures present must be satisfied simultaneously — they are ANDed together, not ORed."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_required` is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor `_gid`s. When multiple structures are present, all of them must be satisfied simultaneously.\n\nThe five available selection structures are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one of the listed descriptors must be present; the rest must be absent.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one of the listed descriptors may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more of the listed descriptors must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all listed descriptors must be present.\n- [`_selection-descriptors_one-none-of`](_selection-descriptors_one-none-of.md): an array of groups; from each group, zero or one descriptor may be present.\n\n`_required` is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"],\n\t\t\t\"_selection-descriptors_one\": [\"_type_boolean\", \"_type_number\", \"_type_string\"]\n\t\t}\n\t}\n}\n```\n\n`_lid` must always be present; exactly one of the three type descriptors must be present."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_object",
+				"_kind_object": [
+					"_required"
+				]
+			}
+		},
+		"_rule": {
+			"_required": {
+				"_selection-descriptors_any": [
+					"_selection-descriptors_one",
+					"_selection-descriptors_one-none",
+					"_selection-descriptors_any",
+					"_selection-descriptors_all",
+					"_selection-descriptors_one-none-of"
+				]
+			},
+			"_recommended": [
+				"_selection-descriptors_one",
+				"_selection-descriptors_one-none",
+				"_selection-descriptors_any",
+				"_selection-descriptors_all",
+				"_selection-descriptors_one-none-of"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "recommended",
+			"_gid": "_recommended",
+			"_aid": [
+				"recommended"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Recommended Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A flat set of descriptor `_gid`s listing the properties that are expected or permitted in the object. In open schema mode (the default) it is advisory — a documentation aid and form generation hint. In closed schema mode (when `_closed` is true) it is enforced as a strict whitelist: any property not listed here is rejected."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_recommended` is a property of the [`_rule`](_rule.md) section. Its value is a flat set of descriptor `_gid`s — not a cardinality structure like [`_required`](_required.md), but a plain membership list.\n\n**Open schema** (default, `_closed` absent or false): `_recommended` documents which properties are expected for this object type. It is used by form generators and display tools to know which fields to show, but does not reject unlisted properties.\n\n**Closed schema** (`_closed` is true): `_recommended` is enforced as a strict whitelist. Any property not in the list is rejected. This mode is appropriate for well-controlled object types where unexpected properties indicate a data quality problem.\n\nConditional rules expressed in the graph layer via `_predicate_value-of` edges may supplement `_recommended` for specific value contexts — they can add properties to the effective permitted set but cannot remove listed properties or override [`_banned`](_banned.md).\n\nA property should not appear in both `_recommended` and `_banned`.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_recommended\": [\n\t\t\t\"_title\", \"_definition\", \"_description\",\n\t\t\t\"_examples\", \"_notes\", \"_url\", \"_citation\"\n\t\t]\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "closed",
+			"_gid": "_closed",
+			"_aid": [
+				"closed"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Closed Schema"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A boolean flag that switches the schema from open to closed mode. When true, only the properties listed in `_recommended` are permitted in the object; any unlisted property is rejected. When false or absent, `_recommended` is advisory and unlisted properties are accepted."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_closed` is an optional property of the [`_rule`](_rule.md) section. It controls whether [`_recommended`](_recommended.md) is treated as a strict whitelist or as an advisory list.\n\nWhen `_closed` is **absent or false** (open schema): properties not listed in `_recommended` are accepted without raising an error. This is the default and is appropriate for schemas that are still evolving or where extensibility is desired.\n\nWhen `_closed` is **true** (closed schema): the object must contain only properties listed in `_recommended` (plus any conditionally added by the graph layer). Any other property causes a validation error. This is appropriate for mature, well-controlled schemas where unexpected properties indicate a data quality issue.\n\n`_closed` has no effect when `_recommended` is absent — without a whitelist there is nothing to enforce.\n\n[`_banned`](_banned.md) properties are unconditional and apply regardless of whether the schema is open or closed.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_recommended\": [\"_lid\", \"_nid\", \"_gid\"],\n\t\t\"_closed\": true\n\t}\n}\n```\n\nOnly `_lid`, `_nid`, and `_gid` are permitted; any other property is a validation error."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_boolean"
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "banned",
+			"_gid": "_banned",
+			"_aid": [
+				"banned"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Banned Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of descriptor `_gid`s that must never appear in the object. If any banned property is present the object is invalid. Unconditional and absolute — takes precedence over all other rules including conditional graph rules."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_banned` is a property of the [`_rule`](_rule.md) section. Its value is a flat set of descriptor `_gid`s. If any of the listed properties is present in the object, validation fails — the object is considered invalid, not simply cleaned up.\n\n`_banned` is **unconditional and absolute**. It takes precedence over all other rules, including conditional rules expressed in the graph layer via `_predicate_value-of` edges. No conditional rule can activate a property that `_banned` prohibits. If a conditional rule's `_path_data` requires a banned property, that is a conflict detectable at edge insertion time.\n\n`_banned` applies in both open and closed schema modes and is not affected by the value of [`_closed`](_closed.md). A property should not appear in both `_banned` and [`_recommended`](_recommended.md).\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_banned\": [\"_data\", \"_rule\"]\n\t}\n}\n```\n\nAn object of this type must never contain `_data` or `_rule` properties, regardless of any other rule that might otherwise permit them."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "computed",
+			"_gid": "_computed",
+			"_aid": [
+				"computed"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Computed Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of descriptor `_gid`s whose values are automatically set by the system when not provided by the user. Computed values are resolved before `_required` is checked, so a computed property can simultaneously be required — the system fills it in if absent and validation then confirms its presence."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_computed` is a property of the [`_rule`](_rule.md) section. It lists properties whose values the system derives automatically if the user does not supply them — for example, `_gid` computed from `_nid` and `_lid`.\n\nThe computation order at insertion time is:\n\n1. Apply [`_default-value`](_default-value.md) defaults.\n2. Compute `_computed` properties.\n3. Check [`_required`](_required.md) constraints.\n\nThis ordering means a property can be listed in both `_computed` and `_required`: the system computes it first, and the presence check then succeeds.\n\n`_computed` differs from [`_locked`](_locked.md) in that the user may optionally supply the value — the system only intervenes when it is absent. For properties that the system owns exclusively, use `_locked` instead.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_computed\": [\"_gid\", \"_key\"],\n\t\t\"_immutable\": [\"_gid\", \"_key\"]\n\t}\n}\n```\n\n`_gid` and `_key` are computed by the system if absent, and once set they cannot be changed."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "locked",
+			"_gid": "_locked",
+			"_aid": [
+				"locked"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Locked Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of descriptor `_gid`s that are entirely managed by the system and cannot be set or modified by users at any time. The system writes these values exclusively."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_locked` is a property of the [`_rule`](_rule.md) section. It lists properties whose values the system owns completely — users cannot set, modify, or delete them. A typical example is `_rev` (the ArangoDB revision token), which the database manages internally.\n\n`_locked` differs from [`_computed`](_computed.md): a computed property can be supplied by the user (the system only fills it in when absent). A locked property is opaque to users entirely — any value provided by the user for a locked property is silently discarded or rejected.\n\n`_locked` differs from [`_immutable`](_immutable.md): an immutable property can be set once (by the user or system) and is then frozen. A locked property is never accessible to users at all — not even for the initial write.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_computed\": [\"_rev\"],\n\t\t\"_locked\": [\"_rev\"]\n\t}\n}\n```\n\n`_rev` is computed and set by the database; users cannot interact with it."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "immutable",
+			"_gid": "_immutable",
+			"_aid": [
+				"immutable"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Immutable Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of descriptor `_gid`s whose values, once written — whether by the user or the system — cannot be modified or deleted. The initial write is permitted; all subsequent changes are rejected."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_immutable` is a property of the [`_rule`](_rule.md) section. It lists properties that are frozen after their first write. A typical example is `_key` (the ArangoDB primary key): it is set once at insertion and is permanent.\n\n`_immutable` differs from [`_locked`](_locked.md): a locked property cannot be written by users at all. An immutable property can be written once — by the user or by the system via [`_computed`](_computed.md) — and is then frozen.\n\nIf a property is both `_computed` and `_immutable`, the system sets it on first insertion and it cannot be changed thereafter. This is the standard pattern for stable identifiers.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"]\n\t\t},\n\t\t\"_computed\": [\"_gid\", \"_key\"],\n\t\t\"_immutable\": [\"_lid\", \"_gid\", \"_key\"]\n\t}\n}\n```\n\n`_lid` is required and immutable once set. `_gid` and `_key` are computed from `_lid` and are also immutable."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "default-value",
+			"_gid": "_default-value",
+			"_aid": [
+				"default-value"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Default Values"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A dictionary mapping descriptor `_gid`s to default values that are applied at insertion time when those properties are absent from the object. Defaults are applied before `_required` is checked, so a property with a default value will always satisfy a requirement for it."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_default-value` is a property of the [`_rule`](_rule.md) section. It is a dictionary whose keys are descriptor `_gid`s and whose values are the defaults to apply when the corresponding property is absent at insertion time.\n\nThe application order at insertion is:\n\n1. Apply `_default-value` defaults for any absent properties.\n2. Compute [`_computed`](_computed.md) properties.\n3. Check [`_required`](_required.md) constraints.\n\nThis ordering allows a property to be both listed in `_default-value` and required: if the user omits it, the default fills it in and validation then succeeds.\n\nDefault values are **schema-local**: the same descriptor can have different defaults in different object schemas. The default value must be compatible with the descriptor's own `_data` type; this is enforced by the validation layer at insertion time.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_default-value\": {\n\t\t\t\"chr_status\": \"active\",\n\t\t\t\"chr_confidence\": 1.0\n\t\t}\n\t}\n}\n```\n\nIf `chr_status` or `chr_confidence` are absent when an object of this type is inserted, they are filled in automatically before validation runs."
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_type_key": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				},
+				"_dict_value": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "selection-descriptors",
+			"_gid": "_selection-descriptors",
+			"_aid": [
+				"selection-descriptors"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Descriptor Selection"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for the five descriptor selection rule terms used inside `_required`. Each sub-term expresses a different cardinality constraint over a set of descriptor `_gid`s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors` is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor `_gid`s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe five variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-none-of`](_selection-descriptors_one-none-of.md): an array of groups; from each group, zero or one may be present.\n\nMultiple selection structures may coexist inside a single `_required` object; all must be satisfied simultaneously (they are ANDed together)."
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "one",
+			"_gid": "_selection-descriptors_one",
+			"_aid": [
+				"one"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Exactly One of (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule requiring that exactly one descriptor from the set is present in the object. All other descriptors in the set must be absent."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_one` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, exactly one of the listed descriptors must be present; the others must be absent.\n\nThis is a mutual exclusion with mandatory selection: one and only one of the group is chosen.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one\": [\n\t\t\t\t\"_min-range-inclusive\",\n\t\t\t\t\"_min-range-exclusive\"\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nExactly one of the two lower-bound properties must be present — not both, not neither."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "one-none",
+			"_gid": "_selection-descriptors_one-none",
+			"_aid": [
+				"one-none"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "One or None of (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule requiring that at most one descriptor from the set is present in the object. Zero descriptors from the set may also be present — none is allowed."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_one-none` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, zero or one of the listed descriptors may be present; having two or more from the set present is an error.\n\nThis is a mutual exclusion without mandatory selection: at most one of the group is chosen.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one-none\": [\n\t\t\t\t\"_kind_string\", \"_regexp\"\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\n`_kind_string` and `_regexp` are mutually exclusive — at most one may be present. Neither is required."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "any",
+			"_gid": "_selection-descriptors_any",
+			"_aid": [
+				"any"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Any of (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule requiring that at least one descriptor from the set is present in the object. Two or more from the set may also be present."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_any` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, at least one of the listed descriptors must be present; having several from the set present is equally valid.\n\nThis expresses an inclusive OR requirement: one or more, but at least one.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_any\": [\n\t\t\t\t\"_title\", \"_definition\", \"_description\"\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nAt least one of `_title`, `_definition`, or `_description` must be present."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "all",
+			"_gid": "_selection-descriptors_all",
+			"_aid": [
+				"all"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "All of (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule requiring that all descriptors in the set are present in the object. If any listed descriptor is absent, the object is invalid."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_all` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, every listed descriptor must be present.\n\nThis is the strictest selection rule — no exemptions. It is used for properties that are unconditionally mandatory.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"]\n\t\t}\n\t}\n}\n```\n\n`_lid` must always be present — no exceptions."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_key",
+					"_kind_key": [
+						"_kind_key_term_descriptor"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "one-none-of",
+			"_gid": "_selection-descriptors_one-none-of",
+			"_aid": [
+				"one-none-of"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "One or None of Each (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule expressed as an array of sets. From each set in the array, zero or one descriptor may be present. Each set is evaluated independently — the rule is applied separately to every group."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_one-none-of` is a property of the [`_required`](_required.md) object. Unlike the other four selection structures — which each evaluate a single flat set — this one takes an **array of sets** and applies a zero-or-one constraint independently to each group.\n\nThis is the natural way to express mutual exclusions across multiple independent pairs or groups simultaneously. For example, a range object must have at most one lower bound and at most one upper bound, where each pair is evaluated independently:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one-none-of\": [\n\t\t\t\t[\"_min-range-inclusive\", \"_min-range-exclusive\"],\n\t\t\t\t[\"_max-range-inclusive\", \"_max-range-exclusive\"]\n\t\t\t],\n\t\t\t\"_selection-descriptors_any\": [\n\t\t\t\t\"_min-range-inclusive\", \"_min-range-exclusive\",\n\t\t\t\t\"_max-range-inclusive\", \"_max-range-exclusive\"\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nFrom the first group, at most one of `_min-range-inclusive` / `_min-range-exclusive` may be present. From the second group, at most one of `_max-range-inclusive` / `_max-range-exclusive` may be present. Combined with `_selection-descriptors_any`, at least one bound overall is required. The two groups are evaluated independently — a valid object could have only a lower bound, only an upper bound, or one of each."
+			}
+		},
+		"_data": {
+			"_array": {
+				"_set": {
+					"_set_scalar": {
+						"_set_type": "_type_key",
+						"_kind_key": [
+							"_kind_key_term_descriptor"
+						]
+					}
+				}
+			}
+		}
+	}
+]
