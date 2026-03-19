@@ -2,34 +2,34 @@
 
 **`_title`**
 
-Recommended properties
+Recommended Properties
 
 **`_definition`**
 
-Selection of recommended properties.
+A flat set of descriptor `_gid`s listing the properties that are expected or permitted in the object. In open schema mode (the default) it is advisory — a documentation aid and form generation hint. In closed schema mode (when [`_closed`](_closed.md) is true) it is enforced as a strict whitelist: any property not listed here is rejected.
 
 **`_description`**
 
-This field contains a [descriptors selection rule](_selection-descriptors.md) that determines which *set* of *descriptors* are *recommended* to be *included* in the [data structure definition](_type_object.md) of the *object*. By *recommended* it means that you are *strongly encouraged* to *include* the *selection* of *properties* in the *object*.
+`_recommended` is a property of the [`_rule`](_rule.md) section. Its value is a flat set of descriptor `_gid`s — not a cardinality structure like [`_required`](_required.md), but a plain membership list.
 
-The selection *values* must be the [global identifier](_gid.md) of the *descriptors* that are *recommended*.
+**Open schema** (default, `_closed` absent or false): `_recommended` documents which properties are expected for this object type. It is used by form generators and display tools to know which fields to show, but does not reject unlisted properties.
 
-If these properties are not added to the object this doesn't mean that the object is invalid.
+**Closed schema** (`_closed` is true): `_recommended` is enforced as a strict whitelist. Any property not in the list is rejected. This mode is appropriate for well-controlled object types where unexpected properties indicate a data quality problem.
 
-**`_examples`**
+Conditional rules expressed in the graph layer via `_predicate_value-of` edges may supplement `_recommended` for specific value contexts — they can add properties to the effective permitted set but cannot remove listed properties or override [`_banned`](_banned.md).
+
+A property should not appear in both `_recommended` and `_banned`.
 
 ```json
-	"_selection-descriptors_one": [one, two, three],
-	"_selection-descriptors_any": [red, green, blue],
-	"_selection-descriptors_all": [mon. tue, wed]
+{
+	"_rule": {
+		"_recommended": [
+			"_title", "_definition", "_description",
+			"_examples", "_notes", "_url", "_citation"
+		]
+	}
 }
 ```
-
-This selection rule implies the following conditions:
-
-- At least *one* of `[red, green, blue]` is recommended.
-- *One* or *more* of `[odd, even] `are recommended.
-- *All* of `[mon, tue, wed]` are recommended.
 
 ---
 
@@ -50,11 +50,13 @@ This selection rule implies the following conditions:
 
 ```json
 {
-  "_scalar" : {
-    "_kind" : [
-      "_selection-descriptors"
-    ],
-    "_type" : "_type_object"
+  "_set" : {
+    "_set_scalar" : {
+      "_kind_key" : [
+        "_kind_key_term_descriptor"
+      ],
+      "_set_type" : "_type_key"
+    }
   }
 }
 ```

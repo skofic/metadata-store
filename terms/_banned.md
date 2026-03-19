@@ -2,19 +2,29 @@
 
 **`_title`**
 
-Banned properties
+Banned Properties
 
 **`_definition`**
 
-List of banned properties.
+A set of descriptor `_gid`s that must never appear in the object. If any banned property is present the object is invalid. Unconditional and absolute — takes precedence over all other rules including conditional graph rules.
 
 **`_description`**
 
-This field contains a [descriptors selection rule](_selection-descriptors.md) that determines which *set* of *descriptors* must *not* be *included* in the [data structure definition](_type_object.md) of the *object*.
+`_banned` is a property of the [`_rule`](_rule.md) section. Its value is a flat set of descriptor `_gid`s. If any of the listed properties is present in the object, validation fails — the object is considered invalid, not simply cleaned up.
 
-The selection *values* must be the [global identifier](_gid.md) of the *descriptors* that are *forbidden* from being *included* in the *object data structure*.
+`_banned` is **unconditional and absolute**. It takes precedence over all other rules, including conditional rules expressed in the graph layer via `_predicate_value-of` edges. No conditional rule can activate a property that `_banned` prohibits. If a conditional rule's `_path_data` requires a banned property, that is a conflict detectable at edge insertion time.
 
-This rule should be evaluated at the *end* of the *validation workflow* and should *not trigger* an *error*: all banned properties should simply be *removed*.
+`_banned` applies in both open and closed schema modes and is not affected by the value of [`_closed`](_closed.md). A property should not appear in both `_banned` and [`_recommended`](_recommended.md).
+
+```json
+{
+	"_rule": {
+		"_banned": ["_data", "_rule"]
+	}
+}
+```
+
+An object of this type must never contain `_data` or `_rule` properties, regardless of any other rule that might otherwise permit them.
 
 ---
 
@@ -35,13 +45,12 @@ This rule should be evaluated at the *end* of the *validation workflow* and shou
 
 ```json
 {
-  "_class" : "_class_reference",
   "_set" : {
     "_set_scalar" : {
-      "_kind" : [
-        "_any-descriptor"
+      "_kind_key" : [
+        "_kind_key_term_descriptor"
       ],
-      "_set_type" : "_type_string_key"
+      "_set_type" : "_type_key"
     }
   }
 }

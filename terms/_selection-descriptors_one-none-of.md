@@ -2,44 +2,36 @@
 
 **`_title`**
 
-One of any in list
+One or None of Each (Descriptors)
 
 **`_definition`**
 
-The selection should include one or no element from each of the list of sets
+A descriptor selection rule expressed as an array of sets. From each set in the array, zero or one descriptor may be present. Each set is evaluated independently — the rule is applied separately to every group.
 
 **`_description`**
 
-This descriptor contains a *list* of *sets*: the rule determines that *one element*, or *no elements* should be selected from *each* of the *child sets*.
+`_selection-descriptors_one-none-of` is a property of the [`_required`](_required.md) object. Unlike the other four selection structures — which each evaluate a single flat set — this one takes an **array of sets** and applies a zero-or-one constraint independently to each group.
 
-The *descriptors* in the *child sets* are represented by their [global identifiers](_gid.md).
-
-**`_examples`**
+This is the natural way to express mutual exclusions across multiple independent pairs or groups simultaneously. For example, a range object must have at most one lower bound and at most one upper bound, where each pair is evaluated independently:
 
 ```json
 {
-	"_selection-descriptors_one-none-of": [
-		["minimum_inclusive", "minimum_exclusive"],
-		["maximum_inclusive", "maximum_exclusive"]
-	]
+	"_rule": {
+		"_required": {
+			"_selection-descriptors_one-none-of": [
+				["_min-range-inclusive", "_min-range-exclusive"],
+				["_max-range-inclusive", "_max-range-exclusive"]
+			],
+			"_selection-descriptors_any": [
+				"_min-range-inclusive", "_min-range-exclusive",
+				"_max-range-inclusive", "_max-range-exclusive"
+			]
+		}
+	}
 }
 ```
 
-This example implements a selection for a range:
-
-- In the *child sets* selection you choose *one* or *none* from each, that is: `minimum_inclusive` or `minimum_exclusive` or *none* from the *first* set and `maximum_inclusive` or `maximum_exclusive` or *none* fron the `second` set.
-- The final selection of elements must include *at least one choice*.
-
-So the possible results could be:
-
-- `["minimum_inclusive"]`
-- `["minimum_exclusive"]`
-- `["maximum_inclusive"]`
-- `["maximum_exclusive"]`
-- `["minimum_inclusive", "maximum_inclusive"]`
-- `["minimum_inclusive", "maximum_exclusive"]`
-- `["minimum_exclusive", "maximum_inclusive"]`
-- `["minimum_exclusive", "maximum_exclusive"]`
+From the first group, at most one of `_min-range-inclusive` / `_min-range-exclusive` may be present. From the second group, at most one of `_max-range-inclusive` / `_max-range-exclusive` may be present. Combined with `_selection-descriptors_any`, at least one bound overall is required. The two groups are evaluated independently — a valid object could have only a lower bound, only an upper bound, or one of each.
 
 ---
 
@@ -63,13 +55,12 @@ So the possible results could be:
   "_array" : {
     "_set" : {
       "_set_scalar" : {
-        "_kind" : [
-          "_any-descriptor"
+        "_kind_key" : [
+          "_kind_key_term_descriptor"
         ],
-        "_set_type" : "_type_string_key"
+        "_set_type" : "_type_key"
       }
     }
-  },
-  "_class" : "_class_reference"
+  }
 }
 ```

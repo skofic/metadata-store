@@ -2,17 +2,29 @@
 
 **`_title`**
 
-All of
+All of (Descriptors)
 
 **`_definition`**
 
-Selection should contain all descriptors from the set.
+A descriptor selection rule requiring that all descriptors in the set are present in the object. If any listed descriptor is absent, the object is invalid.
 
 **`_description`**
 
-The rule determines that *all* of the descriptors in the *set* should be part of the *selection*.
+`_selection-descriptors_all` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, every listed descriptor must be present.
 
-TThe *descriptors* of the *set* are represented by their *global identifiers*.
+This is the strictest selection rule — no exemptions. It is used for properties that are unconditionally mandatory.
+
+```json
+{
+	"_rule": {
+		"_required": {
+			"_selection-descriptors_all": ["_lid"]
+		}
+	}
+}
+```
+
+`_lid` must always be present — no exceptions.
 
 ---
 
@@ -33,13 +45,12 @@ TThe *descriptors* of the *set* are represented by their *global identifiers*.
 
 ```json
 {
-  "_class" : "_class_reference",
   "_set" : {
     "_set_scalar" : {
-      "_kind" : [
-        "_any-descriptor"
+      "_kind_key" : [
+        "_kind_key_term_descriptor"
       ],
-      "_set_type" : "_type_string_key"
+      "_set_type" : "_type_key"
     }
   }
 }
