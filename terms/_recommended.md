@@ -6,7 +6,7 @@ Recommended Properties
 
 **`_definition`**
 
-A flat set of descriptor `_gid`s listing the properties that are expected or permitted in the object. In open schema mode (the default) it is advisory — a documentation aid and form generation hint. In closed schema mode (when [`_closed`](_closed.md) is true) it is enforced as a strict whitelist: any property not listed here is rejected.
+A flat set of descriptor `_gid`s listing the properties that are expected or permitted in the object. In open schema mode (the default) it is advisory — a documentation aid and form generation hint. In closed schema mode (when `_closed` is true) it is enforced as a strict whitelist: any property not listed here is rejected.
 
 **`_description`**
 

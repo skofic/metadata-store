@@ -1,4 +1,4 @@
-# `_type_object_geojson`
+# `_type_object_GeoJSON`
 
 **`_title`**
 
@@ -10,7 +10,7 @@ Scalar data type for a GeoJSON object representing a geographic feature. The obj
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_object_geojson`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object — a structured representation of a geographic feature such as a point, line, polygon, or feature collection, conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is not valid. No companion qualifier, unit, or range constraint is applicable.
+When [`_type`](_type.md) is set to `_type_object_GeoJSON`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object — a structured representation of a geographic feature such as a point, line, polygon, or feature collection, conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is not valid. No companion qualifier, unit, or range constraint is applicable.
 
 **`_examples`**
 
@@ -19,7 +19,7 @@ When [`_type`](_type.md) is set to `_type_object_geojson`, the descriptor value 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_object_geojson"
+		"_type": "_type_object_GeoJSON"
 	}
 }
 ```
@@ -63,10 +63,10 @@ A closed ring of coordinates forming a rectangular boundary. The first and last 
 ```json
 {
   "_aid" : [
-    "geojson"
+    "GeoJSON"
   ],
-  "_gid" : "_type_object_geojson",
-  "_lid" : "geojson",
+  "_gid" : "_type_object_GeoJSON",
+  "_lid" : "GeoJSON",
   "_nid" : "_type_object"
 }
 ```

@@ -28,7 +28,7 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
   - [`_kind_string_date`](_kind_string_date.md): The string is a date, equivalent to the JSON Schema `date` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_time`](_kind_string_time.md): The string is a time, equivalent to the JSON Schema `time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_date-time`](_kind_string_date-time.md): The string is a date and time, equivalent to the JSON Schema `date-time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_ymd`](_kind_string_ymd.md): The string is a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
+  - [`_kind_string_YMD`](_kind_string_YMD.md): The string is a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
   - [`_kind_string_Hostname`](_kind_string_Hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
   - [`_kind_string_IPv4`](_kind_string_IPv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
   - [`_kind_string_IPv6`](_kind_string_IPv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).

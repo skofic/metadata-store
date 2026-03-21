@@ -1,0 +1,241 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "predicate",
+			"_gid": "_predicate",
+			"_aid": ["predicate"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Relationship predicate"},
+			"_definition": {"ISO_639_3_eng": "Type or classification of the relationship between two nodes in an edge."},
+			"_description": {"ISO_639_3_eng": "A relationship predicate qualifies the *type*, *nature*, or *class* of a directed relationship between two nodes in an [edge](_edge.md). The combination of [source](_from.md), predicate, and [destination](_to.md) must be unique — no two edges may share the same triple.\n\nThe predicate value is the `_key` of a term that identifies the relationship type. This term is itself the *root* of a controlled vocabulary enumerating the dictionary's built-in predicates. Predicates are grouped into four categories:\n\n- **[Functional](_predicate_functional.md)**: carry domain meaning and are followed during graph traversal — [`_predicate_enum-of`](_predicate_enum-of.md), [`_predicate_property-of`](_predicate_property-of.md), [`_predicate_field-of`](_predicate_field-of.md), [`_predicate_value-of`](_predicate_value-of.md).\n- **[Structural](_predicate_structural.md)**: reserved for dataset-level dependency graphs — [`_predicate_required-by`](_predicate_required-by.md), [`_predicate_banned-by`](_predicate_banned-by.md), [`_predicate_recommended-by`](_predicate_recommended-by.md).\n- **[Container](_predicate_container.md)**: grouping aids used during display but skipped during validation — [`_predicate_section-of`](_predicate_section-of.md).\n- **[Bridge](_predicate_bridge.md)**: allow a graph to include elements from another graph without duplicating edges — [`_predicate_bridge-of`](_predicate_bridge-of.md)."}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_key",
+				"_kind_key": ["_kind_key_term"]
+			}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "path",
+			"_gid": "_path",
+			"_aid": ["path"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Relationship paths"},
+			"_definition": {"ISO_639_3_eng": "Set of graph root handles whose traversal passes through this edge."},
+			"_description": {"ISO_639_3_eng": "[Edges](_edge.md) are uniquely identified by their [source](_from.md), [predicate](_predicate.md), and [destination](_to.md) combination. When multiple graphs share the same directed relationship between the same two nodes, they do not create separate edge documents — they share a single edge. This property holds the set of all graph root document handles that route through this edge.\n\nA graph is defined by its root node: all edges whose `_path` contains that root handle belong to the graph. Filtering edges by a root handle present in `_path` isolates the edges belonging to a specific graph without creating redundant documents."}
+		},
+		"_data": {
+			"_set": {
+				"_set_scalar": {
+					"_set_type": "_type_handle"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_path",
+			"_lid": "data",
+			"_gid": "_path_data",
+			"_aid": ["data"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Path data"},
+			"_definition": {"ISO_639_3_eng": "An open dictionary of custom data attached to the edge, scoped by graph root or node context."},
+			"_description": {"ISO_639_3_eng": "[Edges](_edge.md) are shared across all the graphs listed in [_path](_path.md). This property allows data to be associated with the edge in a context-sensitive way: keys are document handles (graph root handles from `_path`, or the `_from`/`_to` handles) or descriptor `_gid`s, and values contain the data relevant to that context.\n\nA common pattern for conditional validation rules uses graph root handles as keys. When the system traverses a specific graph, it reads `_path_data[root_handle]` to find any additional `_rule`-like constraints that apply within that structural context — for example, making a property required only when a specific value is present in a parent descriptor.\n\nThis property is initialised to an empty object `{}` at insertion time."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_key\": \"<edge hash>\",\n\t\"_from\": \"locations/Roma\",\n\t\"_predicate\": \"_predicate_travel-to\",\n\t\"_to\": \"locations/Milano\",\n\t\"_path\": [\n\t\t\"airlines/airline-A\",\n\t\t\"airlines/airline-B\"\n\t],\n\t\"_path_data\": {\n\t\t\"airlines/airline-A\": {\n\t\t\t\"price\": 150,\n\t\t\t\"duration\": 75\n\t\t},\n\t\t\"airlines/airline-B\": {\n\t\t\t\"price\": 200,\n\t\t\t\"duration\": 45\n\t\t},\n\t\t\"locations/Roma\": {\n\t\t\t\"taxi\": 70,\n\t\t\t\"duration\": 45\n\t\t},\n\t\t\"locations/Milano\": {\n\t\t\t\"taxi\": 90,\n\t\t\t\"duration\": 30\n\t\t},\n\t\t\"passengers\": 1247\n\t}\n}\n```\n\nThis edge represents the Rome → Milan route shared by two airlines. `_path_data` holds price and duration data scoped to each airline, taxi data scoped to the departure and arrival cities, and a general passenger count attached to the edge as a whole.\n\n```json\n{\n\t\"_key\": \"<edge hash>\",\n\t\"_from\": \"terms/_type_number\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_required\": {\n\t\t\t\t\"_selection-descriptors_all\": [\"_kind_number\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis edge states that, within the `_scalar` structure, when `_type` holds the value `_type_number`, the `_kind_number` property becomes required. The `_path_data` key is the graph root handle `terms/_scalar`; the value mirrors the `_rule` section format."}
+		},
+		"_data": {
+			"_scalar": {
+				"_type": "_type_struct"
+			}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "functional",
+			"_gid": "_predicate_functional",
+			"_aid": ["functional"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Functional predicate"},
+			"_definition": {"ISO_639_3_eng": "A predicate category grouping predicates that carry domain meaning and are followed during graph traversal."},
+			"_description": {"ISO_639_3_eng": "Predicates fall into four categories: *functional*, [structural](_predicate_structural.md), [container](_predicate_container.md), and [bridge](_predicate_bridge.md). Functional predicates define the primary semantic relationship between two nodes and are the predicates that traversal algorithms follow when resolving enumeration membership, object schema properties, or value-conditional rules.\n\nThe functional predicates are:\n\n- [`_predicate_enum-of`](_predicate_enum-of.md): the source node is a valid enumeration element of the destination node.\n- [`_predicate_property-of`](_predicate_property-of.md): the source node is a property descriptor of the destination object definition.\n- [`_predicate_field-of`](_predicate_field-of.md): the source node is a field or column of the destination form or table definition.\n- [`_predicate_value-of`](_predicate_value-of.md): the source node is a possible value of the destination property; used to encode value-conditional rules in `_path_data`."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "structural",
+			"_gid": "_predicate_structural",
+			"_aid": ["structural"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Structural predicate"},
+			"_definition": {"ISO_639_3_eng": "A predicate category grouping predicates that encode dataset-level dependencies between descriptors."},
+			"_description": {"ISO_639_3_eng": "Predicates fall into four categories: [functional](_predicate_functional.md), *structural*, [container](_predicate_container.md), and [bridge](_predicate_bridge.md). Structural predicates are **not** used to define term schemas — that role belongs to the [`_rule`](_rule.md) section and the [`_predicate_value-of`](_predicate_value-of.md) graph. Instead, structural predicates express *dataset-level dependencies*: constraints that arise from the co-occurrence of descriptors within a dataset, independently of the schema of any individual term.\n\nFor example, if a dataset includes a measurement variable that requires a date, or if the presence of one variable forbids another, these cross-descriptor dependencies are encoded with structural predicates.\n\nThe structural predicates are:\n\n- [`_predicate_required-by`](_predicate_required-by.md): the source descriptor is required whenever the destination descriptor is present in a dataset.\n- [`_predicate_banned-by`](_predicate_banned-by.md): the source descriptor must not appear in a dataset that contains the destination descriptor.\n- [`_predicate_recommended-by`](_predicate_recommended-by.md): the source descriptor is recommended whenever the destination descriptor is present in a dataset."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "container",
+			"_gid": "_predicate_container",
+			"_aid": ["container"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Container predicate"},
+			"_definition": {"ISO_639_3_eng": "A predicate category grouping predicates that act as display sections or navigation containers within a graph."},
+			"_description": {"ISO_639_3_eng": "Predicates fall into four categories: [functional](_predicate_functional.md), [structural](_predicate_structural.md), *container*, and [bridge](_predicate_bridge.md). Container predicates do not carry domain meaning. They are used to subdivide a graph into named sections for display purposes — for example, grouping enumeration elements under a regional heading, or organising schema properties under a thematic section. Container nodes are skipped during validation traversal and used only during display.\n\nThe container predicate is:\n\n- [`_predicate_section-of`](_predicate_section-of.md): the source node is a grouping section within the destination graph."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "bridge",
+			"_gid": "_predicate_bridge",
+			"_aid": ["bridge"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Bridge predicate"},
+			"_definition": {"ISO_639_3_eng": "A predicate category grouping predicates that allow a graph to include elements from another graph without duplicating edges."},
+			"_description": {"ISO_639_3_eng": "Predicates fall into four categories: [functional](_predicate_functional.md), [structural](_predicate_structural.md), [container](_predicate_container.md), and *bridge*. Bridge predicates connect a custom graph root to an existing graph, signalling that the custom graph shares some of that graph's elements. The bridge node itself is skipped during traversal; the shared elements are found by following edges whose [`_path`](_path.md) set contains both graph roots.\n\nThe bridge predicate is:\n\n- [`_predicate_bridge-of`](_predicate_bridge-of.md): the source node (an existing graph root) is bridged into the destination node (a custom graph root). During traversal of the destination graph, the source node is skipped."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "enum-of",
+			"_gid": "_predicate_enum-of",
+			"_aid": ["enum-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Enumeration of"},
+			"_definition": {"ISO_639_3_eng": "The source node is a valid enumeration element of the destination node's controlled vocabulary."},
+			"_description": {"ISO_639_3_eng": "The [source node](_from.md) is an *enumeration element* belonging to the [destination node](_to.md). Enumerations are *controlled vocabularies* organised as directed graphs. The destination node may be the enumeration root, another enumeration element (for hierarchical vocabularies), or a [container node](_predicate_container.md) that groups elements under a section heading. This predicate is the primary functional predicate followed during enumeration validation — a value is valid if and only if a path of `_predicate_enum-of` edges connects it to the vocabulary root."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_from\": \"terms/ISO_3166_1_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_1\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n}\n```\n\nThis [edge](_edge.md) declares `ISO_3166_1_ITA` (Italy) as a valid element of the `ISO_3166_1` country vocabulary.\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_1_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/EUROPE\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/EUROPE\",\n\t\"_predicate\": \"_predicate_section-of\",\n\t\"_to\": \"terms/ISO_3166_1\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n}\n```\n\nThese two edges connect Italy to the `ISO_3166_1` vocabulary through a `EUROPE` section. During validation, the section node is skipped and Italy is found directly. During display, the vocabulary is shown grouped by region."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "property-of",
+			"_gid": "_predicate_property-of",
+			"_aid": ["property-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Property of"},
+			"_definition": {"ISO_639_3_eng": "The source node is a property descriptor of the destination object definition."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) links a *property descriptor* (source) to the *object definition* it belongs to (destination). It is the basis of the graph-based schema system: by connecting descriptors to object roots with this predicate, and then associating value-conditional rules in [`_path_data`](_path_data.md) via [`_predicate_value-of`](_predicate_value-of.md) edges, the system encodes constraints that depend on which value a property holds within a specific structural context."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_from\": \"terms/_type\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {}\n}\n```\n\nThis [edge](_edge.md) declares [`_type`](_type.md) as a property of the [`_scalar`](_scalar.md) object definition. The `_scalar` root is the graph context: any `_predicate_value-of` edges whose `_path` contains `terms/_scalar` can then attach conditional rules that activate when `_type` holds a specific value."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "field-of",
+			"_gid": "_predicate_field-of",
+			"_aid": ["field-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Field of"},
+			"_definition": {"ISO_639_3_eng": "The source node is a field or column of the destination form or table definition."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) is used to build *form* and *table* graphs for user interface purposes. It is more general than [property-of](_predicate_property-of.md): it expresses simple membership in a form or table layout without implying any schema enforcement or value-conditional logic. The destination node is the form or table root; the source node is a field or column within it."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_from\": \"terms/chr_name\",\n\t\"_predicate\": \"_predicate_field-of\",\n\t\"_to\": \"terms/user_form\",\n\t\"_path\": [\"terms/user_form\"],\n\t\"_path_data\": {}\n}\n```\n\nThis [edge](_edge.md) declares `chr_name` as a field of the `user_form` display layout."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "value-of",
+			"_gid": "_predicate_value-of",
+			"_aid": ["value-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Value of"},
+			"_definition": {"ISO_639_3_eng": "The source node is a possible value of the destination property; used to encode value-conditional rules in a specific structural context."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) encodes *conditional rules*: constraints that activate only when a specific property holds a specific value within a specific structural context. The [source](_from.md) is the value, the [destination](_to.md) is the property, the [path](_path.md) is the structural context (graph root), and the `_path_data[root_handle]` object contains the rules that apply when the condition is met.\n\nThe [`_path_data`](_path_data.md) value at the graph root key follows the same format as the [`_rule`](_rule.md) section: it may contain [`_required`](_required.md), [`_recommended`](_recommended.md), [`_banned`](_banned.md), and other rule properties. The system resolves these conditional rules after the unconditional `_rule` section and merges their constraints into the validation context.\n\nConditional rules can only *add* constraints — they may require additional properties or expand the recommended set. They cannot remove a `_banned` constraint or override a structural-level rule."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_from\": \"terms/_type\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/_type_number\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_required\": {\n\t\t\t\t\"_selection-descriptors_all\": [\"_kind_number\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe first edge declares [`_type`](_type.md) as a property of the [`_scalar`](_scalar.md) object. The second edge states: within the `_scalar` context, when `_type` holds the value [`_type_number`](_type_number.md), the [`_kind_number`](_kind_number.md) property becomes required."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "required-by",
+			"_gid": "_predicate_required-by",
+			"_aid": ["required-by"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Required by"},
+			"_definition": {"ISO_639_3_eng": "The source descriptor must be present in any dataset that contains the destination descriptor."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) is a [*structural predicate*](_predicate_structural.md) reserved for *dataset-level dependency graphs*. It is not used to define term schemas — schema constraints are expressed in the [`_rule`](_rule.md) section and the [`_predicate_value-of`](_predicate_value-of.md) graph.\n\nA `_predicate_required-by` edge states that the [source](_from.md) descriptor must appear in any dataset that contains the [destination](_to.md) descriptor. This expresses a co-occurrence requirement between variables in a dataset — for example, a measurement variable that is meaningless without an accompanying date or location variable."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "banned-by",
+			"_gid": "_predicate_banned-by",
+			"_aid": ["banned-by"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Banned by"},
+			"_definition": {"ISO_639_3_eng": "The source descriptor must not appear in any dataset that contains the destination descriptor."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) is a *structural predicate* reserved for *dataset-level dependency graphs*. It is not used to define term schemas — schema constraints are expressed in the [`_rule`](_rule.md) section and the [`_predicate_value-of`](_predicate_value-of.md) graph.\n\nA `_predicate_banned-by` edge states that the [source](_from.md) descriptor must not appear in any dataset that contains the [destination](_to.md) descriptor. This expresses a mutual exclusion between variables in a dataset — for example, two descriptors that measure the same quantity by incompatible methods."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "recommended-by",
+			"_gid": "_predicate_recommended-by",
+			"_aid": ["recommended-by"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Recommended by"},
+			"_definition": {"ISO_639_3_eng": "The source descriptor is recommended in any dataset that contains the destination descriptor."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) is a *structural predicate* reserved for *dataset-level dependency graphs*. It is not used to define term schemas — schema constraints are expressed in the [`_rule`](_rule.md) section and the [`_predicate_value-of`](_predicate_value-of.md) graph.\n\nA `_predicate_recommended-by` edge states that the [source](_from.md) descriptor is recommended (but not required) whenever the [destination](_to.md) descriptor appears in a dataset. This expresses a soft co-occurrence suggestion — for example, recommending that a dataset including body weight also includes height, to allow BMI to be computed."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "section-of",
+			"_gid": "_predicate_section-of",
+			"_aid": ["section-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Section of"},
+			"_definition": {"ISO_639_3_eng": "The source node is a grouping section or disclosure container within the destination graph."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) groups graph elements under a named heading or disclosure section for categorisation or display purposes.\n\nThe [source](_from.md) node acts as the section container; the elements of the section are connected to it via [functional predicates](_predicate_functional.md). During *validation traversal*, section nodes are skipped — only functional edges are followed.\n\nDuring *display*, section nodes appear as collapsible headers that group their members."},
+			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_from\": \"terms/EUROPE\",\n\t\"_predicate\": \"_predicate_section-of\",\n\t\"_to\": \"terms/ISO_3166_1\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n}\n```\n\nThis [edge](_edge.md) makes `EUROPE` a section container within the `ISO_3166_1` vocabulary.\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_1_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/EUROPE\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/EUROPE\",\n\t\"_predicate\": \"_predicate_section-of\",\n\t\"_to\": \"terms/ISO_3166_1\",\n\t\"_path\": [\"terms/ISO_3166_1\"],\n\t\"_path_data\": {}\n}\n```\n\nTogether, these two edges group Italy under the `EUROPE` section of the `ISO_3166_1` country vocabulary. Validation ignores `EUROPE` and finds Italy directly; display shows countries organised by region."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "bridge-of",
+			"_gid": "_predicate_bridge-of",
+			"_aid": ["bridge-of"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Bridge of"},
+			"_definition": {"ISO_639_3_eng": "The source node (an existing graph root) is bridged into the destination node (a custom graph root); the source node is skipped during traversal of the destination graph."},
+			"_description": {"ISO_639_3_eng": "This [predicate](_predicate.md) allows a custom graph to include elements from an existing complete graph without duplicating [edge](_edge.md) documents. A `_predicate_bridge-of` edge connects the existing graph root (source) to the custom graph root (destination). The existing graph root is then skipped during traversal of the custom graph; shared elements are found by following functional edges whose [`_path`](_path.md) set contains the custom graph root.\n\nThis mechanism avoids duplicating edges: each element edge exists once, carrying all applicable graph roots in its `_path` set. Additional custom graphs that include the same elements simply add their root to the `_path` of the relevant element edges."},
+			"_examples": {"ISO_639_3_eng": "Suppose `ISO_3166_1` is the complete country vocabulary and you want to create a new vocabulary `EUROPE` containing only European countries.\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_1_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_1\",\n\t\"_path\": [\"terms/ISO_3166_1\", \"terms/EUROPE\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/ISO_3166_1\",\n\t\"_predicate\": \"_predicate_bridge-of\",\n\t\"_to\": \"terms/EUROPE\",\n\t\"_path\": [\"terms/EUROPE\"],\n\t\"_path_data\": {}\n}\n```\n\nThe first edge is Italy's existing membership edge in `ISO_3166_1`, extended by adding `EUROPE` to its `_path`. The second edge is the bridge: it connects the `ISO_3166_1` root to the `EUROPE` root. When traversing `EUROPE`, the `ISO_3166_1` node is skipped (bridge); Italy is found through the first edge because `EUROPE` is in its `_path`.\n\nA second vocabulary `LATIN_EUROPE` that also includes Italy would add `terms/LATIN_EUROPE` to the first edge's `_path` and create its own bridge edge — without creating a new element edge for Italy."}
+		}
+	}
+]

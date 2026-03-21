@@ -1,4 +1,4 @@
-# `_kind_string_hex`
+# `_kind_string_HEX`
 
 **`_title`**
 
@@ -10,7 +10,7 @@ An enumeration element indicating that the string value is a hexadecimal represe
 
 **`_description`**
 
-`_kind_string_hex` qualifies a [`_type_string`](_type_string.md) scalar as a hexadecimal string. Typical uses include colour codes, hash digests, binary identifiers, and memory addresses. Unlike a generic string, the value is constrained to the character set `[0-9A-Fa-f]`; the `_regexp` property may be used to further constrain length or casing.
+`_kind_string_HEX` qualifies a [`_type_string`](_type_string.md) scalar as a hexadecimal string. Typical uses include colour codes, hash digests, binary identifiers, and memory addresses. Unlike a generic string, the value is constrained to the character set `[0-9A-Fa-f]`; the `_regexp` property may be used to further constrain length or casing.
 
 String range properties (`_valid-range_string`, `_normal-range_string`) are applicable when ordering hex values lexicographically is meaningful.
 
@@ -18,7 +18,7 @@ String range properties (`_valid-range_string`, `_normal-range_string`) are appl
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_hex",
+		"_kind_string": "_kind_string_HEX",
 		"_regexp": "^[0-9A-Fa-f]{6}$"
 	}
 }
@@ -33,10 +33,10 @@ This descriptor accepts a six-character hex colour code such as `FF5733`.
 ```json
 {
   "_aid" : [
-    "hex"
+    "HEX"
   ],
-  "_gid" : "_kind_string_hex",
-  "_lid" : "hex",
+  "_gid" : "_kind_string_HEX",
+  "_lid" : "HEX",
   "_nid" : "_kind_string"
 }
 ```

@@ -1,4 +1,4 @@
-# `_kind_string_markdown`
+# `_kind_string_Markdown`
 
 **`_title`**
 
@@ -10,7 +10,7 @@ An enumeration element indicating that the string value is Markdown-formatted te
 
 **`_description`**
 
-`_kind_string_markdown` qualifies a [`_type_string`](_type_string.md) scalar as Markdown text. The stored value is a UTF-8 string containing standard Markdown syntax — headings, lists, links, fenced code blocks, and so on. The dictionary itself uses Markdown in the `_description`, `_examples`, and `_notes` properties of the [`_info`](_info.md) section.
+`_kind_string_Markdown` qualifies a [`_type_string`](_type_string.md) scalar as Markdown text. The stored value is a UTF-8 string containing standard Markdown syntax — headings, lists, links, fenced code blocks, and so on. The dictionary itself uses Markdown in the `_description`, `_examples`, and `_notes` properties of the [`_info`](_info.md) section.
 
 When this qualifier is present, `_regexp` is not applicable — the Markdown format is self-defining.
 
@@ -18,7 +18,7 @@ When this qualifier is present, `_regexp` is not applicable — the Markdown for
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_markdown"
+		"_kind_string": "_kind_string_Markdown"
 	}
 }
 ```
@@ -30,10 +30,10 @@ When this qualifier is present, `_regexp` is not applicable — the Markdown for
 ```json
 {
   "_aid" : [
-    "markdown"
+    "Markdown"
   ],
-  "_gid" : "_kind_string_markdown",
-  "_lid" : "markdown",
+  "_gid" : "_kind_string_Markdown",
+  "_lid" : "Markdown",
   "_nid" : "_kind_string"
 }
 ```

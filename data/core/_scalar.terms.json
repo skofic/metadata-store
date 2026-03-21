@@ -18,6 +18,11 @@
 			"_description": {
 				"ISO_639_3_eng": "When [`_type`](_type.md) is set to `_type_boolean`, the descriptor value must be a native boolean — either `true` or `false`. This is the simplest scalar type: it carries no companion qualifier, no unit, no range, and no format constraint. Any [`_scalar`](_scalar.md) section that selects `_type_boolean` is complete as-is."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -42,6 +47,11 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Float with unit and normal range** — body temperature in degrees Celsius:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_float\"],\n\t\t\"_decimals\": 1,\n\t\t\"_unit\": \"_unit_temperature_C\",\n\t\t\"_normal-range\": {\n\t\t\t\"_min-range-inclusive\": 36.0,\n\t\t\t\"_max-range-inclusive\": 37.5\n\t\t}\n\t}\n}\n```\n\nA floating-point value displayed with one decimal place. Values outside the normal range are flagged as outliers but not rejected.\n\n\n\n**Integer with valid range** — a count of samples that must be at least 1:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_integer\"],\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 1\n\t\t}\n\t}\n}\n```\n\nAn integer value. Any value less than 1 is rejected as invalid.\n\n\n\n**Float or integer** — a measurement that may be recorded with or without decimals:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_float\", \"_kind_number_integer\"]\n\t}\n}\n```\n\nBoth `42` and `42.5` are valid values."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -64,8 +74,13 @@
 				"ISO_639_3_eng": "When [`_type`](_type.md) is set to `_type_string`, the descriptor value is a UTF-8 string. The optional companion property [`_kind_string`](_kind_string.md) selects a specific encoding or format — Markdown, HTML, URI, date, email, and so on. When `_kind_string` is absent, the string is generic and the [`_scalar`](_scalar.md) section may additionally carry [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range_string`](_valid-range_string.md), and [`_normal-range_string`](_normal-range_string.md). When `_kind_string` is present, the format is self-defining and [`_regexp`](_regexp.md) is not permitted."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "**Generic string with regexp** — a three-letter uppercase code:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_regexp\": \"^[A-Z]{3}$\"\n\t}\n}\n```\n\nAccepts values such as `ITA` or `ENG`. `_regexp` is only permitted when `_kind_string` is absent.\n\n\n\n**Markdown** — a Markdown-formatted text value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Markdown\"\n\t}\n}\n```\n\nExample value: `## Title\\n\\nSome **bold** text.`\n\n\n\n**HTML** — an HTML-formatted text value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HTML\"\n\t}\n}\n```\n\nExample value: `<p>Hello <strong>world</strong></p>`\n\n\n\n**URI** — a Uniform Resource Identifier:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_URI\"\n\t}\n}\n```\n\nExample value: `https://www.example.com/resource`\n\n\n\n**HEX** — a hexadecimal value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HEX\"\n\t}\n}\n```\n\nExample value: `FF3A6B`\n\n\n\n**SVG** — an SVG image encoded as a string:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_SVG\"\n\t}\n}\n```\n\nExample value: `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 10 10\"><circle cx=\"5\" cy=\"5\" r=\"5\"/></svg>`\n\n\n\n**Email** — an email address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_email\"\n\t}\n}\n```\n\nExample value: `user@example.com`\n\n\n\n**Date** — a date in JSON Schema `date` format, with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date\",\n\t\t\"_valid-range_string\": {\n\t\t\t\"_min-range-inclusive_string\": \"2000-01-01\"\n\t\t}\n\t}\n}\n```\n\nA date no earlier than 1 January 2000, for example `2024-06-15`.\n\n\n\n**Time** — a time in JSON Schema `time` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_time\"\n\t}\n}\n```\n\nExample value: `14:30:00`\n\n\n\n**Date-time** — a date and time in JSON Schema `date-time` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date-time\"\n\t}\n}\n```\n\nExample value: `2024-06-15T14:30:00Z`\n\n\n\n**YMD** — a full or partial date in `YYYYMMDD` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_ymd\"\n\t}\n}\n```\n\nAccepts `2024` (year only), `202406` (year and month), or `20240615` (full date).\n\n\n\n**Hostname** — an internet hostname:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Hostname\"\n\t}\n}\n```\n\nExample value: `www.example.com`\n\n\n\n**IPv4** — an IPv4 address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv4\"\n\t}\n}\n```\n\nExample value: `192.168.1.1`\n\n\n\n**IPv6** — an IPv6 address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv6\"\n\t}\n}\n```\n\nExample value: `2001:0db8:85a3::8a2e:0370:7334`\n\n\n\n**LaTeX** — a mathematical or scientific expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_LaTeX\"\n\t}\n}\n```\n\nExample value: `\\\\bar{x} \\\\pm \\\\sigma` (rendered by KaTeX as x̄ ± σ). Simple Unicode symbols such as `°C` or `μg` are also valid."
+				"ISO_639_3_eng": "**Generic string with regexp** — a three-letter uppercase code:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_regexp\": \"^[A-Z]{3}$\"\n\t}\n}\n```\n\nAccepts values such as `ITA` or `ENG`. `_regexp` is only permitted when `_kind_string` is absent.\n\n\n\n**Markdown** — a Markdown-formatted text value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Markdown\"\n\t}\n}\n```\n\nExample value: `## Title\\n\\nSome **bold** text.`\n\n\n\n**HTML** — an HTML-formatted text value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HTML\"\n\t}\n}\n```\n\nExample value: `<p>Hello <strong>world</strong></p>`\n\n\n\n**URI** — a Uniform Resource Identifier:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_URI\"\n\t}\n}\n```\n\nExample value: `https://www.example.com/resource`\n\n\n\n**HEX** — a hexadecimal value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HEX\"\n\t}\n}\n```\n\nExample value: `FF3A6B`\n\n\n\n**SVG** — an SVG image encoded as a string:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_SVG\"\n\t}\n}\n```\n\nExample value: `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 10 10\"><circle cx=\"5\" cy=\"5\" r=\"5\"/></svg>`\n\n\n\n**Email** — an email address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_email\"\n\t}\n}\n```\n\nExample value: `user@example.com`\n\n\n\n**Date** — a date in JSON Schema `date` format, with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date\",\n\t\t\"_valid-range_string\": {\n\t\t\t\"_min-range-inclusive_string\": \"2000-01-01\"\n\t\t}\n\t}\n}\n```\n\nA date no earlier than 1 January 2000, for example `2024-06-15`.\n\n\n\n**Time** — a time in JSON Schema `time` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_time\"\n\t}\n}\n```\n\nExample value: `14:30:00`\n\n\n\n**Date-time** — a date and time in JSON Schema `date-time` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date-time\"\n\t}\n}\n```\n\nExample value: `2024-06-15T14:30:00Z`\n\n\n\n**YMD** — a full or partial date in `YYYYMMDD` format:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_YMD\"\n\t}\n}\n```\n\nAccepts `2024` (year only), `202406` (year and month), or `20240615` (full date).\n\n\n\n**Hostname** — an internet hostname:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Hostname\"\n\t}\n}\n```\n\nExample value: `www.example.com`\n\n\n\n**IPv4** — an IPv4 address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv4\"\n\t}\n}\n```\n\nExample value: `192.168.1.1`\n\n\n\n**IPv6** — an IPv6 address:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv6\"\n\t}\n}\n```\n\nExample value: `2001:0db8:85a3::8a2e:0370:7334`\n\n\n\n**LaTeX** — a mathematical or scientific expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_LaTeX\"\n\t}\n}\n```\n\nExample value: `\\\\bar{x} \\\\pm \\\\sigma` (rendered by KaTeX as x̄ ± σ). Simple Unicode symbols such as `°C` or `μg` are also valid."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -90,6 +105,11 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Unrestricted** — the key may reference any document in the database:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\"\n\t}\n}\n```\n\nThe value may be the `_key` of any document in any collection, for example `ISO_639_3_eng` or `_type_number`.\n\n\n\n**Any term** — the key must reference any dictionary term:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term\"]\n\t}\n}\n```\n\nAny term in the dictionary is accepted — whether it is a descriptor, a namespace, an enumeration root, or any other kind. For example `_type_number` or `ISO_639_3_eng`.\n\n\n\n**Enumeration root** — the key must reference a controlled vocabulary root:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_enum\"]\n\t}\n}\n```\n\nOnly terms that serve as the root of a controlled vocabulary graph are accepted — for example `ISO_639_3` or `ISO_3166_1`, not their elements.\n\n\n\n**Enumeration element** — the key must reference a valid controlled vocabulary choice:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_enum_element\"]\n\t}\n}\n```\n\nOnly enumeration elements are accepted — terms reachable from a root via [`_predicate_enum-of`](_predicate_enum-of.md) edges. For example `ISO_639_3_eng` or `ISO_3166_1_ITA`.\n\n\n\n**Object definition** — the key must reference a schema term:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_object\"]\n\t}\n}\n```\n\nOnly terms carrying a [`_rule`](_rule.md) section are accepted — terms that define an object schema. For example `_term` or `_edge`.\n\n\n\n**Descriptor** — the key must reference a descriptor term:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_descriptor\"]\n\t}\n}\n```\n\nOnly terms carrying a [`_data`](_data.md) section are accepted. For example `_type` or `_kind_number`.\n\n**Predicate** — the key must reference a predicate term:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_predicate\"]\n\t}\n}\n```\n\nOnly terms used as predicates in edge documents are accepted — for example `_predicate_enum-of` or `_predicate_section-of`."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -114,6 +134,11 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Document handle** — a reference to a specific document including its collection:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_handle\"\n\t}\n}\n```\n\nValid values have the form `<collection>/<_key>`, for example `terms/ISO_639_3_eng` (the English language term in the `terms` collection) or `edges/a1b2c3d4` (an edge document). The collection name is part of the value, distinguishing this type from [`_type_key`](_type_key.md) which carries only the `_key` portion."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -138,6 +163,11 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Restricted to one vocabulary** — a language code from ISO 639-3:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_enum\",\n\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t}\n}\n```\n\nValid values are elements of the `ISO_639_3` vocabulary, such as `ISO_639_3_eng` (English) or `ISO_639_3_ita` (Italian). The root `ISO_639_3` itself is not a valid value.\n\n\n\n**Restricted to multiple vocabularies** — a language code from either ISO 639-3 or ISO 639-1:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_enum\",\n\t\t\"_kind_enum\": [\"ISO_639_3\", \"ISO_639_1\"]\n\t}\n}\n```\n\nBoth `ISO_639_3_eng` and `ISO_639_1_en` are valid; the value need only belong to one of the listed vocabularies.\n\n\n\n**Unrestricted** — any enumeration element from any vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_enum\"\n\t}\n}\n```\n\nNo vocabulary constraint. Any term that is an enumeration element in any controlled vocabulary is accepted."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -162,6 +192,12 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Schema-constrained object** — a numeric range structure:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_object\",\n\t\t\"_kind_object\": [\"_range\"]\n\t}\n}\n```\n\nThe value must conform to the [`_range`](_range.md) schema. A valid value might be `{\"_min-range-inclusive\": 0, \"_max-range-exclusive\": 100}`.\n\n\n\n**Unconstrained object** — any object whose keys are dictionary descriptors:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_object\"\n\t}\n}\n```\n\nNo schema is imposed. Every property key must still be the `_gid` of a known descriptor, but any combination of descriptors is accepted. The object may also be empty (`{}`)."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_namespace",
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -186,6 +222,11 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Free-form metadata block** — an externally-defined structure attached to a record:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_struct\"\n\t}\n}\n```\n\nThe value may be any object, including an empty one. Property keys are not validated against the dictionary. This is appropriate for attaching provider-specific metadata whose structure is defined outside the dictionary, for example:\n\n```json\n{\n\t\"source_system\": \"LabTrack\",\n\t\"import_batch\": \"2024-Q1\",\n\t\"flags\": [\"reviewed\", \"approved\"]\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -210,15 +251,20 @@
 			"_examples": {
 				"ISO_639_3_eng": "**Simple timestamp** — a recording date with no constraint:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_timestamp\"\n\t}\n}\n```\n\nAny integer is accepted. For example, `1719705600` represents 30 June 2024 00:00:00 UTC.\n\n\n\n**Timestamp with valid range** — a date that must not be before the Unix epoch:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_timestamp\",\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 0\n\t\t}\n\t}\n}\n```\n\nNegative values (dates before 1 January 1970) are rejected. Useful for descriptors that record events in the modern computing era."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_type_object",
-			"_lid": "geojson",
-			"_gid": "_type_object_geojson",
+			"_lid": "GeoJSON",
+			"_gid": "_type_object_GeoJSON",
 			"_aid": [
-				"geojson"
+				"GeoJSON"
 			]
 		},
 		"_info": {
@@ -229,11 +275,16 @@
 				"ISO_639_3_eng": "Scalar data type for a GeoJSON object representing a geographic feature. The object must not be empty and no companion `_kind` property is expected."
 			},
 			"_description": {
-				"ISO_639_3_eng": "When [`_type`](_type.md) is set to `_type_object_geojson`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object — a structured representation of a geographic feature such as a point, line, polygon, or feature collection, conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is not valid. No companion qualifier, unit, or range constraint is applicable."
+				"ISO_639_3_eng": "When [`_type`](_type.md) is set to `_type_object_GeoJSON`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object — a structured representation of a geographic feature such as a point, line, polygon, or feature collection, conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is not valid. No companion qualifier, unit, or range constraint is applicable."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "**Point geometry** — the coordinates of a single location:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_object_geojson\"\n\t}\n}\n```\n\nA valid value for this descriptor might be:\n\n```json\n{\n\t\"type\": \"Point\",\n\t\"coordinates\": [12.4964, 41.9028]\n}\n```\n\nThis represents a point at longitude 12.4964°E, latitude 41.9028°N (Rome, Italy).\n\n\n\n**Polygon geometry** — the boundary of a region:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\"coordinates\": [\n\t\t[\n\t\t\t[12.44, 41.87],\n\t\t\t[12.56, 41.87],\n\t\t\t[12.56, 41.94],\n\t\t\t[12.44, 41.94],\n\t\t\t[12.44, 41.87]\n\t\t]\n\t]\n}\n```\n\nA closed ring of coordinates forming a rectangular boundary. The first and last coordinate must be identical to close the polygon."
+				"ISO_639_3_eng": "**Point geometry** — the coordinates of a single location:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_object_GeoJSON\"\n\t}\n}\n```\n\nA valid value for this descriptor might be:\n\n```json\n{\n\t\"type\": \"Point\",\n\t\"coordinates\": [12.4964, 41.9028]\n}\n```\n\nThis represents a point at longitude 12.4964°E, latitude 41.9028°N (Rome, Italy).\n\n\n\n**Polygon geometry** — the boundary of a region:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\"coordinates\": [\n\t\t[\n\t\t\t[12.44, 41.87],\n\t\t\t[12.56, 41.87],\n\t\t\t[12.56, 41.94],\n\t\t\t[12.44, 41.94],\n\t\t\t[12.44, 41.87]\n\t\t]\n\t]\n}\n```\n\nA closed ring of coordinates forming a rectangular boundary. The first and last coordinate must be identical to close the polygon."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -255,6 +306,11 @@
 			"_description": {
 				"ISO_639_3_eng": "This term serves as the namespace for all [`_kind_*`](_kind.md) qualifier and role-indicator sub-terms. It has two distinct uses.\n\n**As a data-type qualifier** — sub-terms such as [`_kind_number`](_kind_number.md), [`_kind_string`](_kind_string.md), [`_kind_key`](_kind_key.md), [`_kind_enum`](_kind_enum.md), and [`_kind_object`](_kind_object.md) appear alongside [`_type`](_type.md) in a [`_scalar`](_scalar.md) section to further constrain the data type. For example, `_type_number` combined with `_kind_number_float` specifies a floating-point number, while `_type_enum` combined with `_kind_enum: [\"ISO_639_3\"]` constrains the value to a specific controlled vocabulary.\n\n**As a term role indicator** — the sub-term [`_kind_term`](_kind_term.md) is a descriptor used in the [`_domn`](_domn.md) section to record the functional roles a term plays in the dictionary. Because a term can simultaneously act as a descriptor, an enumeration element, a namespace, an object schema definition, and more, `_kind_term` makes these roles explicitly queryable without traversing the graph."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_namespace"
+			]
 		}
 	},
 	{
@@ -276,6 +332,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_number_float` is one of the two allowed values of the [`_kind_number`](_kind_number.md) qualifier. It indicates that the numeric value is stored as a double-precision floating-point number and may carry a fractional part.\n\nWhen `_kind_number` contains only `_kind_number_float`, the descriptor accepts floating-point values but rejects plain integers. When `_kind_number` contains both `_kind_number_float` and `_kind_number_integer`, both floating-point and integer values are accepted.\n\nThe companion `_decimals` property, valid only when `_kind_number_float` is present, controls how many decimal places are shown when the value is displayed — it is a display hint, not a storage constraint.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_float\"],\n\t\t\"_decimals\": 2,\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 0.0\n\t\t}\n\t}\n}\n```\n\nThis descriptor accepts any non-negative floating-point number, displayed with two decimal places."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -297,15 +358,20 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_number_integer` is one of the two allowed values of the [`_kind_number`](_kind_number.md) qualifier. It indicates that the numeric value must be a whole number — no fractional part is accepted.\n\nWhen `_kind_number` contains only `_kind_number_integer`, the descriptor rejects any value with a decimal component. When `_kind_number` contains both `_kind_number_integer` and `_kind_number_float`, both whole and fractional values are accepted.\n\nNote that ArangoDB stores all numbers as double-precision floating-point internally. The integer constraint is a semantic rule enforced by the dictionary's validation layer, not a storage-level distinction.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_integer\"],\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 0\n\t\t}\n\t}\n}\n```\n\nThis descriptor accepts any non-negative integer value."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "markdown",
-			"_gid": "_kind_string_markdown",
+			"_lid": "Markdown",
+			"_gid": "_kind_string_Markdown",
 			"_aid": [
-				"markdown"
+				"Markdown"
 			]
 		},
 		"_info": {
@@ -316,17 +382,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is Markdown-formatted text. The value is a plain UTF-8 string containing Markdown syntax and is intended to be rendered by a Markdown processor before display."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_markdown` qualifies a [`_type_string`](_type_string.md) scalar as Markdown text. The stored value is a UTF-8 string containing standard Markdown syntax — headings, lists, links, fenced code blocks, and so on. The dictionary itself uses Markdown in the `_description`, `_examples`, and `_notes` properties of the [`_info`](_info.md) section.\n\nWhen this qualifier is present, `_regexp` is not applicable — the Markdown format is self-defining.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_markdown\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_Markdown` qualifies a [`_type_string`](_type_string.md) scalar as Markdown text. The stored value is a UTF-8 string containing standard Markdown syntax — headings, lists, links, fenced code blocks, and so on. The dictionary itself uses Markdown in the `_description`, `_examples`, and `_notes` properties of the [`_info`](_info.md) section.\n\nWhen this qualifier is present, `_regexp` is not applicable — the Markdown format is self-defining.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Markdown\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "html",
-			"_gid": "_kind_string_html",
+			"_lid": "HTML",
+			"_gid": "_kind_string_HTML",
 			"_aid": [
-				"html"
+				"HTML"
 			]
 		},
 		"_info": {
@@ -337,17 +408,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is HTML-formatted text. The value is a plain UTF-8 string containing HTML markup and is intended to be rendered by a browser or HTML processor before display."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_html` qualifies a [`_type_string`](_type_string.md) scalar as HTML text. The stored value is a UTF-8 string containing valid HTML markup. It is used when richer formatting than Markdown supports is required — for example, embedded tables, custom attributes, or inline styles.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_html\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_HTML` qualifies a [`_type_string`](_type_string.md) scalar as HTML text. The stored value is a UTF-8 string containing valid HTML markup. It is used when richer formatting than Markdown supports is required — for example, embedded tables, custom attributes, or inline styles.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HTML\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "uri",
-			"_gid": "_kind_string_uri",
+			"_lid": "URI",
+			"_gid": "_kind_string_URI",
 			"_aid": [
-				"uri"
+				"URI"
 			]
 		},
 		"_info": {
@@ -358,17 +434,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is a Uniform Resource Identifier (URI). The value must conform to RFC 3986 and may represent a URL, URN, or any other URI scheme."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_uri` qualifies a [`_type_string`](_type_string.md) scalar as a URI. Valid values conform to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) and include HTTP/HTTPS URLs, URNs, data URIs, and other scheme-specific forms. This qualifier is used for properties that store external references, documentation links, or resource identifiers.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_uri\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_URI` qualifies a [`_type_string`](_type_string.md) scalar as a URI. Valid values conform to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) and include HTTP/HTTPS URLs, URNs, data URIs, and other scheme-specific forms. This qualifier is used for properties that store external references, documentation links, or resource identifiers.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_URI\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "hex",
-			"_gid": "_kind_string_hex",
+			"_lid": "HEX",
+			"_gid": "_kind_string_HEX",
 			"_aid": [
-				"hex"
+				"HEX"
 			]
 		},
 		"_info": {
@@ -379,17 +460,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is a hexadecimal representation. The value consists exclusively of hexadecimal digits (0–9, A–F) and encodes a binary or numeric quantity as a base-16 string."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_hex` qualifies a [`_type_string`](_type_string.md) scalar as a hexadecimal string. Typical uses include colour codes, hash digests, binary identifiers, and memory addresses. Unlike a generic string, the value is constrained to the character set `[0-9A-Fa-f]`; the `_regexp` property may be used to further constrain length or casing.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable when ordering hex values lexicographically is meaningful.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_hex\",\n\t\t\"_regexp\": \"^[0-9A-Fa-f]{6}$\"\n\t}\n}\n```\n\nThis descriptor accepts a six-character hex colour code such as `FF5733`."
+				"ISO_639_3_eng": "`_kind_string_HEX` qualifies a [`_type_string`](_type_string.md) scalar as a hexadecimal string. Typical uses include colour codes, hash digests, binary identifiers, and memory addresses. Unlike a generic string, the value is constrained to the character set `[0-9A-Fa-f]`; the `_regexp` property may be used to further constrain length or casing.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable when ordering hex values lexicographically is meaningful.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_HEX\",\n\t\t\"_regexp\": \"^[0-9A-Fa-f]{6}$\"\n\t}\n}\n```\n\nThis descriptor accepts a six-character hex colour code such as `FF5733`."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "svg",
-			"_gid": "_kind_string_svg",
+			"_lid": "SVG",
+			"_gid": "_kind_string_SVG",
 			"_aid": [
-				"svg"
+				"SVG"
 			]
 		},
 		"_info": {
@@ -400,8 +486,13 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is an SVG (Scalable Vector Graphics) image. The value is a UTF-8 string containing valid SVG XML markup, suitable for inline rendering in a browser."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_svg` qualifies a [`_type_string`](_type_string.md) scalar as an SVG image stored inline. SVG is an XML-based vector image format; storing it as a string allows images to be embedded directly in term documents without a separate file reference. Typical uses include icons, diagrams, and flag images for ISO 3166 country terms.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_svg\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_SVG` qualifies a [`_type_string`](_type_string.md) scalar as an SVG image stored inline. SVG is an XML-based vector image format; storing it as a string allows images to be embedded directly in term documents without a separate file reference. Typical uses include icons, diagrams, and flag images for ISO 3166 country terms.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_SVG\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -423,6 +514,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_string_email` qualifies a [`_type_string`](_type_string.md) scalar as an email address. Valid values conform to the standard `local-part@domain` format. This qualifier is used for contact, provider, and curator properties where an email address is the expected input.\n\nWhen this qualifier is present, `_regexp` is not applicable — the format is self-defining.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_email\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -442,8 +538,13 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is a full calendar date in the format defined by JSON Schema (`date` format): `YYYY-MM-DD` (ISO 8601). String range properties may be used to constrain the allowed date interval."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_date` qualifies a [`_type_string`](_type_string.md) scalar as a full calendar date. The format is `YYYY-MM-DD` as specified by ISO 8601 and the JSON Schema `date` format. Values such as `2024-03-15` (15 March 2024) are valid; partial dates and times are not.\n\nFor partial dates (year only, year-month, or full date), use [`_kind_string_ymd`](_kind_string_ymd.md) instead.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable and compare dates lexicographically, which is correct for the `YYYY-MM-DD` format.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date\",\n\t\t\"_valid-range_string\": {\n\t\t\t\"_min-range-inclusive_string\": \"1900-01-01\"\n\t\t}\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_date` qualifies a [`_type_string`](_type_string.md) scalar as a full calendar date. The format is `YYYY-MM-DD` as specified by ISO 8601 and the JSON Schema `date` format. Values such as `2024-03-15` (15 March 2024) are valid; partial dates and times are not.\n\nFor partial dates (year only, year-month, or full date), use [`_kind_string_YMD`](_kind_string_YMD.md) instead.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable and compare dates lexicographically, which is correct for the `YYYY-MM-DD` format.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date\",\n\t\t\"_valid-range_string\": {\n\t\t\t\"_min-range-inclusive_string\": \"1900-01-01\"\n\t\t}\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -465,6 +566,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_string_time` qualifies a [`_type_string`](_type_string.md) scalar as a time-of-day value. The format is `HH:MM:SS` optionally followed by a UTC offset (`+HH:MM` or `Z`), as specified by ISO 8601 and the JSON Schema `time` format. Examples: `14:30:00`, `08:00:00+01:00`, `23:59:59Z`.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable when comparing times lexicographically within the same timezone.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_time\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -486,15 +592,20 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_string_date-time` qualifies a [`_type_string`](_type_string.md) scalar as a combined date-time value. The format is `YYYY-MM-DDTHH:MM:SS` with an optional UTC offset or `Z` suffix, as specified by ISO 8601 and the JSON Schema `date-time` format. Example: `2024-03-15T14:30:00Z`.\n\nWhen a Unix timestamp is more appropriate (e.g. for high-frequency logging), consider [`_type_timestamp`](_type_timestamp.md) instead.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable and compare date-times lexicographically, which is correct for ISO 8601 format with consistent timezone handling.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_date-time\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "ymd",
-			"_gid": "_kind_string_ymd",
+			"_lid": "YMD",
+			"_gid": "_kind_string_YMD",
 			"_aid": [
-				"ymd"
+				"YMD"
 			]
 		},
 		"_info": {
@@ -505,17 +616,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is a partial or full date in YYYYMMDD format: `YYYY` (year only), `YYYYMM` (year and month), or `YYYYMMDD` (full date). This format accommodates dates of varying precision within a single field."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_ymd` qualifies a [`_type_string`](_type_string.md) scalar as a compact date string that supports partial precision. Three lengths are valid:\n\n- `YYYY` — year only, e.g. `1985`\n- `YYYYMM` — year and month, e.g. `198503`\n- `YYYYMMDD` — full date, e.g. `19850315`\n\nThis format is useful in scientific and historical datasets where dates may be known only to the year or month. Unlike [`_kind_string_date`](_kind_string_date.md), it does not use separators, which makes lexicographic ordering correct across all three precisions.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_ymd\",\n\t\t\"_regexp\": \"^[0-9]{4}([0-9]{2}([0-9]{2})?)?$\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_YMD` qualifies a [`_type_string`](_type_string.md) scalar as a compact date string that supports partial precision. Three lengths are valid:\n\n- `YYYY` — year only, e.g. `1985`\n- `YYYYMM` — year and month, e.g. `198503`\n- `YYYYMMDD` — full date, e.g. `19850315`\n\nThis format is useful in scientific and historical datasets where dates may be known only to the year or month. Unlike [`_kind_string_date`](_kind_string_date.md), it does not use separators, which makes lexicographic ordering correct across all three precisions.\n\nString range properties (`_valid-range_string`, `_normal-range_string`) are applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_YMD\",\n\t\t\"_regexp\": \"^[0-9]{4}([0-9]{2}([0-9]{2})?)?$\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "hostname",
-			"_gid": "_kind_string_hostname",
+			"_lid": "Hostname",
+			"_gid": "_kind_string_Hostname",
 			"_aid": [
-				"hostname"
+				"Hostname"
 			]
 		},
 		"_info": {
@@ -526,17 +642,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is an Internet hostname. The value must be a valid fully-qualified domain name (FQDN) or a simple hostname, as defined by RFC 1123."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_hostname` qualifies a [`_type_string`](_type_string.md) scalar as an Internet hostname. Valid values are fully-qualified domain names such as `example.com` or `api.myservice.org`, conforming to RFC 1123. IP addresses should use [`_kind_string_ipv4`](_kind_string_ipv4.md) or [`_kind_string_ipv6`](_kind_string_ipv6.md) instead.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_hostname\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_Hostname` qualifies a [`_type_string`](_type_string.md) scalar as an Internet hostname. Valid values are fully-qualified domain names such as `example.com` or `api.myservice.org`, conforming to RFC 1123. IP addresses should use [`_kind_string_IPv4`](_kind_string_IPv4.md) or [`_kind_string_IPv6`](_kind_string_IPv6.md) instead.\n\nWhen this qualifier is present, `_regexp` is not applicable.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Hostname\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "ipv4",
-			"_gid": "_kind_string_ipv4",
+			"_lid": "IPv4",
+			"_gid": "_kind_string_IPv4",
 			"_aid": [
-				"ipv4"
+				"IPv4"
 			]
 		},
 		"_info": {
@@ -547,17 +668,22 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is an IPv4 address in dotted-decimal notation (e.g. `192.168.1.1`), as defined by RFC 2673."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_ipv4` qualifies a [`_type_string`](_type_string.md) scalar as an IPv4 address. Valid values are four decimal octets separated by dots, each in the range 0–255, for example `10.0.0.1` or `203.0.113.42`. CIDR notation (`192.168.0.0/24`) is not included unless further constrained by `_regexp`.\n\nFor IPv6 addresses, use [`_kind_string_ipv6`](_kind_string_ipv6.md).\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_ipv4\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_IPv4` qualifies a [`_type_string`](_type_string.md) scalar as an IPv4 address. Valid values are four decimal octets separated by dots, each in the range 0–255, for example `10.0.0.1` or `203.0.113.42`. CIDR notation (`192.168.0.0/24`) is not included unless further constrained by `_regexp`.\n\nFor IPv6 addresses, use [`_kind_string_IPv6`](_kind_string_IPv6.md).\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv4\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_nid": "_kind_string",
-			"_lid": "ipv6",
-			"_gid": "_kind_string_ipv6",
+			"_lid": "IPv6",
+			"_gid": "_kind_string_IPv6",
 			"_aid": [
-				"ipv6"
+				"IPv6"
 			]
 		},
 		"_info": {
@@ -568,8 +694,13 @@
 				"ISO_639_3_eng": "An enumeration element indicating that the string value is an IPv6 address in the colon-separated hexadecimal notation defined by RFC 4291, optionally using the `::` abbreviation for consecutive zero groups."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_string_ipv6` qualifies a [`_type_string`](_type_string.md) scalar as an IPv6 address. Valid values use the standard colon-separated hexadecimal notation, such as `2001:0db8:85a3:0000:0000:8a2e:0370:7334` or its abbreviated form `2001:db8:85a3::8a2e:370:7334`. The `::` shorthand may be used once per address to replace one or more consecutive groups of zeroes.\n\nFor IPv4 addresses, use [`_kind_string_ipv4`](_kind_string_ipv4.md).\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_ipv6\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`_kind_string_IPv6` qualifies a [`_type_string`](_type_string.md) scalar as an IPv6 address. Valid values use the standard colon-separated hexadecimal notation, such as `2001:0db8:85a3:0000:0000:8a2e:0370:7334` or its abbreviated form `2001:db8:85a3::8a2e:370:7334`. The `::` shorthand may be used once per address to replace one or more consecutive groups of zeroes.\n\nFor IPv4 addresses, use [`_kind_string_IPv4`](_kind_string_IPv4.md).\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_IPv6\"\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -591,6 +722,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_string_LaTeX` qualifies a [`_type_string`](_type_string.md) scalar as a LaTeX expression. Because LaTeX is a superset of plain UTF-8, the same field can store anything from a plain symbol such as `μ` or `°C` to a full mathematical expression such as `\\bar{x} \\pm \\sigma` or `\\frac{n!}{k!(n-k)!}`. The frontend renders the value using **KaTeX**, which handles both plain Unicode and LaTeX syntax seamlessly.\n\nThis qualifier is used for the `_symbol` property of the [`_code`](_code.md) section, where terms carry a mathematical or scientific symbol.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_LaTeX\"\n\t}\n}\n```\n\nA valid value for a standard deviation descriptor might be `\\sigma`, and for a binomial coefficient `\\binom{n}{k}`."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -612,6 +748,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term` is the least restrictive value of the [`_kind_key`](_kind_key.md) qualifier. When present in `_kind_key`, the `_type_key` scalar accepts any string that is the `_key` of an existing term document — descriptor, namespace, enumeration root, alias, or any other kind.\n\nUse this value when the property needs to reference a term but the specific role of that term is not constrained. For stricter constraints, use one of the more specific `_kind_key_term_*` values.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -633,6 +774,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term_enum` constrains a [`_type_key`](_type_key.md) scalar to reference only enumeration root terms. An enumeration root is a term that acts as the root of a controlled vocabulary graph: other terms are linked to it via `_predicate_enum-of` edges, forming the set of valid selectable values.\n\nThis qualifier is used when a property must point to a vocabulary definition rather than to a specific value within that vocabulary. For example, a property that names the controlled vocabulary a descriptor draws its values from would use `_kind_key_term_enum`.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_enum\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -654,6 +800,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term_enum_element` constrains a [`_type_key`](_type_key.md) scalar to reference only valid enumeration elements. An enumeration element is a term connected to an enumeration root by a `_predicate_enum-of` edge — it represents one of the allowed choices within a controlled vocabulary.\n\nThis qualifier is the key-based analogue of [`_type_enum`](_type_enum.md): both constrain a value to an enumeration element, but `_type_enum` stores the `_gid` of the element while `_type_key` with `_kind_key_term_enum_element` stores its `_key` (which equals `_gid` for dictionary terms).\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_enum_element\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -675,6 +826,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term_descriptor` constrains a [`_type_key`](_type_key.md) scalar to reference only descriptor terms. A descriptor is any term that carries a [`_data`](_data.md) section — it defines the type, shape, and constraints of a data variable in the dictionary.\n\nThis qualifier is used when a property must point to a data variable definition. For example, a property that identifies which descriptor governs the values of a dataset column would use `_kind_key_term_descriptor`.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_descriptor\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -696,6 +852,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term_object` constrains a [`_type_key`](_type_key.md) scalar to reference only object definition terms. An object definition is any term that carries a [`_rule`](_rule.md) section — it defines the required, recommended, and forbidden properties of a structured object, and may be referenced by `_kind_object` in a `_scalar` section to impose a schema on object values.\n\nThis qualifier is used when a property must point to a schema definition. For example, a property that declares which object schema a dataset record must conform to would use `_kind_key_term_object`.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_object\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	},
 	{
@@ -717,6 +878,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_kind_key_term_predicate` constrains a [`_type_key`](_type_key.md) scalar to reference only predicate terms. A predicate term is a term whose `_gid` is used as the value of the `_predicate` property in an edge document, qualifying the nature of the relationship between the `_from` and `_to` nodes.\n\nPredicate terms belong to the `_predicate_*` family — for example `_predicate_enum-of`, `_predicate_section-of`, `_predicate_bridge-of`, and `_predicate_value-of`. In the [`_domn`](_domn.md) section, [`_kind_term`](_kind_term.md) uses the value `_kind_term_predicate` to flag a term as a predicate.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_key\",\n\t\t\"_kind_key\": [\"_kind_key_term_predicate\"]\n\t}\n}\n```"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_enum_element"
+			]
 		}
 	}
 ]

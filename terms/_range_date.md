@@ -6,11 +6,11 @@ Date Range
 
 **`_definition`**
 
-An object that defines a date interval in `_kind_string_ymd` format (YYYYMMDD, YYYYMM, or YYYY), using inclusive and/or exclusive lower and upper bounds compared lexicographically. At least one bound must be present.
+An object that defines a date interval in `_kind_string_YMD` format (YYYYMMDD, YYYYMM, or YYYY), using inclusive and/or exclusive lower and upper bounds compared lexicographically. At least one bound must be present.
 
 **`_description`**
 
-`_range_date` is the schema term for date range objects in `_kind_string_ymd` format. It is referenced by [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) via `_kind_object`. Its bound properties carry the `_date` suffix to distinguish them from generic string bounds.
+`_range_date` is the schema term for date range objects in `_kind_string_YMD` format. It is referenced by [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) via `_kind_object`. Its bound properties carry the `_date` suffix to distinguish them from generic string bounds.
 
 Comparison is lexicographic over the YYYYMMDD-family format, which is order-preserving across all three precision levels: `1950` < `195003` < `19500315`.
 

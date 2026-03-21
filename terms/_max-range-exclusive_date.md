@@ -6,7 +6,7 @@ Date Range Maximum Exclusive
 
 **`_definition`**
 
-The exclusive upper bound of a date range in `_kind_string_ymd` format. Only date values strictly less than this bound (lexicographically) belong to the range — the bound itself is excluded.
+The exclusive upper bound of a date range in `_kind_string_YMD` format. Only date values strictly less than this bound (lexicographically) belong to the range — the bound itself is excluded.
 
 **`_description`**
 
@@ -45,7 +45,7 @@ Dates from year 2100 onward are out of range; `"20991231"` is accepted.
 ```json
 {
   "_scalar" : {
-    "_kind_string" : "_kind_string_ymd",
+    "_kind_string" : "_kind_string_YMD",
     "_type" : "_type_string"
   }
 }

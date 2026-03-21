@@ -1,4 +1,4 @@
-# `_kind_string_svg`
+# `_kind_string_SVG`
 
 **`_title`**
 
@@ -10,7 +10,7 @@ An enumeration element indicating that the string value is an SVG (Scalable Vect
 
 **`_description`**
 
-`_kind_string_svg` qualifies a [`_type_string`](_type_string.md) scalar as an SVG image stored inline. SVG is an XML-based vector image format; storing it as a string allows images to be embedded directly in term documents without a separate file reference. Typical uses include icons, diagrams, and flag images for ISO 3166 country terms.
+`_kind_string_SVG` qualifies a [`_type_string`](_type_string.md) scalar as an SVG image stored inline. SVG is an XML-based vector image format; storing it as a string allows images to be embedded directly in term documents without a separate file reference. Typical uses include icons, diagrams, and flag images for ISO 3166 country terms.
 
 When this qualifier is present, `_regexp` is not applicable.
 
@@ -18,7 +18,7 @@ When this qualifier is present, `_regexp` is not applicable.
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_svg"
+		"_kind_string": "_kind_string_SVG"
 	}
 }
 ```
@@ -30,10 +30,10 @@ When this qualifier is present, `_regexp` is not applicable.
 ```json
 {
   "_aid" : [
-    "svg"
+    "SVG"
   ],
-  "_gid" : "_kind_string_svg",
-  "_lid" : "svg",
+  "_gid" : "_kind_string_SVG",
+  "_lid" : "SVG",
   "_nid" : "_kind_string"
 }
 ```

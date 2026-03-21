@@ -6,7 +6,7 @@ Date Range Maximum Inclusive
 
 **`_definition`**
 
-The inclusive upper bound of a date range in `_kind_string_ymd` format. Only date values less than or equal to this bound (lexicographically) belong to the range.
+The inclusive upper bound of a date range in `_kind_string_YMD` format. Only date values less than or equal to this bound (lexicographically) belong to the range.
 
 **`_description`**
 
@@ -45,7 +45,7 @@ Dates after 31 December 1959 are out of range.
 ```json
 {
   "_scalar" : {
-    "_kind_string" : "_kind_string_ymd",
+    "_kind_string" : "_kind_string_YMD",
     "_type" : "_type_string"
   }
 }

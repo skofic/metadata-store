@@ -1,4 +1,4 @@
-# `_kind_string_ymd`
+# `_kind_string_YMD`
 
 **`_title`**
 
@@ -10,7 +10,7 @@ An enumeration element indicating that the string value is a partial or full dat
 
 **`_description`**
 
-`_kind_string_ymd` qualifies a [`_type_string`](_type_string.md) scalar as a compact date string that supports partial precision. Three lengths are valid:
+`_kind_string_YMD` qualifies a [`_type_string`](_type_string.md) scalar as a compact date string that supports partial precision. Three lengths are valid:
 
 - `YYYY` — year only, e.g. `1985`
 - `YYYYMM` — year and month, e.g. `198503`
@@ -24,7 +24,7 @@ String range properties (`_valid-range_string`, `_normal-range_string`) are appl
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_ymd",
+		"_kind_string": "_kind_string_YMD",
 		"_regexp": "^[0-9]{4}([0-9]{2}([0-9]{2})?)?$"
 	}
 }
@@ -37,10 +37,10 @@ String range properties (`_valid-range_string`, `_normal-range_string`) are appl
 ```json
 {
   "_aid" : [
-    "ymd"
+    "YMD"
   ],
-  "_gid" : "_kind_string_ymd",
-  "_lid" : "ymd",
+  "_gid" : "_kind_string_YMD",
+  "_lid" : "YMD",
   "_nid" : "_kind_string"
 }
 ```

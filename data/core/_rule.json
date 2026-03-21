@@ -44,6 +44,12 @@
 				"_selection-descriptors_all",
 				"_selection-descriptors_one-none-of"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -75,6 +81,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -101,6 +112,11 @@
 			"_scalar": {
 				"_type": "_type_boolean"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -132,6 +148,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -163,6 +184,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -194,6 +220,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -225,6 +256,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -257,6 +293,11 @@
 				},
 				"_dict_value": {}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -278,6 +319,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_selection-descriptors` is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor `_gid`s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe five variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-none-of`](_selection-descriptors_one-none-of.md): an array of groups; from each group, zero or one may be present.\n\nMultiple selection structures may coexist inside a single `_required` object; all must be satisfied simultaneously (they are ANDed together)."
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_namespace"
+			]
 		}
 	},
 	{
@@ -309,6 +355,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -340,6 +391,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -371,6 +427,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -402,6 +463,11 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -435,6 +501,11 @@
 					}
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	}
 ]

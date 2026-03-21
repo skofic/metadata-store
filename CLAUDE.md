@@ -328,7 +328,7 @@ Each of these properties is described in detail in the subsections below.
 | `_type_object`         | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
 | `_type_struct`         | An object with indeterminate properties (may be empty). |
 | `_type_timestamp`      | An integer representing a Unix timestamp. |
-| `_type_object_geojson` | A GeoJSON object (may **not** be empty). |
+| `_type_object_GeoJSON` | A GeoJSON object (may **not** be empty). |
 
 ---
 
@@ -381,19 +381,19 @@ A UTF-8 string. The optional `_kind_string` property specifies the string encodi
 | `_kind_string` value      | Description | Extra properties |
 |---------------------------|-------------|------------------|
 | *(absent)*                | Generic string. | `_regexp`, `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_markdown`   | Markdown text. | — |
-| `_kind_string_html`       | HTML text. | — |
-| `_kind_string_uri`        | Uniform Resource Identifier. | — |
-| `_kind_string_hex`        | Hexadecimal value. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_svg`        | SVG image. | — |
+| `_kind_string_Markdown`   | Markdown text. | — |
+| `_kind_string_HTML`       | HTML text. | — |
+| `_kind_string_URI`        | Uniform Resource Identifier. | — |
+| `_kind_string_HEX`        | Hexadecimal value. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_SVG`        | SVG image. | — |
 | `_kind_string_email`      | Email address. | — |
 | `_kind_string_date`       | Date (JSON Schema `date` format). | `_valid-range_string`, `_normal-range_string` |
 | `_kind_string_time`       | Time (JSON Schema `time` format). | `_valid-range_string`, `_normal-range_string` |
 | `_kind_string_date-time`  | Date-time (JSON Schema `date-time` format). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_ymd`        | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_hostname`   | Internet hostname. | — |
-| `_kind_string_ipv4`       | IPv4 address. | — |
-| `_kind_string_ipv6`       | IPv6 address. | — |
+| `_kind_string_YMD`        | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). | `_valid-range_string`, `_normal-range_string` |
+| `_kind_string_Hostname`   | Internet hostname. | — |
+| `_kind_string_IPv4`       | IPv4 address. | — |
+| `_kind_string_IPv6`       | IPv6 address. | — |
 | `_kind_string_LaTeX`      | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. | — |
 
 `_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it.
@@ -402,7 +402,7 @@ A UTF-8 string. The optional `_kind_string` property specifies the string encodi
 {
     "_scalar": {
         "_type": "_type_string",
-        "_kind_string": "_kind_string_hex",
+        "_kind_string": "_kind_string_HEX",
         "_valid-range_string": {
             "_min-range-inclusive_string": "0A",
             "_max-range-exclusive_string": "A5"
@@ -503,14 +503,14 @@ An integer representing a Unix timestamp — the number of seconds elapsed since
 
 ---
 
-**`_type_object_geojson`**
+**`_type_object_GeoJSON`**
 
 A GeoJSON object. May **not** be empty. No other `_scalar` properties are expected.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_object_geojson"
+        "_type": "_type_object_GeoJSON"
     }
 }
 ```
@@ -707,7 +707,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 ##### `_set_scalar`
 
-`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_set_type`** instead of `_type`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_geojson`, which are not comparable).
+`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_set_type`** instead of `_type`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
 
 ###### `_set_scalar` properties
 
@@ -744,7 +744,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 | `_type_enum`           | A string representing the `_gid` of an enumeration element. |
 | `_type_timestamp`      | An integer representing a Unix timestamp. |
 
-`_type_struct`, `_type_object`, and `_type_object_geojson` are excluded because objects are not comparable and cannot be tested for uniqueness.
+`_type_struct`, `_type_object`, and `_type_object_GeoJSON` are excluded because objects are not comparable and cannot be tested for uniqueness.
 
 The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
 

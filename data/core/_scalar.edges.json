@@ -1,0 +1,76 @@
+[
+	{
+		"_from": "terms/_type",
+		"_predicate": "_predicate_property-of",
+		"_to": "terms/_scalar",
+		"_path": ["terms/_scalar"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_type_number",
+		"_predicate": "_predicate_value-of",
+		"_to": "terms/_type",
+		"_path": ["terms/_scalar"],
+		"_path_data": {
+			"terms/_scalar": {
+				"_required": {
+					"_selection-descriptors_all": ["_kind_number"]
+				}
+			}
+		}
+	},
+	{
+		"_from": "terms/_type_string",
+		"_predicate": "_predicate_value-of",
+		"_to": "terms/_type",
+		"_path": ["terms/_scalar"],
+		"_path_data": {
+			"terms/_scalar": {
+				"_recommended": ["_kind_string"]
+			}
+		}
+	},
+
+	{
+		"_from": "terms/_kind_number",
+		"_predicate": "_predicate_property-of",
+		"_to": "terms/_scalar",
+		"_path": ["terms/_scalar"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_kind_number_float",
+		"_predicate": "_predicate_value-of",
+		"_to": "terms/_kind_number",
+		"_path": ["terms/_scalar"],
+		"_path_data": {
+			"terms/_scalar": {
+				"_recommended": [
+					"_unit",
+					"_decimals",
+					"_unit-name",
+					"_unit-symbol",
+					"_valid-range",
+					"_normal-range"
+				]
+			}
+		}
+	},
+	{
+		"_from": "terms/_kind_number_integer",
+		"_predicate": "_predicate_value-of",
+		"_to": "terms/_kind_number",
+		"_path": ["terms/_scalar"],
+		"_path_data": {
+			"terms/_scalar": {
+				"_recommended": [
+					"_unit",
+					"_unit-name",
+					"_unit-symbol",
+					"_valid-range",
+					"_normal-range"
+				]
+			}
+		}
+	}
+]

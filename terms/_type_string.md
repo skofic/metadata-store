@@ -173,7 +173,7 @@ Example value: `2024-06-15T14:30:00Z`
 {
 	"_scalar": {
 		"_type": "_type_string",
-		"_kind_string": "_kind_string_ymd"
+		"_kind_string": "_kind_string_YMD"
 	}
 }
 ```

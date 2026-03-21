@@ -6,7 +6,7 @@ Date Range Minimum Exclusive
 
 **`_definition`**
 
-The exclusive lower bound of a date range in `_kind_string_ymd` format. Only date values strictly greater than this bound (lexicographically) belong to the range — the bound itself is excluded.
+The exclusive lower bound of a date range in `_kind_string_YMD` format. Only date values strictly greater than this bound (lexicographically) belong to the range — the bound itself is excluded.
 
 **`_description`**
 
@@ -44,7 +44,7 @@ Dates up to and including 31 December 1949 are out of range; dates from 1950 onw
 ```json
 {
   "_scalar" : {
-    "_kind_string" : "_kind_string_ymd",
+    "_kind_string" : "_kind_string_YMD",
     "_type" : "_type_string"
   }
 }

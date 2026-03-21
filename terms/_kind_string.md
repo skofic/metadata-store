@@ -21,7 +21,7 @@ The `_kind_string` property qualifies the [`_type_string`](_type_string.md) data
 - [`_kind_string_date`](_kind_string_date.md): The string is a date in JSON Schema `date` format.
 - [`_kind_string_time`](_kind_string_time.md): The string is a time in JSON Schema `time` format.
 - [`_kind_string_date-time`](_kind_string_date-time.md): The string is a date-time in JSON Schema `date-time` format.
-- [`_kind_string_ymd`](_kind_string_ymd.md): The string is a full or partial date in `YYYYMMDD` format (`YYYY`, `YYYYMM`, or `YYYYMMDD`).
+- [`_kind_string_YMD`](_kind_string_YMD.md): The string is a full or partial date in `YYYYMMDD` format (`YYYY`, `YYYYMM`, or `YYYYMMDD`).
 - [`_kind_string_Hostname`](_kind_string_Hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
 - [`_kind_string_IPv4`](_kind_string_IPv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
 - [`_kind_string_IPv6`](_kind_string_IPv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).

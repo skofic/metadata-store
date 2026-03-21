@@ -6,11 +6,11 @@ Date Range Minimum Inclusive
 
 **`_definition`**
 
-The inclusive lower bound of a date range in `_kind_string_ymd` format. Only date values greater than or equal to this bound (lexicographically) belong to the range.
+The inclusive lower bound of a date range in `_kind_string_YMD` format. Only date values greater than or equal to this bound (lexicographically) belong to the range.
 
 **`_description`**
 
-`_min-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the lower bound of the date interval in `_kind_string_ymd` format, **including** the bound value itself. Comparison is lexicographic over the YYYYMMDD-family format. It may appear in [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) objects.
+`_min-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the lower bound of the date interval in `_kind_string_YMD` format, **including** the bound value itself. Comparison is lexicographic over the YYYYMMDD-family format. It may appear in [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) objects.
 
 At most one of `_min-range-inclusive_date` and [`_min-range-exclusive_date`](_min-range-exclusive_date.md) may be present in the same range object.
 
@@ -44,7 +44,7 @@ Dates before year 1900 are out of range.
 ```json
 {
   "_scalar" : {
-    "_kind_string" : "_kind_string_ymd",
+    "_kind_string" : "_kind_string_YMD",
     "_type" : "_type_string"
   }
 }

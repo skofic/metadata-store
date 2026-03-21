@@ -17,6 +17,11 @@
 				"_type": "_type_key",
 				"_kind_key": ["_kind_key_term"]
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -37,6 +42,11 @@
 				"_type": "_type_string",
 				"_regexp": "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -57,6 +67,11 @@
 				"_type": "_type_string",
 				"_regexp": "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -78,6 +93,11 @@
 					"_set_type": "_type_string"
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -99,6 +119,11 @@
 					"_set_type": "_type_string"
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -118,6 +143,11 @@
 			"_scalar": {
 				"_type": "_type_string"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -138,6 +168,11 @@
 				"_type": "_type_string",
 				"_kind_string": "_kind_string_LaTeX"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -157,6 +192,11 @@
 			"_scalar": {
 				"_type": "_type_string"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	}
 ]

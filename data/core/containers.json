@@ -50,6 +50,13 @@
 			"_immutable": [
 				"_key"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_namespace",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -98,6 +105,12 @@
 			"_immutable": [
 				"_key"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -145,6 +158,12 @@
 			],
 			"_immutable": [
 				"_key"
+			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
 			]
 		}
 	},
@@ -202,6 +221,12 @@
 				"_to",
 				"_predicate"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -255,6 +280,12 @@
 				"_nid",
 				"_gid"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -301,6 +332,12 @@
 				"_provider",
 				"_methods"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -344,6 +381,12 @@
 					"_dict"
 				]
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -385,6 +428,12 @@
 				"_immutable",
 				"_default-value"
 			]
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_object"
+			]
 		}
 	},
 	{
@@ -414,6 +463,11 @@
 			"_scalar": {
 				"_type": "_type_object"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	},
 	{
@@ -443,6 +497,11 @@
 			"_scalar": {
 				"_type": "_type_object"
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
 		}
 	}
 ]

@@ -120,21 +120,7 @@ This example describes a descriptor that accepts a scalar value of any type. The
     "_dict"
   ],
   "_recommended" : [
-    "_type",
-    "_kind_number",
-    "_kind_string",
-    "_kind_key",
-    "_kind_enum",
-    "_kind_object",
-    "_unit",
-    "_unit-name",
-    "_unit-symbol",
-    "_regexp",
-    "_decimals",
-    "_valid-range",
-    "_valid-range_string",
-    "_normal-range",
-    "_normal-range_string"
+    "_type"
   ]
 }
 ```

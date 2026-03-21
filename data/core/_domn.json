@@ -28,6 +28,13 @@
 					]
 				}
 			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor",
+				"_kind_term_namespace",
+				"_kind_term_enum"
+			]
 		}
 	}
 ]
