@@ -84,13 +84,7 @@ This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitu
 
 ```json
 {
-  "_banned" : [
-    "_scalar",
-    "_array",
-    "_set",
-    "_tuple",
-    "_dict"
-  ],
+  "_closed" : true,
   "_recommended" : [
     "_elements"
   ],

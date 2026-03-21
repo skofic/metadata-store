@@ -21,8 +21,6 @@ A range object may contain any combination of one lower bound and one upper boun
 - [`_max-range-inclusive_string`](_max-range-inclusive_string.md) — upper bound, value included
 - [`_max-range-exclusive_string`](_max-range-exclusive_string.md) — upper bound, value excluded
 
-> **Note:** Selector review pending — see [`_range`](_range.md).
-
 ```json
 {
 	"_range_string": {
@@ -31,10 +29,6 @@ A range object may contain any combination of one lower bound and one upper boun
 	}
 }
 ```
-
-**`_notes`**
-
-**Selector review pending**: same combination as [`_range`](_range.md) — `_selection-descriptors_one-none-of` plus `_selection-descriptors_any` must be reviewed for completeness when the `_rule` section is finalised.
 
 ---
 
@@ -68,14 +62,9 @@ A range object may contain any combination of one lower bound and one upper boun
 
 ```json
 {
+  "_closed" : true,
   "_required" : {
-    "_selection-descriptors_any" : [
-      "_min-range-inclusive_string",
-      "_min-range-exclusive_string",
-      "_max-range-inclusive_string",
-      "_max-range-exclusive_string"
-    ],
-    "_selection-descriptors_one-none-of" : [
+    "_selection-descriptors_one-of-any" : [
       [
         "_min-range-inclusive_string",
         "_min-range-exclusive_string"

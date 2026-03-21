@@ -62,6 +62,7 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
 
 ```json
 {
+  "_closed" : true,
   "_computed" : [
     "_key"
   ],

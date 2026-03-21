@@ -77,6 +77,7 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
 
 ```json
 {
+  "_closed" : true,
   "_computed" : [
     "_key"
   ],

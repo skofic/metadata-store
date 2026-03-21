@@ -31,6 +31,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_key",
@@ -88,6 +89,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_key",
@@ -142,6 +144,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_key",
@@ -199,6 +202,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_key",
@@ -258,22 +262,25 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
-					"_lid"
+					"_lid",
+					"_gid",
+					"_aid"
 				]
 			},
 			"_recommended": [
 				"_nid",
-				"_gid",
-				"_aid",
 				"_pid",
 				"_name",
 				"_symbol",
+				"_regexp",
 				"_emoji"
 			],
 			"_computed": [
-				"_gid"
+				"_gid",
+				"_aid"
 			],
 			"_immutable": [
 				"_lid",
@@ -317,6 +324,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_title",
@@ -372,6 +380,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_one-none": [
 					"_scalar",
@@ -418,14 +427,19 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
+			"_required": {
+				"_selection-descriptors_one": [
+					"_closed"
+				]
+			},
 			"_recommended": [
-				"_required",
-				"_recommended",
-				"_closed",
 				"_banned",
-				"_computed",
 				"_locked",
+				"_required",
+				"_computed",
 				"_immutable",
+				"_recommended",
 				"_default-value"
 			]
 		},

@@ -83,15 +83,20 @@ An object definition with no unconditional constraints — all rules are in the 
 
 ```json
 {
+  "_closed" : true,
   "_recommended" : [
-    "_required",
-    "_recommended",
-    "_closed",
     "_banned",
-    "_computed",
     "_locked",
+    "_required",
+    "_computed",
     "_immutable",
+    "_recommended",
     "_default-value"
-  ]
+  ],
+  "_required" : {
+    "_selection-descriptors_one" : [
+      "_closed"
+    ]
+  }
 }
 ```

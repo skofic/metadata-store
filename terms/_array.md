@@ -162,6 +162,7 @@ This example describes an array that may contain any number of elements of any s
 
 ```json
 {
+  "_closed" : true,
   "_recommended" : [
     "_elements"
   ],

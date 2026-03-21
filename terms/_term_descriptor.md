@@ -46,6 +46,7 @@ Descriptors are referenced by object schema terms to define which properties an 
 
 ```json
 {
+  "_closed" : true,
   "_computed" : [
     "_key"
   ],

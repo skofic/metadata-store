@@ -46,6 +46,7 @@ Any descriptor can reference an object definition term via the `_kind` property 
 
 ```json
 {
+  "_closed" : true,
   "_computed" : [
     "_key"
   ],

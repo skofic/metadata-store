@@ -48,6 +48,7 @@ Alias terms are the only exception to the documentation section requirement: an 
 
 ```json
 {
+  "_closed" : true,
   "_recommended" : [
     "_description",
     "_examples",

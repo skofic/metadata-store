@@ -139,13 +139,7 @@ This example describes a dictionary whose keys can be any string and whose value
 
 ```json
 {
-  "_banned" : [
-    "_scalar",
-    "_array",
-    "_set",
-    "_tuple",
-    "_dict"
-  ],
+  "_closed" : true,
   "_required" : {
     "_selection-descriptors_all" : [
       "_dict_key",

@@ -19,8 +19,6 @@ Comparison is lexicographic over the YYYYMMDD-family format, which is order-pres
 - [`_max-range-inclusive_date`](_max-range-inclusive_date.md) — upper bound, value included
 - [`_max-range-exclusive_date`](_max-range-exclusive_date.md) — upper bound, value excluded
 
-> **Note:** Selector review pending — see [`_range`](_range.md).
-
 ```json
 {
 	"_range_date": {
@@ -31,10 +29,6 @@ Comparison is lexicographic over the YYYYMMDD-family format, which is order-pres
 ```
 
 This interval covers all year, year-month, and full-date values between 1950 and 31 December 1959.
-
-**`_notes`**
-
-**Selector review pending**: same combination as [`_range`](_range.md) — `_selection-descriptors_one-none-of` plus `_selection-descriptors_any` must be reviewed for completeness when the `_rule` section is finalised.
 
 ---
 
@@ -68,14 +62,9 @@ This interval covers all year, year-month, and full-date values between 1950 and
 
 ```json
 {
+  "_closed" : true,
   "_required" : {
-    "_selection-descriptors_any" : [
-      "_min-range-inclusive_date",
-      "_min-range-exclusive_date",
-      "_max-range-inclusive_date",
-      "_max-range-exclusive_date"
-    ],
-    "_selection-descriptors_one-none-of" : [
+    "_selection-descriptors_one-of-any" : [
       [
         "_min-range-inclusive_date",
         "_min-range-exclusive_date"

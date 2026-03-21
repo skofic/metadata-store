@@ -16,7 +16,7 @@
 				"ISO_639_3_eng": "An object containing one or more descriptor selection structures that express which properties must be present in an object for it to be considered valid. All selection structures present must be satisfied simultaneously — they are ANDed together, not ORed."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_required` is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor `_gid`s. When multiple structures are present, all of them must be satisfied simultaneously.\n\nThe five available selection structures are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one of the listed descriptors must be present; the rest must be absent.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one of the listed descriptors may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more of the listed descriptors must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all listed descriptors must be present.\n- [`_selection-descriptors_one-none-of`](_selection-descriptors_one-none-of.md): an array of groups; from each group, zero or one descriptor may be present.\n\n`_required` is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"],\n\t\t\t\"_selection-descriptors_one\": [\"_type_boolean\", \"_type_number\", \"_type_string\"]\n\t\t}\n\t}\n}\n```\n\n`_lid` must always be present; exactly one of the three type descriptors must be present."
+				"ISO_639_3_eng": "`_required` is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor `_gid`s. When multiple structures are present, all of them must be satisfied simultaneously.\n\nThe six available selection structures are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one of the listed descriptors must be present; the rest must be absent.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one of the listed descriptors may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more of the listed descriptors must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all listed descriptors must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute an element.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute an element.\n\n`_required` is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"],\n\t\t\t\"_selection-descriptors_one\": [\"_type_boolean\", \"_type_number\", \"_type_string\"]\n\t\t}\n\t}\n}\n```\n\n`_lid` must always be present; exactly one of the three type descriptors must be present."
 			}
 		},
 		"_data": {
@@ -28,22 +28,17 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_any": [
 					"_selection-descriptors_one",
 					"_selection-descriptors_one-none",
 					"_selection-descriptors_any",
 					"_selection-descriptors_all",
-					"_selection-descriptors_one-none-of"
+					"_selection-descriptors_one-of-any",
+					"_selection-descriptors_one-of-all"
 				]
-			},
-			"_recommended": [
-				"_selection-descriptors_one",
-				"_selection-descriptors_one-none",
-				"_selection-descriptors_any",
-				"_selection-descriptors_all",
-				"_selection-descriptors_one-none-of"
-			]
+			}
 		},
 		"_domn": {
 			"_kind_term": [
@@ -102,10 +97,10 @@
 				"ISO_639_3_eng": "Closed Schema"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "A boolean flag that switches the schema from open to closed mode. When true, only the properties listed in `_recommended` are permitted in the object; any unlisted property is rejected. When false or absent, `_recommended` is advisory and unlisted properties are accepted."
+				"ISO_639_3_eng": "A required boolean flag that switches the schema between open and closed mode. When true, only properties in `_required` or `_recommended` are permitted; any other property is rejected. When false, `_recommended` is advisory. Must be present in every rule object — both base `_rule` sections and `_path_data` conditional rule objects."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_closed` is an optional property of the [`_rule`](_rule.md) section. It controls whether [`_recommended`](_recommended.md) is treated as a strict whitelist or as an advisory list.\n\nWhen `_closed` is **absent or false** (open schema): properties not listed in `_recommended` are accepted without raising an error. This is the default and is appropriate for schemas that are still evolving or where extensibility is desired.\n\nWhen `_closed` is **true** (closed schema): the object must contain only properties listed in `_recommended` (plus any conditionally added by the graph layer). Any other property causes a validation error. This is appropriate for mature, well-controlled schemas where unexpected properties indicate a data quality issue.\n\n`_closed` has no effect when `_recommended` is absent — without a whitelist there is nothing to enforce.\n\n[`_banned`](_banned.md) properties are unconditional and apply regardless of whether the schema is open or closed.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_recommended\": [\"_lid\", \"_nid\", \"_gid\"],\n\t\t\"_closed\": true\n\t}\n}\n```\n\nOnly `_lid`, `_nid`, and `_gid` are permitted; any other property is a validation error."
+				"ISO_639_3_eng": "`_closed` is a **required** property of every rule object — both base [`_rule`](_rule.md) sections and conditional rule objects stored in [`_path_data`](_path_data.md). Its explicit presence eliminates ambiguity about a schema's closure state without having to trace the rule hierarchy to a root.\n\n[`_required`](_required.md) and [`_recommended`](_recommended.md) are **disjoint tiers** of the allowed property set: required means allowed and mandatory; recommended means allowed and optional. A property must appear in exactly one or neither — never both. In a closed schema the allowed set is their union.\n\nWhen `_closed` is **false** (open schema): optional properties outside `_recommended` are accepted without raising an error. Appropriate for schemas that are still evolving or where extensibility is desired.\n\nWhen `_closed` is **true** (closed schema): only properties in `_required` or `_recommended` may be present. Any other property causes a validation error. Appropriate for mature, well-controlled schemas where unexpected properties indicate a data quality issue.\n\nFor **conditional rule objects** in `_path_data` (attached to `_predicate_value-of` edges):\n\n- A **closed** conditional rule (`_closed: true`) **replaces** the base `_recommended` set entirely — its `_recommended` becomes the complete optional-property whitelist for that value context.\n- An **open** conditional rule (`_closed: false`) **accumulates** — its `_recommended` is unioned with the base, and any `_banned` entries conditionally remove properties from the effective permitted set.\n\n`_required` always accumulates (AND logic) regardless of closure mode. [`_banned`](_banned.md) is unconditional and absolute in all modes.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_closed\": true,\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"]\n\t\t},\n\t\t\"_recommended\": [\"_nid\", \"_gid\", \"_aid\"]\n\t}\n}\n```\n\n`_lid` is required and always permitted. `_nid`, `_gid`, and `_aid` are optional and permitted. Any other property is a validation error."
 			}
 		},
 		"_data": {
@@ -317,7 +312,7 @@
 				"ISO_639_3_eng": "Namespace for the five descriptor selection rule terms used inside `_required`. Each sub-term expresses a different cardinality constraint over a set of descriptor `_gid`s."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_selection-descriptors` is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor `_gid`s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe five variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-none-of`](_selection-descriptors_one-none-of.md): an array of groups; from each group, zero or one may be present.\n\nMultiple selection structures may coexist inside a single `_required` object; all must be satisfied simultaneously (they are ANDed together)."
+				"ISO_639_3_eng": "`_selection-descriptors` is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor `_gid`s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe six variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute.\n\nMultiple selection structures may coexist inside a single `_required` object; all must be satisfied simultaneously (they are ANDed together)."
 			}
 		},
 		"_domn": {
@@ -473,21 +468,59 @@
 	{
 		"_code": {
 			"_nid": "_selection-descriptors",
-			"_lid": "one-none-of",
-			"_gid": "_selection-descriptors_one-none-of",
+			"_lid": "one-of-any",
+			"_gid": "_selection-descriptors_one-of-any",
 			"_aid": [
-				"one-none-of"
+				"one-of-any"
 			]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "One or None of Each (Descriptors)"
+				"ISO_639_3_eng": "One of Each, Any Result (Descriptors)"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "A descriptor selection rule expressed as an array of sets. From each set in the array, zero or one descriptor may be present. Each set is evaluated independently — the rule is applied separately to every group."
+				"ISO_639_3_eng": "A descriptor selection rule expressed as an array of sets. From each set, exactly one descriptor is the valid form for that group — if any element of the group is present, exactly one must be (mutual exclusion within the group). At least one group must contribute an element to the object. Each set in the array must be non-empty."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_selection-descriptors_one-none-of` is a property of the [`_required`](_required.md) object. Unlike the other four selection structures — which each evaluate a single flat set — this one takes an **array of sets** and applies a zero-or-one constraint independently to each group.\n\nThis is the natural way to express mutual exclusions across multiple independent pairs or groups simultaneously. For example, a range object must have at most one lower bound and at most one upper bound, where each pair is evaluated independently:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one-none-of\": [\n\t\t\t\t[\"_min-range-inclusive\", \"_min-range-exclusive\"],\n\t\t\t\t[\"_max-range-inclusive\", \"_max-range-exclusive\"]\n\t\t\t],\n\t\t\t\"_selection-descriptors_any\": [\n\t\t\t\t\"_min-range-inclusive\", \"_min-range-exclusive\",\n\t\t\t\t\"_max-range-inclusive\", \"_max-range-exclusive\"\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nFrom the first group, at most one of `_min-range-inclusive` / `_min-range-exclusive` may be present. From the second group, at most one of `_max-range-inclusive` / `_max-range-exclusive` may be present. Combined with `_selection-descriptors_any`, at least one bound overall is required. The two groups are evaluated independently — a valid object could have only a lower bound, only an upper bound, or one of each."
+				"ISO_639_3_eng": "`_selection-descriptors_one-of-any` is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:\n\n1. **Within each set**: exactly one descriptor is the valid form for that group. If any element from the set is present in the object, exactly one must be present — the elements within a set are mutually exclusive.\n2. **Across sets**: at least one set must contribute an element — the object must not be empty of all listed descriptors.\n\nThis selector is the natural way to express structures such as range objects, where each bound type has exactly one valid form (inclusive or exclusive) and at least one bound must be present:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one-of-any\": [\n\t\t\t\t[\"_min-range-inclusive\", \"_min-range-exclusive\"],\n\t\t\t\t[\"_max-range-inclusive\", \"_max-range-exclusive\"]\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nFrom the first set, at most one of `_min-range-inclusive` / `_min-range-exclusive` may be present (the two forms of the lower bound are mutually exclusive). From the second set, at most one of `_max-range-inclusive` / `_max-range-exclusive` may be present. At least one bound overall must be present. Valid objects include: only a lower bound, only an upper bound, or one of each.\n\nCompare with [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md), which requires every set to contribute — meaning all groups must have exactly one element present."
+			}
+		},
+		"_data": {
+			"_array": {
+				"_set": {
+					"_set_scalar": {
+						"_set_type": "_type_key",
+						"_kind_key": [
+							"_kind_key_term_descriptor"
+						]
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_kind_term": [
+				"_kind_term_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "one-of-all",
+			"_gid": "_selection-descriptors_one-of-all",
+			"_aid": [
+				"one-of-all"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "One of Each, All Results (Descriptors)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A descriptor selection rule expressed as an array of sets. From each set, exactly one descriptor is the valid form for that group — if any element of the group is present, exactly one must be (mutual exclusion within the group). All groups must contribute an element to the object. Each set in the array must be non-empty."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_selection-descriptors_one-of-all` is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:\n\n1. **Within each set**: exactly one descriptor is the valid form for that group. If any element from the set is present in the object, exactly one must be present — the elements within a set are mutually exclusive.\n2. **Across sets**: all sets must contribute an element — every group must have exactly one of its elements present in the object.\n\nThis selector expresses structures where every group of alternatives is mandatory, but within each group only one form is allowed. For example, a closed range that requires both a lower and an upper bound, each in exactly one form:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_one-of-all\": [\n\t\t\t\t[\"_min-range-inclusive\", \"_min-range-exclusive\"],\n\t\t\t\t[\"_max-range-inclusive\", \"_max-range-exclusive\"]\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nExactly one lower bound and exactly one upper bound must be present. A range with only a lower bound or only an upper bound would be invalid under this rule.\n\nCompare with [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md), which requires only at least one group to contribute — groups may be absent."
 			}
 		},
 		"_data": {

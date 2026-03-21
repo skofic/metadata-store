@@ -38,16 +38,28 @@ This project is in early initialization. No source code exists yet. The `.gitign
 
 ### Pending
 - Core Concepts — multi-role concept: a term can simultaneously be a descriptor, an object schema, an enumeration element, and an enumeration root. Design rationale: `_term_descriptor` and `_term_object` exist as explicit validation targets — use them when a procedure must confirm that a term IS a descriptor or IS an object definition.
-- **Design decisions made — implementation pending:**
-  1. **Open vs closed schema**: direction decided. `_rule` will carry an open/closed flag; `_recommended` is the whitelist (advisory when open, enforced when closed). Implementation pending.
-  2. **Conditional rules**: mechanism designed. `_predicate_value-of` edges carry context-specific `_rule`-like structures in `_path_data`, keyed by path root. Selection structures remain in `_rule` (not retired). Implementation pending.
-  3. **`_banned` precedence**: decided. `_banned` is unconditional and absolute — no conditional rule can activate a banned property. Conflicts between conditional rules and `_banned` are detectable at edge insertion time.
 - **Open design questions** (still to be resolved):
   1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
   2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
 - **Next topic (Phase 2)**:
   1. Review `_info` content in `data/core/containers.json`.
   2. Continue populating remaining core term files.
+
+### Recent session (2026-03-21)
+- Decided: `_closed` is **required** in ALL rule objects (base `_rule` sections AND `_path_data` conditional rule objects). Explicit presence eliminates ambiguity without tracing the hierarchy.
+- Closed conditional rule replaces the base `_recommended` entirely; open conditional rule accumulates (union). `_required` always accumulates. `_banned` is unconditional.
+- Added `_closed: true` to all 8 `_rule` sections in `containers.json` (`_term`, `_term_descriptor`, `_term_object`, `_edge`, `_code`, `_info`, `_data`, `_rule`).
+- Added `_recommended` to `_data` term's `_rule` section (shape properties: `_scalar`, `_array`, `_set`, `_tuple`, `_dict`).
+- Added `_closed: true` to `_required` term's `_rule` section in `_rule.json`.
+- Added `_closed: true` and `_recommended` to the three range `_rule` sections in `_scalar.json` (`_range`, `_range_string`, `_range_date`).
+- Updated `_closed` term description in `_rule.json` to state it is required in all rule objects and document conditional rule accumulation semantics.
+- Updated root `CLAUDE.md`: added `_closed` to `_rule` properties table (as required), added `_closed` subsection, updated `_recommended` description.
+- Updated `data/core/CLAUDE.md`: added `_closed` requirement to `_rule` Constraints section, documented conditional rule semantics.
+- Rewrote `_scalar.edges.json` completely: 15 property-of edges, 10 `_type_*` value-of edges (closed, full whitelist), 2 `_kind_number_*` value-of edges (open; integer bans `_decimals`), 13 `_kind_string_*` value-of edges (open; each bans inapplicable properties), 6 `_kind_key_*` value-of edges (open; no additional rules).
+- Decided: `_required` and `_recommended` are **disjoint** — a property appears in exactly one or neither, never both. Required = allowed + mandatory; recommended = allowed + optional. Closed-schema whitelist = their union. Updated all CLAUDE.md files and `_closed` term description to reflect this.
+- Decided: `_aid` is **required and computed** (defaults to `[_lid]`; not immutable so aliases can be appended). Added `_gid` and `_aid` to `_required` in `_code._rule`; added `_aid` to `_computed`; removed `_gid` and `_aid` from `_recommended` (disjoint rule); added `_regexp` to `_recommended` (was missing from closed whitelist).
+- Updated `_aid` definition and description in `_code.json` and CLAUDE.md.
+- Regenerated term cards throughout.
 
 ### Recent session (2026-03-18)
 - Added `_methods` optional property to `_info` section (Markdown/HTML, same format as `_description`; for measurement conditions and protocols on descriptor terms).
@@ -199,18 +211,18 @@ When `_nid` is absent, the term defines a top-level namespace with no parent. Fo
 
 #### Secondary properties
 
-These optional properties support searching and organising terms.
+`_aid` is required and computed. The remaining properties are optional.
 
 | Property  | Required | Description |
 |-----------|----------|-------------|
-| `_aid`    | No       | "All identifiers" — the set of official identifiers for the term. |
+| `_aid`    | Required, Computed | "All identifiers" — the set of official identifiers for the term. Computed: defaults to `[_lid]` if absent. Not immutable — grows when aliases are added. |
 | `_pid`    | No       | "Provided identifiers" — custom identifiers used by data providers. |
 | `_name`   | No       | A string containing the name of the term. |
 | `_symbol` | No       | A formatted string containing the symbol of the term (e.g., a currency symbol, mathematical expression). |
 | `_regexp` | No       | A regular expression used to validate the `_lid` of this term. |
 | `_emoji`  | No       | An emoji character used as a visual icon for the term. |
 
-- **`_aid`** ("all identifiers"): The set of all *official* identifiers by which the term can be identified — i.e., identifiers that are considered standards beyond this dictionary. By default it should contain the term's own `_lid`, plus the `_lid` of any alias terms pointing to the current term. This property should be **omitted** if the term has no official standard identifier and no alias terms. It should be **included** if the term has a standard identifier, or if alias terms with different `_lid` values point to it — in which case it lists the current `_lid`, any standard identifier(s), and the `_lid` values of all aliases.
+- **`_aid`** ("all identifiers"): The set of all *official* identifiers by which the term can be identified — i.e., identifiers that are considered standards beyond this dictionary. This property is **required** and **computed**: `_lid` is a public identifier for the dictionary, so if `_aid` is absent when a term is created or modified, the system initialises it to `[_lid]`. It is not immutable — when alias terms point to this term, their `_lid` values are appended. When a term has additional standard identifiers (e.g. an ISO code), those are also included. Provider-specific or ad hoc identifiers belong in `_pid` instead.
 - **`_pid`** ("provided identifiers"): Custom identifiers used by data providers. This dictionary is used to apply standards and metadata to a repository of datasets. When receiving datasets that lack metadata, this field can be searched to match unknown variable names to known terms.
 - **`_name`**: The term's name. Used when a term has an official or unique human-readable name distinct from its identifier.
 - **`_symbol`**: The term's symbol, stored as a **LaTeX string**. LaTeX is a superset of plain UTF-8 text, so simple symbols can be stored as plain Unicode characters (e.g., `€`, `μ`, `°C`) while complex expressions use LaTeX syntax (e.g., `\bar{x} \pm \sigma`, `\frac{n!}{k!(n-k)!}`). The frontend renders this field using **KaTeX**, which handles both plain Unicode and LaTeX syntax seamlessly.
@@ -395,8 +407,9 @@ A UTF-8 string. The optional `_kind_string` property specifies the string encodi
 | `_kind_string_IPv4`       | IPv4 address. | — |
 | `_kind_string_IPv6`       | IPv6 address. | — |
 | `_kind_string_LaTeX`      | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. | — |
+| `_kind_string_regexp`     | Regular expression. The stored value is itself a regexp; the editing interface provides a testing facility. | — |
 
-`_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it.
+`_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it. Note the distinction: `_kind_string_regexp` declares that the stored *value* is a regular expression; `_regexp` holds a validation pattern applied to a generic string value.
 
 ```json
 {
@@ -896,25 +909,26 @@ The `_rule` section defines how objects may be composed. It contains a set of ru
 
 Conditional constraints that apply only when a specific property holds a specific value are expressed in the graph layer using the `_predicate_value-of` predicate — see the Graphs section. The `_rule` section handles structural constraints that apply unconditionally; the graph layer handles value-dependent constraints.
 
-A boolean open/closed flag will be added to `_rule`. When closed, only properties listed in `_recommended` are permitted. When open, `_recommended` is advisory. `_banned` is unconditional in both modes.
+The `_closed` flag controls whether unlisted optional properties are accepted. `_required` and `_recommended` are disjoint tiers of the allowed set — required means allowed and mandatory, recommended means allowed and optional. In a closed schema the allowed set is their union; no property should appear in both. `_banned` is unconditional in both modes.
 
 #### Top-level properties
 
-One or more of the following properties may be present:
+The following properties may be present. `_closed` is **required** in every rule object; the rest are optional:
 
-| Property        | Description |
-|-----------------|-------------|
-| `_required`     | Defines which properties must be present in the object, expressed using selection structures. |
-| `_recommended`  | Defines the whitelist of properties permitted in the object. Advisory when open; enforced as a strict whitelist when closed. |
-| `_banned`       | Defines which properties must never be present in the object. Unconditional — takes precedence over all other rules including conditional graph rules. |
-| `_computed`     | Properties whose values are automatically set by the system if not provided by the user. |
-| `_locked`       | Properties whose values are entirely managed by the system and cannot be set or modified by users. |
-| `_immutable`    | Properties that, once set, cannot be modified or deleted. |
-| `_default-value`| Key/value dictionary mapping properties to their default values, applied at insertion time. |
+| Property        | Required | Description |
+|-----------------|----------|-------------|
+| `_closed`       | Yes      | Boolean flag. When true, only properties in `_required` or `_recommended` are permitted; any other property is rejected. When false, `_recommended` is advisory. Must be present in every rule object — both base `_rule` sections and `_path_data` conditional rule objects. |
+| `_required`     | No       | Defines which properties must be present in the object, expressed using selection structures. Required properties are always permitted and must never appear in `_recommended`. |
+| `_recommended`  | No       | The set of optional properties permitted in the object. Disjoint from `_required`. Advisory when `_closed` is false; enforced as a strict additional whitelist when `_closed` is true. |
+| `_banned`       | No       | Defines which properties must never be present in the object. Unconditional — takes precedence over all other rules including conditional graph rules. |
+| `_computed`     | No       | Properties whose values are automatically set by the system if not provided by the user. |
+| `_locked`       | No       | Properties whose values are entirely managed by the system and cannot be set or modified by users. |
+| `_immutable`    | No       | Properties that, once set, cannot be modified or deleted. |
+| `_default-value`| No       | Key/value dictionary mapping properties to their default values, applied at insertion time. |
 
 #### Selection structures
 
-`_required` expresses its conditions using **selection structures** — properties that specify which descriptors must be present according to a particular cardinality rule. Four of the five selectors take a **flat set of descriptor keys** as their value. The fifth, `_selection-descriptors_one-none-of`, takes an **array of sets** — the constraint is applied independently to each set in the list.
+`_required` expresses its conditions using **selection structures** — properties that specify which descriptors must be present according to a particular cardinality rule. The first four selectors take a **flat set of descriptor keys** as their value. The last two take an **array of sets**, applying a two-phase rule: from each set exactly one element is the valid form, and the second phase governs how many sets must contribute.
 
 | Property                             | Value shape          | Description |
 |--------------------------------------|----------------------|-------------|
@@ -922,28 +936,29 @@ One or more of the following properties may be present:
 | `_selection-descriptors_one-none`    | Set of descriptor keys | **One or none**: zero or one descriptor from the set may be present. |
 | `_selection-descriptors_any`         | Set of descriptor keys | **Any of**: one or more descriptors from the set must be present. |
 | `_selection-descriptors_all`         | Set of descriptor keys | **All of**: all descriptors from the set must be present. |
-| `_selection-descriptors_one-none-of` | Array of sets of descriptor keys | **One of any in list**: from each set in the list, zero or one descriptor may be present. |
+| `_selection-descriptors_one-of-any`  | Array of sets of descriptor keys | **One of each, any result**: from each set, at most one element may be present (mutual exclusion); at least one set must contribute an element. |
+| `_selection-descriptors_one-of-all`  | Array of sets of descriptor keys | **One of each, all results**: from each set, exactly one element must be present (mutual exclusion); every set must contribute an element. |
 
-The structural difference of `_selection-descriptors_one-none-of` is significant: where the other four selectors evaluate a single group of descriptors, this selector evaluates each group in the list independently. For example:
+The two grouped selectors apply a two-phase evaluation. For `_selection-descriptors_one-of-any`, the classic use case is a range object where each bound type has exactly one valid form and at least one bound is required:
 
 ```json
 {
     "_rule": {
         "_required": {
-            "_selection-descriptors_one-none-of": [
-                ["first_name", "full_name"],
-                ["phone", "email"]
+            "_selection-descriptors_one-of-any": [
+                ["_min-range-inclusive", "_min-range-exclusive"],
+                ["_max-range-inclusive", "_max-range-exclusive"]
             ]
         }
     }
 }
 ```
 
-This rule allows zero or one of `first_name`/`full_name`, and independently zero or one of `phone`/`email`. Each group is evaluated on its own.
+From the first set, at most one lower-bound form may be present. From the second set, at most one upper-bound form may be present. At least one bound overall must be present. Use `_selection-descriptors_one-of-all` instead when all sets must contribute — for example, a range that requires both a lower and an upper bound.
 
 #### `_required`
 
-`_required` is an object that must contain **at least one** selection structure. It may contain any combination of the five selectors, but at least one must be present — an empty `_required` object is invalid. When multiple selectors are present, **all of them must be satisfied simultaneously**: the selectors are ANDed together, not ORed. Note that `_default-value` is applied before `_required` is checked, so a property with a default value will always satisfy a requirement for it.
+`_required` is an object that must contain **at least one** selection structure. It may contain any combination of the six selectors, but at least one must be present — an empty `_required` object is invalid. When multiple selectors are present, **all of them must be satisfied simultaneously**: the selectors are ANDed together, not ORed. Note that `_default-value` is applied before `_required` is checked, so a property with a default value will always satisfy a requirement for it.
 
 ```json
 {
@@ -977,24 +992,39 @@ This rule imposes the following conditions:
 
 This rule indicates that the object must never contain any of the properties `one`, `two`, or `three`, regardless of any conditional rules that may otherwise apply.
 
+#### `_closed`
+
+`_closed` is a **required** boolean present in every rule object — both base `_rule` sections and conditional rule objects stored in `_path_data`. Its explicit presence eliminates ambiguity about a schema's closure state without needing to trace the rule hierarchy.
+
+- **`_closed: false`** (open schema): properties outside `_required` and `_recommended` are accepted. Advisory — used for schemas that are still evolving or where extensibility is desired.
+- **`_closed: true`** (closed schema): only properties in `_required` or `_recommended` may be present; any other property causes a validation error.
+
+For **conditional rule objects** in `_path_data` (attached to `_predicate_value-of` edges):
+
+- A **closed** conditional rule (`_closed: true`) **replaces** the base `_recommended` set entirely — its `_recommended` becomes the complete whitelist for that value context.
+- An **open** conditional rule (`_closed: false`) **accumulates** — its `_recommended` is unioned with the base, and any `_banned` entries conditionally remove properties from the effective permitted set.
+
+`_required` always accumulates (AND logic) regardless of the closure mode. `_banned` is unconditional and absolute in all modes.
+
 #### `_recommended`
 
-`_recommended` is an array of descriptor references listing the properties that are permitted in the structure. Its effect depends on the schema mode (open or closed, indicated by a flag to be added to `_rule`):
+`_recommended` is an array of descriptor references listing the properties that are permitted in the structure. Its effect depends on `_closed`:
 
-- **Open schema** (default): `_recommended` is advisory — it documents the expected properties for form generation and display, but does not reject unlisted properties.
-- **Closed schema**: `_recommended` is enforced as a strict whitelist — only listed properties may be present; any unlisted property is rejected.
+- **`_closed: false`**: `_recommended` is advisory — it documents the expected optional properties for form generation and display, but does not reject unlisted properties.
+- **`_closed: true`**: `_recommended` is enforced — only properties in `_required` or `_recommended` may be present; any other property is rejected.
 
-When `_recommended` is absent, all non-banned properties are permitted regardless of schema mode. `_recommended` and `_banned` are complementary: `_recommended` defines what is expected or allowed; `_banned` defines what is never permitted. A property should not appear in both.
+`_required` and `_recommended` are disjoint: a property appears in exactly one or neither. `_banned` is unconditional and applies regardless of the other lists. When `_recommended` is absent, all non-banned, non-required properties are permitted regardless of `_closed`.
 
 ```json
 {
     "_rule": {
+        "_closed": true,
         "_recommended": ["_type", "_kind", "_format", "_unit", "_unit-name", "_unit-symbol", "_regexp", "_decimals", "_valid-range", "_normal-range"]
     }
 }
 ```
 
-Conditional rules (via `_predicate_value-of` graph edges) may supplement `_recommended` for specific value contexts — adding properties to the effective permitted set when a property holds a particular value. They cannot remove properties from `_recommended` or lift a `_banned` constraint.
+Conditional rules (via `_predicate_value-of` graph edges) may supplement `_recommended` for specific value contexts. An open conditional rule adds to or restricts the effective permitted set; a closed conditional rule replaces it entirely. Neither can lift a `_banned` constraint.
 
 #### `_computed`
 

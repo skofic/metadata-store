@@ -83,11 +83,14 @@ Links to terms whose cards do not yet exist are permitted — all cards will be 
 
 ## `_rule` Constraints
 
+- **`_closed` is required in every rule object** — both base `_rule` sections and `_path_data` conditional rule objects. Use `true` for closed schemas (strict) and `false` for open schemas (advisory). Its explicit presence eliminates the need to trace the rule hierarchy to determine closure state.
+- **`_required` and `_recommended` are disjoint**. A property must appear in exactly one or neither — never both. Required means allowed + mandatory; recommended means allowed + optional. In a closed schema the allowed set is their union. Never list a required property in `_recommended`.
 - `_recommended` is a **flat array** of descriptor `_gid` strings. Never use selection structures inside `_recommended`.
 - `_required` uses selection structures (`_selection-descriptors_all`, `_selection-descriptors_one`, etc.).
 - `_key` belongs in `_computed` and `_immutable`. It may also appear in `_required`: because `_computed` is resolved before `_required` is checked, the system sets `_key` from `_gid` before validation runs, so the requirement is always satisfied.
 - `_gid` belongs in `_computed` and `_immutable` for the `_code` section term.
 - Properties that are immutable once set (identifiers, relationship endpoints) go in `_immutable`.
+- **Conditional rule objects** (in `_path_data` of `_predicate_value-of` edges): a closed conditional rule (`_closed: true`) **replaces** the base `_recommended`; an open one (`_closed: false`) **accumulates** (union). `_banned` in a conditional rule removes properties from the effective permitted set. `_required` always accumulates regardless of closure mode.
 
 ---
 

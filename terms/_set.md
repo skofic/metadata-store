@@ -114,18 +114,12 @@ This example describes a set of [enumeration](_type_enum.md) values that must be
 
 ```json
 {
-  "_banned" : [
-    "_scalar",
-    "_array",
-    "_set",
-    "_tuple",
-    "_dict"
-  ],
+  "_closed" : true,
   "_recommended" : [
     "_elements"
   ],
   "_required" : {
-    "_selection-descriptors_all" : [
+    "_selection-descriptors_one" : [
       "_set_scalar"
     ]
   }

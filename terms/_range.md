@@ -21,8 +21,6 @@ A range object may contain any combination of one lower bound and one upper boun
 
 At most one min-property and one max-property may be present; at least one must be present. Omitting a bound leaves that end of the interval open.
 
-> **Note:** The `_rule._required` for this term uses `_selection-descriptors_one-none-of` combined with `_selection-descriptors_any` to express 'at most one from each bound pair, but at least one overall'. This combination of selectors should be reviewed when the `_rule` section is finalised.
-
 ```json
 {
 	"_range": {
@@ -31,10 +29,6 @@ At most one min-property and one max-property may be present; at least one must 
 	}
 }
 ```
-
-**`_notes`**
-
-**Selector review pending**: the `_rule._required` below combines `_selection-descriptors_one-none-of` (at most one from each bound pair) with `_selection-descriptors_any` (at least one bound overall). This combination must be verified for completeness and correctness when the `_rule` section is finalised.
 
 ---
 
@@ -68,14 +62,9 @@ At most one min-property and one max-property may be present; at least one must 
 
 ```json
 {
+  "_closed" : true,
   "_required" : {
-    "_selection-descriptors_any" : [
-      "_min-range-inclusive",
-      "_min-range-exclusive",
-      "_max-range-inclusive",
-      "_max-range-exclusive"
-    ],
-    "_selection-descriptors_one-none-of" : [
+    "_selection-descriptors_one-of-any" : [
       [
         "_min-range-inclusive",
         "_min-range-exclusive"

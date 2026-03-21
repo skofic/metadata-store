@@ -19,14 +19,8 @@
 			}
 		},
 		"_rule": {
-			"_recommended": ["_type"],
-			"_banned": [
-				"_scalar",
-				"_array",
-				"_set",
-				"_tuple",
-				"_dict"
-			]
+			"_closed": true,
+			"_recommended": ["_type"]
 		},
 		"_domn": {
 			"_kind_term": [
@@ -55,6 +49,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_one-none": [
 					"_scalar",
@@ -95,20 +90,14 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
-				"_selection-descriptors_all": [
+				"_selection-descriptors_one": [
 					"_set_scalar"
 				]
 			},
 			"_recommended": [
 				"_elements"
-			],
-			"_banned": [
-				"_scalar",
-				"_array",
-				"_set",
-				"_tuple",
-				"_dict"
 			]
 		},
 		"_domn": {
@@ -139,6 +128,7 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_tuple_types"
@@ -146,13 +136,6 @@
 			},
 			"_recommended": [
 				"_elements"
-			],
-			"_banned": [
-				"_scalar",
-				"_array",
-				"_set",
-				"_tuple",
-				"_dict"
 			]
 		},
 		"_domn": {
@@ -182,19 +165,13 @@
 			}
 		},
 		"_rule": {
+			"_closed": true,
 			"_required": {
 				"_selection-descriptors_all": [
 					"_dict_key",
 					"_dict_value"
 				]
-			},
-			"_banned": [
-				"_scalar",
-				"_array",
-				"_set",
-				"_tuple",
-				"_dict"
-			]
+			}
 		},
 		"_domn": {
 			"_kind_term": [

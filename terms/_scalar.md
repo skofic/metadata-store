@@ -112,13 +112,7 @@ This example describes a descriptor that accepts a scalar value of any type. The
 
 ```json
 {
-  "_banned" : [
-    "_scalar",
-    "_array",
-    "_set",
-    "_tuple",
-    "_dict"
-  ],
+  "_closed" : true,
   "_recommended" : [
     "_type"
   ]

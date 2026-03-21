@@ -167,6 +167,7 @@ This example shows the *data definition* for a *descriptor* that can take *any d
 
 ```json
 {
+  "_closed" : true,
   "_required" : {
     "_selection-descriptors_one-none" : [
       "_scalar",

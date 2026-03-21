@@ -10,7 +10,9 @@ A regular expression used to validate string values. When present in a `_scalar`
 
 **`_description`**
 
-`_regexp` is an optional property of the [`_scalar`](_scalar.md) section, applicable only to [`_type_string`](_type_string.md) without a [`_kind_string`](_kind_string.md) qualifier. When `_kind_string` is present, the format is already self-defining and a regular expression could contradict it, so `_regexp` is not permitted alongside it.
+`_regexp` is an optional property of the [`_scalar`](_scalar.md) section, applicable only to [`_type_string`](_type_string.md) without a [`_kind_string`](_kind_string.md) qualifier. When `_kind_string` is present, the format is already self-defining and a regular expression could contradict it, so `_regexp` is not permitted alongside any `_kind_string` value — including [`_kind_string_regexp`](_kind_string_regexp.md).
+
+**Distinction from [`_kind_string_regexp`](_kind_string_regexp.md)**: `_regexp` is a *validation tool* — it holds a pattern that the descriptor's string value must match. [`_kind_string_regexp`](_kind_string_regexp.md) is a *type declaration* — it states that the descriptor's stored value *is itself* a regular expression. These two concepts are complementary but mutually exclusive as `_scalar` properties: you cannot use `_regexp` to validate a field whose `_kind_string` is already `_kind_string_regexp`.
 
 The value is a plain UTF-8 string containing a valid regular expression. The expression is evaluated against the full string value of the descriptor.
 
@@ -47,6 +49,7 @@ This descriptor accepts only strings of two or three uppercase ASCII letters.
 ```json
 {
   "_scalar" : {
+    "_kind_string" : "_kind_string_regexp",
     "_type" : "_type_string"
   }
 }

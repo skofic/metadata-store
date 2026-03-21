@@ -48,8 +48,10 @@ Terms with an empty-string namespace (`_nid: ""`) are core dictionary building b
 
 ```json
 {
+  "_closed" : true,
   "_computed" : [
-    "_gid"
+    "_gid",
+    "_aid"
   ],
   "_immutable" : [
     "_lid",
@@ -58,16 +60,17 @@ Terms with an empty-string namespace (`_nid: ""`) are core dictionary building b
   ],
   "_recommended" : [
     "_nid",
-    "_gid",
-    "_aid",
     "_pid",
     "_name",
     "_symbol",
+    "_regexp",
     "_emoji"
   ],
   "_required" : {
     "_selection-descriptors_all" : [
-      "_lid"
+      "_lid",
+      "_gid",
+      "_aid"
     ]
   }
 }

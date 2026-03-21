@@ -26,6 +26,7 @@ The `_kind_string` property qualifies the [`_type_string`](_type_string.md) data
 - [`_kind_string_IPv4`](_kind_string_IPv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
 - [`_kind_string_IPv6`](_kind_string_IPv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).
 - [`_kind_string_LaTeX`](_kind_string_LaTeX.md): The string is a [LaTeX](https://www.latex-project.org) expression, rendered by [KaTeX](https://katex.org). LaTeX is a superset of plain UTF-8, so simple symbols may be stored as plain Unicode.
+- [`_kind_string_regexp`](_kind_string_regexp.md): The string is a [regular expression](https://en.wikipedia.org/wiki/Regular_expression). The value must be syntactically valid. The editing interface provides a testing facility for verifying the expression.
 
 When `_kind_string` is absent, the string is generic and the [`_scalar`](_scalar.md) section may additionally include [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range_string`](_valid-range_string.md), and [`_normal-range_string`](_normal-range_string.md). When `_kind_string` is present, the format is self-defining and [`_regexp`](_regexp.md) is not permitted.
 
