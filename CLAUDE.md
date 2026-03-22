@@ -45,6 +45,13 @@ This project is in early initialization. No source code exists yet. The `.gitign
   1. Review `_info` content in `data/core/containers.json`.
   2. Continue populating remaining core term files.
 
+### Recent session (2026-03-22)
+- Established two-directory structure: `terms/` for auto-generated term cards; `docs/` for hand-authored documentation. Term cards generator writes to `terms/` (config key `paths.terms`); `docs/` is never touched by any workflow.
+- Introduced `dictionary.config.json` at the repo root to centralise directory paths; the term-cards generator reads it at startup and falls back to built-in defaults if absent.
+- Created `docs/Structure Definition Rules.md`: comprehensive explanation of the `_rule` section, selection structures, `_closed` semantics, both conditional rule mechanisms (`_predicate_property-of` presence-triggered and `_predicate_value-of` value-triggered), evaluation order, Strategy A, and the self-sufficient rule graph design — with examples throughout.
+- Added reference to `Structure Definition Rules.md` from the `_rule` term description in `containers.json` and from the Rule Edge Strategy section in `data/core/CLAUDE.md`.
+- Updated all CLAUDE.md files (`workflows/CLAUDE.md`, `workflows/term-cards/CLAUDE.md`, `data/core/CLAUDE.md`) to reflect the two-directory structure.
+
 ### Recent session (2026-03-21)
 - Decided: `_closed` is **required** in ALL rule objects (base `_rule` sections AND `_path_data` conditional rule objects). Explicit presence eliminates ambiguity without tracing the hierarchy.
 - Closed conditional rule replaces the base `_recommended` entirely; open conditional rule accumulates (union). `_required` always accumulates. `_banned` is unconditional.
@@ -65,7 +72,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Added `_methods` optional property to `_info` section (Markdown/HTML, same format as `_description`; for measurement conditions and protocols on descriptor terms).
 - Renamed all `iso_` namespace prefixes to `ISO_` across all source files; standalone `"iso"` identifier also uppercased to `"ISO"`.
 - Fixed all remaining `_type_string_handle` → `_type_handle` and `_type_string_key` → `_type_key` references.
-- Added SVG edge diagrams to `terms/images/` (`edge-basic.svg`, `edge-shared.svg`, `edge-bridge.svg`) and updated `_edge._examples` to reference them.
+- Added SVG edge diagrams to `docs/images/` (`edge-basic.svg`, `edge-shared.svg`, `edge-bridge.svg`) and updated `_edge._examples` to reference them.
 - Updated `_edge._description`: MD5 key formula now mentions `/` separator; "All predicates" → "Most predicates".
 - Updated `_domn._description`: removed restriction to user-defined terms; `_domn` now serves as a general role/usage classifier for any term.
 - Corrected `_set`: `_set_scalar` is now required (not optional); updated `_definition`, `_description`, and `_rule` accordingly.
@@ -437,6 +444,7 @@ A string representing the `_key` of a document. If `_kind_key` is absent, the ke
 | `_kind_key_term_enum_element` | The key must reference an enumeration element — i.e., a valid choice within a controlled vocabulary. |
 | `_kind_key_term_descriptor`| The key must reference a descriptor (has a `_data` section). |
 | `_kind_key_term_object`    | The key must reference a term that represents an object definition (has a `_rule` section). |
+| `_kind_key_term_predicate` | The key must reference a predicate term — a term used as the `_predicate` property of an edge document. |
 
 ```json
 {
@@ -907,7 +915,7 @@ The example above describes the multilingual structure used throughout the `_inf
 
 The `_rule` section defines how objects may be composed. It contains a set of rules that determine which properties are required, recommended, forbidden, or automatically managed within an object. Any term carrying a `_rule` section defines an object schema; other terms can reference it via `_type_object` and `_kind` in their `_data` section.
 
-Conditional constraints that apply only when a specific property holds a specific value are expressed in the graph layer using the `_predicate_value-of` predicate — see the Graphs section. The `_rule` section handles structural constraints that apply unconditionally; the graph layer handles value-dependent constraints.
+Conditional constraints are expressed in the graph layer — see the Graphs section. Two mechanisms exist: `_predicate_property-of` edges with non-empty `_path_data` carry rules that activate when a property is **present** (any value); `_predicate_value-of` edges carry rules that activate when a property holds a **specific value**. The `_rule` section handles only unconditional constraints.
 
 The `_closed` flag controls whether unlisted optional properties are accepted. `_required` and `_recommended` are disjoint tiers of the allowed set — required means allowed and mandatory, recommended means allowed and optional. In a closed schema the allowed set is their union; no property should appear in both. `_banned` is unconditional in both modes.
 
@@ -1179,7 +1187,7 @@ Functional predicates carry domain meaning and are followed during graph travers
 | Predicate                | Description |
 |--------------------------|-------------|
 | `_predicate_enum-of`     | `_from` is a valid enumeration element of the `_to` controlled vocabulary. |
-| `_predicate_property-of` | `_from` descriptor is a property of the `_to` schema term. Used to link descriptors to object definitions. |
+| `_predicate_property-of` | `_from` descriptor is a property of the `_to` schema term. Used to link descriptors to object definitions. When `_path_data` contains a rule object, that rule is activated whenever the property is present (any value) — see the Rule Edge Strategy section in `data/core/CLAUDE.md`. |
 | `_predicate_field-of`    | `_from` descriptor is a field of the `_to` term. Used to define form layouts or data table columns. |
 
 ```json
@@ -1339,13 +1347,16 @@ To resolve an alias directly (without full traversal):
 
 **Conditional rules**
 
-Conditional rules express constraints that activate only when a specific property holds a specific value within a specific structural context. They use a dedicated predicate, `_predicate_value-of`, and store the activated rules in `_path_data`.
+Conditional rules are constraints stored in `_path_data` on graph edges. Two predicates carry them:
 
-| Predicate               | Description |
-|-------------------------|-------------|
-| `_predicate_value-of`   | `_from` is a possible value of the property `_to`. When `_to` holds value `_from` within the structural context identified by `_path`, the rules in `_path_data[path_root]` apply. |
+| Predicate               | Trigger | Description |
+|-------------------------|---------|-------------|
+| `_predicate_property-of` (with non-empty `_path_data`) | Property is **present** (any value) | The rule in `_path_data[path_root]` applies whenever `_from` exists in the object, regardless of its value. |
+| `_predicate_value-of`   | Property holds a **specific value** | `_from` is a possible value of the property `_to`. When `_to` holds value `_from` within the structural context identified by `_path`, the rules in `_path_data[path_root]` apply. |
 
-The edge encodes: **what** (the value, in `_from`), **of which property** (in `_to`), **in which structural context** (in `_path`), **with what consequences** (in `_path_data[path_root]`).
+**Presence-triggered rules** (`_predicate_property-of` with `_path_data`): used when a constraint must apply for every possible value a property can hold. The canonical case is mutual exclusion — when `_unit` is present (any unit value), `_unit-name` and `_unit-symbol` must be absent. This cannot be expressed with `_predicate_value-of` because the constraint is not tied to any specific value.
+
+**Value-triggered rules** (`_predicate_value-of`): the edge encodes **what** (the value, in `_from`), **of which property** (in `_to`), **in which structural context** (in `_path`), **with what consequences** (in `_path_data[path_root]`).
 
 ```json
 {
@@ -1370,7 +1381,13 @@ This edge states: within a `_scalar` structure, when `_type` holds the value `_t
 
 **Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_string_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_set_scalar` (path root `terms/_set_scalar`). Each carries its own `_path_data` with context-appropriate rules.
 
-**Precedence**: conditional rules can only add constraints — they may make previously optional properties required, or expand the recommended set. They cannot remove a `_banned` constraint or override structural-level `_rule` properties. If a conditional rule's `_path_data` requires a property listed in the structure's `_rule._banned`, this is a conflict detectable at edge insertion time.
+**Precedence**: a closed conditional rule (`_closed: true`) replaces the base `_recommended` entirely, which can restrict the effective allowed set to fewer properties than the base rule permits. An open conditional rule (`_closed: false`) accumulates — it adds to `_required` and unions with `_recommended`. Neither can lift a `_banned` constraint. If a conditional rule's `_path_data` requires a property listed in the structure's `_rule._banned`, this is a conflict detectable at edge insertion time.
+
+**Rule graph self-sufficiency**: the rule graph is designed to be the sole source of truth for both validation and UI behaviour — no out-of-graph knowledge about type semantics should be needed. This has a direct consequence for `_predicate_value-of` edge authoring:
+
+- **Create an edge for every value that restricts the effective property set**, even if the only consequence is that fewer properties are allowed than the base rule permits. A closed conditional edge for `_type_boolean` with `_recommended: []` signals "only `_type` is permitted here" and allows the validator and UI to detect and clean up orphaned properties from a previous value context.
+- **Omit an edge only when the value truly changes nothing** relative to the base rule — no properties become required, no properties become banned, and the allowed set is unchanged. For `_type_boolean` this means an edge IS needed; for a value with the same allowed set as the base rule, it is not.
+- **On value change** (e.g. the user changes `_type` from `_type_string` to `_type_boolean`): the effective schema before and after the change is computed from the graph (base rule + presence rules + old/new value rule), the diff identifies orphaned properties, and the UI offers to remove them rather than silently deleting them.
 
 #### Graph Traversal
 

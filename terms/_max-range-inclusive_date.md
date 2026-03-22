@@ -10,13 +10,13 @@ The inclusive upper bound of a date range in `_kind_string_YMD` format. Only dat
 
 **`_description`**
 
-`_max-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the upper bound of the date interval, **including** the bound value itself. It may appear in [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) objects.
+`_max-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the upper bound of the date interval, **including** the bound value itself. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects with `_kind_object: ["_range_date"]`.
 
 At most one of `_max-range-inclusive_date` and [`_max-range-exclusive_date`](_max-range-exclusive_date.md) may be present in the same range object.
 
 ```json
 {
-	"_valid-range_date": {
+	"_valid-range_string": {
 		"_min-range-inclusive_date": "1950",
 		"_max-range-inclusive_date": "19591231"
 	}

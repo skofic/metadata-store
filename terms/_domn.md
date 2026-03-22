@@ -103,7 +103,21 @@ The domains section, `_domn`, provides the *domains* and *categories* associated
 ```json
 {
   "_scalar" : {
+    "_kind_object" : [
+      "_domn"
+    ],
     "_type" : "_type_object"
   }
+}
+```
+
+**`_rule`**
+
+```json
+{
+  "_closed" : false,
+  "_recommended" : [
+    "_kind_term"
+  ]
 }
 ```

@@ -10,13 +10,13 @@ The inclusive lower bound of a date range in `_kind_string_YMD` format. Only dat
 
 **`_description`**
 
-`_min-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the lower bound of the date interval in `_kind_string_YMD` format, **including** the bound value itself. Comparison is lexicographic over the YYYYMMDD-family format. It may appear in [`_valid-range_date`](_valid-range_date.md) and [`_normal-range_date`](_normal-range_date.md) objects.
+`_min-range-inclusive_date` is a property of [`_range_date`](_range_date.md) objects. It defines the lower bound of the date interval in `_kind_string_YMD` format, **including** the bound value itself. Comparison is lexicographic over the YYYYMMDD-family format. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects with `_kind_object: ["_range_date"]`.
 
 At most one of `_min-range-inclusive_date` and [`_min-range-exclusive_date`](_min-range-exclusive_date.md) may be present in the same range object.
 
 ```json
 {
-	"_valid-range_date": {
+	"_valid-range_string": {
 		"_min-range-inclusive_date": "1900"
 	}
 }

@@ -54,7 +54,9 @@ Descriptors are referenced by object schema terms to define which properties an 
     "_key"
   ],
   "_recommended" : [
-    "_rule"
+    "_rule",
+    "_prop",
+    "_domn"
   ],
   "_required" : {
     "_selection-descriptors_all" : [

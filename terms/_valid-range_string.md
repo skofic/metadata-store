@@ -27,7 +27,7 @@ The value is an object conforming to the [`_range_string`](_range_string.md) sch
 }
 ```
 
-Only two-letter uppercase strings from `AA` to `ZZ` are accepted. For date strings in YYYYMMDD format, use [`_valid-range_date`](_valid-range_date.md) instead.
+Only two-letter uppercase strings from `AA` to `ZZ` are accepted. For date strings in YYYYMMDD format, use `_valid-range_string` with `_kind_object: ["_range_date"]` to apply date-specific bound properties.
 
 ---
 

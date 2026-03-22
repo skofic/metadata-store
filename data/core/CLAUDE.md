@@ -19,9 +19,12 @@ terms/                — term cards (project root, not inside data/)
   _term.md
   _code.md
   ...
+docs/                 — hand-authored documentation (project root, not inside data/)
+  Structure Definition Rules.md
+  ...
 ```
 
-Term cards live at the **project root** in `terms/`, not inside `data/`. All cards are named `<_gid>.md`.
+Term cards live at the **project root** in `terms/`, not inside `data/`. All cards are named `<_gid>.md`. Hand-authored documentation lives in `docs/`.
 
 ---
 
@@ -91,6 +94,60 @@ Links to terms whose cards do not yet exist are permitted — all cards will be 
 - `_gid` belongs in `_computed` and `_immutable` for the `_code` section term.
 - Properties that are immutable once set (identifiers, relationship endpoints) go in `_immutable`.
 - **Conditional rule objects** (in `_path_data` of `_predicate_value-of` edges): a closed conditional rule (`_closed: true`) **replaces** the base `_recommended`; an open one (`_closed: false`) **accumulates** (union). `_banned` in a conditional rule removes properties from the effective permitted set. `_required` always accumulates regardless of closure mode.
+
+---
+
+## Rule Edge Strategy
+
+> For a full explanation of the rule system — including selection structures, accumulation semantics, and annotated examples — see [`docs/Structure Definition Rules.md`](../../docs/Structure Definition Rules.md) in the repository root.
+
+The rule graph is designed to be **self-sufficient** — validation and UI behaviour derive entirely from the graph, with no out-of-graph knowledge about type semantics.
+
+Two edge predicates carry conditional rules:
+
+- **`_predicate_property-of`** with non-empty `_path_data`: rule activates when the property is **present** (any value).
+- **`_predicate_value-of`**: rule activates when the property holds a **specific value**.
+
+### Presence-triggered rules (`_predicate_property-of`)
+
+Add a rule object to `_path_data` on a `_predicate_property-of` edge when a constraint must apply whenever the property exists, regardless of its value. The primary use case is **mutual exclusion**: when `_unit` is present, `_unit-name` and `_unit-symbol` must not be (and vice versa). This cannot be expressed with `_value-of` because the constraint is not tied to any particular value — it applies to every value the property could hold.
+
+Always use `_closed: false` for presence-triggered rules unless the property's presence alone fully determines the allowed set — which is rare.
+
+### Value-triggered rules (`_predicate_value-of`)
+
+Create a `_predicate_value-of` edge for a value whenever **the effective allowed property set differs from the base rule**, in either direction — more properties required, fewer properties permitted, or both. Do not create an edge when the value changes nothing relative to the base rule.
+
+The key case: a value that permits *fewer* properties than the base rule's `_recommended` whitelist still requires an explicit closed conditional edge. Without it, the validator cannot detect semantically invalid combinations (e.g. `_type_boolean` with `_regexp`) and the UI has no basis for cleaning up orphaned properties when the governing property changes value.
+
+### Closed vs open
+
+- Use **`_closed: true`** when the value defines a specific, bounded allowed set. The `_recommended` in the conditional becomes the complete optional-property whitelist for that value context, replacing the base.
+- Use **`_closed: false`** when the value adds requirements or bans without restricting the overall whitelist (accumulation mode).
+
+For `_type_*` values in `_scalar`: use `_closed: true` with the exact `_recommended` list for that type. Most type values restrict the allowed set relative to the base (which lists all possible scalar properties across all types).
+
+### Which properties need a `_predicate_property-of` edge
+
+Every property of a schema term should have a `_predicate_property-of` edge. However, for properties whose presence triggers no conditional rules, the edge carries empty `_path_data` and serves only as a schema membership declaration. In `_scalar`, this full set of edges has been deliberately omitted for **passive properties** — properties such as `_regexp`, `_decimals`, `_valid-range`, and `_valid-range_string` whose presence does not gate any conditional rule. Their membership is implicitly declared by their appearance in the `_recommended` lists of type and kind conditionals.
+
+**Consequence**: the property graph for `_scalar` is incomplete for pure navigation. You cannot discover all properties of `_scalar` by traversing `_predicate_property-of` edges alone — you must also read the `_recommended` lists in the rule conditionals. Any tooling that inspects schema membership (graph browser, schema inspector) must account for this: read both property-of edges and `_recommended` lists to get the full picture.
+
+`_predicate_property-of` edges are created only when:
+1. The property has a **presence-triggered rule** (non-empty `_path_data`), or
+2. The property's value triggers further conditional rules via `_predicate_value-of` (i.e. it governs the composition of the schema — like `_type` and `_kind_number`).
+
+### Evaluation order
+
+When multiple conditionals apply simultaneously, they accumulate in this order: base `_rule` → presence rules → value rules. Each layer uses the same closed/open accumulation semantics; `_banned` from any layer is unconditional throughout.
+
+### On value change
+
+When a governing property changes value (e.g. `_type` changes from `_type_string` to `_type_boolean`):
+1. Compute the old effective schema (base rule + presence rules + old value's conditional).
+2. Compute the new effective schema (base rule + presence rules + new value's conditional).
+3. Diff: properties in the old allowed set but not the new are now orphaned.
+4. The UI offers to remove orphaned properties — it does not silently delete them, since the user may be exploring and intend to revert.
 
 ---
 

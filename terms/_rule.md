@@ -27,6 +27,8 @@ When non-empty, `_rule` carries unconditional structural constraints:
 
 Conditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. The `_rule` section handles only constraints that apply unconditionally, regardless of property values.
 
+For a comprehensive explanation of how the rule system works — including selection structures, the `_predicate_value-of` conditional rule strategy, and the self-sufficient rule graph design — see [Structure Definition Rules](../docs/Structure Definition Rules.md).
+
 ```json
 {
 	"_rule": {

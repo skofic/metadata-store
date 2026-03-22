@@ -2,12 +2,12 @@
  * term-cards — Markdown card generator for dictionary terms.
  *
  * Reads every *.json file in data/core/, extracts all term objects, and writes
- * one Markdown card to terms/<_gid>.md for each term that has an _info section.
+ * one Markdown card to docs/<_gid>.md for each term that has an _info section.
  * Terms without _info (alias terms) are silently skipped.
  *
  * The sync is incremental:
  *   - Cards whose content has not changed are left untouched (preserving mtimes).
- *   - Cards whose source term has been deleted are removed from terms/.
+ *   - Cards whose source term has been deleted are removed from docs/.
  *   - New or modified terms produce new or overwritten cards.
  *
  * The tool locates the repository root automatically by walking up from the
@@ -223,6 +223,20 @@ func appendProperty(key: String, value: Any, to lines: inout [String]) {
     lines.append("")
 }
 
+// MARK: - Config
+
+/// Reads `dictionary.config.json` from the repository root and returns the
+/// `paths` dictionary. Returns an empty dictionary if the file is absent or
+/// cannot be parsed, so callers can fall back to defaults.
+func readConfig(repoRoot: URL) -> [String: String] {
+    let configURL = repoRoot.appendingPathComponent("dictionary.config.json")
+    guard let data = try? Data(contentsOf: configURL),
+          let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+          let paths = json["paths"] as? [String: String]
+    else { return [:] }
+    return paths
+}
+
 // MARK: - Main
 
 /// Entry point: locates the repository, reads all source terms, and syncs the
@@ -238,8 +252,11 @@ func run() throws {
         exit(1)
     }
 
-    let dataCoreURL = repoRoot.appendingPathComponent("data/core")
-    let termsURL    = repoRoot.appendingPathComponent("terms")
+    // Read directory paths from dictionary.config.json. Fall back to the
+    // historical defaults so the tool still works without the config file.
+    let config = readConfig(repoRoot: repoRoot)
+    let dataCoreURL = repoRoot.appendingPathComponent(config["core"] ?? "data/core")
+    let termsURL    = repoRoot.appendingPathComponent(config["terms"] ?? "terms")
 
     // Create terms/ if it does not yet exist (safe no-op when it already does).
     try fm.createDirectory(at: termsURL, withIntermediateDirectories: true)
@@ -308,15 +325,18 @@ func run() throws {
     // -------------------------------------------------------------------------
     // Phase 3: remove stale cards.
     //
-    // Any .md file in terms/ whose stem does not match a currently known _gid
+    // Any .md file in docs/ whose stem does not match a currently known _gid
     // belongs to a term that has been deleted or renamed. Remove it so the
-    // terms/ directory stays in sync with the source data.
+    // docs/ directory stays in sync with the source data.
     // -------------------------------------------------------------------------
     let existingCards = (try? fm.contentsOfDirectory(at: termsURL, includingPropertiesForKeys: nil)
         .filter { $0.pathExtension == "md" }) ?? []
 
     for card in existingCards {
         let gid = card.deletingPathExtension().lastPathComponent
+        // Term _gids never contain spaces. Files with spaces are hand-authored
+        // documentation (e.g. "Structure Definition Rules.md") and must not be deleted.
+        guard !gid.contains(" ") else { continue }
         if !generatedGids.contains(gid) {
             try fm.removeItem(at: card)
             deleted += 1

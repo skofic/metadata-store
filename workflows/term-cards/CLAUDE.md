@@ -5,6 +5,8 @@ Generates and synchronises one Markdown card per term in the `terms/` directory 
 - **Input**: all `*.json` files in `data/core/`
 - **Output**: one `terms/<_gid>.md` file per term that has an `_info` section
 
+The output path is read from `dictionary.config.json` (`paths.terms`); the default is `terms/`.
+
 ## Card Format
 
 Each card contains:

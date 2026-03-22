@@ -130,7 +130,7 @@
 		"_rule": {
 			"_closed": true,
 			"_required": {
-				"_selection-descriptors_all": [
+				"_selection-descriptors_one": [
 					"_tuple_types"
 				]
 			},

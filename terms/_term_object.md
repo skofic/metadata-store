@@ -54,7 +54,9 @@ Any descriptor can reference an object definition term via the `_kind` property 
     "_key"
   ],
   "_recommended" : [
-    "_data"
+    "_data",
+    "_prop",
+    "_domn"
   ],
   "_required" : {
     "_selection-descriptors_all" : [

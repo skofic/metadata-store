@@ -99,7 +99,9 @@
 				]
 			},
 			"_recommended": [
-				"_rule"
+				"_rule",
+				"_prop",
+				"_domn"
 			],
 			"_computed": [
 				"_key"
@@ -154,7 +156,9 @@
 				]
 			},
 			"_recommended": [
-				"_data"
+				"_data",
+				"_prop",
+				"_domn"
 			],
 			"_computed": [
 				"_key"
@@ -415,7 +419,7 @@
 				"ISO_639_3_eng": "The section of a term that defines the structural constraints governing an object: which properties are required, recommended, forbidden, or system-managed. Its presence in a term signals that the term is an object definition. An empty `_rule` section is valid and means that all structural constraints are expressed in the graph layer rather than here."
 			},
 			"_description": {
-				"ISO_639_3_eng": "The `_rule` section is present in object definition terms. Its mere presence — even when empty — signals that the term defines an object structure. This is analogous to how an empty [`_scalar`](_scalar.md) section signals a scalar value of any type.\n\nWhen non-empty, `_rule` carries unconditional structural constraints:\n\n- [`_required`](_required.md): which properties must always be present, expressed using descriptor selection structures.\n- [`_recommended`](_recommended.md): the whitelist of permitted properties — advisory in open schemas, enforced in closed schemas.\n- [`_closed`](_closed.md): when true, switches `_recommended` from advisory to a strict whitelist.\n- [`_banned`](_banned.md): properties that must never be present; unconditional and absolute.\n- [`_computed`](_computed.md): properties the system fills in automatically when absent.\n- [`_locked`](_locked.md): properties the system manages exclusively; users cannot touch them.\n- [`_immutable`](_immutable.md): properties that, once set, cannot be modified or deleted.\n- [`_default-value`](_default-value.md): default values applied at insertion time before `_required` is checked.\n\n**Empty `_rule`**: when `_rule` is present but empty (`_rule: {}`), it means the term is an object definition whose structural constraints are entirely expressed in the graph layer via `_predicate_value-of` edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.\n\nConditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. The `_rule` section handles only constraints that apply unconditionally, regardless of property values.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"]\n\t\t},\n\t\t\"_recommended\": [\"_nid\", \"_lid\", \"_gid\", \"_aid\"],\n\t\t\"_closed\": true,\n\t\t\"_computed\": [\"_gid\"],\n\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t}\n}\n```\n\nAn object definition where `_lid` is always required and immutable, `_gid` is computed and immutable, the schema is closed to the four listed properties, and all constraints are unconditional.\n\n```json\n{\n\t\"_rule\": {}\n}\n```\n\nAn object definition with no unconditional constraints — all rules are in the graph."
+				"ISO_639_3_eng": "The `_rule` section is present in object definition terms. Its mere presence — even when empty — signals that the term defines an object structure. This is analogous to how an empty [`_scalar`](_scalar.md) section signals a scalar value of any type.\n\nWhen non-empty, `_rule` carries unconditional structural constraints:\n\n- [`_required`](_required.md): which properties must always be present, expressed using descriptor selection structures.\n- [`_recommended`](_recommended.md): the whitelist of permitted properties — advisory in open schemas, enforced in closed schemas.\n- [`_closed`](_closed.md): when true, switches `_recommended` from advisory to a strict whitelist.\n- [`_banned`](_banned.md): properties that must never be present; unconditional and absolute.\n- [`_computed`](_computed.md): properties the system fills in automatically when absent.\n- [`_locked`](_locked.md): properties the system manages exclusively; users cannot touch them.\n- [`_immutable`](_immutable.md): properties that, once set, cannot be modified or deleted.\n- [`_default-value`](_default-value.md): default values applied at insertion time before `_required` is checked.\n\n**Empty `_rule`**: when `_rule` is present but empty (`_rule: {}`), it means the term is an object definition whose structural constraints are entirely expressed in the graph layer via `_predicate_value-of` edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.\n\nConditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. The `_rule` section handles only constraints that apply unconditionally, regardless of property values.\n\nFor a comprehensive explanation of how the rule system works — including selection structures, the `_predicate_value-of` conditional rule strategy, and the self-sufficient rule graph design — see [Structure Definition Rules](../docs/Structure Definition Rules.md).\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"]\n\t\t},\n\t\t\"_recommended\": [\"_nid\", \"_lid\", \"_gid\", \"_aid\"],\n\t\t\"_closed\": true,\n\t\t\"_computed\": [\"_gid\"],\n\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t}\n}\n```\n\nAn object definition where `_lid` is always required and immutable, `_gid` is computed and immutable, the schema is closed to the four listed properties, and all constraints are unconditional.\n\n```json\n{\n\t\"_rule\": {}\n}\n```\n\nAn object definition with no unconditional constraints — all rules are in the graph."
 			}
 		},
 		"_data": {
@@ -480,7 +484,7 @@
 			}
 		},
 		"_rule": {
-			"_closed": true,
+			"_closed": false,
 			"_recommended": [
 				"_kind_term"
 			]

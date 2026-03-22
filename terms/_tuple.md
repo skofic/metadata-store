@@ -89,7 +89,7 @@ This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitu
     "_elements"
   ],
   "_required" : {
-    "_selection-descriptors_all" : [
+    "_selection-descriptors_one" : [
       "_tuple_types"
     ]
   }

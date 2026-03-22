@@ -25,10 +25,10 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
   - [`_kind_string_HEX`](_kind_string_HEX.md): The string is a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) value. May additionally include [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md).
   - [`_kind_string_SVG`](_kind_string_SVG.md): The string is an [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) image.
   - [`_kind_string_email`](_kind_string_email.md): The string is an [email address](https://en.wikipedia.org/wiki/Email_address).
-  - [`_kind_string_date`](_kind_string_date.md): The string is a date, equivalent to the JSON Schema `date` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_time`](_kind_string_time.md): The string is a time, equivalent to the JSON Schema `time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_date-time`](_kind_string_date-time.md): The string is a date and time, equivalent to the JSON Schema `date-time` format. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
-  - [`_kind_string_YMD`](_kind_string_YMD.md): The string is a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. May additionally include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
+  - [`_kind_string_date`](_kind_string_date.md): The string is a date, equivalent to the JSON Schema `date` format. May additionally include [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md).
+  - [`_kind_string_time`](_kind_string_time.md): The string is a time, equivalent to the JSON Schema `time` format. May additionally include [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md).
+  - [`_kind_string_date-time`](_kind_string_date-time.md): The string is a date and time, equivalent to the JSON Schema `date-time` format. May additionally include [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md).
+  - [`_kind_string_YMD`](_kind_string_YMD.md): The string is a full or partial date in `YYYYMMDD` format; the day, or the day and month, may be omitted, yielding `YYYYMM` or `YYYY` respectively. May additionally include [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md).
   - [`_kind_string_Hostname`](_kind_string_Hostname.md): The string is an [internet hostname](https://en.wikipedia.org/wiki/Hostname).
   - [`_kind_string_IPv4`](_kind_string_IPv4.md): The string is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4).
   - [`_kind_string_IPv6`](_kind_string_IPv6.md): The string is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6).
@@ -43,6 +43,7 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
   - [`_kind_key_term_enum_element`](_kind_key_term_enum_element.md): The key may reference any enumeration element — i.e., any term that is a valid choice within a controlled vocabulary, connected to an enumeration root via a [`_predicate_enum-of`](_predicate_enum-of.md) edge.
   - [`_kind_key_term_object`](_kind_key_term_object.md): The key may reference any term that defines an object schema — i.e., any term with a [`_rule`](_rule.md) section.
   - [`_kind_key_term_descriptor`](_kind_key_term_descriptor.md): The key may reference any descriptor — i.e., any term with a [`_data`](_data.md) section.
+  - [`_kind_key_term_predicate`](_kind_key_term_predicate.md): The key may reference a predicate term — i.e., any term used as the `_predicate` property of an edge document.
   When `_kind_key` is absent, the key may reference a document in any collection.
 
 - [`_type_enum`](_type_enum.md): The value is a string representing the [`_gid`](_gid.md) of a term that is an element of a controlled vocabulary. The optional companion property [`_kind_enum`](_kind_enum.md) is a set of enumeration type `_gid`s — i.e., the roots of the controlled vocabulary graphs — identifying the vocabularies from which the value must be drawn. The value must be a valid enumeration *element* of at least one of the listed roots. When `_kind_enum` is absent, the value may be any enumeration element from any controlled vocabulary.
@@ -55,7 +56,7 @@ This property defines the *data type* of the value in a [`_scalar`](_scalar.md) 
 
 - [`_type_timestamp`](_type_timestamp.md): The value is an integer representing a [Unix timestamp](https://www.unixtimestamp.com) — the number of seconds elapsed since 1 January 1970 UTC. The [`_scalar`](_scalar.md) section may include [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md).
 
-- [`_type_object_geojson`](_type_object_geojson.md): The value is a [GeoJSON](https://geojson.org) object representing a geographic feature. The object must not be empty, and no other [`_scalar`](_scalar.md) properties are expected.
+- [`_type_object_GeoJSON`](_type_object_GeoJSON.md): The value is a [GeoJSON](https://geojson.org) object representing a geographic feature. The object must not be empty, and no other [`_scalar`](_scalar.md) properties are expected.
 
 When `_type` is omitted, the [`_scalar`](_scalar.md) section must be empty, meaning the value may be of any scalar type without constraint.
 
