@@ -113,9 +113,11 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
-				"_recommended": [
-					"_type"
-				]
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				}
 			}
 		}
 	},
@@ -129,19 +131,10 @@
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
+						"_type",
 						"_kind_number"
 					]
-				},
-				"_recommended": [
-					"_type",
-					"_kind_number",
-					"_unit",
-					"_unit-name",
-					"_unit-symbol",
-					"_valid-range",
-					"_normal-range",
-					"_decimals"
-				]
+				}
 			}
 		}
 	},
@@ -153,8 +146,12 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type",
+					]
+				},
 				"_recommended": [
-					"_type",
 					"_kind_string",
 					"_regexp",
 					"_unit",
@@ -174,10 +171,12 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
-				"_recommended": [
-					"_type",
-					"_kind_key"
-				]
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type",
+						"_kind_key"
+					]
+				}
 			}
 		}
 	},
@@ -189,9 +188,11 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
-				"_recommended": [
-					"_type"
-				]
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				}
 			}
 		}
 	},
@@ -203,8 +204,12 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				},
 				"_recommended": [
-					"_type",
 					"_kind_enum"
 				]
 			}
@@ -218,8 +223,12 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				},
 				"_recommended": [
-					"_type",
 					"_kind_object"
 				]
 			}
@@ -233,9 +242,11 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
-				"_recommended": [
-					"_type"
-				]
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				}
 			}
 		}
 	},
@@ -247,8 +258,12 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				},
 				"_recommended": [
-					"_type",
 					"_valid-range",
 					"_normal-range"
 				]
@@ -263,9 +278,11 @@
 		"_path_data": {
 			"terms/_scalar": {
 				"_closed": true,
-				"_recommended": [
-					"_type"
-				]
+				"_required": {
+					"_selection-descriptors_one": [
+						"_type"
+					]
+				}
 			}
 		}
 	},
@@ -277,7 +294,21 @@
 		"_path": ["terms/_scalar"],
 		"_path_data": {
 			"terms/_scalar": {
-				"_closed": false
+				"_closed": true,
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type",
+						"_kind_number"
+					]
+				},
+				"_recommended": [
+					"_decimals",
+					"_unit",
+					"_unit-name",
+					"_unit-symbol",
+					"_valid-range",
+					"_normal-range"
+				]
 			}
 		}
 	},
@@ -288,9 +319,19 @@
 		"_path": ["terms/_scalar"],
 		"_path_data": {
 			"terms/_scalar": {
-				"_closed": false,
-				"_banned": [
-					"_decimals"
+				"_closed": true,
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type",
+						"_kind_number"
+					]
+				},
+				"_recommended": [
+					"_unit",
+					"_unit-name",
+					"_unit-symbol",
+					"_valid-range",
+					"_normal-range"
 				]
 			}
 		}
@@ -303,15 +344,13 @@
 		"_path": ["terms/_scalar"],
 		"_path_data": {
 			"terms/_scalar": {
-				"_closed": false,
-				"_banned": [
-					"_regexp",
-					"_unit",
-					"_unit-name",
-					"_unit-symbol",
-					"_valid-range_string",
-					"_normal-range_string"
-				]
+				"_closed": true,
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type",
+						"_kind_string"
+					]
+				}
 			}
 		}
 	},

@@ -475,8 +475,15 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object"
+				"_type": "_type_object",
+				"_kind_object": ["_domn"]
 			}
+		},
+		"_rule": {
+			"_closed": true,
+			"_recommended": [
+				"_kind_term"
+			]
 		},
 		"_domn": {
 			"_kind_term": [
