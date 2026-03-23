@@ -6,23 +6,22 @@ Number
 
 **`_definition`**
 
-Scalar data type for a numeric value stored as a double-precision floating-point number. The companion property `_kind_number` is required and specifies whether the value is a floating-point number, an integer, or either.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a numeric value that accepts both integers and floating-point numbers. For stricter constraints, use [`_type_number_float`](_type_number_float.md) (floating-point only) or [`_type_number_integer`](_type_number_integer.md) (integers only).
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_number`, the descriptor value is a number stored internally as a double-precision floating-point. The companion property [`_kind_number`](_kind_number.md) is **required** and must be a non-empty set selecting [`_kind_number_float`](_kind_number_float.md), [`_kind_number_integer`](_kind_number_integer.md), or both.
+When [`_type_scalar`](_type_scalar.md) is `_type_number`, the descriptor accepts any numeric value — integer or floating-point. All numbers are stored as double-precision floating-point in ArangoDB internally.
 
-The [`_scalar`](_scalar.md) section may additionally carry [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), and [`_normal-range`](_normal-range.md) for any `_type_number` configuration. [`_decimals`](_decimals.md) is only meaningful when `_kind_number_float` is included.
+Companion properties: [`_decimals`](_decimals.md) (display hint for decimal places), [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md), [`_valid-range`](_valid-range.md), [`_normal-range`](_normal-range.md).
 
 **`_examples`**
 
-**Float with unit and normal range** — body temperature in degrees Celsius:
+**Number with unit and normal range** — body temperature in degrees Celsius:
 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_number",
-		"_kind_number": ["_kind_number_float"],
+		"_type_scalar": "_type_number",
 		"_decimals": 1,
 		"_unit": "_unit_temperature_C",
 		"_normal-range": {
@@ -33,40 +32,20 @@ The [`_scalar`](_scalar.md) section may additionally carry [`_unit`](_unit.md), 
 }
 ```
 
-A floating-point value displayed with one decimal place. Values outside the normal range are flagged as outliers but not rejected.
 
 
-
-**Integer with valid range** — a count of samples that must be at least 1:
+**Number with valid range** — a count of samples that must be at least 1:
 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_number",
-		"_kind_number": ["_kind_number_integer"],
+		"_type_scalar": "_type_number",
 		"_valid-range": {
 			"_min-range-inclusive": 1
 		}
 	}
 }
 ```
-
-An integer value. Any value less than 1 is rejected as invalid.
-
-
-
-**Float or integer** — a measurement that may be recorded with or without decimals:
-
-```json
-{
-	"_scalar": {
-		"_type": "_type_number",
-		"_kind_number": ["_kind_number_float", "_kind_number_integer"]
-	}
-}
-```
-
-Both `42` and `42.5` are valid values.
 
 ---
 

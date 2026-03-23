@@ -39,7 +39,7 @@ Terms with an empty-string namespace (`_nid: ""`) are core dictionary building b
     "_kind_object" : [
       "_code"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

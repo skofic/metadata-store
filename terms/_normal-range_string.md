@@ -6,11 +6,11 @@ Normal String Range
 
 **`_definition`**
 
-The boundaries of expected or typical string values. Values outside this range are flagged as outliers for review but are not rejected. The range is expressed as an object conforming to the `_range_string` schema, using lexicographic comparison.
+The boundaries of expected or typical string values. Values outside this range are flagged as outliers for review but are not rejected. The range is expressed as an object conforming to the [`_range_string`](_range_string.md) schema, using lexicographic comparison.
 
 **`_description`**
 
-`_normal-range_string` defines the interval in which string values are considered typical. Values outside this interval are **outliers** — not invalid, but flagged for review. It is the string counterpart of [`_normal-range`](_normal-range.md) and follows the same lexicographic comparison convention as [`_valid-range_string`](_valid-range_string.md).
+[`_normal-range_string`](_normal-range_string.md) defines the interval in which string values are considered typical. Values outside this interval are **outliers** — not invalid, but flagged for review. It is the string counterpart of [`_normal-range`](_normal-range.md) and follows the same lexicographic comparison convention as [`_valid-range_string`](_valid-range_string.md).
 
 The value is an object conforming to the [`_range_string`](_range_string.md) schema.
 
@@ -56,7 +56,7 @@ Any two-letter uppercase string is valid; strings outside `CA`–`MZ` are accept
     "_kind_object" : [
       "_range_string"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

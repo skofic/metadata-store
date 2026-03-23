@@ -10,9 +10,9 @@ An object that defines a string interval using inclusive and/or exclusive lower 
 
 **`_description`**
 
-`_range_string` is the schema term for string range objects. It is referenced by [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) via `_kind_object`, and may be used directly as a generic string range property.
+[`_range_string`](_range_string.md) is the schema term for string range objects. It is referenced by [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) via [`_kind_object`](_kind_object.md), and may be used directly as a generic string range property.
 
-Comparison is **lexicographic**. String formats should be chosen so that lexicographic order corresponds to semantic order — for instance, the `YYYYMMDD`-family format of [`_kind_string_YMD`](_kind_string_YMD.md) has this property.
+Comparison is **lexicographic**. String formats should be chosen so that lexicographic order corresponds to semantic order — for instance, the `YYYYMMDD`-family format of [`_type_string_YMD`](_type_string_YMD.md) has this property.
 
 A range object may contain any combination of one lower bound and one upper bound:
 
@@ -53,7 +53,7 @@ A range object may contain any combination of one lower bound and one upper boun
     "_kind_object" : [
       "_range_string"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

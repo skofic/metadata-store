@@ -6,11 +6,11 @@ Structure
 
 **`_definition`**
 
-Scalar data type for a free-form object whose properties need not be defined in the dictionary. No companion `_kind` property is expected.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a free-form object whose properties need not be defined in the dictionary. No companion properties are expected.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_struct`, the descriptor value is an object with no constraints on its property keys — they need not correspond to any term in the dictionary. This type is used for opaque or externally-defined structures where property names are determined by an external convention rather than the dictionary schema. No companion qualifier, unit, range, or format constraint is applicable. The object may be empty.
+When [`_type_scalar`](_type_scalar.md) is `_type_struct`, the descriptor value is an object with no constraints on its property keys — they need not correspond to any term in the dictionary. This type is used for opaque or externally-defined structures where property names are determined by an external convention rather than the dictionary schema. No companion properties are applicable. The object may be empty.
 
 **`_examples`**
 
@@ -19,7 +19,7 @@ When [`_type`](_type.md) is set to `_type_struct`, the descriptor value is an ob
 ```json
 {
 	"_scalar": {
-		"_type": "_type_struct"
+		"_type_scalar": "_type_struct"
 	}
 }
 ```

@@ -188,13 +188,13 @@ Selection structures appear inside `_required` and express cardinality constrain
 {
     "_rule": {
         "_required": {
-            "_selection-descriptors_one": ["_type_boolean", "_type_number", "_type_string"]
+            "_selection-descriptors_one": ["_scalar", "_array", "_set", "_tuple", "_dict"]
         }
     }
 }
 ```
 
-Exactly one of the three type properties must be present.
+Exactly one of the five data shape properties must be present.
 
 ```json
 {
@@ -317,13 +317,13 @@ A `_predicate_value-of` edge encodes the statement: *"when property `_to` holds 
 {
     "_from": "terms/_type_string",
     "_predicate": "_predicate_value-of",
-    "_to": "terms/_type",
+    "_to": "terms/_type_scalar",
     "_path": ["terms/_scalar"],
     "_path_data": {
         "terms/_scalar": {
             "_closed": true,
             "_recommended": [
-                "_kind_string", "_regexp",
+                "_regexp",
                 "_unit", "_unit-name", "_unit-symbol",
                 "_valid-range_string", "_normal-range_string"
             ]
@@ -332,9 +332,9 @@ A `_predicate_value-of` edge encodes the statement: *"when property `_to` holds 
 }
 ```
 
-This edge states: within a `_scalar` structure (path root `terms/_scalar`), when `_type` holds the value `_type_string`, only the listed properties are permitted and the schema is closed.
+This edge states: within a `_scalar` structure (path root `terms/_scalar`), when `_type_scalar` holds the value `_type_string`, only the listed properties are permitted and the schema is closed.
 
-The structural context (`_path`) is key: the same value can produce different consequences in different contexts. A `_predicate_value-of` edge for `_type_string` within `_scalar` is entirely independent of one within `_set_scalar`, each with its own `_path_data`.
+The structural context (`_path`) is key: the same value can produce different consequences in different contexts. A `_predicate_value-of` edge for `_type_string` within `_scalar` (path `terms/_scalar`, pointing to `terms/_type_scalar`) is entirely independent of one within `_set_scalar` (path `terms/_set_scalar`, pointing to `terms/_type_scalar_set`), each with its own `_path_data`.
 
 ### Conditional Rule Accumulation
 
@@ -373,34 +373,35 @@ The critical case: a value that permits *fewer* properties than the base `_recom
 
 Consider the `_scalar` structure. Its base `_rule._recommended` lists **all** possible `_scalar` properties across all types — because it must describe the full optional-property whitelist without knowing which type is in force. Without type-specific closed conditionals, a scalar with `_type_boolean` that also has `_regexp`, `_decimals`, and `_valid-range` would pass structural validation silently.
 
-**Passive properties** are properties whose presence never triggers any rule and whose values never govern schema composition. They have no `_predicate_property-of` edge. Their membership in the schema is declared implicitly by their appearance in the `_recommended` lists of the conditionals that permit them. In `_scalar`, passive properties include `_regexp`, `_decimals`, `_valid-range`, `_normal-range`, `_valid-range_string`, and `_normal-range_string` — they appear in the `_recommended` lists of the type and kind conditionals that allow them, but no presence-triggered rule depends on their presence and their values trigger no further conditionals.
+**Passive properties** are properties whose presence never triggers any rule and whose values never govern schema composition. They have no `_predicate_property-of` edge. Their membership in the schema is declared implicitly by their appearance in the `_recommended` lists of the conditionals that permit them. In `_scalar`, passive properties include `_regexp`, `_decimals`, `_valid-range`, `_normal-range`, `_valid-range_string`, and `_normal-range_string` — they appear in the `_recommended` lists of the type conditionals that allow them, but no presence-triggered rule depends on their presence and their values trigger no further conditionals.
 
 **Consequence**: you cannot discover all properties of a schema by traversing `_predicate_property-of` edges alone. Tooling that inspects schema membership (graph browser, schema inspector) must also read the `_recommended` lists in the rule conditionals to get the full picture.
 
 Create a `_predicate_property-of` edge only when:
 1. The property has a **presence-triggered rule** (non-empty `_path_data`) — the `_unit` mutual exclusion group is the canonical example.
-2. The property's values trigger further conditional rules via `_predicate_value-of` — i.e., it governs schema composition, like `_type` and `_kind_number`.
+2. The property's values trigger further conditional rules via `_predicate_value-of` — i.e., it governs schema composition, like `_type_scalar`.
 
 ### Closed vs open conditionals
 
 - Use **`_closed: true`** when the value defines a specific, bounded allowed set. The conditional `_recommended` becomes the complete optional-property whitelist for that value, replacing the base. This is the **reset** mechanism.
 - Use **`_closed: false`** for **presence-triggered rules** on `_predicate_property-of` edges — where a constraint (typically a ban) must apply without replacing the whitelist.
 
-For all value-triggered conditionals in `_scalar` — both `_type_*` and `_kind_*` — use `_closed: true`. The reset operates at two levels:
+For all value-triggered conditionals in `_scalar`, use `_closed: true`. Each type value (`_type_boolean`, `_type_number_float`, `_type_string_Markdown`, `_type_key_term`, etc.) gets its own closed conditional that fully resets the optional-property whitelist for that type. The reset pattern is flat — there are no nested kind-level refinements. The effective optional properties are exactly those listed in the conditional's `_recommended`:
 
-- **`_type_*` conditionals** define the permitted set at the type level. They require `_type` and any companion properties mandatory for that type. They list only those optional properties that are meaningful for the type in general, before any kind qualifier. Types that accept no optional properties at all include no `_recommended` — absent `_recommended` in a closed conditional means the optional whitelist is reset to empty.
-- **`_kind_*` conditionals** refine within the type. They require both `_type` and the qualifying property (e.g. `_kind_number`), and define the exact optional properties for that specific kind. `_kind_number_float` permits `_decimals`; `_kind_number_integer` does not. Each kind conditional fully replaces the type-level whitelist — the effective optional properties are those in the kind conditional, not the union of both levels.
+- Types that accept no optional properties (e.g. `_type_boolean`, `_type_key_term`, `_type_struct`) include no `_recommended` — absent `_recommended` in a closed conditional means the optional whitelist is reset to empty.
+- Types that accept unit and range properties (e.g. `_type_number`, `_type_number_float`) list those explicitly.
+- `_type_number_integer` is like `_type_number_float` but omits `_decimals`, which is not meaningful for integers.
 
 ### On value change
 
-When a governing property changes value (e.g. `_type` changes from `_type_string` to `_type_boolean`), the UI performs this procedure:
+When a governing property changes value (e.g. `_type_scalar` changes from `_type_string` to `_type_boolean`), the UI performs this procedure:
 
-1. Compute the old effective schema: base rule → presence rules → old type-level conditional → old kind-level conditional (if any).
-2. Compute the new effective schema: base rule → presence rules → new type-level conditional (no kind-level conditional, since the type change resets it).
+1. Compute the old effective schema: base rule → presence rules → old value's conditional.
+2. Compute the new effective schema: base rule → presence rules → new value's conditional.
 3. Diff: properties in the old allowed set but not the new are now orphaned.
 4. Offer to remove orphaned properties — do not silently delete them, since the user may be exploring and intend to revert.
 
-This procedure applies at each governing level: changing `_type` discards both the type-level and kind-level conditionals and replaces them with the new type's conditional; changing `_kind_number` replaces only the kind-level conditional. This procedure works correctly only when every value that restricts the allowed set has an explicit closed conditional edge.
+This procedure works correctly only when every value that restricts the allowed set has an explicit closed conditional edge. If a value has no edge, the system cannot determine the difference between "this value allows all optional properties" and "this value's rule was never authored".
 
 ---
 
@@ -415,16 +416,12 @@ The `_scalar` structure is the canonical example of a self-sufficient rule graph
     "_rule": {
         "_closed": true,
         "_required": {
-            "_selection-descriptors_one": [
-                "_type_boolean", "_type_number", "_type_string",
-                "_type_key", "_type_handle", "_type_enum",
-                "_type_object", "_type_struct", "_type_timestamp",
-                "_type_object_GeoJSON"
-            ]
+            "_selection-descriptors_all": ["_type_scalar"]
         },
         "_recommended": [
-            "_kind_number", "_kind_string", "_kind_key", "_kind_enum", "_kind_object",
-            "_unit", "_unit-name", "_unit-symbol", "_regexp", "_decimals",
+            "_kind_enum", "_kind_object",
+            "_unit", "_unit-name", "_unit-symbol",
+            "_regexp", "_decimals",
             "_valid-range", "_valid-range_string",
             "_normal-range", "_normal-range_string"
         ]
@@ -432,7 +429,7 @@ The `_scalar` structure is the canonical example of a self-sufficient rule graph
 }
 ```
 
-Exactly one `_type_*` value must be present. The broad `_recommended` list is the union of all properties any type could ever use.
+`_type_scalar` must always be present. The broad `_recommended` list is the union of all properties any type could ever use — it establishes what is *possible* in a `_scalar` object. The type-specific conditionals then reset this to the exact whitelist appropriate for each type value.
 
 **Conditional edge for `_type_boolean`**:
 
@@ -440,20 +437,17 @@ Exactly one `_type_*` value must be present. The broad `_recommended` list is th
 {
     "_from": "terms/_type_boolean",
     "_predicate": "_predicate_value-of",
-    "_to": "terms/_type",
+    "_to": "terms/_type_scalar",
     "_path": ["terms/_scalar"],
     "_path_data": {
         "terms/_scalar": {
-            "_closed": true,
-            "_required": {
-                "_selection-descriptors_one": ["_type"]
-            }
+            "_closed": true
         }
     }
 }
 ```
 
-`_type_boolean` permits no optional properties. The closed conditional replaces the base `_recommended` and explicitly restores the required set: `_type` is required, and no `_recommended` means the optional whitelist is empty.
+`_type_boolean` permits no optional properties. The closed conditional replaces the base `_recommended` with an empty whitelist. (There is no `_recommended` key — absent `_recommended` in a closed conditional means reset to empty.) The base `_required` still applies: `_type_scalar` remains required.
 
 **Conditional edge for `_type_number`**:
 
@@ -461,37 +455,34 @@ Exactly one `_type_*` value must be present. The broad `_recommended` list is th
 {
     "_from": "terms/_type_number",
     "_predicate": "_predicate_value-of",
-    "_to": "terms/_type",
+    "_to": "terms/_type_scalar",
     "_path": ["terms/_scalar"],
     "_path_data": {
         "terms/_scalar": {
             "_closed": true,
-            "_required": {
-                "_selection-descriptors_all": ["_type", "_kind_number"]
-            }
+            "_recommended": [
+                "_unit", "_unit-name", "_unit-symbol",
+                "_valid-range", "_normal-range", "_decimals"
+            ]
         }
     }
 }
 ```
 
-`_type` and `_kind_number` are both required. No optional properties are declared at the type level — the kind-level conditionals (for `_kind_number_float` and `_kind_number_integer`) define the optional properties available within each numeric kind.
+When `_type_scalar` is `_type_number`, the optional properties are reset to unit, range, and decimal controls. `_kind_enum`, `_kind_object`, `_regexp`, and string ranges from the base `_recommended` are no longer in the whitelist.
 
-**Conditional edge for `_kind_number_float`**:
+**Conditional edge for `_type_number_integer`**:
 
 ```json
 {
-    "_from": "terms/_kind_number_float",
+    "_from": "terms/_type_number_integer",
     "_predicate": "_predicate_value-of",
-    "_to": "terms/_kind_number",
+    "_to": "terms/_type_scalar",
     "_path": ["terms/_scalar"],
     "_path_data": {
         "terms/_scalar": {
             "_closed": true,
-            "_required": {
-                "_selection-descriptors_all": ["_type", "_kind_number"]
-            },
             "_recommended": [
-                "_decimals",
                 "_unit", "_unit-name", "_unit-symbol",
                 "_valid-range", "_normal-range"
             ]
@@ -500,7 +491,30 @@ Exactly one `_type_*` value must be present. The broad `_recommended` list is th
 }
 ```
 
-The kind-level conditional resets the whitelist to the float-specific optional properties. `_decimals` is permitted here but absent from `_kind_number_integer`'s conditional — the mutual exclusion is handled entirely by the reset pattern, not by bans.
+`_type_number_integer` omits `_decimals` from the whitelist — integer values have no fractional part, so `_decimals` is not meaningful. The mutual exclusion between `_type_number_float` (which permits `_decimals`) and `_type_number_integer` (which does not) is handled entirely by the reset pattern, not by bans.
+
+**Conditional edge for `_type_string`**:
+
+```json
+{
+    "_from": "terms/_type_string",
+    "_predicate": "_predicate_value-of",
+    "_to": "terms/_type_scalar",
+    "_path": ["terms/_scalar"],
+    "_path_data": {
+        "terms/_scalar": {
+            "_closed": true,
+            "_recommended": [
+                "_regexp",
+                "_unit", "_unit-name", "_unit-symbol",
+                "_valid-range_string", "_normal-range_string"
+            ]
+        }
+    }
+}
+```
+
+Generic strings permit a validation `_regexp` and string ranges. Format-specific string types (e.g. `_type_string_Markdown`, `_type_string_date`, `_type_string_URI`) each have their own conditional. Most have an empty whitelist because their format is self-defining; date/time types additionally permit `_valid-range_string` and `_normal-range_string`.
 
 ---
 

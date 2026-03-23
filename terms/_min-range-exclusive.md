@@ -10,9 +10,9 @@ The exclusive lower bound of a numeric range. Only values strictly greater than 
 
 **`_description`**
 
-`_min-range-exclusive` is a property of [`_range`](_range.md) objects. It defines the lower bound of the numeric interval, **excluding** the bound value itself (>). It may appear in [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) objects.
+[`_min-range-exclusive`](_min-range-exclusive.md) is a property of [`_range`](_range.md) objects. It defines the lower bound of the numeric interval, **excluding** the bound value itself (>). It may appear in [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) objects.
 
-At most one of `_min-range-exclusive` and [`_min-range-inclusive`](_min-range-inclusive.md) may be present in the same range object.
+At most one of [`_min-range-exclusive`](_min-range-exclusive.md) and [`_min-range-inclusive`](_min-range-inclusive.md) may be present in the same range object.
 
 ```json
 {
@@ -44,11 +44,7 @@ Values must be strictly positive; zero itself is out of range.
 ```json
 {
   "_scalar" : {
-    "_kind_number" : [
-      "_kind_number_float",
-      "_kind_number_integer"
-    ],
-    "_type" : "_type_number"
+    "_type_scalar" : "_type_number"
   }
 }
 ```

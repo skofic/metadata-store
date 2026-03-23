@@ -6,11 +6,11 @@ GeoJSON Object
 
 **`_definition`**
 
-Scalar data type for a GeoJSON object representing a geographic feature. The object must not be empty and no companion `_kind` property is expected.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a GeoJSON object representing a geographic feature. The object must not be empty and no companion properties are expected.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_object_GeoJSON`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object — a structured representation of a geographic feature such as a point, line, polygon, or feature collection, conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is not valid. No companion qualifier, unit, or range constraint is applicable.
+When [`_type_scalar`](_type_scalar.md) is `_type_object_GeoJSON`, the descriptor value must be a valid [GeoJSON](https://geojson.org) object conforming to [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946) — a structured representation of a geographic feature such as a point, line, polygon, or feature collection. Unlike [`_type_object`](_type_object.md) and [`_type_struct`](_type_struct.md), the object must **not** be empty: a GeoJSON value without a `type` property is invalid. No companion properties are applicable.
 
 **`_examples`**
 
@@ -19,12 +19,12 @@ When [`_type`](_type.md) is set to `_type_object_GeoJSON`, the descriptor value 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_object_GeoJSON"
+		"_type_scalar": "_type_object_GeoJSON"
 	}
 }
 ```
 
-A valid value for this descriptor might be:
+A valid value for this descriptor:
 
 ```json
 {

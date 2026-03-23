@@ -16,25 +16,173 @@
 				"ISO_639_3_eng": "A set of role-indicator enumeration elements that classify the functional roles a term plays in the dictionary. Each element identifies one role — such as descriptor, namespace, enumeration root, or object definition. A single term may hold multiple roles simultaneously."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_kind_term` is a property of the [_domn](_domn.md) section. Its value is a set of enumeration elements drawn from the `_kind_term` controlled vocabulary, each identifying one functional role the term plays in the dictionary.\n\nA term may hold several roles at the same time. For example, a term can simultaneously be a **namespace** (other terms use its `_gid` as their `_nid`), an **enumeration root** (it is the root of a controlled vocabulary graph), and a **descriptor** (it carries a `_data` section). Recording all roles explicitly in `_kind_term` allows any of them to be queried directly — without traversing the graph — which is useful for tooling and validation pipelines.\n\nTypical role values include:\n\n- **`_kind_term_descriptor`** — the term carries a `_data` section and defines the type of a data variable.\n- **`_kind_term_namespace`** — the term acts as a namespace; other terms reference its `_gid` in their `_nid`.\n- **`_kind_term_enum`** — the term is the root of a controlled vocabulary (enumeration) graph.\n- **`_kind_term_enum_element`** — the term is a valid selectable element within a controlled vocabulary.\n- **`_kind_term_object`** — the term carries a `_rule` section and defines an object schema.\n- **`_kind_term_alias`** — the term is an alias for another term; it carries no `_info` and delegates to the canonical term.\n- **`_kind_term_predicate`** — the term is used as a predicate in an edge, qualifying the nature of a relationship between two nodes.\n\nThe set of recognised role values is defined as the `_kind_term` enumeration graph and may be extended as the dictionary evolves."
+				"ISO_639_3_eng": "[`_kind_term`](_kind_term.md) is a property of the [_domn](_domn.md) section. Its value is a set of enumeration elements drawn from the [`_kind_term`](_kind_term.md) controlled vocabulary, each identifying one functional role the term plays in the dictionary.\n\nA term may hold several roles at the same time. For example, a term can simultaneously be a **namespace** (other terms use its [`_gid`](_gid.md) as their [`_nid`](_nid.md)), an **enumeration root** (it is the root of a controlled vocabulary graph), and a **descriptor** (it carries a [`_data`](_data.md) section). Recording all roles explicitly in [`_kind_term`](_kind_term.md) allows any of them to be queried directly — without traversing the graph — which is useful for tooling and validation pipelines.\n\nTypical role values include:\n\n- **[`_kind_term_descriptor`](_kind_term_descriptor.md)** — the term carries a [`_data`](_data.md) section and defines the type of a data variable.\n- **[`_kind_term_namespace`](_kind_term_namespace.md)** — the term acts as a namespace; other terms reference its [`_gid`](_gid.md) in their [`_nid`](_nid.md).\n- **[`_kind_term_enum`](_kind_term_enum.md)** — the term is the root of a controlled vocabulary (enumeration) graph.\n- **[`_kind_term_enum_element`](_kind_term_enum_element.md)** — the term is a valid selectable element within a controlled vocabulary.\n- **[`_kind_term_object`](_kind_term_object.md)** — the term carries a [`_rule`](_rule.md) section and defines an object schema.\n- **[`_kind_term_alias`](_kind_term_alias.md)** — the term is an alias for another term; it carries no [`_info`](_info.md) and delegates to the canonical term.\n- **[`_kind_term_predicate`](_kind_term_predicate.md)** — the term is used as a predicate in an edge, qualifying the nature of a relationship between two nodes.\n\nThe set of recognised role values is defined as the [`_kind_term`](_kind_term.md) enumeration graph and may be extended as the dictionary evolves."
 			}
 		},
 		"_data": {
 			"_set": {
 				"_set_scalar": {
-					"_set_type": "_type_enum",
+					"_type_scalar_set": "_type_enum",
 					"_kind_enum": [
 						"_kind_term"
 					]
 				}
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_namespace",
-				"_kind_term_enum"
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "descriptor",
+			"_gid": "_kind_term_descriptor",
+			"_aid": [
+				"descriptor"
 			]
-		}
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Descriptor"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is a descriptor — a term that carries a [`_data`](_data.md) section defining the type, shape, and constraints of a data variable. Descriptors are the fundamental building blocks used to type the properties of objects and the columns of datasets."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_descriptor`](_kind_term_descriptor.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as a descriptor — any term that carries a [`_data`](_data.md) section.\n\nA descriptor defines what kind of data a variable holds: its scalar type (boolean, number, string, enumeration, object, etc.), its shape (scalar, array, set, tuple, dictionary), and any applicable constraints (valid range, regexp, unit). Descriptors are referenced in object schemas via [`_predicate_property-of`](_predicate_property-of.md) edges, and their [`_gid`](_gid.md) values appear as property keys in [`_type_object`](_type_object.md) values.\n\nA term may be a descriptor and simultaneously hold other roles — for example, a term can be both a descriptor and an enumeration element if it also participates in a controlled vocabulary graph.\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_descriptor\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "namespace",
+			"_gid": "_kind_term_namespace",
+			"_aid": [
+				"namespace"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Namespace"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term acts as a namespace — other terms reference its [`_gid`](_gid.md) in their [`_nid`](_nid.md) field to declare themselves as members of that namespace. A namespace term organises related terms under a common identifier prefix."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_namespace`](_kind_term_namespace.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as a namespace — a term whose [`_gid`](_gid.md) is used as the [`_nid`](_nid.md) of other terms, forming a hierarchical naming structure.\n\nNamespaces are not a distinct term type: any term can act as a namespace simply by having other terms reference its [`_gid`](_gid.md) in their [`_nid`](_nid.md). The [`_kind_term_namespace`](_kind_term_namespace.md) role makes this function explicitly queryable without traversing the graph.\n\nNamespaces may be nested: a namespace term may itself belong to a parent namespace, forming chains such as `ISO` → `ISO_639` → `ISO_639_3`. The top of the chain is either a term with no [`_nid`](_nid.md) (top-level namespace) or a term with `_nid: \"\"` (a core dictionary building block).\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_namespace\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "enum",
+			"_gid": "_kind_term_enum",
+			"_aid": [
+				"enum"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Enumeration Root"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is the root of a controlled vocabulary graph — an enumeration type from which valid selectable values are drawn. Other terms connect to it via [`_predicate_enum-of`](_predicate_enum-of.md) edges to declare themselves as valid choices."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_enum`](_kind_term_enum.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as an enumeration root — the top node of a controlled vocabulary graph.\n\nAn enumeration root defines a value domain: all terms connected to it (directly or transitively) via [`_predicate_enum-of`](_predicate_enum-of.md) edges are valid choices when a descriptor uses [`_type_enum`](_type_enum.md) with [`_kind_enum`](_kind_enum.md) pointing to this root. The root itself is not a valid selectable value — only its members are.\n\nA term may simultaneously be an enumeration root and a namespace: for example, `ISO_639_3` is both the root of the ISO 639-3 language vocabulary and the namespace under which its elements (such as `ISO_639_3_eng`) reside.\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_enum\", \"_kind_term_namespace\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "enum_element",
+			"_gid": "_kind_term_enum_element",
+			"_aid": [
+				"enum_element"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Enumeration Element"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is a valid selectable value within a controlled vocabulary — connected to an enumeration root via a [`_predicate_enum-of`](_predicate_enum-of.md) edge, directly or transitively through section nodes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_enum_element`](_kind_term_enum_element.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as an enumeration element — a valid choice within one or more controlled vocabulary graphs.\n\nAn enumeration element is reachable from an enumeration root by following [`_predicate_enum-of`](_predicate_enum-of.md) edges (skipping [`_predicate_section-of`](_predicate_section-of.md) section nodes during validation traversal). Its [`_gid`](_gid.md) is a valid value wherever a descriptor declares [`_type_enum`](_type_enum.md) with [`_kind_enum`](_kind_enum.md) pointing to the root of the vocabulary it belongs to.\n\nA term can be an element of multiple controlled vocabularies simultaneously — for example, `ISO_639_3_eng` belongs to both `ISO_639_3` and, via an alias bridge, to `ISO_639_1`. The role [`_kind_term_enum_element`](_kind_term_enum_element.md) does not specify which vocabulary; that information is encoded in the graph edges.\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_enum_element\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "object",
+			"_gid": "_kind_term_object",
+			"_aid": [
+				"object"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Object Definition"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is an object definition — a term that carries a [`_rule`](_rule.md) section defining the schema of a structured object: which properties are required, recommended, forbidden, or automatically managed."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_object`](_kind_term_object.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as an object definition — any term that carries a [`_rule`](_rule.md) section.\n\nObject definitions are referenced by other terms via [`_type_object`](_type_object.md) and [`_kind_object`](_kind_object.md) in their [`_data`](_data.md) section, constraining values to conform to the declared schema. They may also carry a [`_data`](_data.md) section simultaneously — for example, a term can be both a descriptor (defining the type of a value) and an object definition (defining the schema of that value when it is an object).\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_object\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "alias",
+			"_gid": "_kind_term_alias",
+			"_aid": [
+				"alias"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Alias"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is an alias — an alternative identifier for a canonical term. An alias carries only a [`_code`](_code.md) section and no [`_info`](_info.md); the dictionary resolves it to the canonical term it points to."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_alias`](_kind_term_alias.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as an alias — a term that provides an alternative identifier for another, canonical term without duplicating its content.\n\nAn alias term carries only its [`_code`](_code.md) section (and optionally [`_domn`](_domn.md)). It has no [`_info`](_info.md), [`_data`](_data.md), or [`_rule`](_rule.md) sections. In the graph, an alias is implemented using [`_predicate_bridge-of`](_predicate_bridge-of.md) and [`_predicate_enum-of`](_predicate_enum-of.md) edges: the alias node acts as a bridge that is skipped during traversal, with the canonical term returned as the resolved value.\n\nA typical use case is alternate coding standards: `ISO_639_1_en` (ISO 639-1) and `ISO_639_3_eng` (ISO 639-3) both represent English. `ISO_639_1_en` is the alias; `ISO_639_3_eng` is the canonical term.\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_alias\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_kind_term",
+			"_lid": "predicate",
+			"_gid": "_kind_term_predicate",
+			"_aid": [
+				"predicate"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Predicate"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An enumeration element indicating that the term is used as a predicate in an edge document — its [`_gid`](_gid.md) appears as the value of the [`_predicate`](_predicate.md) property, qualifying the nature of the relationship between the [`_from`](_from.md) and [`_to`](_to.md) nodes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_kind_term_predicate`](_kind_term_predicate.md) is a role value used in the [`_kind_term`](_kind_term.md) property of the [`_domn`](_domn.md) section. It flags the term as a predicate — a term whose [`_gid`](_gid.md) is used as the [`_predicate`](_predicate.md) field of an edge document to qualify the kind of relationship between two nodes.\n\nAll predicates follow a **many-to-one direction**: [`_from`](_from.md) is the leaf (child, member, element) and [`_to`](_to.md) is the root (parent, container, category). Predicates fall into two categories:\n\n- **Functional predicates** — carry domain meaning and are followed during graph traversal (e.g. [`_predicate_enum-of`](_predicate_enum-of.md), [`_predicate_property-of`](_predicate_property-of.md), [`_predicate_field-of`](_predicate_field-of.md), [`_predicate_value-of`](_predicate_value-of.md)).\n- **Non-functional predicates** — structural aids that modify traversal behaviour and are skipped or handled specially during traversal (e.g. [`_predicate_section-of`](_predicate_section-of.md), [`_predicate_bridge-of`](_predicate_bridge-of.md)).\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_kind_term\": [\"_kind_term_predicate\"]\n\t}\n}\n```"
+			}
+		},
+		"_domn": {}
 	}
 ]

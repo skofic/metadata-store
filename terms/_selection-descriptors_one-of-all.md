@@ -10,7 +10,7 @@ A descriptor selection rule expressed as an array of sets. From each set, exactl
 
 **`_description`**
 
-`_selection-descriptors_one-of-all` is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:
+[`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md) is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:
 
 1. **Within each set**: exactly one descriptor is the valid form for that group. If any element from the set is present in the object, exactly one must be present — the elements within a set are mutually exclusive.
 2. **Across sets**: all sets must contribute an element — every group must have exactly one of its elements present in the object.
@@ -56,10 +56,7 @@ Compare with [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of
   "_array" : {
     "_set" : {
       "_set_scalar" : {
-        "_kind_key" : [
-          "_kind_key_term_descriptor"
-        ],
-        "_set_type" : "_type_key"
+        "_type_scalar_set" : "_type_key_term_descriptor"
       }
     }
   }

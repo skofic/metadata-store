@@ -17,7 +17,7 @@ The functional predicates are:
 - [`_predicate_enum-of`](_predicate_enum-of.md): the source node is a valid enumeration element of the destination node.
 - [`_predicate_property-of`](_predicate_property-of.md): the source node is a property descriptor of the destination object definition.
 - [`_predicate_field-of`](_predicate_field-of.md): the source node is a field or column of the destination form or table definition.
-- [`_predicate_value-of`](_predicate_value-of.md): the source node is a possible value of the destination property; used to encode value-conditional rules in `_path_data`.
+- [`_predicate_value-of`](_predicate_value-of.md): the source node is a possible value of the destination property; used to encode value-conditional rules in [`_path_data`](_path_data.md).
 
 ---
 

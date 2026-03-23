@@ -10,7 +10,7 @@ An object that defines a numeric interval using inclusive and/or exclusive lower
 
 **`_description`**
 
-`_range` is the schema term for numeric range objects. It is referenced by [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) via `_kind_object`, and may also be used directly as a generic range property when the valid/normal distinction is not needed.
+[`_range`](_range.md) is the schema term for numeric range objects. It is referenced by [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) via [`_kind_object`](_kind_object.md), and may also be used directly as a generic range property when the valid/normal distinction is not needed.
 
 A range object may contain any combination of one lower bound and one upper bound:
 
@@ -53,7 +53,7 @@ At most one min-property and one max-property may be present; at least one must 
     "_kind_object" : [
       "_range"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

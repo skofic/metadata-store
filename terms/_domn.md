@@ -106,7 +106,7 @@ The domains section, `_domn`, provides the *domains* and *categories* associated
     "_kind_object" : [
       "_domn"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

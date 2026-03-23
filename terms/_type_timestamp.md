@@ -6,11 +6,13 @@ Timestamp
 
 **`_definition`**
 
-Scalar data type for an integer representing a Unix timestamp — the number of seconds elapsed since 1 January 1970 UTC.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for an integer representing a Unix timestamp — the number of seconds elapsed since 1 January 1970 UTC.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_timestamp`, the descriptor value is an integer counting the seconds elapsed since the Unix epoch (1 January 1970, 00:00:00 UTC). Negative values represent dates before the epoch. The [`_scalar`](_scalar.md) section may additionally carry [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) to constrain or flag the accepted time interval.
+When [`_type_scalar`](_type_scalar.md) is `_type_timestamp`, the descriptor value is an integer counting the seconds elapsed since the Unix epoch (1 January 1970, 00:00:00 UTC). Negative values represent dates before the epoch.
+
+Companion properties: [`_valid-range`](_valid-range.md), [`_normal-range`](_normal-range.md) — to constrain or flag the accepted time interval.
 
 **`_examples`**
 
@@ -19,7 +21,7 @@ When [`_type`](_type.md) is set to `_type_timestamp`, the descriptor value is an
 ```json
 {
 	"_scalar": {
-		"_type": "_type_timestamp"
+		"_type_scalar": "_type_timestamp"
 	}
 }
 ```
@@ -33,7 +35,7 @@ Any integer is accepted. For example, `1719705600` represents 30 June 2024 00:00
 ```json
 {
 	"_scalar": {
-		"_type": "_type_timestamp",
+		"_type_scalar": "_type_timestamp",
 		"_valid-range": {
 			"_min-range-inclusive": 0
 		}
@@ -41,7 +43,7 @@ Any integer is accepted. For example, `1719705600` represents 30 June 2024 00:00
 }
 ```
 
-Negative values (dates before 1 January 1970) are rejected. Useful for descriptors that record events in the modern computing era.
+Negative values (dates before 1 January 1970) are rejected.
 
 ---
 

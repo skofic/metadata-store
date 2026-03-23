@@ -4,48 +4,69 @@
 			"_nid": "",
 			"_lid": "scalar",
 			"_gid": "_scalar",
-			"_aid": ["scalar"]
+			"_aid": [
+				"scalar"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Scalar"},
-			"_definition": {"ISO_639_3_eng": "The shape property for a single, indivisible value of any type. When empty, the descriptor accepts any scalar value without type or format constraints."},
-			"_description": {"ISO_639_3_eng": "This property defines the *shape* and *type* of a *scalar value* — a single, indivisible datum. A [*number*](_type_number.md), a [*boolean*](_type_boolean.md), or a [*string*](_type_string.md) are examples of scalar values; an [*array*](_array.md) of elements, a [*set*](_set.md), a [*tuple*](_tuple.md), or a key/value [*dictionary*](_dict.md) are not.\n\nWhen `_scalar` is an *empty object*, the descriptor accepts any scalar value of any type. When it contains a [`_type`](_type.md) property, that type constraint is enforced. Depending on the type, a companion kind property — [`_kind_number`](_kind_number.md), [`_kind_string`](_kind_string.md), [`_kind_key`](_kind_key.md), [`_kind_enum`](_kind_enum.md), or [`_kind_object`](_kind_object.md) — may further qualify the type, and additional properties such as [`_unit`](_unit.md) or range properties may constrain or document the value."},
-			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_integer\"],\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 5,\n\t\t\t\"_max-range-inclusive\": 10\n\t\t}\n\t}\n}\n```\nThis example describes a scalar [integer](_kind_number_integer.md) value in the range from `5` to `10` inclusive.\n\n\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_number\",\n\t\t\"_kind_number\": [\"_kind_number_float\"],\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\"_max-range-exclusive\": 100.0\n\t\t},\n\t\t\"_unit\": \"_unit_length_cm\"\n\t}\n}\n```\nThis example describes a [floating-point](_kind_number_float.md) numeric value greater than or equal to `0.0` and less than `100.0`, representing a length in [centimetres](_unit_length_cm.md).\n\n\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_enum\",\n\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t}\n}\n```\nThis example describes an [enumeration](_type_enum.md) value that must be chosen from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes.\n\n\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type\": \"_type_string\",\n\t\t\"_kind_string\": \"_kind_string_Markdown\"\n\t}\n}\n```\nThis example describes a [text](_type_string.md) value encoded in [Markdown](_kind_string_Markdown.md) format.\n\n\n\n```json\n{\n\t\"_scalar\": {}\n}\n```\nThis example describes a descriptor that accepts a scalar value of any type. The empty `_scalar` object means no type constraint is applied, but non-scalar shapes — [arrays](_array.md), [sets](_set.md), [tuples](_tuple.md), and [dictionaries](_dict.md) — are still excluded."}
+			"_title": {
+				"ISO_639_3_eng": "Scalar"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The shape property for a single, indivisible value. When the object is empty, the descriptor accepts any scalar value without type constraints. When non-empty, the required [`_type_scalar`](_type_scalar.md) property determines the data type and governs which additional properties are permitted."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *scalar* is a single, indivisible datum — a number, a boolean, a string, or a reference to another term. It contrasts with the compound shapes ([`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_dict`](_dict.md)), which hold multiple values.\n\nWhen [`_scalar`](_scalar.md) is an *empty object* (`{}`), the descriptor accepts any scalar value of any type, with no further constraints.\n\nWhen non-empty, [`_type_scalar`](_type_scalar.md) is required and governs the entire property configuration. Each type value activates a conditional rule that defines exactly which additional properties are permitted. [`_unit`](_unit.md) and the free-text pair [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md) are mutually exclusive — use the codified unit when available, fall back to the free-text pair otherwise.\n\n| [`_type_scalar`](_type_scalar.md) | Description | Companion properties |\n|---|---|---|\n| [`_type_boolean`](_type_boolean.md) | True/false boolean value. | — |\n| [`_type_number`](_type_number.md) | Number; accepts both integers and floating-point values. | [`_decimals`](_decimals.md); [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md); [`_valid-range`](_valid-range.md) / [`_normal-range`](_normal-range.md) |\n| [`_type_number_float`](_type_number_float.md) | Floating-point number. | [`_decimals`](_decimals.md); [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md); [`_valid-range`](_valid-range.md) / [`_normal-range`](_normal-range.md) |\n| [`_type_number_integer`](_type_number_integer.md) | Integer — no decimal part. | [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md); [`_valid-range`](_valid-range.md) / [`_normal-range`](_normal-range.md) |\n| [`_type_string`](_type_string.md) | Generic UTF-8 string. | [`_regexp`](_regexp.md); [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md); [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_Markdown`](_type_string_Markdown.md) | Markdown-formatted text. | — |\n| [`_type_string_HTML`](_type_string_HTML.md) | HTML-formatted text. | — |\n| [`_type_string_URI`](_type_string_URI.md) | Uniform Resource Identifier. | — |\n| [`_type_string_HEX`](_type_string_HEX.md) | Hexadecimal string. | [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md); [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_SVG`](_type_string_SVG.md) | SVG image data. | — |\n| [`_type_string_email`](_type_string_email.md) | Email address. | — |\n| [`_type_string_date`](_type_string_date.md) | Date in JSON Schema `date` format (`YYYY-MM-DD`). | [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_time`](_type_string_time.md) | Time in JSON Schema `time` format. | [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_date-time`](_type_string_date-time.md) | Date-time in JSON Schema `date-time` format. | [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_YMD`](_type_string_YMD.md) | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). | [`_valid-range_string`](_valid-range_string.md) / [`_normal-range_string`](_normal-range_string.md) |\n| [`_type_string_Hostname`](_type_string_Hostname.md) | Internet hostname. | — |\n| [`_type_string_IPv4`](_type_string_IPv4.md) | IPv4 address. | — |\n| [`_type_string_IPv6`](_type_string_IPv6.md) | IPv6 address. | — |\n| [`_type_string_LaTeX`](_type_string_LaTeX.md) | LaTeX expression; rendered with KaTeX. | — |\n| [`_type_string_regexp`](_type_string_regexp.md) | Regular expression; the stored value is itself a pattern. | — |\n| [`_type_key`](_type_key.md) | `_key` of any ArangoDB document. | — |\n| [`_type_key_term`](_type_key_term.md) | `_key` of any term. | — |\n| [`_type_key_term_enum`](_type_key_term_enum.md) | `_key` of an enumeration root — the root of a controlled vocabulary. | — |\n| [`_type_key_term_enum_element`](_type_key_term_enum_element.md) | `_key` of an enumeration element — a valid choice within a controlled vocabulary. | — |\n| [`_type_key_term_descriptor`](_type_key_term_descriptor.md) | `_key` of a descriptor (has a [`_data`](_data.md) section). | — |\n| [`_type_key_term_object`](_type_key_term_object.md) | `_key` of an object definition term (has a [`_rule`](_rule.md) section). | — |\n| [`_type_key_term_predicate`](_type_key_term_predicate.md) | `_key` of a predicate term. | — |\n| [`_type_handle`](_type_handle.md) | ArangoDB document handle (`<collection>/<_key>`). | — |\n| [`_type_enum`](_type_enum.md) | `_gid` of an enumeration element — a value drawn from a controlled vocabulary. | [`_kind_enum`](_kind_enum.md) |\n| [`_type_object`](_type_object.md) | Object whose properties are descriptor `_gid`s; may be empty. | [`_kind_object`](_kind_object.md) |\n| [`_type_struct`](_type_struct.md) | Object with indeterminate properties; may be empty. | — |\n| [`_type_timestamp`](_type_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC). | [`_valid-range`](_valid-range.md) / [`_normal-range`](_normal-range.md) |\n| [`_type_object_GeoJSON`](_type_object_GeoJSON.md) | GeoJSON object; may not be empty. | — |\n"
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A boolean value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type_scalar\": \"_type_boolean\"\n\t}\n}\n```\n\n\n\nA floating-point length in centimetres with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type_scalar\": \"_type_number_float\",\n\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\"_decimals\": 2,\n\t\t\"_valid-range\": {\n\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\"_max-range-exclusive\": 100.0\n\t\t}\n\t}\n}\n```\n\n\n\nAn enumeration value drawn from the ISO 639-3 language vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type_scalar\": \"_type_enum\",\n\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t}\n}\n```\n\n\n\nA generic UTF-8 string validated by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type_scalar\": \"_type_string\",\n\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t}\n}\n```\n\n\n\nAn unconstrained scalar (any type accepted):\n\n```json\n{\n\t\"_scalar\": {}\n}\n```"
+			}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
-				"_kind_object": ["_scalar"]
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_scalar"
+				]
 			}
 		},
 		"_rule": {
 			"_closed": true,
-			"_recommended": ["_type"]
-		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
+			"_recommended": [
+				"_type_scalar"
 			]
-		}
+		},
+		"_domn": {}
 	},
 	{
 		"_code": {
 			"_nid": "",
 			"_lid": "array",
 			"_gid": "_array",
-			"_aid": ["array"]
+			"_aid": [
+				"array"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Array"},
-			"_definition": {"ISO_639_3_eng": "The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type."},
-			"_description": {"ISO_639_3_eng": "This property defines the *shape* and *type* of an *array* — an ordered list of values of the *same type*. Values may be *repeated* and the type definition applies to *every element* in the list.\n\nThe property may contain *at most one* of the following shape sub-properties, defining the element type:\n\n- [Scalar elements](_scalar.md): Each element is a scalar value.\n- [Array elements](_array.md): Each element is itself an array (nested arrays).\n- [Set elements](_set.md): Each element is a set.\n- [Tuple elements](_tuple.md): Each element is a tuple.\n- [Dictionary elements](_dict.md): Each element is a key/value dictionary.\n\nThe optional [_elements](_elements.md) property constrains the minimum and maximum number of items in the array.\n\nWhen the property is an *empty object*, the array may contain any number of elements of any shape or type."},
-			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_array\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 1,\n\t\t\t\"_max-items\": 5\n\t\t},\n\t\t\"_scalar\": {\n\t\t\t\"_type\": \"_type_number\",\n\t\t\t\"_kind_number\": [\"_kind_number_integer\"],\n\t\t\t\"_valid-range\": {\n\t\t\t\t\"_min-range-inclusive\": 5,\n\t\t\t\t\"_max-range-inclusive\": 10\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes an array of [scalar](_scalar.md) [integer](_kind_number_integer.md) values in the range from `5` to `10` inclusive. The array must have at least 1 element and at most 5 elements.\n\n\n\n```json\n{\n\t\"_array\": {\n\t\t\"_array\": {\n\t\t\t\"_elements\": {\n\t\t\t\t\"_min-items\": 0,\n\t\t\t\t\"_max-items\": 10\n\t\t\t},\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type\": \"_type_number\",\n\t\t\t\t\"_kind_number\": [\"_kind_number_float\"],\n\t\t\t\t\"_valid-range\": {\n\t\t\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\t\t\"_max-range-exclusive\": 100.0\n\t\t\t\t},\n\t\t\t\t\"_unit-symbol\": \"cm.\",\n\t\t\t\t\"_unit-name\": {\"ISO_639_3_eng\": \"Centimeters\"}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes a list of arrays of [floating-point](_kind_number_float.md) numeric values greater than or equal to `0.0` and less than `100.0`, representing lengths in [centimetres](_unit_length_cm.md).\n\nThis example shows two levels of nested arrays. The top level array may have any number of elements; the second level array can be empty but must have at most 10 elements.\n\n\n\n```json\n{\n\t\"_array\": {\n\t\t\"_set\": {\n\t\t\t\"_set_scalar\": {\n\t\t\t\t\"_set_type\": \"_type_enum\",\n\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes an array of [sets](_set.md) whose elements are [enumeration](_type_enum.md) values from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes.\n\nThe array, and the set, may have any number of elements.\n\n\n\n```json\n{\n\t\"_array\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_type_key\": \"_type_enum\",\n\t\t\t\t\"_kind_enum\": [\"ISO_3166_1\"]\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type\": \"_type_object\",\n\t\t\t\t\t\"_kind_object\": [\"my_struct_definition\"]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes an array of [key/value dictionaries](_dict.md). The [dictionary keys](_dict_key.md) are [enumeration](_type_enum.md) values from the [ISO 3166-1](ISO_3166_1.md) country code vocabulary. The dictionary values are [objects](_type_object.md) conforming to the `my_struct_definition` schema.\n\nIn this example the array may have any number of elements.\n\n\n\n```json\n{\n\t\"_array\": {}\n}\n```\n\nThis example describes an array that may contain any number of elements of any shape or type."}
+			"_title": {
+				"ISO_639_3_eng": "Array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional [`_elements`](_elements.md) property constrains the element count."
+			},
+			"_description": {
+				"ISO_639_3_eng": "An *array* is an ordered sequence of values of the *same type*. Values may repeat; the type definition applies uniformly to every element.\n\nArrays are *recursive*: the element type is itself a shape property — one of [`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md). Nesting terminates at a [`_scalar`](_scalar.md) or [`_dict`](_dict.md) leaf.\n\nWhen [`_array`](_array.md) is an *empty object* (`{}`), the array may contain any number of elements of any shape or type, with no further constraints.\n\nWhen non-empty, exactly *one* shape sub-property must be present. The optional [`_elements`](_elements.md) property may always be added to constrain the minimum and maximum number of items."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "An array of integers between 5 and 10, with 1 to 5 elements:\n\n```json\n{\n\t\"_array\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 1,\n\t\t\t\"_max-items\": 5\n\t\t},\n\t\t\"_scalar\": {\n\t\t\t\"_type_scalar\": \"_type_number_integer\",\n\t\t\t\"_valid-range\": {\n\t\t\t\t\"_min-range-inclusive\": 5,\n\t\t\t\t\"_max-range-inclusive\": 10\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA nested array — an array of arrays of floating-point lengths:\n\n```json\n{\n\t\"_array\": {\n\t\t\"_array\": {\n\t\t\t\"_elements\": {\n\t\t\t\t\"_max-items\": 10\n\t\t\t},\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type_scalar\": \"_type_number_float\",\n\t\t\t\t\"_unit\": \"_unit_length_cm\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nAn array of sets of ISO 639-3 language codes:\n\n```json\n{\n\t\"_array\": {\n\t\t\"_set\": {\n\t\t\t\"_set_scalar\": {\n\t\t\t\t\"_type_scalar_set\": \"_type_enum\",\n\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nAn unconstrained array:\n\n```json\n{\n\t\"_array\": {}\n}\n```"
+			}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
-				"_kind_object": ["_array"]
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_array"
+				]
 			}
 		},
 		"_rule": {
@@ -63,30 +84,37 @@
 				"_elements"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
 			"_nid": "",
 			"_lid": "set",
 			"_gid": "_set",
-			"_aid": ["set"]
+			"_aid": [
+				"set"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Set"},
-			"_definition": {"ISO_639_3_eng": "The shape property for an unordered list of unique elements of the same comparable type. Unlike other shape properties, _set cannot be empty: _set_scalar is always required, because without a declared element type there is no basis for enforcing uniqueness."},
-			"_description": {"ISO_639_3_eng": "This property defines the *shape* and *type* of a *set* — an unordered list of *unique* values of the *same comparable type*. Because uniqueness requires comparability, [`_set_type`](_set_type.md) accepts the same values as [`_type`](_type.md), with the exception of [`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), and [`_type_object_GeoJSON`](_type_object_GeoJSON.md), which are excluded because objects are not comparable.\n\nThe  [`_set_scalar`](_set_scalar.md) property defines the element type using [`_set_type`](_set_type.md) along with the same optional companion and constraint properties as [`_scalar`](_scalar.md): [`_kind_number`](_kind_number.md), [`_kind_string`](_kind_string.md), [`_kind_key`](_kind_key.md), [`_kind_enum`](_kind_enum.md), [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_regexp`](_regexp.md), [`_decimals`](_decimals.md), [`_valid-range`](_valid-range.md), [`_valid-range_string`](_valid-range_string.md), [`_normal-range`](_normal-range.md), and [`_normal-range_string`](_normal-range_string.md). [`_set_scalar`](_set_scalar.md) is always required — unlike [`_array`](_array.md), `_set` cannot be empty. Without a declared element type there is no basis for enforcing uniqueness, so the element type must always be specified.\n\nThe optional [`_elements`](_elements.md) property constrains the minimum and maximum number of items in the set."},
-			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_set\": {\n\t\t\"_set_scalar\": {\n\t\t\t\"_set_type\": \"_type_boolean\"\n\t\t}\n\t}\n}\n```\nThis example describes a set of [booleans](_type_boolean.md). Since boolean has only two distinct values, such a set can contain at most two elements: `true` and `false`.\n\n\n\n```json\n{\n\t\"_set\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 1\n\t\t},\n\t\t\"_set_scalar\": {\n\t\t\t\"_set_type\": \"_type_number\",\n\t\t\t\"_kind_number\": [\"_kind_number_integer\"]\n\t\t}\n\t}\n}\n```\nThis example describes a set of unique [integer](_kind_number_integer.md) values; the set cannot be empty.\n\n\n\n```json\n{\n\t\"_set\": {\n\t\t\"_set_scalar\": {\n\t\t\t\"_set_type\": \"_type_number\",\n\t\t\t\"_kind_number\": [\"_kind_number_float\"],\n\t\t\t\"_valid-range\": {\n\t\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\t\"_max-range-exclusive\": 100.0\n\t\t\t},\n\t\t\t\"_unit\": \"_unit_length_cm\"\n\t\t}\n\t}\n}\n```\nThis example describes a set of unique [floating-point](_kind_number_float.md) numeric values greater than or equal to `0.0` and less than `100.0`, representing lengths in [centimetres](_unit_length_cm.md). The set can have any number of elements.\n\n\n\n```json\n{\n\t\"_set\": {\n\t\t\"_elements\": {\n\t\t\t\"_max-items\": 3\n\t\t},\n\t\t\"_set_scalar\": {\n\t\t\t\"_set_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\nThis example describes a set of [enumeration](_type_enum.md) values that must be chosen from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes. The set may contain at most 3 unique elements."}
+			"_title": {
+				"ISO_639_3_eng": "Set"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The shape property for an unordered list of unique elements of the same comparable type. Unlike other shape properties, [`_set`](_set.md) cannot be empty: [`_set_scalar`](_set_scalar.md) is always required, because without a declared element type there is no basis for enforcing uniqueness."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *set* is an unordered collection of *unique* values of the *same comparable type*. Uniqueness requires that elements be comparable, so non-comparable types — [`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), and [`_type_object_GeoJSON`](_type_object_GeoJSON.md) — are not permitted as element types.\n\nUnlike [`_array`](_array.md), a set is *not recursive*: its element type is always a scalar, defined by [`_set_scalar`](_set_scalar.md). [`_set_scalar`](_set_scalar.md) is always required — an empty [`_set`](_set.md) object is not valid.\n\n[`_set_scalar`](_set_scalar.md) works like [`_scalar`](_scalar.md), but uses [`_type_scalar_set`](_type_scalar_set.md) instead of [`_type_scalar`](_type_scalar.md). All other properties — unit, range, [`_regexp`](_regexp.md), [`_decimals`](_decimals.md), and [`_kind_enum`](_kind_enum.md) — behave identically to their counterparts in [`_scalar`](_scalar.md).\n\nThe optional [`_elements`](_elements.md) property constrains the minimum and maximum number of items in the set."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A set of booleans (at most two elements: `true` and `false`):\n\n```json\n{\n\t\"_set\": {\n\t\t\"_set_scalar\": {\n\t\t\t\"_type_scalar_set\": \"_type_boolean\"\n\t\t}\n\t}\n}\n```\n\n\n\nA non-empty set of unique integers:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 1\n\t\t},\n\t\t\"_set_scalar\": {\n\t\t\t\"_type_scalar_set\": \"_type_number_integer\"\n\t\t}\n\t}\n}\n```\n\n\n\nA set of up to three ISO 639-3 language codes:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_elements\": {\n\t\t\t\"_max-items\": 3\n\t\t},\n\t\t\"_set_scalar\": {\n\t\t\t\"_type_scalar_set\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```"
+			}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
-				"_kind_object": ["_set"]
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_set"
+				]
 			}
 		},
 		"_rule": {
@@ -100,68 +128,81 @@
 				"_elements"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_namespace",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
 			"_nid": "",
 			"_lid": "tuple",
 			"_gid": "_tuple",
-			"_aid": ["tuple"]
+			"_aid": [
+				"tuple"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Tuple"},
-			"_definition": {"ISO_639_3_eng": "The shape property for an ordered list of elements where each position may have a different type. The type at each position is determined by the descriptor referenced at the corresponding index of the types list."},
-			"_description": {"ISO_639_3_eng": "A *tuple* is an *ordered list* in which *each element* may have a *different type* depending on its *position*. It is one of the top-level data shapes alongside [scalar](_scalar.md), [array](_array.md), [set](_set.md), and [dictionary](_dict.md).\n\nA tuple requires the [_tuple_types](_tuple_types.md) property: an ordered array of descriptor [global identifiers](_gid.md) that defines the expected type at each position. The type at position *n* is resolved by looking up the descriptor at index *n* in `_tuple_types` and reading its `_data` section.\n\nThe optional [_elements](_elements.md) property constrains how many elements a tuple value may contain. The [minimum](_min-items.md) must be at least 1; the [maximum](_max-items.md) cannot exceed the length of `_tuple_types`. When `_elements` is omitted, the tuple must contain exactly as many elements as there are entries in `_tuple_types`."},
-			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_tuple\": {\n\t\t\"_tuple_types\": [\n\t\t\t\"longitude_decimal\",\n\t\t\t\"latitude_decimal\"\n\t\t]\n\t}\n}\n```\n\nThis example describes a pair of coordinates where the first element is a decimal longitude and the second is a decimal latitude. The value must contain exactly two elements.\n\n\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 3,\n\t\t\t\"_max-items\": 4\n\t\t},\n\t\t\"_tuple_types\": [\n\t\t\t\"latitude_DMS\",\n\t\t\t\"longitude_DMS\",\n\t\t\t\"geodetic-datum\",\n\t\t\t\"area\"\n\t\t]\n\t}\n}\n```\n\nThis example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitude, a geodetic datum, and an optional surface area. The first three elements are required; the fourth is optional."}
+			"_title": {
+				"ISO_639_3_eng": "Tuple"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The shape property for an ordered list of elements where each position may have a different type. The required [`_type_tuple`](_type_tuple.md) property is an ordered array of descriptor global identifiers; the type at position n is determined by the descriptor at index n."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *tuple* is an *ordered list* in which each element may have a *different type* depending on its *position*. It differs from [`_array`](_array.md) and [`_set`](_set.md), which apply a single type uniformly to all elements.\n\nThe required [`_type_tuple`](_type_tuple.md) property contains an ordered array of descriptor [global identifiers](_gid.md). The type at position *n* is resolved by looking up the descriptor at index *n* and reading its [`_data`](_data.md) section. This indirection means tuple positions reuse existing descriptor definitions rather than duplicating type information inline.\n\nThe optional [`_elements`](_elements.md) property constrains how many elements a tuple value may contain. The length of [`_type_tuple`](_type_tuple.md) is the absolute upper bound; neither [`_min-items`](_min-items.md) nor [`_max-items`](_max-items.md) may exceed it. When [`_elements`](_elements.md) is omitted, the tuple must contain exactly as many elements as [`_type_tuple`](_type_tuple.md) has entries. When fewer elements are present, the trailing positions are not applied — the tuple is treated as a prefix of the full type sequence."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A coordinate pair — exactly two elements:\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_type_tuple\": [\n\t\t\t\"longitude_decimal\",\n\t\t\t\"latitude_decimal\"\n\t\t]\n\t}\n}\n```\n\n\n\nA location record with an optional surface area — three required elements, fourth optional:\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 3,\n\t\t\t\"_max-items\": 4\n\t\t},\n\t\t\"_type_tuple\": [\n\t\t\t\"latitude_DMS\",\n\t\t\t\"longitude_DMS\",\n\t\t\t\"geodetic_datum\",\n\t\t\t\"area\"\n\t\t]\n\t}\n}\n```"
+			}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
-				"_kind_object": ["_tuple"]
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_tuple"
+				]
 			}
 		},
 		"_rule": {
 			"_closed": true,
 			"_required": {
 				"_selection-descriptors_one": [
-					"_tuple_types"
+					"_type_tuple"
 				]
 			},
 			"_recommended": [
 				"_elements"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
 			"_nid": "",
 			"_lid": "dict",
 			"_gid": "_dict",
-			"_aid": ["dict"]
+			"_aid": [
+				"dict"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Dictionary"},
-			"_definition": {"ISO_639_3_eng": "The shape property for a key/value dictionary with explicitly typed keys and values. Both the key type and the value type must be specified."},
-			"_description": {"ISO_639_3_eng": "This property defines the *shape* and *type* of a *key/value dictionary*. Keys are *strings* that may be *bound* to a *controlled vocabulary*; values may be of *any shape and type*. The [key](_dict_key.md) and [value](_dict_value.md) definitions apply uniformly to all entries in the dictionary."},
-			"_examples": {"ISO_639_3_eng": "```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_type_key\": \"_type_string\"\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_elements\": {\n\t\t\t\t\t\"_min-items\": 5,\n\t\t\t\t\t\"_max-items\": 10\n\t\t\t\t},\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type\": \"_type_object\",\n\t\t\t\t\t\"_kind_object\": [\"some_object_definition\"]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [*strings*](_type_string.md), and whose *values*, [`_dict_value`](_dict_value.md), are [*arrays*](_array.md) of between 5 and 10 [objects](_type_object.md) conforming to the `some_object_definition` schema.\n\n\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_type_key\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type\": \"_type_string\",\n\t\t\t\t\"_kind_string\": \"_kind_string_Markdown\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes a dictionary whose *keys*, [`_dict_key`](_dict_key.md), are [global identifiers](_gid.md) of [ISO 639-3](ISO_639_3.md) language codes, and whose *values*, [`_dict_value`](_dict_value.md), are [Markdown](_kind_string_Markdown.md) text strings — a pattern used to implement multilingual styled text.\n\n\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_type_key\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_3166_1\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_dict\": {\n\t\t\t\t\"_dict_key\": {\n\t\t\t\t\t\"_type_key\": \"_type_enum\",\n\t\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t\t},\n\t\t\t\t\"_dict_value\": {\n\t\t\t\t\t\"_array\": {\n\t\t\t\t\t\t\"_elements\": {\n\t\t\t\t\t\t\t\"_min-items\": 5,\n\t\t\t\t\t\t\t\"_max-items\": 10\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\t\t\"_type\": \"_type_object\",\n\t\t\t\t\t\t\t\"_kind_object\": [\"some_object_definition\"]\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThis example describes a recursive dictionary. The outer keys are [ISO 3166-1](ISO_3166_1.md) country codes; the values are inner dictionaries keyed by [ISO 639-3](ISO_639_3.md) language codes, whose values are arrays of 5 to 10 objects conforming to `some_object_definition`.\n\n\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {},\n\t\t\"_dict_value\": {}\n\t}\n}\n```\n\nThis example describes a dictionary whose keys can be any string and whose values can be of any shape or type."}
+			"_title": {
+				"ISO_639_3_eng": "Dictionary"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The shape property for a key/value dictionary with explicitly typed keys and values. Both [`_dict_key`](_dict_key.md) and [`_dict_value`](_dict_value.md) are required; the value side is a full [`_data`](_data.md) section, making the dictionary recursively composable."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *dictionary* is a key/value structure in which the key type and value type are both explicitly declared. It contrasts with [`_type_struct`](_type_struct.md) (indeterminate properties) and [`_type_object`](_type_object.md) (properties correspond to descriptor [`_gid`](_gid.md)s).\n\n[`_dict_key`](_dict_key.md) defines the key type using [`_dict_key_type`](_dict_key_type.md), which accepts only string-compatible types: strings, enumeration elements, term keys, and document handles. The optional companion [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary when the key type is [`_type_enum`](_type_enum.md).\n\n[`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow any value type. This makes dictionaries fully recursive.\n\nThe canonical use case is a *multilingual text property*: keys are language [global identifiers](_gid.md) (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A multilingual text dictionary — the pattern used throughout [`_info`](_info.md) sections:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type_scalar\": \"_type_string\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA dictionary keyed by string, with array values:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_string\"\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type_scalar\": \"_type_object\",\n\t\t\t\t\t\"_kind_object\": [\"some_schema\"]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA nested dictionary (country → language → Markdown text):\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_3166_1\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_dict\": {\n\t\t\t\t\"_dict_key\": {\n\t\t\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t\t},\n\t\t\t\t\"_dict_value\": {\n\t\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\t\"_type_scalar\": \"_type_string_Markdown\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nAn unconstrained dictionary:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {},\n\t\t\"_dict_value\": {}\n\t}\n}\n```"
+			}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
-				"_kind_object": ["_dict"]
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_dict"
+				]
 			}
 		},
 		"_rule": {
@@ -173,12 +214,6 @@
 				]
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_namespace",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	}
 ]

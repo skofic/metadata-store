@@ -65,7 +65,7 @@ This term has no [namespace](_nid.md): the local identifier and global identifie
 {
   "_scalar" : {
     "_regexp" : "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$",
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

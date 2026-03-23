@@ -6,11 +6,19 @@ Boolean
 
 **`_definition`**
 
-Scalar data type for a true/false boolean value. No companion `_kind` property is needed or expected.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a true/false boolean value. No companion properties are needed or expected.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_boolean`, the descriptor value must be a native boolean — either `true` or `false`. This is the simplest scalar type: it carries no companion qualifier, no unit, no range, and no format constraint. Any [`_scalar`](_scalar.md) section that selects `_type_boolean` is complete as-is.
+When [`_type_scalar`](_type_scalar.md) is `_type_boolean`, the descriptor value must be a native boolean — either `true` or `false`. This is the simplest scalar type: it carries no companion properties, no unit, no range, and no format constraint. Any [`_scalar`](_scalar.md) section that sets `_type_boolean` is complete as-is.
+
+```json
+{
+	"_scalar": {
+		"_type_scalar": "_type_boolean"
+	}
+}
+```
 
 ---
 

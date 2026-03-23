@@ -63,7 +63,7 @@ This is the `ISO` top-level namespace term. It has no [namespace](_nid.md), so t
 {
   "_scalar" : {
     "_regexp" : "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$",
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

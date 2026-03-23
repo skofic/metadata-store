@@ -6,30 +6,35 @@ Set
 
 **`_definition`**
 
-The shape property for an unordered list of unique elements of the same comparable type. Unlike other shape properties, _set cannot be empty: _set_scalar is always required, because without a declared element type there is no basis for enforcing uniqueness.
+The shape property for an unordered list of unique elements of the same comparable type. Unlike other shape properties, [`_set`](_set.md) cannot be empty: [`_set_scalar`](_set_scalar.md) is always required, because without a declared element type there is no basis for enforcing uniqueness.
 
 **`_description`**
 
-This property defines the *shape* and *type* of a *set* — an unordered list of *unique* values of the *same comparable type*. Because uniqueness requires comparability, [`_set_type`](_set_type.md) accepts the same values as [`_type`](_type.md), with the exception of [`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), and [`_type_object_GeoJSON`](_type_object_GeoJSON.md), which are excluded because objects are not comparable.
+A *set* is an unordered collection of *unique* values of the *same comparable type*. Uniqueness requires that elements be comparable, so non-comparable types — [`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), and [`_type_object_GeoJSON`](_type_object_GeoJSON.md) — are not permitted as element types.
 
-The  [`_set_scalar`](_set_scalar.md) property defines the element type using [`_set_type`](_set_type.md) along with the same optional companion and constraint properties as [`_scalar`](_scalar.md): [`_kind_number`](_kind_number.md), [`_kind_string`](_kind_string.md), [`_kind_key`](_kind_key.md), [`_kind_enum`](_kind_enum.md), [`_unit`](_unit.md), [`_unit-name`](_unit-name.md), [`_unit-symbol`](_unit-symbol.md), [`_regexp`](_regexp.md), [`_decimals`](_decimals.md), [`_valid-range`](_valid-range.md), [`_valid-range_string`](_valid-range_string.md), [`_normal-range`](_normal-range.md), and [`_normal-range_string`](_normal-range_string.md). [`_set_scalar`](_set_scalar.md) is always required — unlike [`_array`](_array.md), `_set` cannot be empty. Without a declared element type there is no basis for enforcing uniqueness, so the element type must always be specified.
+Unlike [`_array`](_array.md), a set is *not recursive*: its element type is always a scalar, defined by [`_set_scalar`](_set_scalar.md). [`_set_scalar`](_set_scalar.md) is always required — an empty [`_set`](_set.md) object is not valid.
+
+[`_set_scalar`](_set_scalar.md) works like [`_scalar`](_scalar.md), but uses [`_type_scalar_set`](_type_scalar_set.md) instead of [`_type_scalar`](_type_scalar.md). All other properties — unit, range, [`_regexp`](_regexp.md), [`_decimals`](_decimals.md), and [`_kind_enum`](_kind_enum.md) — behave identically to their counterparts in [`_scalar`](_scalar.md).
 
 The optional [`_elements`](_elements.md) property constrains the minimum and maximum number of items in the set.
 
 **`_examples`**
 
+A set of booleans (at most two elements: `true` and `false`):
+
 ```json
 {
 	"_set": {
 		"_set_scalar": {
-			"_set_type": "_type_boolean"
+			"_type_scalar_set": "_type_boolean"
 		}
 	}
 }
 ```
-This example describes a set of [booleans](_type_boolean.md). Since boolean has only two distinct values, such a set can contain at most two elements: `true` and `false`.
 
 
+
+A non-empty set of unique integers:
 
 ```json
 {
@@ -38,34 +43,15 @@ This example describes a set of [booleans](_type_boolean.md). Since boolean has 
 			"_min-items": 1
 		},
 		"_set_scalar": {
-			"_set_type": "_type_number",
-			"_kind_number": ["_kind_number_integer"]
+			"_type_scalar_set": "_type_number_integer"
 		}
 	}
 }
 ```
-This example describes a set of unique [integer](_kind_number_integer.md) values; the set cannot be empty.
 
 
 
-```json
-{
-	"_set": {
-		"_set_scalar": {
-			"_set_type": "_type_number",
-			"_kind_number": ["_kind_number_float"],
-			"_valid-range": {
-				"_min-range-inclusive": 0.0,
-				"_max-range-exclusive": 100.0
-			},
-			"_unit": "_unit_length_cm"
-		}
-	}
-}
-```
-This example describes a set of unique [floating-point](_kind_number_float.md) numeric values greater than or equal to `0.0` and less than `100.0`, representing lengths in [centimetres](_unit_length_cm.md). The set can have any number of elements.
-
-
+A set of up to three ISO 639-3 language codes:
 
 ```json
 {
@@ -74,13 +60,12 @@ This example describes a set of unique [floating-point](_kind_number_float.md) n
 			"_max-items": 3
 		},
 		"_set_scalar": {
-			"_set_type": "_type_enum",
+			"_type_scalar_set": "_type_enum",
 			"_kind_enum": ["ISO_639_3"]
 		}
 	}
 }
 ```
-This example describes a set of [enumeration](_type_enum.md) values that must be chosen from the [ISO 639-3](ISO_639_3.md) controlled vocabulary of language codes. The set may contain at most 3 unique elements.
 
 ---
 
@@ -105,7 +90,7 @@ This example describes a set of [enumeration](_type_enum.md) values that must be
     "_kind_object" : [
       "_set"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

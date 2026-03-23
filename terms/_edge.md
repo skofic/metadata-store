@@ -53,7 +53,7 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
     "_kind_object" : [
       "_edge"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

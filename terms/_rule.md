@@ -76,7 +76,7 @@ An object definition with no unconditional constraints — all rules are in the 
     "_kind_object" : [
       "_rule"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

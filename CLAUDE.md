@@ -45,6 +45,13 @@ This project is in early initialization. No source code exists yet. The `.gitign
   1. Review `_info` content in `data/core/containers.json`.
   2. Continue populating remaining core term files.
 
+### Recent session (2026-03-23)
+- Redesigned `_scalar` type system: `_type` becomes a namespace; `_type_scalar` is the new type descriptor in `_scalar`; `_type_scalar_set` is used in `_set_scalar`; `_dict_key_type` is used in `_dict_key`.
+- Eliminated `_kind_number`, `_kind_string`, `_kind_key` companion properties; their specificity is now encoded directly in `_type_scalar` values (`_type_number_float`, `_type_string_Markdown`, `_type_key_term`, etc.).
+- `_kind_enum` and `_kind_object` remain as companion descriptors for `_type_enum` and `_type_object`.
+- Updated root `CLAUDE.md` throughout: `_scalar` properties table, `_type_scalar` enumeration (with all 33 values), all type subsections and code examples, `_set_scalar`, `_dict_key`, and the conditional rule example in the Graphs section.
+- Next: update `containers.json`, `_scalar.json`, `_scalar.edges.json`, and documentation files.
+
 ### Recent session (2026-03-22)
 - Established two-directory structure: `terms/` for auto-generated term cards; `docs/` for hand-authored documentation. Term cards generator writes to `terms/` (config key `paths.terms`); `docs/` is never touched by any workflow.
 - Introduced `dictionary.config.json` at the repo root to centralise directory paths; the term-cards generator reads it at startup and falls back to built-in defaults if absent.
@@ -316,38 +323,58 @@ Each of these properties is described in detail in the subsections below.
 
 | Property               | Required                        | Description |
 |------------------------|---------------------------------|-------------|
-| `_type`                | Yes (if `_scalar` not empty)    | The scalar data type. |
-| `_kind_number`         | Yes (if `_type` is `_type_number`) | Qualifies the numeric type; a non-empty set of `_kind_number_float` and/or `_kind_number_integer`. |
-| `_kind_string`         | No                              | Qualifies the string encoding or format; relevant to `_type_string`. Scalar enumeration element. |
-| `_kind_key`            | No                              | Constrains the type of term the key may reference; relevant to `_type_key`. Set of enumeration elements. |
+| `_type_scalar`         | Yes (if `_scalar` not empty)    | The scalar data type. |
 | `_kind_enum`           | No                              | Constrains the controlled vocabulary the enumeration value must belong to; relevant to `_type_enum`. Set of enumeration type `_gid`s. |
 | `_kind_object`         | No                              | Constrains the object schema the value must conform to; relevant to `_type_object`. Set of object definition `_gid`s. |
 | `_unit`                | No                              | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No                              | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
 | `_unit-symbol`         | No                              | Unit symbol, used when `_unit` is absent. |
-| `_regexp`              | No                              | Regular expression to validate string values; only valid when `_kind_string` is absent. |
-| `_decimals`            | No                              | Number of decimals to display; relevant to `_kind_number_float` only. |
+| `_regexp`              | No                              | Regular expression to validate string values; relevant to `_type_string` only (not valid for format-specific string types such as `_type_string_date`). |
+| `_decimals`            | No                              | Number of decimals to display; relevant to `_type_number` and `_type_number_float` only. |
 | `_valid-range`         | No                              | Valid numeric range for the value. |
 | `_valid-range_string`  | No                              | Valid string range for the value. |
 | `_normal-range`        | No                              | Normal numeric range for the value. |
 | `_normal-range_string` | No                              | Normal string range for the value. |
 
-##### `_type` enumeration
+##### `_type_scalar` enumeration
 
-`_type` is required whenever `_scalar` is not empty. It defines the scalar data type:
+`_type_scalar` is required whenever `_scalar` is not empty. It defines the scalar data type. Number, string, and key types form hierarchies: `_type_number` accepts any number; `_type_number_float` and `_type_number_integer` are more specific. `_type_string` accepts any UTF-8 string; the `_type_string_*` variants declare a specific encoding or format. `_type_key` accepts any term key; the `_type_key_*` variants constrain the referenced term role.
 
-| Value                  | Description |
-|------------------------|-------------|
-| `_type_boolean`        | A true/false boolean value. |
-| `_type_number`         | A number; `_kind_number` (set) is required. |
-| `_type_string`         | A UTF-8 string; `_kind_string` (scalar) optionally qualifies the format. |
-| `_type_key`            | A string representing the `_key` of a document. |
-| `_type_handle`         | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
-| `_type_enum`           | A string representing the `_gid` of an enumeration element. |
-| `_type_object`         | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
-| `_type_struct`         | An object with indeterminate properties (may be empty). |
-| `_type_timestamp`      | An integer representing a Unix timestamp. |
-| `_type_object_GeoJSON` | A GeoJSON object (may **not** be empty). |
+| Value                       | Description |
+|-----------------------------|-------------|
+| `_type_boolean`             | A true/false boolean value. |
+| `_type_number`              | A number; accepts both integer and floating-point values. `_decimals` is permitted. |
+| `_type_number_float`        | A floating-point number (must be stored as float). `_decimals` is permitted. |
+| `_type_number_integer`      | An integer — no decimal part. `_decimals` is not permitted. |
+| `_type_string`              | A generic UTF-8 string. `_regexp` is permitted. |
+| `_type_string_Markdown`     | Markdown text. |
+| `_type_string_HTML`         | HTML text. |
+| `_type_string_URI`          | Uniform Resource Identifier. |
+| `_type_string_HEX`          | Hexadecimal value. `_valid-range_string` and `_normal-range_string` are permitted. |
+| `_type_string_SVG`          | SVG image. |
+| `_type_string_email`        | Email address. |
+| `_type_string_date`         | Date (JSON Schema `date` format). `_valid-range_string` and `_normal-range_string` are permitted. |
+| `_type_string_time`         | Time (JSON Schema `time` format). `_valid-range_string` and `_normal-range_string` are permitted. |
+| `_type_string_date-time`    | Date-time (JSON Schema `date-time` format). `_valid-range_string` and `_normal-range_string` are permitted. |
+| `_type_string_YMD`          | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). `_valid-range_string` and `_normal-range_string` are permitted. |
+| `_type_string_Hostname`     | Internet hostname. |
+| `_type_string_IPv4`         | IPv4 address. |
+| `_type_string_IPv6`         | IPv6 address. |
+| `_type_string_LaTeX`        | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. |
+| `_type_string_regexp`       | Regular expression. The stored value is itself a regexp; the editing interface provides a testing facility. |
+| `_type_key`                 | A string representing the `_key` of a document in any collection. |
+| `_type_key_term`            | A key that must reference any term. |
+| `_type_key_term_enum`       | A key that must reference an enumeration root — the root of a controlled vocabulary graph. |
+| `_type_key_term_enum_element` | A key that must reference an enumeration element — a valid choice within a controlled vocabulary. |
+| `_type_key_term_descriptor` | A key that must reference a descriptor (has a `_data` section). |
+| `_type_key_term_object`     | A key that must reference an object definition term (has a `_rule` section). |
+| `_type_key_term_predicate`  | A key that must reference a predicate term. |
+| `_type_handle`              | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
+| `_type_enum`                | A string representing the `_gid` of an enumeration element. |
+| `_type_object`              | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
+| `_type_struct`              | An object with indeterminate properties (may be empty). |
+| `_type_timestamp`           | An integer representing a Unix timestamp. |
+| `_type_object_GeoJSON`      | A GeoJSON object (may **not** be empty). |
 
 ---
 
@@ -358,29 +385,29 @@ Stored as a native boolean in ArangoDB (`true` or `false`). No other `_scalar` p
 ```json
 {
     "_scalar": {
-        "_type": "_type_boolean"
+        "_type_scalar": "_type_boolean"
     }
 }
 ```
 
 ---
 
-**`_type_number`**
+**`_type_number`, `_type_number_float`, `_type_number_integer`**
 
-A numeric value stored as a double-precision floating-point number. `_kind_number` is **required** and must be a non-empty set:
+All three types represent numbers stored as double-precision floating-point in ArangoDB. They differ in what values are accepted and whether `_decimals` is permitted:
 
-| `_kind_number` value   | Description | Extra properties |
-|------------------------|-------------|------------------|
-| `_kind_number_float`   | Floating-point number. | `_decimals` (display precision), `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range`, `_normal-range` |
-| `_kind_number_integer` | Integer — no decimal part. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range`, `_normal-range` |
+| Type                   | Accepts            | `_decimals` |
+|------------------------|--------------------|-------------|
+| `_type_number`         | Any number         | Permitted   |
+| `_type_number_float`   | Floating-point     | Permitted   |
+| `_type_number_integer` | Integers only      | Not permitted |
 
-When both values are present in `_kind_number`, both floating-point and integer values are accepted.
+Use `_type_number` when both integer and float values are acceptable. Use `_type_number_float` when the value must be stored and displayed as a floating-point number. Use `_type_number_integer` when the value must be a whole number.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_number",
-        "_kind_number": ["_kind_number_float"],
+        "_type_scalar": "_type_number_float",
         "_unit": "_unit_length_cm",
         "_decimals": 2,
         "_valid-range": {
@@ -393,36 +420,14 @@ When both values are present in `_kind_number`, both floating-point and integer 
 
 ---
 
-**`_type_string`**
+**`_type_string`, `_type_string_*`**
 
-A UTF-8 string. The optional `_kind_string` property specifies the string encoding or format:
-
-| `_kind_string` value      | Description | Extra properties |
-|---------------------------|-------------|------------------|
-| *(absent)*                | Generic string. | `_regexp`, `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_Markdown`   | Markdown text. | — |
-| `_kind_string_HTML`       | HTML text. | — |
-| `_kind_string_URI`        | Uniform Resource Identifier. | — |
-| `_kind_string_HEX`        | Hexadecimal value. | `_unit`, `_unit-name`, `_unit-symbol`, `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_SVG`        | SVG image. | — |
-| `_kind_string_email`      | Email address. | — |
-| `_kind_string_date`       | Date (JSON Schema `date` format). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_time`       | Time (JSON Schema `time` format). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_date-time`  | Date-time (JSON Schema `date-time` format). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_YMD`        | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). | `_valid-range_string`, `_normal-range_string` |
-| `_kind_string_Hostname`   | Internet hostname. | — |
-| `_kind_string_IPv4`       | IPv4 address. | — |
-| `_kind_string_IPv6`       | IPv6 address. | — |
-| `_kind_string_LaTeX`      | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. | — |
-| `_kind_string_regexp`     | Regular expression. The stored value is itself a regexp; the editing interface provides a testing facility. | — |
-
-`_regexp` is available **only** when `_kind_string` is absent — the data kind is self-defining and a regular expression could contradict it. Note the distinction: `_kind_string_regexp` declares that the stored *value* is a regular expression; `_regexp` holds a validation pattern applied to a generic string value.
+`_type_string` is a generic UTF-8 string. The `_type_string_*` variants specify a particular encoding or format — the type itself carries the format information, so no companion property is needed. `_regexp` is available only with `_type_string`; format-specific string types are self-defining and a regular expression could contradict them. Note the distinction: `_type_string_regexp` declares that the stored *value* is a regular expression; `_regexp` holds a validation pattern applied to a generic string value.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_string",
-        "_kind_string": "_kind_string_HEX",
+        "_type_scalar": "_type_string_HEX",
         "_valid-range_string": {
             "_min-range-inclusive_string": "0A",
             "_max-range-exclusive_string": "A5"
@@ -433,24 +438,14 @@ A UTF-8 string. The optional `_kind_string` property specifies the string encodi
 
 ---
 
-**`_type_key`**
+**`_type_key`, `_type_key_*`**
 
-A string representing the `_key` of a document. If `_kind_key` is absent, the key can refer to a document in any collection. If `_kind_key` is present, it is a set constraining the key to specific term types:
-
-| `_kind_key` value          | Meaning |
-|----------------------------|---------|
-| `_kind_key_term`           | The key may reference any term. |
-| `_kind_key_term_enum`      | The key must reference an enumeration type — i.e., the root of a controlled vocabulary graph. |
-| `_kind_key_term_enum_element` | The key must reference an enumeration element — i.e., a valid choice within a controlled vocabulary. |
-| `_kind_key_term_descriptor`| The key must reference a descriptor (has a `_data` section). |
-| `_kind_key_term_object`    | The key must reference a term that represents an object definition (has a `_rule` section). |
-| `_kind_key_term_predicate` | The key must reference a predicate term — a term used as the `_predicate` property of an edge document. |
+`_type_key` is a string representing the `_key` of a document in any collection. The `_type_key_*` variants constrain the referenced term to a specific role — the type itself carries the constraint, so no companion property is needed.
 
 ```json
 {
     "_scalar": {
-        "_type": "_type_key",
-        "_kind_key": ["_kind_key_term"]
+        "_type_scalar": "_type_key_term"
     }
 }
 ```
@@ -470,7 +465,7 @@ A string representing the `_gid` of an enumeration element. The optional `_kind_
 ```json
 {
     "_scalar": {
-        "_type": "_type_enum",
+        "_type_scalar": "_type_enum",
         "_kind_enum": ["ISO_639_3"]
     }
 }
@@ -485,7 +480,7 @@ An object whose properties must correspond to descriptor term `_gid`s. May be em
 ```json
 {
     "_scalar": {
-        "_type": "_type_object",
+        "_type_scalar": "_type_object",
         "_kind_object": ["_range_string"]
     }
 }
@@ -500,7 +495,7 @@ An object with indeterminate properties. May be empty. No other `_scalar` proper
 ```json
 {
     "_scalar": {
-        "_type": "_type_struct"
+        "_type_scalar": "_type_struct"
     }
 }
 ```
@@ -514,7 +509,7 @@ An integer representing a Unix timestamp — the number of seconds elapsed since
 ```json
 {
     "_scalar": {
-        "_type": "_type_timestamp",
+        "_type_scalar": "_type_timestamp",
         "_valid-range": {
             "_min-range-inclusive": 0
         }
@@ -531,7 +526,7 @@ A GeoJSON object. May **not** be empty. No other `_scalar` properties are expect
 ```json
 {
     "_scalar": {
-        "_type": "_type_object_GeoJSON"
+        "_type_scalar": "_type_object_GeoJSON"
     }
 }
 ```
@@ -623,7 +618,7 @@ Arrays are **recursive**: an `_array` may contain other arrays, sets, tuples, or
             "_max-items": 10
         },
         "_scalar": {
-            "_type": "_type_string"
+            "_type_scalar": "_type_string"
         }
     }
 }
@@ -644,7 +639,7 @@ Array elements are scalar values. The `_scalar` object follows the same rules as
             "_min-items": 1
         },
         "_scalar": {
-            "_type": "_type_number",
+            "_type_scalar": "_type_number",
             "_unit": "_unit_length_cm"
         }
     }
@@ -662,7 +657,7 @@ Array elements are themselves arrays. The structure is recursive: each nested `_
     "_array": {
         "_array": {
             "_scalar": {
-                "_type": "_type_number_integer"
+                "_type_scalar": "_type_number_integer"
             }
         }
     }
@@ -680,8 +675,8 @@ Array elements are themselves sets — arrays of unique, comparable elements. Un
     "_array": {
         "_set": {
             "_set_scalar": {
-                "_set_type": "_type_string_enum",
-                "_kind": ["ISO_639_3"]
+                "_type_scalar_set": "_type_enum",
+                "_kind_enum": ["ISO_639_3"]
             }
         }
     }
@@ -692,13 +687,13 @@ Array elements are themselves sets — arrays of unique, comparable elements. Un
 
 **`_tuple`**
 
-Array elements are themselves tuples — ordered lists with positionally-typed elements. Each element's type is defined by the corresponding position in `_tuple_types`. See the [`_tuple`](#_tuple) section for the full definition.
+Array elements are themselves tuples — ordered lists with positionally-typed elements. Each element's type is defined by the corresponding position in `_type_tuple`. See the [`_tuple`](#_tuple) section for the full definition.
 
 ```json
 {
     "_array": {
         "_tuple": {
-            "_tuple_types": [
+            "_type_tuple": [
                 "ISO_3166_1_a2",
                 "chr_body_weight"
             ]
@@ -728,44 +723,34 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 ##### `_set_scalar`
 
-`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_set_type`** instead of `_type`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
+`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_type_scalar_set`** instead of `_type_scalar`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
 
 ###### `_set_scalar` properties
 
-`_set_scalar` follows the same rules as `_scalar`, with `_set_type` in place of `_type`. The same kind properties apply (`_kind_number`, `_kind_string`, `_kind_key`, `_kind_enum`). The range and unit properties are identical.
+`_set_scalar` follows the same rules as `_scalar`, with `_type_scalar_set` in place of `_type_scalar`. The `_kind_enum` and `_kind_object` companion properties apply where relevant. The range, unit, `_regexp`, and `_decimals` properties are identical.
 
-| Property               | Required                          | Description |
-|------------------------|-----------------------------------|-------------|
-| `_set_type`            | Yes                               | The data type of the set element. |
-| `_kind_number`         | Yes (if `_set_type` is `_type_number`) | Qualifies the numeric type. |
-| `_kind_string`         | No                                | Qualifies the string format; relevant to `_type_string`. |
-| `_kind_key`            | No                                | Constrains the term type the key may reference; relevant to `_type_key`. |
-| `_kind_enum`           | No                                | Constrains the controlled vocabulary; relevant to `_type_enum`. |
-| `_unit`                | No                                | Data unit, expressed as an enumeration element. |
-| `_unit-name`           | No                                | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
-| `_unit-symbol`         | No                                | Unit symbol, used when `_unit` is absent. |
-| `_regexp`              | No                                | Regular expression; only valid when `_kind_string` is absent. |
-| `_decimals`            | No                                | Number of decimals to display; relevant to `_kind_number_float` only. |
-| `_valid-range`         | No                                | Valid numeric range for the value. |
-| `_valid-range_string`  | No                                | Valid string range for the value. |
-| `_normal-range`        | No                                | Normal numeric range for the value. |
-| `_normal-range_string` | No                                | Normal string range for the value. |
+| Property               | Required | Description |
+|------------------------|----------|-------------|
+| `_type_scalar_set`     | Yes      | The data type of the set element. |
+| `_kind_enum`           | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
+| `_unit`                | No       | Data unit, expressed as an enumeration element. |
+| `_unit-name`           | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
+| `_unit-symbol`         | No       | Unit symbol, used when `_unit` is absent. |
+| `_regexp`              | No       | Regular expression; relevant to `_type_string` only. |
+| `_decimals`            | No       | Number of decimals to display; relevant to `_type_number` and `_type_number_float` only. |
+| `_valid-range`         | No       | Valid numeric range for the value. |
+| `_valid-range_string`  | No       | Valid string range for the value. |
+| `_normal-range`        | No       | Normal numeric range for the value. |
+| `_normal-range_string` | No       | Normal string range for the value. |
 
-###### `_set_type` enumeration
+###### `_type_scalar_set` enumeration
 
-`_set_type` accepts the same values as `_type` except for non-comparable types:
+`_type_scalar_set` is a bridge-graph subset of `_type_scalar`. It accepts all `_type_scalar` values **except**:
 
-| Value                  | Description |
-|------------------------|-------------|
-| `_type_boolean`        | A true/false boolean value. |
-| `_type_number`         | A number; `_kind_number` is required. |
-| `_type_string`         | A UTF-8 string; `_kind_string` optionally qualifies the format. |
-| `_type_key`            | A string representing the `_key` of a document. |
-| `_type_handle`         | A string containing the `_id` of an ArangoDB document. |
-| `_type_enum`           | A string representing the `_gid` of an enumeration element. |
-| `_type_timestamp`      | An integer representing a Unix timestamp. |
+- `_type_string_Markdown`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_string_regexp` — display/markup strings not meaningful as set keys.
+- `_type_object`, `_type_struct`, `_type_object_GeoJSON` — non-comparable; set uniqueness cannot be enforced.
 
-`_type_struct`, `_type_object`, and `_type_object_GeoJSON` are excluded because objects are not comparable and cannot be tested for uniqueness.
+Accepted: `_type_boolean`, all `_type_number*` types, all remaining `_type_string*` types (generic, URI, HEX, email, date, time, date-time, YMD, Hostname, IPv4, IPv6), all `_type_key*` types, `_type_handle`, `_type_enum`, and `_type_timestamp`.
 
 The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
 
@@ -777,7 +762,7 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
             "_max-items": 5
         },
         "_set_scalar": {
-            "_set_type": "_type_enum",
+            "_type_scalar_set": "_type_enum",
             "_kind_enum": ["ISO_639_3"]
         }
     }
@@ -788,25 +773,25 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
 
 #### `_tuple`
 
-`_tuple` is an object property that defines and documents an ordered list in which each element may have a different data type. Unlike `_array` and `_set`, which apply a single type uniformly to all elements, a tuple is **positional**: the type at index *n* in `_tuple_types` applies to the value at index *n* in the tuple array.
+`_tuple` is an object property that defines and documents an ordered list in which each element may have a different data type. Unlike `_array` and `_set`, which apply a single type uniformly to all elements, a tuple is **positional**: the type at index *n* in `_type_tuple` applies to the value at index *n* in the tuple array.
 
 ##### `_tuple` properties
 
-| Property       | Required | Description |
-|----------------|----------|-------------|
-| `_tuple_types` | Yes      | Ordered list of descriptor `_gid`s defining the data type of each tuple position. |
-| `_elements`    | No       | Minimum and maximum number of elements the tuple may contain. |
+| Property      | Required | Description |
+|---------------|----------|-------------|
+| `_type_tuple` | Yes      | Ordered list of descriptor `_gid`s defining the data type of each tuple position. |
+| `_elements`   | No       | Minimum and maximum number of elements the tuple may contain. |
 
-##### `_tuple_types`
+##### `_type_tuple`
 
-`_tuple_types` is an array of descriptor `_gid`s. The type definition for each tuple position is **not written inline**: each entry is the `_gid` of a descriptor term, and it is that term's `_data` section that defines the expected type for the corresponding position. Order is significant: position *n* in `_tuple_types` governs position *n* in the tuple value.
+`_type_tuple` is an array of descriptor `_gid`s. The type definition for each tuple position is **not written inline**: each entry is the `_gid` of a descriptor term, and it is that term's `_data` section that defines the expected type for the corresponding position. Order is significant: position *n* in `_type_tuple` governs position *n* in the tuple value.
 
 This indirection means that tuple positions reuse existing descriptor definitions from the dictionary rather than duplicating type information. The type of a tuple element is fully resolved by looking up the referenced descriptor and reading its `_data` section.
 
 ```json
 {
     "_tuple": {
-        "_tuple_types": [
+        "_type_tuple": [
             "ISO_3166_1_a2",
             "chr_birth_date",
             "chr_body_weight"
@@ -817,22 +802,22 @@ This indirection means that tuple positions reuse existing descriptor definition
 
 ##### `_elements`
 
-`_elements` constrains how many elements a tuple value may contain. The length of `_tuple_types` acts as an absolute upper bound: neither `_min-items` nor `_max-items` may exceed it.
+`_elements` constrains how many elements a tuple value may contain. The length of `_type_tuple` acts as an absolute upper bound: neither `_min-items` nor `_max-items` may exceed it.
 
-- If `_elements` is **omitted**, the tuple must contain exactly as many elements as `_tuple_types`.
+- If `_elements` is **omitted**, the tuple must contain exactly as many elements as `_type_tuple`.
 - If `_elements` is **present**, the tuple length is governed by its sub-properties.
 
 | Property     | Required | Description |
 |--------------|----------|-------------|
-| `_min-items` | No       | Minimum number of elements (inclusive). Cannot exceed the length of `_tuple_types`. If omitted, the minimum is zero. |
-| `_max-items` | No       | Maximum number of elements (inclusive). Cannot exceed the length of `_tuple_types`. If omitted, the maximum equals the length of `_tuple_types`. |
+| `_min-items` | No       | Minimum number of elements (inclusive). Cannot exceed the length of `_type_tuple`. If omitted, the minimum is zero. |
+| `_max-items` | No       | Maximum number of elements (inclusive). Cannot exceed the length of `_type_tuple`. If omitted, the maximum equals the length of `_type_tuple`. |
 
-When the tuple contains fewer elements than `_tuple_types`, the types for the trailing positions are simply not applied — the tuple is treated as a prefix of the full type sequence.
+When the tuple contains fewer elements than `_type_tuple`, the types for the trailing positions are simply not applied — the tuple is treated as a prefix of the full type sequence.
 
 ```json
 {
     "_tuple": {
-        "_tuple_types": [
+        "_type_tuple": [
             "ISO_3166_1_a2",
             "chr_birth_date",
             "chr_body_weight"
@@ -860,32 +845,47 @@ When the tuple contains fewer elements than `_tuple_types`, the types for the tr
 
 ##### `_dict_key`
 
-`_dict_key` is a structure that defines the type of the dictionary key. Because dictionary keys must be compatible with object property names, the permitted types are restricted to string-compatible variants. It mirrors the structure of `_scalar` but uses `_type_key` instead of `_type`, and omits non-string types.
+`_dict_key` is a structure that defines the type of the dictionary key. It is structurally parallel to `_scalar` but uses **`_dict_key_type`** as the required type property. Because dictionary keys must be string-compatible object property names, only string-compatible types are accepted.
 
 ###### `_dict_key` properties
 
-| Property      | Required | Description |
-|---------------|----------|-------------|
-| `_type_key`   | Yes      | The data type of the dictionary key. |
-| `_kind_key`   | No       | Constrains the term type the key may reference; relevant to `_type_key`. |
-| `_kind_enum`  | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
-| `_unit`       | No       | Key unit, expressed as an enumeration element. |
-| `_unit-name`  | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
-| `_unit-symbol`| No       | Unit symbol, used when `_unit` is absent. |
-| `_regexp`     | No       | Regular expression to validate the key format; only valid when `_kind_string` is absent. |
+| Property        | Required | Description |
+|-----------------|----------|-------------|
+| `_dict_key_type`| Yes      | The data type of the dictionary key. |
+| `_kind_enum`    | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
+| `_unit`         | No       | Key unit, expressed as an enumeration element. |
+| `_unit-name`    | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
+| `_unit-symbol`  | No       | Unit symbol, used when `_unit` is absent. |
+| `_regexp`       | No       | Regular expression to validate the key format; relevant to `_type_string` only. |
 
-###### `_type_key` enumeration
+###### `_dict_key_type` enumeration
 
-`_type_key` accepts only string-compatible types, as dictionary keys must be valid object property names:
+`_dict_key_type` is a bridge-graph subset of `_type_scalar_set`, further restricted to string-compatible types that can serve as valid object property names. Numbers and `_type_timestamp` are excluded. `_dict_key_type` ⊂ `_type_scalar_set` ⊂ `_type_scalar`.
 
-| Value          | Description |
-|----------------|-------------|
-| `_type_string` | A generic UTF-8 string. |
-| `_type_key`    | A string representing the `_key` of a term. |
-| `_type_handle` | A string representing the `_id` of an ArangoDB document. |
-| `_type_enum`   | A string representing the `_gid` of an enumeration element. |
+| Value                         | Description |
+|-------------------------------|-------------|
+| `_type_string`                | A generic UTF-8 string. |
+| `_type_string_URI`            | Uniform Resource Identifier. |
+| `_type_string_HEX`            | Hexadecimal string. |
+| `_type_string_email`          | Email address. |
+| `_type_string_date`           | Date (`YYYY-MM-DD`). |
+| `_type_string_time`           | Time (`HH:MM:SS`). |
+| `_type_string_date-time`      | Date-time (`YYYY-MM-DDTHH:MM:SS`). |
+| `_type_string_YMD`            | Partial/full date in YYYYMMDD format. |
+| `_type_string_Hostname`       | Internet hostname. |
+| `_type_string_IPv4`           | IPv4 address. |
+| `_type_string_IPv6`           | IPv6 address. |
+| `_type_key`                   | A string representing the `_key` of a document. |
+| `_type_key_term`              | A key that must reference any term. |
+| `_type_key_term_enum`         | A key that must reference an enumeration root. |
+| `_type_key_term_enum_element` | A key that must reference an enumeration element. |
+| `_type_key_term_descriptor`   | A key that must reference a descriptor. |
+| `_type_key_term_object`       | A key that must reference an object definition term. |
+| `_type_key_term_predicate`    | A key that must reference a predicate term. |
+| `_type_handle`                | A string representing the `_id` of an ArangoDB document. |
+| `_type_enum`                  | A string representing the `_gid` of an enumeration element. |
 
-The semantics of each type, and of the kind properties, are identical to those described in the [`_scalar`](#_scalar) section.
+The semantics of each type are identical to those described in the [`_scalar`](#_scalar) section.
 
 ##### `_dict_value`
 
@@ -895,12 +895,12 @@ The semantics of each type, and of the kind properties, are identical to those d
 {
     "_dict": {
         "_dict_key": {
-            "_type_key": "_type_enum",
+            "_dict_key_type": "_type_enum",
             "_kind_enum": ["ISO_639_3"]
         },
         "_dict_value": {
             "_scalar": {
-                "_type": "_type_string"
+                "_type_scalar": "_type_string"
             }
         }
     }
@@ -1027,7 +1027,7 @@ For **conditional rule objects** in `_path_data` (attached to `_predicate_value-
 {
     "_rule": {
         "_closed": true,
-        "_recommended": ["_type", "_kind", "_format", "_unit", "_unit-name", "_unit-symbol", "_regexp", "_decimals", "_valid-range", "_normal-range"]
+        "_recommended": ["_type_scalar", "_kind_enum", "_kind_object", "_unit", "_unit-name", "_unit-symbol", "_regexp", "_decimals", "_valid-range", "_normal-range"]
     }
 }
 ```
@@ -1115,7 +1115,7 @@ Graphs are implemented using ArangoDB **edge collection** documents. Each edge d
 
 | Property     | Type                             | Required | Default | Description |
 |--------------|----------------------------------|----------|---------|-------------|
-| `_predicate` | `_type_string_enum`              | Yes      | —       | The relationship predicate; qualifies the kind of relationship between `_from` and `_to`. |
+| `_predicate` | `_type_enum`                     | Yes      | —       | The relationship predicate; qualifies the kind of relationship between `_from` and `_to`. |
 | `_path`      | Set of `_type_handle`     | Yes      | —       | The set of graph root handles whose traversal passes through this edge. |
 | `_path_data` | Open dictionary (`_type_struct`) | Yes      | `{}`    | Data associated with the edge, scoped by path or node context. |
 
@@ -1361,33 +1361,35 @@ Conditional rules are constraints stored in `_path_data` on graph edges. Two pre
 ```json
 {
     "_key": "<edge hash>",
-    "_from": "terms/_type_string_enum",
+    "_from": "terms/_type_enum",
     "_predicate": "_predicate_value-of",
-    "_to": "terms/_type",
+    "_to": "terms/_type_scalar",
     "_path": ["terms/_scalar"],
     "_path_data": {
         "terms/_scalar": {
+            "_closed": true,
             "_required": {
-                "_selection-descriptors_any": ["_kind"]
-            }
+                "_selection-descriptors_all": ["_type_scalar"]
+            },
+            "_recommended": ["_kind_enum"]
         }
     }
 }
 ```
 
-This edge states: within a `_scalar` structure, when `_type` holds the value `_type_string_enum`, the property `_kind` becomes required.
+This edge states: within a `_scalar` structure, when `_type_scalar` holds the value `_type_enum`, the property `_kind_enum` becomes permitted (and recommended).
 
-`_from` (`_type_string_enum`) is already part of the edge's primary key (`_from`/`_predicate`/`_to`), so it is not repeated as a `_path_data` key. The `_path_data` key is the path root handle (`terms/_scalar`), which identifies the structural context — consistent with how `_path_data` is keyed throughout the graph model.
+`_from` (`_type_enum`) is already part of the edge's primary key (`_from`/`_predicate`/`_to`), so it is not repeated as a `_path_data` key. The `_path_data` key is the path root handle (`terms/_scalar`), which identifies the structural context — consistent with how `_path_data` is keyed throughout the graph model.
 
-**Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_string_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_set_scalar` (path root `terms/_set_scalar`). Each carries its own `_path_data` with context-appropriate rules.
+**Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_set_scalar` (path root `terms/_set_scalar`). Each carries its own `_path_data` with context-appropriate rules.
 
 **Precedence**: a closed conditional rule (`_closed: true`) replaces the base `_recommended` entirely, which can restrict the effective allowed set to fewer properties than the base rule permits. An open conditional rule (`_closed: false`) accumulates — it adds to `_required` and unions with `_recommended`. Neither can lift a `_banned` constraint. If a conditional rule's `_path_data` requires a property listed in the structure's `_rule._banned`, this is a conflict detectable at edge insertion time.
 
 **Rule graph self-sufficiency**: the rule graph is designed to be the sole source of truth for both validation and UI behaviour — no out-of-graph knowledge about type semantics should be needed. This has a direct consequence for `_predicate_value-of` edge authoring:
 
-- **Create an edge for every value that restricts the effective property set**, even if the only consequence is that fewer properties are allowed than the base rule permits. A closed conditional edge for `_type_boolean` with `_recommended: []` signals "only `_type` is permitted here" and allows the validator and UI to detect and clean up orphaned properties from a previous value context.
+- **Create an edge for every value that restricts the effective property set**, even if the only consequence is that fewer properties are allowed than the base rule permits. A closed conditional edge for `_type_boolean` with an empty `_recommended` signals "only `_type_scalar` is permitted here" and allows the validator and UI to detect and clean up orphaned properties from a previous value context.
 - **Omit an edge only when the value truly changes nothing** relative to the base rule — no properties become required, no properties become banned, and the allowed set is unchanged. For `_type_boolean` this means an edge IS needed; for a value with the same allowed set as the base rule, it is not.
-- **On value change** (e.g. the user changes `_type` from `_type_string` to `_type_boolean`): the effective schema before and after the change is computed from the graph (base rule + presence rules + old/new value rule), the diff identifies orphaned properties, and the UI offers to remove them rather than silently deleting them.
+- **On value change** (e.g. the user changes `_type_scalar` from `_type_string` to `_type_boolean`): the effective schema before and after the change is computed from the graph (base rule + presence rules + old/new value rule), the diff identifies orphaned properties, and the UI offers to remove them rather than silently deleting them.
 
 #### Graph Traversal
 

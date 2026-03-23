@@ -6,11 +6,11 @@ Enumeration
 
 **`_definition`**
 
-Scalar data type for a string representing the `_gid` of an enumeration element. The optional companion property `_kind_enum` restricts the controlled vocabularies from which the value must be drawn.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a string representing the `_gid` of an enumeration element. The optional companion property [`_kind_enum`](_kind_enum.md) restricts the controlled vocabularies from which the value must be drawn.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_enum`, the descriptor value is a string that must be the [`_gid`](_gid.md) of a valid enumeration *element* — a term reachable from an enumeration root by following [`_predicate_enum-of`](_predicate_enum-of.md) edges. The optional companion property [`_kind_enum`](_kind_enum.md) is a set of enumeration root `_gid`s that restricts the accepted vocabularies; the value must belong to at least one of the listed roots. When `_kind_enum` is absent, the value may be any enumeration element from any controlled vocabulary in the dictionary.
+When [`_type_scalar`](_type_scalar.md) is `_type_enum`, the descriptor value is a string that must be the [`_gid`](_gid.md) of a valid enumeration *element* — a term reachable from an enumeration root by following [`_predicate_enum-of`](_predicate_enum-of.md) edges. The optional companion property [`_kind_enum`](_kind_enum.md) is a set of enumeration root `_gid`s that restricts the accepted vocabularies; the value must belong to at least one of the listed roots. When [`_kind_enum`](_kind_enum.md) is absent, the value may be any enumeration element from any controlled vocabulary in the dictionary.
 
 **`_examples`**
 
@@ -19,7 +19,7 @@ When [`_type`](_type.md) is set to `_type_enum`, the descriptor value is a strin
 ```json
 {
 	"_scalar": {
-		"_type": "_type_enum",
+		"_type_scalar": "_type_enum",
 		"_kind_enum": ["ISO_639_3"]
 	}
 }
@@ -34,7 +34,7 @@ Valid values are elements of the `ISO_639_3` vocabulary, such as `ISO_639_3_eng`
 ```json
 {
 	"_scalar": {
-		"_type": "_type_enum",
+		"_type_scalar": "_type_enum",
 		"_kind_enum": ["ISO_639_3", "ISO_639_1"]
 	}
 }
@@ -49,12 +49,10 @@ Both `ISO_639_3_eng` and `ISO_639_1_en` are valid; the value need only belong to
 ```json
 {
 	"_scalar": {
-		"_type": "_type_enum"
+		"_type_scalar": "_type_enum"
 	}
 }
 ```
-
-No vocabulary constraint. Any term that is an enumeration element in any controlled vocabulary is accepted.
 
 ---
 

@@ -10,9 +10,9 @@ The exclusive lower bound of a string range. Only string values strictly greater
 
 **`_description`**
 
-`_min-range-exclusive_string` is a property of [`_range_string`](_range_string.md) objects. It defines the lower bound of the string interval, **excluding** the bound value itself. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects.
+[`_min-range-exclusive_string`](_min-range-exclusive_string.md) is a property of [`_range_string`](_range_string.md) objects. It defines the lower bound of the string interval, **excluding** the bound value itself. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects.
 
-At most one of `_min-range-exclusive_string` and [`_min-range-inclusive_string`](_min-range-inclusive_string.md) may be present in the same range object.
+At most one of [`_min-range-exclusive_string`](_min-range-exclusive_string.md) and [`_min-range-inclusive_string`](_min-range-inclusive_string.md) may be present in the same range object.
 
 ```json
 {
@@ -44,7 +44,7 @@ Strings that sort as `"19491231"` or earlier are out of range; `"1950"` and late
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

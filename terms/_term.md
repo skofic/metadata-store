@@ -68,7 +68,7 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
     "_kind_object" : [
       "_term"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

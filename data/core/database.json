@@ -16,11 +16,7 @@
 				"_type": "_type_handle"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -39,11 +35,7 @@
 				"_type": "_type_string"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -62,11 +54,7 @@
 				"_type": "_type_key"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	},
 	
 	{
@@ -86,11 +74,7 @@
 				"_type": "_type_handle"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -109,10 +93,6 @@
 				"_type": "_type_handle"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	}
 ]

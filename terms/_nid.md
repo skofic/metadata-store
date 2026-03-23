@@ -37,7 +37,7 @@ Any term's [global identifier](_gid.md) may serve as a namespace for other terms
 }
 ```
 
-This term, with [global identifier](_gid.md) `ISO_3166_1_ITA`, represents the ISO country code for [Italy](`ISO_3166_1_ITA`.md). Its [local identifier](_lid.md) is `ITA`, its namespace is `ISO_3166_1`, and its `_regexp` validates that all local identifiers in this namespace consist of exactly three uppercase letters. The namespace `ISO_3166_1` is itself composed of chained namespaces:
+This term, with [global identifier](_gid.md) `ISO_3166_1_ITA`, represents the ISO country code for [Italy](`ISO_3166_1_ITA`.md). Its [local identifier](_lid.md) is `ITA`, its namespace is `ISO_3166_1`, and its [`_regexp`](_regexp.md) validates that all local identifiers in this namespace consist of exactly three uppercase letters. The namespace `ISO_3166_1` is itself composed of chained namespaces:
 
 - `ISO`: The *[International Standards Organisation](ISO.md)* root namespace (no parent namespace).
 - `ISO_3166`: The namespace for *[codes for the representation of names of countries and their subdivisions](ISO_3166.md)*, with `ISO` as its namespace.
@@ -75,10 +75,7 @@ This term has no namespace — it is itself the top-level `ISO` namespace, with 
 ```json
 {
   "_scalar" : {
-    "_kind_key" : [
-      "_kind_key_term"
-    ],
-    "_type" : "_type_key"
+    "_type_scalar" : "_type_key_term"
   }
 }
 ```

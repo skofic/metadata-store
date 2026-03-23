@@ -10,7 +10,7 @@ An object containing one or more descriptor selection structures that express wh
 
 **`_description`**
 
-`_required` is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor `_gid`s. When multiple structures are present, all of them must be satisfied simultaneously.
+[`_required`](_required.md) is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor [`_gid`](_gid.md)s. When multiple structures are present, all of them must be satisfied simultaneously.
 
 The six available selection structures are:
 
@@ -21,20 +21,20 @@ The six available selection structures are:
 - [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute an element.
 - [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute an element.
 
-`_required` is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.
+[`_required`](_required.md) is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.
 
 ```json
 {
 	"_rule": {
 		"_required": {
 			"_selection-descriptors_all": ["_lid"],
-			"_selection-descriptors_one": ["_type_boolean", "_type_number", "_type_string"]
+			"_selection-descriptors_one": ["_scalar", "_array", "_set", "_tuple", "_dict"]
 		}
 	}
 }
 ```
 
-`_lid` must always be present; exactly one of the three type descriptors must be present.
+[`_lid`](_lid.md) must always be present; exactly one of the five data shape descriptors must be present.
 
 ---
 
@@ -59,7 +59,7 @@ The six available selection structures are:
     "_kind_object" : [
       "_required"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

@@ -10,9 +10,9 @@ The inclusive upper bound of a numeric range. Only values less than or equal to 
 
 **`_description`**
 
-`_max-range-inclusive` is a property of [`_range`](_range.md) objects. It defines the upper bound of the numeric interval, **including** the bound value itself (≤). It may appear in [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) objects.
+[`_max-range-inclusive`](_max-range-inclusive.md) is a property of [`_range`](_range.md) objects. It defines the upper bound of the numeric interval, **including** the bound value itself (≤). It may appear in [`_valid-range`](_valid-range.md) and [`_normal-range`](_normal-range.md) objects.
 
-At most one of `_max-range-inclusive` and [`_max-range-exclusive`](_max-range-exclusive.md) may be present in the same range object.
+At most one of [`_max-range-inclusive`](_max-range-inclusive.md) and [`_max-range-exclusive`](_max-range-exclusive.md) may be present in the same range object.
 
 ```json
 {
@@ -45,11 +45,7 @@ Values must lie within the closed interval [0.0, 100.0].
 ```json
 {
   "_scalar" : {
-    "_kind_number" : [
-      "_kind_number_float",
-      "_kind_number_integer"
-    ],
-    "_type" : "_type_number"
+    "_type_scalar" : "_type_number"
   }
 }
 ```

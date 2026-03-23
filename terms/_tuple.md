@@ -6,22 +6,24 @@ Tuple
 
 **`_definition`**
 
-The shape property for an ordered list of elements where each position may have a different type. The type at each position is determined by the descriptor referenced at the corresponding index of the types list.
+The shape property for an ordered list of elements where each position may have a different type. The required [`_type_tuple`](_type_tuple.md) property is an ordered array of descriptor global identifiers; the type at position n is determined by the descriptor at index n.
 
 **`_description`**
 
-A *tuple* is an *ordered list* in which *each element* may have a *different type* depending on its *position*. It is one of the top-level data shapes alongside [scalar](_scalar.md), [array](_array.md), [set](_set.md), and [dictionary](_dict.md).
+A *tuple* is an *ordered list* in which each element may have a *different type* depending on its *position*. It differs from [`_array`](_array.md) and [`_set`](_set.md), which apply a single type uniformly to all elements.
 
-A tuple requires the [_tuple_types](_tuple_types.md) property: an ordered array of descriptor [global identifiers](_gid.md) that defines the expected type at each position. The type at position *n* is resolved by looking up the descriptor at index *n* in `_tuple_types` and reading its `_data` section.
+The required [`_type_tuple`](_type_tuple.md) property contains an ordered array of descriptor [global identifiers](_gid.md). The type at position *n* is resolved by looking up the descriptor at index *n* and reading its [`_data`](_data.md) section. This indirection means tuple positions reuse existing descriptor definitions rather than duplicating type information inline.
 
-The optional [_elements](_elements.md) property constrains how many elements a tuple value may contain. The [minimum](_min-items.md) must be at least 1; the [maximum](_max-items.md) cannot exceed the length of `_tuple_types`. When `_elements` is omitted, the tuple must contain exactly as many elements as there are entries in `_tuple_types`.
+The optional [`_elements`](_elements.md) property constrains how many elements a tuple value may contain. The length of [`_type_tuple`](_type_tuple.md) is the absolute upper bound; neither [`_min-items`](_min-items.md) nor [`_max-items`](_max-items.md) may exceed it. When [`_elements`](_elements.md) is omitted, the tuple must contain exactly as many elements as [`_type_tuple`](_type_tuple.md) has entries. When fewer elements are present, the trailing positions are not applied — the tuple is treated as a prefix of the full type sequence.
 
 **`_examples`**
+
+A coordinate pair — exactly two elements:
 
 ```json
 {
 	"_tuple": {
-		"_tuple_types": [
+		"_type_tuple": [
 			"longitude_decimal",
 			"latitude_decimal"
 		]
@@ -29,9 +31,9 @@ The optional [_elements](_elements.md) property constrains how many elements a t
 }
 ```
 
-This example describes a pair of coordinates where the first element is a decimal longitude and the second is a decimal latitude. The value must contain exactly two elements.
 
 
+A location record with an optional surface area — three required elements, fourth optional:
 
 ```json
 {
@@ -40,17 +42,15 @@ This example describes a pair of coordinates where the first element is a decima
 			"_min-items": 3,
 			"_max-items": 4
 		},
-		"_tuple_types": [
+		"_type_tuple": [
 			"latitude_DMS",
 			"longitude_DMS",
-			"geodetic-datum",
+			"geodetic_datum",
 			"area"
 		]
 	}
 }
 ```
-
-This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitude, a geodetic datum, and an optional surface area. The first three elements are required; the fourth is optional.
 
 ---
 
@@ -75,7 +75,7 @@ This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitu
     "_kind_object" : [
       "_tuple"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```
@@ -90,7 +90,7 @@ This example describes a tuple of 3 or 4 elements: a DMS latitude, a DMS longitu
   ],
   "_required" : {
     "_selection-descriptors_one" : [
-      "_tuple_types"
+      "_type_tuple"
     ]
   }
 }

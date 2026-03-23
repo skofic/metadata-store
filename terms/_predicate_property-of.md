@@ -16,7 +16,7 @@ This [predicate](_predicate.md) links a *property descriptor* (source) to the *o
 
 ```json
 {
-	"_from": "terms/_type",
+	"_from": "terms/_type_scalar",
 	"_predicate": "_predicate_property-of",
 	"_to": "terms/_scalar",
 	"_path": ["terms/_scalar"],
@@ -24,7 +24,7 @@ This [predicate](_predicate.md) links a *property descriptor* (source) to the *o
 }
 ```
 
-This [edge](_edge.md) declares [`_type`](_type.md) as a property of the [`_scalar`](_scalar.md) object definition. The `_scalar` root is the graph context: any `_predicate_value-of` edges whose `_path` contains `terms/_scalar` can then attach conditional rules that activate when `_type` holds a specific value.
+This [edge](_edge.md) declares [`_type_scalar`](_type_scalar.md) as a property of the [`_scalar`](_scalar.md) object definition. The [`_scalar`](_scalar.md) root is the graph context: any [`_predicate_value-of`](_predicate_value-of.md) edges whose [`_path`](_path.md) contains `terms/_scalar` can then attach conditional rules that activate when [`_type_scalar`](_type_scalar.md) holds a specific value.
 
 ---
 

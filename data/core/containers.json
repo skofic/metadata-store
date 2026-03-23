@@ -24,7 +24,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_term"
 				]
@@ -52,13 +52,7 @@
 				"_key"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_namespace",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -82,7 +76,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_term_descriptor"
 				]
@@ -110,12 +104,7 @@
 				"_key"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -139,7 +128,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_term_object"
 				]
@@ -167,12 +156,7 @@
 				"_key"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -199,7 +183,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_edge"
 				]
@@ -230,12 +214,7 @@
 				"_predicate"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -259,7 +238,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_code"
 				]
@@ -292,12 +271,7 @@
 				"_gid"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -321,7 +295,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_info"
 				]
@@ -345,12 +319,7 @@
 				"_methods"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -377,7 +346,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_data"
 				]
@@ -395,12 +364,7 @@
 				]
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -424,7 +388,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": [
 					"_rule"
 				]
@@ -447,12 +411,7 @@
 				"_default-value"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor",
-				"_kind_term_object"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -479,7 +438,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object",
+				"_type_scalar": "_type_object",
 				"_kind_object": ["_domn"]
 			}
 		},
@@ -489,11 +448,7 @@
 				"_kind_term"
 			]
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	},
 	{
 		"_code": {
@@ -520,13 +475,9 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_object"
+				"_type_scalar": "_type_object"
 			}
 		},
-		"_domn": {
-			"_kind_term": [
-				"_kind_term_descriptor"
-			]
-		}
+		"_domn": {}
 	}
 ]

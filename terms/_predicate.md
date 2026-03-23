@@ -12,7 +12,7 @@ Type or classification of the relationship between two nodes in an edge.
 
 A relationship predicate qualifies the *type*, *nature*, or *class* of a directed relationship between two nodes in an [edge](_edge.md). The combination of [source](_from.md), predicate, and [destination](_to.md) must be unique — no two edges may share the same triple.
 
-The predicate value is the `_key` of a term that identifies the relationship type. This term is itself the *root* of a controlled vocabulary enumerating the dictionary's built-in predicates. Predicates are grouped into four categories:
+The predicate value is the [`_key`](_key.md) of a term that identifies the relationship type. This term is itself the *root* of a controlled vocabulary enumerating the dictionary's built-in predicates. Predicates are grouped into four categories:
 
 - **[Functional](_predicate_functional.md)**: carry domain meaning and are followed during graph traversal — [`_predicate_enum-of`](_predicate_enum-of.md), [`_predicate_property-of`](_predicate_property-of.md), [`_predicate_field-of`](_predicate_field-of.md), [`_predicate_value-of`](_predicate_value-of.md).
 - **[Structural](_predicate_structural.md)**: reserved for dataset-level dependency graphs — [`_predicate_required-by`](_predicate_required-by.md), [`_predicate_banned-by`](_predicate_banned-by.md), [`_predicate_recommended-by`](_predicate_recommended-by.md).
@@ -39,10 +39,10 @@ The predicate value is the `_key` of a term that identifies the relationship typ
 ```json
 {
   "_scalar" : {
-    "_kind_key" : [
-      "_kind_key_term"
+    "_kind_enum" : [
+      "_predicate"
     ],
-    "_type" : "_type_key"
+    "_type_scalar" : "_type_enum"
   }
 }
 ```

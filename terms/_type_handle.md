@@ -6,11 +6,19 @@ Document Handle
 
 **`_definition`**
 
-Scalar data type for a string representing the `_id` of an ArangoDB document, in `<collection>/<_key>` form. No companion `_kind` property is expected.
+Enumeration element of [`_type_scalar`](_type_scalar.md) for a string representing the `_id` of an ArangoDB document, in `<collection>/<_key>` form. Unlike [`_type_key`](_type_key.md), a handle includes the collection name.
 
 **`_description`**
 
-When [`_type`](_type.md) is set to `_type_handle`, the descriptor value is a string in ArangoDB document handle format: `<collection name>/<_key>` (e.g. `terms/ISO_639_3_eng`). Unlike [`_type_key`](_type_key.md), a handle identifies both the collection and the document within it. No companion qualifier, unit, range, or format constraint is applicable.
+When [`_type_scalar`](_type_scalar.md) is `_type_handle`, the descriptor value is a string in ArangoDB document handle format: `<collection name>/<_key>` (e.g. `terms/ISO_639_3_eng`). Unlike [`_type_key`](_type_key.md), a handle identifies both the collection and the document within it. No companion properties are applicable.
+
+```json
+{
+	"_scalar": {
+		"_type_scalar": "_type_handle"
+	}
+}
+```
 
 **`_examples`**
 
@@ -19,7 +27,7 @@ When [`_type`](_type.md) is set to `_type_handle`, the descriptor value is a str
 ```json
 {
 	"_scalar": {
-		"_type": "_type_handle"
+		"_type_scalar": "_type_handle"
 	}
 }
 ```

@@ -41,7 +41,7 @@ This property is a plain string with no language tag: it records the name as it 
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

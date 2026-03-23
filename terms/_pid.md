@@ -29,7 +29,7 @@ Unlike [official identifiers](_aid.md), provider identifiers are not required to
 }
 ```
 
-`ITA` is the [local identifier](_lid.md), `ITA` and `IT` are both [official](_aid.md) ISO country codes, while `I` is the code for Italy that data providers use internally, so it appears in `_pid`.
+`ITA` is the [local identifier](_lid.md), `ITA` and `IT` are both [official](_aid.md) ISO country codes, while `I` is the code for Italy that data providers use internally, so it appears in [`_pid`](_pid.md).
 
 ---
 
@@ -52,7 +52,7 @@ Unlike [official identifiers](_aid.md), provider identifiers are not required to
 {
   "_set" : {
     "_set_scalar" : {
-      "_set_type" : "_type_string"
+      "_type_scalar_set" : "_type_string"
     }
   }
 }

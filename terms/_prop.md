@@ -103,7 +103,7 @@ The properties section, `_prop`, provides the data associated with the *country*
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

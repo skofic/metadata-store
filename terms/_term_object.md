@@ -37,7 +37,7 @@ Any descriptor can reference an object definition term via the `_kind` property 
     "_kind_object" : [
       "_term_object"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

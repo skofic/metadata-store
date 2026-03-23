@@ -6,11 +6,11 @@ Valid String Range
 
 **`_definition`**
 
-The hard boundaries of acceptable string values. Any value falling outside this range is considered an error and must be rejected. The range is expressed as an object conforming to the `_range_string` schema, using lexicographic comparison.
+The hard boundaries of acceptable string values. Any value falling outside this range is considered an error and must be rejected. The range is expressed as an object conforming to the [`_range_string`](_range_string.md) schema, using lexicographic comparison.
 
 **`_description`**
 
-`_valid-range_string` defines the interval of values considered correct for a string descriptor. Values outside this interval are **errors**. Comparison is lexicographic, so the format of the string must be chosen such that lexicographic order corresponds to the intended semantic order.
+[`_valid-range_string`](_valid-range_string.md) defines the interval of values considered correct for a string descriptor. Values outside this interval are **errors**. Comparison is lexicographic, so the format of the string must be chosen such that lexicographic order corresponds to the intended semantic order.
 
 The value is an object conforming to the [`_range_string`](_range_string.md) schema.
 
@@ -27,7 +27,7 @@ The value is an object conforming to the [`_range_string`](_range_string.md) sch
 }
 ```
 
-Only two-letter uppercase strings from `AA` to `ZZ` are accepted. For date strings in YYYYMMDD format, use `_valid-range_string` with `_kind_object: ["_range_date"]` to apply date-specific bound properties.
+Only two-letter uppercase strings from `AA` to `ZZ` are accepted. Date strings in YYYYMMDD-family formats ([`_type_string_YMD`](_type_string_YMD.md), [`_type_string_date`](_type_string_date.md), [`_type_string_date-time`](_type_string_date-time.md)) can be range-bounded with [`_valid-range_string`](_valid-range_string.md) directly, since their lexicographic order matches chronological order.
 
 ---
 
@@ -52,7 +52,7 @@ Only two-letter uppercase strings from `AA` to `ZZ` are accepted. For date strin
     "_kind_object" : [
       "_range_string"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

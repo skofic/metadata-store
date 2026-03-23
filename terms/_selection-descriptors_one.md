@@ -10,7 +10,7 @@ A descriptor selection rule requiring that exactly one descriptor from the set i
 
 **`_description`**
 
-`_selection-descriptors_one` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, exactly one of the listed descriptors must be present; the others must be absent.
+[`_selection-descriptors_one`](_selection-descriptors_one.md) is a property of the [`_required`](_required.md) object. Its value is a set of descriptor [`_gid`](_gid.md)s. For the object to be valid, exactly one of the listed descriptors must be present; the others must be absent.
 
 This is a mutual exclusion with mandatory selection: one and only one of the group is chosen.
 
@@ -50,10 +50,7 @@ Exactly one of the two lower-bound properties must be present — not both, not 
 {
   "_set" : {
     "_set_scalar" : {
-      "_kind_key" : [
-        "_kind_key_term_descriptor"
-      ],
-      "_set_type" : "_type_key"
+      "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }
 }

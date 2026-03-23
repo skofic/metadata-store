@@ -12,7 +12,7 @@ The source descriptor must not appear in any dataset that contains the destinati
 
 This [predicate](_predicate.md) is a *structural predicate* reserved for *dataset-level dependency graphs*. It is not used to define term schemas — schema constraints are expressed in the [`_rule`](_rule.md) section and the [`_predicate_value-of`](_predicate_value-of.md) graph.
 
-A `_predicate_banned-by` edge states that the [source](_from.md) descriptor must not appear in any dataset that contains the [destination](_to.md) descriptor. This expresses a mutual exclusion between variables in a dataset — for example, two descriptors that measure the same quantity by incompatible methods.
+A [`_predicate_banned-by`](_predicate_banned-by.md) edge states that the [source](_from.md) descriptor must not appear in any dataset that contains the [destination](_to.md) descriptor. This expresses a mutual exclusion between variables in a dataset — for example, two descriptors that measure the same quantity by incompatible methods.
 
 ---
 

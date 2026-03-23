@@ -37,7 +37,7 @@ Descriptors are referenced by object schema terms to define which properties an 
     "_kind_object" : [
       "_term_descriptor"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

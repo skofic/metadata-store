@@ -10,9 +10,9 @@ The inclusive upper bound of a string range. Only string values less than or equ
 
 **`_description`**
 
-`_max-range-inclusive_string` is a property of [`_range_string`](_range_string.md) objects. It defines the upper bound of the string interval, **including** the bound value itself. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects.
+[`_max-range-inclusive_string`](_max-range-inclusive_string.md) is a property of [`_range_string`](_range_string.md) objects. It defines the upper bound of the string interval, **including** the bound value itself. It may appear in [`_valid-range_string`](_valid-range_string.md) and [`_normal-range_string`](_normal-range_string.md) objects.
 
-At most one of `_max-range-inclusive_string` and [`_max-range-exclusive_string`](_max-range-exclusive_string.md) may be present in the same range object.
+At most one of [`_max-range-inclusive_string`](_max-range-inclusive_string.md) and [`_max-range-exclusive_string`](_max-range-exclusive_string.md) may be present in the same range object.
 
 ```json
 {
@@ -45,7 +45,7 @@ String values after `"19991231"` are out of range.
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

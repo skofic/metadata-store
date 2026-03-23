@@ -42,7 +42,7 @@ Emoji are displayed alongside the term's textual label wherever it is rendered i
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

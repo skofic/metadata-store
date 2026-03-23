@@ -158,7 +158,7 @@ This example shows the *data definition* for a *descriptor* that can take *any d
     "_kind_object" : [
       "_data"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```

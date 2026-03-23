@@ -10,7 +10,7 @@ A descriptor selection rule requiring that at least one descriptor from the set 
 
 **`_description`**
 
-`_selection-descriptors_any` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, at least one of the listed descriptors must be present; having several from the set present is equally valid.
+[`_selection-descriptors_any`](_selection-descriptors_any.md) is a property of the [`_required`](_required.md) object. Its value is a set of descriptor [`_gid`](_gid.md)s. For the object to be valid, at least one of the listed descriptors must be present; having several from the set present is equally valid.
 
 This expresses an inclusive OR requirement: one or more, but at least one.
 
@@ -26,7 +26,7 @@ This expresses an inclusive OR requirement: one or more, but at least one.
 }
 ```
 
-At least one of `_title`, `_definition`, or `_description` must be present.
+At least one of [`_title`](_title.md), [`_definition`](_definition.md), or [`_description`](_description.md) must be present.
 
 ---
 
@@ -49,10 +49,7 @@ At least one of `_title`, `_definition`, or `_description` must be present.
 {
   "_set" : {
     "_set_scalar" : {
-      "_kind_key" : [
-        "_kind_key_term_descriptor"
-      ],
-      "_set_type" : "_type_key"
+      "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }
 }

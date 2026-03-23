@@ -6,24 +6,24 @@ Object Kind
 
 **`_definition`**
 
-Optional qualifier for the `_type_object` data type. When present, this set property lists the object definition terms — terms carrying a `_rule` section — that the object value must conform to. The value must satisfy at least one of the listed schemas. When absent, the only requirement is that all properties of the object are defined as descriptors in the dictionary.
+Optional qualifier for the [`_type_object`](_type_object.md) data type. When present, this set property lists the object definition terms — terms carrying a [`_rule`](_rule.md) section — that the object value must conform to. The value must satisfy at least one of the listed schemas. When absent, the only requirement is that all properties of the object are defined as descriptors in the dictionary.
 
 **`_description`**
 
-The `_kind_object` property qualifies the [`_type_object`](_type_object.md) data type by constraining the schema the object value must conform to. It is **optional** and is a set of [`_type_key`](_type_key.md) values, each referencing an *object definition term* — a term that carries a [`_rule`](_rule.md) section defining which properties are required, recommended, or banned within the object.
+The [`_kind_object`](_kind_object.md) property qualifies the [`_type_object`](_type_object.md) data type by constraining the schema the object value must conform to. It is **optional** and is a set of [`_type_key`](_type_key.md) values, each referencing an *object definition term* — a term that carries a [`_rule`](_rule.md) section defining which properties are required, recommended, or banned within the object.
 
-When `_kind_object` is present, the value must conform to at least one of the listed schemas. When multiple schemas are listed, the value is accepted if it satisfies any one of them, giving the descriptor a union-type character.
+When [`_kind_object`](_kind_object.md) is present, the value must conform to at least one of the listed schemas. When multiple schemas are listed, the value is accepted if it satisfies any one of them, giving the descriptor a union-type character.
 
-When `_kind_object` is absent, no schema constraint is imposed beyond the basic requirement that every property key must correspond to a descriptor `_gid` defined in the dictionary.
+When [`_kind_object`](_kind_object.md) is absent, no schema constraint is imposed beyond the basic requirement that every property key must correspond to a descriptor [`_gid`](_gid.md) defined in the dictionary.
 
 **`_examples`**
 
-**Single schema** — the value must conform to the `_range` object definition:
+**Single schema** — the value must conform to the [`_range`](_range.md) object definition:
 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_object",
+		"_type_scalar": "_type_object",
 		"_kind_object": ["_range"]
 	}
 }
@@ -38,7 +38,7 @@ The value must be an object satisfying the rules defined in the [`_range`](_rang
 ```json
 {
 	"_scalar": {
-		"_type": "_type_object",
+		"_type_scalar": "_type_object",
 		"_kind_object": ["_range", "_range_string"]
 	}
 }
@@ -53,12 +53,12 @@ The value is accepted if it satisfies the [`_range`](_range.md) schema (numeric 
 ```json
 {
 	"_scalar": {
-		"_type": "_type_object"
+		"_type_scalar": "_type_object"
 	}
 }
 ```
 
-Omitting `_kind_object` imposes no schema constraint. Any object is accepted as long as every property key is the `_gid` of a descriptor defined in the dictionary.
+Omitting [`_kind_object`](_kind_object.md) imposes no schema constraint. Any object is accepted as long as every property key is the [`_gid`](_gid.md) of a descriptor defined in the dictionary.
 
 ---
 
@@ -81,10 +81,7 @@ Omitting `_kind_object` imposes no schema constraint. Any object is accepted as 
 {
   "_set" : {
     "_set_scalar" : {
-      "_kind_key" : [
-        "_kind_key_term_object"
-      ],
-      "_set_type" : "_type_key"
+      "_type_scalar_set" : "_type_key_term_object"
     }
   }
 }

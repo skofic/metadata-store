@@ -10,7 +10,7 @@ The source node is a valid enumeration element of the destination node's control
 
 **`_description`**
 
-The [source node](_from.md) is an *enumeration element* belonging to the [destination node](_to.md). Enumerations are *controlled vocabularies* organised as directed graphs. The destination node may be the enumeration root, another enumeration element (for hierarchical vocabularies), or a [container node](_predicate_container.md) that groups elements under a section heading. This predicate is the primary functional predicate followed during enumeration validation — a value is valid if and only if a path of `_predicate_enum-of` edges connects it to the vocabulary root.
+The [source node](_from.md) is an *enumeration element* belonging to the [destination node](_to.md). Enumerations are *controlled vocabularies* organised as directed graphs. The destination node may be the enumeration root, another enumeration element (for hierarchical vocabularies), or a [container node](_predicate_container.md) that groups elements under a section heading. This predicate is the primary functional predicate followed during enumeration validation — a value is valid if and only if a path of [`_predicate_enum-of`](_predicate_enum-of.md) edges connects it to the vocabulary root.
 
 **`_examples`**
 

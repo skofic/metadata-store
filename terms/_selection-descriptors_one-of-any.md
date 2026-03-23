@@ -10,7 +10,7 @@ A descriptor selection rule expressed as an array of sets. From each set, exactl
 
 **`_description`**
 
-`_selection-descriptors_one-of-any` is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:
+[`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md) is a property of the [`_required`](_required.md) object. It takes an **array of sets** and applies a two-phase selection rule:
 
 1. **Within each set**: exactly one descriptor is the valid form for that group. If any element from the set is present in the object, exactly one must be present — the elements within a set are mutually exclusive.
 2. **Across sets**: at least one set must contribute an element — the object must not be empty of all listed descriptors.
@@ -30,7 +30,7 @@ This selector is the natural way to express structures such as range objects, wh
 }
 ```
 
-From the first set, at most one of `_min-range-inclusive` / `_min-range-exclusive` may be present (the two forms of the lower bound are mutually exclusive). From the second set, at most one of `_max-range-inclusive` / `_max-range-exclusive` may be present. At least one bound overall must be present. Valid objects include: only a lower bound, only an upper bound, or one of each.
+From the first set, at most one of [`_min-range-inclusive`](_min-range-inclusive.md) / [`_min-range-exclusive`](_min-range-exclusive.md) may be present (the two forms of the lower bound are mutually exclusive). From the second set, at most one of [`_max-range-inclusive`](_max-range-inclusive.md) / [`_max-range-exclusive`](_max-range-exclusive.md) may be present. At least one bound overall must be present. Valid objects include: only a lower bound, only an upper bound, or one of each.
 
 Compare with [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md), which requires every set to contribute — meaning all groups must have exactly one element present.
 
@@ -56,10 +56,7 @@ Compare with [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of
   "_array" : {
     "_set" : {
       "_set_scalar" : {
-        "_kind_key" : [
-          "_kind_key_term_descriptor"
-        ],
-        "_set_type" : "_type_key"
+        "_type_scalar_set" : "_type_key_term_descriptor"
       }
     }
   }

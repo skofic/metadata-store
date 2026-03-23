@@ -10,7 +10,7 @@ A descriptor selection rule requiring that all descriptors in the set are presen
 
 **`_description`**
 
-`_selection-descriptors_all` is a property of the [`_required`](_required.md) object. Its value is a set of descriptor `_gid`s. For the object to be valid, every listed descriptor must be present.
+[`_selection-descriptors_all`](_selection-descriptors_all.md) is a property of the [`_required`](_required.md) object. Its value is a set of descriptor [`_gid`](_gid.md)s. For the object to be valid, every listed descriptor must be present.
 
 This is the strictest selection rule — no exemptions. It is used for properties that are unconditionally mandatory.
 
@@ -24,7 +24,7 @@ This is the strictest selection rule — no exemptions. It is used for propertie
 }
 ```
 
-`_lid` must always be present — no exceptions.
+[`_lid`](_lid.md) must always be present — no exceptions.
 
 ---
 
@@ -47,10 +47,7 @@ This is the strictest selection rule — no exemptions. It is used for propertie
 {
   "_set" : {
     "_set_scalar" : {
-      "_kind_key" : [
-        "_kind_key_term_descriptor"
-      ],
-      "_set_type" : "_type_key"
+      "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }
 }
