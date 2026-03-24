@@ -82,7 +82,7 @@ Omitting [`_kind_enum`](_kind_enum.md) places no vocabulary constraint on the va
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_type_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_enum"
     }
   }

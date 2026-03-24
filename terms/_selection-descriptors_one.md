@@ -49,7 +49,7 @@ Exactly one of the two lower-bound properties must be present — not both, not 
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

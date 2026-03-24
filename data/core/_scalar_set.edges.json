@@ -1,10 +1,10 @@
 [
 	{
-		"_from": "terms/_type_scalar",
+		"_from": "terms/_type_scalar_set",
 		"_predicate": "_predicate_property-of",
-		"_to": "terms/_scalar",
+		"_to": "terms/_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {}
 	},
@@ -12,16 +12,16 @@
 	{
 		"_from": "terms/_type_boolean",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -30,16 +30,16 @@
 	{
 		"_from": "terms/_type_number",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -56,16 +56,16 @@
 	{
 		"_from": "terms/_type_number_float",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -82,16 +82,16 @@
 	{
 		"_from": "terms/_type_number_integer",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -107,16 +107,16 @@
 	{
 		"_from": "terms/_type_string",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -131,92 +131,36 @@
 		}
 	},
 	{
-		"_from": "terms/_type_string_Markdown",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-	{
-		"_from": "terms/_type_string_HTML",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-
-	{
 		"_from": "terms/_type_string_URI",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
 		}
 	},
-	{
-		"_from": "terms/_type_string_SVG",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-	
 	{
 		"_from": "terms/_type_string_email",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -225,16 +169,16 @@
 	{
 		"_from": "terms/_type_string_Hostname",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -243,16 +187,16 @@
 	{
 		"_from": "terms/_type_string_IPv4",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -261,71 +205,34 @@
 	{
 		"_from": "terms/_type_string_IPv6",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
 		}
 	},
-	{
-		"_from": "terms/_type_string_LaTeX",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-	{
-		"_from": "terms/_type_string_regexp",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-	
 	{
 		"_from": "terms/_type_string_HEX",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -341,16 +248,16 @@
 	{
 		"_from": "terms/_type_string_date",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -363,16 +270,16 @@
 	{
 		"_from": "terms/_type_string_time",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -385,16 +292,16 @@
 	{
 		"_from": "terms/_type_string_date-time",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -407,16 +314,16 @@
 	{
 		"_from": "terms/_type_string_YMD",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -429,16 +336,16 @@
 	{
 		"_from": "terms/_type_key",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -447,16 +354,16 @@
 	{
 		"_from": "terms/_type_key_term",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -465,16 +372,16 @@
 	{
 		"_from": "terms/_type_key_term_enum",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -483,16 +390,16 @@
 	{
 		"_from": "terms/_type_key_term_enum_element",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -501,16 +408,16 @@
 	{
 		"_from": "terms/_type_key_term_descriptor",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -519,16 +426,16 @@
 	{
 		"_from": "terms/_type_key_term_object",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -537,16 +444,16 @@
 	{
 		"_from": "terms/_type_key_term_predicate",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -555,16 +462,16 @@
 	{
 		"_from": "terms/_type_handle",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				}
 			}
@@ -573,16 +480,16 @@
 	{
 		"_from": "terms/_type_enum",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -592,57 +499,18 @@
 		}
 	},
 	{
-		"_from": "terms/_type_object",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				},
-				"_recommended": [
-					"_kind_object"
-				]
-			}
-		}
-	},
-	{
-		"_from": "terms/_type_struct",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
-	{
 		"_from": "terms/_type_timestamp",
 		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
+		"_to": "terms/_type_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": true,
 				"_required": {
 					"_selection-descriptors_all": [
-						"_type_scalar"
+						"_type_scalar_set"
 					]
 				},
 				"_recommended": [
@@ -652,34 +520,16 @@
 			}
 		}
 	},
-	{
-		"_from": "terms/_type_object_GeoJSON",
-		"_predicate": "_predicate_value-of",
-		"_to": "terms/_type_scalar",
-		"_path": [
-			"terms/_scalar"
-		],
-		"_path_data": {
-			"terms/_scalar": {
-				"_closed": true,
-				"_required": {
-					"_selection-descriptors_all": [
-						"_type_scalar"
-					]
-				}
-			}
-		}
-	},
 	
 	{
 		"_from": "terms/_unit",
 		"_predicate": "_predicate_property-of",
-		"_to": "terms/_scalar",
+		"_to": "terms/_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": false,
 				"_banned": [
 					"_unit-name",
@@ -691,12 +541,12 @@
 	{
 		"_from": "terms/_unit-name",
 		"_predicate": "_predicate_property-of",
-		"_to": "terms/_scalar",
+		"_to": "terms/_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": false,
 				"_banned": [
 					"_unit"
@@ -707,12 +557,12 @@
 	{
 		"_from": "terms/_unit-symbol",
 		"_predicate": "_predicate_property-of",
-		"_to": "terms/_scalar",
+		"_to": "terms/_scalar_set",
 		"_path": [
-			"terms/_scalar"
+			"terms/_scalar_set"
 		],
 		"_path_data": {
-			"terms/_scalar": {
+			"terms/_scalar_set": {
 				"_closed": false,
 				"_banned": [
 					"_unit"

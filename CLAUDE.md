@@ -45,11 +45,21 @@ This project is in early initialization. No source code exists yet. The `.gitign
   1. Review `_info` content in `data/core/containers.json`.
   2. Continue populating remaining core term files.
 
+### Recent session (2026-03-24)
+- Full review pass of all `data/core/` JSON files following the `_set_scalar` → `_scalar_set` rename. Systematic Python check script used on each file (`_gid` computation, `_lid` no-underscore, `_aid` contains `_lid`, language keys, stale API patterns, `_closed` in `_rule`, `_required`/`_recommended` disjoint, edge references).
+- **`_scalar.json`**: fixed `_type_scalar_set._aid` (`["scalar_set"]` → `["set"]`); fixed definition/description to say "in a `_scalar_set` section"; fixed `_kind_enum._data` and `_kind_object._data` (`_type_scalar_set` as object key → `_scalar_set`); fixed two stale `"_type"` → `"_type_scalar"` in code examples.
+- **`_scalar.terms.json`**: clean (all 33 type enumeration terms).
+- **`_predicates.edges.json`**: clean (all 13 edges, all references valid).
+- **`_scalar.enums.json`**: discovered `_type_string_HTML` was excluded from `_type_scalar_set` in the edge file but not documented in descriptions. Count "26 accepted values" was wrong (should be 25). Fixed descriptions in `_scalar.json`, `_scalar_set.json`, and `CLAUDE.md` (added HTML to exclusion list, changed count to 25).
+- **`_scalar.edges.json`**: fixed `_type_string_HEX` value-of edge missing `_unit`, `_unit-name`, `_unit-symbol` from `_recommended` (closed rule would have silently blocked units on hex scalars).
+- **`_domn.enums.json`**: clean (all 7 edges valid).
+- All `data/core/` files now verified clean.
+
 ### Recent session (2026-03-23)
-- Redesigned `_scalar` type system: `_type` becomes a namespace; `_type_scalar` is the new type descriptor in `_scalar`; `_type_scalar_set` is used in `_set_scalar`; `_dict_key_type` is used in `_dict_key`.
+- Redesigned `_scalar` type system: `_type` becomes a namespace; `_type_scalar` is the new type descriptor in `_scalar`; `_type_scalar_set` is used in `_scalar_set`; `_dict_key_type` is used in `_dict_key`.
 - Eliminated `_kind_number`, `_kind_string`, `_kind_key` companion properties; their specificity is now encoded directly in `_type_scalar` values (`_type_number_float`, `_type_string_Markdown`, `_type_key_term`, etc.).
 - `_kind_enum` and `_kind_object` remain as companion descriptors for `_type_enum` and `_type_object`.
-- Updated root `CLAUDE.md` throughout: `_scalar` properties table, `_type_scalar` enumeration (with all 33 values), all type subsections and code examples, `_set_scalar`, `_dict_key`, and the conditional rule example in the Graphs section.
+- Updated root `CLAUDE.md` throughout: `_scalar` properties table, `_type_scalar` enumeration (with all 33 values), all type subsections and code examples, `_scalar_set`, `_dict_key`, and the conditional rule example in the Graphs section.
 - Next: update `containers.json`, `_scalar.json`, `_scalar.edges.json`, and documentation files.
 
 ### Recent session (2026-03-22)
@@ -82,7 +92,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Added SVG edge diagrams to `docs/images/` (`edge-basic.svg`, `edge-shared.svg`, `edge-bridge.svg`) and updated `_edge._examples` to reference them.
 - Updated `_edge._description`: MD5 key formula now mentions `/` separator; "All predicates" → "Most predicates".
 - Updated `_domn._description`: removed restriction to user-defined terms; `_domn` now serves as a general role/usage classifier for any term.
-- Corrected `_set`: `_set_scalar` is now required (not optional); updated `_definition`, `_description`, and `_rule` accordingly.
+- Corrected `_set`: `_scalar_set` is now required (not optional); updated `_definition`, `_description`, and `_rule` accordingly.
 - Revised `_set._description` to reference `_type` as the basis for `_set_type`, naming only the three excluded types.
 - Added `_code` section to term card output (before `_data` and `_rule`).
 - Restructured `_type_number` paragraph in `_type._description`: shared optional properties (`_unit`, `_unit-name`, etc.) now appear at the top level; `_kind_number` introduced after; `_decimals` remains only under `_kind_number_float`.
@@ -668,13 +678,13 @@ Array elements are themselves arrays. The structure is recursive: each nested `_
 
 **`_set`**
 
-Array elements are themselves sets — arrays of unique, comparable elements. Unlike `_array`, `_set` is **not** recursive: because uniqueness requires comparability, the element type is constrained to a comparable scalar (via `_set_scalar`, not `_scalar`). See the [`_set`](#_set) section for the full definition.
+Array elements are themselves sets — arrays of unique, comparable elements. Unlike `_array`, `_set` is **not** recursive: because uniqueness requires comparability, the element type is constrained to a comparable scalar (via `_scalar_set`, not `_scalar`). See the [`_set`](#_set) section for the full definition.
 
 ```json
 {
     "_array": {
         "_set": {
-            "_set_scalar": {
+            "_scalar_set": {
                 "_type_scalar_set": "_type_enum",
                 "_kind_enum": ["ISO_639_3"]
             }
@@ -712,22 +722,22 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 #### `_set`
 
-`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive. Unlike `_array`, `_set` cannot be empty: `_set_scalar` is always required, because without a declared element type there is no basis for enforcing uniqueness.
+`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive. Unlike `_array`, `_set` cannot be empty: `_scalar_set` is always required, because without a declared element type there is no basis for enforcing uniqueness.
 
 ##### `_set` properties
 
 | Property      | Required | Description |
 |---------------|----------|-------------|
-| `_set_scalar` | Yes      | Defines the data type of the set elements. |
+| `_scalar_set` | Yes      | Defines the data type of the set elements. |
 | `_elements`   | No       | Minimum and maximum number of elements in the set. Same structure as in `_array`. |
 
-##### `_set_scalar`
+##### `_scalar_set`
 
-`_set_scalar` functions identically to `_scalar`, with one difference: the data type property is named **`_type_scalar_set`** instead of `_type_scalar`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
+`_scalar_set` functions identically to `_scalar`, with one difference: the data type property is named **`_type_scalar_set`** instead of `_type_scalar`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
 
-###### `_set_scalar` properties
+###### `_scalar_set` properties
 
-`_set_scalar` follows the same rules as `_scalar`, with `_type_scalar_set` in place of `_type_scalar`. The `_kind_enum` and `_kind_object` companion properties apply where relevant. The range, unit, `_regexp`, and `_decimals` properties are identical.
+`_scalar_set` follows the same rules as `_scalar`, with `_type_scalar_set` in place of `_type_scalar`. The `_kind_enum` and `_kind_object` companion properties apply where relevant. The range, unit, `_regexp`, and `_decimals` properties are identical.
 
 | Property               | Required | Description |
 |------------------------|----------|-------------|
@@ -747,7 +757,7 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 `_type_scalar_set` is a bridge-graph subset of `_type_scalar`. It accepts all `_type_scalar` values **except**:
 
-- `_type_string_Markdown`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_string_regexp` — display/markup strings not meaningful as set keys.
+- `_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_string_regexp` — display/markup strings not meaningful as set keys.
 - `_type_object`, `_type_struct`, `_type_object_GeoJSON` — non-comparable; set uniqueness cannot be enforced.
 
 Accepted: `_type_boolean`, all `_type_number*` types, all remaining `_type_string*` types (generic, URI, HEX, email, date, time, date-time, YMD, Hostname, IPv4, IPv6), all `_type_key*` types, `_type_handle`, `_type_enum`, and `_type_timestamp`.
@@ -761,7 +771,7 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
             "_min-items": 1,
             "_max-items": 5
         },
-        "_set_scalar": {
+        "_scalar_set": {
             "_type_scalar_set": "_type_enum",
             "_kind_enum": ["ISO_639_3"]
         }
@@ -1381,7 +1391,7 @@ This edge states: within a `_scalar` structure, when `_type_scalar` holds the va
 
 `_from` (`_type_enum`) is already part of the edge's primary key (`_from`/`_predicate`/`_to`), so it is not repeated as a `_path_data` key. The `_path_data` key is the path root handle (`terms/_scalar`), which identifies the structural context — consistent with how `_path_data` is keyed throughout the graph model.
 
-**Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_set_scalar` (path root `terms/_set_scalar`). Each carries its own `_path_data` with context-appropriate rules.
+**Context sensitivity**: the same value can produce different consequences in different structural contexts. A `_predicate_value-of` edge for `_type_enum` within `_scalar` (path root `terms/_scalar`) is a separate edge from one within `_scalar_set` (path root `terms/_scalar_set`). Each carries its own `_path_data` with context-appropriate rules.
 
 **Precedence**: a closed conditional rule (`_closed: true`) replaces the base `_recommended` entirely, which can restrict the effective allowed set to fewer properties than the base rule permits. An open conditional rule (`_closed: false`) accumulates — it adds to `_required` and unions with `_recommended`. Neither can lift a `_banned` constraint. If a conditional rule's `_path_data` requires a property listed in the structure's `_rule._banned`, this is a conflict detectable at edge insertion time.
 

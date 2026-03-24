@@ -13,7 +13,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_handle"
+				"_type_scalar": "_type_handle"
 			}
 		},
 		"_domn": {}
@@ -32,7 +32,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_string"
+				"_type_scalar": "_type_string"
 			}
 		},
 		"_domn": {}
@@ -51,7 +51,7 @@
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_key"
+				"_type_scalar": "_type_key"
 			}
 		},
 		"_domn": {}
@@ -67,11 +67,11 @@
 		"_info": {
 			"_title": {"ISO_639_3_eng": "Relationship source"},
 			"_definition": {"ISO_639_3_eng": "Reference to the node that represents the origin in a directed graph edge."},
-			"_description": {"ISO_639_3_eng": "The value represents the [document handle](_id.md) of the node that represents the origin of a relationship in a graph. In [ArangoDB](https://www.arangodb.com) the value is the [_id](https://www.arangodb.com/docs/stable/getting-started-databases-collections-documents.html) of the directed graph relationship source."}
+			"_description": {"ISO_639_3_eng": "The value is the [document handle](_id.md) of the source node of a directed graph relationship. In [ArangoDB](https://www.arangodb.com), `_from` is a required field on all edge documents."}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_handle"
+				"_type_scalar": "_type_handle"
 			}
 		},
 		"_domn": {}
@@ -86,11 +86,11 @@
 		"_info": {
 			"_title": {"ISO_639_3_eng": "Relationship target"},
 			"_definition": {"ISO_639_3_eng": "Reference to the node that represents the destination in a directed graph edge."},
-			"_description": {"ISO_639_3_eng": "The value represents the [document handle](_id.md) of the node that represents the destination of a relationship in a graph. In [ArangoDB](https://www.arangodb.com) the value is the [_id](https://www.arangodb.com/docs/stable/getting-started-databases-collections-documents.html) of the directed graph relationship target."}
+			"_description": {"ISO_639_3_eng": "The value is the [document handle](_id.md) of the destination node of a directed graph relationship. In [ArangoDB](https://www.arangodb.com), `_to` is a required field on all edge documents."}
 		},
 		"_data": {
 			"_scalar": {
-				"_type": "_type_handle"
+				"_type_scalar": "_type_handle"
 			}
 		},
 		"_domn": {}

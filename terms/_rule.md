@@ -32,11 +32,11 @@ For a comprehensive explanation of how the rule system works — including selec
 ```json
 {
 	"_rule": {
+		"_closed": true,
 		"_required": {
 			"_selection-descriptors_all": ["_lid"]
 		},
-		"_recommended": ["_nid", "_lid", "_gid", "_aid"],
-		"_closed": true,
+		"_recommended": ["_nid", "_gid", "_aid"],
 		"_computed": ["_gid"],
 		"_immutable": ["_lid", "_gid"]
 	}

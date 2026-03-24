@@ -2,17 +2,15 @@
 
 **`_title`**
 
-Maximum number of elements
+Maximum element count
 
 **`_definition`**
 
-This field indicates the maximum number of elements an item may contain.
+The inclusive upper bound on the number of elements a container may hold. When absent, no upper bound applies.
 
 **`_description`**
 
-This field can be used to indicate the *maximum number* of *elements* an item may contain. The property is used by the elements range [descriptor](_elements.md) to indicate the maximum bound for [array](_array.md) and [set](_set.md) data [container](_data.md) [elements](_elements.md).
-
-The value is an *integer* and the *bound* is *inclusive*, the item to which the property refers to cannot have *more* elements than the value held by this field.
+Specifies the maximum number of elements that an [array](_array.md), [set](_set.md), or other container may contain. The bound is *inclusive*: the container may hold *at most* this many elements. When this property is absent from [`_elements`](_elements.md), the container may hold any number of elements.
 
 ---
 
@@ -34,10 +32,10 @@ The value is an *integer* and the *bound* is *inclusive*, the item to which the 
 ```json
 {
   "_scalar" : {
-    "_kind_number" : [
-      "_kind_number_integer"
-    ],
-    "_type" : "_type_number"
+    "_type_scalar" : "_type_number_integer",
+    "_valid-range" : {
+      "_min-range-inclusive" : 0
+    }
   }
 }
 ```

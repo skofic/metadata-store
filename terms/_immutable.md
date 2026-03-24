@@ -50,7 +50,7 @@ If a property is both [`_computed`](_computed.md) and [`_immutable`](_immutable.
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

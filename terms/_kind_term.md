@@ -46,7 +46,7 @@ The set of recognised role values is defined as the [`_kind_term`](_kind_term.md
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_kind_enum" : [
         "_kind_term"
       ],

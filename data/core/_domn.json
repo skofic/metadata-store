@@ -21,7 +21,7 @@
 		},
 		"_data": {
 			"_set": {
-				"_set_scalar": {
+				"_scalar_set": {
 					"_type_scalar_set": "_type_enum",
 					"_kind_enum": [
 						"_kind_term"
@@ -99,11 +99,11 @@
 	},
 	{
 		"_code": {
-			"_nid": "_kind_term",
-			"_lid": "enum_element",
+			"_nid": "_kind_term_enum",
+			"_lid": "element",
 			"_gid": "_kind_term_enum_element",
 			"_aid": [
-				"enum_element"
+				"element"
 			]
 		},
 		"_info": {

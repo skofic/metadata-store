@@ -53,7 +53,7 @@ This ordering means a property can be listed in both [`_computed`](_computed.md)
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

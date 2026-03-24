@@ -32,7 +32,7 @@ The *document handle* is the record unique identifier in [ArangoDB](https://www.
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_handle"
+    "_type_scalar" : "_type_handle"
   }
 }
 ```

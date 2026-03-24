@@ -2,15 +2,15 @@
 
 **`_title`**
 
-Allowed number of elements
+Element count range
 
 **`_definition`**
 
-This field indicates the allowed range of elements for arrays and sets.
+Defines the allowed range of element counts for a container. At least one bound must be present; both bounds are optional and inclusive.
 
 **`_description`**
 
-This field is used to *limit* the *number of items* in [arrays](_array.md) or [sets](_set.md). It is a *discrete range* that must be *greater than zero*.
+Constrains the number of elements in an [array](_array.md), [set](_set.md), or other container type. Both bounds are optional: omitting [`_min-items`](_min-items.md) leaves the lower end open; omitting [`_max-items`](_max-items.md) leaves the upper end open. At least one bound must be present — an empty `_elements` object is invalid.
 
 **`_examples`**
 
@@ -22,7 +22,7 @@ This field is used to *limit* the *number of items* in [arrays](_array.md) or [s
 	}
 }
 ```
-The [array](_array.md) or [set](_set.md) can have between `1` and `8` elements.
+The [array](_array.md) or [set](_set.md) must contain between `1` and `8` elements, inclusive.
 
 
 
@@ -33,7 +33,7 @@ The [array](_array.md) or [set](_set.md) can have between `1` and `8` elements.
 	}
 }
 ```
-The [array](_array.md) or [set](_set.md) must have at least *one* element.
+No lower bound is imposed; the container may be empty or hold any number of elements.
 
 
 
@@ -44,7 +44,7 @@ The [array](_array.md) or [set](_set.md) must have at least *one* element.
 	}
 }
 ```
-The [array](_array.md) or [set](_set.md) must have *less* than 10 items.
+The [array](_array.md) or [set](_set.md) may contain at most `10` elements.
 
 ---
 
@@ -69,7 +69,7 @@ The [array](_array.md) or [set](_set.md) must have *less* than 10 items.
     "_kind_object" : [
       "_elements"
     ],
-    "_type" : "_type_object"
+    "_type_scalar" : "_type_object"
   }
 }
 ```
@@ -78,6 +78,7 @@ The [array](_array.md) or [set](_set.md) must have *less* than 10 items.
 
 ```json
 {
+  "_closed" : true,
   "_required" : {
     "_selection-descriptors_any" : [
       "_min-items",

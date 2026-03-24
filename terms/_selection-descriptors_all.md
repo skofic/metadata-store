@@ -46,7 +46,7 @@ This is the strictest selection rule — no exemptions. It is used for propertie
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

@@ -6,7 +6,7 @@ Data Type Namespace
 
 **`_definition`**
 
-Namespace for all data type terms used in the data dictionary. All `_type_*` terms belong to this namespace. The actual type descriptor properties are [`_type_scalar`](_type_scalar.md) (in [`_scalar`](_scalar.md) sections), [`_type_scalar_set`](_type_scalar_set.md) (in [`_set_scalar`](_set_scalar.md) sections), and [`_dict_key_type`](_dict_key_type.md) (in [`_dict_key`](_dict_key.md) sections).
+Namespace for all data type terms used in the data dictionary. All `_type_*` terms belong to this namespace. The actual type descriptor properties are [`_type_scalar`](_type_scalar.md) (in [`_scalar`](_scalar.md) sections), [`_type_scalar_set`](_type_scalar_set.md) (in [`_type_scalar_set`](_type_scalar_set.md) sections), and [`_dict_key_type`](_dict_key_type.md) (in [`_dict_key`](_dict_key.md) sections).
 
 **`_description`**
 
@@ -15,7 +15,7 @@ The [`_type`](_type.md) term serves as the **namespace root** for all data type 
 The actual property descriptors for specifying data types in data sections are:
 
 - [`_type_scalar`](_type_scalar.md): required in [`_scalar`](_scalar.md) sections.
-- [`_type_scalar_set`](_type_scalar_set.md): required in [`_set_scalar`](_set_scalar.md) sections (comparable types only).
+- [`_type_scalar_set`](_type_scalar_set.md): required in [`_type_scalar_set`](_type_scalar_set.md) sections (comparable types only).
 - [`_dict_key_type`](_dict_key_type.md): required in [`_dict_key`](_dict_key.md) sections (string-compatible types only).
 
 ---

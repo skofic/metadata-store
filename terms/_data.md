@@ -24,8 +24,7 @@ Any term that carries this section is a [descriptor](_term_descriptor.md). A ter
 {
 	"_data": {
 		"_scalar": {
-			"_type": "_type_number",
-			"_kind_number": ["_kind_number_integer"],
+			"_type_scalar": "_type_number_integer",
 			"_valid-range": {
 				"_min-range-inclusive": 5,
 				"_max-range-inclusive": 10
@@ -35,7 +34,7 @@ Any term that carries this section is a [descriptor](_term_descriptor.md). A ter
 }
 ```
 
-The above example describes a [scalar](_scalar.md) [integer](_kind_number_integer.md) value in the range from `5` to `10` inclusive.
+The above example describes a [scalar](_scalar.md) [integer](_type_number_integer.md) value in the range from `5` to `10` inclusive.
 
 
 
@@ -44,8 +43,7 @@ The above example describes a [scalar](_scalar.md) [integer](_kind_number_intege
 	"_data": {
 		"_array": {
 			"_scalar": {
-				"_type": "_type_number",
-				"_kind_number": ["_kind_number_float"],
+				"_type_scalar": "_type_number_float",
 				"_valid-range": {
 					"_min-range-inclusive": 0.0,
 					"_max-range-exclusive": 100.0
@@ -57,7 +55,7 @@ The above example describes a [scalar](_scalar.md) [integer](_kind_number_intege
 }
 ```
 
-The above example describes a [list](_array.md) of [floating-point](_kind_number_float.md) values *greater or equal* to `0.0` and *less than* `100.0` representing a *length* in *centimetres*.
+The above example describes a [list](_array.md) of [floating-point](_type_number_float.md) values *greater or equal* to `0.0` and *less than* `100.0` representing a *length* in *centimetres*.
 
 
 
@@ -65,8 +63,8 @@ The above example describes a [list](_array.md) of [floating-point](_kind_number
 {
 	"_data": {
 		"_set": {
-			"_set_scalar": {
-				"_set_type": "_type_enum",
+			"_scalar_set": {
+				"_type_scalar_set": "_type_enum",
 				"_kind_enum": ["ISO_639_3"]
 			}
 		}
@@ -83,13 +81,13 @@ The above example describes a [set](_set.md) of unique [enumeration](_type_enum.
 	"_data": {
 		"_dict": {
 			"_dict_key": {
-				"_type_key": "_type_enum",
+				"_dict_key_type": "_type_enum",
 				"_kind_enum": ["ISO_3166_1", "ISO_3166_3"]
 			},
 			"_dict_value": {
 				"_dict": {
 					"_dict_key": {
-						"_type_key": "_type_enum",
+						"_dict_key_type": "_type_enum",
 						"_kind_enum": ["ISO_639_3"]
 					},
 					"_dict_value": {
@@ -99,7 +97,7 @@ The above example describes a [set](_set.md) of unique [enumeration](_type_enum.
 								"_max-items": 10
 							},
 							"_scalar": {
-								"_type": "_type_object",
+								"_type_scalar": "_type_object",
 								"_kind_object": ["some_object_definition"]
 							}
 						}
@@ -123,7 +121,7 @@ The above example describes a [dictionary](_dict.md) whose *keys* are the [globa
 }
 ```
 
-This example shows the *data definition* for a *descriptor* that can take *only* [scalar](_scalar.md) values of any [type](_type.md).
+This example shows the *data definition* for a *descriptor* that can take *only* [scalar](_scalar.md) values of any type.
 
 
 

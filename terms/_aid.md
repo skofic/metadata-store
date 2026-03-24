@@ -56,7 +56,7 @@ Keep this set restricted to *official* or *widely recognised* standards. Includi
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_string"
     }
   }

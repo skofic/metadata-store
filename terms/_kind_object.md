@@ -80,7 +80,7 @@ Omitting [`_kind_object`](_kind_object.md) imposes no schema constraint. Any obj
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_type_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_object"
     }
   }

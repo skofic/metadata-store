@@ -48,7 +48,7 @@ This is a mutual exclusion without mandatory selection: at most one of the group
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

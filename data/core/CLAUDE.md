@@ -40,6 +40,14 @@ All terms in this directory are rooted in the default namespace (empty string `"
 | `"_term"` | `descriptor` | `_term_descriptor` | Sub-term of `_term` |
 | `"_term"` | `object`     | `_term_object`     | Sub-term of `_term` |
 
+### The empty-string namespace — known exception
+
+`_nid: ""` is the **only case** where `_nid` is not the `_gid` of an existing term. It represents the **default namespace** — the dictionary's own structural namespace — which has no term of its own. This is intentional and not an error.
+
+**Do not flag `_nid: ""` as a broken reference.** All other `_nid` values must reference an existing term.
+
+This exception also has an access-control implication: users may have full ownership of any namespace they define, but the default namespace (`""`) is reserved and cannot be claimed or edited by ordinary users. This rule is enforced at the application layer, not in the term schema.
+
 ---
 
 ## Term Structure Checklist

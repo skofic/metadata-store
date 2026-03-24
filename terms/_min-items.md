@@ -2,17 +2,15 @@
 
 **`_title`**
 
-Minimum number of elements
+Minimum element count
 
 **`_definition`**
 
-This field indicates the minimum number of elements an item may contain.
+The inclusive lower bound on the number of elements a container may hold. When absent, no lower bound applies.
 
 **`_description`**
 
-This field can be used to indicate the *minimum number* of *elements* an item may contain. The property is used by the elements range [descriptor](_elements.md) to indicate the minimum bound for [array](_array.md) and [set](_set.md) data [container](_data.md) [elements](_elements.md).
-
-The value is an *integer* and the *bound* is *inclusive*, the item to which the property refers to cannot have *less* elements than the value held by this field.
+Specifies the minimum number of elements that an [array](_array.md), [set](_set.md), or other container must contain. The bound is *inclusive*: the container must hold *at least* this many elements. A value of `0` imposes no effective lower bound. When this property is absent from [`_elements`](_elements.md), the container may hold any number of elements down to zero.
 
 ---
 
@@ -34,10 +32,7 @@ The value is an *integer* and the *bound* is *inclusive*, the item to which the 
 ```json
 {
   "_scalar" : {
-    "_kind_number" : [
-      "_kind_number_integer"
-    ],
-    "_type" : "_type_number",
+    "_type_scalar" : "_type_number_integer",
     "_valid-range" : {
       "_min-range-inclusive" : 0
     }

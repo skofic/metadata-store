@@ -51,7 +51,7 @@ Conditional rules expressed in the graph layer via [`_predicate_value-of`](_pred
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

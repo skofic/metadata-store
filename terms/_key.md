@@ -32,7 +32,7 @@ The *document key* is the *unique identifier* of a document *within its collecti
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_key"
+    "_type_scalar" : "_type_key"
   }
 }
 ```

@@ -48,7 +48,7 @@ At least one of [`_title`](_title.md), [`_definition`](_definition.md), or [`_de
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

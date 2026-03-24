@@ -47,7 +47,7 @@ A set of descriptor [`_gid`](_gid.md)s that are entirely managed by the system a
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

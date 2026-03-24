@@ -68,7 +68,7 @@ An array of sets of ISO 639-3 language codes:
 {
 	"_array": {
 		"_set": {
-			"_set_scalar": {
+			"_scalar_set": {
 				"_type_scalar_set": "_type_enum",
 				"_kind_enum": ["ISO_639_3"]
 			}

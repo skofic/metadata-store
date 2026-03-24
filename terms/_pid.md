@@ -51,7 +51,7 @@ Unlike [official identifiers](_aid.md), provider identifiers are not required to
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_string"
     }
   }

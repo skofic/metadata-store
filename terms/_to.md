@@ -10,7 +10,7 @@ Reference to the node that represents the destination in a directed graph edge.
 
 **`_description`**
 
-The value represents the [document handle](_id.md) of the node that represents the destination of a relationship in a graph. In [ArangoDB](https://www.arangodb.com) the value is the [_id](https://www.arangodb.com/docs/stable/getting-started-databases-collections-documents.html) of the directed graph relationship target.
+The value is the [document handle](_id.md) of the destination node of a directed graph relationship. In [ArangoDB](https://www.arangodb.com), `_to` is a required field on all edge documents.
 
 ---
 
@@ -32,7 +32,7 @@ The value represents the [document handle](_id.md) of the node that represents t
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_handle"
+    "_type_scalar" : "_type_handle"
   }
 }
 ```

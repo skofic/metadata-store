@@ -46,7 +46,7 @@ An object of this type must never contain [`_data`](_data.md) or [`_rule`](_rule
 ```json
 {
   "_set" : {
-    "_set_scalar" : {
+    "_scalar_set" : {
       "_type_scalar_set" : "_type_key_term_descriptor"
     }
   }

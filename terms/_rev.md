@@ -32,7 +32,7 @@ The *document revision* is an opaque string assigned and updated by [ArangoDB](h
 ```json
 {
   "_scalar" : {
-    "_type" : "_type_string"
+    "_type_scalar" : "_type_string"
   }
 }
 ```

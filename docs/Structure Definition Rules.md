@@ -334,7 +334,7 @@ A `_predicate_value-of` edge encodes the statement: *"when property `_to` holds 
 
 This edge states: within a `_scalar` structure (path root `terms/_scalar`), when `_type_scalar` holds the value `_type_string`, only the listed properties are permitted and the schema is closed.
 
-The structural context (`_path`) is key: the same value can produce different consequences in different contexts. A `_predicate_value-of` edge for `_type_string` within `_scalar` (path `terms/_scalar`, pointing to `terms/_type_scalar`) is entirely independent of one within `_set_scalar` (path `terms/_set_scalar`, pointing to `terms/_type_scalar_set`), each with its own `_path_data`.
+The structural context (`_path`) is key: the same value can produce different consequences in different contexts. A `_predicate_value-of` edge for `_type_string` within `_scalar` (path `terms/_scalar`, pointing to `terms/_type_scalar`) is entirely independent of one within `_scalar_set` (path `terms/_scalar_set`, pointing to `terms/_type_scalar_set`), each with its own `_path_data`.
 
 ### Conditional Rule Accumulation
 

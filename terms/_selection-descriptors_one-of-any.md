@@ -55,7 +55,7 @@ Compare with [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of
 {
   "_array" : {
     "_set" : {
-      "_set_scalar" : {
+      "_scalar_set" : {
         "_type_scalar_set" : "_type_key_term_descriptor"
       }
     }

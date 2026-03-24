@@ -31,10 +31,10 @@ A term can be an element of multiple controlled vocabularies simultaneously — 
 ```json
 {
   "_aid" : [
-    "enum_element"
+    "element"
   ],
   "_gid" : "_kind_term_enum_element",
-  "_lid" : "enum_element",
-  "_nid" : "_kind_term"
+  "_lid" : "element",
+  "_nid" : "_kind_term_enum"
 }
 ```
