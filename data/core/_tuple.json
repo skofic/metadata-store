@@ -1,0 +1,70 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "tuple",
+			"_gid": "_tuple",
+			"_aid": ["tuple"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tuple"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A data shape for an ordered list of values where each position may hold a different data type. The required [`_type_tuple`](_type_tuple.md) property is an ordered array of descriptor [`_gid`](_gid.md)s; the type at position n is determined by the descriptor at index n. Unlike [`_array`](_array.md) and [`_set`](_set.md), which apply a single type uniformly to all elements, a tuple is positional."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A tuple is an ordered sequence of values in which each element may have a distinct data type, determined by its position. This makes it suitable for encoding structured records — such as coordinate pairs, measurement bundles, or fixed-format rows — where the meaning and type of each slot are predefined.\n\n**Type resolution via indirection**: the type of position n is not written inline. Instead, [`_type_tuple`](_type_tuple.md) holds the [`_gid`](_gid.md) of a descriptor term at each index, and the type for that position is resolved by reading that descriptor's [`_data`](_data.md) section. This means tuple positions reuse existing dictionary definitions rather than duplicating type information.\n\n**Length control**: the length of [`_type_tuple`](_type_tuple.md) sets the absolute upper bound on the number of tuple elements. The optional [`_elements`](_elements.md) property can further constrain the length by setting [`_min-items`](_min-items.md) and [`_max-items`](_max-items.md). When [`_elements`](_elements.md) is omitted, the tuple must contain exactly as many elements as there are entries in [`_type_tuple`](_type_tuple.md). When the tuple contains fewer elements than [`_type_tuple`](_type_tuple.md), the trailing positions are not applied — the tuple is treated as a prefix of the full type sequence."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Fixed-length tuple** — a coordinate pair with exactly two elements:\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_type_tuple\": [\n\t\t\t\"longitude_decimal\",\n\t\t\t\"latitude_decimal\"\n\t\t]\n\t}\n}\n```\n\nThe first element must conform to the `longitude_decimal` descriptor's type; the second to `latitude_decimal`. Exactly two elements are required.\n\n\n\n**Variable-length tuple** — a location record where the first three elements are required and the fourth is optional:\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_elements\": {\n\t\t\t\"_min-items\": 3,\n\t\t\t\"_max-items\": 4\n\t\t},\n\t\t\"_type_tuple\": [\n\t\t\t\"latitude_DMS\",\n\t\t\t\"longitude_DMS\",\n\t\t\t\"geodetic_datum\",\n\t\t\t\"area\"\n\t\t]\n\t}\n}\n```\n\nThe latitude, longitude, and datum are always required; the area is optional. A value with three elements is valid; one with five is not."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_tuple"
+				]
+			}
+		},
+		"_rule": {
+			"_closed": true,
+			"_required": {
+				"_selection-descriptors_one": [
+					"_type_tuple"
+				]
+			},
+			"_recommended": [
+				"_elements"
+			]
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_type",
+			"_lid": "tuple",
+			"_gid": "_type_tuple",
+			"_aid": ["tuple"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tuple Types"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An ordered array of descriptor [`_gid`](_gid.md)s defining the data type of each position in a [`_tuple`](_tuple.md). The descriptor at index n governs the expected type of the value at position n in the tuple. The length of this array sets the absolute maximum number of elements the tuple may contain."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_type_tuple`](_type_tuple.md) is the required property of every non-empty [`_tuple`](_tuple.md) section. It is an ordered array where each entry is the [`_gid`](_gid.md) of a descriptor term. The type definition for position n is resolved by looking up the referenced descriptor and reading its [`_data`](_data.md) section — the type is not written inline.\n\nThe length of [`_type_tuple`](_type_tuple.md) determines the absolute upper bound on tuple length. Neither [`_min-items`](_min-items.md) nor [`_max-items`](_max-items.md) in the optional [`_elements`](_elements.md) property may exceed it. When the tuple contains fewer elements than the length of [`_type_tuple`](_type_tuple.md), the types for trailing positions are simply not applied — the tuple is treated as a prefix of the full type sequence.\n\n```json\n{\n\t\"_tuple\": {\n\t\t\"_type_tuple\": [\n\t\t\t\"ISO_3166_1_a2\",\n\t\t\t\"chr_birth_date\",\n\t\t\t\"chr_body_weight\"\n\t\t]\n\t}\n}\n```\n\nThe first position must conform to the `ISO_3166_1_a2` descriptor (a two-letter country code), the second to `chr_birth_date`, the third to `chr_body_weight`."
+			}
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_type_scalar": "_type_key_term_descriptor"
+				}
+			}
+		}
+	}
+]

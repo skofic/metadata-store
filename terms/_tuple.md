@@ -6,19 +6,19 @@ Tuple
 
 **`_definition`**
 
-The shape property for an ordered list of elements where each position may have a different type. The required [`_type_tuple`](_type_tuple.md) property is an ordered array of descriptor global identifiers; the type at position n is determined by the descriptor at index n.
+A data shape for an ordered list of values where each position may hold a different data type. The required [`_type_tuple`](_type_tuple.md) property is an ordered array of descriptor [`_gid`](_gid.md)s; the type at position n is determined by the descriptor at index n. Unlike [`_array`](_array.md) and [`_set`](_set.md), which apply a single type uniformly to all elements, a tuple is positional.
 
 **`_description`**
 
-A *tuple* is an *ordered list* in which each element may have a *different type* depending on its *position*. It differs from [`_array`](_array.md) and [`_set`](_set.md), which apply a single type uniformly to all elements.
+A tuple is an ordered sequence of values in which each element may have a distinct data type, determined by its position. This makes it suitable for encoding structured records — such as coordinate pairs, measurement bundles, or fixed-format rows — where the meaning and type of each slot are predefined.
 
-The required [`_type_tuple`](_type_tuple.md) property contains an ordered array of descriptor [global identifiers](_gid.md). The type at position *n* is resolved by looking up the descriptor at index *n* and reading its [`_data`](_data.md) section. This indirection means tuple positions reuse existing descriptor definitions rather than duplicating type information inline.
+**Type resolution via indirection**: the type of position n is not written inline. Instead, [`_type_tuple`](_type_tuple.md) holds the [`_gid`](_gid.md) of a descriptor term at each index, and the type for that position is resolved by reading that descriptor's [`_data`](_data.md) section. This means tuple positions reuse existing dictionary definitions rather than duplicating type information.
 
-The optional [`_elements`](_elements.md) property constrains how many elements a tuple value may contain. The length of [`_type_tuple`](_type_tuple.md) is the absolute upper bound; neither [`_min-items`](_min-items.md) nor [`_max-items`](_max-items.md) may exceed it. When [`_elements`](_elements.md) is omitted, the tuple must contain exactly as many elements as [`_type_tuple`](_type_tuple.md) has entries. When fewer elements are present, the trailing positions are not applied — the tuple is treated as a prefix of the full type sequence.
+**Length control**: the length of [`_type_tuple`](_type_tuple.md) sets the absolute upper bound on the number of tuple elements. The optional [`_elements`](_elements.md) property can further constrain the length by setting [`_min-items`](_min-items.md) and [`_max-items`](_max-items.md). When [`_elements`](_elements.md) is omitted, the tuple must contain exactly as many elements as there are entries in [`_type_tuple`](_type_tuple.md). When the tuple contains fewer elements than [`_type_tuple`](_type_tuple.md), the trailing positions are not applied — the tuple is treated as a prefix of the full type sequence.
 
 **`_examples`**
 
-A coordinate pair — exactly two elements:
+**Fixed-length tuple** — a coordinate pair with exactly two elements:
 
 ```json
 {
@@ -31,9 +31,11 @@ A coordinate pair — exactly two elements:
 }
 ```
 
+The first element must conform to the `longitude_decimal` descriptor's type; the second to `latitude_decimal`. Exactly two elements are required.
 
 
-A location record with an optional surface area — three required elements, fourth optional:
+
+**Variable-length tuple** — a location record where the first three elements are required and the fourth is optional:
 
 ```json
 {
@@ -51,6 +53,8 @@ A location record with an optional surface area — three required elements, fou
 	}
 }
 ```
+
+The latitude, longitude, and datum are always required; the area is optional. A value with three elements is valid; one with five is not.
 
 ---
 

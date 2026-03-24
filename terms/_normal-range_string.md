@@ -17,7 +17,7 @@ The value is an object conforming to the [`_range_string`](_range_string.md) sch
 ```json
 {
 	"_scalar": {
-		"_type": "_type_string",
+		"_type_scalar": "_type_string",
 		"_regexp": "^[A-Z]{2}$",
 		"_valid-range_string": {
 			"_min-range-inclusive_string": "AA",

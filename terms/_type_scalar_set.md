@@ -6,11 +6,11 @@ Set Scalar Type
 
 **`_definition`**
 
-The data type of elements in a [`_type_scalar_set`](_type_scalar_set.md) section. A bridge-graph subset of [`_type_scalar`](_type_scalar.md) restricted to comparable types — types for which equality and ordering are well-defined. Excluded: display/markup strings ([`_type_string_Markdown`](_type_string_Markdown.md), [`_type_string_SVG`](_type_string_SVG.md), [`_type_string_LaTeX`](_type_string_LaTeX.md), [`_type_string_regexp`](_type_string_regexp.md)); and non-comparable objects ([`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), [`_type_object_GeoJSON`](_type_object_GeoJSON.md)).
+The data type of elements in a [`_scalar_set`](_scalar_set.md) section. A bridge-graph subset of [`_type_scalar`](_type_scalar.md) restricted to comparable types — types for which equality and ordering are well-defined. Excluded: display/markup strings ([`_type_string_Markdown`](_type_string_Markdown.md), [`_type_string_HTML`](_type_string_HTML.md), [`_type_string_SVG`](_type_string_SVG.md), [`_type_string_LaTeX`](_type_string_LaTeX.md), [`_type_string_regexp`](_type_string_regexp.md)); and non-comparable objects ([`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), [`_type_object_GeoJSON`](_type_object_GeoJSON.md)).
 
 **`_description`**
 
-[`_type_scalar_set`](_type_scalar_set.md) is required in every non-empty [`_type_scalar_set`](_type_scalar_set.md) section. It is a bridge-graph subset of [`_type_scalar`](_type_scalar.md) with 26 accepted values. Excluded: display/markup strings ([`_type_string_Markdown`](_type_string_Markdown.md), [`_type_string_SVG`](_type_string_SVG.md), [`_type_string_LaTeX`](_type_string_LaTeX.md), [`_type_string_regexp`](_type_string_regexp.md)) and non-comparable objects ([`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), [`_type_object_GeoJSON`](_type_object_GeoJSON.md)).
+[`_type_scalar_set`](_type_scalar_set.md) is required in every non-empty [`_scalar_set`](_scalar_set.md) section. It is a bridge-graph subset of [`_type_scalar`](_type_scalar.md) with 25 accepted values. Excluded: display/markup strings ([`_type_string_Markdown`](_type_string_Markdown.md), [`_type_string_HTML`](_type_string_HTML.md), [`_type_string_SVG`](_type_string_SVG.md), [`_type_string_LaTeX`](_type_string_LaTeX.md), [`_type_string_regexp`](_type_string_regexp.md)) and non-comparable objects ([`_type_object`](_type_object.md), [`_type_struct`](_type_struct.md), [`_type_object_GeoJSON`](_type_object_GeoJSON.md)).
 
 **Numbers**
 
@@ -57,7 +57,7 @@ The data type of elements in a [`_type_scalar_set`](_type_scalar_set.md) section
 ```json
 {
   "_aid" : [
-    "scalar_set"
+    "set"
   ],
   "_gid" : "_type_scalar_set",
   "_lid" : "set",
