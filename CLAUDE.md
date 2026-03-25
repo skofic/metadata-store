@@ -29,7 +29,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 ### Completed
 - `_code` section — identifiers (`_gid`, `_lid`, `_nid`), computation rules, secondary properties (`_aid`, `_pid`, `_name`, `_symbol`, `_regexp`, `_emoji`)
 - `_info` section — multilingual structure, core and secondary properties, alias term exception
-- `_data` section — all five shapes (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`), all `_type` variants, range properties
+- `_data` section — all six shapes (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`, `_type`), all `_type` variants, range properties, typedef mechanism
 - `_rule` section — all properties (`_required`, `_recommended`, `_banned`, `_computed`, `_locked`, `_immutable`, `_default-value`), selection structures, open/closed schema design, `_banned` precedence
 - Graphs section — edge structure, `_path`/`_path_data`, functional and non-functional predicates, sections, bridge graphs, alias resolution, `_predicate_value-of` conditional rules, traversal semantics
 
@@ -44,6 +44,11 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - **Next topic (Phase 2)**:
   1. Review `_info` content in `data/core/containers.json`.
   2. Continue populating remaining core term files.
+
+### Recent session (2026-03-25)
+- Verified `_dict.json` (fully rewritten last session) passes all structural checks — clean.
+- Ran term cards generator: 2 new cards written (`_dict_key.md`, `_dict_value.md`).
+- Implemented typedef mechanism: added `_kind_term_typedef` (domn), `_type_key_term_typedef` (scalar type), `_type` shape property (data shapes), and supporting edges. Updated `_data._rule` shape selector to include `_type`. Documented in CLAUDE.md.
 
 ### Recent session (2026-03-24)
 - Full review pass of all `data/core/` JSON files following the `_set_scalar` → `_scalar_set` rename. Systematic Python check script used on each file (`_gid` computation, `_lid` no-underscore, `_aid` contains `_lid`, language keys, stale API patterns, `_closed` in `_rule`, `_required`/`_recommended` disjoint, edge references).
@@ -313,7 +318,7 @@ The `_data` section is used by descriptor terms. It describes and documents the 
 
 #### Data shape (top-level structure)
 
-The top level of the data description defines the **shape** of the data. Exactly one of the following properties is present:
+The top level of the data description defines the **shape** of the data. At most one of the following properties is present:
 
 | Property  | Description |
 |-----------|-------------|
@@ -322,8 +327,9 @@ The top level of the data description defines the **shape** of the data. Exactly
 | `_set`    | An unordered list of *unique* values of the same type. |
 | `_tuple`  | An ordered list of values whose data type is defined by position. |
 | `_dict`   | A key/value dictionary. The key is defined by a scalar string variant; the value is recursively defined by a `_data` section. |
+| `_type`   | A reference to a **typedef term** by `_gid`. The shape is resolved by looking up the referenced term's `_data` section. Mutually exclusive with all five inline shapes. |
 
-Each of these properties is described in detail in the subsections below.
+The five inline shapes (`_scalar` through `_dict`) are described in detail in the subsections below. `_type` is described in the [Typedef mechanism](#typedef-mechanism) subsection.
 
 #### `_scalar`
 
@@ -379,6 +385,7 @@ Each of these properties is described in detail in the subsections below.
 | `_type_key_term_descriptor` | A key that must reference a descriptor (has a `_data` section). |
 | `_type_key_term_object`     | A key that must reference an object definition term (has a `_rule` section). |
 | `_type_key_term_predicate`  | A key that must reference a predicate term. |
+| `_type_key_term_typedef`    | A key that must reference a typedef term (carries `_kind_term_typedef`). Used by the `_type` shape property. |
 | `_type_handle`              | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
 | `_type_enum`                | A string representing the `_gid` of an enumeration element. |
 | `_type_object`              | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
@@ -855,18 +862,20 @@ When the tuple contains fewer elements than `_type_tuple`, the types for the tra
 
 ##### `_dict_key`
 
-`_dict_key` is a structure that defines the type of the dictionary key. It is structurally parallel to `_scalar` but uses **`_dict_key_type`** as the required type property. Because dictionary keys must be string-compatible object property names, only string-compatible types are accepted.
+`_dict_key` is a structure that defines the type of the dictionary key. It is structurally parallel to `_scalar` but uses **`_dict_key_type`** as the required type property. Because dictionary keys must be string-compatible object property names, only string-compatible types are accepted. `_dict_key_type` is always required — unconstrained dictionary keys are not permitted.
 
 ###### `_dict_key` properties
 
 | Property        | Required | Description |
 |-----------------|----------|-------------|
 | `_dict_key_type`| Yes      | The data type of the dictionary key. |
-| `_kind_enum`    | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
-| `_unit`         | No       | Key unit, expressed as an enumeration element. |
-| `_unit-name`    | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
-| `_unit-symbol`  | No       | Unit symbol, used when `_unit` is absent. |
-| `_regexp`       | No       | Regular expression to validate the key format; relevant to `_type_string` only. |
+| `_kind_enum`    | Conditional | Constrains the controlled vocabulary; activated by a `_predicate_value-of` edge when `_dict_key_type` is `_type_enum`. |
+| `_unit`         | Conditional | Key unit, expressed as an enumeration element; activated by edge rule for applicable types. |
+| `_unit-name`    | Conditional | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent; activated by edge rule. |
+| `_unit-symbol`  | Conditional | Unit symbol, used when `_unit` is absent; activated by edge rule. |
+| `_regexp`       | Conditional | Regular expression to validate the key format; activated by a `_predicate_value-of` edge when `_dict_key_type` is `_type_string`. |
+
+Optional companions are not listed in the base `_rule`. They are activated by value-triggered conditional rules (`_predicate_value-of` edges): when `_dict_key_type` holds a specific value, the corresponding edge supplies the permitted optional properties for that key type.
 
 ###### `_dict_key_type` enumeration
 
@@ -892,6 +901,7 @@ When the tuple contains fewer elements than `_type_tuple`, the types for the tra
 | `_type_key_term_descriptor`   | A key that must reference a descriptor. |
 | `_type_key_term_object`       | A key that must reference an object definition term. |
 | `_type_key_term_predicate`    | A key that must reference a predicate term. |
+| `_type_key_term_typedef`      | A key that must reference a typedef term. |
 | `_type_handle`                | A string representing the `_id` of an ArangoDB document. |
 | `_type_enum`                  | A string representing the `_gid` of an enumeration element. |
 
@@ -918,6 +928,52 @@ The semantics of each type are identical to those described in the [`_scalar`](#
 ```
 
 The example above describes the multilingual structure used throughout the `_info` section: keys are ISO 639-3 language `_gid`s (e.g. `ISO_639_3_eng`), values are plain strings.
+
+---
+
+#### Typedef mechanism
+
+A **typedef** is a reusable data shape definition. Any term can act as a typedef by carrying `_kind_term_typedef` in its `_domn._kind_term` set. Other descriptors reference it by placing the typedef term's `_gid` in the `_type` property of their `_data` section.
+
+**Rules:**
+
+- `_type` is mutually exclusive with all five inline shape properties. A `_data` section either has one inline shape or a `_type` reference — never both.
+- The typedef term must define its shape **inline** using one of the five concrete shape properties (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`). It must not itself use `_type` — chaining is prohibited.
+- `_type` holds a **single `_gid`** (not a set). Only one typedef may be referenced per descriptor.
+- A descriptor whose `_data` uses `_type` must **not** carry a `_rule` section. Schema constraints belong on the typedef term itself (which may carry both `_data` and `_rule`).
+- Validation performs **one lookup**: find the typedef term, read its `_data` section, apply it as if written inline.
+
+**Typedef term structure:**
+
+```json
+{
+    "_code": {
+        "_nid": "",
+        "_lid": "multilingual_string",
+        "_gid": "_info_string",
+        "_aid": ["multilingual_string"]
+    },
+    "_data": {
+        "_dict": {
+            "_dict_key": {"_dict_key_type": "_type_key_term"},
+            "_dict_value": {"_scalar": {"_type_scalar": "_type_string"}}
+        }
+    },
+    "_domn": {
+        "_kind_term": ["_kind_term_typedef"]
+    }
+}
+```
+
+**Referencing the typedef:**
+
+```json
+{
+    "_data": {
+        "_type": "_info_string"
+    }
+}
+```
 
 ---
 

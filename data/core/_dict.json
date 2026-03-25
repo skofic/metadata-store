@@ -1,0 +1,74 @@
+[
+	{
+		"_code": {
+			"_nid": "_dict",
+			"_lid": "key",
+			"_gid": "_dict_key",
+			"_aid": [
+				"key"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dictionary Key"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The type descriptor for dictionary keys in a [`_dict`](_dict.md) section. The required [`_dict_key_type`](_dict_key_type.md) property selects the data type of the key from the [`_dict_key_type`](_dict_key_type.md) enumeration — a bridge-graph subset of [`_type_scalar_set`](_type_scalar_set.md) restricted to string-compatible types that can serve as valid object property names."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_dict_key`](_dict_key.md) is a required property of every [`_dict`](_dict.md) section. It is structurally parallel to [`_scalar`](_scalar.md) but uses [`_dict_key_type`](_dict_key_type.md) as its required type property, and accepts only string-compatible types — numbers, booleans, and timestamp are excluded because they cannot serve as valid object property names.\n\n**Optional companions** are not listed in the base rule. Instead, they are activated by value-triggered conditional rules: when [`_dict_key_type`](_dict_key_type.md) holds a specific value, a `_predicate_value-of` edge supplies the set of permitted optional properties for that key type. For example:\n\n- [`_kind_enum`](_kind_enum.md): permitted when [`_dict_key_type`](_dict_key_type.md) is [`_type_enum`](_type_enum.md).\n- [`_regexp`](_regexp.md): permitted when [`_dict_key_type`](_dict_key_type.md) is [`_type_string`](_type_string.md).\n- [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md): permitted for types that carry a unit; [`_unit`](_unit.md) and the name/symbol pair are mutually exclusive.\n\n[`_dict_key_type`](_dict_key_type.md) is always required — unconstrained dictionary keys are not permitted."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Enumeration keys** — keys are ISO 639-3 language identifiers:\n\n```json\n{\n\t\"_dict_key\": {\n\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t}\n}\n```\n\nOnly valid elements of the `ISO_639_3` controlled vocabulary (e.g. `ISO_639_3_eng`, `ISO_639_3_ita`) are accepted as keys.\n\n\n\n**Generic string keys**:\n\n```json\n{\n\t\"_dict_key\": {\n\t\t\"_dict_key_type\": \"_type_string\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_dict_key"
+				]
+			}
+		},
+		"_rule": {
+			"_closed": true,
+			"_required": {
+				"_selection-descriptors_one": [
+					"_dict_key_type"
+				]
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_dict",
+			"_lid": "value",
+			"_gid": "_dict_value",
+			"_aid": [
+				"value"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dictionary Value"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The value descriptor for a [`_dict`](_dict.md) section. Equivalent to a full [`_data`](_data.md) section: contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow values of any type and shape. This makes dictionaries fully recursive."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_dict_value`](_dict_value.md) is a required property of every non-empty [`_dict`](_dict.md) section. Its structure is identical to a [`_data`](_data.md) section: it contains exactly one shape sub-property that defines the type and shape of each dictionary value. Because [`_dict`](_dict.md) is one of the allowed shapes, dictionaries can be nested arbitrarily — the value of a dictionary can itself be another dictionary with its own key and value types.\n\nAn empty `_dict_value` object (`\"_dict_value\": {}`) means the dictionary accepts values of any shape and type.\n\nThe canonical use case is the **multilingual text property** used throughout the [`_info`](_info.md) section: keys are language [`_gid`](_gid.md)s (e.g. `ISO_639_3_eng`) and values are plain strings."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Multilingual text** — the pattern used throughout [`_info`](_info.md) sections:\n\n```json\n{\n\t\"_dict_value\": {\n\t\t\"_scalar\": {\n\t\t\t\"_type_scalar\": \"_type_string\"\n\t\t}\n\t}\n}\n```\n\n\n\n**Array values** — each key maps to an array of objects:\n\n```json\n{\n\t\"_dict_value\": {\n\t\t\"_array\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type_scalar\": \"_type_object\",\n\t\t\t\t\"_kind_object\": [\"some_schema\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\n**Nested dictionary** — country → language → Markdown text:\n\n```json\n{\n\t\"_dict_value\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type_scalar\": \"_type_string_Markdown\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\n**Unconstrained** — values of any type:\n\n```json\n{\n\t\"_dict_value\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type_scalar": "_type_object",
+				"_kind_object": [
+					"_data"
+				]
+			}
+		}
+	}
+]

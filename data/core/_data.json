@@ -35,8 +35,7 @@
 			"_recommended": [
 				"_type_scalar"
 			]
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -52,7 +51,7 @@
 				"ISO_639_3_eng": "Array"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional [`_elements`](_elements.md) property constrains the element count."
+				"ISO_639_3_eng": "The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional elements property constrains the element count."
 			},
 			"_description": {
 				"ISO_639_3_eng": "An *array* is an ordered sequence of values of the *same type*. Values may repeat; the type definition applies uniformly to every element.\n\nArrays are *recursive*: the element type is itself a shape property — one of [`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md). Nesting terminates at a [`_scalar`](_scalar.md) or [`_dict`](_dict.md) leaf.\n\nWhen [`_array`](_array.md) is an *empty object* (`{}`), the array may contain any number of elements of any shape or type, with no further constraints.\n\nWhen non-empty, exactly *one* shape sub-property must be present. The optional [`_elements`](_elements.md) property may always be added to constrain the minimum and maximum number of items."
@@ -83,8 +82,7 @@
 			"_recommended": [
 				"_elements"
 			]
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -127,8 +125,7 @@
 			"_recommended": [
 				"_elements"
 			]
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -171,8 +168,7 @@
 			"_recommended": [
 				"_elements"
 			]
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -191,10 +187,10 @@
 				"ISO_639_3_eng": "The shape property for a key/value dictionary with explicitly typed keys and values. Both [`_dict_key`](_dict_key.md) and [`_dict_value`](_dict_value.md) are required; the value side is a full [`_data`](_data.md) section, making the dictionary recursively composable."
 			},
 			"_description": {
-				"ISO_639_3_eng": "A *dictionary* is a key/value structure in which the key type and value type are both explicitly declared. It contrasts with [`_type_struct`](_type_struct.md) (indeterminate properties) and [`_type_object`](_type_object.md) (properties correspond to descriptor [`_gid`](_gid.md)s).\n\n[`_dict_key`](_dict_key.md) defines the key type using [`_dict_key_type`](_dict_key_type.md), which accepts only string-compatible types: strings, enumeration elements, term keys, and document handles. The optional companion [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary when the key type is [`_type_enum`](_type_enum.md).\n\n[`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow any value type. This makes dictionaries fully recursive.\n\nThe canonical use case is a *multilingual text property*: keys are language [global identifiers](_gid.md) (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section."
+				"ISO_639_3_eng": "A *dictionary* is a key/value structure in which the key type and value type are both explicitly declared. It contrasts with [`_type_struct`](_type_struct.md) (indeterminate properties) and [`_type_object`](_type_object.md) (properties correspond to descriptor [`_gid`](_gid.md)s).\n\n[`_dict_key`](_dict_key.md) defines the key type using [`_dict_key_type`](_dict_key_type.md), which accepts only string-compatible types: strings, enumeration elements, term keys, and document handles. The optional companion [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary when the key type is [`_type_enum`](_type_enum.md).\n\n[`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow any value type. This makes dictionaries fully recursive.\n\nThe canonical use case is a *multilingual text property*: keys are language [`_gid`](_gid.md)s (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A multilingual text dictionary — the pattern used throughout [`_info`](_info.md) sections:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type_scalar\": \"_type_string\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA dictionary keyed by string, with array values:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_string\"\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type_scalar\": \"_type_object\",\n\t\t\t\t\t\"_kind_object\": [\"some_schema\"]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA nested dictionary (country → language → Markdown text):\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_3166_1\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_dict\": {\n\t\t\t\t\"_dict_key\": {\n\t\t\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t\t},\n\t\t\t\t\"_dict_value\": {\n\t\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\t\"_type_scalar\": \"_type_string_Markdown\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nAn unconstrained dictionary:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {},\n\t\t\"_dict_value\": {}\n\t}\n}\n```"
+				"ISO_639_3_eng": "A multilingual text dictionary — the pattern used throughout [`_info`](_info.md) sections:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_type_scalar\": \"_type_string\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA dictionary keyed by string, with array values:\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_string\"\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type_scalar\": \"_type_object\",\n\t\t\t\t\t\"_kind_object\": [\"some_schema\"]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n\n\nA nested dictionary (country → language → Markdown text):\n\n```json\n{\n\t\"_dict\": {\n\t\t\"_dict_key\": {\n\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\"_kind_enum\": [\"ISO_3166_1\"]\n\t\t},\n\t\t\"_dict_value\": {\n\t\t\t\"_dict\": {\n\t\t\t\t\"_dict_key\": {\n\t\t\t\t\t\"_dict_key_type\": \"_type_enum\",\n\t\t\t\t\t\"_kind_enum\": [\"ISO_639_3\"]\n\t\t\t\t},\n\t\t\t\t\"_dict_value\": {\n\t\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\t\"_type_scalar\": \"_type_string_Markdown\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -213,7 +209,35 @@
 					"_dict_value"
 				]
 			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "type",
+			"_gid": "_type",
+			"_aid": [
+				"type"
+			]
 		},
-		"_domn": {}
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Type Reference"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A shape property that references a typedef term by key, delegating the data shape definition to that term. Mutually exclusive with the five inline shape properties ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_dict`](_dict.md)). The referenced term must carry [`_kind_term_typedef`](_kind_term_typedef.md) and define its shape inline."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_type`](_type.md) is the sixth shape option in a [`_data`](_data.md) section. Instead of declaring a data shape inline, the descriptor delegates to an existing typedef term — a term that carries [`_kind_term_typedef`](_kind_term_typedef.md) and defines a concrete, reusable shape.\n\nThe value is a single `_gid` string that must be the key of a typedef term. During validation, the system performs one lookup: it reads the referenced term's [`_data`](_data.md) section and applies it exactly as if the shape were written inline in the current descriptor. Chaining is not permitted — the typedef term itself must use one of the five inline shape properties, not `_type`.\n\n[`_type`](_type.md) is mutually exclusive with `_scalar`, `_array`, `_set`, `_tuple`, and `_dict`. A [`_data`](_data.md) section that uses `_type` must not carry a [`_rule`](_rule.md) section on the same descriptor — schema constraints belong on the typedef term itself.\n\nTypical use cases:\n\n- **Reusable multilingual text**: a typedef term `_info_string` defines the dictionary keyed by language `_gid`s; all `_info` property descriptors reference it via `_type`.\n- **Shared range structures**: a typedef term defines a range object; multiple descriptors reference it without repeating the key/value structure.\n- **Standardised identifiers**: a typedef captures a regexp-constrained string pattern shared by many descriptor terms.\n\n```json\n{\n\t\"_data\": {\n\t\t\"_type\": \"_info_string\"\n\t}\n}\n```\n\nThe validator resolves `_info_string`, reads its `_data._dict` definition, and validates the incoming value against that shape."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Referencing a multilingual string typedef** — the most common use case, shared by all `_info` text properties:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_type\": \"_info_string\"\n\t}\n}\n```\n\nThis is equivalent to the following inline declaration (but written once in the typedef term and reused many times):\n\n```json\n{\n\t\"_data\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_dict_key_type\": \"_type_key_term\"\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_type_scalar\": \"_type_string\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_type_scalar": "_type_key_term_typedef"
+			}
+		}
 	}
 ]

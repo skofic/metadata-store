@@ -45,6 +45,15 @@
 		"_path_data": {}
 	},
 	{
+		"_from": "terms/_kind_term_typedef",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_kind_term",
+		"_path": [
+			"terms/_kind_term"
+		],
+		"_path_data": {}
+	},
+	{
 		"_from": "terms/_kind_term_alias",
 		"_predicate": "_predicate_enum-of",
 		"_to": "terms/_kind_term",

@@ -39,8 +39,7 @@
 			"_description": {
 				"ISO_639_3_eng": "This term serves as the namespace root for all [`_kind_*`](_kind.md) sub-terms. It has two distinct uses.\n\n**As a data-type qualifier** — only two `_kind_*` properties are used as companions in a [`_scalar`](_scalar.md) section:\n\n- [`_kind_enum`](_kind_enum.md): optional companion to [`_type_enum`](_type_enum.md). Restricts the controlled vocabularies from which the enumeration value may be drawn.\n- [`_kind_object`](_kind_object.md): optional companion to [`_type_object`](_type_object.md). Restricts the object schema the value must conform to.\n\nAll other type specificity — float vs. integer numbers, Markdown vs. HTML strings, term keys vs. enum-root keys — is expressed directly in the [`_type_scalar`](_type_scalar.md) value (e.g. [`_type_number_float`](_type_number_float.md), [`_type_string_Markdown`](_type_string_Markdown.md), [`_type_key_term_enum`](_type_key_term_enum.md)), without any additional `_kind_*` companion.\n\n**As a term role indicator** — the sub-term [`_kind_term`](_kind_term.md) is a descriptor used in the [`_domn`](_domn.md) section to record the functional roles a term plays in the dictionary. Because a term can simultaneously act as a descriptor, an enumeration element, a namespace, an object schema definition, and more, [`_kind_term`](_kind_term.md) makes these roles explicitly queryable without traversing the graph."
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -69,8 +68,7 @@
 					"_type_scalar"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -99,8 +97,7 @@
 					"_type_scalar_set"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -129,8 +126,7 @@
 					"_dict_key_type"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -161,8 +157,7 @@
 					"_type_scalar_set": "_type_key_term_enum"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -193,8 +188,7 @@
 					"_type_scalar_set": "_type_key_term_object"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -226,8 +220,7 @@
 					"_unit"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -250,21 +243,8 @@
 			}
 		},
 		"_data": {
-			"_dict": {
-				"_dict_key": {
-					"_dict_key_type": "_type_enum",
-					"_kind_enum": [
-						"ISO_639_3"
-					]
-				},
-				"_dict_value": {
-					"_scalar": {
-						"_type_scalar": "_type_string"
-					}
-				}
-			}
-		},
-		"_domn": {}
+			"_type": "_info_string"
+		}
 	},
 	{
 		"_code": {
@@ -290,8 +270,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string_LaTeX"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -317,8 +296,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string_regexp"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -347,8 +325,7 @@
 					"_min-range-inclusive": 0
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -377,8 +354,7 @@
 					"_range"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -407,8 +383,7 @@
 					"_range_string"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -437,8 +412,7 @@
 					"_range"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -467,8 +441,7 @@
 					"_range_string"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -512,8 +485,7 @@
 					]
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -557,8 +529,7 @@
 					]
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -584,8 +555,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_number"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -611,8 +581,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -638,8 +607,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_number"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -665,8 +633,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -718,8 +685,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -745,8 +711,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_number"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -772,7 +737,6 @@
 			"_scalar": {
 				"_type_scalar": "_type_string"
 			}
-		},
-		"_domn": {}
+		}
 	}
 ]

@@ -301,6 +301,17 @@
 		"_path_data": {}
 	},
 	{
+		"_from": "terms/_type_key_term_typedef",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_scalar_set",
+			"terms/_dict_key_type"
+		],
+		"_path_data": {}
+	},
+	{
 		"_from": "terms/_type_handle",
 		"_predicate": "_predicate_enum-of",
 		"_to": "terms/_type_scalar",

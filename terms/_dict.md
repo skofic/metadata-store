@@ -16,7 +16,7 @@ A *dictionary* is a key/value structure in which the key type and value type are
 
 [`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow any value type. This makes dictionaries fully recursive.
 
-The canonical use case is a *multilingual text property*: keys are language [global identifiers](_gid.md) (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section.
+The canonical use case is a *multilingual text property*: keys are language [`_gid`](_gid.md)s (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section.
 
 **`_examples`**
 
@@ -84,19 +84,6 @@ A nested dictionary (country → language → Markdown text):
 				}
 			}
 		}
-	}
-}
-```
-
-
-
-An unconstrained dictionary:
-
-```json
-{
-	"_dict": {
-		"_dict_key": {},
-		"_dict_value": {}
 	}
 }
 ```

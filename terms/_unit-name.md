@@ -47,18 +47,6 @@ The value is a dictionary keyed by ISO 639-3 language [`_gid`](_gid.md) (e.g. `I
 
 ```json
 {
-  "_dict" : {
-    "_dict_key" : {
-      "_dict_key_type" : "_type_enum",
-      "_kind_enum" : [
-        "ISO_639_3"
-      ]
-    },
-    "_dict_value" : {
-      "_scalar" : {
-        "_type_scalar" : "_type_string"
-      }
-    }
-  }
+  "_type" : "_info_string"
 }
 ```

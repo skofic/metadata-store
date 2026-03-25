@@ -15,8 +15,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_handle"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -34,8 +33,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_string"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -53,8 +51,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_key"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	
 	{
@@ -73,8 +70,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_handle"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -92,7 +88,6 @@
 			"_scalar": {
 				"_type_scalar": "_type_handle"
 			}
-		},
-		"_domn": {}
+		}
 	}
 ]

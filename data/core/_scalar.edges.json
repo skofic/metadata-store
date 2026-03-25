@@ -8,7 +8,6 @@
 		],
 		"_path_data": {}
 	},
-	
 	{
 		"_from": "terms/_type_boolean",
 		"_predicate": "_predicate_value-of",
@@ -166,7 +165,6 @@
 			}
 		}
 	},
-
 	{
 		"_from": "terms/_type_string_URI",
 		"_predicate": "_predicate_value-of",
@@ -203,7 +201,6 @@
 			}
 		}
 	},
-	
 	{
 		"_from": "terms/_type_string_email",
 		"_predicate": "_predicate_value-of",
@@ -312,7 +309,6 @@
 			}
 		}
 	},
-	
 	{
 		"_from": "terms/_type_string_HEX",
 		"_predicate": "_predicate_value-of",
@@ -329,6 +325,7 @@
 					]
 				},
 				"_recommended": [
+					"_regexp",
 					"_unit",
 					"_unit-name",
 					"_unit-symbol",
@@ -553,6 +550,24 @@
 		}
 	},
 	{
+		"_from": "terms/_type_key_term_typedef",
+		"_predicate": "_predicate_value-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_scalar"
+		],
+		"_path_data": {
+			"terms/_scalar": {
+				"_closed": true,
+				"_required": {
+					"_selection-descriptors_all": [
+						"_type_scalar"
+					]
+				}
+			}
+		}
+	},
+	{
 		"_from": "terms/_type_handle",
 		"_predicate": "_predicate_value-of",
 		"_to": "terms/_type_scalar",
@@ -670,7 +685,6 @@
 			}
 		}
 	},
-	
 	{
 		"_from": "terms/_unit",
 		"_predicate": "_predicate_property-of",

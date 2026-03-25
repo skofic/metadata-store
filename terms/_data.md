@@ -17,6 +17,7 @@ Any term that carries this section is a [descriptor](_term_descriptor.md). A ter
 - [Set shape](_set.md): Defines the *data type* and *constraints* for an *unordered list* of *unique* values of the *same type*.
 - [Tuple shape](_tuple.md): Defines the *data type* for each position of an *ordered list* where each element may have a *different type*.
 - [Dictionary shape](_dict.md): Defines the *key* and *value* types and *constraints* for a *key/value dictionary*.
+- [Type reference](_type.md): Delegates the shape definition to a [typedef term](_kind_term_typedef.md) identified by its `_gid`. The shape is resolved by a single lookup of the referenced term's `_data` section. Mutually exclusive with all five inline shapes.
 
 **`_examples`**
 
@@ -133,6 +134,18 @@ This example shows the *data definition* for a *descriptor* that can take *only*
 
 This example shows the *data definition* for a *descriptor* that can take *any data shape* or *value*.
 
+
+
+```json
+{
+	"_data": {
+		"_type": "_info_string"
+	}
+}
+```
+
+This example shows the *data definition* for a *descriptor* that delegates its shape to the `_info_string` [typedef](_type.md). The validator looks up that term's [`_data`](_data.md) section and applies it as if it were written inline.
+
 ---
 
 **`_code`**
@@ -172,7 +185,8 @@ This example shows the *data definition* for a *descriptor* that can take *any d
       "_array",
       "_set",
       "_tuple",
-      "_dict"
+      "_dict",
+      "_type"
     ]
   }
 }

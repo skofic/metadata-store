@@ -16,7 +16,7 @@
 				"ISO_639_3_eng": "An object containing one or more descriptor selection structures that express which properties must be present in an object for it to be considered valid. All selection structures present must be satisfied simultaneously — they are ANDed together, not ORed."
 			},
 			"_description": {
-				"ISO_639_3_eng": "[`_required`](_required.md) is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor [`_gid`](_gid.md)s. When multiple structures are present, all of them must be satisfied simultaneously.\n\nThe six available selection structures are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one of the listed descriptors must be present; the rest must be absent.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one of the listed descriptors may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more of the listed descriptors must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all listed descriptors must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute an element.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute an element.\n\n[`_required`](_required.md) is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"],\n\t\t\t\"_selection-descriptors_one\": [\"_scalar\", \"_array\", \"_set\", \"_tuple\", \"_dict\"]\n\t\t}\n\t}\n}\n```\n\n[`_lid`](_lid.md) must always be present; exactly one of the five data shape descriptors must be present."
+				"ISO_639_3_eng": "[`_required`](_required.md) is a property of the [`_rule`](_rule.md) section. It contains one or more [descriptor selection](_selection-descriptors.md) structures, each expressing a cardinality constraint over a group of descriptor [`_gid`](_gid.md)s. When multiple structures are present, all of them must be satisfied simultaneously.\n\nThe seven available selection structures are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one of the listed descriptors must be present; the rest must be absent.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one of the listed descriptors may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more of the listed descriptors must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all listed descriptors must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute an element.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute an element.\n- [`_selection-descriptors_all-of-one`](_selection-descriptors_all-of-one.md): an array of groups; exactly one group must be selected in its entirety — all its members must be present and no member from any other group may be present.\n\n[`_required`](_required.md) is checked **after** [`_default-value`](_default-value.md) and [`_computed`](_computed.md) are applied, so a property with a default or computed value will always satisfy a requirement for it.\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all\": [\"_lid\"],\n\t\t\t\"_selection-descriptors_one\": [\"_scalar\", \"_array\", \"_set\", \"_tuple\", \"_dict\"]\n\t\t}\n\t}\n}\n```\n\n[`_lid`](_lid.md) must always be present; exactly one of the five data shape descriptors must be present."
 			}
 		},
 		"_data": {
@@ -36,11 +36,11 @@
 					"_selection-descriptors_any",
 					"_selection-descriptors_all",
 					"_selection-descriptors_one-of-any",
-					"_selection-descriptors_one-of-all"
+					"_selection-descriptors_one-of-all",
+					"_selection-descriptors_all-of-one"
 				]
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -68,8 +68,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -95,8 +94,7 @@
 			"_scalar": {
 				"_type_scalar": "_type_boolean"
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -124,8 +122,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -153,8 +150,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -182,8 +178,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -211,8 +206,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -241,8 +235,7 @@
 				},
 				"_dict_value": {}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -261,10 +254,9 @@
 				"ISO_639_3_eng": "Namespace for the six descriptor selection rule terms used inside [`_required`](_required.md). Each sub-term expresses a different cardinality constraint over a set of descriptor [`_gid`](_gid.md)s."
 			},
 			"_description": {
-				"ISO_639_3_eng": "[`_selection-descriptors`](_selection-descriptors.md) is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor [`_gid`](_gid.md)s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe six variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute.\n\nMultiple selection structures may coexist inside a single [`_required`](_required.md) object; all must be satisfied simultaneously (they are ANDed together)."
+				"ISO_639_3_eng": "[`_selection-descriptors`](_selection-descriptors.md) is the namespace for the family of cardinality constraint terms used in the [`_required`](_required.md) object. Each sub-term takes a set (or array of sets) of descriptor [`_gid`](_gid.md)s and imposes a cardinality rule on how many of them must be present in a valid object.\n\nThe seven variants are:\n\n- [`_selection-descriptors_one`](_selection-descriptors_one.md): exactly one must be present.\n- [`_selection-descriptors_one-none`](_selection-descriptors_one-none.md): zero or one may be present.\n- [`_selection-descriptors_any`](_selection-descriptors_any.md): one or more must be present.\n- [`_selection-descriptors_all`](_selection-descriptors_all.md): all must be present.\n- [`_selection-descriptors_one-of-any`](_selection-descriptors_one-of-any.md): an array of groups; from each group exactly one descriptor is the valid form, and at least one group must contribute.\n- [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md): an array of groups; from each group exactly one descriptor is the valid form, and all groups must contribute.\n- [`_selection-descriptors_all-of-one`](_selection-descriptors_all-of-one.md): an array of groups; exactly one group must be selected in its entirety — all its members must be present and no member from any other group may be present.\n\nMultiple selection structures may coexist inside a single [`_required`](_required.md) object; all must be satisfied simultaneously (they are ANDed together)."
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -292,8 +284,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -321,8 +312,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -350,8 +340,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -379,8 +368,7 @@
 					"_type_scalar_set": "_type_key_term_descriptor"
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -410,8 +398,7 @@
 					}
 				}
 			}
-		},
-		"_domn": {}
+		}
 	},
 	{
 		"_code": {
@@ -441,7 +428,36 @@
 					}
 				}
 			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_selection-descriptors",
+			"_lid": "all-of-one",
+			"_gid": "_selection-descriptors_all-of-one",
+			"_aid": [
+				"all-of-one"
+			]
 		},
-		"_domn": {}
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "All of One"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A selection structure for the [`_required`](_required.md) object. Takes an array of groups (each group is a set of descriptor [`_gid`](_gid.md)s); exactly one group must be selected in its entirety — all its members must be present in the object, and no member from any other group may be present."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[`_selection-descriptors_all-of-one`](_selection-descriptors_all-of-one.md) is a property of the [`_required`](_required.md) object. It takes an **array of groups** and enforces an exclusive variant rule:\n\n1. **Exactly one group** must be chosen — all descriptors in the chosen group must be present in the object.\n2. **All other groups** are excluded — no descriptor from any non-chosen group may be present.\n\nThis selector is the natural way to express mutually exclusive structural modes — for example, a [`_dict`](_dict.md) that can be specified either inline (with both [`_dict_key`](_dict_key.md) and [`_dict_value`](_dict_value.md)) or by reference (with [`_kind_dict`](_kind_dict.md) alone):\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_required\": {\n\t\t\t\"_selection-descriptors_all-of-one\": [\n\t\t\t\t[\"_kind_dict\"],\n\t\t\t\t[\"_dict_key\", \"_dict_value\"]\n\t\t\t]\n\t\t}\n\t}\n}\n```\n\nExactly one of the two groups must be satisfied: either [`_kind_dict`](_kind_dict.md) is present (and [`_dict_key`](_dict_key.md) / [`_dict_value`](_dict_value.md) are absent), or both [`_dict_key`](_dict_key.md) and [`_dict_value`](_dict_value.md) are present (and [`_kind_dict`](_kind_dict.md) is absent). Mixed forms — such as [`_kind_dict`](_kind_dict.md) alongside [`_dict_key`](_dict_key.md) — are invalid.\n\nCompare with [`_selection-descriptors_one-of-all`](_selection-descriptors_one-of-all.md), which selects one *element* from each group rather than one *group* in its entirety."
+			}
+		},
+		"_data": {
+			"_array": {
+				"_set": {
+					"_scalar_set": {
+						"_type_scalar_set": "_type_key_term_descriptor"
+					}
+				}
+			}
+		}
 	}
 ]
