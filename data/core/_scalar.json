@@ -101,35 +101,6 @@
 	},
 	{
 		"_code": {
-			"_nid": "_dict_key",
-			"_lid": "type",
-			"_gid": "_dict_key_type",
-			"_aid": [
-				"type"
-			]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Dictionary Key Type"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The data type of keys in a [`_dict_key`](_dict_key.md) section. A bridge-graph subset of [`_type_scalar_set`](_type_scalar_set.md) restricted to string-compatible types — types that can serve as valid JavaScript object property names and ArangoDB document property keys. Excludes all number types and [`_type_timestamp`](_type_timestamp.md)."
-			},
-			"_description": {
-				"ISO_639_3_eng": "[`_dict_key_type`](_dict_key_type.md) is required in every [`_dict_key`](_dict_key.md) section. It is a bridge-graph subset of [`_type_scalar_set`](_type_scalar_set.md) with 20 accepted values, restricted to string-compatible types that can serve as valid object property names. All number types, [`_type_boolean`](_type_boolean.md), and [`_type_timestamp`](_type_timestamp.md) are excluded. Range properties ([`_valid-range_string`](_valid-range_string.md), [`_normal-range_string`](_normal-range_string.md)) are not available in the [`_dict_key`](_dict_key.md) context.\n\n**Strings**\n\n- [`_type_string`](_type_string.md) — Generic UTF-8 text; the only string type that accepts [`_regexp`](_regexp.md). Companion properties: [`_regexp`](_regexp.md), [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md).\n- [`_type_string_URI`](_type_string_URI.md) — Uniform Resource Identifier.\n- [`_type_string_HEX`](_type_string_HEX.md) — Hexadecimal value. Companion properties: [`_unit`](_unit.md) / [`_unit-name`](_unit-name.md) / [`_unit-symbol`](_unit-symbol.md).\n- [`_type_string_email`](_type_string_email.md) — Email address.\n- [`_type_string_date`](_type_string_date.md) — Date in JSON Schema `date` format (YYYY-MM-DD).\n- [`_type_string_time`](_type_string_time.md) — Time in JSON Schema `time` format (HH:MM:SS).\n- [`_type_string_date-time`](_type_string_date-time.md) — Date-time in JSON Schema `date-time` format.\n- [`_type_string_YMD`](_type_string_YMD.md) — Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD).\n- [`_type_string_Hostname`](_type_string_Hostname.md) — Internet hostname.\n- [`_type_string_IPv4`](_type_string_IPv4.md) — IPv4 address.\n- [`_type_string_IPv6`](_type_string_IPv6.md) — IPv6 address.\n\n**Keys**\n\n- [`_type_key`](_type_key.md) — A string representing the [`_key`](_key.md) of a document in any collection.\n- [`_type_key_term`](_type_key_term.md) — A key that must reference any term.\n- [`_type_key_term_enum`](_type_key_term_enum.md) — A key that must reference an enumeration root — the root node of a controlled vocabulary graph.\n- [`_type_key_term_enum_element`](_type_key_term_enum_element.md) — A key that must reference an enumeration element — a valid selectable value within a vocabulary.\n- [`_type_key_term_descriptor`](_type_key_term_descriptor.md) — A key that must reference a descriptor term (carries a [`_data`](_data.md) section).\n- [`_type_key_term_object`](_type_key_term_object.md) — A key that must reference an object definition term (carries a [`_rule`](_rule.md) section).\n- [`_type_key_term_predicate`](_type_key_term_predicate.md) — A key that must reference a predicate term.\n\n**Other**\n\n- [`_type_handle`](_type_handle.md) — A string in `<collection>/<_key>` format representing the ArangoDB `_id` of a document.\n- [`_type_enum`](_type_enum.md) — The `_gid` of an enumeration element. Companion property: [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary from which the value is drawn.\n"
-			}
-		},
-		"_data": {
-			"_scalar": {
-				"_type_scalar": "_type_enum",
-				"_kind_enum": [
-					"_dict_key_type"
-				]
-			}
-		}
-	},
-	{
-		"_code": {
 			"_nid": "_kind",
 			"_lid": "enum",
 			"_gid": "_kind_enum",
@@ -312,7 +283,7 @@
 				"ISO_639_3_eng": "Decimals"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "The number of decimal places to display when rendering a floating-point value. This is a display hint only — it does not constrain the precision of the stored value. Valid only when [`_type_scalar`](_type_scalar.md) is [`_type_number`](_type_number.md) or [`_type_number_float`](_type_number_float.md); not permitted with [`_type_number_integer`](_type_number_integer.md)."
+				"ISO_639_3_eng": "The number of decimal places to display when rendering a floating-point value. This is a display hint only — it does not constrain the precision of the stored value. Valid only when _type_scalar is _type_number or _type_number_float; not permitted with _type_number_integer."
 			},
 			"_description": {
 				"ISO_639_3_eng": "[`_decimals`](_decimals.md) is an optional property of the [`_scalar`](_scalar.md) section, applicable only when [`_type_scalar`](_type_scalar.md) is [`_type_number`](_type_number.md) or [`_type_number_float`](_type_number_float.md). It is not permitted when [`_type_scalar`](_type_scalar.md) is [`_type_number_integer`](_type_number_integer.md), since integers have no decimal part. It controls how many decimal places the frontend displays when rendering the value, without affecting storage precision.\n\nThe value must be a non-negative integer. A value of `0` requests display as a whole number even though the underlying storage may retain fractional precision.\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_type_scalar\": \"_type_number_float\",\n\t\t\"_decimals\": 2\n\t}\n}\n```\n\nValues will be displayed with exactly two decimal places, for example `3.14` or `0.00`."

@@ -10,7 +10,7 @@ Samples of the term's usage or value, helping users understand how to supply or 
 
 **`_description`**
 
-[`_examples`](_examples.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_Markdown`](_info_string_Markdown.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown or HTML string**.
+[`_examples`](_examples.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_formatted`](_info_string_formatted.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown** or **HTML** string.
 
 Examples complement the description by showing concrete instances of valid values or usage patterns. They are especially useful for descriptors with non-obvious formats, enumeration values, or structural constraints. JSON code blocks are preferred for structured data examples.
 
@@ -41,6 +41,6 @@ Examples complement the description by showing concrete instances of valid value
 
 ```json
 {
-  "_type" : "_info_string_Markdown"
+  "_type" : "_info_string_formatted"
 }
 ```

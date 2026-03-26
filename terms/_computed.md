@@ -6,11 +6,11 @@ Computed Properties
 
 **`_definition`**
 
-A set of descriptor [`_gid`](_gid.md)s whose values are automatically set by the system when not provided by the user. Computed values are resolved before [`_required`](_required.md) is checked, so a computed property can simultaneously be required — the system fills it in if absent and validation then confirms its presence.
+A set of descriptor global identifiers whose values are automatically set by the system when not provided by the user. Computed values are resolved before required values are checked, so a computed property can simultaneously be required — the system fills it in if absent and validation then confirms its presence.
 
 **`_description`**
 
-[`_computed`](_computed.md) is a property of the [`_rule`](_rule.md) section. It lists properties whose values the system derives automatically if the user does not supply them — for example, [`_gid`](_gid.md) computed from [`_nid`](_nid.md) and [`_lid`](_lid.md).
+`_computed` is a property of the [`_rule`](_rule.md) section. It lists properties whose values the system derives automatically if the user does not supply them — for example, [`_gid`](_gid.md) computed from [`_nid`](_nid.md) and [`_lid`](_lid.md).
 
 The computation order at insertion time is:
 

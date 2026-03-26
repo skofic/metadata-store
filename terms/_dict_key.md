@@ -6,7 +6,7 @@ Dictionary Key
 
 **`_definition`**
 
-The type descriptor for dictionary keys in a [`_dict`](_dict.md) section. The required [`_dict_key_type`](_dict_key_type.md) property selects the data type of the key from the [`_dict_key_type`](_dict_key_type.md) enumeration — a bridge-graph subset of [`_type_scalar_set`](_type_scalar_set.md) restricted to string-compatible types that can serve as valid object property names.
+The type descriptor for dictionary keys in a _dict section. The required _dict_key_type property selects the data type of the key from the _dict_key_type enumeration — a bridge-graph subset of _type_scalar_set restricted to string-compatible types that can serve as valid object property names.
 
 **`_description`**
 

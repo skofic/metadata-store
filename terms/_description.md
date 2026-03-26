@@ -10,7 +10,7 @@ Full description of the term aimed at a non-expert audience. Should explain what
 
 **`_description`**
 
-[`_description`](_description.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_Markdown`](_info_string_Markdown.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown or HTML string**.
+[`_description`](_description.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_formatted`](_info_string_formatted.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown** or **HTML** string.
 
 The description is the main informational body of a term. While [`_definition`](_definition.md) answers *what is this?*, the description answers *how is it used?* and *why does it exist?*. It is aimed at a non-expert reader and may include:
 
@@ -48,6 +48,6 @@ The description is required on most terms; it may be omitted only when the defin
 
 ```json
 {
-  "_type" : "_info_string_Markdown"
+  "_type" : "_info_string_formatted"
 }
 ```

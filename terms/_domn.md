@@ -12,9 +12,9 @@ The section of a term that classifies it across one or more categorical dimensio
 
 The domains section provides a principled mechanism for categorising a [term](_term.md) according to dimensions such as subject domain, measurement type, statistical class, or intended application context. Each property in this section must be a [descriptor](_term_descriptor.md) defined in the dictionary; its value must conform to that descriptor's type definition and is typically an element of a controlled vocabulary.
 
-This section applies to any term in the dictionary — including core dictionary building blocks — and serves two complementary purposes. First, it classifies the term within meaningful subject or application domains. Second, and crucially, it records the *roles* the term may play within the dictionary: for example, whether it functions as a [descriptor](_term_descriptor.md), an enumeration element, a namespace, an object schema definition, or any combination of these. Storing roles explicitly in `_domn` enables a consumer to determine immediately what a term can be used for, without traversing the graph to infer its function from its relationships.
+This section applies to any term in the dictionary — including core dictionary building blocks — and serves two complementary purposes. First, it classifies the term within meaningful subject or application domains. Second, and crucially, it records the [*roles*](_kind_term.md) the term may play within the dictionary: for example, whether it functions as a descriptor, an enumeration element, a namespace, an object schema definition, or any combination of these. Storing roles explicitly in `_domn` enables a consumer to determine immediately what a term can be used for, without traversing the graph to infer its function from its relationships.
 
-The section is optional and its schema is open: any dictionary-defined descriptor may appear as a property. When the term object operates in closed mode, only descriptors listed in the term's [structure rules](_rule.md) are permitted.
+The section is optional and its schema is open: any dictionary-defined descriptor may appear as a property.
 
 **`_examples`**
 

@@ -6,7 +6,7 @@ Decimals
 
 **`_definition`**
 
-The number of decimal places to display when rendering a floating-point value. This is a display hint only — it does not constrain the precision of the stored value. Valid only when [`_type_scalar`](_type_scalar.md) is [`_type_number`](_type_number.md) or [`_type_number_float`](_type_number_float.md); not permitted with [`_type_number_integer`](_type_number_integer.md).
+The number of decimal places to display when rendering a floating-point value. This is a display hint only — it does not constrain the precision of the stored value. Valid only when _type_scalar is _type_number or _type_number_float; not permitted with _type_number_integer.
 
 **`_description`**
 

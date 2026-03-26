@@ -6,19 +6,17 @@ All identifiers
 
 **`_definition`**
 
-The set of all official, externally recognised identifiers by which this term can be referenced. Automatically initialised to contain the local identifier if not supplied. When alias terms point to this term, their local identifiers are added here as well.
+The set of all official, externally recognised identifiers by which this term can be referenced. Automatically initialised to contain the local identifier if not supplied.
 
 **`_description`**
 
-This set collects all *official* or *globally recognised* identifiers that can be used to *reference* the term — for example, alternative ISO codes assigned by different parts of the same standard.
+This set collects all *official* or *globally recognised* identifiers that can be used to *reference* the term.
 
-The [local identifier](_lid.md) is a public identifier for this dictionary, so this property is **required** and **computed**: if absent when a term is created or modified, the system initialises it to `[_lid]`. It is not immutable — when alias terms point to this term, their [local identifiers](_lid.md) are appended to the set.
+The [local identifier](_lid.md) is a public identifier for this dictionary, so this property is **required** and **computed**: if absent when a term is created or modified, the system initialises it to [`_lid`](_lid.md). 
 
-For *descriptors* (data variables), these identifiers may help *match* the descriptor when processing external datasets that use different naming conventions.
+*Alias enumeration elements* should store their [local identifiers](_lid.md) in this set, so that the *official element* can be *identified* also when using *alternative codes*.
 
-For *enumeration elements*, the set should include all *alternative codes* that correspond to the current [local identifier](_lid.md).
-
-Keep this set restricted to *official* or *widely recognised* standards. Including ad hoc or provider-specific identifiers here reduces its usefulness; those belong in [provider identifiers](_pid.md) instead.
+Keep this set restricted to *official* or *widely recognised* standards. *Ad hoc* or *provider-specific* identifiers belong in [provider identifiers](_pid.md) instead.
 
 **`_examples`**
 

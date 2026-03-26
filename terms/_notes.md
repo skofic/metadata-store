@@ -10,7 +10,7 @@ Additional information that does not fit in other properties — informal annota
 
 **`_description`**
 
-[`_notes`](_notes.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_Markdown`](_info_string_Markdown.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown or HTML string**.
+[`_notes`](_notes.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_formatted`](_info_string_formatted.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown** or **HTML** string.
 
 Notes act as a scrapbook for the metadata curator. Appropriate content includes:
 
@@ -40,6 +40,6 @@ Notes should not duplicate content from other `_info` properties. Content that b
 
 ```json
 {
-  "_type" : "_info_string_Markdown"
+  "_type" : "_info_string_formatted"
 }
 ```

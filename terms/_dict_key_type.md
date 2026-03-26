@@ -6,7 +6,7 @@ Dictionary Key Type
 
 **`_definition`**
 
-The data type of keys in a [`_dict_key`](_dict_key.md) section. A bridge-graph subset of [`_type_scalar_set`](_type_scalar_set.md) restricted to string-compatible types — types that can serve as valid JavaScript object property names and ArangoDB document property keys. Excludes all number types and [`_type_timestamp`](_type_timestamp.md).
+The data type of keys in a _dict_key section. A bridge-graph subset of _type_scalar_set restricted to string-compatible types — types that can serve as valid JavaScript object property names and ArangoDB document property keys. Excludes all number types and _type_timestamp.
 
 **`_description`**
 
@@ -35,12 +35,12 @@ The data type of keys in a [`_dict_key`](_dict_key.md) section. A bridge-graph s
 - [`_type_key_term_descriptor`](_type_key_term_descriptor.md) — A key that must reference a descriptor term (carries a [`_data`](_data.md) section).
 - [`_type_key_term_object`](_type_key_term_object.md) — A key that must reference an object definition term (carries a [`_rule`](_rule.md) section).
 - [`_type_key_term_predicate`](_type_key_term_predicate.md) — A key that must reference a predicate term.
+- [`_type_key_term_typedef`](_type_key_term_typedef.md) — A key that must reference a type definition term.
 
 **Other**
 
 - [`_type_handle`](_type_handle.md) — A string in `<collection>/<_key>` format representing the ArangoDB `_id` of a document.
 - [`_type_enum`](_type_enum.md) — The `_gid` of an enumeration element. Companion property: [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary from which the value is drawn.
-
 
 ---
 

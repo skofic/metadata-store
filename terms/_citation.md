@@ -6,11 +6,11 @@ Citations
 
 **`_definition`**
 
-A set of citations that must be referenced when using or publishing data associated with this term. Each entry is a Markdown or HTML string.
+Citations that must be referenced when using or publishing data associated with this term. Expressed as a Markdown or HTML string.
 
 **`_description`**
 
-[`_citation`](_citation.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_Markdown`](_info_string_Markdown.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown or HTML string** containing one or more formatted citation entries.
+This is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_formatted`](_info_string_formatted.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown** or **HTML** string containing one or more formatted citation entries.
 
 Use this property when a term is derived from, or requires attribution to, a published standard, paper, or dataset. The citation text should follow whatever reference format is appropriate for the relevant domain (e.g. APA, Vancouver, ISO citation style). Markdown links are encouraged to make references directly clickable.
 
@@ -41,6 +41,6 @@ Use this property when a term is derived from, or requires attribution to, a pub
 
 ```json
 {
-  "_type" : "_info_string_Markdown"
+  "_type" : "_info_string_formatted"
 }
 ```

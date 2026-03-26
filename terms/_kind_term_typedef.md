@@ -22,9 +22,9 @@ A common use case is a reusable multilingual string structure — a dictionary k
 {
 	"_code": {
 		"_nid": "",
-		"_lid": "multilingual_string",
+		"_lid": "string",
 		"_gid": "_info_string",
-		"_aid": ["multilingual_string"]
+		"_aid": ["string"]
 	},
 	"_data": {
 		"_dict": {

@@ -10,7 +10,7 @@ Description of the measurement conditions, protocols, and procedures followed to
 
 **`_description`**
 
-[`_methods`](_methods.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_Markdown`](_info_string_Markdown.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown or HTML string**.
+[`_methods`](_methods.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string_formatted`](_info_string_formatted.md) typedef) keyed by language [`_gid`](_gid.md)s, with each value expressed as a **Markdown** or **HTML** string.
 
 While [`_description`](_description.md) explains what a descriptor represents and how it is used, `_methods` documents *how the value is obtained* — the measurement conditions, instruments, timing, subject preparation, and procedural steps that define the variable. This distinction matters when two descriptors measure the same underlying phenomenon under different conditions: they are not interchangeable, and `_methods` is the record of why.
 
@@ -49,6 +49,6 @@ Typical content includes:
 
 ```json
 {
-  "_type" : "_info_string_Markdown"
+  "_type" : "_info_string_formatted"
 }
 ```

@@ -6,15 +6,15 @@ Dictionary
 
 **`_definition`**
 
-The shape property for a key/value dictionary with explicitly typed keys and values. Both [`_dict_key`](_dict_key.md) and [`_dict_value`](_dict_value.md) are required; the value side is a full [`_data`](_data.md) section, making the dictionary recursively composable.
+The shape property for a key/value dictionary with explicitly typed keys and values. Both dictionary key and value types are required; the value side is a full data section, making the dictionary recursively composable.
 
 **`_description`**
 
-A *dictionary* is a key/value structure in which the key type and value type are both explicitly declared. It contrasts with [`_type_struct`](_type_struct.md) (indeterminate properties) and [`_type_object`](_type_object.md) (properties correspond to descriptor [`_gid`](_gid.md)s).
+A *dictionary* is a key/value structure in which the key type and value type are both explicitly declared. It contrasts with [`_type_struct`](_type_struct.md) (indeterminate properties) and [`_type_object`](_type_object.md) (properties correspond to descriptor term [`_gid`](_gid.md)s).
 
-[`_dict_key`](_dict_key.md) defines the key type using [`_dict_key_type`](_dict_key_type.md), which accepts only string-compatible types: strings, enumeration elements, term keys, and document handles. The optional companion [`_kind_enum`](_kind_enum.md) constrains the controlled vocabulary when the key type is [`_type_enum`](_type_enum.md).
+[`_dict_key`](_dict_key.md) defines the key type using [`_dict_key_type`](_dict_key_type.md), which accepts only string-compatible types: strings, enumeration elements, term keys, and document handles.
 
-[`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow any value type. This makes dictionaries fully recursive.
+[`_dict_value`](_dict_value.md) is equivalent to a full [`_data`](_data.md) section: it contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_dict`](_dict.md)) or [type definition term](_type.md), or is empty to allow any value type. This makes dictionaries fully recursive.
 
 The canonical use case is a *multilingual text property*: keys are language [`_gid`](_gid.md)s (e.g. `ISO_639_3_eng`) and values are plain strings — the pattern used throughout the [`_info`](_info.md) section.
 

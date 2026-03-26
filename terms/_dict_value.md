@@ -6,7 +6,7 @@ Dictionary Value
 
 **`_definition`**
 
-The value descriptor for a [`_dict`](_dict.md) section. Equivalent to a full [`_data`](_data.md) section: contains exactly one shape sub-property ([`_scalar`](_scalar.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), or [`_dict`](_dict.md)), or is empty to allow values of any type and shape. This makes dictionaries fully recursive.
+The value descriptor for a dictionary section. Equivalent to a full data section: contains exactly one shape sub-property _scalar, _array, _set, _tuple, _dict or _type, or is empty to allow values of any type and shape. This makes dictionaries fully recursive.
 
 **`_description`**
 
@@ -49,7 +49,7 @@ The canonical use case is the **multilingual text property** used throughout the
 
 
 
-**Nested dictionary** — country → language → Markdown text:
+**Nested dictionary value** — country → language → Markdown text:
 
 ```json
 {

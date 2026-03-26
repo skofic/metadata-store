@@ -10,7 +10,7 @@ A concise explanation of what the term represents, sufficient for an informed re
 
 **`_description`**
 
-[`_definition`](_definition.md) is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string`](_info_string.md) typedef) keyed by language [`_gid`](_gid.md)s.
+`_definition` is a property of the [`_info`](_info.md) section. Its value is a multilingual dictionary (a [`_info_string`](_info_string.md) typedef) keyed by language [`_gid`](_gid.md)s.
 
 The definition is what an informed reader sees first. It should answer the question *what is this?* in the minimum number of sentences. It is not the place for usage guidance, measurement methods, or context — those belong in [`_description`](_description.md). Two to four plain-text sentences are the target length.
 

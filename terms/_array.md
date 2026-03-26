@@ -6,7 +6,7 @@ Array
 
 **`_definition`**
 
-The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional [`_elements`](_elements.md) property constrains the element count.
+The shape property for an ordered list of elements of the same type. When empty, the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional elements property constrains the element count.
 
 **`_description`**
 

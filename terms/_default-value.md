@@ -6,11 +6,11 @@ Default Values
 
 **`_definition`**
 
-A dictionary mapping descriptor [`_gid`](_gid.md)s to default values that are applied at insertion time when those properties are absent from the object. Defaults are applied before [`_required`](_required.md) is checked, so a property with a default value will always satisfy a requirement for it.
+A dictionary mapping descriptor global identifiers to default values that are applied at insertion time when those properties are absent from the object. Defaults are applied before required properties are checked, so a property with a default value will always satisfy a requirement for it.
 
 **`_description`**
 
-[`_default-value`](_default-value.md) is a property of the [`_rule`](_rule.md) section. It is a dictionary whose keys are descriptor [`_gid`](_gid.md)s and whose values are the defaults to apply when the corresponding property is absent at insertion time.
+This is a property of the [`_rule`](_rule.md) section. It is a [dictionary](_dict.md) whose [keys](_dict_key.md) are descriptor [`_gid`](_gid.md)s and whose [values](_dict_value.md) are the defaults to apply when the corresponding property is absent at insertion time.
 
 The application order at insertion is:
 
@@ -18,7 +18,7 @@ The application order at insertion is:
 2. Compute [`_computed`](_computed.md) properties.
 3. Check [`_required`](_required.md) constraints.
 
-This ordering allows a property to be both listed in [`_default-value`](_default-value.md) and required: if the user omits it, the default fills it in and validation then succeeds.
+This ordering allows a property to be both listed in [`_default-value`](_default-value.md) and [required](_required.md): if the user omits it, the default fills it in and validation then succeeds.
 
 Default values are **schema-local**: the same descriptor can have different defaults in different object schemas. The default value must be compatible with the descriptor's own [`_data`](_data.md) type; this is enforced by the validation layer at insertion time.
 

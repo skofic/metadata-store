@@ -10,7 +10,9 @@ The section of a term that defines the shape and data type of the value the term
 
 **`_description`**
 
-Any term that carries this section is a [descriptor](_term_descriptor.md). A term may simultaneously be a descriptor, an object definition, an enumeration element, or a namespace — these roles are not mutually exclusive. This object may contain *at most one* of the following shape properties (it may also be empty, in which case the descriptor accepts any shape and type):
+Any term that carries this section is a [descriptor](_term_descriptor.md). A term may simultaneously be a descriptor, an object definition, an enumeration element, or a namespace — these roles are not mutually exclusive.
+
+This object may contain *at most one* of the following shape properties (it may also be empty, in which case the descriptor accepts any shape and type):
 
 - [Scalar shape](_scalar.md): Defines the *data type* and *constraints* for a *scalar value*.
 - [Array shape](_array.md): Defines the *data type* and *constraints* for an *ordered list* of values of the *same type*.
