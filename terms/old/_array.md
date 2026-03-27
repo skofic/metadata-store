@@ -117,7 +117,7 @@ An unconstrained array:
 
 **`_rule`**
 
-```json
+```Arrayjson
 {
   "_closed" : true,
   "_recommended" : [
