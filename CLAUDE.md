@@ -37,13 +37,34 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- Core Concepts — multi-role concept: a term can simultaneously be a descriptor, an object schema, an enumeration element, and an enumeration root. Design rationale: `_term_descriptor` and `_term_object` exist as explicit validation targets — use them when a procedure must confirm that a term IS a descriptor or IS an object definition.
+- **Next task**: Begin creating JSON term files in `data/core/` from the completed TSV tables. One JSON file per TSV table. Old files have been moved to `data/core/old/` and `terms/old/`.
 - **Open design questions** (still to be resolved):
   1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
   2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
-- **Next topic (Phase 2)**:
-  1. Review `_info` content in `data/core/containers.json`.
-  2. Continue populating remaining core term files.
+
+### Recent session (2026-03-28)
+- Major namespace redesign completed across all TSV tables. Key changes:
+  - Dropped `_data_` prefix from shape terms; shapes stay at root level (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`).
+  - `_scalar_set` → `_comparable`; `_type_scalar_set` → `_comparable_type` (shared between `_set` and `_nested`).
+  - New `_nested` shape added (7th data shape for recursively nested arrays with typed leaf elements).
+  - `_type` (old typedef property) → `_typedef`; `_type` is now a pure namespace.
+  - Range family restructured: `_range` at root; `_range_min-inclusive` etc. as children; `_range_string` as child; `_range_valid`, `_range_valid_string`, `_range_normal`, `_range_normal_string` under `_range`.
+  - `_kind_enum` → `_enum_types`; `_kind_object` → `_object_types`; `_kind_term` → `_term_type`.
+  - `_type_scalar` → `_scalar_type`; `_type_tuple` → `_tuple_type`; `_dict_key_type` unchanged.
+  - `_type_string_regexp` → `_type_regexp` (moved to root `_type` namespace).
+  - `_type_data` (new enumeration root for all data types); `_type_data_comparable` (comparable subset); `_type_data_dict_key` (dict key subset).
+  - `_type_term_*` terms added (replacing `_kind_term_*`); `_type_selection`, `_type_selection_mandatory`, `_type_selection_optional` added.
+  - `_predicate_container` → `_predicate_section`.
+- New flexible `_required` selection mechanism designed and validated:
+  - `_required` is an array of `_selection_object` instances.
+  - Each `_selection_object` contains `_selection_rules` (array of `_selection_rule`) and `_selection_descriptors` (nested array using `_nested` shape).
+  - Each `_selection_rule` contains `_selection_type` (`_type_selection_mandatory` or `_type_selection_optional`) and optional `_elements`.
+  - Evaluation is bottom-up: leaf arrays first; `_type_selection_mandatory` requires all leaf arrays to contribute (subject to `_elements`); `_type_selection_optional` allows any subset.
+  - `_selection` is a pure namespace for all selection-related terms.
+- All seven TSV tables finalised and verified: `_code.tsv`, `_data.tsv`, `_info.tsv`, `_predicates.tsv`, `_rule.tsv`, `_term.tsv`, `_type.tsv`.
+- New `_info` property `_usage` added (DESCRIPTOR; how/why a value is used).
+- `_domn` marked OBJECT DEFINITION (has a `_rule` section); `_prop` remains DESCRIPTOR only (open `_type_object`).
+- `_predicate` added to `_term.tsv` (edge document field, also ENUM TYPE).
 
 ### Recent session (2026-03-25)
 - Verified `_dict.json` (fully rewritten last session) passes all structural checks — clean.
