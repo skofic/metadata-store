@@ -21,35 +21,21 @@ The shape sub-properties are defined identically to their counterparts in [`_dat
 A value defined as a plain string — the value side of a multilingual string dictionary:
 
 ```json
-{
-	"_dict_value": {
-		"_scalar": {
-			"_scalar_type": "_type_string"
-		}
-	}
-}
+{"_dict_value": {"_scalar": {"_scalar_type": "_type_string"}}}
 ```
 
 A value defined as an array of integers:
 
 ```json
 {
-	"_dict_value": {
-		"_array": {
-			"_scalar": {
-				"_scalar_type": "_type_number_integer"
-			}
-		}
-	}
+	"_dict_value": {"_array": {"_scalar": {"_scalar_type": "_type_number_integer"}}}
 }
 ```
 
 An unconstrained value (any shape and type accepted):
 
 ```json
-{
-	"_dict_value": {}
-}
+{"_dict_value": {}}
 ```
 
 ---
@@ -58,10 +44,12 @@ An unconstrained value (any shape and type accepted):
 
 ```json
 {
-	"_nid": "_dict",
-	"_lid": "value",
-	"_gid": "_dict_value",
-	"_aid": ["value"]
+  "_aid" : [
+    "value"
+  ],
+  "_gid" : "_dict_value",
+  "_lid" : "value",
+  "_nid" : "_dict"
 }
 ```
 
@@ -69,10 +57,12 @@ An unconstrained value (any shape and type accepted):
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_dict_value"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_dict_value"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -80,33 +70,27 @@ An unconstrained value (any shape and type accepted):
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{
-					"_selection_type": "_type_selection_optional",
-					"_elements": {
-						"_max-items": 1
-					}
-				}
-			],
-			"_selection_descriptors": [
-				"_scalar",
-				"_array",
-				"_nested",
-				"_set",
-				"_tuple",
-				"_dict",
-				"_typedef"
-			]
-		}
-	]
+  "_closed" : true,
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_scalar",
+        "_array",
+        "_nested",
+        "_set",
+        "_tuple",
+        "_dict",
+        "_typedef"
+      ],
+      "_selection_rules" : [
+        {
+          "_elements" : {
+            "_max-items" : 1
+          },
+          "_selection_type" : "_type_selection_optional"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

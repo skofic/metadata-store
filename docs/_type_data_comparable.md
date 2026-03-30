@@ -18,17 +18,11 @@ Root of the bridge-graph subset of `_type_data` containing all comparable scalar
 
 ```json
 {
-	"_nid": "_type_data",
-	"_lid": "comparable",
-	"_gid": "_type_data_comparable",
-	"_aid": ["comparable"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "comparable"
+  ],
+  "_gid" : "_type_data_comparable",
+  "_lid" : "comparable",
+  "_nid" : "_type_data"
 }
 ```

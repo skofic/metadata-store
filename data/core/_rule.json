@@ -4,7 +4,9 @@
 			"_nid": "",
 			"_lid": "rule",
 			"_gid": "_rule",
-			"_aid": ["rule"]
+			"_aid": [
+				"rule"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -17,13 +19,15 @@
 				"ISO_639_3_eng": "The `_rule` section is present in object definition terms. Its mere presence — even when empty — signals that the term defines an object structure. This is analogous to how an empty [`_scalar`](_scalar.md) section signals a scalar value of any type.\n\nWhen non-empty, `_rule` carries unconditional structural constraints:\n\n- [`_required`](_required.md): which properties must always be present, expressed using descriptor selection structures.\n- [`_recommended`](_recommended.md): the whitelist of permitted optional properties — advisory in open schemas, enforced in closed schemas.\n- [`_closed`](_closed.md): when `true`, switches `_recommended` from advisory to a strict whitelist.\n- [`_banned`](_banned.md): properties that must never be present; unconditional and absolute.\n- [`_computed`](_computed.md): properties the system fills in automatically when absent.\n- [`_locked`](_locked.md): properties the system manages exclusively; users cannot touch them.\n- [`_immutable`](_immutable.md): properties that, once set, cannot be modified or deleted.\n- [`_default-value`](_default-value.md): default values applied at insertion time before `_required` is checked.\n\n**Empty `_rule`**: when `_rule` is present but empty (`\"_rule\": {}`), the term is an object definition whose structural constraints are entirely expressed in the graph layer via [`_predicate_value-of`](_predicate_value-of.md) edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.\n\nConditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. `_rule` handles only unconditional constraints.\n\nFor a comprehensive explanation of how the rule system works — including selection structures, conditional rule strategies, and the self-sufficient rule graph design — see [Structure Definition Rules](../docs/Structure Definition Rules.md)."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A closed schema where `_lid` is required and immutable, `_gid` is computed and immutable, and the whitelist is limited to three properties:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_closed\": true,\n\t\t\"_required\": [\n\t\t\t{\n\t\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\t\"_selection_descriptors\": [\"_lid\"]\n\t\t\t}\n\t\t],\n\t\t\"_recommended\": [\"_nid\", \"_aid\"],\n\t\t\"_computed\": [\"_gid\"],\n\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t}\n}\n```\n\nAn object definition with no unconditional constraints — all rules expressed in the graph:\n\n```json\n{\n\t\"_rule\": {}\n}\n```"
+				"ISO_639_3_eng": "A closed schema where [`_lid`](_lid.md) is required and immutable, [`_gid`](_gid.md) is computed and immutable, and the whitelist is limited to three properties:\n\n```json\n{\n\t\"_rule\": {\n\t\t\"_closed\": true,\n\t\t\"_required\": [\n\t\t\t{\n\t\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\t\"_selection_descriptors\": [\"_lid\"]\n\t\t\t}\n\t\t],\n\t\t\"_recommended\": [\"_nid\", \"_aid\"],\n\t\t\"_computed\": [\"_gid\"],\n\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t}\n}\n```\n\nAn object definition with no unconditional constraints — all rules expressed in the graph:\n\n```json\n{\"_rule\": {}}\n```"
 			}
 		},
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_object",
-				"_object_types": ["_rule"]
+				"_object_types": [
+					"_rule"
+				]
 			}
 		},
 		"_rule": {
@@ -31,12 +35,24 @@
 			"_required": [
 				{
 					"_selection_rules": [
-						{"_selection_type": "_type_selection_mandatory"}
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
 					],
-					"_selection_descriptors": ["_closed"]
+					"_selection_descriptors": [
+						"_closed"
+					]
 				}
 			],
-			"_recommended": ["_required", "_recommended", "_banned", "_computed", "_locked", "_immutable", "_default-value"]
+			"_recommended": [
+				"_required",
+				"_recommended",
+				"_banned",
+				"_computed",
+				"_locked",
+				"_immutable",
+				"_default-value"
+			]
 		},
 		"_domn": {}
 	},
@@ -45,7 +61,9 @@
 			"_nid": "",
 			"_lid": "required",
 			"_gid": "_required",
-			"_aid": ["required"]
+			"_aid": [
+				"required"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -58,14 +76,16 @@
 				"ISO_639_3_eng": "`_required` is a property of the [`_rule`](_rule.md) section. Its value is an ordered array of [`_rule_selector`](_rule_selector.md) objects. Each selector binds a [`_selection_rules`](_selection_rules.md) list — the cardinality constraints — with a [`_selection_descriptors`](_selection_descriptors.md) value — the descriptor keys to which those constraints apply.\n\nWhen multiple selectors are present, **all must be satisfied simultaneously** (AND logic). When a single selector is present, only its conditions must hold.\n\n[`_default-value`](_default-value.md) is applied before `_required` is checked: a property with a default value will always satisfy a requirement for it, even when the user omits it.\n\n`_required` and [`_recommended`](_recommended.md) are strictly disjoint — a property appears in exactly one or neither, never both."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "Requiring `_lid` and exactly one of a lower bound / upper bound pair (with at least one bound overall):\n\n```json\n{\n\t\"_required\": [\n\t\t{\n\t\t\t\"_selection_rules\": [\n\t\t\t\t{\"_selection_type\": \"_type_selection_mandatory\"}\n\t\t\t],\n\t\t\t\"_selection_descriptors\": [\"_lid\"]\n\t\t},\n\t\t{\n\t\t\t\"_selection_rules\": [\n\t\t\t\t{\"_selection_type\": \"_type_selection_mandatory\", \"_elements\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t\t\t{\"_selection_type\": \"_type_selection_optional\", \"_elements\": {\"_min-items\": 1}}\n\t\t\t],\n\t\t\t\"_selection_descriptors\": [\n\t\t\t\t[\"_range_min-inclusive\", \"_range_min-exclusive\"],\n\t\t\t\t[\"_range_max-inclusive\", \"_range_max-exclusive\"]\n\t\t\t]\n\t\t}\n\t]\n}\n```"
+				"ISO_639_3_eng": "Requiring [`_lid`](_lid.md) and exactly one of a lower bound / upper bound pair (with at least one bound overall):\n\n```json\n{\n\t\"_required\": [\n\t\t{\n\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\"_selection_descriptors\": [\"_lid\"]\n\t\t},\n\t\t{\n\t\t\t\"_selection_rules\": [\n\t\t\t\t{\n\t\t\t\t\t\"_selection_type\": \"_type_selection_mandatory\",\n\t\t\t\t\t\"_elements\": {\"_min-items\": 1, \"_max-items\": 1}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"_selection_type\": \"_type_selection_optional\",\n\t\t\t\t\t\"_elements\": {\"_min-items\": 1}\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"_selection_descriptors\": [\n\t\t\t\t[\"_range_min-inclusive\", \"_range_min-exclusive\"],\n\t\t\t\t[\"_range_max-inclusive\", \"_range_max-exclusive\"]\n\t\t\t]\n\t\t}\n\t]\n}\n```"
 			}
 		},
 		"_data": {
 			"_array": {
 				"_scalar": {
 					"_scalar_type": "_type_object",
-					"_object_types": ["_rule_selector"]
+					"_object_types": [
+						"_rule_selector"
+					]
 				}
 			}
 		},
@@ -76,7 +96,9 @@
 			"_nid": "",
 			"_lid": "recommended",
 			"_gid": "_recommended",
-			"_aid": ["recommended"]
+			"_aid": [
+				"recommended"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -106,7 +128,9 @@
 			"_nid": "",
 			"_lid": "banned",
 			"_gid": "_banned",
-			"_aid": ["banned"]
+			"_aid": [
+				"banned"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -119,7 +143,7 @@
 				"ISO_639_3_eng": "`_banned` is a property of the [`_rule`](_rule.md) section. Its value is a flat array of descriptor `_gid` strings.\n\nUnlike [`_required`](_required.md) and [`_recommended`](_recommended.md), `_banned` is **unconditional**: it takes precedence over all other rules, including conditional rules carried by graph edges. No `_predicate_value-of` edge can activate a property that `_banned` prohibits.\n\nIf a conditional rule's `_path_data` requires a property that appears in `_banned`, this is a conflict — detectable at edge insertion time, not at data validation time. `_banned` entries in a conditional rule object likewise apply unconditionally within their scope and cannot be overridden by further nesting."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "Banning `_regexp` from number scalar types (it is only meaningful for generic strings):\n\n```json\n{\n\t\"_banned\": [\"_regexp\"]\n}\n```"
+				"ISO_639_3_eng": "Banning [`_regexp`](_regexp.md) from number scalar types (it is only meaningful for generic strings):\n\n```json\n{\"_banned\": [\"_regexp\"]}\n```"
 			}
 		},
 		"_data": {
@@ -136,7 +160,9 @@
 			"_nid": "",
 			"_lid": "computed",
 			"_gid": "_computed",
-			"_aid": ["computed"]
+			"_aid": [
+				"computed"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -149,7 +175,7 @@
 				"ISO_639_3_eng": "`_computed` is a property of the [`_rule`](_rule.md) section. Its value is a flat array of descriptor `_gid` strings.\n\nWhen a listed property is absent at insertion time, the system fills it in automatically. Because computation happens before [`_required`](_required.md) validation, a property can be both computed and required — the system sets it first, and validation then confirms its presence.\n\nComputed properties are typically paired with [`_immutable`](_immutable.md) to prevent the system-set value from being modified after it has been established. [`_gid`](_gid.md) and `_key` are the canonical examples: computed from `_nid` + `_lid`, then locked from further modification.\n\nUnlike [`_locked`](_locked.md) properties — which users can never touch — a computed property *may* be provided by the user on first write. The system only steps in when the value is absent."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_computed\": [\"_gid\", \"_key\", \"_aid\"]\n}\n```"
+				"ISO_639_3_eng": "```json\n{\"_computed\": [\"_gid\", \"_key\", \"_aid\"]}\n```"
 			}
 		},
 		"_data": {
@@ -166,7 +192,9 @@
 			"_nid": "",
 			"_lid": "immutable",
 			"_gid": "_immutable",
-			"_aid": ["immutable"]
+			"_aid": [
+				"immutable"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -179,7 +207,7 @@
 				"ISO_639_3_eng": "`_immutable` is a property of the [`_rule`](_rule.md) section. Its value is a flat array of descriptor `_gid` strings.\n\nImmutability takes effect after the first value is written: the value cannot subsequently be changed or removed. This makes `_immutable` appropriate for identifiers and relationship endpoints whose modification after insertion would break referential integrity — for example, `_lid` and [`_gid`](_gid.md) in the identification section.\n\nUnlike [`_locked`](_locked.md) properties, `_immutable` properties *may* be set by the user on first write; they simply cannot be changed afterward. A property can be both [`_computed`](_computed.md) and `_immutable` — the system sets it once and no further modification is permitted by anyone."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_immutable\": [\"_lid\", \"_gid\"]\n}\n```"
+				"ISO_639_3_eng": "```json\n{\"_immutable\": [\"_lid\", \"_gid\"]}\n```"
 			}
 		},
 		"_data": {
@@ -196,7 +224,9 @@
 			"_nid": "",
 			"_lid": "locked",
 			"_gid": "_locked",
-			"_aid": ["locked"]
+			"_aid": [
+				"locked"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -209,7 +239,7 @@
 				"ISO_639_3_eng": "`_locked` is a property of the [`_rule`](_rule.md) section. Its value is a flat array of descriptor `_gid` strings.\n\nLocked properties are set and maintained exclusively by the system, with no user involvement at any stage. This contrasts with [`_computed`](_computed.md) properties: computed properties can be user-provided on first write; locked ones never can be.\n\nArangoDB's internal properties (`_id`, `_rev`) are canonical examples: the system assigns and updates them; users cannot touch them.\n\nLike [`_immutable`](_immutable.md), a locked property cannot be modified after it is set. The difference is that `_immutable` permits a user-provided initial value, while `_locked` does not — the system is the sole author at every stage."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_locked\": [\"_id\", \"_rev\"]\n}\n```"
+				"ISO_639_3_eng": "```json\n{\"_locked\": [\"_id\", \"_rev\"]}\n```"
 			}
 		},
 		"_data": {
@@ -226,7 +256,9 @@
 			"_nid": "",
 			"_lid": "default-value",
 			"_gid": "_default-value",
-			"_aid": ["default-value"]
+			"_aid": [
+				"default-value"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -239,7 +271,7 @@
 				"ISO_639_3_eng": "`_default-value` is a property of the [`_rule`](_rule.md) section. Its value is a dictionary whose keys are descriptor [`_gid`](_gid.md) strings and whose values are the defaults to apply at insertion time.\n\nDefaults are applied **before** [`_required`](_required.md) validation: if the user omits a property that has a default, the system fills it in, and validation then succeeds. This makes it possible to guarantee required properties without forcing users to supply them explicitly.\n\nEach default value must conform to the type definition of the corresponding descriptor. Defaults interact with other rule properties as follows:\n\n- A property can be in both `_default-value` and `_required` — the default guarantees the requirement is met.\n- A property with a default may also be [`_immutable`](_immutable.md) — the default is applied once and cannot be changed.\n- A property with a default must **not** appear in [`_banned`](_banned.md) — that would be a conflict."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_default-value\": {\n\t\t\"chr_status\": \"active\",\n\t\t\"chr_confidence\": 1.0,\n\t\t\"chr_version\": 1\n\t}\n}\n```"
+				"ISO_639_3_eng": "```json\n{\n\t\"_default-value\": {\"chr_status\": \"active\", \"chr_confidence\": 1.0, \"chr_version\": 1}\n}\n```"
 			}
 		},
 		"_data": {
@@ -257,7 +289,9 @@
 			"_nid": "",
 			"_lid": "closed",
 			"_gid": "_closed",
-			"_aid": ["closed"]
+			"_aid": [
+				"closed"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -270,7 +304,7 @@
 				"ISO_639_3_eng": "`_closed` is a **required** property of every rule object — it must be present in the [`_rule`](_rule.md) section of every object definition term and in every conditional rule object stored in `_path_data` on graph edges. Its explicit presence eliminates ambiguity about a schema's closure state.\n\n- **`_closed: false`** (open schema): properties outside [`_required`](_required.md) and [`_recommended`](_recommended.md) are accepted without error. `_recommended` is advisory — it documents expected properties and guides form generation, but does not reject unlisted ones. Appropriate for schemas that are still evolving or where extensibility is desired.\n\n- **`_closed: true`** (closed schema): only properties in `_required` or `_recommended` may be present; any other property causes a validation error. Appropriate for stable schemas with a known, bounded property set.\n\nFor **conditional rule objects** in `_path_data` on graph edges:\n\n- A **closed** conditional rule replaces the base `_recommended` set entirely — its `_recommended` becomes the complete optional-property whitelist for that value context.\n- An **open** conditional rule accumulates — its `_recommended` is unioned with the base `_recommended`, and any [`_banned`](_banned.md) entries conditionally remove properties from the effective permitted set.\n\n[`_required`](_required.md) always accumulates regardless of closure mode. `_banned` is unconditional in all modes."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "Open schema — additional properties beyond `_lid` and `_nid` are accepted:\n\n```json\n{\n\t\"_closed\": false,\n\t\"_recommended\": [\"_lid\", \"_nid\"]\n}\n```\n\nClosed schema — only the listed properties are permitted:\n\n```json\n{\n\t\"_closed\": true,\n\t\"_recommended\": [\"_lid\", \"_nid\", \"_gid\", \"_aid\"]\n}\n```"
+				"ISO_639_3_eng": "Open schema — additional properties beyond [`_lid`](_lid.md) and [`_nid`](_nid.md) are accepted:\n\n```json\n{\"_closed\": false, \"_recommended\": [\"_lid\", \"_nid\"]}\n```\n\nClosed schema — only the listed properties are permitted:\n\n```json\n{\"_closed\": true, \"_recommended\": [\"_lid\", \"_nid\", \"_gid\", \"_aid\"]}\n```"
 			}
 		},
 		"_data": {
@@ -285,7 +319,9 @@
 			"_nid": "",
 			"_lid": "selection",
 			"_gid": "_selection",
-			"_aid": ["selection"]
+			"_aid": [
+				"selection"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -305,7 +341,9 @@
 			"_nid": "_rule",
 			"_lid": "selector",
 			"_gid": "_rule_selector",
-			"_aid": ["selector"]
+			"_aid": [
+				"selector"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -318,13 +356,15 @@
 				"ISO_639_3_eng": "A `_rule_selector` is a single entry in the [`_required`](_required.md) array. It binds [`_selection_rules`](_selection_rules.md) — the cardinality constraints — with [`_selection_descriptors`](_selection_descriptors.md) — the set of descriptor keys those constraints apply to.\n\n**Evaluation order — deepest level first:**\n\n1. `_selection_rules[0]` is applied to the **deepest (last) level** of `_selection_descriptors`. For a flat array this is the array itself; for a nested array this is each innermost sub-array. The rule produces a selection of descriptor keys from that level.\n2. `_selection_rules[1]`, if present, is applied to the results of step 1 — governing how many of the step-1 groups must have contributed a non-empty selection.\n3. This continues through successive rules, each operating on the output of the previous step.\n4. **Early termination**: if any step produces an empty selection, evaluation stops immediately and the selector fails — later rules are not evaluated.\n\nFor a **flat** `_selection_descriptors` (a single array of keys), `_selection_rules` contains exactly one rule, which applies directly to all listed keys.\n\nFor a **nested** `_selection_descriptors` (an array of arrays), `_selection_rules` must contain at least two rules: the first governs which elements are chosen from each innermost sub-array; the second governs how many of those sub-arrays must contribute a result. The number of rules must equal the depth of nesting.\n\nWhen multiple `_rule_selector` objects appear in `_required`, all of their conditions must be satisfied simultaneously — AND logic."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A selector permitting at most one shape property from a list (zero is also valid \u2014 an empty `_data` section means any type):\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\"_selection_type\": \"_type_selection_optional\", \"_elements\": {\"_max-items\": 1}}\n\t],\n\t\"_selection_descriptors\": [\"_scalar\", \"_array\", \"_set\", \"_tuple\", \"_dict\", \"_typedef\"]\n}\n```\n\nA selector requiring `_closed` to be present:\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\"_selection_type\": \"_type_selection_mandatory\"}\n\t],\n\t\"_selection_descriptors\": [\"_closed\"]\n}\n```"
+				"ISO_639_3_eng": "A selector permitting at most one shape property from a list (zero is also valid — an empty [`_data`](_data.md) section means any type):\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\n\t\t\t\"_selection_type\": \"_type_selection_optional\",\n\t\t\t\"_elements\": {\"_max-items\": 1}\n\t\t}\n\t],\n\t\"_selection_descriptors\": [\"_scalar\", \"_array\", \"_set\", \"_tuple\", \"_dict\", \"_typedef\"]\n}\n```\n\nA selector requiring [`_closed`](_closed.md) to be present:\n\n```json\n{\n\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\"_selection_descriptors\": [\"_closed\"]\n}\n```"
 			}
 		},
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_object",
-				"_object_types": ["_rule_selector"]
+				"_object_types": [
+					"_rule_selector"
+				]
 			}
 		},
 		"_rule": {
@@ -332,9 +372,14 @@
 			"_required": [
 				{
 					"_selection_rules": [
-						{"_selection_type": "_type_selection_mandatory"}
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
 					],
-					"_selection_descriptors": ["_selection_rules", "_selection_descriptors"]
+					"_selection_descriptors": [
+						"_selection_rules",
+						"_selection_descriptors"
+					]
 				}
 			]
 		},
@@ -345,7 +390,9 @@
 			"_nid": "_selection",
 			"_lid": "rules",
 			"_gid": "_selection_rules",
-			"_aid": ["rules"]
+			"_aid": [
+				"rules"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -358,14 +405,16 @@
 				"ISO_639_3_eng": "`_selection_rules` is a required property of [`_rule_selector`](_rule_selector.md). Its value is an array of [`_selection_rule`](_selection_rule.md) objects.\n\nWhen [`_selection_descriptors`](_selection_descriptors.md) is a **flat array**, `_selection_rules` contains a single rule that applies to all listed descriptor keys.\n\nWhen `_selection_descriptors` is a **nested array**, each rule in `_selection_rules` corresponds to one level of nesting. The first rule governs the leaf descriptor keys within each inner array; subsequent rules govern progressively outer groupings. The number of rules must equal the depth of nesting in `_selection_descriptors`."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "Two rules for a nested range selector — mutual exclusion within each bound pair, at least one bound overall:\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\"_selection_type\": \"_type_selection_mandatory\", \"_elements\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_selection_type\": \"_type_selection_optional\", \"_elements\": {\"_min-items\": 1}}\n\t]\n}\n```"
+				"ISO_639_3_eng": "Two rules for a nested range selector — mutual exclusion within each bound pair, at least one bound overall:\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\n\t\t\t\"_selection_type\": \"_type_selection_mandatory\",\n\t\t\t\"_elements\": {\"_min-items\": 1, \"_max-items\": 1}\n\t\t},\n\t\t{\n\t\t\t\"_selection_type\": \"_type_selection_optional\",\n\t\t\t\"_elements\": {\"_min-items\": 1}\n\t\t}\n\t]\n}\n```"
 			}
 		},
 		"_data": {
 			"_array": {
 				"_scalar": {
 					"_scalar_type": "_type_object",
-					"_object_types": ["_selection_rule"]
+					"_object_types": [
+						"_selection_rule"
+					]
 				}
 			}
 		},
@@ -376,7 +425,9 @@
 			"_nid": "_selection",
 			"_lid": "rule",
 			"_gid": "_selection_rule",
-			"_aid": ["rule"]
+			"_aid": [
+				"rule"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -395,7 +446,9 @@
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_object",
-				"_object_types": ["_selection_rule"]
+				"_object_types": [
+					"_selection_rule"
+				]
 			}
 		},
 		"_rule": {
@@ -403,12 +456,18 @@
 			"_required": [
 				{
 					"_selection_rules": [
-						{"_selection_type": "_type_selection_mandatory"}
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
 					],
-					"_selection_descriptors": ["_selection_type"]
+					"_selection_descriptors": [
+						"_selection_type"
+					]
 				}
 			],
-			"_recommended": ["_elements"]
+			"_recommended": [
+				"_elements"
+			]
 		},
 		"_domn": {}
 	},
@@ -417,7 +476,9 @@
 			"_nid": "_selection",
 			"_lid": "type",
 			"_gid": "_selection_type",
-			"_aid": ["type"]
+			"_aid": [
+				"type"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -433,7 +494,9 @@
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_enum",
-				"_enum_types": ["_type_selection"]
+				"_enum_types": [
+					"_type_selection"
+				]
 			}
 		},
 		"_domn": {}
@@ -443,7 +506,9 @@
 			"_nid": "_selection",
 			"_lid": "descriptors",
 			"_gid": "_selection_descriptors",
-			"_aid": ["descriptors"]
+			"_aid": [
+				"descriptors"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -453,7 +518,7 @@
 				"ISO_639_3_eng": "A nested array of descriptor `_gid` references. A flat array pairs with a single selection rule; a nested array pairs with multiple rules, one per level of nesting. Each leaf element is the `_gid` of a descriptor."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_selection_descriptors` is a required property of [`_rule_selector`](_rule_selector.md). Its value is a nested array of descriptor [`_gid`](_gid.md) strings.\n\nWhen the corresponding [`_selection_rules`](_selection_rules.md) list contains **one rule**, `_selection_descriptors` is a **flat array** of descriptor keys and the rule applies uniformly to all of them.\n\nWhen `_selection_rules` contains **multiple rules**, `_selection_descriptors` is a **nested array**: each inner array contains the descriptor keys governed by the rule at the corresponding index in `_selection_rules`. This enables multi-phase selection — for example, enforcing mutual exclusion within each bound pair while requiring at least one bound overall:\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\"_selection_type\": \"_type_selection_mandatory\", \"_elements\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_selection_type\": \"_type_selection_optional\", \"_elements\": {\"_min-items\": 1}}\n\t],\n\t\"_selection_descriptors\": [\n\t\t[\"_range_min-inclusive\", \"_range_min-exclusive\"],\n\t\t[\"_range_max-inclusive\", \"_range_max-exclusive\"]\n\t]\n}\n```\n\nThe first rule (mandatory, exactly 1) governs each inner array — exactly one bound form per side must be chosen if that side participates. The second rule (optional, min 1) governs the outer array — at least one side must participate."
+				"ISO_639_3_eng": "`_selection_descriptors` is a required property of [`_rule_selector`](_rule_selector.md). Its value is a nested array of descriptor [`_gid`](_gid.md) strings.\n\nWhen the corresponding [`_selection_rules`](_selection_rules.md) list contains **one rule**, `_selection_descriptors` is a **flat array** of descriptor keys and the rule applies uniformly to all of them.\n\nWhen `_selection_rules` contains **multiple rules**, `_selection_descriptors` is a **nested array**: each inner array contains the descriptor keys governed by the rule at the corresponding index in `_selection_rules`. This enables multi-phase selection — for example, enforcing mutual exclusion within each bound pair while requiring at least one bound overall:\n\n```json\n{\n\t\"_selection_rules\": [\n\t\t{\n\t\t\t\"_selection_type\": \"_type_selection_mandatory\",\n\t\t\t\"_elements\": {\"_min-items\": 1, \"_max-items\": 1}\n\t\t},\n\t\t{\n\t\t\t\"_selection_type\": \"_type_selection_optional\",\n\t\t\t\"_elements\": {\"_min-items\": 1}\n\t\t}\n\t],\n\t\"_selection_descriptors\": [\n\t\t[\"_range_min-inclusive\", \"_range_min-exclusive\"],\n\t\t[\"_range_max-inclusive\", \"_range_max-exclusive\"]\n\t]\n}\n```\n\nThe first rule (mandatory, exactly 1) governs each inner array — exactly one bound form per side must be chosen if that side participates. The second rule (optional, min 1) governs the outer array — at least one side must participate."
 			}
 		},
 		"_data": {

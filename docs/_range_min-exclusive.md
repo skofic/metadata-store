@@ -18,10 +18,12 @@ The exclusive lower bound of a numeric range. A value is valid if it is strictly
 
 ```json
 {
-	"_nid": "_range",
-	"_lid": "min-exclusive",
-	"_gid": "_range_min-exclusive",
-	"_aid": ["min-exclusive"]
+  "_aid" : [
+    "min-exclusive"
+  ],
+  "_gid" : "_range_min-exclusive",
+  "_lid" : "min-exclusive",
+  "_nid" : "_range"
 }
 ```
 
@@ -29,14 +31,8 @@ The exclusive lower bound of a numeric range. A value is valid if it is strictly
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_number"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_number"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

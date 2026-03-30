@@ -33,11 +33,7 @@ A country term with domain classification properties recording its geographic re
 A core dictionary term with only its role recorded:
 
 ```json
-{
-	"_domn": {
-		"_term_type": ["_type_term_descriptor", "_type_term_object"]
-	}
-}
+{"_domn": {"_term_type": ["_type_term_descriptor", "_type_term_object"]}}
 ```
 
 ---
@@ -46,10 +42,12 @@ A core dictionary term with only its role recorded:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "domn",
-	"_gid": "_domn",
-	"_aid": ["domn"]
+  "_aid" : [
+    "domn"
+  ],
+  "_gid" : "_domn",
+  "_lid" : "domn",
+  "_nid" : ""
 }
 ```
 
@@ -57,10 +55,12 @@ A core dictionary term with only its role recorded:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_domn"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_domn"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -68,15 +68,15 @@ A core dictionary term with only its role recorded:
 
 ```json
 {
-	"_closed": false,
-	"_recommended": ["_term_type"],
-	"_computed": ["_term_type"],
-	"_locked": ["_term_type"]
+  "_closed" : false,
+  "_computed" : [
+    "_term_type"
+  ],
+  "_locked" : [
+    "_term_type"
+  ],
+  "_recommended" : [
+    "_term_type"
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

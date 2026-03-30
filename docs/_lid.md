@@ -21,24 +21,13 @@ This property is required on every term and is immutable once set — changing i
 `ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace `ISO_3166_3` it forms the global identifier `ISO_3166_3_ITA`:
 
 ```json
-{
-	"_code": {
-		"_nid": "ISO_3166_3",
-		"_lid": "ITA",
-		"_gid": "ISO_3166_3_ITA"
-	}
-}
+{"_code": {"_nid": "ISO_3166_3", "_lid": "ITA", "_gid": "ISO_3166_3_ITA"}}
 ```
 
-For a top-level namespace term with no `_nid`, `_lid` and `_gid` share the same value:
+For a top-level namespace term with no [`_nid`](_nid.md), `_lid` and [`_gid`](_gid.md) share the same value:
 
 ```json
-{
-	"_code": {
-		"_lid": "ISO",
-		"_gid": "ISO"
-	}
-}
+{"_code": {"_lid": "ISO", "_gid": "ISO"}}
 ```
 
 ---
@@ -47,10 +36,12 @@ For a top-level namespace term with no `_nid`, `_lid` and `_gid` share the same 
 
 ```json
 {
-	"_nid": "",
-	"_lid": "lid",
-	"_gid": "_lid",
-	"_aid": ["lid"]
+  "_aid" : [
+    "lid"
+  ],
+  "_gid" : "_lid",
+  "_lid" : "lid",
+  "_nid" : ""
 }
 ```
 
@@ -58,15 +49,9 @@ For a top-level namespace term with no `_nid`, `_lid` and `_gid` share the same 
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string",
-		"_regexp": "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$"
-	}
+  "_scalar" : {
+    "_regexp" : "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$",
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

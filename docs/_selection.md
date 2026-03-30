@@ -20,15 +20,11 @@ This namespace is a sibling of [`_rule`](_rule.md) in the core dictionary. Its t
 
 ```json
 {
-	"_nid": "",
-	"_lid": "selection",
-	"_gid": "_selection",
-	"_aid": ["selection"]
+  "_aid" : [
+    "selection"
+  ],
+  "_gid" : "_selection",
+  "_lid" : "selection",
+  "_nid" : ""
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

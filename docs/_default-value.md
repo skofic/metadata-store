@@ -24,11 +24,7 @@ Each default value must conform to the type definition of the corresponding desc
 
 ```json
 {
-	"_default-value": {
-		"chr_status": "active",
-		"chr_confidence": 1.0,
-		"chr_version": 1
-	}
+	"_default-value": {"chr_status": "active", "chr_confidence": 1.0, "chr_version": 1}
 }
 ```
 
@@ -38,10 +34,12 @@ Each default value must conform to the type definition of the corresponding desc
 
 ```json
 {
-	"_nid": "",
-	"_lid": "default-value",
-	"_gid": "_default-value",
-	"_aid": ["default-value"]
+  "_aid" : [
+    "default-value"
+  ],
+  "_gid" : "_default-value",
+  "_lid" : "default-value",
+  "_nid" : ""
 }
 ```
 
@@ -49,17 +47,13 @@ Each default value must conform to the type definition of the corresponding desc
 
 ```json
 {
-	"_dict": {
-		"_dict_key": {
-			"_dict_key_type": "_type_key_term_descriptor"
-		},
-		"_dict_value": {}
-	}
+  "_dict" : {
+    "_dict_key" : {
+      "_dict_key_type" : "_type_key_term_descriptor"
+    },
+    "_dict_value" : {
+
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

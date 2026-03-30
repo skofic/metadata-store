@@ -40,10 +40,12 @@ Other examples:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "emoji",
-	"_gid": "_emoji",
-	"_aid": ["emoji"]
+  "_aid" : [
+    "emoji"
+  ],
+  "_gid" : "_emoji",
+  "_lid" : "emoji",
+  "_nid" : ""
 }
 ```
 
@@ -51,14 +53,8 @@ Other examples:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

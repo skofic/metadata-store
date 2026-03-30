@@ -4,7 +4,9 @@
 			"_nid": "",
 			"_lid": "info",
 			"_gid": "_info",
-			"_aid": ["info"]
+			"_aid": [
+				"info"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -17,13 +19,15 @@
 				"ISO_639_3_eng": "The information section is present on nearly all [terms](_term.md). It provides the documentation that allows people — not just machines — to understand the term's meaning, scope, and usage.\n\nEvery property in this section is multilingual: its value is a key/value dictionary in which the key is the [`_gid`](_gid.md) of a language term drawn from the ISO 639-3 vocabulary and the value is a string. Plain-text properties use the [`_info_string`](_info_string.md) typedef; formatted-text properties use the [`_info_string_formatted`](_info_string_formatted.md) typedef.\n\nThe two core properties — [`_title`](_title.md) and [`_definition`](_definition.md) — are required on all terms that carry an information section. [`_description`](_description.md) is strongly recommended and should be omitted only when the definition alone is unambiguous beyond any reasonable doubt. The remaining properties are optional and serve supplementary purposes: measurement methods, usage guidance, examples, citations, provider contacts, external links, and informal notes.\n\nThe section is omitted entirely from alias terms, which carry no content of their own and delegate all documentation to the canonical term they point to."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A minimal information section with only the required properties:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Body weight\"},\n\t\t\"_definition\": {\"ISO_639_3_eng\": \"The mass of the subject's body measured without clothing or shoes.\"}\n\t}\n}\n```\n\nA fuller information section:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Body weight\"},\n\t\t\"_definition\": {\"ISO_639_3_eng\": \"The mass of the subject's body measured without clothing or shoes. Expressed in kilograms to one decimal place.\"},\n\t\t\"_description\": {\"ISO_639_3_eng\": \"Body weight is recorded at every clinical visit as a primary indicator of nutritional status.\"},\n\t\t\"_methods\": {\"ISO_639_3_eng\": \"Subject stands barefoot on a calibrated digital scale after an 8-hour overnight fast.\"},\n\t\t\"_url\": {\"ISO_639_3_eng\": \"[WHO Child Growth Standards](https://www.who.int/tools/child-growth-standards)\"}\n\t}\n}\n```"
+				"ISO_639_3_eng": "A minimal information section with only the required properties:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Body weight\"},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The mass of the subject's body measured without clothing or shoes.\"\n\t\t}\n\t}\n}\n```\n\nA fuller information section:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Body weight\"},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The mass of the subject's body measured without clothing or shoes. Expressed in kilograms to one decimal place.\"\n\t\t},\n\t\t\"_description\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight is recorded at every clinical visit as a primary indicator of nutritional status.\"\n\t\t},\n\t\t\"_methods\": {\n\t\t\t\"ISO_639_3_eng\": \"Subject stands barefoot on a calibrated digital scale after an 8-hour overnight fast.\"\n\t\t},\n\t\t\"_url\": {\n\t\t\t\"ISO_639_3_eng\": \"[WHO Child Growth Standards](https://www.who.int/tools/child-growth-standards)\"\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_object",
-				"_object_types": ["_info"]
+				"_object_types": [
+					"_info"
+				]
 			}
 		},
 		"_rule": {
@@ -31,12 +35,26 @@
 			"_required": [
 				{
 					"_selection_rules": [
-						{"_selection_type": "_type_selection_mandatory"}
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
 					],
-					"_selection_descriptors": ["_title", "_definition"]
+					"_selection_descriptors": [
+						"_title",
+						"_definition"
+					]
 				}
 			],
-			"_recommended": ["_description", "_methods", "_usage", "_examples", "_citation", "_provider", "_url", "_notes"]
+			"_recommended": [
+				"_description",
+				"_methods",
+				"_usage",
+				"_examples",
+				"_citation",
+				"_provider",
+				"_url",
+				"_notes"
+			]
 		},
 		"_domn": {}
 	},
@@ -45,7 +63,9 @@
 			"_nid": "_info",
 			"_lid": "string",
 			"_gid": "_info_string",
-			"_aid": ["string"]
+			"_aid": [
+				"string"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -58,14 +78,16 @@
 				"ISO_639_3_eng": "[`_info_string`](_info_string.md) is a [typedef](_type_term_typedef.md) used by the plain-text properties of the [`_info`](_info.md) section: [`_title`](_title.md) and [`_definition`](_definition.md).\n\nThe structure is a dictionary keyed by ISO 639-3 language identifiers — for example `ISO_639_3_eng` for English, `ISO_639_3_ita` for Italian — with plain UTF-8 string values. At least one language entry is expected; the English entry (`ISO_639_3_eng`) is required during Phase 2 of dictionary construction.\n\nDescriptors that reference this typedef use `_typedef: \"_info_string\"` in their `_data` section rather than repeating the dict structure inline."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A monolingual title during early dictionary construction:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight\"\n}\n```\n\nA fully translated definition:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"The mass of the subject's body.\",\n\t\"ISO_639_3_ita\": \"La massa corporea del soggetto.\",\n\t\"ISO_639_3_fra\": \"La masse corporelle du sujet.\",\n\t\"ISO_639_3_deu\": \"Die Körpermasse der Testperson.\"\n}\n```"
+				"ISO_639_3_eng": "A monolingual title during early dictionary construction:\n\n```json\n{\"ISO_639_3_eng\": \"Body weight\"}\n```\n\nA fully translated definition:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"The mass of the subject's body.\",\n\t\"ISO_639_3_ita\": \"La massa corporea del soggetto.\",\n\t\"ISO_639_3_fra\": \"La masse corporelle du sujet.\",\n\t\"ISO_639_3_deu\": \"Die Körpermasse der Testperson.\"\n}\n```"
 			}
 		},
 		"_data": {
 			"_dict": {
 				"_dict_key": {
 					"_dict_key_type": "_type_enum",
-					"_enum_types": ["ISO_639_3"]
+					"_enum_types": [
+						"ISO_639_3"
+					]
 				},
 				"_dict_value": {
 					"_scalar": {
@@ -81,7 +103,9 @@
 			"_nid": "_info_string",
 			"_lid": "formatted",
 			"_gid": "_info_string_formatted",
-			"_aid": ["formatted"]
+			"_aid": [
+				"formatted"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -101,7 +125,9 @@
 			"_dict": {
 				"_dict_key": {
 					"_dict_key_type": "_type_enum",
-					"_enum_types": ["ISO_639_3"]
+					"_enum_types": [
+						"ISO_639_3"
+					]
 				},
 				"_dict_value": {
 					"_scalar": {
@@ -117,7 +143,9 @@
 			"_nid": "",
 			"_lid": "title",
 			"_gid": "_title",
-			"_aid": ["title"]
+			"_aid": [
+				"title"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -143,7 +171,9 @@
 			"_nid": "",
 			"_lid": "definition",
 			"_gid": "_definition",
-			"_aid": ["definition"]
+			"_aid": [
+				"definition"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -169,7 +199,9 @@
 			"_nid": "",
 			"_lid": "description",
 			"_gid": "_description",
-			"_aid": ["description"]
+			"_aid": [
+				"description"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -195,7 +227,9 @@
 			"_nid": "",
 			"_lid": "methods",
 			"_gid": "_methods",
-			"_aid": ["methods"]
+			"_aid": [
+				"methods"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -221,7 +255,9 @@
 			"_nid": "",
 			"_lid": "usage",
 			"_gid": "_usage",
-			"_aid": ["usage"]
+			"_aid": [
+				"usage"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -247,7 +283,9 @@
 			"_nid": "",
 			"_lid": "examples",
 			"_gid": "_examples",
-			"_aid": ["examples"]
+			"_aid": [
+				"examples"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -273,7 +311,9 @@
 			"_nid": "",
 			"_lid": "citation",
 			"_gid": "_citation",
-			"_aid": ["citation"]
+			"_aid": [
+				"citation"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -299,7 +339,9 @@
 			"_nid": "",
 			"_lid": "provider",
 			"_gid": "_provider",
-			"_aid": ["provider"]
+			"_aid": [
+				"provider"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -325,7 +367,9 @@
 			"_nid": "",
 			"_lid": "url",
 			"_gid": "_url",
-			"_aid": ["url"]
+			"_aid": [
+				"url"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -351,7 +395,9 @@
 			"_nid": "",
 			"_lid": "notes",
 			"_gid": "_notes",
-			"_aid": ["notes"]
+			"_aid": [
+				"notes"
+			]
 		},
 		"_info": {
 			"_title": {

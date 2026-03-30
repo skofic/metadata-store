@@ -10,11 +10,11 @@ An ArangoDB edge document representing a directed relationship between two nodes
 
 **`_description`**
 
-Edges are the building blocks of all graphs in the data dictionary. Each edge connects a [source node](_from.md) (`_from`) to a [destination node](_to.md) (`_to`) via a typed [relationship](_predicate.md) (`_predicate`), and declares which [graphs](_path.md) traverse it (`_path`). The [path data property](_path_data.md) (`_path_data`) carries any data associated with the relationship within a specific graph or node context.
+Edges are the building blocks of all graphs in the data dictionary. Each edge connects a [source node](_from.md) ([`_from`](_from.md)) to a [destination node](_to.md) ([`_to`](_to.md)) via a typed [relationship](_predicate.md) ([`_predicate`](_predicate.md)), and declares which [graphs](_path.md) traverse it ([`_path`](_path.md)). The [path data property](_path_data.md) ([`_path_data`](_path_data.md)) carries any data associated with the relationship within a specific graph or node context.
 
-Edge documents are uniquely identified by their source, predicate, and destination: no two edges may share the same `_from`/`_predicate`/`_to` combination. The document [key](_key.md) is computed as the MD5 hash of the string formed by joining `_from`, `_predicate`, and `_to` with `/` separators.
+Edge documents are uniquely identified by their source, predicate, and destination: no two edges may share the same [`_from`](_from.md)/[`_predicate`](_predicate.md)/[`_to`](_to.md) combination. The document [key](_key.md) is computed as the MD5 hash of the string formed by joining [`_from`](_from.md), [`_predicate`](_predicate.md), and [`_to`](_to.md) with `/` separators.
 
-Most predicates follow a *many-to-one* direction: `_from` is the leaf node (child, element, member) and `_to` is the root node (parent, container, category).
+Most predicates follow a *many-to-one* direction: [`_from`](_from.md) is the leaf node (child, element, member) and [`_to`](_to.md) is the root node (parent, container, category).
 
 **`_examples`**
 
@@ -22,7 +22,7 @@ Most predicates follow a *many-to-one* direction: `_from` is the leaf node (chil
 
 ![Basic edge](images/edge-basic.svg)
 
-**Shared edge** — the same edge also belongs to a second graph, `MyCountries`. Adding `MyCountries` to `_path` is all that is needed; no new edge document is created:
+**Shared edge** — the same edge also belongs to a second graph, `MyCountries`. Adding `MyCountries` to [`_path`](_path.md) is all that is needed; no new edge document is created:
 
 ![Shared edge](images/edge-shared.svg)
 
@@ -36,10 +36,12 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "edge",
-	"_gid": "_edge",
-	"_aid": ["edge"]
+  "_aid" : [
+    "edge"
+  ],
+  "_gid" : "_edge",
+  "_lid" : "edge",
+  "_nid" : ""
 }
 ```
 
@@ -47,10 +49,12 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_edge"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_edge"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -58,23 +62,36 @@ The bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_from", "_to", "_predicate", "_path", "_path_data"]
-		}
-	],
-	"_computed": ["_key"],
-	"_immutable": ["_key", "_from", "_to", "_predicate"],
-	"_default-value": {"_path_data": {}}
+  "_closed" : true,
+  "_computed" : [
+    "_key"
+  ],
+  "_default-value" : {
+    "_path_data" : {
+
+    }
+  },
+  "_immutable" : [
+    "_key",
+    "_from",
+    "_to",
+    "_predicate"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_from",
+        "_to",
+        "_predicate",
+        "_path",
+        "_path_data"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

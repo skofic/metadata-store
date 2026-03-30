@@ -60,11 +60,7 @@ When non-empty, [`_scalar_type`](_scalar_type.md) is required and governs the en
 A boolean value:
 
 ```json
-{
-	"_scalar": {
-		"_scalar_type": "_type_boolean"
-	}
-}
+{"_scalar": {"_scalar_type": "_type_boolean"}}
 ```
 
 A floating-point length in centimetres with a valid range:
@@ -75,10 +71,7 @@ A floating-point length in centimetres with a valid range:
 		"_scalar_type": "_type_number_float",
 		"_unit": "_unit_length_cm",
 		"_decimals": 2,
-		"_range_valid": {
-			"_range_min-inclusive": 0.0,
-			"_range_max-exclusive": 100.0
-		}
+		"_range_valid": {"_range_min-inclusive": 0.0, "_range_max-exclusive": 100.0}
 	}
 }
 ```
@@ -86,20 +79,13 @@ A floating-point length in centimetres with a valid range:
 An enumeration value drawn from the ISO 639-3 language vocabulary:
 
 ```json
-{
-	"_scalar": {
-		"_scalar_type": "_type_enum",
-		"_enum_types": ["ISO_639_3"]
-	}
-}
+{"_scalar": {"_scalar_type": "_type_enum", "_enum_types": ["ISO_639_3"]}}
 ```
 
 An unconstrained scalar (any type accepted):
 
 ```json
-{
-	"_scalar": {}
-}
+{"_scalar": {}}
 ```
 
 ---
@@ -108,10 +94,12 @@ An unconstrained scalar (any type accepted):
 
 ```json
 {
-	"_nid": "",
-	"_lid": "scalar",
-	"_gid": "_scalar",
-	"_aid": ["scalar"]
+  "_aid" : [
+    "scalar"
+  ],
+  "_gid" : "_scalar",
+  "_lid" : "scalar",
+  "_nid" : ""
 }
 ```
 
@@ -119,10 +107,12 @@ An unconstrained scalar (any type accepted):
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_scalar"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_scalar"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -130,13 +120,9 @@ An unconstrained scalar (any type accepted):
 
 ```json
 {
-	"_closed": true,
-	"_recommended": ["_scalar_type"]
+  "_closed" : true,
+  "_recommended" : [
+    "_scalar_type"
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -20,10 +20,12 @@ The value is an object conforming to the [`_range_string`](_range_string.md) sch
 
 ```json
 {
-	"_nid": "_range_normal",
-	"_lid": "string",
-	"_gid": "_range_normal_string",
-	"_aid": ["string"]
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_range_normal_string",
+  "_lid" : "string",
+  "_nid" : "_range_normal"
 }
 ```
 
@@ -31,15 +33,11 @@ The value is an object conforming to the [`_range_string`](_range_string.md) sch
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_range_string"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_range_string"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

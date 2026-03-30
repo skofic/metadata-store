@@ -27,17 +27,11 @@ As a sub-enumeration root, `_predicate_functional` may be used in [`_enum_types`
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "functional",
-	"_gid": "_predicate_functional",
-	"_aid": ["functional"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "functional"
+  ],
+  "_gid" : "_predicate_functional",
+  "_lid" : "functional",
+  "_nid" : "_predicate"
 }
 ```

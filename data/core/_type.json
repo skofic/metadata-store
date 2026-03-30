@@ -4,7 +4,9 @@
 			"_nid": "",
 			"_lid": "type",
 			"_gid": "_type",
-			"_aid": ["type"]
+			"_aid": [
+				"type"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -24,7 +26,9 @@
 			"_nid": "_type",
 			"_lid": "data",
 			"_gid": "_type_data",
-			"_aid": ["data"]
+			"_aid": [
+				"data"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -38,7 +42,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -46,7 +52,9 @@
 			"_nid": "_type_data",
 			"_lid": "comparable",
 			"_gid": "_type_data_comparable",
-			"_aid": ["comparable"]
+			"_aid": [
+				"comparable"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -60,7 +68,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -68,7 +78,9 @@
 			"_nid": "_type_data",
 			"_lid": "dict",
 			"_gid": "_type_data_dict",
-			"_aid": ["dict"]
+			"_aid": [
+				"dict"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -88,7 +100,9 @@
 			"_nid": "_type_data_dict",
 			"_lid": "key",
 			"_gid": "_type_data_dict_key",
-			"_aid": ["key"]
+			"_aid": [
+				"key"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -102,7 +116,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -110,7 +126,9 @@
 			"_nid": "_type",
 			"_lid": "boolean",
 			"_gid": "_type_boolean",
-			"_aid": ["boolean"]
+			"_aid": [
+				"boolean"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -124,7 +142,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -132,7 +152,9 @@
 			"_nid": "_type",
 			"_lid": "number",
 			"_gid": "_type_number",
-			"_aid": ["number"]
+			"_aid": [
+				"number"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -146,7 +168,10 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-root",
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -154,7 +179,9 @@
 			"_nid": "_type_number",
 			"_lid": "float",
 			"_gid": "_type_number_float",
-			"_aid": ["float"]
+			"_aid": [
+				"float"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -168,7 +195,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -176,7 +205,9 @@
 			"_nid": "_type_number",
 			"_lid": "integer",
 			"_gid": "_type_number_integer",
-			"_aid": ["integer"]
+			"_aid": [
+				"integer"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -190,7 +221,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -198,7 +231,9 @@
 			"_nid": "_type",
 			"_lid": "string",
 			"_gid": "_type_string",
-			"_aid": ["string"]
+			"_aid": [
+				"string"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -212,7 +247,10 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-root",
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -220,7 +258,9 @@
 			"_nid": "_type_string",
 			"_lid": "formatted",
 			"_gid": "_type_string_formatted",
-			"_aid": ["formatted"]
+			"_aid": [
+				"formatted"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -240,7 +280,9 @@
 			"_nid": "_type_string",
 			"_lid": "HTML",
 			"_gid": "_type_string_HTML",
-			"_aid": ["HTML"]
+			"_aid": [
+				"HTML"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -250,11 +292,13 @@
 				"ISO_639_3_eng": "The scalar data type for HTML-formatted text. The type carries its own format constraint; `_regexp` is not applicable."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_type_string_HTML` declares that the value is an [HTML](https://en.wikipedia.org/wiki/HTML) string. No `_regexp` is applicable — the type itself defines the format. Excluded from [`_type_data_comparable`](_type_data_comparable.md) and [`_type_data_dict_key`](_type_data_dict_key.md) because HTML strings do not support meaningful ordering or use as property names."
+				"ISO_639_3_eng": "`_type_string_HTML` declares that the value is an [HTML](https://en.wikipedia.org/wiki/HTML) string. No [`_regexp`](_regexp.md) is applicable — the type itself defines the format. Excluded from [`_type_data_comparable`](_type_data_comparable.md) and [`_type_data_dict_key`](_type_data_dict_key.md) because HTML strings do not support meaningful ordering or use as property names."
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -262,7 +306,9 @@
 			"_nid": "_type_string",
 			"_lid": "Markdown",
 			"_gid": "_type_string_Markdown",
-			"_aid": ["Markdown"]
+			"_aid": [
+				"Markdown"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -276,7 +322,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -284,7 +332,9 @@
 			"_nid": "_type_string",
 			"_lid": "LaTeX",
 			"_gid": "_type_string_LaTeX",
-			"_aid": ["LaTeX"]
+			"_aid": [
+				"LaTeX"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -294,11 +344,13 @@
 				"ISO_639_3_eng": "The scalar data type for LaTeX expressions. Plain Unicode characters are also valid. Rendered in frontends using KaTeX. The type carries its own format constraint; `_regexp` is not applicable."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_type_string_LaTeX` declares that the value is a LaTeX string. [LaTeX](https://www.latex-project.org) is a superset of plain [UTF-8](https://en.wikipedia.org/wiki/UTF-8) text, so simple symbols (e.g. `°C`, `μg`) may be stored as plain [Unicode](https://en.wikipedia.org/wiki/Unicode) while complex expressions use LaTeX syntax (e.g. `\\bar{x} \\pm \\sigma`). No `_regexp` is applicable. Excluded from [`_type_data_comparable`](_type_data_comparable.md)."
+				"ISO_639_3_eng": "`_type_string_LaTeX` declares that the value is a LaTeX string. [LaTeX](https://www.latex-project.org) is a superset of plain [UTF-8](https://en.wikipedia.org/wiki/UTF-8) text, so simple symbols (e.g. `°C`, `μg`) may be stored as plain [Unicode](https://en.wikipedia.org/wiki/Unicode) while complex expressions use LaTeX syntax (e.g. `\\bar{x} \\pm \\sigma`). No [`_regexp`](_regexp.md) is applicable. Excluded from [`_type_data_comparable`](_type_data_comparable.md)."
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -306,7 +358,9 @@
 			"_nid": "_type_string",
 			"_lid": "SVG",
 			"_gid": "_type_string_SVG",
-			"_aid": ["SVG"]
+			"_aid": [
+				"SVG"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -320,7 +374,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -328,7 +384,9 @@
 			"_nid": "_type_string",
 			"_lid": "internet",
 			"_gid": "_type_string_internet",
-			"_aid": ["internet"]
+			"_aid": [
+				"internet"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -348,7 +406,9 @@
 			"_nid": "_type_string",
 			"_lid": "URI",
 			"_gid": "_type_string_URI",
-			"_aid": ["URI"]
+			"_aid": [
+				"URI"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -362,7 +422,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -370,7 +432,9 @@
 			"_nid": "_type_string",
 			"_lid": "Email",
 			"_gid": "_type_string_Email",
-			"_aid": ["Email"]
+			"_aid": [
+				"Email"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -384,7 +448,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -392,7 +458,9 @@
 			"_nid": "_type_string",
 			"_lid": "Hostname",
 			"_gid": "_type_string_Hostname",
-			"_aid": ["Hostname"]
+			"_aid": [
+				"Hostname"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -406,7 +474,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -414,7 +484,9 @@
 			"_nid": "_type_string",
 			"_lid": "IPv4",
 			"_gid": "_type_string_IPv4",
-			"_aid": ["IPv4"]
+			"_aid": [
+				"IPv4"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -428,7 +500,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -436,7 +510,9 @@
 			"_nid": "_type_string",
 			"_lid": "IPv6",
 			"_gid": "_type_string_IPv6",
-			"_aid": ["IPv6"]
+			"_aid": [
+				"IPv6"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -450,7 +526,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -458,7 +536,9 @@
 			"_nid": "_type_string",
 			"_lid": "timestamp",
 			"_gid": "_type_string_timestamp",
-			"_aid": ["timestamp"]
+			"_aid": [
+				"timestamp"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -478,7 +558,9 @@
 			"_nid": "_type_string",
 			"_lid": "YMD",
 			"_gid": "_type_string_YMD",
-			"_aid": ["YMD"]
+			"_aid": [
+				"YMD"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -492,7 +574,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -500,7 +584,9 @@
 			"_nid": "_type_string",
 			"_lid": "date",
 			"_gid": "_type_string_date",
-			"_aid": ["date"]
+			"_aid": [
+				"date"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -514,7 +600,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -522,7 +610,9 @@
 			"_nid": "_type_string",
 			"_lid": "time",
 			"_gid": "_type_string_time",
-			"_aid": ["time"]
+			"_aid": [
+				"time"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -536,7 +626,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -544,7 +636,9 @@
 			"_nid": "_type_string",
 			"_lid": "date-time",
 			"_gid": "_type_string_date-time",
-			"_aid": ["date-time"]
+			"_aid": [
+				"date-time"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -558,7 +652,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -566,7 +662,9 @@
 			"_nid": "_type_string",
 			"_lid": "encoded",
 			"_gid": "_type_string_encoded",
-			"_aid": ["encoded"]
+			"_aid": [
+				"encoded"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -586,7 +684,9 @@
 			"_nid": "_type_string",
 			"_lid": "HEX",
 			"_gid": "_type_string_HEX",
-			"_aid": ["HEX"]
+			"_aid": [
+				"HEX"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -600,7 +700,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -608,7 +710,9 @@
 			"_nid": "_type",
 			"_lid": "regexp",
 			"_gid": "_type_regexp",
-			"_aid": ["regexp"]
+			"_aid": [
+				"regexp"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -622,7 +726,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -630,7 +736,9 @@
 			"_nid": "_type",
 			"_lid": "key",
 			"_gid": "_type_key",
-			"_aid": ["key"]
+			"_aid": [
+				"key"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -644,7 +752,10 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-root",
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -652,7 +763,9 @@
 			"_nid": "_type_key",
 			"_lid": "term",
 			"_gid": "_type_key_term",
-			"_aid": ["term"]
+			"_aid": [
+				"term"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -666,7 +779,10 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-root",
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -674,7 +790,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "enum-root",
 			"_gid": "_type_key_term_enum-root",
-			"_aid": ["enum-root"]
+			"_aid": [
+				"enum-root"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -688,7 +806,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -696,7 +816,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "enum-item",
 			"_gid": "_type_key_term_enum-item",
-			"_aid": ["enum-item"]
+			"_aid": [
+				"enum-item"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -710,7 +832,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -718,7 +842,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "descriptor",
 			"_gid": "_type_key_term_descriptor",
-			"_aid": ["descriptor"]
+			"_aid": [
+				"descriptor"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -732,7 +858,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -740,7 +868,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "object",
 			"_gid": "_type_key_term_object",
-			"_aid": ["object"]
+			"_aid": [
+				"object"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -754,7 +884,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -762,7 +894,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "predicate",
 			"_gid": "_type_key_term_predicate",
-			"_aid": ["predicate"]
+			"_aid": [
+				"predicate"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -776,7 +910,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -784,7 +920,9 @@
 			"_nid": "_type_key_term",
 			"_lid": "typedef",
 			"_gid": "_type_key_term_typedef",
-			"_aid": ["typedef"]
+			"_aid": [
+				"typedef"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -798,7 +936,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -806,7 +946,9 @@
 			"_nid": "_type",
 			"_lid": "handle",
 			"_gid": "_type_handle",
-			"_aid": ["handle"]
+			"_aid": [
+				"handle"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -820,7 +962,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -828,7 +972,9 @@
 			"_nid": "_type",
 			"_lid": "enum",
 			"_gid": "_type_enum",
-			"_aid": ["enum"]
+			"_aid": [
+				"enum"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -842,7 +988,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -850,7 +998,9 @@
 			"_nid": "_type",
 			"_lid": "struct",
 			"_gid": "_type_struct",
-			"_aid": ["struct"]
+			"_aid": [
+				"struct"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -864,7 +1014,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -872,7 +1024,9 @@
 			"_nid": "_type",
 			"_lid": "object",
 			"_gid": "_type_object",
-			"_aid": ["object"]
+			"_aid": [
+				"object"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -886,7 +1040,10 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-root",
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -894,7 +1051,9 @@
 			"_nid": "_type_object",
 			"_lid": "GeoJSON",
 			"_gid": "_type_object_GeoJSON",
-			"_aid": ["GeoJSON"]
+			"_aid": [
+				"GeoJSON"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -908,7 +1067,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -916,7 +1077,9 @@
 			"_nid": "_type",
 			"_lid": "timestamp",
 			"_gid": "_type_timestamp",
-			"_aid": ["timestamp"]
+			"_aid": [
+				"timestamp"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -930,7 +1093,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -938,7 +1103,9 @@
 			"_nid": "_type",
 			"_lid": "term",
 			"_gid": "_type_term",
-			"_aid": ["term"]
+			"_aid": [
+				"term"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -952,7 +1119,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -960,7 +1129,9 @@
 			"_nid": "_type_term",
 			"_lid": "alias",
 			"_gid": "_type_term_alias",
-			"_aid": ["alias"]
+			"_aid": [
+				"alias"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -974,7 +1145,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -982,7 +1155,9 @@
 			"_nid": "_type_term",
 			"_lid": "predicate",
 			"_gid": "_type_term_predicate",
-			"_aid": ["predicate"]
+			"_aid": [
+				"predicate"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -996,7 +1171,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1004,7 +1181,9 @@
 			"_nid": "_type_term",
 			"_lid": "namespace",
 			"_gid": "_type_term_namespace",
-			"_aid": ["namespace"]
+			"_aid": [
+				"namespace"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1018,7 +1197,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1026,7 +1207,9 @@
 			"_nid": "_type_term",
 			"_lid": "descriptor",
 			"_gid": "_type_term_descriptor",
-			"_aid": ["descriptor"]
+			"_aid": [
+				"descriptor"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1040,7 +1223,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1048,7 +1233,9 @@
 			"_nid": "_type_term",
 			"_lid": "enum-root",
 			"_gid": "_type_term_enum-root",
-			"_aid": ["enum-root"]
+			"_aid": [
+				"enum-root"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1062,7 +1249,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1070,7 +1259,9 @@
 			"_nid": "_type_term",
 			"_lid": "enum-item",
 			"_gid": "_type_term_enum-item",
-			"_aid": ["enum-item"]
+			"_aid": [
+				"enum-item"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1084,7 +1275,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1092,7 +1285,9 @@
 			"_nid": "_type_term",
 			"_lid": "object",
 			"_gid": "_type_term_object",
-			"_aid": ["object"]
+			"_aid": [
+				"object"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1106,7 +1301,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1114,7 +1311,9 @@
 			"_nid": "_type_term",
 			"_lid": "typedef",
 			"_gid": "_type_term_typedef",
-			"_aid": ["typedef"]
+			"_aid": [
+				"typedef"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1128,7 +1327,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1136,7 +1337,9 @@
 			"_nid": "_type",
 			"_lid": "selection",
 			"_gid": "_type_selection",
-			"_aid": ["selection"]
+			"_aid": [
+				"selection"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1150,7 +1353,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -1158,7 +1363,9 @@
 			"_nid": "_type_selection",
 			"_lid": "mandatory",
 			"_gid": "_type_selection_mandatory",
-			"_aid": ["mandatory"]
+			"_aid": [
+				"mandatory"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1172,7 +1379,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	},
 	{
@@ -1180,7 +1389,9 @@
 			"_nid": "_type_selection",
 			"_lid": "optional",
 			"_gid": "_type_selection_optional",
-			"_aid": ["optional"]
+			"_aid": [
+				"optional"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -1194,7 +1405,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-item"]
+			"_term_type": [
+				"_type_term_enum-item"
+			]
 		}
 	}
 ]

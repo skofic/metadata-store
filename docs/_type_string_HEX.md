@@ -18,17 +18,11 @@ The scalar data type for hexadecimal strings (digits 0–9 and letters A–F or 
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "HEX",
-	"_gid": "_type_string_HEX",
-	"_aid": ["HEX"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "HEX"
+  ],
+  "_gid" : "_type_string_HEX",
+  "_lid" : "HEX",
+  "_nid" : "_type_string"
 }
 ```

@@ -25,16 +25,10 @@ An array of integers with 1 to 5 elements, each between 5 and 10:
 ```json
 {
 	"_array": {
-		"_elements": {
-			"_min-items": 1,
-			"_max-items": 5
-		},
+		"_elements": {"_min-items": 1, "_max-items": 5},
 		"_scalar": {
 			"_scalar_type": "_type_number_integer",
-			"_range_valid": {
-				"_range_min-inclusive": 5,
-				"_range_max-inclusive": 10
-			}
+			"_range_valid": {"_range_min-inclusive": 5, "_range_max-inclusive": 10}
 		}
 	}
 }
@@ -46,10 +40,7 @@ A nested array — an array of arrays of floating-point lengths:
 {
 	"_array": {
 		"_array": {
-			"_scalar": {
-				"_scalar_type": "_type_number_float",
-				"_unit": "_unit_length_cm"
-			}
+			"_scalar": {"_scalar_type": "_type_number_float", "_unit": "_unit_length_cm"}
 		}
 	}
 }
@@ -58,9 +49,7 @@ A nested array — an array of arrays of floating-point lengths:
 An unconstrained array:
 
 ```json
-{
-	"_array": {}
-}
+{"_array": {}}
 ```
 
 ---
@@ -69,10 +58,12 @@ An unconstrained array:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "array",
-	"_gid": "_array",
-	"_aid": ["array"]
+  "_aid" : [
+    "array"
+  ],
+  "_gid" : "_array",
+  "_lid" : "array",
+  "_nid" : ""
 }
 ```
 
@@ -80,10 +71,12 @@ An unconstrained array:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_array"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_array"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -91,34 +84,30 @@ An unconstrained array:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{
-					"_selection_type": "_type_selection_optional",
-					"_elements": {
-						"_max-items": 1
-					}
-				}
-			],
-			"_selection_descriptors": [
-				"_scalar",
-				"_array",
-				"_nested",
-				"_set",
-				"_tuple",
-				"_dict",
-				"_typedef"
-			]
-		}
-	],
-	"_recommended": ["_elements"]
+  "_closed" : true,
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_scalar",
+        "_array",
+        "_nested",
+        "_set",
+        "_tuple",
+        "_dict",
+        "_typedef"
+      ],
+      "_selection_rules" : [
+        {
+          "_elements" : {
+            "_max-items" : 1
+          },
+          "_selection_type" : "_type_selection_optional"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

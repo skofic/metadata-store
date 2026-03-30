@@ -18,12 +18,10 @@ If a conditional rule's `_path_data` requires a property that appears in `_banne
 
 **`_examples`**
 
-Banning `_regexp` from number scalar types (it is only meaningful for generic strings):
+Banning [`_regexp`](_regexp.md) from number scalar types (it is only meaningful for generic strings):
 
 ```json
-{
-	"_banned": ["_regexp"]
-}
+{"_banned": ["_regexp"]}
 ```
 
 ---
@@ -32,10 +30,12 @@ Banning `_regexp` from number scalar types (it is only meaningful for generic st
 
 ```json
 {
-	"_nid": "",
-	"_lid": "banned",
-	"_gid": "_banned",
-	"_aid": ["banned"]
+  "_aid" : [
+    "banned"
+  ],
+  "_gid" : "_banned",
+  "_lid" : "banned",
+  "_nid" : ""
 }
 ```
 
@@ -43,16 +43,10 @@ Banning `_regexp` from number scalar types (it is only meaningful for generic st
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_key_term_descriptor"
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_scalar_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

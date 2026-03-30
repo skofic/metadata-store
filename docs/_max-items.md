@@ -20,10 +20,12 @@ When `_max-items` is absent, no upper limit is imposed on the collection size. F
 
 ```json
 {
-	"_nid": "",
-	"_lid": "max-items",
-	"_gid": "_max-items",
-	"_aid": ["max-items"]
+  "_aid" : [
+    "max-items"
+  ],
+  "_gid" : "_max-items",
+  "_lid" : "max-items",
+  "_nid" : ""
 }
 ```
 
@@ -31,17 +33,11 @@ When `_max-items` is absent, no upper limit is imposed on the collection size. F
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_number_integer",
-		"_range_valid": {
-			"_range_min-inclusive": 1
-		}
-	}
+  "_scalar" : {
+    "_range_valid" : {
+      "_range_min-inclusive" : 1
+    },
+    "_scalar_type" : "_type_number_integer"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

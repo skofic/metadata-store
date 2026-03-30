@@ -18,17 +18,11 @@ A term key that must reference an enumeration root — a term carrying `_type_te
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "enum-root",
-	"_gid": "_type_key_term_enum-root",
-	"_aid": ["enum-root"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "enum-root"
+  ],
+  "_gid" : "_type_key_term_enum-root",
+  "_lid" : "enum-root",
+  "_nid" : "_type_key_term"
 }
 ```

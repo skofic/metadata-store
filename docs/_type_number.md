@@ -18,17 +18,11 @@ The scalar data type for any numeric value, accepting both integers and floating
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "number",
-	"_gid": "_type_number",
-	"_aid": ["number"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+  "_aid" : [
+    "number"
+  ],
+  "_gid" : "_type_number",
+  "_lid" : "number",
+  "_nid" : "_type"
 }
 ```

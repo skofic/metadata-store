@@ -36,10 +36,12 @@ In the following edge, `_to` is the handle of the ISO 3166-3 vocabulary root —
 
 ```json
 {
-	"_nid": "",
-	"_lid": "to",
-	"_gid": "_to",
-	"_aid": ["to"]
+  "_aid" : [
+    "to"
+  ],
+  "_gid" : "_to",
+  "_lid" : "to",
+  "_nid" : ""
 }
 ```
 
@@ -47,14 +49,8 @@ In the following edge, `_to` is the handle of the ISO 3166-3 vocabulary root —
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_handle"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_handle"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

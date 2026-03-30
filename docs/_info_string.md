@@ -21,9 +21,7 @@ Descriptors that reference this typedef use `_typedef: "_info_string"` in their 
 A monolingual title during early dictionary construction:
 
 ```json
-{
-	"ISO_639_3_eng": "Body weight"
-}
+{"ISO_639_3_eng": "Body weight"}
 ```
 
 A fully translated definition:
@@ -43,10 +41,12 @@ A fully translated definition:
 
 ```json
 {
-	"_nid": "_info",
-	"_lid": "string",
-	"_gid": "_info_string",
-	"_aid": ["string"]
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_info_string",
+  "_lid" : "string",
+  "_nid" : "_info"
 }
 ```
 
@@ -54,22 +54,18 @@ A fully translated definition:
 
 ```json
 {
-	"_dict": {
-		"_dict_key": {
-			"_dict_key_type": "_type_enum",
-			"_enum_types": ["ISO_639_3"]
-		},
-		"_dict_value": {
-			"_scalar": {
-				"_scalar_type": "_type_string"
-			}
-		}
-	}
+  "_dict" : {
+    "_dict_key" : {
+      "_dict_key_type" : "_type_enum",
+      "_enum_types" : [
+        "ISO_639_3"
+      ]
+    },
+    "_dict_value" : {
+      "_scalar" : {
+        "_scalar_type" : "_type_string"
+      }
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ A term key that must reference a typedef term — a term carrying `_type_term_ty
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "typedef",
-	"_gid": "_type_key_term_typedef",
-	"_aid": ["typedef"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "typedef"
+  ],
+  "_gid" : "_type_key_term_typedef",
+  "_lid" : "typedef",
+  "_nid" : "_type_key_term"
 }
 ```

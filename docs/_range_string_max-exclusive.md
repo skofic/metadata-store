@@ -18,10 +18,12 @@ The exclusive upper bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_nid": "_range_string",
-	"_lid": "max-exclusive",
-	"_gid": "_range_string_max-exclusive",
-	"_aid": ["max-exclusive"]
+  "_aid" : [
+    "max-exclusive"
+  ],
+  "_gid" : "_range_string_max-exclusive",
+  "_lid" : "max-exclusive",
+  "_nid" : "_range_string"
 }
 ```
 
@@ -29,14 +31,8 @@ The exclusive upper bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

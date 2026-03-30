@@ -18,17 +18,11 @@ A term marked `_type_term_namespace` provides the [`_nid`](_nid.md) value for ot
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "namespace",
-	"_gid": "_type_term_namespace",
-	"_aid": ["namespace"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "namespace"
+  ],
+  "_gid" : "_type_term_namespace",
+  "_lid" : "namespace",
+  "_nid" : "_type_term"
 }
 ```

@@ -23,10 +23,12 @@ Two values are defined:
 
 ```json
 {
-	"_nid": "_selection",
-	"_lid": "type",
-	"_gid": "_selection_type",
-	"_aid": ["type"]
+  "_aid" : [
+    "type"
+  ],
+  "_gid" : "_selection_type",
+  "_lid" : "type",
+  "_nid" : "_selection"
 }
 ```
 
@@ -34,15 +36,11 @@ Two values are defined:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_enum",
-		"_enum_types": ["_type_selection"]
-	}
+  "_scalar" : {
+    "_enum_types" : [
+      "_type_selection"
+    ],
+    "_scalar_type" : "_type_enum"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

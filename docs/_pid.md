@@ -16,7 +16,7 @@ Unlike [official identifiers](_aid.md), provider identifiers are not required to
 
 **`_examples`**
 
-A dataset from a legacy system uses `italy_code` and `country_IT` as its internal variable names for the Italy country term. These are provider-specific names, not official codes, so they belong in `_pid`:
+A dataset from a legacy system uses `I` as its internal country code for Italy (the IOC code). Because `I` is an official identifier it belongs in [`_aid`](_aid.md); a hypothetical internal code `italy_code` used by a specific data provider belongs in `_pid`:
 
 ```json
 {
@@ -36,10 +36,12 @@ A dataset from a legacy system uses `italy_code` and `country_IT` as its interna
 
 ```json
 {
-	"_nid": "",
-	"_lid": "pid",
-	"_gid": "_pid",
-	"_aid": ["pid"]
+  "_aid" : [
+    "pid"
+  ],
+  "_gid" : "_pid",
+  "_lid" : "pid",
+  "_nid" : ""
 }
 ```
 
@@ -47,16 +49,10 @@ A dataset from a legacy system uses `italy_code` and `country_IT` as its interna
 
 ```json
 {
-	"_set": {
-		"_comparable": {
-			"_comparable_type": "_type_string"
-		}
-	}
+  "_set" : {
+    "_comparable" : {
+      "_comparable_type" : "_type_string"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

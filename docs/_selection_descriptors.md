@@ -19,8 +19,14 @@ When `_selection_rules` contains **multiple rules**, `_selection_descriptors` is
 ```json
 {
 	"_selection_rules": [
-		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1, "_max-items": 1}},
-		{"_selection_type": "_type_selection_optional", "_elements": {"_min-items": 1}}
+		{
+			"_selection_type": "_type_selection_mandatory",
+			"_elements": {"_min-items": 1, "_max-items": 1}
+		},
+		{
+			"_selection_type": "_type_selection_optional",
+			"_elements": {"_min-items": 1}
+		}
 	],
 	"_selection_descriptors": [
 		["_range_min-inclusive", "_range_min-exclusive"],
@@ -37,10 +43,12 @@ The first rule (mandatory, exactly 1) governs each inner array — exactly one b
 
 ```json
 {
-	"_nid": "_selection",
-	"_lid": "descriptors",
-	"_gid": "_selection_descriptors",
-	"_aid": ["descriptors"]
+  "_aid" : [
+    "descriptors"
+  ],
+  "_gid" : "_selection_descriptors",
+  "_lid" : "descriptors",
+  "_nid" : "_selection"
 }
 ```
 
@@ -48,16 +56,10 @@ The first rule (mandatory, exactly 1) governs each inner array — exactly one b
 
 ```json
 {
-	"_nested": {
-		"_comparable": {
-			"_comparable_type": "_type_key_term_descriptor"
-		}
-	}
+  "_nested" : {
+    "_comparable" : {
+      "_comparable_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

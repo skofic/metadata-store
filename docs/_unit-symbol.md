@@ -19,17 +19,7 @@ A free-text unit symbol string, used when no codified `_unit` is available. Stor
 A unit symbol for micrograms per litre:
 
 ```json
-{
-	"_unit-symbol": "\\mu g/L"
-}
-```
-
-A unit symbol for degrees Celsius:
-
-```json
-{
-	"_unit-symbol": "°C"
-}
+{"_unit-symbol": "\\mu g/L"}
 ```
 
 ---
@@ -38,10 +28,12 @@ A unit symbol for degrees Celsius:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "unit-symbol",
-	"_gid": "_unit-symbol",
-	"_aid": ["unit-symbol"]
+  "_aid" : [
+    "unit-symbol"
+  ],
+  "_gid" : "_unit-symbol",
+  "_lid" : "unit-symbol",
+  "_nid" : ""
 }
 ```
 
@@ -49,14 +41,8 @@ A unit symbol for degrees Celsius:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string_LaTeX"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string_LaTeX"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

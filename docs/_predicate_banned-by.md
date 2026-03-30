@@ -22,17 +22,11 @@ Typical use case: two variables that represent the same measurement in different
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "banned-by",
-	"_gid": "_predicate_banned-by",
-	"_aid": ["banned-by"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "banned-by"
+  ],
+  "_gid" : "_predicate_banned-by",
+  "_lid" : "banned-by",
+  "_nid" : "_predicate"
 }
 ```

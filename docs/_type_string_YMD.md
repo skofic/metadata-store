@@ -18,17 +18,11 @@ The scalar data type for partial or full dates in YYYYMMDD format: `YYYY` (year 
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "YMD",
-	"_gid": "_type_string_YMD",
-	"_aid": ["YMD"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "YMD"
+  ],
+  "_gid" : "_type_string_YMD",
+  "_lid" : "YMD",
+  "_nid" : "_type_string"
 }
 ```

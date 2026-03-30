@@ -25,22 +25,16 @@ For **conditional rule objects** in `_path_data` on graph edges:
 
 **`_examples`**
 
-Open schema — additional properties beyond `_lid` and `_nid` are accepted:
+Open schema — additional properties beyond [`_lid`](_lid.md) and [`_nid`](_nid.md) are accepted:
 
 ```json
-{
-	"_closed": false,
-	"_recommended": ["_lid", "_nid"]
-}
+{"_closed": false, "_recommended": ["_lid", "_nid"]}
 ```
 
 Closed schema — only the listed properties are permitted:
 
 ```json
-{
-	"_closed": true,
-	"_recommended": ["_lid", "_nid", "_gid", "_aid"]
-}
+{"_closed": true, "_recommended": ["_lid", "_nid", "_gid", "_aid"]}
 ```
 
 ---
@@ -49,10 +43,12 @@ Closed schema — only the listed properties are permitted:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "closed",
-	"_gid": "_closed",
-	"_aid": ["closed"]
+  "_aid" : [
+    "closed"
+  ],
+  "_gid" : "_closed",
+  "_lid" : "closed",
+  "_nid" : ""
 }
 ```
 
@@ -60,14 +56,8 @@ Closed schema — only the listed properties are permitted:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_boolean"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_boolean"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

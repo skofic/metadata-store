@@ -30,10 +30,12 @@ Examples complement the description by showing concrete instances of valid value
 
 ```json
 {
-	"_nid": "",
-	"_lid": "examples",
-	"_gid": "_examples",
-	"_aid": ["examples"]
+  "_aid" : [
+    "examples"
+  ],
+  "_gid" : "_examples",
+  "_lid" : "examples",
+  "_nid" : ""
 }
 ```
 
@@ -41,12 +43,6 @@ Examples complement the description by showing concrete instances of valid value
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -30,10 +30,12 @@ Use this property for supplementary external references — standards pages, dat
 
 ```json
 {
-	"_nid": "",
-	"_lid": "url",
-	"_gid": "_url",
-	"_aid": ["url"]
+  "_aid" : [
+    "url"
+  ],
+  "_gid" : "_url",
+  "_lid" : "url",
+  "_nid" : ""
 }
 ```
 
@@ -41,12 +43,6 @@ Use this property for supplementary external references — standards pages, dat
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

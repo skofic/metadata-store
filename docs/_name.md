@@ -38,10 +38,12 @@ The native name of the Cantonese language, written in Chinese script — distinc
 
 ```json
 {
-	"_nid": "",
-	"_lid": "name",
-	"_gid": "_name",
-	"_aid": ["name"]
+  "_aid" : [
+    "name"
+  ],
+  "_gid" : "_name",
+  "_lid" : "name",
+  "_nid" : ""
 }
 ```
 
@@ -49,14 +51,8 @@ The native name of the Cantonese language, written in Chinese script — distinc
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

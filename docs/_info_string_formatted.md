@@ -41,10 +41,12 @@ A multilingual formatted description:
 
 ```json
 {
-	"_nid": "_info_string",
-	"_lid": "formatted",
-	"_gid": "_info_string_formatted",
-	"_aid": ["formatted"]
+  "_aid" : [
+    "formatted"
+  ],
+  "_gid" : "_info_string_formatted",
+  "_lid" : "formatted",
+  "_nid" : "_info_string"
 }
 ```
 
@@ -52,22 +54,18 @@ A multilingual formatted description:
 
 ```json
 {
-	"_dict": {
-		"_dict_key": {
-			"_dict_key_type": "_type_enum",
-			"_enum_types": ["ISO_639_3"]
-		},
-		"_dict_value": {
-			"_scalar": {
-				"_scalar_type": "_type_string_Markdown"
-			}
-		}
-	}
+  "_dict" : {
+    "_dict_key" : {
+      "_dict_key_type" : "_type_enum",
+      "_enum_types" : [
+        "ISO_639_3"
+      ]
+    },
+    "_dict_value" : {
+      "_scalar" : {
+        "_scalar_type" : "_type_string_Markdown"
+      }
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ The scalar data type for SVG image markup stored as a string. The type carries i
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "SVG",
-	"_gid": "_type_string_SVG",
-	"_aid": ["SVG"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "SVG"
+  ],
+  "_gid" : "_type_string_SVG",
+  "_lid" : "SVG",
+  "_nid" : "_type_string"
 }
 ```

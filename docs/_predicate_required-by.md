@@ -22,17 +22,11 @@ Typical use case: a variable representing a derived measurement requires the sou
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "required-by",
-	"_gid": "_predicate_required-by",
-	"_aid": ["required-by"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "required-by"
+  ],
+  "_gid" : "_predicate_required-by",
+  "_lid" : "required-by",
+  "_nid" : "_predicate"
 }
 ```

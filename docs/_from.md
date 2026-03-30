@@ -36,10 +36,12 @@ In the following edge, `_from` is the handle of the Italy term — the enumerati
 
 ```json
 {
-	"_nid": "",
-	"_lid": "from",
-	"_gid": "_from",
-	"_aid": ["from"]
+  "_aid" : [
+    "from"
+  ],
+  "_gid" : "_from",
+  "_lid" : "from",
+  "_nid" : ""
 }
 ```
 
@@ -47,14 +49,8 @@ In the following edge, `_from` is the handle of the Italy term — the enumerati
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_handle"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_handle"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

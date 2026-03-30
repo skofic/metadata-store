@@ -18,17 +18,11 @@ The scalar data type for Unix timestamps — integers representing seconds elaps
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "timestamp",
-	"_gid": "_type_timestamp",
-	"_aid": ["timestamp"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "timestamp"
+  ],
+  "_gid" : "_type_timestamp",
+  "_lid" : "timestamp",
+  "_nid" : "_type"
 }
 ```

@@ -18,17 +18,11 @@ A term key that must reference a predicate term — a term carrying `_type_term_
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "predicate",
-	"_gid": "_type_key_term_predicate",
-	"_aid": ["predicate"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "predicate"
+  ],
+  "_gid" : "_type_key_term_predicate",
+  "_lid" : "predicate",
+  "_nid" : "_type_key_term"
 }
 ```

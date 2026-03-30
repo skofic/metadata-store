@@ -32,10 +32,12 @@ Typical content includes subject preparation, measurement timing, instruments or
 
 ```json
 {
-	"_nid": "",
-	"_lid": "methods",
-	"_gid": "_methods",
-	"_aid": ["methods"]
+  "_aid" : [
+    "methods"
+  ],
+  "_gid" : "_methods",
+  "_lid" : "methods",
+  "_nid" : ""
 }
 ```
 
@@ -43,12 +45,6 @@ Typical content includes subject preparation, measurement timing, instruments or
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

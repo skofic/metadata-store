@@ -31,7 +31,7 @@ For a comprehensive explanation of how the rule system works — including selec
 
 **`_examples`**
 
-A closed schema where `_lid` is required and immutable, `_gid` is computed and immutable, and the whitelist is limited to three properties:
+A closed schema where [`_lid`](_lid.md) is required and immutable, [`_gid`](_gid.md) is computed and immutable, and the whitelist is limited to three properties:
 
 ```json
 {
@@ -53,9 +53,7 @@ A closed schema where `_lid` is required and immutable, `_gid` is computed and i
 An object definition with no unconditional constraints — all rules expressed in the graph:
 
 ```json
-{
-	"_rule": {}
-}
+{"_rule": {}}
 ```
 
 ---
@@ -64,10 +62,12 @@ An object definition with no unconditional constraints — all rules expressed i
 
 ```json
 {
-	"_nid": "",
-	"_lid": "rule",
-	"_gid": "_rule",
-	"_aid": ["rule"]
+  "_aid" : [
+    "rule"
+  ],
+  "_gid" : "_rule",
+  "_lid" : "rule",
+  "_nid" : ""
 }
 ```
 
@@ -75,10 +75,12 @@ An object definition with no unconditional constraints — all rules expressed i
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_rule"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_rule"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -86,21 +88,27 @@ An object definition with no unconditional constraints — all rules expressed i
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_closed"]
-		}
-	],
-	"_recommended": ["_required", "_recommended", "_banned", "_computed", "_locked", "_immutable", "_default-value"]
+  "_closed" : true,
+  "_recommended" : [
+    "_required",
+    "_recommended",
+    "_banned",
+    "_computed",
+    "_locked",
+    "_immutable",
+    "_default-value"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_closed"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

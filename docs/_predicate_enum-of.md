@@ -40,17 +40,11 @@ Italy is a valid element of the ISO 3166-3 country vocabulary:
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "enum-of",
-	"_gid": "_predicate_enum-of",
-	"_aid": ["enum-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "enum-of"
+  ],
+  "_gid" : "_predicate_enum-of",
+  "_lid" : "enum-of",
+  "_nid" : "_predicate"
 }
 ```

@@ -18,25 +18,16 @@ The optional [`_elements`](_elements.md) property constrains the number of eleme
 
 **`_examples`**
 
-A nested array of string descriptor keys, two levels deep — used as `_selection_descriptors` with two selection rules:
+A nested array of string descriptor keys, two levels deep — used as [`_selection_descriptors`](_selection_descriptors.md) with two selection rules:
 
 ```json
-{
-	"_nested": {
-		"_comparable": {
-			"_comparable_type": "_type_string"
-		}
-	}
-}
+{"_nested": {"_comparable": {"_comparable_type": "_type_string"}}}
 ```
 
 With the corresponding two-rule selector, the value at validation time would look like:
 
 ```json
-[
-	["_lid", "_gid"],
-	["_nid"]
-]
+[["_lid", "_gid"], ["_nid"]]
 ```
 
 The outer array contains one inner array per selection rule; each inner array contains the descriptor keys governed by that rule.
@@ -47,10 +38,12 @@ The outer array contains one inner array per selection rule; each inner array co
 
 ```json
 {
-	"_nid": "",
-	"_lid": "nested",
-	"_gid": "_nested",
-	"_aid": ["nested"]
+  "_aid" : [
+    "nested"
+  ],
+  "_gid" : "_nested",
+  "_lid" : "nested",
+  "_nid" : ""
 }
 ```
 
@@ -58,10 +51,12 @@ The outer array contains one inner array per selection rule; each inner array co
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_nested"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_nested"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -69,21 +64,21 @@ The outer array contains one inner array per selection rule; each inner array co
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_comparable"]
-		}
-	],
-	"_recommended": ["_elements"]
+  "_closed" : true,
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_comparable"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ The scalar data type for native boolean values. The stored value is `true` or `f
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "boolean",
-	"_gid": "_type_boolean",
-	"_aid": ["boolean"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "boolean"
+  ],
+  "_gid" : "_type_boolean",
+  "_lid" : "boolean",
+  "_nid" : "_type"
 }
 ```

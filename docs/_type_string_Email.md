@@ -18,17 +18,11 @@ The scalar data type for email addresses conforming to the JSON Schema `email` f
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "Email",
-	"_gid": "_type_string_Email",
-	"_aid": ["Email"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "Email"
+  ],
+  "_gid" : "_type_string_Email",
+  "_lid" : "Email",
+  "_nid" : "_type_string"
 }
 ```

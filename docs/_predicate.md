@@ -23,7 +23,7 @@ The `_predicate` field is immutable once the edge is created.
 
 **`_examples`**
 
-In the following edge, `_predicate` is `_predicate_enum-of`, declaring that Italy is a valid element of the ISO 3166-3 vocabulary:
+In the following edge, `_predicate` is [`_predicate_enum-of`](_predicate_enum-of.md), declaring that Italy is a valid element of the ISO 3166-3 vocabulary:
 
 ```json
 {
@@ -41,10 +41,12 @@ In the following edge, `_predicate` is `_predicate_enum-of`, declaring that Ital
 
 ```json
 {
-	"_nid": "",
-	"_lid": "predicate",
-	"_gid": "_predicate",
-	"_aid": ["predicate"]
+  "_aid" : [
+    "predicate"
+  ],
+  "_gid" : "_predicate",
+  "_lid" : "predicate",
+  "_nid" : ""
 }
 ```
 
@@ -52,15 +54,11 @@ In the following edge, `_predicate` is `_predicate_enum-of`, declaring that Ital
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_enum",
-		"_enum_types": ["_predicate"]
-	}
+  "_scalar" : {
+    "_enum_types" : [
+      "_predicate"
+    ],
+    "_scalar_type" : "_type_enum"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ A selection rule type indicating that the governed array must contribute element
 
 ```json
 {
-	"_nid": "_type_selection",
-	"_lid": "mandatory",
-	"_gid": "_type_selection_mandatory",
-	"_aid": ["mandatory"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "mandatory"
+  ],
+  "_gid" : "_type_selection_mandatory",
+  "_lid" : "mandatory",
+  "_nid" : "_type_selection"
 }
 ```

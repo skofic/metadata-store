@@ -18,15 +18,11 @@ Edge section grouping date and time string types: YMD, date, time, and date-time
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "timestamp",
-	"_gid": "_type_string_timestamp",
-	"_aid": ["timestamp"]
+  "_aid" : [
+    "timestamp"
+  ],
+  "_gid" : "_type_string_timestamp",
+  "_lid" : "timestamp",
+  "_nid" : "_type_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

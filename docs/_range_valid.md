@@ -24,9 +24,7 @@ A Kelvin temperature must be non-negative:
 {
 	"_scalar": {
 		"_scalar_type": "_type_number_float",
-		"_range_valid": {
-			"_range_min-inclusive": 0.0
-		}
+		"_range_valid": {"_range_min-inclusive": 0.0}
 	}
 }
 ```
@@ -37,10 +35,12 @@ A Kelvin temperature must be non-negative:
 
 ```json
 {
-	"_nid": "_range",
-	"_lid": "valid",
-	"_gid": "_range_valid",
-	"_aid": ["valid"]
+  "_aid" : [
+    "valid"
+  ],
+  "_gid" : "_range_valid",
+  "_lid" : "valid",
+  "_nid" : "_range"
 }
 ```
 
@@ -48,15 +48,11 @@ A Kelvin temperature must be non-negative:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_range"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_range"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

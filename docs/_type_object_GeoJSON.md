@@ -18,17 +18,11 @@ The scalar data type for GeoJSON objects conforming to RFC 7946. The value must 
 
 ```json
 {
-	"_nid": "_type_object",
-	"_lid": "GeoJSON",
-	"_gid": "_type_object_GeoJSON",
-	"_aid": ["GeoJSON"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "GeoJSON"
+  ],
+  "_gid" : "_type_object_GeoJSON",
+  "_lid" : "GeoJSON",
+  "_nid" : "_type_object"
 }
 ```

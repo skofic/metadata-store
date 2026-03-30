@@ -32,10 +32,12 @@ The description is required on most terms; it may be omitted only when the defin
 
 ```json
 {
-	"_nid": "",
-	"_lid": "description",
-	"_gid": "_description",
-	"_aid": ["description"]
+  "_aid" : [
+    "description"
+  ],
+  "_gid" : "_description",
+  "_lid" : "description",
+  "_nid" : ""
 }
 ```
 
@@ -43,12 +45,6 @@ The description is required on most terms; it may be omitted only when the defin
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

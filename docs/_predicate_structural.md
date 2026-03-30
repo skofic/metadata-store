@@ -18,7 +18,7 @@ Three structural predicates are defined:
 - [`_predicate_banned-by`](_predicate_banned-by.md): when `_to` is present in a record, `_from` must be absent.
 - [`_predicate_recommended-by`](_predicate_recommended-by.md): when `_to` is present in a record, `_from` is expected but not mandatory.
 
-These predicates are **not used within the dictionary's own graph**, which expresses all structural constraints through the [`_rule`](_rule.md) section and [`_predicate_property-of`](_predicate_property-of.md) / [`_predicate_value-of`](_predicate_value-of.md) edges with `_path_data` rule objects. Structural predicates are a future-phase mechanism, to be activated once the core dictionary is finalised.
+These predicates are **not used within the dictionary's own graph**, which expresses all structural constraints through the [`_rule`](_rule.md) section and `_predicate_property-of` / `_predicate_value-of` edges with `_path_data` rule objects. Structural predicates are a future-phase mechanism, to be activated once the core dictionary is finalised.
 
 As a sub-enumeration root, `_predicate_structural` may be used in [`_enum_types`](_enum_types.md) to constrain a property to structural predicates only.
 
@@ -28,17 +28,11 @@ As a sub-enumeration root, `_predicate_structural` may be used in [`_enum_types`
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "structural",
-	"_gid": "_predicate_structural",
-	"_aid": ["structural"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "structural"
+  ],
+  "_gid" : "_predicate_structural",
+  "_lid" : "structural",
+  "_nid" : "_predicate"
 }
 ```

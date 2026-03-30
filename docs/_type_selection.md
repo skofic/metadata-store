@@ -18,17 +18,11 @@ Root of the controlled vocabulary for selection rule types. Used in the `_select
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "selection",
-	"_gid": "_type_selection",
-	"_aid": ["selection"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "selection"
+  ],
+  "_gid" : "_type_selection",
+  "_lid" : "selection",
+  "_nid" : "_type"
 }
 ```

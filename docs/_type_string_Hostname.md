@@ -18,17 +18,11 @@ The scalar data type for internet hostnames conforming to the JSON Schema `hostn
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "Hostname",
-	"_gid": "_type_string_Hostname",
-	"_aid": ["Hostname"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "Hostname"
+  ],
+  "_gid" : "_type_string_Hostname",
+  "_lid" : "Hostname",
+  "_nid" : "_type_string"
 }
 ```

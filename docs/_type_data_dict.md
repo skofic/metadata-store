@@ -18,15 +18,11 @@ Namespace grouping dictionary key type terms. Its primary child is `_type_data_d
 
 ```json
 {
-	"_nid": "_type_data",
-	"_lid": "dict",
-	"_gid": "_type_data_dict",
-	"_aid": ["dict"]
+  "_aid" : [
+    "dict"
+  ],
+  "_gid" : "_type_data_dict",
+  "_lid" : "dict",
+  "_nid" : "_type_data"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

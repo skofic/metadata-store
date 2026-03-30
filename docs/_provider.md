@@ -30,10 +30,12 @@ Each entry should include at minimum a name and an e-mail address or institution
 
 ```json
 {
-	"_nid": "",
-	"_lid": "provider",
-	"_gid": "_provider",
-	"_aid": ["provider"]
+  "_aid" : [
+    "provider"
+  ],
+  "_gid" : "_provider",
+  "_lid" : "provider",
+  "_nid" : ""
 }
 ```
 
@@ -41,12 +43,6 @@ Each entry should include at minimum a name and an e-mail address or institution
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

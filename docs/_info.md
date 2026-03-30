@@ -26,7 +26,9 @@ A minimal information section with only the required properties:
 {
 	"_info": {
 		"_title": {"ISO_639_3_eng": "Body weight"},
-		"_definition": {"ISO_639_3_eng": "The mass of the subject's body measured without clothing or shoes."}
+		"_definition": {
+			"ISO_639_3_eng": "The mass of the subject's body measured without clothing or shoes."
+		}
 	}
 }
 ```
@@ -37,10 +39,18 @@ A fuller information section:
 {
 	"_info": {
 		"_title": {"ISO_639_3_eng": "Body weight"},
-		"_definition": {"ISO_639_3_eng": "The mass of the subject's body measured without clothing or shoes. Expressed in kilograms to one decimal place."},
-		"_description": {"ISO_639_3_eng": "Body weight is recorded at every clinical visit as a primary indicator of nutritional status."},
-		"_methods": {"ISO_639_3_eng": "Subject stands barefoot on a calibrated digital scale after an 8-hour overnight fast."},
-		"_url": {"ISO_639_3_eng": "[WHO Child Growth Standards](https://www.who.int/tools/child-growth-standards)"}
+		"_definition": {
+			"ISO_639_3_eng": "The mass of the subject's body measured without clothing or shoes. Expressed in kilograms to one decimal place."
+		},
+		"_description": {
+			"ISO_639_3_eng": "Body weight is recorded at every clinical visit as a primary indicator of nutritional status."
+		},
+		"_methods": {
+			"ISO_639_3_eng": "Subject stands barefoot on a calibrated digital scale after an 8-hour overnight fast."
+		},
+		"_url": {
+			"ISO_639_3_eng": "[WHO Child Growth Standards](https://www.who.int/tools/child-growth-standards)"
+		}
 	}
 }
 ```
@@ -51,10 +61,12 @@ A fuller information section:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "info",
-	"_gid": "_info",
-	"_aid": ["info"]
+  "_aid" : [
+    "info"
+  ],
+  "_gid" : "_info",
+  "_lid" : "info",
+  "_nid" : ""
 }
 ```
 
@@ -62,10 +74,12 @@ A fuller information section:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_info"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_info"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -73,21 +87,29 @@ A fuller information section:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_title", "_definition"]
-		}
-	],
-	"_recommended": ["_description", "_methods", "_usage", "_examples", "_citation", "_provider", "_url", "_notes"]
+  "_closed" : true,
+  "_recommended" : [
+    "_description",
+    "_methods",
+    "_usage",
+    "_examples",
+    "_citation",
+    "_provider",
+    "_url",
+    "_notes"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_title",
+        "_definition"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

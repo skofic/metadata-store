@@ -18,17 +18,11 @@ The scalar data type for enumeration values — strings that must be the `_gid` 
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "enum",
-	"_gid": "_type_enum",
-	"_aid": ["enum"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "enum"
+  ],
+  "_gid" : "_type_enum",
+  "_lid" : "enum",
+  "_nid" : "_type"
 }
 ```

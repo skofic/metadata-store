@@ -27,24 +27,25 @@ When multiple `_rule_selector` objects appear in `_required`, all of their condi
 
 **`_examples`**
 
-A selector permitting at most one shape property from a list (zero is also valid — an empty `_data` section means any type):
+A selector permitting at most one shape property from a list (zero is also valid — an empty [`_data`](_data.md) section means any type):
 
 ```json
 {
 	"_selection_rules": [
-		{"_selection_type": "_type_selection_optional", "_elements": {"_max-items": 1}}
+		{
+			"_selection_type": "_type_selection_optional",
+			"_elements": {"_max-items": 1}
+		}
 	],
 	"_selection_descriptors": ["_scalar", "_array", "_set", "_tuple", "_dict", "_typedef"]
 }
 ```
 
-A selector requiring `_closed` to be present:
+A selector requiring [`_closed`](_closed.md) to be present:
 
 ```json
 {
-	"_selection_rules": [
-		{"_selection_type": "_type_selection_mandatory"}
-	],
+	"_selection_rules": [{"_selection_type": "_type_selection_mandatory"}],
 	"_selection_descriptors": ["_closed"]
 }
 ```
@@ -55,10 +56,12 @@ A selector requiring `_closed` to be present:
 
 ```json
 {
-	"_nid": "_rule",
-	"_lid": "selector",
-	"_gid": "_rule_selector",
-	"_aid": ["selector"]
+  "_aid" : [
+    "selector"
+  ],
+  "_gid" : "_rule_selector",
+  "_lid" : "selector",
+  "_nid" : "_rule"
 }
 ```
 
@@ -66,10 +69,12 @@ A selector requiring `_closed` to be present:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_rule_selector"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_rule_selector"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -77,20 +82,19 @@ A selector requiring `_closed` to be present:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_selection_rules", "_selection_descriptors"]
-		}
-	]
+  "_closed" : true,
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_selection_rules",
+        "_selection_descriptors"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

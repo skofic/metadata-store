@@ -18,17 +18,11 @@ A term marked `_type_term_object` carries a [`_rule`](_rule.md) section defining
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "object",
-	"_gid": "_type_term_object",
-	"_aid": ["object"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_type_term_object",
+  "_lid" : "object",
+  "_nid" : "_type_term"
 }
 ```

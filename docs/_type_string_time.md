@@ -18,17 +18,11 @@ The scalar data type for times conforming to the JSON Schema `time` format (`HH:
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "time",
-	"_gid": "_type_string_time",
-	"_aid": ["time"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "time"
+  ],
+  "_gid" : "_type_string_time",
+  "_lid" : "time",
+  "_nid" : "_type_string"
 }
 ```

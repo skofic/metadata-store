@@ -14,7 +14,7 @@ Every term in the dictionary can take on one or more functional roles, and `_ter
 
 The eight possible roles are:
 
-- [**Alias**](_type_term_alias.md): the term is an alias — it appears as the `_to` node of a [`_predicate_bridge-of`](_predicate_bridge-of.md) edge, redirecting lookups to a canonical term.
+- [**Alias**](_type_term_alias.md): the term is an alias — it appears as the [`_to`](_to.md) node of a [`_predicate_bridge-of`](_predicate_bridge-of.md) edge, redirecting lookups to a canonical term.
 - [**Predicate**](_type_term_predicate.md): the term is used as a value of the [`_predicate`](_predicate.md) field in an [edge document](_edge.md).
 - [**Namespace**](_type_term_namespace.md): the term is used as a value of the [`_nid`](_nid.md) field in a [code section](_code.md), serving as a namespace for other terms.
 - [**Descriptor**](_type_term_descriptor.md): the term carries a [`_data`](_data.md) section and therefore represents a typed data variable.
@@ -30,21 +30,13 @@ This property lives in the [`_domn`](_domn.md) section and is populated automati
 A term that serves simultaneously as an enumeration root and a namespace:
 
 ```json
-{
-	"_domn": {
-		"_term_type": ["_type_term_enum-root", "_type_term_namespace"]
-	}
-}
+{"_domn": {"_term_type": ["_type_term_enum-root", "_type_term_namespace"]}}
 ```
 
 A term that is both a descriptor and an object definition:
 
 ```json
-{
-	"_domn": {
-		"_term_type": ["_type_term_descriptor", "_type_term_object"]
-	}
-}
+{"_domn": {"_term_type": ["_type_term_descriptor", "_type_term_object"]}}
 ```
 
 ---
@@ -53,10 +45,12 @@ A term that is both a descriptor and an object definition:
 
 ```json
 {
-	"_nid": "_term",
-	"_lid": "type",
-	"_gid": "_term_type",
-	"_aid": ["type"]
+  "_aid" : [
+    "type"
+  ],
+  "_gid" : "_term_type",
+  "_lid" : "type",
+  "_nid" : "_term"
 }
 ```
 
@@ -64,17 +58,13 @@ A term that is both a descriptor and an object definition:
 
 ```json
 {
-	"_set": {
-		"_comparable": {
-			"_comparable_type": "_type_enum",
-			"_enum_types": ["_type_term"]
-		}
-	}
+  "_set" : {
+    "_comparable" : {
+      "_comparable_type" : "_type_enum",
+      "_enum_types" : [
+        "_type_term"
+      ]
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

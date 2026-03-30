@@ -160,7 +160,21 @@ When a governing property changes value (e.g. `_type` changes from `_type_string
 
 ## File Naming
 
-Group related terms into a single JSON file. Each file is a JSON array of term objects. Suggested groupings:
+Each logical group of terms may be accompanied by up to two edge files, using a consistent three-file pattern:
+
+| Suffix | Contents |
+|--------|----------|
+| `<name>.json` | Term objects (JSON array of term documents). |
+| `<name>.enum.json` | Enumeration edges: `_predicate_enum-of` and `_predicate_section-of` edges that connect the group's terms into controlled-vocabulary graphs. |
+| `<name>.edge.json` | Rule and schema edges: `_predicate_property-of`, `_predicate_value-of`, `_predicate_field-of`, `_predicate_bridge-of`, and `_predicate_alias-of` edges that encode schema constraints and graph membership. |
+
+Not every group needs all three files. If a group has no enumeration structure, omit `<name>.enum.json`; if it has no rule edges, omit `<name>.edge.json`.
+
+Edge files are JSON arrays of edge objects. `_key` is not written — it is computed at insertion time as `LOWER(MD5(CONCAT(_from, "/", _predicate, "/", _to)))`.
+
+### Term file groupings
+
+Group related terms into a single JSON file. Suggested groupings:
 
 | File                | Contents |
 |---------------------|----------|

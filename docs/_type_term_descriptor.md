@@ -18,17 +18,11 @@ A term marked `_type_term_descriptor` carries a [`_data`](_data.md) section desc
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "descriptor",
-	"_gid": "_type_term_descriptor",
-	"_aid": ["descriptor"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "descriptor"
+  ],
+  "_gid" : "_type_term_descriptor",
+  "_lid" : "descriptor",
+  "_nid" : "_type_term"
 }
 ```

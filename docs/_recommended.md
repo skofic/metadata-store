@@ -33,10 +33,12 @@ Its effect depends on [`_closed`](_closed.md):
 
 ```json
 {
-	"_nid": "",
-	"_lid": "recommended",
-	"_gid": "_recommended",
-	"_aid": ["recommended"]
+  "_aid" : [
+    "recommended"
+  ],
+  "_gid" : "_recommended",
+  "_lid" : "recommended",
+  "_nid" : ""
 }
 ```
 
@@ -44,16 +46,10 @@ Its effect depends on [`_closed`](_closed.md):
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_key_term_descriptor"
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_scalar_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

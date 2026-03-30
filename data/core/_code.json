@@ -4,7 +4,9 @@
 			"_nid": "",
 			"_lid": "code",
 			"_gid": "_code",
-			"_aid": ["code"]
+			"_aid": [
+				"code"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -14,16 +16,18 @@
 				"ISO_639_3_eng": "The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary."
 			},
 			"_description": {
-				"ISO_639_3_eng": "The identification section is mandatory in every [term](_term.md). It provides the identifiers that locate the term within the dictionary's namespace hierarchy.\n\nThe [local identifier](_lid.md) (`_lid`) is the only property the curator must always supply. The [namespace](_nid.md) (`_nid`) optionally scopes the term under a parent term, enabling hierarchical organisation from general to specific — for example `ISO` → `ISO_3166` → `ISO_3166_3`. The [global identifier](_gid.md) ([`_gid`](_gid.md)) is computed by concatenating `_nid` and `_lid` with an underscore (`_`) separator and is unique across the entire dictionary; it is copied to the ArangoDB document key before the term is saved.\n\nTerms with an empty-string namespace (`_nid: \"\"`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` — for example `_code`, `_info`, `_data`. Terms with no `_nid` property define top-level namespaces — for example `ISO`.\n\nThe [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), [`_regexp`](_regexp.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes."
+				"ISO_639_3_eng": "The identification section is mandatory in every [term](_term.md). It provides the identifiers that locate the term within the dictionary's namespace hierarchy.\n\nThe [local identifier](_lid.md) ([`_lid`](_lid.md)) is the only property the curator must always supply. The [namespace](_nid.md) ([`_nid`](_nid.md)) optionally scopes the term under a parent term, enabling hierarchical organisation from general to specific — for example `ISO` → `ISO_3166` → `ISO_3166_3`. The [global identifier](_gid.md) ([`_gid`](_gid.md)) is computed by concatenating `_nid` and `_lid` with an underscore (`_`) separator and is unique across the entire dictionary; it is copied to the ArangoDB document key before the term is saved.\n\nTerms with an empty-string namespace (`_nid: \"\"`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` — for example `_code`, `_info`, `_data`. Terms with no `_nid` property define top-level namespaces — for example `ISO`.\n\nThe [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), [`_regexp`](_regexp.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A country term with several secondary properties:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\"_name\": \"Italia\",\n\t\t\"_emoji\": \"🇮🇹\"\n\t}\n}\n```\n\nA core dictionary building block with an empty-string namespace:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"\",\n\t\t\"_lid\": \"code\",\n\t\t\"_gid\": \"_code\",\n\t\t\"_aid\": [\"code\"]\n\t}\n}\n```\n\nA top-level namespace term with no parent:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_lid\": \"ISO\",\n\t\t\"_gid\": \"ISO\",\n\t\t\"_aid\": [\"ISO\"]\n\t}\n}\n```"
+				"ISO_639_3_eng": "A country term with several secondary properties:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\"_name\": \"Italia\",\n\t\t\"_emoji\": \"🇮🇹\"\n\t}\n}\n```\n\nA core dictionary building block with an empty-string namespace:\n\n```json\n{\"_code\": {\"_nid\": \"\", \"_lid\": \"code\", \"_gid\": \"_code\", \"_aid\": [\"code\"]}}\n```\n\nA top-level namespace term with no parent:\n\n```json\n{\"_code\": {\"_lid\": \"ISO\", \"_gid\": \"ISO\", \"_aid\": [\"ISO\"]}}\n```"
 			}
 		},
 		"_data": {
 			"_scalar": {
 				"_scalar_type": "_type_object",
-				"_object_types": ["_code"]
+				"_object_types": [
+					"_code"
+				]
 			}
 		},
 		"_rule": {
@@ -31,14 +35,34 @@
 			"_required": [
 				{
 					"_selection_rules": [
-						{"_selection_type": "_type_selection_mandatory"}
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
 					],
-					"_selection_descriptors": ["_lid", "_gid", "_aid"]
+					"_selection_descriptors": [
+						"_lid",
+						"_gid",
+						"_aid"
+					]
 				}
 			],
-			"_recommended": ["_nid", "_pid", "_name", "_symbol", "_regexp", "_emoji"],
-			"_computed": ["_gid", "_aid"],
-			"_immutable": ["_lid", "_nid", "_gid"]
+			"_recommended": [
+				"_nid",
+				"_pid",
+				"_name",
+				"_symbol",
+				"_regexp",
+				"_emoji"
+			],
+			"_computed": [
+				"_gid",
+				"_aid"
+			],
+			"_immutable": [
+				"_lid",
+				"_nid",
+				"_gid"
+			]
 		},
 		"_domn": {}
 	},
@@ -47,7 +71,9 @@
 			"_nid": "",
 			"_lid": "nid",
 			"_gid": "_nid",
-			"_aid": ["nid"]
+			"_aid": [
+				"nid"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -60,7 +86,7 @@
 				"ISO_639_3_eng": "Namespaces group and organise [terms](_term.md) under a common category or classification. The value of `_nid` is the [global identifier](_gid.md) of the term that represents the namespace of the current term.\n\nNamespaces also disambiguate [local identifiers](_lid.md): a local identifier must be unique only within its namespace, not across the entire dictionary.\n\nThree distinct cases exist depending on the value of this property:\n\n- **Non-empty string**: the term belongs to the named namespace. The namespace term must itself exist in the dictionary.\n- **Empty string** (`\"\"`): the term is a core dictionary building block. The resulting [global identifier](_gid.md) begins with an underscore, marking it as a structural term. This is the only case where `_nid` does not reference an existing term.\n- **Absent**: the term defines a top-level namespace with no parent.\n\nAny term's [global identifier](_gid.md) may serve as a namespace for other terms, allowing namespaces to form chains from general to specific — for example `ISO` → `ISO_3166` → `ISO_3166_3`."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A term whose namespace is `ISO_3166_3` — the `_nid` must be the `_gid` of an existing term:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\"\n\t}\n}\n```\n\nA core dictionary term with an empty-string namespace — `_nid` is `\"\"` and `_gid` begins with an underscore:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"\",\n\t\t\"_lid\": \"code\",\n\t\t\"_gid\": \"_code\"\n\t}\n}\n```\n\nA top-level namespace term with `_nid` absent — `_lid` and `_gid` are equal:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_lid\": \"ISO\",\n\t\t\"_gid\": \"ISO\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "A term whose namespace is `ISO_3166_3` — the `_nid` must be the [`_gid`](_gid.md) of an existing term:\n\n```json\n{\"_code\": {\"_nid\": \"ISO_3166_3\", \"_lid\": \"ITA\", \"_gid\": \"ISO_3166_3_ITA\"}}\n```\n\nA core dictionary term with an empty-string namespace — `_nid` is `\"\"` and [`_gid`](_gid.md) begins with an underscore:\n\n```json\n{\"_code\": {\"_nid\": \"\", \"_lid\": \"code\", \"_gid\": \"_code\"}}\n```\n\nA top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and [`_gid`](_gid.md) are equal:\n\n```json\n{\"_code\": {\"_lid\": \"ISO\", \"_gid\": \"ISO\"}}\n```"
 			}
 		},
 		"_data": {
@@ -75,7 +101,9 @@
 			"_nid": "",
 			"_lid": "lid",
 			"_gid": "_lid",
-			"_aid": ["lid"]
+			"_aid": [
+				"lid"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -88,7 +116,7 @@
 				"ISO_639_3_eng": "Terms are uniquely identified by their [global identifier](_gid.md), which is the concatenation of the [namespace identifier](_nid.md) and this local identifier, separated by an underscore (`_`). The local identifier must therefore be unique within its namespace; it need not be unique across the entire dictionary.\n\nThe allowed character set is restricted to avoid ambiguity: the underscore is reserved as the namespace separator and may not appear in a `_lid`. The accepted pattern is `^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$`.\n\nThis property is required on every term and is immutable once set — changing it would alter the term's [global identifier](_gid.md) and invalidate all references to it."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "`ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace `ISO_3166_3` it forms the global identifier `ISO_3166_3_ITA`:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\"\n\t}\n}\n```\n\nFor a top-level namespace term with no `_nid`, `_lid` and `_gid` share the same value:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_lid\": \"ISO\",\n\t\t\"_gid\": \"ISO\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace `ISO_3166_3` it forms the global identifier `ISO_3166_3_ITA`:\n\n```json\n{\"_code\": {\"_nid\": \"ISO_3166_3\", \"_lid\": \"ITA\", \"_gid\": \"ISO_3166_3_ITA\"}}\n```\n\nFor a top-level namespace term with no [`_nid`](_nid.md), `_lid` and [`_gid`](_gid.md) share the same value:\n\n```json\n{\"_code\": {\"_lid\": \"ISO\", \"_gid\": \"ISO\"}}\n```"
 			}
 		},
 		"_data": {
@@ -104,7 +132,9 @@
 			"_nid": "",
 			"_lid": "gid",
 			"_gid": "_gid",
-			"_aid": ["gid"]
+			"_aid": [
+				"gid"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -114,10 +144,10 @@
 				"ISO_639_3_eng": "The unique identifier of the term across the entire dictionary. Computed as the concatenation of the namespace identifier and the local identifier, separated by an underscore. Copied to the document key before the record is stored."
 			},
 			"_description": {
-				"ISO_639_3_eng": "The global identifier uniquely identifies a term across the entire dictionary. It is computed from the [namespace identifier](_nid.md) and the [local identifier](_lid.md) according to the following rules:\n\n| `_nid` value          | `_gid` formula         | Example                         |\n|-----------------------|------------------------|---------------------------------|\n| Present and non-empty | `_nid` + `_` + `_lid` | `ISO_3166_3_ITA`                |\n| Empty string `\"\"`     | `_` + `_lid`           | `_code`                         |\n| Absent                | `_lid`                 | `ISO`                           |\n\nBecause `_gid` is computed before the document is stored, it is a plain string value — not a reference to an existing document. The computed value is copied to the ArangoDB document key (`_key`), making it the primary key within the terms collection and enforcing uniqueness across the dictionary."
+				"ISO_639_3_eng": "The global identifier uniquely identifies a term across the entire dictionary. It is computed from the [namespace identifier](_nid.md) and the [local identifier](_lid.md) according to the following rules:\n\n| [`_nid`](_nid.md) value          | `_gid` formula         | Example                         |\n|-----------------------|------------------------|---------------------------------|\n| Present and non-empty | [`_nid`](_nid.md) + `_` + [`_lid`](_lid.md) | `ISO_3166_3_ITA`                |\n| Empty string `\"\"`     | `_` + [`_lid`](_lid.md)           | [`_code`](_code.md)                         |\n| Absent                | [`_lid`](_lid.md)                 | `ISO`                           |\n\nBecause `_gid` is computed before the document is stored, it is a plain string value — not a reference to an existing document. The computed value is copied to the ArangoDB document key ([`_key`](_key.md)), making it the primary key within the terms collection and enforcing uniqueness across the dictionary."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "`ISO_3166_3_ITA` is the global identifier of the Italy term: namespace `ISO_3166_3` concatenated with local identifier `ITA` via an underscore:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\"\n\t}\n}\n```\n\n`_code` is the global identifier of a core dictionary term: an empty-string namespace produces a leading underscore:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"\",\n\t\t\"_lid\": \"code\",\n\t\t\"_gid\": \"_code\"\n\t}\n}\n```"
+				"ISO_639_3_eng": "`ISO_3166_3_ITA` is the global identifier of the Italy term: namespace `ISO_3166_3` concatenated with local identifier `ITA` via an underscore:\n\n```json\n{\"_code\": {\"_nid\": \"ISO_3166_3\", \"_lid\": \"ITA\", \"_gid\": \"ISO_3166_3_ITA\"}}\n```\n\n[`_code`](_code.md) is the global identifier of a core dictionary term: an empty-string namespace produces a leading underscore:\n\n```json\n{\"_code\": {\"_nid\": \"\", \"_lid\": \"code\", \"_gid\": \"_code\"}}\n```"
 			}
 		},
 		"_data": {
@@ -133,7 +163,9 @@
 			"_nid": "",
 			"_lid": "aid",
 			"_gid": "_aid",
-			"_aid": ["aid"]
+			"_aid": [
+				"aid"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -143,10 +175,10 @@
 				"ISO_639_3_eng": "The set of all official, externally recognised identifiers by which this term can be referenced. Computed: defaults to the local identifier if not supplied. Grows as alias terms point to this term."
 			},
 			"_description": {
-				"ISO_639_3_eng": "This set collects every official or widely recognised identifier that can be used to reference the term — not just the dictionary's own [local identifier](_lid.md), but any standard code that an external source would use for the same concept.\n\nThe property is **required** and **computed**: because `_lid` is a public identifier for the dictionary, the system initialises `_aid` to `[_lid]` if it is absent when a term is created. It is not immutable — when [alias terms](_type_term_alias.md) point to this term, their `_lid` values are appended to this set, keeping a consolidated list of all the codes by which the concept is officially known.\n\nKeep this set restricted to official or standardised identifiers. Provider-specific or ad hoc names belong in [provider identifiers](_pid.md) instead."
+				"ISO_639_3_eng": "This set collects every official or widely recognised identifier that can be used to reference the term — not just the dictionary's own [local identifier](_lid.md), but any standard code that an external source would use for the same concept.\n\nThe property is **required** and **computed**: because [`_lid`](_lid.md) is a public identifier for the dictionary, the system initialises `_aid` to `[_lid]` if it is absent when a term is created. It is not immutable — when [alias terms](_type_term_alias.md) point to this term, their [`_lid`](_lid.md) values are appended to this set, keeping a consolidated list of all the codes by which the concept is officially known.\n\nKeep this set restricted to official or standardised identifiers. Provider-specific or ad hoc names belong in [provider identifiers](_pid.md) instead."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "The ISO 3166-3 term for Italy carries the alpha-3 code `ITA` as its `_lid`, and the alpha-2 code `IT` as an additional official identifier in `_aid`:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"]\n\t}\n}\n```\n\n`ITA` (alpha-3), `IT` (alpha-2), and `I` (IOC code) are all official identifiers for Italy, so all three appear in `_aid`."
+				"ISO_639_3_eng": "The ISO 3166-3 term for Italy carries the alpha-3 code `ITA` as its [`_lid`](_lid.md), and the alpha-2 code `IT` as an additional official identifier in `_aid`:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"]\n\t}\n}\n```\n\n`ITA` (alpha-3), `IT` (alpha-2), and `I` (IOC code) are all official identifiers for Italy, so all three appear in `_aid`."
 			}
 		},
 		"_data": {
@@ -163,7 +195,9 @@
 			"_nid": "",
 			"_lid": "pid",
 			"_gid": "_pid",
-			"_aid": ["pid"]
+			"_aid": [
+				"pid"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -176,7 +210,7 @@
 				"ISO_639_3_eng": "This dictionary is used to apply standards and metadata to external datasets. When a dataset arrives without metadata, its variable names may not match any [local identifier](_lid.md) or [official identifier](_aid.md). The provider identifiers set records the names that specific data providers use for this concept, enabling automated matching during dataset ingestion.\n\nUnlike [official identifiers](_aid.md), provider identifiers are not required to follow any standard — they are simply the names that a particular source happens to use for the same concept. Multiple providers may use different names for the same variable, all of which can be collected here."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A dataset from a legacy system uses `I` as its internal country code for Italy (the IOC code). Because `I` is an official identifier it belongs in `_aid`; a hypothetical internal code `italy_code` used by a specific data provider belongs in `_pid`:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\"_pid\": [\"italy_code\", \"country_IT\"]\n\t}\n}\n```"
+				"ISO_639_3_eng": "A dataset from a legacy system uses `I` as its internal country code for Italy (the IOC code). Because `I` is an official identifier it belongs in [`_aid`](_aid.md); a hypothetical internal code `italy_code` used by a specific data provider belongs in `_pid`:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\"_pid\": [\"italy_code\", \"country_IT\"]\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -193,7 +227,9 @@
 			"_nid": "",
 			"_lid": "name",
 			"_gid": "_name",
-			"_aid": ["name"]
+			"_aid": [
+				"name"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -221,7 +257,9 @@
 			"_nid": "",
 			"_lid": "symbol",
 			"_gid": "_symbol",
-			"_aid": ["symbol"]
+			"_aid": [
+				"symbol"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -249,7 +287,9 @@
 			"_nid": "",
 			"_lid": "emoji",
 			"_gid": "_emoji",
-			"_aid": ["emoji"]
+			"_aid": [
+				"emoji"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -277,7 +317,9 @@
 			"_nid": "",
 			"_lid": "regexp",
 			"_gid": "_regexp",
-			"_aid": ["regexp"]
+			"_aid": [
+				"regexp"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -287,10 +329,10 @@
 				"ISO_639_3_eng": "A regular expression pattern. In the identification section it constrains the format of local identifiers within the namespace; in the data section it constrains the value of generic string scalars."
 			},
 			"_description": {
-				"ISO_639_3_eng": "This property stores a regular expression and is used in two distinct contexts:\n\n**In the [identification section](_code.md)**: when present on a namespace-defining term, `_regexp` specifies the pattern that all [local identifiers](_lid.md) within that namespace must satisfy. For example, an ISO 3166-3 namespace term carries a three-uppercase-letter pattern to enforce that every member term's `_lid` is a valid alpha-3 code.\n\n**In the [data section](_data.md)**: when present inside a [`_scalar`](_scalar.md) object whose [`_scalar_type`](_scalar_type.md) is `_type_string`, `_regexp` constrains the format of the string value a descriptor accepts. It applies only to `_type_string` — format-specific string types such as `_type_string_date` or `_type_string_URI` are self-defining and do not accept a `_regexp` companion.\n\nThe value stored in this property is itself a regular expression string."
+				"ISO_639_3_eng": "This property stores a regular expression and is used in two distinct contexts:\n\n**In the [identification section](_code.md)**: when present on a namespace-defining term, `_regexp` specifies the pattern that all [local identifiers](_lid.md) within that namespace must satisfy. For example, an ISO 3166-3 namespace term carries a three-uppercase-letter pattern to enforce that every member term's [`_lid`](_lid.md) is a valid alpha-3 code.\n\n**In the [data section](_data.md)**: when present inside a [`_scalar`](_scalar.md) object whose [`_scalar_type`](_scalar_type.md) is `_type_string`, `_regexp` constrains the format of the string value a descriptor accepts. It applies only to `_type_string` — format-specific string types such as `_type_string_date` or `_type_string_URI` are self-defining and do not accept a `_regexp` companion.\n\nThe value stored in this property is itself a regular expression string."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A namespace term enforcing that all member `_lid` values are exactly three uppercase letters (ISO 3166-3 country codes):\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO\",\n\t\t\"_lid\": \"3166_3\",\n\t\t\"_gid\": \"ISO_3166_3\",\n\t\t\"_regexp\": \"^[A-Z]{3}$\"\n\t}\n}\n```\n\nA descriptor whose value must be a valid hex colour code:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {\n\t\t\t\"_scalar_type\": \"_type_string\",\n\t\t\t\"_regexp\": \"^#[0-9A-Fa-f]{6}$\"\n\t\t}\n\t}\n}\n```"
+				"ISO_639_3_eng": "A namespace term enforcing that all member [`_lid`](_lid.md) values are exactly three uppercase letters (ISO 3166-3 country codes):\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO\",\n\t\t\"_lid\": \"3166_3\",\n\t\t\"_gid\": \"ISO_3166_3\",\n\t\t\"_regexp\": \"^[A-Z]{3}$\"\n\t}\n}\n```\n\nA descriptor whose value must be a valid hex colour code:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {\"_scalar_type\": \"_type_string\", \"_regexp\": \"^#[0-9A-Fa-f]{6}$\"}\n\t}\n}\n```"
 			}
 		},
 		"_data": {

@@ -33,10 +33,7 @@ Generic term example:
 		"_emoji": "🇮🇹"
 	},
 	"_info": {
-		"_title": {
-			"ISO_639_3_eng": "Italy",
-			"ISO_639_3_ita": "Italia"
-		},
+		"_title": {"ISO_639_3_eng": "Italy", "ISO_639_3_ita": "Italia"},
 		"_definition": {
 			"ISO_639_3_eng": "Italian Republic",
 			"ISO_639_3_ita": "Repubblica Italiana"
@@ -53,10 +50,12 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
 
 ```json
 {
-	"_nid": "",
-	"_lid": "term",
-	"_gid": "_term",
-	"_aid": ["term"]
+  "_aid" : [
+    "term"
+  ],
+  "_gid" : "_term",
+  "_lid" : "term",
+  "_nid" : ""
 }
 ```
 
@@ -64,10 +63,12 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_term"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_term"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -75,23 +76,31 @@ This term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_code"]
-		}
-	],
-	"_recommended": ["_info", "_data", "_rule", "_domn", "_prop"],
-	"_computed": ["_key"],
-	"_immutable": ["_key"]
+  "_closed" : true,
+  "_computed" : [
+    "_key"
+  ],
+  "_immutable" : [
+    "_key"
+  ],
+  "_recommended" : [
+    "_info",
+    "_data",
+    "_rule",
+    "_domn",
+    "_prop"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_code"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ A term marked `_type_term_predicate` defines a named relationship that appears i
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "predicate",
-	"_gid": "_type_term_predicate",
-	"_aid": ["predicate"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "predicate"
+  ],
+  "_gid" : "_type_term_predicate",
+  "_lid" : "predicate",
+  "_nid" : "_type_term"
 }
 ```

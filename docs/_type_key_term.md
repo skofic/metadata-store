@@ -18,17 +18,11 @@ A document key that must reference a term in the term collection, without constr
 
 ```json
 {
-	"_nid": "_type_key",
-	"_lid": "term",
-	"_gid": "_type_key_term",
-	"_aid": ["term"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+  "_aid" : [
+    "term"
+  ],
+  "_gid" : "_type_key_term",
+  "_lid" : "term",
+  "_nid" : "_type_key"
 }
 ```

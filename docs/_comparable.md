@@ -24,21 +24,14 @@ A comparable section for a set of ISO 639-3 language codes:
 
 ```json
 {
-	"_comparable": {
-		"_comparable_type": "_type_enum",
-		"_enum_types": ["ISO_639_3"]
-	}
+	"_comparable": {"_comparable_type": "_type_enum", "_enum_types": ["ISO_639_3"]}
 }
 ```
 
 A comparable section for a set of unique integers:
 
 ```json
-{
-	"_comparable": {
-		"_comparable_type": "_type_number_integer"
-	}
-}
+{"_comparable": {"_comparable_type": "_type_number_integer"}}
 ```
 
 ---
@@ -47,10 +40,12 @@ A comparable section for a set of unique integers:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "comparable",
-	"_gid": "_comparable",
-	"_aid": ["comparable"]
+  "_aid" : [
+    "comparable"
+  ],
+  "_gid" : "_comparable",
+  "_lid" : "comparable",
+  "_nid" : ""
 }
 ```
 
@@ -58,10 +53,12 @@ A comparable section for a set of unique integers:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_comparable"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_comparable"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -69,20 +66,18 @@ A comparable section for a set of unique integers:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_comparable_type"]
-		}
-	]
+  "_closed" : true,
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_comparable_type"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

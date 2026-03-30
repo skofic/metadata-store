@@ -18,17 +18,11 @@ The scalar data type for integer numbers. Values must have no decimal part; floa
 
 ```json
 {
-	"_nid": "_type_number",
-	"_lid": "integer",
-	"_gid": "_type_number_integer",
-	"_aid": ["integer"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "integer"
+  ],
+  "_gid" : "_type_number_integer",
+  "_lid" : "integer",
+  "_nid" : "_type_number"
 }
 ```

@@ -36,10 +36,12 @@ The title is the primary label for the term in any user-facing context — it ap
 
 ```json
 {
-	"_nid": "",
-	"_lid": "title",
-	"_gid": "_title",
-	"_aid": ["title"]
+  "_aid" : [
+    "title"
+  ],
+  "_gid" : "_title",
+  "_lid" : "title",
+  "_nid" : ""
 }
 ```
 
@@ -47,12 +49,6 @@ The title is the primary label for the term in any user-facing context — it ap
 
 ```json
 {
-	"_typedef": "_info_string"
+  "_typedef" : "_info_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

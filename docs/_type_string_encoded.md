@@ -18,15 +18,11 @@ Edge section grouping encoded string types. Currently contains `_type_string_HEX
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "encoded",
-	"_gid": "_type_string_encoded",
-	"_aid": ["encoded"]
+  "_aid" : [
+    "encoded"
+  ],
+  "_gid" : "_type_string_encoded",
+  "_lid" : "encoded",
+  "_nid" : "_type_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

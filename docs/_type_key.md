@@ -18,17 +18,11 @@ The scalar data type for document keys — strings representing the `_key` field
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "key",
-	"_gid": "_type_key",
-	"_aid": ["key"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+  "_aid" : [
+    "key"
+  ],
+  "_gid" : "_type_key",
+  "_lid" : "key",
+  "_nid" : "_type"
 }
 ```

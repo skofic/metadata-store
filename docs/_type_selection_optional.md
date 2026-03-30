@@ -18,17 +18,11 @@ A selection rule type indicating that the governed array may contribute any numb
 
 ```json
 {
-	"_nid": "_type_selection",
-	"_lid": "optional",
-	"_gid": "_type_selection_optional",
-	"_aid": ["optional"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "optional"
+  ],
+  "_gid" : "_type_selection_optional",
+  "_lid" : "optional",
+  "_nid" : "_type_selection"
 }
 ```

@@ -24,39 +24,22 @@ Any term's [global identifier](_gid.md) may serve as a namespace for other terms
 
 **`_examples`**
 
-A term whose namespace is `ISO_3166_3` — the `_nid` must be the `_gid` of an existing term:
+A term whose namespace is `ISO_3166_3` — the `_nid` must be the [`_gid`](_gid.md) of an existing term:
 
 ```json
-{
-	"_code": {
-		"_nid": "ISO_3166_3",
-		"_lid": "ITA",
-		"_gid": "ISO_3166_3_ITA"
-	}
-}
+{"_code": {"_nid": "ISO_3166_3", "_lid": "ITA", "_gid": "ISO_3166_3_ITA"}}
 ```
 
-A core dictionary term with an empty-string namespace — `_nid` is `""` and `_gid` begins with an underscore:
+A core dictionary term with an empty-string namespace — `_nid` is `""` and [`_gid`](_gid.md) begins with an underscore:
 
 ```json
-{
-	"_code": {
-		"_nid": "",
-		"_lid": "code",
-		"_gid": "_code"
-	}
-}
+{"_code": {"_nid": "", "_lid": "code", "_gid": "_code"}}
 ```
 
-A top-level namespace term with `_nid` absent — `_lid` and `_gid` are equal:
+A top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and [`_gid`](_gid.md) are equal:
 
 ```json
-{
-	"_code": {
-		"_lid": "ISO",
-		"_gid": "ISO"
-	}
-}
+{"_code": {"_lid": "ISO", "_gid": "ISO"}}
 ```
 
 ---
@@ -65,10 +48,12 @@ A top-level namespace term with `_nid` absent — `_lid` and `_gid` are equal:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "nid",
-	"_gid": "_nid",
-	"_aid": ["nid"]
+  "_aid" : [
+    "nid"
+  ],
+  "_gid" : "_nid",
+  "_lid" : "nid",
+  "_nid" : ""
 }
 ```
 
@@ -76,14 +61,8 @@ A top-level namespace term with `_nid` absent — `_lid` and `_gid` are equal:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_key_term"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_key_term"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

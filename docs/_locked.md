@@ -21,9 +21,7 @@ Like [`_immutable`](_immutable.md), a locked property cannot be modified after i
 **`_examples`**
 
 ```json
-{
-	"_locked": ["_id", "_rev"]
-}
+{"_locked": ["_id", "_rev"]}
 ```
 
 ---
@@ -32,10 +30,12 @@ Like [`_immutable`](_immutable.md), a locked property cannot be modified after i
 
 ```json
 {
-	"_nid": "",
-	"_lid": "locked",
-	"_gid": "_locked",
-	"_aid": ["locked"]
+  "_aid" : [
+    "locked"
+  ],
+  "_gid" : "_locked",
+  "_lid" : "locked",
+  "_nid" : ""
 }
 ```
 
@@ -43,16 +43,10 @@ Like [`_immutable`](_immutable.md), a locked property cannot be modified after i
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_key_term_descriptor"
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_scalar_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

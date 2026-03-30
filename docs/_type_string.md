@@ -18,17 +18,11 @@ The scalar data type for generic UTF-8 strings. Also the root of the string sub-
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "string",
-	"_gid": "_type_string",
-	"_aid": ["string"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_type_string",
+  "_lid" : "string",
+  "_nid" : "_type"
 }
 ```

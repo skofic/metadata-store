@@ -18,17 +18,11 @@ Root of the controlled vocabulary for scalar data types. Every value that `_scal
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "data",
-	"_gid": "_type_data",
-	"_aid": ["data"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_type_data",
+  "_lid" : "data",
+  "_nid" : "_type"
 }
 ```

@@ -18,15 +18,11 @@ Edge section grouping internet address string types: URI, Email, Hostname, IPv4,
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "internet",
-	"_gid": "_type_string_internet",
-	"_aid": ["internet"]
+  "_aid" : [
+    "internet"
+  ],
+  "_gid" : "_type_string_internet",
+  "_lid" : "internet",
+  "_nid" : "_type_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

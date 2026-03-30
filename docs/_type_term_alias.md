@@ -18,17 +18,11 @@ A term marked `_type_term_alias` acts as an alternative identifier for a canonic
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "alias",
-	"_gid": "_type_term_alias",
-	"_aid": ["alias"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "alias"
+  ],
+  "_gid" : "_type_term_alias",
+  "_lid" : "alias",
+  "_nid" : "_type_term"
 }
 ```

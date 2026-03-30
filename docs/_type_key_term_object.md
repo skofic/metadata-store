@@ -18,17 +18,11 @@ A term key that must reference an object definition term — a term carrying a `
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "object",
-	"_gid": "_type_key_term_object",
-	"_aid": ["object"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_type_key_term_object",
+  "_lid" : "object",
+  "_nid" : "_type_key_term"
 }
 ```

@@ -35,10 +35,12 @@ Mathematical expressions stored as LaTeX strings:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "symbol",
-	"_gid": "_symbol",
-	"_aid": ["symbol"]
+  "_aid" : [
+    "symbol"
+  ],
+  "_gid" : "_symbol",
+  "_lid" : "symbol",
+  "_nid" : ""
 }
 ```
 
@@ -46,14 +48,8 @@ Mathematical expressions stored as LaTeX strings:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string_LaTeX"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string_LaTeX"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

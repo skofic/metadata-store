@@ -21,9 +21,7 @@ Unlike [`_locked`](_locked.md) properties — which users can never touch — a 
 **`_examples`**
 
 ```json
-{
-	"_computed": ["_gid", "_key", "_aid"]
-}
+{"_computed": ["_gid", "_key", "_aid"]}
 ```
 
 ---
@@ -32,10 +30,12 @@ Unlike [`_locked`](_locked.md) properties — which users can never touch — a 
 
 ```json
 {
-	"_nid": "",
-	"_lid": "computed",
-	"_gid": "_computed",
-	"_aid": ["computed"]
+  "_aid" : [
+    "computed"
+  ],
+  "_gid" : "_computed",
+  "_lid" : "computed",
+  "_nid" : ""
 }
 ```
 
@@ -43,16 +43,10 @@ Unlike [`_locked`](_locked.md) properties — which users can never touch — a 
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_key_term_descriptor"
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_scalar_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

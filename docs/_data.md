@@ -30,9 +30,7 @@ The seventh option is [`_typedef`](_typedef.md), a reference to an existing type
 A descriptor that accepts any value (empty data section):
 
 ```json
-{
-	"_data": {}
-}
+{"_data": {}}
 ```
 
 A descriptor for a floating-point number:
@@ -52,11 +50,7 @@ A descriptor for a floating-point number:
 A descriptor referencing a typedef:
 
 ```json
-{
-	"_data": {
-		"_typedef": "_info_string"
-	}
-}
+{"_data": {"_typedef": "_info_string"}}
 ```
 
 ---
@@ -65,10 +59,12 @@ A descriptor referencing a typedef:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "data",
-	"_gid": "_data",
-	"_aid": ["data"]
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_data",
+  "_lid" : "data",
+  "_nid" : ""
 }
 ```
 
@@ -76,10 +72,12 @@ A descriptor referencing a typedef:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_data"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_data"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -87,33 +85,27 @@ A descriptor referencing a typedef:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{
-					"_selection_type": "_type_selection_optional",
-					"_elements": {
-						"_max-items": 1
-					}
-				}
-			],
-			"_selection_descriptors": [
-				"_scalar",
-				"_array",
-				"_nested",
-				"_set",
-				"_tuple",
-				"_dict",
-				"_typedef"
-			]
-		}
-	]
+  "_closed" : true,
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_scalar",
+        "_array",
+        "_nested",
+        "_set",
+        "_tuple",
+        "_dict",
+        "_typedef"
+      ],
+      "_selection_rules" : [
+        {
+          "_elements" : {
+            "_max-items" : 1
+          },
+          "_selection_type" : "_type_selection_optional"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -47,7 +47,14 @@ A value-triggered conditional rule: within the [`_scalar`](_scalar.md) structure
 	"_path_data": {
 		"terms/_scalar": {
 			"_closed": true,
-			"_recommended": ["_unit", "_unit-name", "_unit-symbol", "_decimals", "_range_valid", "_range_normal"]
+			"_recommended": [
+				"_unit",
+				"_unit-name",
+				"_unit-symbol",
+				"_decimals",
+				"_range_valid",
+				"_range_normal"
+			]
 		}
 	}
 }
@@ -59,10 +66,12 @@ A value-triggered conditional rule: within the [`_scalar`](_scalar.md) structure
 
 ```json
 {
-	"_nid": "_path",
-	"_lid": "data",
-	"_gid": "_path_data",
-	"_aid": ["data"]
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_path_data",
+  "_lid" : "data",
+  "_nid" : "_path"
 }
 ```
 
@@ -70,14 +79,8 @@ A value-triggered conditional rule: within the [`_scalar`](_scalar.md) structure
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_struct"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_struct"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

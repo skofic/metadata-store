@@ -45,17 +45,11 @@ Italy included in a custom `MyCountries` vocabulary via a bridge to `ISO_3166_3`
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "bridge-of",
-	"_gid": "_predicate_bridge-of",
-	"_aid": ["bridge-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "bridge-of"
+  ],
+  "_gid" : "_predicate_bridge-of",
+  "_lid" : "bridge-of",
+  "_nid" : "_predicate"
 }
 ```

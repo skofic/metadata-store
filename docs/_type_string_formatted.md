@@ -18,15 +18,11 @@ Edge section grouping formatted text string types: HTML, Markdown, LaTeX, and SV
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "formatted",
-	"_gid": "_type_string_formatted",
-	"_aid": ["formatted"]
+  "_aid" : [
+    "formatted"
+  ],
+  "_gid" : "_type_string_formatted",
+  "_lid" : "formatted",
+  "_nid" : "_type_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

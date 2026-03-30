@@ -47,17 +47,11 @@ Italy and France are valid elements grouped under a `EUROPE` section header:
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "section-of",
-	"_gid": "_predicate_section-of",
-	"_aid": ["section-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "section-of"
+  ],
+  "_gid" : "_predicate_section-of",
+  "_lid" : "section-of",
+  "_nid" : "_predicate"
 }
 ```

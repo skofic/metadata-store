@@ -1257,7 +1257,21 @@ Graphs are implemented using ArangoDB **edge collection** documents. Each edge d
 
 #### Edge Uniqueness and Key Computation
 
-No two edges may share the same `_from`/`_predicate`/`_to` combination. The `_key` of an edge document is computed as the **MD5 hash** of the concatenation `_from + "/" + _predicate + "/" + _to`.
+No two edges may share the same `_from`/`_predicate`/`_to` combination. The `_key` of an edge document is computed as the **MD5 hash** of the concatenation `_from + "/" + _predicate + "/" + _to`, where `/` is the separator between the three fields.
+
+The hash is always stored in **lowercase**. Use an explicit case conversion when computing the key to avoid ambiguity — do not rely on the default behaviour of any particular MD5 implementation. In ArangoDB AQL:
+
+```aql
+LET _key = LOWER(MD5(CONCAT(doc._from, "/", doc._predicate, "/", doc._to)))
+```
+
+For example, the edge from `terms/ISO_3166_3_ITA` via `_predicate_enum-of` to `terms/ISO_3166_3` hashes the string:
+
+```
+terms/ISO_3166_3_ITA/_predicate_enum-of/terms/ISO_3166_3
+```
+
+`_key` is not written to the edge JSON files — it is computed at insertion time, exactly as `_gid` is computed for term documents.
 
 This uniqueness constraint is the foundation of the `_path` mechanism: when multiple graphs share the same directed relationship (same source, same predicate, same destination), they do not create separate edge documents — they share a single edge, and each graph's root handle is added to the `_path` set.
 

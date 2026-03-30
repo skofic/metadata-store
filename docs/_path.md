@@ -46,10 +46,12 @@ The same edge shared by a second graph `MyCountries`. No new document is created
 
 ```json
 {
-	"_nid": "",
-	"_lid": "path",
-	"_gid": "_path",
-	"_aid": ["path"]
+  "_aid" : [
+    "path"
+  ],
+  "_gid" : "_path",
+  "_lid" : "path",
+  "_nid" : ""
 }
 ```
 
@@ -57,16 +59,10 @@ The same edge shared by a second graph `MyCountries`. No new document is created
 
 ```json
 {
-	"_set": {
-		"_comparable": {
-			"_comparable_type": "_type_handle"
-		}
-	}
+  "_set" : {
+    "_comparable" : {
+      "_comparable_type" : "_type_handle"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

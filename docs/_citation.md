@@ -32,10 +32,12 @@ For supplementary external links that do not require formal attribution, use [`_
 
 ```json
 {
-	"_nid": "",
-	"_lid": "citation",
-	"_gid": "_citation",
-	"_aid": ["citation"]
+  "_aid" : [
+    "citation"
+  ],
+  "_gid" : "_citation",
+  "_lid" : "citation",
+  "_nid" : ""
 }
 ```
 
@@ -43,12 +45,6 @@ For supplementary external links that do not require formal attribution, use [`_
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

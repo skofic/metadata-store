@@ -34,7 +34,7 @@ A simple membership edge (no conditional rule):
 }
 ```
 
-A presence-triggered rule: when `_unit` is present, `_unit-name` and `_unit-symbol` must be absent:
+A presence-triggered rule: when [`_unit`](_unit.md) is present, [`_unit-name`](_unit-name.md) and [`_unit-symbol`](_unit-symbol.md) must be absent:
 
 ```json
 {
@@ -43,10 +43,7 @@ A presence-triggered rule: when `_unit` is present, `_unit-name` and `_unit-symb
 	"_to": "terms/_scalar",
 	"_path": ["terms/_scalar"],
 	"_path_data": {
-		"terms/_scalar": {
-			"_closed": false,
-			"_banned": ["_unit-name", "_unit-symbol"]
-		}
+		"terms/_scalar": {"_closed": false, "_banned": ["_unit-name", "_unit-symbol"]}
 	}
 }
 ```
@@ -57,17 +54,11 @@ A presence-triggered rule: when `_unit` is present, `_unit-name` and `_unit-symb
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "property-of",
-	"_gid": "_predicate_property-of",
-	"_aid": ["property-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "property-of"
+  ],
+  "_gid" : "_predicate_property-of",
+  "_lid" : "property-of",
+  "_nid" : "_predicate"
 }
 ```

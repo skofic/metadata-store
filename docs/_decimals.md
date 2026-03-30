@@ -19,12 +19,7 @@ The maximum number of decimal places to display for a numeric value. Does not af
 A floating-point length displayed with two decimal places:
 
 ```json
-{
-	"_scalar": {
-		"_scalar_type": "_type_number_float",
-		"_decimals": 2
-	}
-}
+{"_scalar": {"_scalar_type": "_type_number_float", "_decimals": 2}}
 ```
 
 ---
@@ -33,10 +28,12 @@ A floating-point length displayed with two decimal places:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "decimals",
-	"_gid": "_decimals",
-	"_aid": ["decimals"]
+  "_aid" : [
+    "decimals"
+  ],
+  "_gid" : "_decimals",
+  "_lid" : "decimals",
+  "_nid" : ""
 }
 ```
 
@@ -44,17 +41,11 @@ A floating-point length displayed with two decimal places:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_number_integer",
-		"_range_valid": {
-			"_range_min-inclusive": 0
-		}
-	}
+  "_scalar" : {
+    "_range_valid" : {
+      "_range_min-inclusive" : 0
+    },
+    "_scalar_type" : "_type_number_integer"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

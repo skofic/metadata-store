@@ -10,7 +10,7 @@ The scalar data type for HTML-formatted text. The type carries its own format co
 
 **`_description`**
 
-`_type_string_HTML` declares that the value is an [HTML](https://en.wikipedia.org/wiki/HTML) string. No `_regexp` is applicable — the type itself defines the format. Excluded from [`_type_data_comparable`](_type_data_comparable.md) and [`_type_data_dict_key`](_type_data_dict_key.md) because HTML strings do not support meaningful ordering or use as property names.
+`_type_string_HTML` declares that the value is an [HTML](https://en.wikipedia.org/wiki/HTML) string. No [`_regexp`](_regexp.md) is applicable — the type itself defines the format. Excluded from [`_type_data_comparable`](_type_data_comparable.md) and [`_type_data_dict_key`](_type_data_dict_key.md) because HTML strings do not support meaningful ordering or use as property names.
 
 ---
 
@@ -18,17 +18,11 @@ The scalar data type for HTML-formatted text. The type carries its own format co
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "HTML",
-	"_gid": "_type_string_HTML",
-	"_aid": ["HTML"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "HTML"
+  ],
+  "_gid" : "_type_string_HTML",
+  "_lid" : "HTML",
+  "_nid" : "_type_string"
 }
 ```

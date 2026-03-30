@@ -10,7 +10,7 @@ A set of enumeration root `_gid`s identifying the controlled vocabularies from w
 
 **`_description`**
 
-`_enum_types` is an optional companion to [`_scalar_type`](_scalar_type.md), [`_comparable_type`](_comparable_type.md), and [`_dict_key_type`](_dict_key_type.md) when their value is [`_type_enum`](_type_enum.md). It restricts the allowed enumeration elements to those reachable from the listed vocabulary roots.
+`_enum_types` is an optional companion to [`_scalar_type`](_scalar_type.md), [`_comparable_type`](_comparable_type.md), and [`_dict_key_type`](_dict_key_type.md) when their value is `_type_enum`. It restricts the allowed enumeration elements to those reachable from the listed vocabulary roots.
 
 Each element in the set is the [`_gid`](_gid.md) of an enumeration root term — a term that acts as the root of a controlled vocabulary graph. A value is accepted if it is a valid element of **at least one** of the listed vocabularies.
 
@@ -21,12 +21,7 @@ When `_enum_types` is absent, the value may be any enumeration element from any 
 Restrict an enumeration value to ISO 639-3 language codes:
 
 ```json
-{
-	"_scalar": {
-		"_scalar_type": "_type_enum",
-		"_enum_types": ["ISO_639_3"]
-	}
-}
+{"_scalar": {"_scalar_type": "_type_enum", "_enum_types": ["ISO_639_3"]}}
 ```
 
 Allow values from either ISO 639-3 or ISO 639-1:
@@ -46,10 +41,12 @@ Allow values from either ISO 639-3 or ISO 639-1:
 
 ```json
 {
-	"_nid": "_enum",
-	"_lid": "types",
-	"_gid": "_enum_types",
-	"_aid": ["types"]
+  "_aid" : [
+    "types"
+  ],
+  "_gid" : "_enum_types",
+  "_lid" : "types",
+  "_nid" : "_enum"
 }
 ```
 
@@ -57,16 +54,10 @@ Allow values from either ISO 639-3 or ISO 639-1:
 
 ```json
 {
-	"_set": {
-		"_comparable": {
-			"_comparable_type": "_type_key_term_enum-root"
-		}
-	}
+  "_set" : {
+    "_comparable" : {
+      "_comparable_type" : "_type_key_term_enum-root"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,17 +18,11 @@ A term marked `_type_term_enum-root` defines the root node of a controlled vocab
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "enum-root",
-	"_gid": "_type_term_enum-root",
-	"_aid": ["enum-root"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "enum-root"
+  ],
+  "_gid" : "_type_term_enum-root",
+  "_lid" : "enum-root",
+  "_nid" : "_type_term"
 }
 ```

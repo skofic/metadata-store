@@ -4,7 +4,9 @@
 			"_nid": "_predicate",
 			"_lid": "functional",
 			"_gid": "_predicate_functional",
-			"_aid": ["functional"]
+			"_aid": [
+				"functional"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -18,7 +20,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -26,7 +30,9 @@
 			"_nid": "_predicate",
 			"_lid": "enum-of",
 			"_gid": "_predicate_enum-of",
-			"_aid": ["enum-of"]
+			"_aid": [
+				"enum-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -43,7 +49,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -51,7 +59,9 @@
 			"_nid": "_predicate",
 			"_lid": "property-of",
 			"_gid": "_predicate_property-of",
-			"_aid": ["property-of"]
+			"_aid": [
+				"property-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -64,11 +74,13 @@
 				"ISO_639_3_eng": "`_predicate_property-of` links a descriptor to the object schema it belongs to. An edge with this predicate states that [`_from`](_from.md) (a descriptor) is a property of the schema defined by [`_to`](_to.md) (an object definition term).\n\n**Schema membership**: the edge declares that `_from` may appear as a property in objects conforming to the `_to` schema. This allows tooling to discover all properties of a schema by traversing `_predicate_property-of` edges.\n\n**Presence-triggered rules**: when [`_path_data`](_path_data.md) is non-empty, the rule object stored there activates whenever `_from` is present in the object — regardless of its value. The primary use case is mutual exclusion: when [`_unit`](_unit.md) is present (any value), [`_unit-name`](_unit-name.md) and [`_unit-symbol`](_unit-symbol.md) must be absent. This cannot be expressed with [`_predicate_value-of`](_predicate_value-of.md) because the constraint is not tied to any specific value.\n\nAlways use `_closed: false` for presence-triggered rules unless the property's presence alone fully determines the complete allowed set — which is rare.\n\nNote: for **passive properties** whose presence triggers no conditional rule, a `_predicate_property-of` edge with empty `_path_data` may be omitted. Membership for such properties is implicitly declared by their appearance in [`_recommended`](_recommended.md) lists of type and kind conditional rules. Tooling that inspects schema membership must therefore read both property-of edges and `_recommended` lists."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A simple membership edge (no conditional rule):\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {}\n}\n```\n\nA presence-triggered rule: when `_unit` is present, `_unit-name` and `_unit-symbol` must be absent:\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": false,\n\t\t\t\"_banned\": [\"_unit-name\", \"_unit-symbol\"]\n\t\t}\n\t}\n}\n```"
+				"ISO_639_3_eng": "A simple membership edge (no conditional rule):\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {}\n}\n```\n\nA presence-triggered rule: when [`_unit`](_unit.md) is present, [`_unit-name`](_unit-name.md) and [`_unit-symbol`](_unit-symbol.md) must be absent:\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\"_closed\": false, \"_banned\": [\"_unit-name\", \"_unit-symbol\"]}\n\t}\n}\n```"
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -76,7 +88,9 @@
 			"_nid": "_predicate",
 			"_lid": "field-of",
 			"_gid": "_predicate_field-of",
-			"_aid": ["field-of"]
+			"_aid": [
+				"field-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -90,7 +104,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -98,7 +114,9 @@
 			"_nid": "_predicate",
 			"_lid": "value-of",
 			"_gid": "_predicate_value-of",
-			"_aid": ["value-of"]
+			"_aid": [
+				"value-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -111,11 +129,13 @@
 				"ISO_639_3_eng": "`_predicate_value-of` is the mechanism for value-triggered conditional rules. An edge with this predicate states: within the structural context identified by [`_path`](_path.md), when [`_to`](_to.md) (the property) holds the value [`_from`](_from.md), apply the rules in [`_path_data`](_path_data.md).\n\nThe edge encodes four things in one record:\n\n- **What** — `_from`: the value that triggers the rule.\n- **Of which property** — `_to`: the property being tested.\n- **In which context** — `_path`: the structural context (schema root handle).\n- **With what consequences** — `_path_data[path_root]`: the conditional rule object.\n\nCreate a `_predicate_value-of` edge for a value whenever **the effective allowed property set differs from the base rule** in either direction — more properties required, fewer permitted, or both. Do not create an edge when the value changes nothing relative to the base rule.\n\nThe conditional rule object in `_path_data` must include [`_closed`](_closed.md):\n\n- **`_closed: true`**: replaces the base [`_recommended`](_recommended.md) entirely; the rule's `_recommended` becomes the complete optional-property whitelist for that value context.\n- **`_closed: false`**: accumulates — unions with the base `_recommended`; `_banned` entries conditionally remove properties.\n\n[`_required`](_required.md) always accumulates regardless of closure mode. The same value may produce different conditional rules in different structural contexts: a `_predicate_value-of` edge for [`_type_enum`](_type_enum.md) in [`_scalar`](_scalar.md) (path root `terms/_scalar`) is a separate edge from one in [`_dict_key`](_dict_key.md) (path root `terms/_dict_key`).\n\nThe rule graph is designed to be **self-sufficient**: both the validator and the UI derive behaviour entirely from the graph, with no out-of-graph knowledge about type semantics."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "When `_scalar_type` holds `_type_enum`, the `_enum_types` property becomes permitted:\n\n```json\n{\n\t\"_from\": \"terms/_type_enum\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": true,\n\t\t\t\"_required\": [\n\t\t\t\t{\n\t\t\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\t\t\"_selection_descriptors\": [\"_scalar_type\"]\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"_recommended\": [\"_enum_types\", \"_unit\", \"_unit-name\", \"_unit-symbol\"]\n\t\t}\n\t}\n}\n```"
+				"ISO_639_3_eng": "When [`_scalar_type`](_scalar_type.md) holds [`_type_enum`](_type_enum.md), the [`_enum_types`](_enum_types.md) property becomes permitted:\n\n```json\n{\n\t\"_from\": \"terms/_type_enum\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": true,\n\t\t\t\"_required\": [\n\t\t\t\t{\n\t\t\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\t\t\"_selection_descriptors\": [\"_scalar_type\"]\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"_recommended\": [\"_enum_types\", \"_unit\", \"_unit-name\", \"_unit-symbol\"]\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -123,7 +143,9 @@
 			"_nid": "_predicate",
 			"_lid": "structural",
 			"_gid": "_predicate_structural",
-			"_aid": ["structural"]
+			"_aid": [
+				"structural"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -137,7 +159,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -145,7 +169,9 @@
 			"_nid": "_predicate",
 			"_lid": "required-by",
 			"_gid": "_predicate_required-by",
-			"_aid": ["required-by"]
+			"_aid": [
+				"required-by"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -159,7 +185,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -167,7 +195,9 @@
 			"_nid": "_predicate",
 			"_lid": "banned-by",
 			"_gid": "_predicate_banned-by",
-			"_aid": ["banned-by"]
+			"_aid": [
+				"banned-by"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -181,7 +211,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -189,7 +221,9 @@
 			"_nid": "_predicate",
 			"_lid": "recommended-by",
 			"_gid": "_predicate_recommended-by",
-			"_aid": ["recommended-by"]
+			"_aid": [
+				"recommended-by"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -199,11 +233,13 @@
 				"ISO_639_3_eng": "The source variable is recommended in a dataset record whenever the destination variable is present. A record containing `_to` but lacking `_from` is flagged as incomplete but not rejected."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_predicate_recommended-by` expresses a soft co-occurrence expectation between two dataset variables. An edge with this predicate states: if `_to` is present in a submitted dataset record, then `_from` is expected but not mandatory — its absence generates a warning rather than a rejection.\n\nThis predicate is part of the [`_predicate_structural`](_predicate_structural.md) sub-vocabulary and is **reserved for the dataset validation layer**. It is not used within the core dictionary's own graph.\n\nTypical use case: a measurement variable is more meaningful when accompanied by a contextual variable — for example, a body temperature reading is more interpretable when the measurement site (oral, axillary, rectal) is also recorded."
+				"ISO_639_3_eng": "`_predicate_recommended-by` expresses a soft co-occurrence expectation between two dataset variables. An edge with this predicate states: if [`_to`](_to.md) is present in a submitted dataset record, then [`_from`](_from.md) is expected but not mandatory — its absence generates a warning rather than a rejection.\n\nThis predicate is part of the [`_predicate_structural`](_predicate_structural.md) sub-vocabulary and is **reserved for the dataset validation layer**. It is not used within the core dictionary's own graph.\n\nTypical use case: a measurement variable is more meaningful when accompanied by a contextual variable — for example, a body temperature reading is more interpretable when the measurement site (oral, axillary, rectal) is also recorded."
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -211,7 +247,9 @@
 			"_nid": "_predicate",
 			"_lid": "section",
 			"_gid": "_predicate_section",
-			"_aid": ["section"]
+			"_aid": [
+				"section"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -225,7 +263,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -233,7 +273,9 @@
 			"_nid": "_predicate",
 			"_lid": "section-of",
 			"_gid": "_predicate_section-of",
-			"_aid": ["section-of"]
+			"_aid": [
+				"section-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -250,7 +292,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	},
 	{
@@ -258,7 +302,9 @@
 			"_nid": "_predicate",
 			"_lid": "bridge",
 			"_gid": "_predicate_bridge",
-			"_aid": ["bridge"]
+			"_aid": [
+				"bridge"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -272,7 +318,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_enum-root"]
+			"_term_type": [
+				"_type_term_enum-root"
+			]
 		}
 	},
 	{
@@ -280,7 +328,9 @@
 			"_nid": "_predicate",
 			"_lid": "bridge-of",
 			"_gid": "_predicate_bridge-of",
-			"_aid": ["bridge-of"]
+			"_aid": [
+				"bridge-of"
+			]
 		},
 		"_info": {
 			"_title": {
@@ -297,7 +347,9 @@
 			}
 		},
 		"_domn": {
-			"_term_type": ["_type_term_predicate"]
+			"_term_type": [
+				"_type_term_predicate"
+			]
 		}
 	}
 ]

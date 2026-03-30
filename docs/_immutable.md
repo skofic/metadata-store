@@ -19,9 +19,7 @@ Unlike [`_locked`](_locked.md) properties, `_immutable` properties *may* be set 
 **`_examples`**
 
 ```json
-{
-	"_immutable": ["_lid", "_gid"]
-}
+{"_immutable": ["_lid", "_gid"]}
 ```
 
 ---
@@ -30,10 +28,12 @@ Unlike [`_locked`](_locked.md) properties, `_immutable` properties *may* be set 
 
 ```json
 {
-	"_nid": "",
-	"_lid": "immutable",
-	"_gid": "_immutable",
-	"_aid": ["immutable"]
+  "_aid" : [
+    "immutable"
+  ],
+  "_gid" : "_immutable",
+  "_lid" : "immutable",
+  "_nid" : ""
 }
 ```
 
@@ -41,16 +41,10 @@ Unlike [`_locked`](_locked.md) properties, `_immutable` properties *may* be set 
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_key_term_descriptor"
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_scalar_type" : "_type_key_term_descriptor"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

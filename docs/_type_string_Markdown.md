@@ -18,17 +18,11 @@ The scalar data type for Markdown-formatted text, rendered in frontends using a 
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "Markdown",
-	"_gid": "_type_string_Markdown",
-	"_aid": ["Markdown"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "Markdown"
+  ],
+  "_gid" : "_type_string_Markdown",
+  "_lid" : "Markdown",
+  "_nid" : "_type_string"
 }
 ```

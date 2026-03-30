@@ -41,10 +41,12 @@ At least one item must be present:
 
 ```json
 {
-	"_nid": "_selection",
-	"_lid": "rule",
-	"_gid": "_selection_rule",
-	"_aid": ["rule"]
+  "_aid" : [
+    "rule"
+  ],
+  "_gid" : "_selection_rule",
+  "_lid" : "rule",
+  "_nid" : "_selection"
 }
 ```
 
@@ -52,10 +54,12 @@ At least one item must be present:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_selection_rule"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_selection_rule"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -63,21 +67,21 @@ At least one item must be present:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_selection_type"]
-		}
-	],
-	"_recommended": ["_elements"]
+  "_closed" : true,
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_selection_type"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

@@ -18,15 +18,11 @@ Namespace grouping all type terms in the data dictionary: scalar data types, ter
 
 ```json
 {
-	"_nid": "",
-	"_lid": "type",
-	"_gid": "_type",
-	"_aid": ["type"]
+  "_aid" : [
+    "type"
+  ],
+  "_gid" : "_type",
+  "_lid" : "type",
+  "_nid" : ""
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

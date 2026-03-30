@@ -22,17 +22,11 @@ The same descriptor may be a field of multiple layouts and a property of multipl
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "field-of",
-	"_gid": "_predicate_field-of",
-	"_aid": ["field-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "field-of"
+  ],
+  "_gid" : "_predicate_field-of",
+  "_lid" : "field-of",
+  "_nid" : "_predicate"
 }
 ```

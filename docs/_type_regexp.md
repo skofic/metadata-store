@@ -18,17 +18,11 @@ The scalar data type for regular expression patterns. The stored value is itself
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "regexp",
-	"_gid": "_type_regexp",
-	"_aid": ["regexp"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "regexp"
+  ],
+  "_gid" : "_type_regexp",
+  "_lid" : "regexp",
+  "_nid" : "_type"
 }
 ```

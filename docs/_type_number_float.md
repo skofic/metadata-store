@@ -18,17 +18,11 @@ The scalar data type for floating-point numbers. Values must be stored and treat
 
 ```json
 {
-	"_nid": "_type_number",
-	"_lid": "float",
-	"_gid": "_type_number_float",
-	"_aid": ["float"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "float"
+  ],
+  "_gid" : "_type_number_float",
+  "_lid" : "float",
+  "_nid" : "_type_number"
 }
 ```

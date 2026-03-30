@@ -24,14 +24,8 @@ Human body temperature (°C): values above 42 are outliers; valid up to 45:
 {
 	"_scalar": {
 		"_scalar_type": "_type_number_float",
-		"_range_valid": {
-			"_range_min-inclusive": 25.0,
-			"_range_max-inclusive": 45.0
-		},
-		"_range_normal": {
-			"_range_min-inclusive": 35.0,
-			"_range_max-inclusive": 42.0
-		}
+		"_range_valid": {"_range_min-inclusive": 25.0, "_range_max-inclusive": 45.0},
+		"_range_normal": {"_range_min-inclusive": 35.0, "_range_max-inclusive": 42.0}
 	}
 }
 ```
@@ -42,10 +36,12 @@ Human body temperature (°C): values above 42 are outliers; valid up to 45:
 
 ```json
 {
-	"_nid": "_range",
-	"_lid": "normal",
-	"_gid": "_range_normal",
-	"_aid": ["normal"]
+  "_aid" : [
+    "normal"
+  ],
+  "_gid" : "_range_normal",
+  "_lid" : "normal",
+  "_nid" : "_range"
 }
 ```
 
@@ -53,15 +49,11 @@ Human body temperature (°C): values above 42 are outliers; valid up to 45:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_range"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_range"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

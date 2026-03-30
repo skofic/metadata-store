@@ -18,17 +18,11 @@ The scalar data type for ArangoDB document handles — strings in the form `<col
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "handle",
-	"_gid": "_type_handle",
-	"_aid": ["handle"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "handle"
+  ],
+  "_gid" : "_type_handle",
+  "_lid" : "handle",
+  "_nid" : "_type"
 }
 ```

@@ -32,10 +32,12 @@ Content that becomes stable and authoritative should be moved to [`_description`
 
 ```json
 {
-	"_nid": "",
-	"_lid": "notes",
-	"_gid": "_notes",
-	"_aid": ["notes"]
+  "_aid" : [
+    "notes"
+  ],
+  "_gid" : "_notes",
+  "_lid" : "notes",
+  "_nid" : ""
 }
 ```
 
@@ -43,12 +45,6 @@ Content that becomes stable and authoritative should be moved to [`_description`
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

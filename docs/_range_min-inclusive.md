@@ -18,10 +18,12 @@ The inclusive lower bound of a numeric range. A value is valid if it is greater 
 
 ```json
 {
-	"_nid": "_range",
-	"_lid": "min-inclusive",
-	"_gid": "_range_min-inclusive",
-	"_aid": ["min-inclusive"]
+  "_aid" : [
+    "min-inclusive"
+  ],
+  "_gid" : "_range_min-inclusive",
+  "_lid" : "min-inclusive",
+  "_nid" : "_range"
 }
 ```
 
@@ -29,14 +31,8 @@ The inclusive lower bound of a numeric range. A value is valid if it is greater 
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_number"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_number"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

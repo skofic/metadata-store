@@ -10,7 +10,7 @@ The data type of elements in a `_comparable` section. Required and never empty. 
 
 **`_description`**
 
-[`_comparable_type`](_comparable_type.md) is required in every [`_comparable`](_comparable.md) section. It is a bridge-graph subset of [`_scalar_type`](_scalar_type.md), accepting all scalar type values **except** those that are not comparable: the `_type_string_formatted` section types (`_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`) and non-comparable object types (`_type_object`, `_type_struct`, `_type_object_GeoJSON`). Note that `_type_regexp` is comparable and is accepted.
+[`_comparable_type`](_comparable_type.md) is required in every [`_comparable`](_comparable.md) section. It is a bridge-graph subset of [`_scalar_type`](_scalar_type.md), accepting all scalar type values **except** those that are not comparable: display and markup strings (`_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_regexp`) and non-comparable object types (`_type_object`, `_type_struct`, `_type_object_GeoJSON`).
 
 Like [`_scalar_type`](_scalar_type.md), each value activates a conditional rule that governs which companion properties are permitted in the same [`_comparable`](_comparable.md) section.
 
@@ -20,10 +20,12 @@ Like [`_scalar_type`](_scalar_type.md), each value activates a conditional rule 
 
 ```json
 {
-	"_nid": "_comparable",
-	"_lid": "type",
-	"_gid": "_comparable_type",
-	"_aid": ["type"]
+  "_aid" : [
+    "type"
+  ],
+  "_gid" : "_comparable_type",
+  "_lid" : "type",
+  "_nid" : "_comparable"
 }
 ```
 
@@ -31,15 +33,11 @@ Like [`_scalar_type`](_scalar_type.md), each value activates a conditional rule 
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_enum",
-		"_enum_types": ["_type_data_comparable"]
-	}
+  "_scalar" : {
+    "_enum_types" : [
+      "_type_data_comparable"
+    ],
+    "_scalar_type" : "_type_enum"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

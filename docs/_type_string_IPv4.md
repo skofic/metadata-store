@@ -18,17 +18,11 @@ The scalar data type for IPv4 addresses conforming to the JSON Schema `ipv4` for
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "IPv4",
-	"_gid": "_type_string_IPv4",
-	"_aid": ["IPv4"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "IPv4"
+  ],
+  "_gid" : "_type_string_IPv4",
+  "_lid" : "IPv4",
+  "_nid" : "_type_string"
 }
 ```

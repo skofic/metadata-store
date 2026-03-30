@@ -18,17 +18,11 @@ A term marked `_type_term_enum-item` is connected to one or more enumeration roo
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "enum-item",
-	"_gid": "_type_term_enum-item",
-	"_aid": ["enum-item"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "enum-item"
+  ],
+  "_gid" : "_type_term_enum-item",
+  "_lid" : "enum-item",
+  "_nid" : "_type_term"
 }
 ```

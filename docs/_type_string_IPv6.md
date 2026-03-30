@@ -18,17 +18,11 @@ The scalar data type for IPv6 addresses conforming to the JSON Schema `ipv6` for
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "IPv6",
-	"_gid": "_type_string_IPv6",
-	"_aid": ["IPv6"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "IPv6"
+  ],
+  "_gid" : "_type_string_IPv6",
+  "_lid" : "IPv6",
+  "_nid" : "_type_string"
 }
 ```

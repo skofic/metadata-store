@@ -30,10 +30,12 @@ The definition is what an informed reader sees first. It should answer *what is 
 
 ```json
 {
-	"_nid": "",
-	"_lid": "definition",
-	"_gid": "_definition",
-	"_aid": ["definition"]
+  "_aid" : [
+    "definition"
+  ],
+  "_gid" : "_definition",
+  "_lid" : "definition",
+  "_nid" : ""
 }
 ```
 
@@ -41,12 +43,6 @@ The definition is what an informed reader sees first. It should answer *what is 
 
 ```json
 {
-	"_typedef": "_info_string"
+  "_typedef" : "_info_string"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

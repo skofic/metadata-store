@@ -18,17 +18,11 @@ A term key that must reference a descriptor — a term carrying a `_data` sectio
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "descriptor",
-	"_gid": "_type_key_term_descriptor",
-	"_aid": ["descriptor"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "descriptor"
+  ],
+  "_gid" : "_type_key_term_descriptor",
+  "_lid" : "descriptor",
+  "_nid" : "_type_key_term"
 }
 ```

@@ -18,10 +18,12 @@ The inclusive lower bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_nid": "_range_string",
-	"_lid": "min-inclusive",
-	"_gid": "_range_string_min-inclusive",
-	"_aid": ["min-inclusive"]
+  "_aid" : [
+    "min-inclusive"
+  ],
+  "_gid" : "_range_string_min-inclusive",
+  "_lid" : "min-inclusive",
+  "_nid" : "_range_string"
 }
 ```
 
@@ -29,14 +31,8 @@ The inclusive lower bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

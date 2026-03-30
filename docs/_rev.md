@@ -20,10 +20,12 @@ Users can read this value but cannot set or modify it — it is entirely managed
 
 ```json
 {
-	"_nid": "",
-	"_lid": "rev",
-	"_gid": "_rev",
-	"_aid": ["rev"]
+  "_aid" : [
+    "rev"
+  ],
+  "_gid" : "_rev",
+  "_lid" : "rev",
+  "_nid" : ""
 }
 ```
 
@@ -31,14 +33,8 @@ Users can read this value but cannot set or modify it — it is entirely managed
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

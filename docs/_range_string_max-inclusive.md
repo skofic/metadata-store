@@ -18,10 +18,12 @@ The inclusive upper bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_nid": "_range_string",
-	"_lid": "max-inclusive",
-	"_gid": "_range_string_max-inclusive",
-	"_aid": ["max-inclusive"]
+  "_aid" : [
+    "max-inclusive"
+  ],
+  "_gid" : "_range_string_max-inclusive",
+  "_lid" : "max-inclusive",
+  "_nid" : "_range_string"
 }
 ```
 
@@ -29,14 +31,8 @@ The inclusive upper bound of a string range. A value is valid if it is lexicogra
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_string"
-	}
+  "_scalar" : {
+    "_scalar_type" : "_type_string"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

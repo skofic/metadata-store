@@ -18,17 +18,11 @@ The scalar data type for full dates in ISO 8601 `YYYY-MM-DD` format (JSON Schema
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "date",
-	"_gid": "_type_string_date",
-	"_aid": ["date"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "date"
+  ],
+  "_gid" : "_type_string_date",
+  "_lid" : "date",
+  "_nid" : "_type_string"
 }
 ```

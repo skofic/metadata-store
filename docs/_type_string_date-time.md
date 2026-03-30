@@ -18,17 +18,11 @@ The scalar data type for combined date-time values in ISO 8601 format (`YYYY-MM-
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "date-time",
-	"_gid": "_type_string_date-time",
-	"_aid": ["date-time"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "date-time"
+  ],
+  "_gid" : "_type_string_date-time",
+  "_lid" : "date-time",
+  "_nid" : "_type_string"
 }
 ```

@@ -15,3 +15,4 @@ This directory contains command-line tools that maintain the dictionary's derive
 | Directory    | Purpose |
 |--------------|---------|
 | `term-cards` | Generates one Markdown card per term in `docs/` from all `data/core/*.json` files. |
+| `check-refs` | Validates that every term GID referenced inside any term's structural sections is defined in `data/core/`. |

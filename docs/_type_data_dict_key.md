@@ -18,17 +18,11 @@ Root of the bridge-graph subset of `_type_data_comparable` containing all types 
 
 ```json
 {
-	"_nid": "_type_data_dict",
-	"_lid": "key",
-	"_gid": "_type_data_dict_key",
-	"_aid": ["key"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "key"
+  ],
+  "_gid" : "_type_data_dict_key",
+  "_lid" : "key",
+  "_nid" : "_type_data_dict"
 }
 ```

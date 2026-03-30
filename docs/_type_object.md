@@ -18,17 +18,11 @@ The scalar data type for objects whose properties must be `_gid`s of descriptor 
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "object",
-	"_gid": "_type_object",
-	"_aid": ["object"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root", "_type_term_enum-item"]
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_type_object",
+  "_lid" : "object",
+  "_nid" : "_type"
 }
 ```

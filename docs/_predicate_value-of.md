@@ -32,7 +32,7 @@ The rule graph is designed to be **self-sufficient**: both the validator and the
 
 **`_examples`**
 
-When `_scalar_type` holds `_type_enum`, the `_enum_types` property becomes permitted:
+When [`_scalar_type`](_scalar_type.md) holds [`_type_enum`](_type_enum.md), the [`_enum_types`](_enum_types.md) property becomes permitted:
 
 ```json
 {
@@ -61,17 +61,11 @@ When `_scalar_type` holds `_type_enum`, the `_enum_types` property becomes permi
 
 ```json
 {
-	"_nid": "_predicate",
-	"_lid": "value-of",
-	"_gid": "_predicate_value-of",
-	"_aid": ["value-of"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_predicate"]
+  "_aid" : [
+    "value-of"
+  ],
+  "_gid" : "_predicate_value-of",
+  "_lid" : "value-of",
+  "_nid" : "_predicate"
 }
 ```

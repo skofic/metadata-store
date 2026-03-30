@@ -38,10 +38,12 @@ This property is most useful for descriptor terms that require guidance beyond t
 
 ```json
 {
-	"_nid": "",
-	"_lid": "usage",
-	"_gid": "_usage",
-	"_aid": ["usage"]
+  "_aid" : [
+    "usage"
+  ],
+  "_gid" : "_usage",
+  "_lid" : "usage",
+  "_nid" : ""
 }
 ```
 
@@ -49,12 +51,6 @@ This property is most useful for descriptor terms that require guidance beyond t
 
 ```json
 {
-	"_typedef": "_info_string_formatted"
+  "_typedef" : "_info_string_formatted"
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

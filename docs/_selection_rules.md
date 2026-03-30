@@ -23,8 +23,14 @@ Two rules for a nested range selector — mutual exclusion within each bound pai
 ```json
 {
 	"_selection_rules": [
-		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1, "_max-items": 1}},
-		{"_selection_type": "_type_selection_optional", "_elements": {"_min-items": 1}}
+		{
+			"_selection_type": "_type_selection_mandatory",
+			"_elements": {"_min-items": 1, "_max-items": 1}
+		},
+		{
+			"_selection_type": "_type_selection_optional",
+			"_elements": {"_min-items": 1}
+		}
 	]
 }
 ```
@@ -35,10 +41,12 @@ Two rules for a nested range selector — mutual exclusion within each bound pai
 
 ```json
 {
-	"_nid": "_selection",
-	"_lid": "rules",
-	"_gid": "_selection_rules",
-	"_aid": ["rules"]
+  "_aid" : [
+    "rules"
+  ],
+  "_gid" : "_selection_rules",
+  "_lid" : "rules",
+  "_nid" : "_selection"
 }
 ```
 
@@ -46,17 +54,13 @@ Two rules for a nested range selector — mutual exclusion within each bound pai
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_object",
-			"_object_types": ["_selection_rule"]
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_object_types" : [
+        "_selection_rule"
+      ],
+      "_scalar_type" : "_type_object"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

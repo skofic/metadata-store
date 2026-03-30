@@ -23,10 +23,7 @@ A set of ISO 639-3 language codes:
 ```json
 {
 	"_set": {
-		"_comparable": {
-			"_comparable_type": "_type_enum",
-			"_enum_types": ["ISO_639_3"]
-		}
+		"_comparable": {"_comparable_type": "_type_enum", "_enum_types": ["ISO_639_3"]}
 	}
 }
 ```
@@ -36,13 +33,8 @@ A set of between 1 and 5 unique integers:
 ```json
 {
 	"_set": {
-		"_elements": {
-			"_min-items": 1,
-			"_max-items": 5
-		},
-		"_comparable": {
-			"_comparable_type": "_type_number_integer"
-		}
+		"_elements": {"_min-items": 1, "_max-items": 5},
+		"_comparable": {"_comparable_type": "_type_number_integer"}
 	}
 }
 ```
@@ -53,10 +45,12 @@ A set of between 1 and 5 unique integers:
 
 ```json
 {
-	"_nid": "",
-	"_lid": "set",
-	"_gid": "_set",
-	"_aid": ["set"]
+  "_aid" : [
+    "set"
+  ],
+  "_gid" : "_set",
+  "_lid" : "set",
+  "_nid" : ""
 }
 ```
 
@@ -64,10 +58,12 @@ A set of between 1 and 5 unique integers:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_set"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_set"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
 ```
 
@@ -75,21 +71,21 @@ A set of between 1 and 5 unique integers:
 
 ```json
 {
-	"_closed": true,
-	"_required": [
-		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
-			"_selection_descriptors": ["_comparable"]
-		}
-	],
-	"_recommended": ["_elements"]
+  "_closed" : true,
+  "_recommended" : [
+    "_elements"
+  ],
+  "_required" : [
+    {
+      "_selection_descriptors" : [
+        "_comparable"
+      ],
+      "_selection_rules" : [
+        {
+          "_selection_type" : "_type_selection_mandatory"
+        }
+      ]
+    }
+  ]
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

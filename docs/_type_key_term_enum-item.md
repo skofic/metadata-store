@@ -18,17 +18,11 @@ A term key that must reference a valid enumeration element — a term reachable 
 
 ```json
 {
-	"_nid": "_type_key_term",
-	"_lid": "enum-item",
-	"_gid": "_type_key_term_enum-item",
-	"_aid": ["enum-item"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "enum-item"
+  ],
+  "_gid" : "_type_key_term_enum-item",
+  "_lid" : "enum-item",
+  "_nid" : "_type_key_term"
 }
 ```

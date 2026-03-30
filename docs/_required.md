@@ -20,21 +20,25 @@ When multiple selectors are present, **all must be satisfied simultaneously** (A
 
 **`_examples`**
 
-Requiring `_lid` and exactly one of a lower bound / upper bound pair (with at least one bound overall):
+Requiring [`_lid`](_lid.md) and exactly one of a lower bound / upper bound pair (with at least one bound overall):
 
 ```json
 {
 	"_required": [
 		{
-			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory"}
-			],
+			"_selection_rules": [{"_selection_type": "_type_selection_mandatory"}],
 			"_selection_descriptors": ["_lid"]
 		},
 		{
 			"_selection_rules": [
-				{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1, "_max-items": 1}},
-				{"_selection_type": "_type_selection_optional", "_elements": {"_min-items": 1}}
+				{
+					"_selection_type": "_type_selection_mandatory",
+					"_elements": {"_min-items": 1, "_max-items": 1}
+				},
+				{
+					"_selection_type": "_type_selection_optional",
+					"_elements": {"_min-items": 1}
+				}
 			],
 			"_selection_descriptors": [
 				["_range_min-inclusive", "_range_min-exclusive"],
@@ -51,10 +55,12 @@ Requiring `_lid` and exactly one of a lower bound / upper bound pair (with at le
 
 ```json
 {
-	"_nid": "",
-	"_lid": "required",
-	"_gid": "_required",
-	"_aid": ["required"]
+  "_aid" : [
+    "required"
+  ],
+  "_gid" : "_required",
+  "_lid" : "required",
+  "_nid" : ""
 }
 ```
 
@@ -62,17 +68,13 @@ Requiring `_lid` and exactly one of a lower bound / upper bound pair (with at le
 
 ```json
 {
-	"_array": {
-		"_scalar": {
-			"_scalar_type": "_type_object",
-			"_object_types": ["_rule_selector"]
-		}
-	}
+  "_array" : {
+    "_scalar" : {
+      "_object_types" : [
+        "_rule_selector"
+      ],
+      "_scalar_type" : "_type_object"
+    }
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

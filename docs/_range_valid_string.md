@@ -22,9 +22,7 @@ A date string must be in the 21st century:
 {
 	"_scalar": {
 		"_scalar_type": "_type_string_date",
-		"_range_valid_string": {
-			"_range_string_min-inclusive": "2000-01-01"
-		}
+		"_range_valid_string": {"_range_string_min-inclusive": "2000-01-01"}
 	}
 }
 ```
@@ -35,10 +33,12 @@ A date string must be in the 21st century:
 
 ```json
 {
-	"_nid": "_range_valid",
-	"_lid": "string",
-	"_gid": "_range_valid_string",
-	"_aid": ["string"]
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_range_valid_string",
+  "_lid" : "string",
+  "_nid" : "_range_valid"
 }
 ```
 
@@ -46,15 +46,11 @@ A date string must be in the 21st century:
 
 ```json
 {
-	"_scalar": {
-		"_scalar_type": "_type_object",
-		"_object_types": ["_range_string"]
-	}
+  "_scalar" : {
+    "_object_types" : [
+      "_range_string"
+    ],
+    "_scalar_type" : "_type_object"
+  }
 }
-```
-
-**`_domn`**
-
-```json
-{}
 ```

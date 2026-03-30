@@ -18,17 +18,11 @@ A term marked `_type_term_typedef` carries a [`_data`](_data.md) section with an
 
 ```json
 {
-	"_nid": "_type_term",
-	"_lid": "typedef",
-	"_gid": "_type_term_typedef",
-	"_aid": ["typedef"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "typedef"
+  ],
+  "_gid" : "_type_term_typedef",
+  "_lid" : "typedef",
+  "_nid" : "_type_term"
 }
 ```

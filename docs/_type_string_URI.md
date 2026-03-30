@@ -18,17 +18,11 @@ The scalar data type for Uniform Resource Identifiers conforming to RFC 3986. Th
 
 ```json
 {
-	"_nid": "_type_string",
-	"_lid": "URI",
-	"_gid": "_type_string_URI",
-	"_aid": ["URI"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "URI"
+  ],
+  "_gid" : "_type_string_URI",
+  "_lid" : "URI",
+  "_nid" : "_type_string"
 }
 ```

@@ -18,17 +18,11 @@ Root of the controlled vocabulary for term type classifications. Each element de
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "term",
-	"_gid": "_type_term",
-	"_aid": ["term"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-root"]
+  "_aid" : [
+    "term"
+  ],
+  "_gid" : "_type_term",
+  "_lid" : "term",
+  "_nid" : "_type"
 }
 ```

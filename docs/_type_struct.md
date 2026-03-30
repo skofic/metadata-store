@@ -18,17 +18,11 @@ The scalar data type for arbitrary objects with unconstrained property names and
 
 ```json
 {
-	"_nid": "_type",
-	"_lid": "struct",
-	"_gid": "_type_struct",
-	"_aid": ["struct"]
-}
-```
-
-**`_domn`**
-
-```json
-{
-	"_term_type": ["_type_term_enum-item"]
+  "_aid" : [
+    "struct"
+  ],
+  "_gid" : "_type_struct",
+  "_lid" : "struct",
+  "_nid" : "_type"
 }
 ```
