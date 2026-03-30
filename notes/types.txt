@@ -25,12 +25,12 @@ _type_data: The scalar data type (_scalar_type).
 			_type_string_HEX
 	_type_key
 		_type_key_term
-		_type_key_term_enum-root
-		_type_key_term_enum-item
-		_type_key_term_descriptor
-		_type_key_term_object
-		_type_key_term_predicate
-		_type_key_term_typedef
+			_type_key_term_enum-root
+			_type_key_term_enum-item
+			_type_key_term_descriptor
+			_type_key_term_object
+			_type_key_term_predicate
+			_type_key_term_typedef
 	_type_handle
 	_type_enum
 	_type_struct
