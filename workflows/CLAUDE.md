@@ -14,4 +14,4 @@ This directory contains command-line tools that maintain the dictionary's derive
 
 | Directory    | Purpose |
 |--------------|---------|
-| `term-cards` | Generates one Markdown card per term in `terms/` from all `data/core/*.json` files. |
+| `term-cards` | Generates one Markdown card per term in `docs/` from all `data/core/*.json` files. |

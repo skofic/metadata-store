@@ -2,6 +2,6 @@
 	"paths": {
 		"core": "data/core",
 		"docs": "docs",
-		"terms": "terms"
+		"terms": "docs"
 	}
 }

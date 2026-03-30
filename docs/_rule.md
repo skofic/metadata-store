@@ -23,7 +23,7 @@ When non-empty, `_rule` carries unconditional structural constraints:
 - [`_immutable`](_immutable.md): properties that, once set, cannot be modified or deleted.
 - [`_default-value`](_default-value.md): default values applied at insertion time before `_required` is checked.
 
-**Empty `_rule`**: when `_rule` is present but empty (`"_rule": {}`), the term is an object definition whose structural constraints are entirely expressed in the graph layer via `_predicate_value-of` edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.
+**Empty `_rule`**: when `_rule` is present but empty (`"_rule": {}`), the term is an object definition whose structural constraints are entirely expressed in the graph layer via [`_predicate_value-of`](_predicate_value-of.md) edges. This is the appropriate pattern for highly dynamic schemas — such as [`_scalar`](_scalar.md) — where the permitted and required properties depend entirely on the values of other properties and cannot be expressed as unconditional rules.
 
 Conditional constraints — rules that activate only when a specific property holds a specific value — are always expressed in the graph layer, never in this section. `_rule` handles only unconditional constraints.
 

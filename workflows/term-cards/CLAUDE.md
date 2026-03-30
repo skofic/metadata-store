@@ -1,11 +1,11 @@
 # term-cards — Working Instructions
 
-Generates and synchronises one Markdown card per term in the `terms/` directory at the repository root.
+Generates and synchronises one Markdown card per term in the `docs/` directory at the repository root.
 
 - **Input**: all `*.json` files in `data/core/`
-- **Output**: one `terms/<_gid>.md` file per term that has an `_info` section
+- **Output**: one `docs/<_gid>.md` file per term that has an `_info` section
 
-The output path is read from `dictionary.config.json` (`paths.terms`); the default is `terms/`.
+The output path is read from `dictionary.config.json` (`paths.terms`); the default is `docs/`.
 
 ## Card Format
 
@@ -31,7 +31,7 @@ Terms that have no `_info` section (alias terms) produce no card.
 | Term in data, card does not exist | Card is created |
 | Term in data, card content differs | Card is overwritten |
 | Term in data, card content is identical | Card is left untouched |
-| Card exists in `terms/` but term not in data | Card is deleted |
+| Card exists in `docs/` but term not in data | Card is deleted |
 
 ## Build and Run
 

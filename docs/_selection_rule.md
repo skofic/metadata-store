@@ -23,7 +23,7 @@ All items must be present:
 {"_selection_type": "_type_selection_mandatory"}
 ```
 
-At most one item may be present:
+At most one item may be present (the selection may also be empty):
 
 ```json
 {"_selection_type": "_type_selection_optional", "_elements": {"_max-items": 1}}

@@ -23,8 +23,8 @@ Two rules for a nested range selector — mutual exclusion within each bound pai
 ```json
 {
 	"_selection_rules": [
-		{"_selection_type": "_type_selection_optional", "_elements": {"_max-items": 1}},
-		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1}}
+		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1, "_max-items": 1}},
+		{"_selection_type": "_type_selection_optional", "_elements": {"_min-items": 1}}
 	]
 }
 ```

@@ -135,7 +135,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Next: update `containers.json`, `_scalar.json`, `_scalar.edges.json`, and documentation files.
 
 ### Recent session (2026-03-22)
-- Established two-directory structure: `terms/` for auto-generated term cards; `docs/` for hand-authored documentation. Term cards generator writes to `terms/` (config key `paths.terms`); `docs/` is never touched by any workflow.
+- Established two-directory structure: `docs/` for both auto-generated term cards and hand-authored documentation. Term cards generator writes to `docs/` (config key `paths.terms`). Previously `terms/` was used for term cards; merged into `docs/` on 2026-03-31.
 - Introduced `dictionary.config.json` at the repo root to centralise directory paths; the term-cards generator reads it at startup and falls back to built-in defaults if absent.
 - Created `docs/Structure Definition Rules.md`: comprehensive explanation of the `_rule` section, selection structures, `_closed` semantics, both conditional rule mechanisms (`_predicate_property-of` presence-triggered and `_predicate_value-of` value-triggered), evaluation order, Strategy A, and the self-sufficient rule graph design — with examples throughout.
 - Added reference to `Structure Definition Rules.md` from the `_rule` term description in `containers.json` and from the Rule Edge Strategy section in `data/core/CLAUDE.md`.

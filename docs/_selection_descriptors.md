@@ -19,8 +19,8 @@ When `_selection_rules` contains **multiple rules**, `_selection_descriptors` is
 ```json
 {
 	"_selection_rules": [
-		{"_selection_type": "_type_selection_optional", "_elements": {"_max-items": 1}},
-		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1}}
+		{"_selection_type": "_type_selection_mandatory", "_elements": {"_min-items": 1, "_max-items": 1}},
+		{"_selection_type": "_type_selection_optional", "_elements": {"_min-items": 1}}
 	],
 	"_selection_descriptors": [
 		["_range_min-inclusive", "_range_min-exclusive"],
@@ -29,7 +29,7 @@ When `_selection_rules` contains **multiple rules**, `_selection_descriptors` is
 }
 ```
 
-The first rule (optional, max 1) governs each inner array — at most one bound form per side may be present. The second rule (mandatory, min 1) governs the outer array — at least one bound overall must be present.
+The first rule (mandatory, exactly 1) governs each inner array — exactly one bound form per side must be chosen if that side participates. The second rule (optional, min 1) governs the outer array — at least one side must participate.
 
 ---
 
