@@ -69,7 +69,7 @@ Every term in this directory must have:
 
 **`_title`**: Short label, no punctuation. One to five words.
 
-**`_definition`**: Two to four sentences. Sufficient for an informed reader to understand the term without needing to read the description.
+**`_definition`**: Two to four sentences. Sufficient for an informed reader to understand the term without needing to read the description. Plain text only — no Markdown links (`[text](url)`). Backtick code formatting for identifiers is acceptable.
 
 **`_description`**: Markdown string. Aimed at a non-expert audience. Should cover what the term is, how it is used, and why it exists. May include links to other term cards (see Link Format below) and fenced code blocks for examples.
 

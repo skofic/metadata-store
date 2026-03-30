@@ -1,0 +1,303 @@
+[
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "functional",
+			"_gid": "_predicate_functional",
+			"_aid": ["functional"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Functional predicates"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sub-vocabulary of predicates that carry domain meaning and are followed during graph traversal. Groups `_predicate_enum-of`, `_predicate_property-of`, `_predicate_field-of`, and `_predicate_value-of`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Functional predicates define semantically significant relationships between terms. They are the predicates followed during graph traversal — validation, element lookup, and schema evaluation all act on functional predicate edges.\n\nThe four functional predicates and their roles:\n\n- [`_predicate_enum-of`](_predicate_enum-of.md): declares an element's membership in a controlled vocabulary.\n- [`_predicate_property-of`](_predicate_property-of.md): declares a descriptor's membership in a schema, and optionally activates presence-triggered rules.\n- [`_predicate_field-of`](_predicate_field-of.md): declares a descriptor's membership in a form or data-table layout.\n- [`_predicate_value-of`](_predicate_value-of.md): declares a value's role within a specific property, and activates value-triggered conditional rules.\n\nAs a sub-enumeration root, `_predicate_functional` may be used in [`_enum_types`](_enum_types.md) to constrain a property to functional predicates only."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_enum-root"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "enum-of",
+			"_gid": "_predicate_enum-of",
+			"_aid": ["enum-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Enumeration of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source node is a valid enumeration element of the destination node's controlled vocabulary. Used to declare membership in an enumeration, making the source a selectable value within that vocabulary."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_enum-of` is the primary relationship for building controlled vocabularies. An edge with this predicate states that [`_from`](_from.md) is a valid, selectable value within the vocabulary rooted at (or containing) [`_to`](_to.md).\n\nDuring **validation traversal**, only `_predicate_enum-of` edges are followed — section and bridge edges are skipped. The traversal starts from the vocabulary root and collects all reachable elements via these edges.\n\nDuring **display**, the same edges are followed but section nodes are rendered as collapsible group headers. Elements may be nested at any depth within section nodes.\n\nEnumerations can be hierarchical: if `_to` is itself an element of a larger vocabulary (rather than the root), then `_from` is a member of a sub-group within that vocabulary. Both `_to` and `_from` are valid selectable values in this case.\n\nThe [`_path`](_path.md) set on an edge determines which vocabularies the edge participates in, enabling element sharing across multiple vocabularies without duplicating edge documents."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Italy is a valid element of the ISO 3166-3 country vocabulary:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "property-of",
+			"_gid": "_predicate_property-of",
+			"_aid": ["property-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Property of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source descriptor is a property of the destination schema term. Declares the descriptor's membership in a schema and, when `_path_data` is non-empty, activates a conditional rule whenever the property is present in an object, regardless of its value."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_property-of` links a descriptor to the object schema it belongs to. An edge with this predicate states that [`_from`](_from.md) (a descriptor) is a property of the schema defined by [`_to`](_to.md) (an object definition term).\n\n**Schema membership**: the edge declares that `_from` may appear as a property in objects conforming to the `_to` schema. This allows tooling to discover all properties of a schema by traversing `_predicate_property-of` edges.\n\n**Presence-triggered rules**: when [`_path_data`](_path_data.md) is non-empty, the rule object stored there activates whenever `_from` is present in the object — regardless of its value. The primary use case is mutual exclusion: when [`_unit`](_unit.md) is present (any value), [`_unit-name`](_unit-name.md) and [`_unit-symbol`](_unit-symbol.md) must be absent. This cannot be expressed with [`_predicate_value-of`](_predicate_value-of.md) because the constraint is not tied to any specific value.\n\nAlways use `_closed: false` for presence-triggered rules unless the property's presence alone fully determines the complete allowed set — which is rare.\n\nNote: for **passive properties** whose presence triggers no conditional rule, a `_predicate_property-of` edge with empty `_path_data` may be omitted. Membership for such properties is implicitly declared by their appearance in [`_recommended`](_recommended.md) lists of type and kind conditional rules. Tooling that inspects schema membership must therefore read both property-of edges and `_recommended` lists."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A simple membership edge (no conditional rule):\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {}\n}\n```\n\nA presence-triggered rule: when `_unit` is present, `_unit-name` and `_unit-symbol` must be absent:\n\n```json\n{\n\t\"_from\": \"terms/_unit\",\n\t\"_predicate\": \"_predicate_property-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": false,\n\t\t\t\"_banned\": [\"_unit-name\", \"_unit-symbol\"]\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "field-of",
+			"_gid": "_predicate_field-of",
+			"_aid": ["field-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Field of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source descriptor is a field of the destination term. Used to define form layouts and data table column sets, independently of schema membership."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_field-of` links a descriptor to a term that represents a form, report, or data table layout. An edge with this predicate states that [`_from`](_from.md) (a descriptor) should appear as a field or column when displaying or entering data for [`_to`](_to.md).\n\nThis predicate is distinct from [`_predicate_property-of`](_predicate_property-of.md): [`_predicate_property-of`](_predicate_property-of.md) is about schema validity — which properties are allowed in an object. `_predicate_field-of` is about presentation — which fields appear in a specific form or table, in what order, and with what grouping.\n\nThe same descriptor may be a field of multiple layouts and a property of multiple schemas simultaneously, using separate edges for each relationship."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "value-of",
+			"_gid": "_predicate_value-of",
+			"_aid": ["value-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Value of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source term is a possible value of the destination property within a specific structural context. When the property holds this value, the rules in `_path_data` are activated. Used to implement value-triggered conditional schema constraints."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_value-of` is the mechanism for value-triggered conditional rules. An edge with this predicate states: within the structural context identified by [`_path`](_path.md), when [`_to`](_to.md) (the property) holds the value [`_from`](_from.md), apply the rules in [`_path_data`](_path_data.md).\n\nThe edge encodes four things in one record:\n\n- **What** — `_from`: the value that triggers the rule.\n- **Of which property** — `_to`: the property being tested.\n- **In which context** — `_path`: the structural context (schema root handle).\n- **With what consequences** — `_path_data[path_root]`: the conditional rule object.\n\nCreate a `_predicate_value-of` edge for a value whenever **the effective allowed property set differs from the base rule** in either direction — more properties required, fewer permitted, or both. Do not create an edge when the value changes nothing relative to the base rule.\n\nThe conditional rule object in `_path_data` must include [`_closed`](_closed.md):\n\n- **`_closed: true`**: replaces the base [`_recommended`](_recommended.md) entirely; the rule's `_recommended` becomes the complete optional-property whitelist for that value context.\n- **`_closed: false`**: accumulates — unions with the base `_recommended`; `_banned` entries conditionally remove properties.\n\n[`_required`](_required.md) always accumulates regardless of closure mode. The same value may produce different conditional rules in different structural contexts: a `_predicate_value-of` edge for [`_type_enum`](_type_enum.md) in [`_scalar`](_scalar.md) (path root `terms/_scalar`) is a separate edge from one in [`_dict_key`](_dict_key.md) (path root `terms/_dict_key`).\n\nThe rule graph is designed to be **self-sufficient**: both the validator and the UI derive behaviour entirely from the graph, with no out-of-graph knowledge about type semantics."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "When `_scalar_type` holds `_type_enum`, the `_enum_types` property becomes permitted:\n\n```json\n{\n\t\"_from\": \"terms/_type_enum\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": true,\n\t\t\t\"_required\": [\n\t\t\t\t{\n\t\t\t\t\t\"_selection_rules\": [{\"_selection_type\": \"_type_selection_mandatory\"}],\n\t\t\t\t\t\"_selection_descriptors\": [\"_scalar_type\"]\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"_recommended\": [\"_enum_types\", \"_unit\", \"_unit-name\", \"_unit-symbol\"]\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "structural",
+			"_gid": "_predicate_structural",
+			"_aid": ["structural"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Structural predicates"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sub-vocabulary of predicates reserved for expressing inter-variable dependency constraints in external dataset validation. Not used within the dictionary's own graph."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Structural predicates encode dependency relationships between dataset variables. They are reserved for the dataset validation layer — when a dataset is submitted, structural predicate edges determine which variables require, forbid, or recommend the presence of other variables in the same record.\n\nThree structural predicates are defined:\n\n- [`_predicate_required-by`](_predicate_required-by.md): when [`_to`](_to.md) is present in a record, [`_from`](_from.md) must also be present.\n- [`_predicate_banned-by`](_predicate_banned-by.md): when `_to` is present in a record, `_from` must be absent.\n- [`_predicate_recommended-by`](_predicate_recommended-by.md): when `_to` is present in a record, `_from` is expected but not mandatory.\n\nThese predicates are **not used within the dictionary's own graph**, which expresses all structural constraints through the [`_rule`](_rule.md) section and `_predicate_property-of` / `_predicate_value-of` edges with `_path_data` rule objects. Structural predicates are a future-phase mechanism, to be activated once the core dictionary is finalised.\n\nAs a sub-enumeration root, `_predicate_structural` may be used in [`_enum_types`](_enum_types.md) to constrain a property to structural predicates only."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_enum-root"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "required-by",
+			"_gid": "_predicate_required-by",
+			"_aid": ["required-by"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Required by"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source variable must be present in a dataset record whenever the destination variable is present. A dataset record containing `_to` but lacking `_from` must be rejected."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_required-by` expresses a mandatory co-occurrence constraint between two dataset variables. An edge with this predicate states: if [`_to`](_to.md) is present in a submitted dataset record, then [`_from`](_from.md) must also be present; if it is absent, the record is invalid.\n\nThis predicate is part of the [`_predicate_structural`](_predicate_structural.md) sub-vocabulary and is **reserved for the dataset validation layer**. It is not used within the core dictionary's own graph, which expresses schema constraints through [`_rule`](_rule.md) sections and conditional edge rules.\n\nTypical use case: a variable representing a derived measurement requires the source variable to also be recorded — for example, a BMI value requires both a body weight and a body height measurement in the same record."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "banned-by",
+			"_gid": "_predicate_banned-by",
+			"_aid": ["banned-by"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Banned by"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source variable must not be present in a dataset record whenever the destination variable is present. A dataset record containing both `_to` and `_from` must be rejected."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_banned-by` expresses a mutual exclusion constraint between two dataset variables. An edge with this predicate states: if [`_to`](_to.md) is present in a submitted dataset record, then [`_from`](_from.md) must be absent; a record containing both is invalid.\n\nThis predicate is part of the [`_predicate_structural`](_predicate_structural.md) sub-vocabulary and is **reserved for the dataset validation layer**. It is not used within the core dictionary's own graph.\n\nTypical use case: two variables that represent the same measurement in different units or protocols cannot both appear in the same record — the presence of one makes the other redundant or contradictory."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "recommended-by",
+			"_gid": "_predicate_recommended-by",
+			"_aid": ["recommended-by"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Recommended by"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source variable is recommended in a dataset record whenever the destination variable is present. A record containing `_to` but lacking `_from` is flagged as incomplete but not rejected."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_recommended-by` expresses a soft co-occurrence expectation between two dataset variables. An edge with this predicate states: if `_to` is present in a submitted dataset record, then `_from` is expected but not mandatory — its absence generates a warning rather than a rejection.\n\nThis predicate is part of the [`_predicate_structural`](_predicate_structural.md) sub-vocabulary and is **reserved for the dataset validation layer**. It is not used within the core dictionary's own graph.\n\nTypical use case: a measurement variable is more meaningful when accompanied by a contextual variable — for example, a body temperature reading is more interpretable when the measurement site (oral, axillary, rectal) is also recorded."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "section",
+			"_gid": "_predicate_section",
+			"_aid": ["section"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Section predicates"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sub-vocabulary of predicates used to group enumeration elements under display-only section headers. Section edges are skipped during validation traversal but used to render collapsible groups during display."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The section sub-vocabulary contains one predicate: [`_predicate_section-of`](_predicate_section-of.md). Section edges do not carry semantic meaning — they are ignored during validation and element lookup. Their sole purpose is to provide display grouping: when rendering a controlled vocabulary as a tree or a picker, section nodes serve as collapsible group headers.\n\nNote the contrast with hierarchical enumerations where intermediate nodes are also valid selectable values (linked by `_predicate_enum-of`): in that pattern, both the group node and its members are valid choices. In a section-based pattern, only the leaf elements are valid choices; the section node is a display artefact.\n\nAs a sub-enumeration root, `_predicate_section` may be used in [`_enum_types`](_enum_types.md) to constrain a property to section predicates only."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_enum-root"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "section-of",
+			"_gid": "_predicate_section-of",
+			"_aid": ["section-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Section of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source node is a display-only section (grouping header) within the destination graph. The source node and this edge are skipped during validation traversal; during display they serve as collapsible group headers for the elements nested below."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_section-of` marks a term as a section node within a controlled vocabulary graph. An edge with this predicate states that [`_from`](_from.md) is a grouping header within the vocabulary rooted at (or traversable from) [`_to`](_to.md).\n\nDuring **validation traversal** (element lookup, membership testing), section edges and section nodes are completely ignored. Only [`_predicate_enum-of`](_predicate_enum-of.md) edges are followed.\n\nDuring **display**, section nodes are rendered as collapsible group headers. Elements below a section node appear as its children in the tree or picker UI.\n\nSection nodes may themselves be nested: a section can be `_predicate_section-of` a parent section, enabling multi-level display groupings while the valid element set remains flat from a validation perspective."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Italy and France are valid elements grouped under a `EUROPE` section header:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/EUROPE\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/EUROPE\",\n\t\"_predicate\": \"_predicate_section-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\n`EUROPE` is skipped during validation; Italy and France are valid values. During display, they appear under a collapsible \"Europe\" heading."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "bridge",
+			"_gid": "_predicate_bridge",
+			"_aid": ["bridge"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Bridge predicates"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sub-vocabulary of predicates used to connect a custom vocabulary to elements from another vocabulary, enabling element reuse without duplicating edge documents."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The bridge sub-vocabulary contains one predicate: [`_predicate_bridge-of`](_predicate_bridge-of.md). Bridge edges allow custom vocabularies to share elements from an existing complete vocabulary without creating duplicate edge documents.\n\nThis mechanism is also used for **alias resolution**: an alias term carries no content of its own and is linked to its canonical term via bridge and enum-of edges, so that traversal through the alias graph always resolves to the canonical term.\n\nAs a sub-enumeration root, `_predicate_bridge` may be used in [`_enum_types`](_enum_types.md) to constrain a property to bridge predicates only."
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_enum-root"]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
+			"_lid": "bridge-of",
+			"_gid": "_predicate_bridge-of",
+			"_aid": ["bridge-of"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Bridge of"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The source node is a bridge connecting the destination vocabulary root to elements from another vocabulary. During traversal, the bridge node is skipped and the traversal continues into the source vocabulary's elements using the destination graph's `_path` filter."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_bridge-of` enables a vocabulary to include elements from a separate, pre-existing vocabulary without duplicating edge documents. An edge with this predicate states: [`_from`](_from.md) is a bridge node that, when encountered during traversal of [`_to`](_to.md), causes the traversal to switch into `_from`'s vocabulary and continue there.\n\n**How it works**: elements in the source vocabulary that should appear in the custom vocabulary have the custom vocabulary's root added to their [`_path`](_path.md) set. When traversing the custom vocabulary, the bridge edge is encountered first; the bridge node is skipped; then element edges already sharing the `_path` value are found and returned.\n\n**Alias resolution**: the same mechanism implements aliases. An alias term (e.g. `ISO_639_1_en`) is linked to its canonical graph root with `_predicate_bridge-of`, marking it as a bridge. The canonical term (e.g. `ISO_639_3_eng`) is then linked to the alias term with [`_predicate_enum-of`](_predicate_enum-of.md) within the alias graph. Traversal through the alias graph resolves to the canonical term; looking up the bridge term's `_predicate_enum-of` edges directly yields the canonical term in one step.\n\nBridge nodes are always skipped during traversal — they are never returned as valid values."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Italy included in a custom `MyCountries` vocabulary via a bridge to `ISO_3166_3`:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n},\n{\n\t\"_from\": \"terms/ISO_3166_3\",\n\t\"_predicate\": \"_predicate_bridge-of\",\n\t\"_to\": \"terms/MyCountries\",\n\t\"_path\": [\"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_domn": {
+			"_term_type": ["_type_term_predicate"]
+		}
+	}
+]

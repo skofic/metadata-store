@@ -37,10 +37,56 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- **Next task**: Begin creating JSON term files in `data/core/` from the completed TSV tables. One JSON file per TSV table. Old files have been moved to `data/core/old/` and `terms/old/`.
+- **All TSV tables completed.** Next task: review the complete set of JSON files for consistency, then proceed to Phase 3 (Standards) or Phase 5 (Edge relationships).
+- Completed TSV → JSON: `_term.tsv`, `_code.tsv`, `_info.tsv`, `_data.tsv` (40 terms), `_type.tsv` (55 terms), `_rule.tsv` (15 terms), `_predicates.tsv` (13 terms).
+- Completed: `_term.tsv` → `data/core/_term.json`; `_code.tsv` → `data/core/_code.json`; `_info.tsv` → `data/core/_info.json`; `_data.tsv` → `data/core/_data.json` (40 terms); `_type.tsv` → `data/core/_type.json` (55 terms).
 - **Open design questions** (still to be resolved):
   1. **Modification cost**: removing or renaming a term that acts as a property in a graph-based schema requires updating all edges referencing it and potentially cascading changes through dependent schemas. The cost and tooling implications of this need to be analysed before committing to the graph-based approach.
   2. **Conflict detection**: a concrete starting point exists (checking `_path_data` conditional rules against `_rule._banned`), but a general mechanism for detecting and reporting all contradictory rules needs to be designed.
+  3. **UI rendering hints (`_display` section)**: `_rule` is about data validity, not presentation. A dedicated `_display` section should carry explicit rendering hints so UI developers do not need to reverse-engineer widget choices from schema semantics. The `_rule` selection structures are a useful secondary signal (e.g. `_type_selection_optional` + `_max-items: 1` on seven shapes implies a popup with a `<none>` option), but they are not a substitute for explicit guidance. The `_display` section should cover at minimum: widget type (popup, radio group, checkbox list, text input, numeric stepper, etc.), display order within a form group, field grouping, conditional visibility (parallel to `_predicate_value-of` but for display), and read-only hints (mirroring `_locked`/`_immutable`). When both are present, `_display` takes precedence; `_rule` semantics serve as a machine-readable fallback. This is a future phase — design and term authoring deferred until the core dictionary structure is stable.
+
+### Recent session (2026-03-30, continued)
+- Created `data/core/_predicates.json` from `_predicates.tsv`: 13 terms with term cards in `terms/`.
+- Terms: four grouping/sub-root nodes (`_predicate_functional`, `_predicate_structural`, `_predicate_section`, `_predicate_bridge`) — each marked `_type_term_enum-root`; nine predicate terms marked `_type_term_predicate`.
+- Structural predicates (`_predicate_required-by`, `_predicate_banned-by`, `_predicate_recommended-by`) documented as **reserved for future dataset validation use** — not used in the core dictionary's own graph, which uses `_path_data` + `_rule` for all schema constraints.
+- Updated `term-index.json` with all 13 new entries (previously only 6 predicates were listed).
+- All seven TSV tables are now converted to JSON. Phase 2 core terms are complete.
+
+### Recent session (2026-03-30)
+- Created `data/core/_rule.json` from `_rule.tsv`: 15 terms with term cards in `terms/`.
+- Terms: `_rule`, `_required`, `_recommended`, `_banned`, `_computed`, `_immutable`, `_locked`, `_default-value`, `_closed` (top-level descriptors); `_selection` (namespace); `_rule_selector` (sub-term of `_rule`, DESCRIPTOR + OBJECT DEFINITION); `_selection_rules`, `_selection_rule`, `_selection_type`, `_selection_descriptors` (sub-terms of `_selection`).
+- Key design points: `_closed` is always required (mandatory `_selection_type`); `_required` is an array of `_rule_selector` objects; `_selection_descriptors` uses `_nested` shape with `_comparable_type: "_type_key_term_descriptor"` leaf type; `_default-value` uses `_dict` with `_dict_key_type: "_type_key_term_descriptor"` and open `_dict_value`.
+- Updated `term-index.json`: removed stale `_selection_object` entry; added `_rule`, `_selection`, `_rule_selector`, `_selection_rule`; fixed `containers.json` pointers (`_term`, `_edge`, `_prop`, `_domn`, `_term_type` → `_term.json`; `_code` → `_code.json`; `_info` → `_info.json`; `_rule` → `_rule.json`); fixed `database.json` pointers (`_id`, `_key`, `_rev`, `_from`, `_to` → `_term.json`); fixed `_predicate`, `_path`, `_path_data` → `_term.json`.
+
+### Recent session (2026-03-29, continued 4)
+- Fixed all unlinked `` `_gid` `` references in `_description` fields across all current (non-`old/`) files.
+- Rule applied: first occurrence of `` `_gid` `` as backtick text in each `_description` is linked as `` [`_gid`](_gid.md) ``; second-or-later occurrences, `_definition` fields, `_examples` fields, and the `_gid` term's own description are left as plain backtick text.
+- Files updated: `data/core/_code.json`, `data/core/_term.json`, `data/core/_data.json`; term cards `_scalar.md`, `_code.md`, `_predicate.md`, `_key.md`. All term cards for `_tuple_type`, `_dict`, `_typedef`, `_enum_types`, `_object_types`, `_unit`, `_unit-name` already had the link; their JSON counterparts were updated to match.
+
+### Recent session (2026-03-29, continued 3)
+- Created `data/core/_type.json` from `_type.tsv`: 55 terms with term cards in `terms/`.
+- Terms cover: `_type` namespace; `_type_data` / `_type_data_comparable` / `_type_data_dict_key` enumeration roots and their sub-sets; all scalar data type enum items (`_type_boolean`, `_type_number*`, `_type_string*`, `_type_regexp`, `_type_key*`, `_type_handle`, `_type_enum`, `_type_struct`, `_type_object*`, `_type_timestamp`); section/grouping nodes (`_type_string_formatted`, `_type_string_internet`, `_type_string_timestamp`, `_type_string_encoded`, `_type_data_dict`); `_type_term` enumeration root and all 8 term-type values; `_type_selection` root and 2 selection-type values.
+- Corrected `_rule` for `_elements`, `_range`, and `_range_string`: `_elements` now uses `_required` with `_type_selection_optional` + `_min-items: 1`; `_range` and `_range_string` now use nested `_selection_descriptors` with two rules (`_type_selection_mandatory` max-1 for mutual exclusion + `_type_selection_optional` min-1 for at-least-one-bound). Updated definitions and descriptions to match.
+- Added two missing entries to `term-index.json`: `_type` and `_type_data_dict`.
+
+### Recent session (2026-03-29, continued 2)
+- Added Markdown links to all unlinked term references in `_description` sections of 13 newly created term cards: `_enum`, `_enum_types`, `_object`, `_object_types`, `_unit`, `_unit-name`, `_decimals`, `_tuple`, `_tuple_type`, `_dict`, `_dict_key`, `_dict_key_type`, `_typedef`.
+- Rule applied: only the first occurrence of each term reference in a `_description` is linked; self-references and second-or-later occurrences remain as plain backtick text.
+
+### Recent session (2026-03-29, continued)
+- Created `data/core/_info.json` from `_info.tsv`: 13 terms (`_info`, `_info_string`, `_info_string_formatted`, `_title`, `_definition`, `_description`, `_methods`, `_usage`, `_examples`, `_citation`, `_provider`, `_url`, `_notes`), with term cards in `terms/`.
+- `_typedef` confirmed as the property name for typedef references in `_data` (renamed from `_type` in the March 2026 redesign).
+- `_info_string` and `_info_string_formatted` have no `_rule` section: `_rule` applies only to `_type_object` schemas; dict typedef terms are fully defined by their `_data._dict` structure.
+- `_usage` is a new term (not in old file): formatted text, same structure as `_description`.
+
+### Recent session (2026-03-29)
+- Created `data/core/_term.json` from `_term.tsv`: 13 terms (`_term`, `_edge`, `_id`, `_key`, `_rev`, `_from`, `_to`, `_predicate`, `_path`, `_path_data`, `_prop`, `_domn`, `_term_type`), with term cards in `terms/`.
+- Created `data/core/_code.json` from `_code.tsv`: 10 terms (`_code`, `_nid`, `_lid`, `_gid`, `_aid`, `_pid`, `_name`, `_symbol`, `_emoji`, `_regexp`), with term cards in `terms/`.
+- All terms use updated naming conventions: `_scalar_type`, `_comparable`/`_comparable_type`, `_object_types`, `_enum_types`, `_type_regexp`, new `_required` selection structure.
+- `_term_type` description uses labelled links `[**Alias**](_type_term_alias.md)`, etc.
+- `_regexp` data type confirmed as `_type_regexp`.
+- `_gid` data type confirmed as `_type_string` (with regexp), not `_type_key_term`.
+- `_nid` data type confirmed as `_type_key_term` (empty-string special case documented in description).
 
 ### Recent session (2026-03-28)
 - Major namespace redesign completed across all TSV tables. Key changes:
@@ -348,9 +394,9 @@ The top level of the data description defines the **shape** of the data. At most
 | `_set`    | An unordered list of *unique* values of the same type. |
 | `_tuple`  | An ordered list of values whose data type is defined by position. |
 | `_dict`   | A key/value dictionary. The key is defined by a scalar string variant; the value is recursively defined by a `_data` section. |
-| `_type`   | A reference to a **typedef term** by `_gid`. The shape is resolved by looking up the referenced term's `_data` section. Mutually exclusive with all five inline shapes. |
+| `_typedef` | A reference to a **typedef term** by `_gid`. The shape is resolved by looking up the referenced term's `_data` section. Mutually exclusive with all six inline shapes. |
 
-The five inline shapes (`_scalar` through `_dict`) are described in detail in the subsections below. `_type` is described in the [Typedef mechanism](#typedef-mechanism) subsection.
+The six inline shapes (`_scalar` through `_dict`) are described in detail in the subsections below. `_typedef` is described in the [Typedef mechanism](#typedef-mechanism) subsection.
 
 #### `_scalar`
 
@@ -377,42 +423,44 @@ The five inline shapes (`_scalar` through `_dict`) are described in detail in th
 
 `_type_scalar` is required whenever `_scalar` is not empty. It defines the scalar data type. Number, string, and key types form hierarchies: `_type_number` accepts any number; `_type_number_float` and `_type_number_integer` are more specific. `_type_string` accepts any UTF-8 string; the `_type_string_*` variants declare a specific encoding or format. `_type_key` accepts any term key; the `_type_key_*` variants constrain the referenced term role.
 
-| Value                       | Description |
-|-----------------------------|-------------|
-| `_type_boolean`             | A true/false boolean value. |
-| `_type_number`              | A number; accepts both integer and floating-point values. `_decimals` is permitted. |
-| `_type_number_float`        | A floating-point number (must be stored as float). `_decimals` is permitted. |
-| `_type_number_integer`      | An integer — no decimal part. `_decimals` is not permitted. |
-| `_type_string`              | A generic UTF-8 string. `_regexp` is permitted. |
-| `_type_string_Markdown`     | Markdown text. |
-| `_type_string_HTML`         | HTML text. |
-| `_type_string_URI`          | Uniform Resource Identifier. |
-| `_type_string_HEX`          | Hexadecimal value. `_valid-range_string` and `_normal-range_string` are permitted. |
-| `_type_string_SVG`          | SVG image. |
-| `_type_string_email`        | Email address. |
-| `_type_string_date`         | Date (JSON Schema `date` format). `_valid-range_string` and `_normal-range_string` are permitted. |
-| `_type_string_time`         | Time (JSON Schema `time` format). `_valid-range_string` and `_normal-range_string` are permitted. |
-| `_type_string_date-time`    | Date-time (JSON Schema `date-time` format). `_valid-range_string` and `_normal-range_string` are permitted. |
-| `_type_string_YMD`          | Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). `_valid-range_string` and `_normal-range_string` are permitted. |
-| `_type_string_Hostname`     | Internet hostname. |
-| `_type_string_IPv4`         | IPv4 address. |
-| `_type_string_IPv6`         | IPv6 address. |
-| `_type_string_LaTeX`        | LaTeX expression. LaTeX is a superset of UTF-8: simple symbols use plain Unicode; complex expressions use LaTeX syntax. Rendered with KaTeX. |
-| `_type_string_regexp`       | Regular expression. The stored value is itself a regexp; the editing interface provides a testing facility. |
-| `_type_key`                 | A string representing the `_key` of a document in any collection. |
-| `_type_key_term`            | A key that must reference any term. |
-| `_type_key_term_enum`       | A key that must reference an enumeration root — the root of a controlled vocabulary graph. |
-| `_type_key_term_enum_element` | A key that must reference an enumeration element — a valid choice within a controlled vocabulary. |
-| `_type_key_term_descriptor` | A key that must reference a descriptor (has a `_data` section). |
-| `_type_key_term_object`     | A key that must reference an object definition term (has a `_rule` section). |
-| `_type_key_term_predicate`  | A key that must reference a predicate term. |
-| `_type_key_term_typedef`    | A key that must reference a typedef term (carries `_kind_term_typedef`). Used by the `_type` shape property. |
-| `_type_handle`              | A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document. |
-| `_type_enum`                | A string representing the `_gid` of an enumeration element. |
-| `_type_object`              | An object whose properties must correspond to descriptor term `_gid`s (may be empty). |
-| `_type_struct`              | An object with indeterminate properties (may be empty). |
-| `_type_timestamp`           | An integer representing a Unix timestamp. |
-| `_type_object_GeoJSON`      | A GeoJSON object (may **not** be empty). |
+- `_type_boolean` — A true/false boolean value.
+- `_type_number` — A number; accepts both integer and floating-point values. `_decimals` permitted.
+  - `_type_number_float` — A floating-point number (must be stored as float). `_decimals` permitted.
+  - `_type_number_integer` — An integer — no decimal part. `_decimals` not permitted.
+- `_type_string` — A generic UTF-8 string. `_regexp` permitted.
+  - *`_type_string_formatted`* *(section — not a valid `_scalar_type` value)*
+    - `_type_string_HTML` — HTML text.
+    - `_type_string_Markdown` — Markdown text.
+    - `_type_string_LaTeX` — LaTeX expression; rendered with KaTeX.
+    - `_type_string_SVG` — SVG image.
+  - *`_type_string_internet`* *(section — not a valid `_scalar_type` value)*
+    - `_type_string_URI` — Uniform Resource Identifier.
+    - `_type_string_Email` — Email address.
+    - `_type_string_Hostname` — Internet hostname.
+    - `_type_string_IPv4` — IPv4 address.
+    - `_type_string_IPv6` — IPv6 address.
+  - *`_type_string_timestamp`* *(section — not a valid `_scalar_type` value)*
+    - `_type_string_YMD` — Partial or full date in YYYYMMDD format (YYYY, YYYYMM, or YYYYMMDD). Range permitted.
+    - `_type_string_date` — Date (JSON Schema `date` format). Range permitted.
+    - `_type_string_time` — Time (JSON Schema `time` format). Range permitted.
+    - `_type_string_date-time` — Date-time (JSON Schema `date-time` format). Range permitted.
+  - *`_type_string_encoded`* *(section — not a valid `_scalar_type` value)*
+    - `_type_string_HEX` — Hexadecimal value. Unit and range permitted.
+- `_type_regexp` — A regular expression; the stored value is itself a pattern.
+- `_type_key` — A string representing the `_key` of a document in any collection.
+  - `_type_key_term` — A key that must reference any term.
+  - `_type_key_term_enum-root` — A key that must reference an enumeration root — the root of a controlled vocabulary graph.
+  - `_type_key_term_enum-item` — A key that must reference an enumeration element — a valid choice within a controlled vocabulary.
+  - `_type_key_term_descriptor` — A key that must reference a descriptor (has a `_data` section).
+  - `_type_key_term_object` — A key that must reference an object definition term (has a `_rule` section).
+  - `_type_key_term_predicate` — A key that must reference a predicate term.
+  - `_type_key_term_typedef` — A key that must reference a typedef term (carries `_type_term_typedef` in `_term_type`).
+- `_type_handle` — A string containing the `_id` (`<collection>/<_key>`) of an ArangoDB document.
+- `_type_enum` — A string representing the `_gid` of an enumeration element.
+- `_type_object` — An object whose properties must correspond to descriptor term `_gid`s (may be empty).
+- `_type_struct` — An object with indeterminate properties (may be empty).
+- `_type_timestamp` — An integer representing a Unix timestamp.
+- `_type_object_GeoJSON` — A GeoJSON object (may **not** be empty).
 
 ---
 
@@ -750,47 +798,47 @@ Array elements are key/value dictionary structures. The `_dict` property is desc
 
 #### `_set`
 
-`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive. Unlike `_array`, `_set` cannot be empty: `_scalar_set` is always required, because without a declared element type there is no basis for enforcing uniqueness.
+`_set` is an object property that defines and documents an array of **unique** elements of the same comparable type. It is structurally similar to `_array`, but because uniqueness requires element comparability, the element type is restricted to comparable scalars and `_set` is **not** recursive. Unlike `_array`, `_set` cannot be empty: `_comparable` is always required, because without a declared element type there is no basis for enforcing uniqueness.
 
 ##### `_set` properties
 
 | Property      | Required | Description |
 |---------------|----------|-------------|
-| `_scalar_set` | Yes      | Defines the data type of the set elements. |
+| `_comparable` | Yes      | Defines the data type of the set elements. |
 | `_elements`   | No       | Minimum and maximum number of elements in the set. Same structure as in `_array`. |
 
-##### `_scalar_set`
+##### `_comparable`
 
-`_scalar_set` functions identically to `_scalar`, with one difference: the data type property is named **`_type_scalar_set`** instead of `_type_scalar`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, and `_type_object_GeoJSON`, which are not comparable).
+`_comparable` functions identically to `_scalar`, with one difference: the data type property is named **`_comparable_type`** instead of `_scalar_type`, and its value is restricted to **comparable types** (excluding `_type_struct`, `_type_object`, `_type_object_GeoJSON`, and the `_type_string_formatted` section types, which are not comparable).
 
-###### `_scalar_set` properties
+###### `_comparable` properties
 
-`_scalar_set` follows the same rules as `_scalar`, with `_type_scalar_set` in place of `_type_scalar`. The `_kind_enum` and `_kind_object` companion properties apply where relevant. The range, unit, `_regexp`, and `_decimals` properties are identical.
+`_comparable` follows the same rules as `_scalar`, with `_comparable_type` in place of `_scalar_type`. The `_enum_types` and `_object_types` companion properties apply where relevant. The range, unit, `_regexp`, and `_decimals` properties are identical.
 
 | Property               | Required | Description |
 |------------------------|----------|-------------|
-| `_type_scalar_set`     | Yes      | The data type of the set element. |
-| `_kind_enum`           | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
+| `_comparable_type`     | Yes      | The data type of the set element. |
+| `_enum_types`          | No       | Constrains the controlled vocabulary; relevant to `_type_enum`. |
 | `_unit`                | No       | Data unit, expressed as an enumeration element. |
 | `_unit-name`           | No       | Multilingual unit name (keyed by language `_gid`), used when `_unit` is absent. |
 | `_unit-symbol`         | No       | Unit symbol, used when `_unit` is absent. |
 | `_regexp`              | No       | Regular expression; relevant to `_type_string` only. |
 | `_decimals`            | No       | Number of decimals to display; relevant to `_type_number` and `_type_number_float` only. |
-| `_valid-range`         | No       | Valid numeric range for the value. |
-| `_valid-range_string`  | No       | Valid string range for the value. |
-| `_normal-range`        | No       | Normal numeric range for the value. |
-| `_normal-range_string` | No       | Normal string range for the value. |
+| `_range_valid`         | No       | Valid numeric range for the value. |
+| `_range_valid_string`  | No       | Valid string range for the value. |
+| `_range_normal`        | No       | Normal numeric range for the value. |
+| `_range_normal_string` | No       | Normal string range for the value. |
 
-###### `_type_scalar_set` enumeration
+###### `_comparable_type` enumeration
 
-`_type_scalar_set` is a bridge-graph subset of `_type_scalar`. It accepts all `_type_scalar` values **except**:
+`_comparable_type` is a bridge-graph subset of `_scalar_type`. It accepts all `_scalar_type` values **except**:
 
-- `_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_string_regexp` — display/markup strings not meaningful as set keys.
+- All types in the `_type_string_formatted` section (`_type_string_HTML`, `_type_string_Markdown`, `_type_string_LaTeX`, `_type_string_SVG`) — display/markup strings not meaningful as comparable values.
 - `_type_object`, `_type_struct`, `_type_object_GeoJSON` — non-comparable; set uniqueness cannot be enforced.
 
-Accepted: `_type_boolean`, all `_type_number*` types, all remaining `_type_string*` types (generic, URI, HEX, email, date, time, date-time, YMD, Hostname, IPv4, IPv6), all `_type_key*` types, `_type_handle`, `_type_enum`, and `_type_timestamp`.
+Accepted: `_type_boolean`, all `_type_number*` types, `_type_string` and all `_type_string_internet*`, `_type_string_timestamp*`, `_type_string_encoded*` subtypes, `_type_regexp`, all `_type_key*` types, `_type_handle`, `_type_enum`, and `_type_timestamp`.
 
-The sub-properties of each range object (`_valid-range`, `_normal-range`, `_valid-range_string`, `_normal-range_string`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
+The sub-properties of each range object (`_range_valid`, `_range_normal`, `_range_valid_string`, `_range_normal_string`) are documented in the [Range properties](#range-properties) subsection of `_scalar`.
 
 ```json
 {
@@ -799,9 +847,9 @@ The sub-properties of each range object (`_valid-range`, `_normal-range`, `_vali
             "_min-items": 1,
             "_max-items": 5
         },
-        "_scalar_set": {
-            "_type_scalar_set": "_type_enum",
-            "_kind_enum": ["ISO_639_3"]
+        "_comparable": {
+            "_comparable_type": "_type_enum",
+            "_enum_types": ["ISO_639_3"]
         }
     }
 }
@@ -900,31 +948,32 @@ Optional companions are not listed in the base `_rule`. They are activated by va
 
 ###### `_dict_key_type` enumeration
 
-`_dict_key_type` is a bridge-graph subset of `_type_scalar_set`, further restricted to string-compatible types that can serve as valid object property names. Numbers and `_type_timestamp` are excluded. `_dict_key_type` ⊂ `_type_scalar_set` ⊂ `_type_scalar`.
+`_dict_key_type` draws from the `_type_data_dict_key` enumeration — a bridge-graph subset of `_type_data_comparable`, further restricted to string-compatible types that can serve as valid object property names. Numbers, `_type_boolean`, `_type_timestamp`, `_type_regexp`, and the non-comparable object types are excluded.
 
-| Value                         | Description |
-|-------------------------------|-------------|
-| `_type_string`                | A generic UTF-8 string. |
-| `_type_string_URI`            | Uniform Resource Identifier. |
-| `_type_string_HEX`            | Hexadecimal string. |
-| `_type_string_email`          | Email address. |
-| `_type_string_date`           | Date (`YYYY-MM-DD`). |
-| `_type_string_time`           | Time (`HH:MM:SS`). |
-| `_type_string_date-time`      | Date-time (`YYYY-MM-DDTHH:MM:SS`). |
-| `_type_string_YMD`            | Partial/full date in YYYYMMDD format. |
-| `_type_string_Hostname`       | Internet hostname. |
-| `_type_string_IPv4`           | IPv4 address. |
-| `_type_string_IPv6`           | IPv6 address. |
-| `_type_key`                   | A string representing the `_key` of a document. |
-| `_type_key_term`              | A key that must reference any term. |
-| `_type_key_term_enum`         | A key that must reference an enumeration root. |
-| `_type_key_term_enum_element` | A key that must reference an enumeration element. |
-| `_type_key_term_descriptor`   | A key that must reference a descriptor. |
-| `_type_key_term_object`       | A key that must reference an object definition term. |
-| `_type_key_term_predicate`    | A key that must reference a predicate term. |
-| `_type_key_term_typedef`      | A key that must reference a typedef term. |
-| `_type_handle`                | A string representing the `_id` of an ArangoDB document. |
-| `_type_enum`                  | A string representing the `_gid` of an enumeration element. |
+- `_type_string` — A generic UTF-8 string.
+  - *`_type_string_internet`* *(section)*
+    - `_type_string_URI` — Uniform Resource Identifier.
+    - `_type_string_Email` — Email address.
+    - `_type_string_Hostname` — Internet hostname.
+    - `_type_string_IPv4` — IPv4 address.
+    - `_type_string_IPv6` — IPv6 address.
+  - *`_type_string_timestamp`* *(section)*
+    - `_type_string_YMD` — Partial/full date in YYYYMMDD format.
+    - `_type_string_date` — Date (`YYYY-MM-DD`).
+    - `_type_string_time` — Time (`HH:MM:SS`).
+    - `_type_string_date-time` — Date-time (`YYYY-MM-DDTHH:MM:SS`).
+  - *`_type_string_encoded`* *(section)*
+    - `_type_string_HEX` — Hexadecimal string.
+- `_type_key` — A string representing the `_key` of a document.
+  - `_type_key_term` — A key that must reference any term.
+  - `_type_key_term_enum-root` — A key that must reference an enumeration root.
+  - `_type_key_term_enum-item` — A key that must reference an enumeration element.
+  - `_type_key_term_descriptor` — A key that must reference a descriptor.
+  - `_type_key_term_object` — A key that must reference an object definition term.
+  - `_type_key_term_predicate` — A key that must reference a predicate term.
+  - `_type_key_term_typedef` — A key that must reference a typedef term.
+- `_type_handle` — A string representing the `_id` of an ArangoDB document.
+- `_type_enum` — A string representing the `_gid` of an enumeration element.
 
 The semantics of each type are identical to those described in the [`_scalar`](#_scalar) section.
 
@@ -954,14 +1003,14 @@ The example above describes the multilingual structure used throughout the `_inf
 
 #### Typedef mechanism
 
-A **typedef** is a reusable data shape definition. Any term can act as a typedef by carrying `_kind_term_typedef` in its `_domn._kind_term` set. Other descriptors reference it by placing the typedef term's `_gid` in the `_type` property of their `_data` section.
+A **typedef** is a reusable data shape definition. Any term can act as a typedef by carrying `_type_term_typedef` in its `_term_type` property. Other descriptors reference it by placing the typedef term's `_gid` in the `_typedef` property of their `_data` section.
 
 **Rules:**
 
-- `_type` is mutually exclusive with all five inline shape properties. A `_data` section either has one inline shape or a `_type` reference — never both.
-- The typedef term must define its shape **inline** using one of the five concrete shape properties (`_scalar`, `_array`, `_set`, `_tuple`, `_dict`). It must not itself use `_type` — chaining is prohibited.
-- `_type` holds a **single `_gid`** (not a set). Only one typedef may be referenced per descriptor.
-- A descriptor whose `_data` uses `_type` must **not** carry a `_rule` section. Schema constraints belong on the typedef term itself (which may carry both `_data` and `_rule`).
+- `_typedef` is mutually exclusive with all six inline shape properties. A `_data` section either has one inline shape or a `_typedef` reference — never both.
+- The typedef term must define its shape **inline** using one of the six concrete shape properties (`_scalar`, `_array`, `_nested`, `_set`, `_tuple`, `_dict`). It must not itself use `_typedef` — chaining is prohibited.
+- `_typedef` holds a **single `_gid`** (not a set). Only one typedef may be referenced per descriptor.
+- A descriptor whose `_data` uses `_typedef` must **not** carry a `_rule` section. Schema constraints belong on the typedef term itself (which may carry both `_data` and `_rule`).
 - Validation performs **one lookup**: find the typedef term, read its `_data` section, apply it as if written inline.
 
 **Typedef term structure:**
@@ -969,19 +1018,19 @@ A **typedef** is a reusable data shape definition. Any term can act as a typedef
 ```json
 {
     "_code": {
-        "_nid": "",
-        "_lid": "multilingual_string",
+        "_nid": "_info",
+        "_lid": "string",
         "_gid": "_info_string",
-        "_aid": ["multilingual_string"]
+        "_aid": ["string"]
     },
     "_data": {
         "_dict": {
             "_dict_key": {"_dict_key_type": "_type_key_term"},
-            "_dict_value": {"_scalar": {"_type_scalar": "_type_string"}}
+            "_dict_value": {"_scalar": {"_scalar_type": "_type_string"}}
         }
     },
     "_domn": {
-        "_kind_term": ["_kind_term_typedef"]
+        "_term_type": ["_type_term_typedef"]
     }
 }
 ```
@@ -991,7 +1040,7 @@ A **typedef** is a reusable data shape definition. Any term can act as a typedef
 ```json
 {
     "_data": {
-        "_type": "_info_string"
+        "_typedef": "_info_string"
     }
 }
 ```

@@ -1,0 +1,131 @@
+In the list I will append an asterisk (*) next to the identifier of edge sections: these are not valid options, only groups of options. Note that an option can also have children which are options.
+
+_type_data: The scalar data type (_scalar_type).
+	_type_number
+		_type_number_float
+		_type_number_integer
+	_type_string
+		_type_string_formatted *
+			_type_string_HTML
+			_type_string_Markdown
+			_type_string_LaTeX
+			_type_string_SVG
+		_type_string_internet *
+			_type_string_URI
+			_type_string_Email
+			_type_string_Hostname
+			_type_string_IPv4
+			_type_string_IPv6
+		_type_string_timestamp *
+			_type_string_YMD
+			_type_string_date
+			_type_string_time
+			_type_string_date-time
+		_type_string_encoded *
+			_type_string_HEX
+	_type_key
+		_type_key_term
+		_type_key_term_enum-root
+		_type_key_term_enum-item
+		_type_key_term_descriptor
+		_type_key_term_object
+		_type_key_term_predicate
+		_type_key_term_typedef
+	_type_handle
+	_type_enum
+	_type_struct
+	_type_object
+	_type_object_GeoJSON
+	_type_regexp
+	_type_boolean
+	_type_timestamp
+
+_type_data_comparable: The comparable data type (_comparable_type).
+	_type_number
+		_type_number_float
+		_type_number_integer
+	_type_string
+		_type_string_internet *
+			_type_string_URI
+			_type_string_Email
+			_type_string_Hostname
+			_type_string_IPv4
+			_type_string_IPv6
+		_type_string_timestamp *
+			_type_string_YMD
+			_type_string_date
+			_type_string_time
+			_type_string_date-time
+		_type_string_encoded *
+			_type_string_HEX
+	_type_key
+		_type_key_term
+		_type_key_term_enum-root
+		_type_key_term_enum-item
+		_type_key_term_descriptor
+		_type_key_term_object
+		_type_key_term_predicate
+		_type_key_term_typedef
+	_type_handle
+	_type_enum
+	_type_regexp
+	_type_boolean
+	_type_timestamp
+
+_type_data_dict_key: Data type for dictionary keys (_dict_key_type).
+	_type_string
+		_type_string_internet *
+			_type_string_URI
+			_type_string_Email
+			_type_string_Hostname
+			_type_string_IPv4
+			_type_string_IPv6
+		_type_string_timestamp *
+			_type_string_YMD
+			_type_string_date
+			_type_string_time
+			_type_string_date-time
+		_type_string_encoded *
+			_type_string_HEX
+	_type_key
+		_type_key_term
+		_type_key_term_enum-root
+		_type_key_term_enum-item
+		_type_key_term_descriptor
+		_type_key_term_object
+		_type_key_term_predicate
+		_type_key_term_typedef
+	_type_handle
+	_type_enum
+
+
+_type_term: Data type for term roles (_term_type).
+	_type_term_alias
+	_type_term_predicate
+	_type_term_namespace
+	_type_term_descriptor
+	_type_term_enum-root
+	_type_term_enum-item
+	_type_term_object
+	_type_term_typedef
+
+
+_type_selection: Selection type (_selection_type).
+	_type_selection_mandatory
+	_type_selection_optional
+
+
+_predicate: Enumeration of predicates (_predicate):
+	_predicate_functional *
+		_predicate_enum-of
+		_predicate_property-of
+		_predicate_field-of
+		_predicate_value-of
+	_predicate_structural *
+		_predicate_required-by
+		_predicate_banned-by
+		_predicate_recommended-by
+	_predicate_section *
+		_predicate_section-of
+	_predicate_bridge *
+		_predicate_bridge-of
