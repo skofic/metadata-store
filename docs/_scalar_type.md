@@ -14,7 +14,7 @@ The data type of a scalar value. Required whenever the `_scalar` section is not 
 
 Two subset enumerations are derived from the full type vocabulary via bridge graphs:
 
-- [`_comparable_type`](_comparable_type.md) — comparable types usable as elements in [`_set`](_set.md) and [`_nested`](_nested.md). Excludes display/markup strings (`_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`, `_type_regexp`) and non-comparable objects (`_type_object`, `_type_struct`, `_type_object_GeoJSON`).
+- [`_comparable_type`](_comparable_type.md) — comparable types usable as elements in [`_set`](_set.md) and [`_nested`](_nested.md). Excludes display/markup strings (`_type_string_Markdown`, `_type_string_HTML`, `_type_string_SVG`, `_type_string_LaTeX`) and non-comparable objects (`_type_object`, `_type_struct`, `_type_object_GeoJSON`).
 - [`_dict_key_type`](_dict_key_type.md) — string-compatible types usable as dictionary keys. A further subset of [`_comparable_type`](_comparable_type.md), excluding all number types and `_type_timestamp`.
 
 ---

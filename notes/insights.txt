@@ -1,0 +1,122 @@
+Just an idea I would like to throw at you.
+
+Edge rules:
+
+Edge rules are a powerful construct that allows shaping an environment that depends on the value a specific variable is set. I just thought of something that could push this mechanism a lot further.
+
+I don't like to have to create a term for scalar values, another for dictionary keys: why can't I call the variable _type? Depending on where it is located, it could change its meaning. For instance, _type under _scalar could take its enumeration options from one set of choices, while when it is under another property it could take a different set of options. The namespace would indicate the intent and the position would determine the specific role.
+
+What do you think?
+
+
+
+⏺ The idea is appealing at the surface — _type is cleaner to write and read — but it runs into a structural constraint that's baked into
+  this dictionary's design.
+                                                                                                                                           
+  The invariant it breaks: property keys in _type_object documents are expected to be term _gids. That invariant is what makes the schema  
+  self-describing and navigable. If you write "_type": "_type_number_float" inside a _scalar object, the key _type has to resolve to a term
+   — but which one? _scalar_type and _comparable_type are different terms with different _data sections and different allowed value sets.  
+  You'd need a contextual lookup ("this _type is inside _scalar, so it means _scalar_type") that adds a layer of indirection the validator
+  doesn't currently have.
+
+  The GID collision: _type is already taken — it's the root namespace term for the entire type enumeration (_nid: "", _lid: "type", _gid:  
+  "_type"). Using it also as a property descriptor creates a collision with its own namespace.
+                                                                                                                                           
+  The subtle irony: the current naming already does exactly what you're describing. _scalar_type has _nid: "_scalar" and _lid: "type" — so 
+  the namespace already encodes "the type property within the _scalar context." The human-readable JSON key is longer, but the conceptual
+  model is identical to your proposal.                                                                                                     
+              
+  Where it could work: if this dictionary eventually gets a rendering/serialisation layer (a Foxx service or API), that layer could use    
+  short aliases — emit _type in JSON output and map it back to _scalar_type/_comparable_type/etc. based on the enclosing context during
+  ingestion. The internal representation stays unambiguous; the external API gets the ergonomic names. That's a Phase 6/7 concern.         
+              
+  For now, the cost of the current verbose names is low and the benefit of unambiguous self-description is high. I'd keep the status quo.  
+
+
+
+
+Interesting! Implementing this idea in a Foxx service would allow making queries closer to language. In any case ArangoDB are already experimenting in interfaces that translate plain language into AQL queries, but I still need to understand at what point they are.
+
+
+
+
+In any case I want to explore my idea just a little bit further, before finalising the edge rules.
+
+Suppose the _path_data properties woud be structured as follows:
+
+	{
+		"_from": "terms/_type,
+		"_predicate": "_predicate_property-of",
+		"_to": "terms/parent-property",
+		"_path": [
+			"terms/parent-property"
+		],
+		"_path_data": {
+			"terms/<parent-property>": {
+				"_data": {
+					"_scalar": {
+						"_scalar_type": "_type_enum",
+						"_enum_type": "parent-property_enum"
+					}
+				},
+				"_rule": {
+					"_closed": true,
+					"_required": [
+						{
+							"_selection_rules": [
+								{
+									"_selection_type": "_type_selection_mandatory"
+								}
+							],
+							"_selection_descriptors": [
+								"_scalar_type"
+							]
+						}
+					],
+					"_recommended": [
+						"_unit",
+						"_unit-name",
+						"_unit-symbol",
+						"_range_valid",
+						"_range_normal",
+						"_decimals"
+					]
+				}
+			}
+		}
+	}
+
+Would it be something worth following at a later stage?
+
+
+
+
+⏺ It's a coherent generalization. You're pushing _path_data from carrying only rules to carrying the full term-card payload — both _data
+  (what type the property has in this context) and _rule (what companions are permitted). One _type term; its meaning is fully determined
+  by the edge.                                                                                                                             
+   
+  What it buys:                                                                                                                            
+  - Eliminates _scalar_type, _comparable_type, _dict_key_type as separate terms — they collapse into a single _type with context-specific
+  definitions in edges                                                                                                                     
+  - The edge becomes the single source of truth for both the type constraint and the structural rules of a property in a given context
+  - Scales cleanly across levels — _type inside _comparable inside _set inside _array is a distinct path root, so a distinct edge, so a    
+  distinct definition                                                                                                                      
+                                                                                                                                           
+  What it costs:                                                                                                                           
+  - The dictionary's self-description becomes more distributed — you can no longer read a term card to understand a property; you have to  
+  traverse to its edges per context                                                                                                        
+  - The validator needs edges not just for rule evaluation but also for type resolution — it becomes fully edge-dependent
+  - _path_data goes from a thin annotation layer to embedding mini term-cards, which blurs the boundary between terms and edges            
+                                                                                                                                           
+  The honest verdict: it's worth following, but at Phase 6, not now. The right moment is when you're actually building the validator —     
+  because the cost of the added complexity only becomes concrete when you're writing the traversal code. At that point you'll know whether 
+  the reduction in term proliferation justifies the distributed self-description. Designing it in the abstract risks committing to a       
+  tradeoff you can't fully evaluate yet.                                                                                                   
+              
+  Worth capturing as a design note somewhere.
+
+
+
+
+Research:
+Take _term.json and transform it un this form.
