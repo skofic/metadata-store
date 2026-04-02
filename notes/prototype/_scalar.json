@@ -1,0 +1,118 @@
+[
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "scalar",
+			"_gid": "_scalar",
+			"_aid": ["scalar"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Scalar"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_number",
+								"_number_float",
+								"_number_integer",
+								"_string",
+								"_string_URI",
+								"_string_Email",
+								"_string_Hostname",
+								"_string_IPv4",
+								"_string_IPv6",
+								"_string_YMD",
+								"_string_date",
+								"_string_time",
+								"_string_date-time",
+								"_string_LaTeX",
+								"_string_HEX",
+								"_string_regexp",
+								"_string_key",
+								"_string_key_term",
+								"_string_key_term_enum-root",
+								"_string_key_term_enum-item",
+								"_string_key_term_descriptor",
+								"_string_key_term_predicate",
+								"_handle",
+								"_text",
+								"_text_HTML",
+								"_text_Markdown",
+								"_text_SVG",
+								"_timestamp",
+								"_boolean",
+								"_enum"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "number",
+			"_gid": "_number",
+			"aid": ["number"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Number"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_any": {
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_number_float",
+								"_number_integer"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+
+]

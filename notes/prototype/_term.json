@@ -1,0 +1,138 @@
+[
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "term",
+			"_gid": "_term",
+			"_aid": ["term"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Term"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{ "_all": {} }
+							],
+							"_selection": [
+								"_codes"
+							]
+						}
+					],
+					"_recommended": [
+						"_infos",
+						"_datas",
+						"_domns",
+						"_props"
+					],
+					"_computed": ["_key"],
+					"_immutable": ["_key"],
+					"_locked": ["_id", "_rev"],
+					"_default-value": {
+						"_domns": {}
+					}
+				}
+			}
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "id",
+			"_gid": "_id",
+			"_aid": ["id"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Document handle"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_handle": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "key",
+			"_gid": "_key",
+			"_aid": ["key"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Document key"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_string_key": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "rev",
+			"_gid": "_rev",
+			"_aid": ["rev"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Document revision"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domns": {}
+	}
+]

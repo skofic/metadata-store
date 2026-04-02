@@ -1,0 +1,202 @@
+[
+	{
+		"_codes": {
+			
+			"_lid": "edge",
+			"_gid": "edge",
+			"aid": ["edge"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Edge"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{ "_all": {} }
+							],
+							"_selection": [
+								"_from",
+								"_to",
+								"_predicate",
+								"_path",
+								"_path_data"
+							]
+						}
+					],
+					"_computed": ["_key"],
+					"_immutable": [
+						"_key",
+						"_from",
+						"_to",
+						"_predicate"
+					],
+					"_locked": ["_id", "_rev"],
+					"_default-value": {
+						"_path_data": {}
+					}
+				}
+			}
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "from",
+			"_gid": "_from",
+			"aid": ["from"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship source"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_handle": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "to",
+			"_gid": "_to",
+			"aid": ["to"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship destination"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_handle": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "predicate",
+			"_gid": "_predicate",
+			"aid": ["predicate"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship predicate"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_enum": ["_predicate"]
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "path",
+			"_gid": "_path",
+			"aid": ["path"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship path"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_set": {
+				"_handle": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "_path",
+			"_lid": "data",
+			"_gid": "_path_data",
+			"aid": ["data"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship path data"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_dict": {
+				"_dict_key": {
+					"_handle": {}
+				},
+				"_dict_value": {
+					"_typedef": "_datas"
+				}
+			}
+		},
+		"_domns": {}
+	}
+]

@@ -1,0 +1,294 @@
+[
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "datas",
+			"_gid": "_datas",
+			"_aid": ["datas"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Data section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_scalar",
+								"_object",
+								"_dict",
+								"_tuple",
+								"_array",
+								"_set",
+								"_nested",
+								"_typedef"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "object",
+			"_gid": "_object",
+			"_aid": ["object"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Object"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_any": {
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_open",
+								"_closed"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "dict",
+			"_gid": "_dict",
+			"_aid": ["dict"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Dictionary"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"all": {}
+								}
+							],
+							"_selection": [
+								"_dict_key",
+								"_dict_value"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "tuple",
+			"_gid": "_tuple",
+			"_aid": ["tuple"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Tuple"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_array": {
+				"_typedef": "_datas"
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "array",
+			"_gid": "_array",
+			"_aid": ["array"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_datas"
+		},
+		"_domns": {}
+	},,
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "set",
+			"_gid": "_set",
+			"_aid": ["set"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Set"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_number",
+								"_number_float",
+								"_number_integer",
+								"_string",
+								"_string_URI",
+								"_string_Email",
+								"_string_Hostname",
+								"_string_IPv4",
+								"_string_IPv6",
+								"_string_YMD",
+								"_string_date",
+								"_string_time",
+								"_string_date-time",
+								"_string_LaTeX",
+								"_string_HEX",
+								"_string_regexp",
+								"_string_key",
+								"_string_key_term",
+								"_string_key_term_enum-root",
+								"_string_key_term_enum-item",
+								"_string_key_term_descriptor",
+								"_string_key_term_predicate",
+								"_handle",
+								"_timestamp",
+								"_boolean",
+								"_enum"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "nested",
+			"_gid": "_nested",
+			"_aid": ["nested"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Nested array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_set"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "typedef",
+			"_gid": "_typedef",
+			"_aid": ["typedef"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Type definition"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			_scalar: {
+				_string_key_term_descriptor: {}
+			}
+		},
+		"_domns": {}
+	}
+]

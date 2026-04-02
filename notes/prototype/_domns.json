@@ -1,0 +1,33 @@
+[
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "domns",
+			"_gid": "_domns",
+			"_aid": ["domns"]
+		},
+		"_infos": {
+			"_title": {
+				"ISO_639_3_eng": "Domains section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_recommended" : [
+						"_term_roles"
+					],
+					"_computed": ["_term_roles"]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	
+]

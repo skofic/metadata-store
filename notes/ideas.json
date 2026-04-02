@@ -1,0 +1,105 @@
+[
+	{
+		"_rule": {
+			"_closed": true,
+			"_required": [
+				{
+					"_selection_rules": [
+						{
+							"_selection_type": "_type_selection_mandatory",
+							"_elements": {
+								"_min-items": 1,
+								"_max-items": 1
+							}
+						},
+						{
+							"_selection_type": "_type_selection_optional",
+							"_elements": {
+								"_min-items": 1
+							}
+						}
+					],
+					"_selection_descriptors": [
+						[
+							"_range_min-inclusive",
+							"_range_min-exclusive"
+						],
+						[
+							"_range_max-inclusive",
+							"_range_max-exclusive"
+						]
+					]
+				}
+			]
+		}
+	},
+	
+	{
+		"object": {
+			"closed": {
+				"required": [
+					{					// OBJECT DATA TYPE "selector"
+						"selectors": [		// OBJECT DATA TYPE
+							{
+								"all": {
+									"_min-items": 1,
+									"_max-items": 1
+								}
+							},
+							{
+								"any": {
+									"_min-items": 1
+								}
+							}
+						],
+						"selection": [		// NESTED DATA TYPE
+							[
+								"_range_min-inclusive",
+								"_range_min-exclusive"
+							],
+							[
+								"_range_max-inclusive",
+								"_range_max-exclusive"
+							]
+						]
+					}
+				]
+			}
+		}
+	},
+	
+	
+	{
+		"_from": "terms/closed",
+		"_predicate": "predicate_property-of",
+		"_to": "terms/object",
+		"path": [
+			"terms/object"
+		],
+		"path_data": {
+			"terms/object": {
+				"rule": {
+					"recommended": [
+						{
+							"selectors": [
+								{ "any": {} }
+							],
+							"selection": [
+								"required",
+								"recommended",
+								"computed",
+								"immutable",
+								"locked",
+								"default-value"
+							]
+						}
+					]
+				}
+			}
+		}
+	}
+]
+
+
+
+Maybe a "rule": { "parent": { ... } } in the term?
