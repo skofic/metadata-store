@@ -162,23 +162,6 @@ An IP address version 6.
 }
 ```
 
-#### _string_YMD
-
-A YYYYMMDD date.
-
-```json
-{
-	_datas: {
-		_scalar: {
-      _string_YMD: {
-        _range_valid_string: { ... },
-        _range_normal_string: { ... }
-      }
-		}
-	}
-}
-```
-
 #### _string_date
 
 A date.
@@ -222,6 +205,23 @@ A date and time.
 	_datas: {
 		_scalar: {
       _string_date-time: {
+        _range_valid_string: { ... },
+        _range_normal_string: { ... }
+      }
+		}
+	}
+}
+```
+
+#### _string_YMD
+
+A YYYYMMDD date.
+
+```json
+{
+	_datas: {
+		_scalar: {
+      _string_YMD: {
         _range_valid_string: { ... },
         _range_normal_string: { ... }
       }
@@ -291,6 +291,20 @@ A document key.
 #### _string_key_term
 
 A term document key.
+
+```json
+{
+	_datas: {
+		_scalar: {
+			_string_key_term: {}
+		}
+	}
+}
+```
+
+#### _string_key_term_type
+
+A data type term.
 
 ```json
 {

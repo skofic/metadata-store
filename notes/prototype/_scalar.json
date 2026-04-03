@@ -6,7 +6,7 @@
 			"_gid": "_scalar",
 			"_aid": ["scalar"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Scalar"
 			},
@@ -31,36 +31,36 @@
 								}
 							],
 							"_selection": [
-								"_number",
-								"_number_float",
-								"_number_integer",
-								"_string",
-								"_string_URI",
-								"_string_Email",
-								"_string_Hostname",
-								"_string_IPv4",
-								"_string_IPv6",
-								"_string_YMD",
-								"_string_date",
-								"_string_time",
-								"_string_date-time",
-								"_string_LaTeX",
-								"_string_HEX",
-								"_string_regexp",
-								"_string_key",
-								"_string_key_term",
-								"_string_key_term_enum-root",
-								"_string_key_term_enum-item",
-								"_string_key_term_descriptor",
-								"_string_key_term_predicate",
-								"_handle",
-								"_text",
-								"_text_HTML",
-								"_text_Markdown",
-								"_text_SVG",
+								"_type_number",
+								"_type_number_float",
+								"_type_number_integer",
+								"_type_string",
+								"_type_string_URI",
+								"_type_string_Email",
+								"_type_string_Hostname",
+								"_type_string_IPv4",
+								"_type_string_IPv6",
+								"_type_string_YMD",
+								"_type_string_date",
+								"_type_string_time",
+								"_type_string_date-time",
+								"_type_string_LaTeX",
+								"_type_string_HEX",
+								"_type_string_regexp",
+								"_type_string_key",
+								"_type_string_key_term",
+								"_type_string_key_term_enum-root",
+								"_type_string_key_term_enum-item",
+								"_type_string_key_term_descriptor",
+								"_type_string_key_term_predicate",
+								"_type_handle",
+								"_type_text",
+								"_type_text_HTML",
+								"_type_text_Markdown",
+								"_type_text_SVG",
 								"_timestamp",
-								"_boolean",
-								"_enum"
+								"_type_boolean",
+								"_type_enum"
 							]
 						}
 					]
@@ -73,13 +73,208 @@
 	{
 		"_codes": {
 			"_nid": "",
-			"_lid": "number",
-			"_gid": "_number",
-			"aid": ["number"]
+			"_lid": "unit",
+			"_gid": "_unit",
+			"aid": ["unit"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Number"
+				"ISO_639_3_eng": "Unit"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_set": {
+				"_type_enum": {
+					"_enums": [
+						"_unit"
+					]
+				}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "_unit",
+			"_lid": "name",
+			"_gid": "_unit_name",
+			"aid": ["name"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Unit name"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_type_string": {}
+			}
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "_unit",
+			"_lid": "symbol",
+			"_gid": "_unit_symbol",
+			"aid": ["symbol"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Unit symbol"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_scalar": {
+				"_type_string_LaTeX": {}
+			}
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "_range",
+			"_lid": "valid",
+			"_gid": "_range_valid",
+			"aid": ["valid"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Valid numeric range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_range"
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "_range",
+			"_lid": "normal",
+			"_gid": "_range_normal",
+			"aid": ["normal"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Normal numeric range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_range"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "_range_valid",
+			"_lid": "string",
+			"_gid": "_range_valid_string",
+			"aid": ["string"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Valid string range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_range_string"
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "_range_normal",
+			"_lid": "string",
+			"_gid": "_range_normal_string",
+			"aid": ["string"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Normal string range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_range_string"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "range",
+			"_gid": "_range",
+			"aid": ["range"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Numeric range"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
@@ -98,21 +293,84 @@
 						{
 							"_selectors": [
 								{
-									"_any": {
+									"_all": {
+										"_min-items": 1,
 										"_max-items": 1
+									}
+								},
+								{
+									"_any": {
+										"_min-items": 1
 									}
 								}
 							],
 							"_selection": [
-								"_number_float",
-								"_number_integer"
+								[ "_range_min-exclusive", "_range_min-inclusive" ],
+								[ "_range_max-exclusive", "_range_max-inclusive" ]
 							]
 						}
 					]
 				}
 			}
 		},
-		"_domns": {}
+		"_domns": {
+			"_term_role": [
+				"_term_role_typedef"
+			]
+		}
 	},
-
+	{
+		"_codes": {
+			"_nid": "_range",
+			"_lid": "string",
+			"_gid": "_range_string",
+			"aid": ["string"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "String range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								},
+								{
+									"_any": {
+										"_min-items": 1
+									}
+								}
+							],
+							"_selection": [
+								[ "_range_string_min-exclusive", "_range_string_min-inclusive_" ],
+								[ "_range_string_max-exclusive", "_range_string_max-inclusive" ]
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domns": {
+			"_term_role": [
+				"_term_role_typedef"
+			]
+		}
+	}
 ]

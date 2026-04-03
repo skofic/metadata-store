@@ -6,7 +6,7 @@
 			"_gid": "edge",
 			"aid": ["edge"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Edge"
 			},
@@ -61,7 +61,7 @@
 			"_gid": "_from",
 			"aid": ["from"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Relationship source"
 			},
@@ -89,7 +89,7 @@
 			"_gid": "_to",
 			"aid": ["to"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Relationship destination"
 			},
@@ -117,7 +117,7 @@
 			"_gid": "_predicate",
 			"aid": ["predicate"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Relationship predicate"
 			},
@@ -145,7 +145,7 @@
 			"_gid": "_path",
 			"aid": ["path"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Relationship path"
 			},
@@ -173,7 +173,7 @@
 			"_gid": "_path_data",
 			"aid": ["data"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Relationship path data"
 			},

@@ -6,7 +6,7 @@
 			"_gid": "_codes",
 			"_aid": ["codes"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Identification section"
 			},
@@ -60,7 +60,7 @@
 			"_gid": "_nid",
 			"_aid": ["nid"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Namespace"
 			},
@@ -88,7 +88,7 @@
 			"_gid": "_lid",
 			"_aid": ["lid"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Local identifier"
 			},
@@ -118,7 +118,7 @@
 			"_gid": "_gid",
 			"_aid": ["gid"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Global identifier"
 			},
@@ -149,7 +149,7 @@
 			"_gid": "_aid",
 			"_aid": ["aid"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Official identifiers"
 			},
@@ -177,7 +177,7 @@
 			"_gid": "_pid",
 			"_aid": ["pid"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Provider identifiers"
 			},
@@ -206,7 +206,7 @@
 			"_gid": "_name",
 			"_aid": ["name"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Name"
 			},
@@ -234,7 +234,7 @@
 			"_gid": "_symbol",
 			"_aid": ["symbol"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Symbol"
 			},
@@ -262,7 +262,7 @@
 			"_gid": "_emoji",
 			"_aid": ["emoji"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Emoji"
 			},
@@ -288,10 +288,10 @@
 		"_codes": {
 			"_nid": "",
 			"_lid": "regexp",
-			"_gid": "_eregexp",
+			"_gid": "_regexp",
 			"_aid": ["regexp"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Regular expression"
 			},

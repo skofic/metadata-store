@@ -6,7 +6,7 @@
 			"_gid": "_datas",
 			"_aid": ["datas"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Data section"
 			},
@@ -55,7 +55,7 @@
 			"_gid": "_object",
 			"_aid": ["object"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Object"
 			},
@@ -96,7 +96,7 @@
 			"_gid": "_dict",
 			"_aid": ["dict"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Dictionary"
 			},
@@ -135,7 +135,7 @@
 			"_gid": "_tuple",
 			"_aid": ["tuple"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Tuple"
 			},
@@ -160,7 +160,7 @@
 			"_gid": "_array",
 			"_aid": ["array"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Array"
 			},
@@ -183,7 +183,7 @@
 			"_gid": "_set",
 			"_aid": ["set"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Set"
 			},
@@ -249,7 +249,7 @@
 			"_gid": "_nested",
 			"_aid": ["nested"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Nested array"
 			},
@@ -273,7 +273,7 @@
 			"_gid": "_typedef",
 			"_aid": ["typedef"]
 		},
-		"_infos": {
+		"_info": {
 			"_title": {
 				"ISO_639_3_eng": "Type definition"
 			},

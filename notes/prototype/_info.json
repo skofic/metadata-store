@@ -2,21 +2,18 @@
 	{
 		"_codes": {
 			"_nid": "",
-			"_lid": "term",
-			"_gid": "_term",
-			"_aid": ["term"]
+			"_lid": "info",
+			"_gid": "_info",
+			"_aid": ["info"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Term"
+				"ISO_639_3_eng": "Information section"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
 				"ISO_639_3_eng": ""
 			}
 		},
@@ -29,280 +26,257 @@
 								{ "_all": {} }
 							],
 							"_selection": [
-								"_codes"
+								"_title",
+								"_definition"
 							]
 						}
 					],
-					"_recommended": [
-						"_info",
-						"_datas",
-						"_domns",
-						"_props"
-					],
-					"_computed": ["_key"],
-					"_immutable": ["_key"],
-					"_locked": ["_id", "_rev"],
-					"_default-value": {
-						"_domns": {}
-					}
-				}
-			}
-		},
-		"_domns": {}
-	},
-	
-	{
-		"_codes": {
-			"_nid": "",
-			"_lid": "id",
-			"_gid": "_id",
-			"_aid": ["id"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Document handle"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_datas": {
-			"_scalar": {
-				"_handle": {}
-			}
-		},
-		"_domns": {}
-	},
-	{
-		"_codes": {
-			"_nid": "",
-			"_lid": "key",
-			"_gid": "_key",
-			"_aid": ["key"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Document key"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_datas": {
-			"_scalar": {
-				"_string_key": {}
-			}
-		},
-		"_domns": {}
-	},
-	{
-		"_codes": {
-			"_nid": "",
-			"_lid": "rev",
-			"_gid": "_rev",
-			"_aid": ["rev"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Document revision"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_datas": {
-			"_scalar": {
-				"_string": {}
-			}
-		},
-		"_domns": {}
-	},
-	
-	{
-		"_codes": {
-			"_nid": "",
-			"_lid": "term_role",
-			"_gid": "_term_role",
-			"_aid": ["term_role"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Term role"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_datas": {
-			"_set": {
-				"_type_enum": {
-					"_enums": [
-						"_term_role"
+					"_recommended" : [
+						"_description",
+						"_examples",
+						"_methods",
+						"_usage",
+						"_citation",
+						"_provider",
+						"_url",
+						"_notes"
 					]
 				}
 			}
 		},
 		"_domns": {}
 	},
+	
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "type",
-			"_gid": "_term_role_type",
-			"_aid": ["type"]
+			"_nid": "",
+			"_lid": "title",
+			"_gid": "_title",
+			"_aid": ["title"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Data type"
+				"ISO_639_3_eng": "Title or label"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_string"
 		},
 		"_domns": {}
 	},
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "enum-root",
-			"_gid": "_term_role_enum-root",
-			"_aid": ["enum-root"]
+			"_nid": "",
+			"_lid": "definition",
+			"_gid": "_definition",
+			"_aid": ["definition"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Enumeration root"
+				"ISO_639_3_eng": "Definition"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_string"
 		},
 		"_domns": {}
 	},
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "enum-item",
-			"_gid": "_term_role_enum-item",
-			"_aid": ["enum-item"]
+			"_nid": "",
+			"_lid": "description",
+			"_gid": "_description",
+			"_aid": ["description"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Enumeration option"
+				"ISO_639_3_eng": "Description"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
 		},
 		"_domns": {}
 	},
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "descriptor",
-			"_gid": "_term_role_descriptor",
-			"_aid": ["descriptor"]
+			"_nid": "",
+			"_lid": "examples",
+			"_gid": "_examples",
+			"_aid": ["examples"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Descriptor"
+				"ISO_639_3_eng": "Examples"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "methods",
+			"_gid": "_methods",
+			"_aid": ["methods"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Methods"
 			},
-			"_examples": {
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
 				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
 		},
 		"_domns": {}
 	},
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "predicate",
-			"_gid": "_term_role_predicate",
-			"_aid": ["predicate"]
+			"_nid": "",
+			"_lid": "usage",
+			"_gid": "_usage",
+			"_aid": ["usage"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Predicate"
+				"ISO_639_3_eng": "Usage"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "citation",
+			"_gid": "_citation",
+			"_aid": ["citation"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Citations"
 			},
-			"_examples": {
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
 				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
 		},
 		"_domns": {}
 	},
 	{
 		"_codes": {
-			"_nid": "_term_role",
-			"_lid": "typedef",
-			"_gid": "_term_role_typedef",
-			"_aid": ["typedef"]
+			"_nid": "",
+			"_lid": "provider",
+			"_gid": "_provider",
+			"_aid": ["provider"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Type definition"
+				"ISO_639_3_eng": "Providers"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
 			},
 			"_description": {
 				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
+		},
+		"_domns": {}
+	},
+	
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "url",
+			"_gid": "_url",
+			"_aid": ["url"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "URLs"
 			},
-			"_examples": {
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
 				"ISO_639_3_eng": ""
 			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
+		},
+		"_domns": {}
+	},
+	{
+		"_codes": {
+			"_nid": "",
+			"_lid": "notes",
+			"_gid": "_notes",
+			"_aid": ["notes"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Notes"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_datas": {
+			"_typedef": "_info_text"
 		},
 		"_domns": {}
 	}
