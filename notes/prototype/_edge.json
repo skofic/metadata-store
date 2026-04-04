@@ -1,6 +1,6 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			
 			"_lid": "edge",
 			"_gid": "edge",
@@ -20,7 +20,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -51,11 +51,11 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "from",
 			"_gid": "_from",
@@ -75,15 +75,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_handle": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "to",
 			"_gid": "_to",
@@ -103,15 +103,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_handle": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "predicate",
 			"_gid": "_predicate",
@@ -131,15 +131,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_enum": ["_predicate"]
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "path",
 			"_gid": "_path",
@@ -159,15 +159,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_set": {
 				"_handle": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_path",
 			"_lid": "data",
 			"_gid": "_path_data",
@@ -187,16 +187,16 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_dict": {
 				"_dict_key": {
 					"_handle": {}
 				},
 				"_dict_value": {
-					"_typedef": "_datas"
+					"_typedef": "_data"
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	}
 ]

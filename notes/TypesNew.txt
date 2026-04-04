@@ -1,37 +1,36 @@
 In the list I will append an asterisk (*) next to the identifier of edge sections: these are not valid options, only groups of options. Note that an option can also have children which are options.
 
 _scalar required (at least and at most one) properties:
-	_type_number
-		_type_number_float
-		_type_number_integer
-	_type_string
-		_type_string_URI
-		_type_string_Email
-		_type_string_Hostname
-		_type_string_IPv4
-		_type_string_IPv6
-		_type_string_date
-		_type_string_time
-		_type_string_date-time
-		_type_string_YMD
-		_type_string_LaTeX
-		_type_string_HEX
-		_type_string_regexp
-		_type_string_key
-			_type_string_key_term
-				_type_string_key_term_type
-				_type_string_key_term_enum-root
-				_type_string_key_term_enum-item
-				_type_string_key_term_descriptor
-				_type_string_key_term_predicate
-	_type_text
-		_type_text_HTML
-		_type_text_Markdown
-		_type_text_SVG
-	_type_timestamp
-	_type_boolean
-	_type_handle
-	_type_enum
+	_number
+		_number_float
+		_number_integer
+	_string
+		_string_URI
+		_string_Email
+		_string_Hostname
+		_string_IPv4
+		_string_IPv6
+		_string_date
+		_string_time
+		_string_date-time
+		_string_YMD
+		_string_LaTeX
+		_string_HEX
+		_string_regexp
+	_text
+		_text_HTML
+		_text_Markdown
+		_text_SVG
+	_term_key
+		_term_key_enum-item
+		_term_key_enum-root
+		_term_key_descriptor
+		_term_key_predicate
+		_term_key_typedef
+	_timestamp
+	_boolean
+	_handle
+	_enum
 
 _object: A structure containing the object rules.
 	_closed

@@ -1,9 +1,9 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "domns",
-			"_gid": "_domns",
+			"_gid": "_domn",
 			"_aid": ["domns"]
 		},
 		"_info": {
@@ -17,7 +17,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_recommended" : [
@@ -27,7 +27,7 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 ]

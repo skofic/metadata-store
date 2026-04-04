@@ -1,6 +1,6 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "info",
 			"_gid": "_info",
@@ -17,7 +17,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -44,11 +44,11 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "title",
 			"_gid": "_title",
@@ -65,13 +65,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_string"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "definition",
 			"_gid": "_definition",
@@ -88,13 +88,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_string"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "description",
 			"_gid": "_description",
@@ -111,13 +111,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "examples",
 			"_gid": "_examples",
@@ -134,14 +134,14 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "methods",
 			"_gid": "_methods",
@@ -158,13 +158,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "usage",
 			"_gid": "_usage",
@@ -181,14 +181,14 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "citation",
 			"_gid": "_citation",
@@ -205,13 +205,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "provider",
 			"_gid": "_provider",
@@ -228,14 +228,14 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "url",
 			"_gid": "_url",
@@ -252,13 +252,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "notes",
 			"_gid": "_notes",
@@ -275,9 +275,9 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_info_text"
 		},
-		"_domns": {}
+		"_domn": {}
 	}
 ]

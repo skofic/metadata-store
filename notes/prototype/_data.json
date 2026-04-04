@@ -1,9 +1,9 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "datas",
-			"_gid": "_datas",
+			"_gid": "_data",
 			"_aid": ["datas"]
 		},
 		"_info": {
@@ -17,7 +17,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -45,11 +45,11 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "object",
 			"_gid": "_object",
@@ -66,7 +66,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -87,10 +87,10 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "dict",
 			"_gid": "_dict",
@@ -107,7 +107,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -126,10 +126,10 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "tuple",
 			"_gid": "_tuple",
@@ -146,15 +146,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_array": {
-				"_typedef": "_datas"
+				"_typedef": "_data"
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "array",
 			"_gid": "_array",
@@ -171,13 +171,13 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
-			"_typedef": "_datas"
+		"_data": {
+			"_typedef": "_data"
 		},
-		"_domns": {}
+		"_domn": {}
 	},,
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "set",
 			"_gid": "_set",
@@ -194,7 +194,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -240,10 +240,10 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "nested",
 			"_gid": "_nested",
@@ -260,14 +260,14 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_typedef": "_set"
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "typedef",
 			"_gid": "_typedef",
@@ -284,11 +284,11 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string_key_term_descriptor: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	}
 ]

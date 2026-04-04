@@ -1,9 +1,9 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "codes",
-			"_gid": "_codes",
+			"_gid": "_code",
 			"_aid": ["codes"]
 		},
 		"_info": {
@@ -17,7 +17,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -50,11 +50,11 @@
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "nid",
 			"_gid": "_nid",
@@ -74,15 +74,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string_key_term_descriptor: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "lid",
 			"_gid": "_lid",
@@ -102,17 +102,17 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string: {
 					"_regexp": "^[a-zA-Z0-9\\-:.@+,=;$!*'%()]{1,254}$"
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "gid",
 			"_gid": "_gid",
@@ -132,18 +132,18 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string: {
 					"_regexp": "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$"
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "aid",
 			"_gid": "_aid",
@@ -163,15 +163,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_set: {
 				_string: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "pid",
 			"_gid": "_pid",
@@ -191,16 +191,16 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_set: {
 				_string: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "name",
 			"_gid": "_name",
@@ -220,15 +220,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "symbol",
 			"_gid": "_symbol",
@@ -248,15 +248,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string_LaTeX: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "emoji",
 			"_gid": "_emoji",
@@ -276,16 +276,16 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "regexp",
 			"_gid": "_regexp",
@@ -305,11 +305,11 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			_scalar: {
 				_string_regexp: {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	}
 ]

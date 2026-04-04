@@ -1,6 +1,6 @@
 [
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "term",
 			"_gid": "_term",
@@ -20,7 +20,7 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_object": {
 				"_closed": {
 					"_required": [
@@ -29,30 +29,30 @@
 								{ "_all": {} }
 							],
 							"_selection": [
-								"_codes"
+								"_code"
 							]
 						}
 					],
 					"_recommended": [
 						"_info",
-						"_datas",
-						"_domns",
-						"_props"
+						"_data",
+						"_domn",
+						"_prop"
 					],
 					"_computed": ["_key"],
 					"_immutable": ["_key"],
 					"_locked": ["_id", "_rev"],
 					"_default-value": {
-						"_domns": {}
+						"_domn": {}
 					}
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "id",
 			"_gid": "_id",
@@ -72,15 +72,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_handle": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "key",
 			"_gid": "_key",
@@ -100,15 +100,15 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_string_key": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "rev",
 			"_gid": "_rev",
@@ -128,16 +128,16 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_scalar": {
 				"_string": {}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "",
 			"_lid": "term_role",
 			"_gid": "_term_role",
@@ -157,19 +157,19 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_datas": {
+		"_data": {
 			"_set": {
-				"_type_enum": {
+				"_enum": {
 					"_enums": [
 						"_term_role"
 					]
 				}
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "type",
 			"_gid": "_term_role_type",
@@ -189,10 +189,10 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "enum-root",
 			"_gid": "_term_role_enum-root",
@@ -212,10 +212,10 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "enum-item",
 			"_gid": "_term_role_enum-item",
@@ -235,10 +235,10 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "descriptor",
 			"_gid": "_term_role_descriptor",
@@ -258,10 +258,10 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "predicate",
 			"_gid": "_term_role_predicate",
@@ -281,10 +281,10 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	},
 	{
-		"_codes": {
+		"_code": {
 			"_nid": "_term_role",
 			"_lid": "typedef",
 			"_gid": "_term_role_typedef",
@@ -304,6 +304,6 @@
 				"ISO_639_3_eng": ""
 			}
 		},
-		"_domns": {}
+		"_domn": {}
 	}
 ]
