@@ -24,7 +24,7 @@
 						{
 							"_selectors": [
 								{
-									"all": {}
+									"_all": {}
 								}
 							],
 							"_selection": [
@@ -90,7 +90,6 @@
 									"_term_key_predicate",
 									"_term_key_typedef",
 								"_handle",
-								"_timestamp",
 								"_enum"
 							]
 						}

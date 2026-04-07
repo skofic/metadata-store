@@ -2,9 +2,9 @@
 	{
 		"_code": {
 			"_nid": "",
-			"_lid": "datas",
+			"_lid": "data",
 			"_gid": "_data",
-			"_aid": ["datas"]
+			"_aid": ["data"]
 		},
 		"_info": {
 			"_title": {
@@ -116,8 +116,8 @@
 			}
 		},
 		"_data": {
-			_scalar: {
-				_string_key_term_descriptor: {}
+			"_scalar": {
+				"_string_key_term_descriptor": {}
 			}
 		},
 		"_domn": {}

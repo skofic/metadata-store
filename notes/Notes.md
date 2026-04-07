@@ -16,7 +16,7 @@ A number that can be eiter a float or an integer.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_number: {
 				_unit: "xxx",
@@ -36,7 +36,7 @@ A floating point number.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _number_float: {
         _decimals: x,
@@ -57,7 +57,7 @@ An integer number.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _number_integer: {
         _unit: "xxx",
@@ -77,7 +77,7 @@ A generic string.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string: {
         _regexp: "xxx",
@@ -98,7 +98,7 @@ A Universal Resource Identifier.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_URI: {}
 		}
@@ -112,7 +112,7 @@ An e-mail address.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_Email: {}
 		}
@@ -126,7 +126,7 @@ A host name.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_Hostname: {}
 		}
@@ -140,7 +140,7 @@ An IP address version 4.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_IPv4: {}
 		}
@@ -154,7 +154,7 @@ An IP address version 6.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_IPv6: {}
 		}
@@ -168,7 +168,7 @@ A date.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _string_date: {
         _range_valid_string: { ... },
@@ -185,7 +185,7 @@ A time.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _string_time: {
         _range_valid_string: { ... },
@@ -202,7 +202,7 @@ A date and time.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _string_date-time: {
         _range_valid_string: { ... },
@@ -219,7 +219,7 @@ A YYYYMMDD date.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _string_YMD: {
         _range_valid_string: { ... },
@@ -236,8 +236,10 @@ A LaTeX string.
 
 ```json
 {
-	_datas: {
-		_string_LaTeX: {}
+	_data: {
+    _scalar: {
+      _string_LaTeX: {}
+    }
 	}
 }
 ```
@@ -248,7 +250,7 @@ A hexadecimal string.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
       _string_HEX: {
         _regex: { ... },
@@ -266,7 +268,7 @@ A regular expression.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_regexp: {}
 		}
@@ -280,7 +282,7 @@ A document key.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key: {}
 		}
@@ -294,7 +296,7 @@ A term document key.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term: {}
 		}
@@ -308,7 +310,7 @@ A data type term.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term: {}
 		}
@@ -322,7 +324,7 @@ An enumeration root term key.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term_enum-root: {}
 		}
@@ -336,7 +338,7 @@ An enumeration element term key
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term_enum-item: {}
 		}
@@ -350,7 +352,7 @@ A descriptor term document key.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term_descriptor: {}
 		}
@@ -364,7 +366,7 @@ A predicate term document key.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_string_key_term_predicate: {}
 		}
@@ -378,7 +380,7 @@ A generic text.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_text: {}
 		}
@@ -392,7 +394,7 @@ An HTML text.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_text_HTML: {}
 		}
@@ -406,7 +408,7 @@ A Markdown text.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_text_Markdown: {}
 		}
@@ -420,7 +422,7 @@ An SVG text.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_text_SVG: {}
 		}
@@ -434,7 +436,7 @@ A timestamp.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_timestamp: {
         _range_valid: { ... },
@@ -451,7 +453,7 @@ A boolean.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_boolean: {}
 		}
@@ -465,7 +467,7 @@ A document handle.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_handle: {}
 		}
@@ -479,7 +481,7 @@ An enumerated value.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_scalar: {
 			_enum: {}
 		}
@@ -495,7 +497,7 @@ An object that can contain any property, also not in the dictionary.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_object: {}
 	}
 }
@@ -505,7 +507,7 @@ An object that can contain any property defined in the dictionary.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_object: {
       _open: {}
     }
@@ -517,7 +519,7 @@ An object that can only contain dictionary properties defined here.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_object: {
       _closed: { ... }
     }
@@ -533,7 +535,7 @@ A dictionary with generic string keys and a Markdown text as value.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_dict: {
       _dict_key: {
         _string: {
@@ -543,7 +545,9 @@ A dictionary with generic string keys and a Markdown text as value.
         }
       },
       _dict_value: {
-        _text_Markdown: {}
+        _scalar: {
+        	_text_Markdown: {}
+        }
       }
     }
 	}
@@ -558,7 +562,7 @@ A tuple with a string and a number.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_tuple: [
       {
         _scalar: {
@@ -583,13 +587,11 @@ An array of floats.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_array: {
       _array: {
         _scalar: {
-          _number: {
-            _number_float: {}
-          }
+          _number_float: {}
         }
       }
     }
@@ -605,11 +607,9 @@ A set of term keys.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_set: {
-      _string: {
-        _string_key_term: {}
-      }
+      _string_key_term: {}
     }
 	}
 }
@@ -623,12 +623,10 @@ A nested array of term keys.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_nested: {
       _scalar: {
-        _string: {
-          _string_key_term: {}
-        }
+        _string_key_term: {}
       }
     }
 	}
@@ -643,7 +641,7 @@ This term is a _title.
 
 ```json
 {
-	_datas: {
+	_data: {
 		_typedef: "_title"
 	}
 }

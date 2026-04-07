@@ -313,8 +313,7 @@
 		"_to": "terms/_scalar_types",
 		"_path": [
 			"terms/_scalar_types",
-			"terms/_set_types",
-			"terms/_dict_key_types"
+			"terms/_set_types"
 		],
 		"_path_data": {}
 	},
