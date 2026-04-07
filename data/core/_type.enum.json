@@ -1,509 +1,340 @@
 [
 	{
-		"_from": "terms/_type_data",
+		"_from": "terms/_type_scalar",
 		"_predicate": "_predicate_bridge-of",
-		"_to": "terms/_type_data_comparable",
+		"_to": "terms/_type_set",
 		"_path": [
-			"terms/_type_data_comparable"
+			"terms/_type_set"
 		],
 		"_path_data": {}
 	},
-	
 	{
-		"_from": "terms/_type_data",
+		"_from": "terms/_type_scalar",
 		"_predicate": "_predicate_bridge-of",
-		"_to": "terms/_type_data_dict_key",
-		"_path": [
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	
-	{
-		"_from": "terms/_type_number",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_number_float",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_number",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_number_integer",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_number",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_formatted",
-		"_predicate": "_predicate_section-of",
-		"_to": "terms/_type_string",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_HTML",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_formatted",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_Markdown",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_formatted",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_LaTeX",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_formatted",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_SVG",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_formatted",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_internet",
-		"_predicate": "_predicate_section-of",
-		"_to": "terms/_type_string",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_URI",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_internet",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_Email",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_internet",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_Hostname",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_internet",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_IPv4",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_internet",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_IPv6",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_internet",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_timestamp",
-		"_predicate": "_predicate_section-of",
-		"_to": "terms/_type_string",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_YMD",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_timestamp",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_date",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_timestamp",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_time",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_timestamp",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_date-time",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_timestamp",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_encoded",
-		"_predicate": "_predicate_section-of",
-		"_to": "terms/_type_string",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_string_HEX",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_string_encoded",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term",
-		"_predicate": "_predicate_enum-of",
 		"_to": "terms/_type_key",
 		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_enum-root",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_enum-item",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_descriptor",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_object",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_predicate",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_key_term_typedef",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_key_term",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_handle",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_enum",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable",
-			"terms/_type_data_dict_key"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_struct",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_object",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_object_GeoJSON",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_regexp",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_boolean",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_timestamp",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_data",
-		"_path": [
-			"terms/_type_data",
-			"terms/_type_data_comparable"
-		],
-		"_path_data": {}
-	},
-
-	{
-		"_from": "terms/_type_term_alias",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_predicate",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_namespace",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_descriptor",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_enum-root",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_enum-item",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_object",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
-		],
-		"_path_data": {}
-	},
-	{
-		"_from": "terms/_type_term_typedef",
-		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_term",
-		"_path": [
-			"terms/_type_term"
+			"terms/_type_key"
 		],
 		"_path_data": {}
 	},
 	
 	{
-		"_from": "terms/_type_selection_mandatory",
+		"_from": "terms/_number",
 		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_selection",
+		"_to": "terms/_type_scalar",
 		"_path": [
-			"terms/_type_selection"
+			"terms/_type_scalar",
+			"terms/_type_set"
 		],
 		"_path_data": {}
 	},
 	{
-		"_from": "terms/_type_selection_optional",
+		"_from": "terms/_number_float",
 		"_predicate": "_predicate_enum-of",
-		"_to": "terms/_type_selection",
+		"_to": "terms/_number",
 		"_path": [
-			"terms/_type_selection"
+			"terms/_type_scalar",
+			"terms/_type_set"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_number_integer",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_number",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set"
+		],
+		"_path_data": {}
+	},
+	
+	{
+		"_from": "terms/_string",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_URI",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_Email",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_Hostname",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_IPv4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_IPv6",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_YMD",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_date",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_time",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_date-time",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_LaTeX",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_HEX",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_string_regexp",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_string",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set"
+		],
+		"_path_data": {}
+	},
+	
+	{
+		"_from": "terms/_text",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_SVG",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_text",
+		"_path": [
+			"terms/_type_scalar"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_HTML",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_text",
+		"_path": [
+			"terms/_type_scalar"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_Markdown",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_text",
+		"_path": [
+			"terms/_type_scalar"
+		],
+		"_path_data": {}
+	},
+	
+	{
+		"_from": "terms/_term_key",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_key_enum-root",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_key_enum-item",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_key_descriptor",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_key_predicate",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_key_typedef",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_key",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	
+	{
+		"_from": "terms/_handle",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_timestamp",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_boolean",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_enum",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_type_scalar",
+		"_path": [
+			"terms/_type_scalar",
+			"terms/_type_set",
+			"terms/_type_key"
 		],
 		"_path_data": {}
 	}

@@ -1,0 +1,473 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "term",
+			"_gid": "_term",
+			"_aid": [
+				"term"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Term"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The fundamental unit of the data dictionary. A term identifies, classifies, and optionally documents a concept, data variable, schema, or enumeration value. Every element of the dictionary — including the structural rules that govern the dictionary itself — is represented as a term."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Terms are the foundational documents of the data dictionary. Every concept, data variable, schema definition, and controlled vocabulary value is stored as a term. A term requires at minimum a [code section](_code.md) providing its identifiers. A [documentation section](_info.md) is expected on nearly all terms and is structurally recommended; alias terms are the only exception, carrying only a code section and delegating all documentation to the canonical term they point to.\n\nA term may additionally carry a [data section](_data.md) — present when the term represents a typed data variable — and a [rule section](_rule.md) — present when the term defines the schema of an object.\n\nTwo further optional sections may also be present. The [properties section](_prop.md) carries concrete attributes of the real-world entity the term represents, turning a classification term into a structured instance record. The [domains section](_domn.md) classifies the term across categorical dimensions such as subject domain, measurement type, or term role.\n\nThe dictionary is self-describing: the terms that define the dictionary's own structure are themselves stored as terms."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Generic term example:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"ISO_3166_3\",\n\t\t\"_lid\": \"ITA\",\n\t\t\"_gid\": \"ISO_3166_3_ITA\",\n\t\t\"_aid\": [\"ITA\", \"IT\", \"I\"],\n\t\t\"_name\": \"Italia\",\n\t\t\"_emoji\": \"🇮🇹\"\n\t},\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Italy\", \"ISO_639_3_ita\": \"Italia\"},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"Italian Republic\",\n\t\t\t\"ISO_639_3_ita\": \"Repubblica Italiana\"\n\t\t}\n\t}\n}\n```\n\nThis term represents the country Italy. Its namespace chain (`ISO` → `ISO_3166` → `ISO_3166_3`) reflects the hierarchy of the ISO 3166-3 standard for country codes."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_object",
+				"_object_types": [
+					"_term"
+				]
+			}
+		},
+		"_rule": {
+			"_closed": true,
+			"_required": [
+				{
+					"_selection_rules": [
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
+					],
+					"_selection_descriptors": [
+						"_code"
+					]
+				}
+			],
+			"_recommended": [
+				"_info",
+				"_data",
+				"_rule",
+				"_domn",
+				"_prop"
+			],
+			"_computed": [
+				"_key"
+			],
+			"_immutable": [
+				"_key"
+			]
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "edge",
+			"_gid": "_edge",
+			"_aid": [
+				"edge"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Edge"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An ArangoDB edge document representing a directed relationship between two nodes in the dictionary graph. Edges encode the relationship type, graph membership, and optional relationship-specific data for a source–destination pair."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Edges are the building blocks of all graphs in the data dictionary. Each edge connects a [source node](_from.md) ([`_from`](_from.md)) to a [destination node](_to.md) ([`_to`](_to.md)) via a typed [relationship](_predicate.md) ([`_predicate`](_predicate.md)), and declares which [graphs](_path.md) traverse it ([`_path`](_path.md)). The [path data property](_path_data.md) ([`_path_data`](_path_data.md)) carries any data associated with the relationship within a specific graph or node context.\n\nEdge documents are uniquely identified by their source, predicate, and destination: no two edges may share the same [`_from`](_from.md)/[`_predicate`](_predicate.md)/[`_to`](_to.md) combination. The document [key](_key.md) is computed as the MD5 hash of the string formed by joining [`_from`](_from.md), [`_predicate`](_predicate.md), and [`_to`](_to.md) with `/` separators.\n\nMost predicates follow a *many-to-one* direction: [`_from`](_from.md) is the leaf node (child, element, member) and [`_to`](_to.md) is the root node (parent, container, category)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Basic edge** — Italy is a valid element of the ISO 3166-3 vocabulary:\n\n![Basic edge](images/edge-basic.svg)\n\n**Shared edge** — the same edge also belongs to a second graph, `MyCountries`. Adding `MyCountries` to [`_path`](_path.md) is all that is needed; no new edge document is created:\n\n![Shared edge](images/edge-shared.svg)\n\nThe bridge edge connects `MyCountries` to the full ISO 3166-3 vocabulary:\n\n![Bridge edge](images/edge-bridge.svg)"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_object",
+				"_object_types": [
+					"_edge"
+				]
+			}
+		},
+		"_rule": {
+			"_closed": true,
+			"_required": [
+				{
+					"_selection_rules": [
+						{
+							"_selection_type": "_type_selection_mandatory"
+						}
+					],
+					"_selection_descriptors": [
+						"_from",
+						"_to",
+						"_predicate",
+						"_path",
+						"_path_data"
+					]
+				}
+			],
+			"_computed": [
+				"_key"
+			],
+			"_immutable": [
+				"_key",
+				"_from",
+				"_to",
+				"_predicate"
+			],
+			"_default-value": {
+				"_path_data": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "id",
+			"_gid": "_id",
+			"_aid": [
+				"id"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Document handle"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The unique identifier of a document across all collections in the database. Assigned automatically by the database at insertion time and cannot be modified."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The document handle is the database-wide unique identifier assigned to every record by ArangoDB at insertion time. It has the form `<collection name>/<_key>` — for example, `terms/_term` or `edges/a3f9c2`. It is system-managed: users cannot set or modify it.\n\nThe handle is used as the value of [source](_from.md) ([`_from`](_from.md)) and [destination](_to.md) ([`_to`](_to.md)) in [edge documents](_edge.md), where it identifies the nodes at each end of a relationship."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_handle"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "key",
+			"_gid": "_key",
+			"_aid": [
+				"key"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Document key"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The unique identifier of a document within its collection. In term documents it is set by the loader from the term's global identifier; in edge documents it is computed from the MD5 hash of the source, predicate, and destination."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The document key is the primary key of a record within its collection in ArangoDB. Together with the collection name it forms the [document handle](_id.md) ([`_id`](_id.md)).\n\nIn this dictionary the key is never supplied by the user or auto-generated by the database — it is always computed:\n\n- For [term documents](_term.md), the loader derives `_key` from the term's [global identifier](_gid.md): the [`_gid`](_gid.md) value is copied to `_key` before the document is saved.\n- For [edge documents](_edge.md), `_key` is the MD5 hash of the concatenation `_from + \"/\" + _predicate + \"/\" + _to`.\n\nOnce set, the key is immutable."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_key"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "rev",
+			"_gid": "_rev",
+			"_aid": [
+				"rev"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Document revision"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The internal revision token of a document, assigned and updated by the database each time the document is modified. It is an opaque string used for optimistic concurrency control and is fully managed by the database."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The document revision is an opaque string assigned and updated by ArangoDB each time a document is modified. It is used for optimistic concurrency control: a client may supply the current `_rev` value when updating a document to ensure no concurrent modification has occurred since the document was last read. If the supplied revision does not match the stored one, the update is rejected.\n\nUsers can read this value but cannot set or modify it — it is entirely managed by the database."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_string"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "from",
+			"_gid": "_from",
+			"_aid": [
+				"from"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship source"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The document handle of the source node in a directed graph edge. Identifies the origin of the relationship — typically the leaf, child, or member in a many-to-one direction."
+			},
+			"_description": {
+				"ISO_639_3_eng": "In an [edge document](_edge.md), `_from` holds the [document handle](_id.md) of the source node — the node from which the directed relationship originates. ArangoDB requires this field on all edge documents.\n\nIn this dictionary most predicates follow a *many-to-one* direction: `_from` is the leaf (child, element, member) and [`_to`](_to.md) is the root (parent, container, category). For example, in an enumeration edge `_from` is the enumeration element and `_to` is the enumeration root.\n\nThe `_from` field is immutable once the edge is created. Together with [`_predicate`](_predicate.md) and [`_to`](_to.md) it uniquely identifies the edge and determines its [key](_key.md)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "In the following edge, `_from` is the handle of the Italy term — the enumeration element, the leaf of the relationship:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_handle"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "to",
+			"_gid": "_to",
+			"_aid": [
+				"to"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship target"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The document handle of the destination node in a directed graph edge. Identifies the terminus of the relationship — typically the root, parent, or container in a many-to-one direction."
+			},
+			"_description": {
+				"ISO_639_3_eng": "In an [edge document](_edge.md), `_to` holds the [document handle](_id.md) of the destination node — the node toward which the directed relationship points. ArangoDB requires this field on all edge documents.\n\nIn this dictionary most predicates follow a *many-to-one* direction: [`_from`](_from.md) is the leaf (child, element, member) and `_to` is the root (parent, container, category). For example, in an enumeration edge `_to` is the enumeration root and `_from` is the enumeration element.\n\nThe `_to` field is immutable once the edge is created. Together with [`_from`](_from.md) and [`_predicate`](_predicate.md) it uniquely identifies the edge and determines its [key](_key.md)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "In the following edge, `_to` is the handle of the ISO 3166-3 vocabulary root — the enumeration root, the destination of the relationship:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_handle"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "predicate",
+			"_gid": "_predicate",
+			"_aid": [
+				"predicate"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship predicate"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The type or classification of the relationship between two nodes in a directed graph edge. The predicate is the global identifier of a term from the predicate controlled vocabulary."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A relationship predicate qualifies the nature of the directed relationship between the [source](_from.md) and [destination](_to.md) nodes of an [edge document](_edge.md). The combination of source, predicate, and destination must be unique — no two edges may share the same triple.\n\nThe predicate value is the [`_gid`](_gid.md) of a term from the predicate controlled vocabulary, of which `_predicate` is itself the root. Predicates are grouped into four categories:\n\n- **[Functional](_predicate_functional.md)**: carry domain meaning and are followed during graph traversal — [`_predicate_enum-of`](_predicate_enum-of.md), [`_predicate_property-of`](_predicate_property-of.md), [`_predicate_field-of`](_predicate_field-of.md), [`_predicate_value-of`](_predicate_value-of.md).\n- **[Structural](_predicate_structural.md)**: reserved for dataset-level dependency graphs — [`_predicate_required-by`](_predicate_required-by.md), [`_predicate_banned-by`](_predicate_banned-by.md), [`_predicate_recommended-by`](_predicate_recommended-by.md).\n- **[Section](_predicate_section.md)**: grouping aids used during display but skipped during validation — [`_predicate_section-of`](_predicate_section-of.md).\n- **[Bridge](_predicate_bridge.md)**: allow a graph to include elements from another graph without duplicating edges — [`_predicate_bridge-of`](_predicate_bridge-of.md).\n\nThe `_predicate` field is immutable once the edge is created."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "In the following edge, `_predicate` is [`_predicate_enum-of`](_predicate_enum-of.md), declaring that Italy is a valid element of the ISO 3166-3 vocabulary:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_enum",
+				"_enum_types": [
+					"_predicate"
+				]
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "path",
+			"_gid": "_path",
+			"_aid": [
+				"path"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Relationship paths"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The set of graph root handles whose traversal passes through this edge. Each handle identifies a graph that routes through this source–predicate–destination relationship."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[Edges](_edge.md) are uniquely identified by their [source](_from.md), [predicate](_predicate.md), and [destination](_to.md). When multiple graphs share the same directed relationship between the same two nodes, they do not create separate edge documents — they share a single edge. `_path` holds the set of all graph root [handles](_id.md) that route through this edge.\n\nA graph is defined by its root node: all edges whose `_path` set contains that root handle belong to the graph. Filtering edges by a root handle present in `_path` isolates the edges of a specific graph without duplicating documents. When a new graph needs to include an existing edge, it simply adds its root handle to the edge's `_path` set — no new edge is created."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A basic edge belonging to one graph — only the ISO 3166-3 root is in `_path`:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nThe same edge shared by a second graph `MyCountries`. No new document is created — `MyCountries` is simply added to `_path`:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_comparable": {
+					"_comparable_type": "_type_handle"
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_path",
+			"_lid": "data",
+			"_gid": "_path_data",
+			"_aid": [
+				"data"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Path data"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An open structure of custom data attached to the edge, scoped by graph root or node context. Initialised to an empty object at insertion time."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[Edges](_edge.md) are shared across all graphs listed in [`_path`](_path.md). This property allows data to be attached to an edge in a context-sensitive way: keys are document handles (graph root handles from `_path`, or the [`_from`](_from.md)/[`_to`](_to.md) handles) or descriptor [`_gid`](_gid.md)s, and values hold the data relevant to that context.\n\nA common use is conditional validation rules via [`_predicate_value-of`](_predicate_value-of.md) edges. When the system evaluates a specific structural context, it reads `_path_data[root_handle]` to find any additional [`_rule`](_rule.md)-like constraints that apply — for example, permitting or banning properties only when a specific value is present in a governing descriptor.\n\nThis property is initialised to an empty object `{}` at edge insertion time."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "An edge between two locations shared by two airlines. `_path_data` holds price and duration scoped to each airline, taxi data scoped to each city, and a general passenger count attached to the edge as a whole:\n\n```json\n{\n\t\"_from\": \"locations/Roma\",\n\t\"_predicate\": \"_predicate_travel-to\",\n\t\"_to\": \"locations/Milano\",\n\t\"_path\": [\"airlines/airline-A\", \"airlines/airline-B\"],\n\t\"_path_data\": {\n\t\t\"airlines/airline-A\": {\"price\": 150, \"duration\": 75},\n\t\t\"airlines/airline-B\": {\"price\": 200, \"duration\": 45},\n\t\t\"locations/Roma\": {\"taxi\": 70, \"duration\": 45},\n\t\t\"locations/Milano\": {\"taxi\": 90, \"duration\": 30},\n\t\t\"passengers\": 1247\n\t}\n}\n```\n\nA value-triggered conditional rule: within the [`_scalar`](_scalar.md) structure, when [`_scalar_type`](_scalar_type.md) holds the value `_type_number_float`, the listed optional properties are permitted and no others:\n\n```json\n{\n\t\"_from\": \"terms/_type_number_float\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar_type\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": true,\n\t\t\t\"_recommended\": [\n\t\t\t\t\"_unit\",\n\t\t\t\t\"_unit-name\",\n\t\t\t\t\"_unit-symbol\",\n\t\t\t\t\"_decimals\",\n\t\t\t\t\"_range_valid\",\n\t\t\t\t\"_range_normal\"\n\t\t\t]\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_struct"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "prop",
+			"_gid": "_prop",
+			"_aid": [
+				"prop"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Properties Section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The section of a term that records the concrete attributes of the real-world entity the term represents. Each property must be a descriptor defined in the dictionary, and its value must conform to that descriptor's type definition."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The properties section turns a classification or identification term into a structured instance record. Where the [code section](_code.md) provides identifiers and the [information section](_info.md) provides documentation, `_prop` holds factual, typed data about the entity itself — attributes that are intrinsic to the real-world concept rather than metadata about the dictionary entry.\n\nFor example, a country term in the ISO 3166 vocabulary might carry identifiers and multilingual titles in [`_code`](_code.md) and [`_info`](_info.md), while `_prop` records the country's international dialling code, geographical area, spoken languages, official currencies, and neighbouring countries — facts that belong to the entity, not to its dictionary representation.\n\nEvery property in `_prop` must be a descriptor defined in the dictionary; its value must conform to that descriptor's type definition. The section has no fixed schema: any dictionary-defined descriptor may appear as a property. Unlike the [domains section](_domn.md), which classifies terms categorically, `_prop` carries the actual measured or factual values of the entity's attributes."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A country term's properties section recording its dialling code, area, official languages, currencies, and land borders:\n\n```json\n{\n\t\"_prop\": {\n\t\t\"std_country_dialling-code\": \"+39\",\n\t\t\"std_country_area_km2\": 301340,\n\t\t\"std_country_languages\": [\"ISO_639_3_ita\"],\n\t\t\"std_country_currencies\": [\"ISO_4217_EUR\"],\n\t\t\"std_country_borders\": [\n\t\t\t\"ISO_3166_3_AUT\",\n\t\t\t\"ISO_3166_3_FRA\",\n\t\t\t\"ISO_3166_3_SMR\",\n\t\t\t\"ISO_3166_3_SVN\",\n\t\t\t\"ISO_3166_3_CHE\",\n\t\t\t\"ISO_3166_3_VAT\"\n\t\t]\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_object"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_term",
+			"_lid": "type",
+			"_gid": "_term_type",
+			"_aid": [
+				"type"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Term type"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The set of functional roles a term plays within the data dictionary. Each element is an enumeration value drawn from the controlled vocabulary rooted at `_type_term`. This property is computed automatically by the system once all terms have been finalised and cannot be set or modified by users."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Every term in the dictionary can take on one or more functional roles, and `_term_type` records all of them in a single set. The roles are assigned by inspecting the term's structure and its relationships in the graph; they are not written by data curators.\n\nThe eight possible roles are:\n\n- [**Alias**](_type_term_alias.md): the term is an alias — it appears as the [`_to`](_to.md) node of a [`_predicate_bridge-of`](_predicate_bridge-of.md) edge, redirecting lookups to a canonical term.\n- [**Predicate**](_type_term_predicate.md): the term is used as a value of the [`_predicate`](_predicate.md) field in an [edge document](_edge.md).\n- [**Namespace**](_type_term_namespace.md): the term is used as a value of the [`_nid`](_nid.md) field in a [code section](_code.md), serving as a namespace for other terms.\n- [**Descriptor**](_type_term_descriptor.md): the term carries a [`_data`](_data.md) section and therefore represents a typed data variable.\n- [**Enumeration root**](_type_term_enum-root.md): the term is the root of an enumeration graph — other terms declare membership in its vocabulary via [`_predicate_enum-of`](_predicate_enum-of.md) edges pointing to it.\n- [**Enumeration option**](_type_term_enum-item.md): the term is a valid element of at least one enumeration graph — it appears as the `_from` node of a `_predicate_enum-of` edge.\n- [**Object definition**](_type_term_object.md): the term carries a [`_rule`](_rule.md) section and therefore defines an object schema.\n- [**Type definition**](_type_term_typedef.md): the term has been referenced in another term's [`_data`](_data.md) section via the [`_typedef`](_typedef.md) property as a reusable type definition.\n\nThis property lives in the [`_domn`](_domn.md) section and is populated automatically after all terms have been finalised. It is computed and locked: users cannot set or modify it."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A term that serves simultaneously as an enumeration root and a namespace:\n\n```json\n{\"_domn\": {\"_term_type\": [\"_type_term_enum-root\", \"_type_term_namespace\"]}}\n```\n\nA term that is both a descriptor and an object definition:\n\n```json\n{\"_domn\": {\"_term_type\": [\"_type_term_descriptor\", \"_type_term_object\"]}}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_comparable": {
+					"_comparable_type": "_type_enum",
+					"_enum_types": [
+						"_type_term"
+					]
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domn",
+			"_gid": "_domn",
+			"_aid": [
+				"domn"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Domains Section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The section of a term that classifies it across one or more categorical dimensions. Each property must be a descriptor defined in the dictionary, and its value is typically an enumeration element drawn from a controlled vocabulary identifying the category to which the term belongs."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The domains section provides a principled mechanism for categorising a [term](_term.md) according to dimensions such as subject domain, measurement type, statistical class, or intended application context. Each property in this section must be a descriptor defined in the dictionary; its value must conform to that descriptor's type definition and is typically an element of a controlled vocabulary.\n\nThis section applies to any term in the dictionary — including core dictionary building blocks — and serves two complementary purposes. First, it classifies the term within meaningful subject or application domains. Second, it records the [roles](_term_type.md) the term plays within the dictionary: whether it functions as a descriptor, an enumeration element, a namespace, an object definition, a typedef, or any combination of these. Storing roles explicitly in `_domn` via the [`_term_type`](_term_type.md) property lets a consumer determine immediately what a term can be used for, without traversing the graph.\n\nThe section is optional and its schema is open: any dictionary-defined descriptor may appear as a property. The [`_term_type`](_term_type.md) property is computed and locked — it is populated automatically by the system and cannot be set or modified by users."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A country term with domain classification properties recording its geographic region and sub-region:\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_type\": [\"_type_term_enum-item\"],\n\t\t\"std_country_region\": {\"ISO_639_3_eng\": \"Europe\"},\n\t\t\"std_country_sub-region\": {\"ISO_639_3_eng\": \"Southern Europe\"}\n\t}\n}\n```\n\nA core dictionary term with only its role recorded:\n\n```json\n{\"_domn\": {\"_term_type\": [\"_type_term_descriptor\", \"_type_term_object\"]}}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_scalar_type": "_type_object",
+				"_object_types": [
+					"_domn"
+				]
+			}
+		},
+		"_rule": {
+			"_closed": false,
+			"_recommended": [
+				"_term_type"
+			],
+			"_computed": [
+				"_term_type"
+			],
+			"_locked": [
+				"_term_type"
+			]
+		},
+		"_domn": {}
+	}
+]

@@ -554,7 +554,7 @@
 					"_recommended": [
 						"_regexp",
 						"_range_valid_string",
-						"_range_normal_string",
+						"_range_normal_string"
 					]
 				}
 			}

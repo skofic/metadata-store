@@ -118,5 +118,16 @@ Would it be something worth following at a later stage?
 
 
 
+Embedded validation logic and ArangoDB UDFs (2026-04-08):
+
+Two ideas explored for extending validation beyond what the declarative _data section can express.
+
+Idea 1 — embed validation code directly in _data section properties (e.g. a new _code type whose value is a JavaScript function). The validator would load and execute it against the current value. The security problem is obvious, but the deeper issue is structural: the dictionary is a declarative system — _data describes what data should look like, and a separate interpreter applies that description. Embedding executable code collapses that separation. The dictionary becomes self-executing rather than self-describing. Validation rules can no longer be audited by reading the data; you have to read and trust code stored in the database. Not a path worth taking.
+
+Idea 2 — ArangoDB User-Defined Functions (UDFs). ArangoDB allows registering JavaScript functions via the HTTP API (stored in _aqlfunctions), callable in AQL as NAMESPACE::FUNCTION(args). Foxx services can call them through AQL. The critical constraint: UDFs are pure functions with no database access from inside the function body — no db._query(), no collection lookups, no HTTP. This matters because: (a) format checks (email, regexp, IPv4) are exactly what _regexp and the type system already express declaratively; (b) semantic checks (is this _gid a real term? is this value a member of this enumeration?) require database access and must stay in Foxx/AQL anyway. UDFs handle the easy half the type system already covers, and can't touch the hard half. They also live outside the dictionary data, breaking the self-contained property and requiring a separate deployment step.
+
+Verdict: the typedef system is the dictionary-native extensibility mechanism. New types are introduced by creating a typedef term (structural definition in _data) plus a handler case in the Foxx validator (implementation). The dictionary stays declarative; code stays in code, versioned and testable. Both embedded-code ideas are not improvements on this.
+
+
 Research:
 Take _term.json and transform it un this form.
