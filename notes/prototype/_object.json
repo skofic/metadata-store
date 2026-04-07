@@ -1,0 +1,448 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "object",
+			"_gid": "_object",
+			"_aid": ["object"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Object"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_any": {
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_open",
+								"_closed"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "open",
+			"_gid": "_open",
+			"_aid": ["open"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Open schema"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_recommended": [
+						"_required",
+						"_recommended",
+						"_banned",
+						"_computed",
+						"_locked",
+						"_immutable",
+						"_default-value"
+					]
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "closed",
+			"_gid": "_closed",
+			"_aid": ["closed"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Closed schema"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_recommended": [
+						"_required",
+						"_recommended",
+						"_banned",
+						"_computed",
+						"_locked",
+						"_immutable",
+						"_default-value"
+					]
+				}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "required",
+			"_gid": "_required",
+			"_aid": ["required"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Required properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_array": {
+				"_typedef": "_selector"
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "recommended",
+			"_gid": "_recommended",
+			"_aid": ["recommended"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Recommended properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_set": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "banned",
+			"_gid": "_banned",
+			"_aid": ["banned"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Banned properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_set": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "computed",
+			"_gid": "_computed",
+			"_aid": ["computed"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Computed properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_set": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "locked",
+			"_gid": "_locked",
+			"_aid": ["locked"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Locked properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_set": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "immutable",
+			"_gid": "_immutable",
+			"_aid": ["immutable"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Immutable properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_set": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "default-value",
+			"_gid": "_default-value",
+			"_aid": ["default-value"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Default values"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_term_key_descriptor": {}
+				},
+				"_dict_value": {}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "selector",
+			"_gid": "_selector",
+			"_aid": ["selector"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Properties selector"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{ "_all": {} }
+							],
+							"_selection": [
+								"_selectors",
+								"_selection"
+							]
+						}
+					],
+				}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "selectors",
+			"_gid": "_selectors",
+			"_aid": ["selectors"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Properties selectors"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_array": {
+				"_object": {
+					"_closed": {
+						"_required": [
+							{
+								"_selectors": [
+									{
+										"_all": {
+											"_min-items": 1,
+											"_max-items": 1
+										}
+									}
+								],
+								"_selection": [
+									"_all",
+									"_any"
+								]
+							}
+						],
+					}
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "all",
+			"_gid": "_all",
+			"_aid": ["all"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mandatory selection"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_typedef": "_elements"
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "any",
+			"_gid": "_any",
+			"_aid": ["any"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Optional selection"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_typedef": "_elements"
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "selection",
+			"_gid": "_selection",
+			"_aid": ["selection"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Properties selection"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_nested": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {}
+	}
+]

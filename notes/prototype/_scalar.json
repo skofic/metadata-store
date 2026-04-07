@@ -72,6 +72,76 @@
 	
 	{
 		"_code": {
+			"_nid": "_scalar",
+			"_lid": "types",
+			"_gid": "_scalar_types",
+			"aid": ["types"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Scalar data types"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_set",
+			"_lid": "types",
+			"_gid": "_set_types",
+			"aid": ["types"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Set data types"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_dict_key",
+			"_lid": "types",
+			"_gid": "_dict_key_types",
+			"aid": ["types"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dictionary key data types"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
 			"_nid": "",
 			"_lid": "number",
 			"_gid": "_number",
@@ -133,7 +203,18 @@
 			}
 		},
 		"_data": {
-			"typedef": "_number"
+			"_object": {
+				"_closed": {
+					"_recommended": [
+						"_unit",
+						"_unit_name",
+						"_unit_symbol",
+						"_range_valid",
+						"_range_normal",
+						"_decimals"
+					]
+				}
+			}
 		},
 		"_domn": {
 			"_term_role": [
@@ -1358,8 +1439,8 @@
 								}
 							],
 							"_selection": [
-								[ "_range_min-exclusive", "_range_min-inclusive" ],
-								[ "_range_max-exclusive", "_range_max-inclusive" ]
+								[ "_min-exclusive", "_min-inclusive" ],
+								[ "_max-exclusive", "_max-inclusive" ]
 							]
 						}
 					]
@@ -1431,7 +1512,7 @@
 		"_code": {
 			"_nid": "_range",
 			"_lid": "min-exclusive",
-			"_gid": "_range_min-exclusive",
+			"_gid": "_min-exclusive",
 			"aid": ["min-exclusive"]
 		},
 		"_info": {
@@ -1459,7 +1540,7 @@
 		"_code": {
 			"_nid": "_range",
 			"_lid": "min-inclusive",
-			"_gid": "_range_min-inclusive",
+			"_gid": "_min-inclusive",
 			"aid": ["min-inclusive"]
 		},
 		"_info": {
@@ -1488,7 +1569,7 @@
 		"_code": {
 			"_nid": "_range",
 			"_lid": "min-exclusive",
-			"_gid": "_range_min-exclusive",
+			"_gid": "_min-exclusive",
 			"aid": ["min-exclusive"]
 		},
 		"_info": {
@@ -1516,7 +1597,7 @@
 		"_code": {
 			"_nid": "_range",
 			"_lid": "min-inclusive",
-			"_gid": "_range_min-inclusive",
+			"_gid": "_min-inclusive",
 			"aid": ["min-inclusive"]
 		},
 		"_info": {

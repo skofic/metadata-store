@@ -1,0 +1,102 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "array",
+			"_gid": "_array",
+			"_aid": ["array"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_scalar",
+								"_object",
+								"_dict",
+								"_tuple",
+								"_array",
+								"_set",
+								"_nested",
+								"_typedef"
+							]
+						}
+					],
+					"_recommended": [
+						"_elements"
+					]
+				}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "elements",
+			"_gid": "_elements",
+			"aid": ["elements"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Elements"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			},
+			"_examples": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_any": {
+										"_min-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_min-items",
+								"_max-items"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_typedef"
+			]
+		}
+	}
+]

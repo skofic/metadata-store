@@ -113,34 +113,6 @@
 	{
 		"_code": {
 			"_nid": "",
-			"_lid": "predicate",
-			"_gid": "_predicate",
-			"aid": ["predicate"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Relationship predicate"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_data": {
-			"_scalar": {
-				"_enum": ["_predicate"]
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "",
 			"_lid": "path",
 			"_gid": "_path",
 			"aid": ["path"]

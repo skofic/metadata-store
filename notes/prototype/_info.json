@@ -279,5 +279,74 @@
 			"_typedef": "_info_text"
 		},
 		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "_info",
+			"_lid": "string",
+			"_gid": "_info_string",
+			"_aid": ["string"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multilingual plain text"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_enum": {
+						"_enums": ["ISO_639_3"]
+					}
+				},
+				"_dict_value": {
+					"_scalar": {
+						"_text": {}
+					}
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_info",
+			"_lid": "text",
+			"_gid": "_info_text",
+			"_aid": ["text"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multilingual formatted text"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_enum": {
+						"_enums": ["ISO_639_3"]
+					}
+				},
+				"_dict_value": {
+					"_scalar": {
+						"_text_Markdown": {}
+					}
+				}
+			}
+		},
+		"_domn": {}
 	}
 ]
