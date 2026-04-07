@@ -18,124 +18,7 @@
 			}
 		},
 		"_data": {
-			"_object": {
-				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
-							"_selection": [
-								"_number",
-									"_number_float",
-									"_number_integer",
-								"_string",
-									"_string_URI",
-									"_string_Email",
-									"_string_Hostname",
-									"_string_IPv4",
-									"_string_IPv6",
-									"_string_YMD",
-									"_string_date",
-									"_string_time",
-									"_string_date-time",
-									"_string_LaTeX",
-									"_string_HEX",
-									"_string_regexp",
-								"_text",
-									"_text_HTML",
-									"_text_Markdown",
-									"_text_SVG",
-								"_term_key",
-									"_term_key_enum-root",
-									"_term_key_enum-item",
-									"_term_key_descriptor",
-									"_term_key_predicate",
-									"_term_key_typedef",
-								"_handle",
-								"_timestamp",
-								"_boolean",
-								"_enum"
-							]
-						}
-					]
-				}
-			}
-		},
-		"_domn": {}
-	},
-	
-	{
-		"_code": {
-			"_nid": "_scalar",
-			"_lid": "types",
-			"_gid": "_scalar_types",
-			"_aid": ["types"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Scalar data types"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "_set",
-			"_lid": "types",
-			"_gid": "_set_types",
-			"_aid": ["types"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Set data types"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "_dict_key",
-			"_lid": "types",
-			"_gid": "_dict_key_types",
-			"_aid": ["types"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Dictionary key data types"
-			},
-			"_definition": {
-				"ISO_639_3_eng": ""
-			},
-			"_description": {
-				"ISO_639_3_eng": ""
-			},
-			"_examples": {
-				"ISO_639_3_eng": ""
-			}
+			"_typedef": "_type_scalar"
 		},
 		"_domn": {}
 	},
@@ -186,7 +69,7 @@
 			"_nid": "_number",
 			"_lid": "float",
 			"_gid": "_number_float",
-			"_aid": ["loat"]
+			"_aid": ["float"]
 		},
 		"_info": {
 			"_title": {

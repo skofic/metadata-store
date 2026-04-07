@@ -18,53 +18,7 @@
 			}
 		},
 		"_data": {
-			"_object": {
-				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
-							"_selection": [
-								"_number",
-									"_number_float",
-									"_number_integer",
-								"_string",
-									"_string_URI",
-									"_string_Email",
-									"_string_Hostname",
-									"_string_IPv4",
-									"_string_IPv6",
-									"_string_YMD",
-									"_string_date",
-									"_string_time",
-									"_string_date-time",
-									"_string_LaTeX",
-									"_string_HEX",
-									"_string_regexp",
-								"_term_key",
-									"_term_key_enum-root",
-									"_term_key_enum-item",
-									"_term_key_descriptor",
-									"_term_key_predicate",
-									"_term_key_typedef",
-								"_handle",
-								"_timestamp",
-								"_boolean",
-								"_enum"
-							]
-						}
-					],
-					"_recommended": [
-						"_elements"
-					]
-				}
-			}
+			"_typedef": "_type_set"
 		},
 		"_domn": {}
 	}

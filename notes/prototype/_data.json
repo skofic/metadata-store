@@ -92,7 +92,7 @@
 			}
 		},
 		"_data": {
-			"_typedef": "_set"
+			"_typedef": "_type_set"
 		},
 		"_domn": {}
 	},
