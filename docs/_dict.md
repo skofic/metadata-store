@@ -1,0 +1,130 @@
+# `_dict`
+
+**`_title`**
+
+Dictionary
+
+**`_definition`**
+
+The data shape property for a key/value structure with explicitly typed keys and values. Both `_dict_key` and `_dict_value` must be present: `_dict_key` constrains the key type, `_dict_value` defines the value shape.
+
+**`_description`**
+
+A *dictionary* is a set of key/value pairs in which both keys and values are typed. Keys are defined by the required [`_dict_key`](_dict_key.md) sub-property, which constrains the key to a string-compatible comparable type using the type-as-key convention. Values are defined by the required [`_dict_value`](_dict_value.md) sub-property, which is equivalent to a full [`_data`](_data.md) section — making the dictionary structure fully recursive.
+
+The canonical use of `_dict` in the core dictionary is the multilingual string structure used throughout the [`_info`](_info.md) section: keys are ISO 639-3 language `_gid`s (constrained with `_enum` to the `ISO_639_3` vocabulary) and values are plain strings.
+
+**`_examples`**
+
+A multilingual string — ISO 639-3 language codes as keys, plain strings as values:
+
+```json
+{
+	"_data": {
+		"_dict": {
+			"_dict_key": {
+				"_enum": {
+					"_enums": ["ISO_639_3"]
+				}
+			},
+			"_dict_value": {
+				"_scalar": {
+					"_string": {}
+				}
+			}
+		}
+	}
+}
+```
+
+A dictionary mapping descriptor term keys to arrays of integers:
+
+```json
+{
+	"_data": {
+		"_dict": {
+			"_dict_key": {
+				"_term_key_descriptor": {}
+			},
+			"_dict_value": {
+				"_array": {
+					"_scalar": {
+						"_number_integer": {}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+A recursive dictionary — ISO 3166-3 country codes as outer keys, multilingual strings as values (each value is itself a dictionary of language codes to strings):
+
+```json
+{
+	"_data": {
+		"_dict": {
+			"_dict_key": {
+				"_enum": {
+					"_enums": ["ISO_3166_3"]
+				}
+			},
+			"_dict_value": {
+				"_dict": {
+					"_dict_key": {
+						"_enum": {
+							"_enums": ["ISO_639_3"]
+						}
+					},
+					"_dict_value": {
+						"_scalar": {
+							"_string": {}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+---
+
+**`_code`**
+
+```json
+{
+  "_aid" : [
+    "dict"
+  ],
+  "_gid" : "_dict",
+  "_lid" : "dict",
+  "_nid" : ""
+}
+```
+
+**`_data`**
+
+```json
+{
+  "_object" : {
+    "_closed" : {
+      "_required" : [
+        {
+          "_selection" : [
+            "_dict_key",
+            "_dict_value"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
