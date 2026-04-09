@@ -50,7 +50,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -131,6 +131,37 @@
 		"_data": {
 			"_scalar": {
 				"_string": {}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domns",
+			"_gid": "_domn",
+			"_aid": ["domns"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Domains section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": ""
+			},
+			"_description": {
+				"ISO_639_3_eng": ""
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_recommended" : [
+						"_term_role"
+					],
+					"_computed": ["_term_role"]
+				}
 			}
 		},
 		"_domn": {}

@@ -11,10 +11,13 @@
 				"ISO_639_3_eng": "Object"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Three forms are available depending on what `_object` contains:\n\n- **`{}`** — unrestricted object. The value may have any properties, including properties not defined in the dictionary, or none at all.\n- **`{\"_open\": {...}}`** — [`_open`](_open.md) schema. The constraints listed in `_open` apply, but the object may also contain any additional property defined in the data dictionary.\n- **`{\"_closed\": {...}}`** — [`_closed`](_closed.md) schema. Only the properties listed within `_closed` are permitted; any other property makes the object invalid.\n\nAt most one of `_open` or `_closed` may be present. Having both simultaneously is invalid."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Unrestricted object** — the descriptor accepts any object structure:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {}\n\t}\n}\n```\n\nThe object may contain any properties (dictionary-defined or not) or be entirely empty.\n\n---\n\n**Open schema** — `_title` is required; any other dictionary property may also appear:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_title\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_definition\", \"_description\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_title\": {...}}`, `{\"_title\": {...}, \"_description\": {...}, \"_notes\": {...}}`.\nInvalid: `{}` — `_title` is missing.\n\n---\n\n**Closed schema** — `_lid` and `_gid` are required; only the listed properties are permitted:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\", \"_pid\"],\n\t\t\t\t\"_computed\": [\"_gid\", \"_aid\"],\n\t\t\t\t\"_immutable\": [\"_lid\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_lid\": \"code\", \"_gid\": \"_code\"}`, `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_nid\": \"\", \"_aid\": [\"code\"]}`.\nInvalid: `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_info\": {...}}` — `_info` is not in the permitted set."
 			}
 		},
 		"_data": {
@@ -40,7 +43,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -53,10 +56,13 @@
 				"ISO_639_3_eng": "Open schema"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_open` is the schema section for the open form of [`_object`](_object.md). It may contain any combination of the constraint properties — [`_required`](_required.md), [`_recommended`](_recommended.md), [`_banned`](_banned.md), [`_computed`](_computed.md), [`_locked`](_locked.md), [`_immutable`](_immutable.md), [`_default-value`](_default-value.md) — to define what is mandatory, advisory, or forbidden within the object. Beyond those explicit constraints, the object may contain any other property defined in the data dictionary.\n\nAn empty `_open` section (`\"_open\": {}`) means no constraints apply: the object may contain any dictionary property, any number of them, or none.\n\n`_recommended` in an open schema is advisory: the listed properties are expected or encouraged but their absence does not make the object invalid. Properties not listed in `_recommended` are still accepted."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Empty `_open` section** — no constraints; any dictionary property is accepted:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {}\n\t\t}\n\t}\n}\n```\n\nValid: `{}`, `{\"_title\": {...}}`, `{\"_title\": {...}, \"_notes\": {...}, \"_custom_prop\": 42}`.\n\n---\n\n**Filled `_open` section** — `_title` is required; `_definition` and `_description` are recommended; `_notes` is banned:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_title\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_definition\", \"_description\"],\n\t\t\t\t\"_banned\": [\"_notes\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_title\": {...}}`, `{\"_title\": {...}, \"_definition\": {...}, \"_examples\": {...}}`.\nInvalid: `{}` — `_title` is missing.\nInvalid: `{\"_title\": {...}, \"_notes\": \"...\"}` — `_notes` is banned."
 			}
 		},
 		"_data": {
@@ -88,10 +94,13 @@
 				"ISO_639_3_eng": "Closed schema"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A schema constraint section within `_object` that restricts the object to only those properties explicitly listed within it. The full set of permitted properties is the union of `_required` and `_recommended`. If the section is empty, the object must be empty."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_closed` is the schema section for the closed form of [`_object`](_object.md). It may contain any combination of [`_required`](_required.md), [`_recommended`](_recommended.md), [`_banned`](_banned.md), [`_computed`](_computed.md), [`_locked`](_locked.md), [`_immutable`](_immutable.md), and [`_default-value`](_default-value.md). Unlike an open schema, a closed schema defines a strict whitelist: only properties that appear in `_required` or `_recommended` are permitted. Any other property makes the object invalid.\n\nAn empty `_closed` section (`\"_closed\": {}`) means the object must be completely empty — no properties at all are permitted.\n\nBecause `_required` and `_recommended` together form the whitelist, a property must appear in exactly one of them. Listing a property in both is a configuration error. `_banned` is redundant in a closed schema (unlisted properties are already forbidden) but may be used explicitly to prevent conditional rules from re-admitting a property."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Empty `_closed` section** — the object must be empty:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {}\n\t\t}\n\t}\n}\n```\n\nValid: `{}`.\nInvalid: `{\"_title\": {...}}` — no properties are permitted.\n\n---\n\n**Filled `_closed` section** — `_lid` and `_gid` are required; `_nid`, `_aid`, `_pid` are optional; no other properties are allowed:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\", \"_pid\"],\n\t\t\t\t\"_computed\": [\"_gid\", \"_aid\"],\n\t\t\t\t\"_immutable\": [\"_lid\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_lid\": \"code\", \"_gid\": \"_code\"}`, `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_nid\": \"\", \"_aid\": [\"code\"]}`.\nInvalid: `{\"_gid\": \"_code\"}` — `_lid` is missing.\nInvalid: `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_title\": {...}}` — `_title` is not in the permitted set."
 			}
 		},
 		"_data": {
@@ -111,7 +120,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -124,10 +133,13 @@
 				"ISO_639_3_eng": "Required properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "An array of `_selector` objects that define mandatory property presence rules for the enclosing schema. All selectors in the array must be satisfied simultaneously. Properties listed in `_computed` or given a value in `_default-value` satisfy their requirements automatically, since those are resolved first."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_required` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Its value is an array of [`_selector`](_selector.md) objects. Each `_selector` object pairs a set of cardinality rules ([`_selectors`](_selectors.md)) with a pool of candidate properties ([`_selection`](_selection.md)). All `_selector` objects in the array must be satisfied simultaneously — the array is implicitly AND-connected.\n\nEach `_selector` controls how many of its candidate properties must be present. The rules inside `_selectors` use [`_all`](_all.md) (mandatory group) or [`_any`](_any.md) (optional group) to define cardinality.\n\nIn a **closed schema**: `_required` defines the mandatory tier of the permitted whitelist. The union of `_required` candidates and [`_recommended`](_recommended.md) is the full set of allowed properties.\n\nIn an **open schema**: `_required` defines which properties must be present, without restricting the set of permitted properties."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**In a closed schema** — the [`_range`](_range.md) numeric range object. Exactly one of `_min-exclusive` or `_min-inclusive` must be present, and at least one of `_max-exclusive` or `_max-inclusive` must be present:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [\n\t\t\t\t\t\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t\t\t\t\t\t{\"_any\": {\"_min-items\": 1}}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"_selection\": [\n\t\t\t\t\t\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t\t\t\t\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_min-inclusive\": 0, \"_max-exclusive\": 100}`, `{\"_min-inclusive\": 0, \"_max-inclusive\": 100, \"_max-exclusive\": 99.9}` (two max bounds are allowed since `_any: {_min-items: 1}` only requires at least one).\nInvalid: `{\"_min-exclusive\": 0, \"_min-inclusive\": 0}` — both min bounds are present; exactly one is required.\nInvalid: `{\"_min-inclusive\": 0}` — no max bound is present.\n\n---\n\n**In an open schema** — both `_selectors` and `_selection` must be present:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_selectors\", \"_selection\"]\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nBoth `_selectors` and `_selection` must be present. Any other dictionary property is also permitted."
 			}
 		},
 		"_data": {
@@ -149,10 +161,13 @@
 				"ISO_639_3_eng": "Recommended properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A set of descriptor global identifiers listing properties that are allowed but not mandatory in the enclosing schema. In a closed schema, `_recommended` together with `_required` defines the complete whitelist of permitted properties. In an open schema, `_recommended` is advisory: listed properties are expected but the object may contain any dictionary property."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_recommended` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Its value is a set of descriptor global identifiers — the terms whose values are optional in the object.\n\nThe role of `_recommended` differs by schema type:\n\n- In a **closed schema**: `_recommended` and [`_required`](_required.md) together form the complete whitelist of permitted properties. Any property not present in either set is forbidden. A property must appear in exactly one of them — listing the same property in both is a configuration error.\n- In an **open schema**: `_recommended` is advisory. It lists properties that are expected or encouraged, but the object may also contain any other property defined in the data dictionary, regardless of whether it appears in `_recommended`."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**In a closed schema** — `_lid` and `_gid` are required; `_nid`, `_aid`, `_pid`, `_name` are optional; no other property is permitted:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\", \"_pid\", \"_name\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_lid\": \"x\", \"_gid\": \"_x\", \"_name\": \"X\"}`.\nInvalid: `{\"_lid\": \"x\", \"_gid\": \"_x\", \"_title\": {...}}` — `_title` is not in the permitted set.\n\n---\n\n**In an open schema** — `_title` is required; `_definition`, `_description`, `_examples` are recommended; any other dictionary property is also accepted:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_title\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_definition\", \"_description\", \"_examples\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_title\": {...}}`, `{\"_title\": {...}, \"_notes\": {...}}` — `_notes` is not in `_recommended` but is still permitted."
 			}
 		},
 		"_data": {
@@ -174,10 +189,13 @@
 				"ISO_639_3_eng": "Banned properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A set of descriptor global identifiers listing properties that must never be present in the object. The ban is unconditional and takes precedence over all other schema rules, including conditional rules applied via graph edges."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_banned` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Any property listed in `_banned` must be absent from the object — the ban cannot be overridden by [`_required`](_required.md), [`_recommended`](_recommended.md), or any conditional rule stored in [`_path_data`](_path_data.md) on graph edges.\n\nThe practical effect of `_banned` differs by schema type:\n\n- In an **open schema**: `_banned` creates an explicit exclusion. Without it, any dictionary property is permitted; adding it carves out specific properties that must not appear.\n- In a **closed schema**: unlisted properties are already excluded by the whitelist. Explicitly adding them to `_banned` makes the exclusion permanent and prevents any conditional rule from re-admitting them.\n\nBecause `_banned` is unconditional, it also overrides conditional rules. A property banned in the base schema cannot be permitted by any activation condition."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**In an open schema** — any dictionary property is accepted except `_notes` and `_citation`:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_banned\": [\"_notes\", \"_citation\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_title\": {...}, \"_description\": {...}}`.\nInvalid: `{\"_title\": {...}, \"_notes\": \"...\"}` — `_notes` is banned.\n\n---\n\n**In a closed schema** — a numeric scalar type that permits unit and range properties but permanently forbids `_decimals`:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_recommended\": [\"_unit\", \"_range_valid\", \"_range_normal\"],\n\t\t\t\t\"_banned\": [\"_decimals\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{}`, `{\"_unit\": \"_unit_length_cm\"}`.\nInvalid: `{\"_decimals\": 2}` — `_decimals` is banned even though no conditional rule has activated it."
 			}
 		},
 		"_data": {
@@ -199,10 +217,13 @@
 				"ISO_639_3_eng": "Computed properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A set of descriptor global identifiers listing properties whose values are automatically derived and set by the system at write time. Users may not supply values for computed properties. Because computed properties are resolved before `_required` is checked, a property that is both computed and required will always satisfy the requirement."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_computed` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Properties listed here are derived from other properties in the same object according to rules encoded in the system. The system sets their values before any validation is performed.\n\nComputed properties may also appear in [`_immutable`](_immutable.md) when the derived value must never change after the initial write. A property appearing in both `_computed` and `_immutable` is computed once at creation time and locked permanently thereafter."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "The [`_code`](_code.md) section computes three properties automatically:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\", \"_pid\"],\n\t\t\t\t\"_computed\": [\"_gid\", \"_aid\"],\n\t\t\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n- `_gid` is computed as the concatenation of `_nid` and `_lid` separated by `\"_\"`. The user provides `_lid` (and optionally `_nid`); the system derives `_gid`.\n- `_key` (the ArangoDB document key) is then set to the value of `_gid` by the loader before the document is saved.\n- `_aid` (the set of all identifiers) is initialised to `[_lid]` if absent — the user's local identifier becomes the first official identifier."
 			}
 		},
 		"_data": {
@@ -224,10 +245,13 @@
 				"ISO_639_3_eng": "Locked properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A set of descriptor global identifiers listing properties that are fully managed by the system. Users cannot set, modify, or delete locked properties at any point in the object's lifecycle."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_locked` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Properties listed here are exclusively under system control throughout the entire lifecycle of the object — neither the initial value nor any subsequent update may come from user input.\n\n`_locked` differs from [`_immutable`](_immutable.md) in that immutable properties may be set once (by the user or by the system via [`_computed`](_computed.md)) and then fixed. Locked properties can never be set by the user at all — only the system writes and updates them. A locked property may change its value over the object's lifetime (the system updates it), but a user attempting to write to it is always rejected."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A schema that locks the ArangoDB-managed document identifier and revision counter:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_definition\"],\n\t\t\t\t\"_locked\": [\"_id\", \"_rev\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n`_id` (the ArangoDB document handle, `<collection>/<key>`) and `_rev` (the document revision token) are generated and updated by the database engine. A user submitting a document that includes either property will have those values silently overwritten or the write will be rejected, depending on the application policy."
 			}
 		},
 		"_data": {
@@ -249,10 +273,13 @@
 				"ISO_639_3_eng": "Immutable properties"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A set of descriptor global identifiers listing properties that cannot be modified once their initial value has been set, whether by the user or by the system. Any subsequent write that changes an immutable property's value is rejected."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_immutable` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Once a value is written to an immutable property — by the user or by the system via [`_computed`](_computed.md) — it is fixed for the lifetime of the object. Updates that would change the value are rejected.\n\nImmutability is used when changing a property's value would have cascading consequences that the system cannot automatically resolve. The canonical case in this dictionary is [`_lid`](_lid.md): because [`_gid`](_gid.md) is computed from `_nid` and `_lid`, and [`_key`](_key.md) is set to `_gid`, changing `_lid` after insertion would invalidate `_gid` and therefore `_key`. Since `_key` is the primary ArangoDB document identifier, a change would invalidate every edge and cross-reference that uses the old identifier.\n\nA property may appear in both `_computed` and `_immutable`: the system computes the value on first write and that value is then permanently fixed."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\"],\n\t\t\t\t\"_computed\": [\"_gid\", \"_aid\"],\n\t\t\t\t\"_immutable\": [\"_lid\", \"_gid\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n`_lid` is immutable because modifying it after insertion would cascade: `_gid` (computed as `_nid + \"_\" + _lid`) would change, and `_key` (set to `_gid`) would become inconsistent with the stored document identifier — invalidating all edges and cross-references that use the old key. `_gid` is also immutable because it is derived from `_lid` and must remain stable for the same reason."
 			}
 		},
 		"_data": {
@@ -274,10 +301,13 @@
 				"ISO_639_3_eng": "Default values"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A dictionary mapping descriptor global identifiers to default values. Each mapped value is applied to the corresponding property when that property is absent from the object, before `_required` is checked. Default values must be compatible with the data type of their descriptor."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_default-value` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Its value is a dictionary whose keys are descriptor global identifiers and whose values are the defaults to supply when the corresponding property is absent.\n\nDefaults are applied before [`_required`](_required.md) is checked, so a property that is both listed in `_default-value` and required will always satisfy the requirement — the default supplies the value if the user did not. A mismatch between the default value and the descriptor's declared type is a configuration error and should be caught during dictionary validation.\n\nDefault values apply only when the property is entirely absent. If a user provides the property explicitly — even with a null or empty value — the default is not applied."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A schema that defaults `chr_status` to `\"active\"` and `chr_confidence` to `1.0`:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"chr_status\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"chr_confidence\", \"chr_date\"],\n\t\t\t\t\"_default-value\": {\n\t\t\t\t\t\"chr_status\": \"active\",\n\t\t\t\t\t\"chr_confidence\": 1.0\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n`chr_status` is required. If a user submits a document without it, the system supplies `\"active\"` before checking requirements — so the requirement is always satisfied. `chr_confidence`, if absent, is initialised to `1.0`. `chr_date` has no default and simply remains absent when not provided by the user."
 			}
 		},
 		"_data": {
@@ -290,7 +320,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -303,10 +333,16 @@
 				"ISO_639_3_eng": "Properties selector"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A selection rule object that pairs a set of cardinality rules (`_selectors`) with a pool of candidate properties (`_selection`). Both properties are required. Multiple `_selector` objects within `_required` are AND-connected: all must be satisfied simultaneously."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A `_selector` object is the unit of selection logic within [`_required`](_required.md). It has two required properties:\n\n- [`_selectors`](_selectors.md) — an array of [`_all`](_all.md) or [`_any`](_any.md) objects defining cardinality rules.\n- [`_selection`](_selection.md) — a flat or nested array of descriptor global identifiers serving as the candidate pool.\n\nWhen `_selection` is a flat array, `_selectors` has a single element applied to all candidates directly.\n\nWhen `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. `_selectors[0]` (the intra-group phase) is applied to each sub-array of `_selection` independently: it defines how many elements from each sub-array can simultaneously be present. `_selectors[1]` (the inter-group phase) is applied to the combined result — one candidate slot per sub-array: it defines how many of the sub-array groups must be represented."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Previously named `_rule_selector` in earlier versions of the dictionary."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Example 1** — the [`_range`](_range.md) numeric range object:\n\n```json\n{\n\t\"_selectors\": [\n\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_any\": {\"_min-items\": 1}}\n\t],\n\t\"_selection\": [\n\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t]\n}\n```\n\n`_selectors[0]` (`_all: {_min-items: 1, _max-items: 1}`) is the intra-group phase: applied to each sub-array independently. From `[\"_min-exclusive\", \"_min-inclusive\"]`, exactly 1 must be present; from `[\"_max-exclusive\", \"_max-inclusive\"]`, exactly 1 must be present. The combined result is exactly 2 selected elements (one per group).\n\n`_selectors[1]` (`_any: {_min-items: 1}`) is the inter-group phase: applied to the 2 selected elements, at least 1 must be present in the actual object.\n\n---\n\n**Example 2** — requiring that the closed schema form be present:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {}}],\n\t\"_selection\": [\"_closed\"]\n}\n```\n\n`_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required."
 			}
 		},
 		"_data": {
@@ -328,7 +364,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -341,10 +377,16 @@
 				"ISO_639_3_eng": "Properties selectors"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_selectors` is the array of cardinality rules within a [`_selector`](_selector.md) object. Each element of `_selectors` is an object containing exactly one of [`_all`](_all.md) (mandatory group) or [`_any`](_any.md) (optional group).\n\nWhen [`_selection`](_selection.md) is a flat array, `_selectors` has a single element applied to all candidates directly.\n\nWhen `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. The first element (`_selectors[0]`) is the intra-group rule: applied to each sub-array of `_selection` independently, it constrains how many elements from each group can simultaneously be present. The second element (`_selectors[1]`) is the inter-group rule: applied to the combined result (one candidate slot per sub-array), it constrains how many of the groups must be represented."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Previously named `_selection_rules` in earlier versions of the dictionary."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "The `_selectors` from the [`_range`](_range.md) numeric range term:\n\n```json\n{\n\t\"_selectors\": [\n\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_any\": {\"_min-items\": 1}}\n\t],\n\t\"_selection\": [\n\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t]\n}\n```\n\nThe first `_selectors` entry — `_all: {_min-items: 1, _max-items: 1}` — is the intra-group rule. Applied to each sub-array independently: from `[\"_min-exclusive\", \"_min-inclusive\"]`, exactly 1 must be present; from `[\"_max-exclusive\", \"_max-inclusive\"]`, exactly 1 must be present. The combined result is exactly 2 selected elements.\n\nThe second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group rule. Applied to the 2 selected elements, at least 1 must be present in the actual object."
 			}
 		},
 		"_data": {
@@ -385,10 +427,13 @@
 				"ISO_639_3_eng": "Mandatory selection"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_all` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as mandatory — the constraint is always evaluated. Its value is an object that may contain [`_min-items`](_min-items.md), [`_max-items`](_max-items.md), or both, or it may be empty.\n\n- **`_all: {}`** — no item limit. All candidates in the group must be present.\n- **`_all: {_max-items: N}`** — at most *N* candidates may be present. More than *N* is invalid.\n- **`_all: {_min-items: M, _max-items: N}`** — at least *M* and at most *N* candidates must be present. With *M* = *N* = 1, exactly one candidate is required (mutually exclusive selection).\n\nThe \"mandatory\" quality of `_all` means the constraint itself is always enforced — unlike [`_any`](_any.md), which only enforces a minimum when `_min-items` is set."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**`_all: {}`** — all candidates must be present:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {}}],\n\t\"_selection\": [\"_selectors\", \"_selection\"]\n}\n```\n\nBoth `_selectors` and `_selection` must be present. An object missing either property is invalid.\n\n---\n\n**`_all: {_max-items: 1}`** — at most one candidate may be present:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {\"_max-items\": 1}}],\n\t\"_selection\": [\"_open\", \"_closed\"]\n}\n```\n\n`_open` and `_closed` cannot both be present. Zero or one is valid; both together is invalid.\n\n---\n\n**`_all: {_min-items: 2, _max-items: 5}`** — between two and five candidates must be present:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {\"_min-items\": 2, \"_max-items\": 5}}],\n\t\"_selection\": [\"propA\", \"propB\", \"propC\", \"propD\", \"propE\", \"propF\"]\n}\n```\n\nAt least two and at most five of the six candidate properties must be present. Having one or zero, or having all six, is invalid."
 			}
 		},
 		"_data": {
@@ -408,10 +453,13 @@
 				"ISO_639_3_eng": "Optional selection"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A cardinality constraint object within `_selectors` that defines an optional rule for its candidate group. With no item limits (`_any: {}`), any number of candidates — including none — may be present. `_min-items` and `_max-items` impose a count range when selection is not entirely open-ended."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_any` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as optional — no candidates are required unless `_min-items` is set. Its value is an object that may contain [`_min-items`](_min-items.md), [`_max-items`](_max-items.md), or both, or it may be empty.\n\n- **`_any: {}`** — no constraint. Any number of candidates — including none — may be present.\n- **`_any: {_max-items: N}`** — at most *N* candidates may be present; zero is still valid.\n- **`_any: {_min-items: M, _max-items: N}`** — at least *M* and at most *N* candidates must be present.\n\nThe \"optional\" quality of `_any` means having none of the candidates is valid by default. [`_all`](_all.md) requires all candidates when no item limits are given; `_any` requires none."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**`_any: {}`** — candidates are fully optional; any number may appear:\n\n```json\n{\n\t\"_selectors\": [{\"_any\": {}}],\n\t\"_selection\": [\"_unit\", \"_unit_name\", \"_unit_symbol\"]\n}\n```\n\nZero, one, two, or all three of the unit properties may be present. No count constraint is enforced.\n\n---\n\n**`_any: {_max-items: 1}`** — at most one candidate may be present; none is also valid:\n\n```json\n{\n\t\"_selectors\": [{\"_any\": {\"_max-items\": 1}}],\n\t\"_selection\": [\"_open\", \"_closed\"]\n}\n```\n\nAt most one schema form may be present. Zero is valid; both `_open` and `_closed` simultaneously is invalid.\n\n---\n\n**`_any: {_min-items: 2, _max-items: 5}`** — at least two and at most five candidates must be present:\n\n```json\n{\n\t\"_selectors\": [{\"_any\": {\"_min-items\": 2, \"_max-items\": 5}}],\n\t\"_selection\": [\"propA\", \"propB\", \"propC\", \"propD\", \"propE\", \"propF\"]\n}\n```\n\nAt least two and at most five of the six candidates must be present. Having one or zero, or having all six, is invalid."
 			}
 		},
 		"_data": {
@@ -419,7 +467,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -432,10 +480,13 @@
 				"ISO_639_3_eng": "Properties selection"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_selection` is the candidate pool within a [`_selector`](_selector.md) object. Its structure is coordinated with [`_selectors`](_selectors.md):\n\n- **Flat array** — a single list of candidates. `_selectors` has one element that governs all candidates.\n- **Nested array** — an array of sub-arrays. Each sub-array is governed by the `_selectors` element at the same position. The first `_selectors` element applies to the first sub-array, the second to the second, and so on.\n\nAll values in `_selection` must be descriptor global identifiers. The nesting may be as deep as needed, but each nesting level adds one entry to `_selectors`.\n\nThe name `_selection` was previously `_selection_descriptors` in earlier versions of the dictionary."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "**Flat `_selection`** — a single selector governs all candidates:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {}}],\n\t\"_selection\": [\"_selectors\", \"_selection\"]\n}\n```\n\nOne `_selectors` entry governs both `_selectors` and `_selection` as a flat group. Both must be present.\n\n---\n\n**Nested `_selection`** — two selectors each govern one sub-array (from the [`_range`](_range.md) term):\n\n```json\n{\n\t\"_selectors\": [\n\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_any\": {\"_min-items\": 1}}\n\t],\n\t\"_selection\": [\n\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t]\n}\n```\n\nThe first `_selectors` entry applies to `[\"_min-exclusive\", \"_min-inclusive\"]`: exactly one lower-bound property is required. The second applies to `[\"_max-exclusive\", \"_max-inclusive\"]`: at least one upper-bound property is required."
 			}
 		},
 		"_data": {

@@ -1,0 +1,56 @@
+[
+	{
+		"_from": "terms/_term_role_type",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_enum-root",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_enum-item",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_descriptor",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_predicate",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_typedef",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	}
+]

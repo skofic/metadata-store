@@ -25,6 +25,16 @@ docs/                 — term cards and hand-authored documentation (project ro
 
 Term cards live at the **project root** in `docs/`, alongside hand-authored documentation. All cards are named `<_gid>.md`.
 
+### Source of truth and term cards
+
+**The `.json` files in `data/core/` are the sole source of truth.** Term cards in `docs/` are a human-readable rendering of the JSON content, used for consulting terms during development (Markdown escaping in JSON strings makes the raw files unreadable). They are derived artifacts and may be deleted or regenerated at any time once the core terms are finalised.
+
+**Workflow:**
+1. Make all changes to the `.json` source file.
+2. Regenerate the affected `.md` term cards in `docs/` from the updated JSON.
+
+Never edit a `.md` card directly. If a card needs correction, update the `.json` first, then regenerate the card.
+
 ---
 
 ## Namespace Convention
