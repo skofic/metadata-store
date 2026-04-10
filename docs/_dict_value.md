@@ -6,11 +6,11 @@ Dictionary value
 
 **`_definition`**
 
-The sub-property of a dictionary that defines the type and shape of its values. Equivalent to a full data section: at most one shape property may be present. When empty, the value may be of any shape and type.
+The sub-property of a dictionary that defines the type and shape of its values. At most one data shape property may be present, following the same conventions as a `_data` section. When empty, the value may be of any shape and type.
 
 **`_description`**
 
-`_dict_value` defines the type of the value side of a dictionary entry. It is equivalent to a full [`_data`](_data.md) section: at most one shape property may be present — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_nested`](_nested.md), [`_dict`](_dict.md), or [`_typedef`](_typedef.md).
+`_dict_value` defines the type of the value side of a dictionary entry. At most one shape property may be present — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_nested`](_nested.md), [`_dict`](_dict.md), or [`_typedef`](_typedef.md) — following the same conventions as a [`_data`](_data.md) section.
 
 When `_dict_value` is an **empty object** (`{}`), the value side accepts any value of any shape and type without constraint.
 
@@ -71,6 +71,6 @@ Unconstrained values — any shape and type accepted:
 
 ```json
 {
-  "_typedef" : "_data"
+  "_typedef": "_data"
 }
 ```

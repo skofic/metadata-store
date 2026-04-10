@@ -4,28 +4,18 @@
 
 Valid numeric range
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "valid",
+  "_gid": "_range_valid",
+  "_aid": [
     "valid"
-  ],
-  "_gid" : "_range_valid",
-  "_lid" : "valid",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -33,6 +23,6 @@ Valid numeric range
 
 ```json
 {
-  "_typedef" : "_range"
+  "_typedef": "_range"
 }
 ```

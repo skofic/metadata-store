@@ -4,28 +4,18 @@
 
 Valid string range
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range_valid",
+  "_lid": "string",
+  "_gid": "_range_valid_string",
+  "_aid": [
     "string"
-  ],
-  "_gid" : "_range_valid_string",
-  "_lid" : "string",
-  "_nid" : "_range_valid"
+  ]
 }
 ```
 
@@ -33,6 +23,6 @@ Valid string range
 
 ```json
 {
-  "_typedef" : "_range_string"
+  "_typedef": "_range_string"
 }
 ```

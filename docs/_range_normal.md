@@ -4,28 +4,18 @@
 
 Normal numeric range
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "normal",
+  "_gid": "_range_normal",
+  "_aid": [
     "normal"
-  ],
-  "_gid" : "_range_normal",
-  "_lid" : "normal",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -33,6 +23,6 @@ Normal numeric range
 
 ```json
 {
-  "_typedef" : "_range"
+  "_typedef": "_range"
 }
 ```

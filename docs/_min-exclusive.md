@@ -4,28 +4,18 @@
 
 Range minimum exclusive
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "min-exclusive",
+  "_gid": "_min-exclusive",
+  "_aid": [
     "min-exclusive"
-  ],
-  "_gid" : "_min-exclusive",
-  "_lid" : "min-exclusive",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -33,10 +23,8 @@ Range minimum exclusive
 
 ```json
 {
-  "_scalar" : {
-    "_number" : {
-
-    }
+  "_scalar": {
+    "_number": {}
   }
 }
 ```

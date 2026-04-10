@@ -10,7 +10,7 @@ The data shape property for a key/value structure with explicitly typed keys and
 
 **`_description`**
 
-A *dictionary* is a set of key/value pairs in which both keys and values are typed. Keys are defined by the required [`_dict_key`](_dict_key.md) sub-property, which constrains the key to a string-compatible comparable type using the type-as-key convention. Values are defined by the required [`_dict_value`](_dict_value.md) sub-property, which is equivalent to a full [`_data`](_data.md) section — making the dictionary structure fully recursive.
+A *dictionary* is a set of key/value pairs in which both keys and values are typed. Keys are defined by the required [`_dict_key`](_dict_key.md) sub-property, which constrains the key to a string-compatible comparable type using the type-as-key convention. Values are defined by the required [`_dict_value`](_dict_value.md) sub-property, which specifies the data shape of dictionary values — making the dictionary structure fully recursive when the value type is itself a dictionary. When `_dict_value` is an empty object, values may be of any type and shape.
 
 The canonical use of `_dict` in the core dictionary is the multilingual string structure used throughout the [`_info`](_info.md) section: keys are ISO 639-3 language `_gid`s (constrained with `_enum` to the `ISO_639_3` vocabulary) and values are plain strings.
 

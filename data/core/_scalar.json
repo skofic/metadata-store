@@ -11,10 +11,13 @@
 				"ISO_639_3_eng": "Scalar"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_scalar` is the data shape for a single value. It uses the **type-as-key** convention: the property key present inside `_scalar` identifies the data type; its value is an object of **companion properties** that apply additional constraints (units, ranges, patterns, etc.). An empty `_scalar` (`{}`) imposes no type constraint.\n\nThe validator reads the single key present in `_scalar` to determine the type, then validates the companion properties against that type's schema.\n\nScalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a `_string_URI` value must first satisfy the `_string` check (valid UTF-8 string) before the URI format check is applied.\n\n**Number types** — comparable; usable in sets but not as dictionary keys:\n\n| Type | Accepts |\n|---|---|\n| [`_number`](_number.md) | Any number (integer or float) |\n| [`_number_float`](_number_float.md) | Floating-point; must be stored as float |\n| [`_number_integer`](_number_integer.md) | Integer; no decimal part |\n\nCompanion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid`](_range_valid.md), [`_range_normal`](_range_normal.md). [`_decimals`](_decimals.md) is also accepted by `_number` and `_number_float` but not `_number_integer`.\n\n**String types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_string`](_string.md) | Generic UTF-8 string |\n| [`_string_URI`](_string_URI.md) | Uniform Resource Identifier |\n| [`_string_Email`](_string_Email.md) | Email address |\n| [`_string_Hostname`](_string_Hostname.md) | Internet hostname |\n| [`_string_IPv4`](_string_IPv4.md) | IPv4 address |\n| [`_string_IPv6`](_string_IPv6.md) | IPv6 address |\n| [`_string_YMD`](_string_YMD.md) | Partial or full date (YYYYMMDD) |\n| [`_string_date`](_string_date.md) | Date (YYYY-MM-DD) |\n| [`_string_time`](_string_time.md) | Time (HH:MM:SS) |\n| [`_string_date-time`](_string_date-time.md) | Date-time (YYYY-MM-DDTHH:MM:SS) |\n| [`_string_LaTeX`](_string_LaTeX.md) | LaTeX expression |\n| [`_string_HEX`](_string_HEX.md) | Hexadecimal string |\n| [`_string_regexp`](_string_regexp.md) | A regular expression (the stored value is itself a pattern) |\n\n`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.\n\n**Text types** — **non-comparable**; cannot be used in sets or as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_text`](_text.md) | Generic rich text |\n| [`_text_HTML`](_text_HTML.md) | HTML |\n| [`_text_Markdown`](_text_Markdown.md) | Markdown |\n| [`_text_SVG`](_text_SVG.md) | SVG image |\n\nNo companion properties. The markup format is declared by the type key itself.\n\n**Term key types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Constraint on the referenced term |\n|---|---|\n| [`_term_key`](_term_key.md) | Any term |\n| [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |\n| [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |\n| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |\n| [`_term_key_predicate`](_term_key_predicate.md) | Predicate |\n| [`_term_key_typedef`](_term_key_typedef.md) | Typedef term |\n\nNo companion properties — the type key encodes the constraint on the referenced term.\n\n**Other types**:\n\n| Type | Description | Comparable | Companion properties |\n|---|---|---|---|\n| [`_handle`](_handle.md) | ArangoDB document `_id` (`<collection>/<key>`) | Yes | — |\n| [`_timestamp`](_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC) | Yes | `_range_valid`, `_range_normal` |\n| [`_boolean`](_boolean.md) | True/false | Yes | — |\n| [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |"
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A floating-point number with unit and valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\t\"_max-range-exclusive\": 300.0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA plain string constrained by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t\t}\n\t}\n}\n```\n\nAn enumeration value constrained to the ISO 639-3 language vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nAn unconstrained scalar — any type and value accepted:\n\n```json\n{\n\t\"_scalar\": {}\n}\n```"
 			}
 		},
 		"_data": {
@@ -35,13 +38,13 @@
 				"ISO_639_3_eng": "Number"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for any numeric value, accepting both integers and floating-point numbers. Parent type of `_number_float` and `_number_integer`, which add stricter format constraints. When used as the type key, `_decimals` and all range and unit companion properties are permitted."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_number` serves a dual role. As a type key inside [`_scalar`](_scalar.md), it declares that the value is any numeric value — integer or floating-point. As a parent type, it is the root of [`_number_float`](_number_float.md) and [`_number_integer`](_number_integer.md), which further constrain the accepted format.\n\nWhen `_number` is the type key, companion properties [`_decimals`](_decimals.md) and all range and unit properties are permitted. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A number with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0,\n\t\t\t\t\"_max-range-exclusive\": 100\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `3.14`, `-100`."
 			}
 		},
 		"_data": {
@@ -76,13 +79,13 @@
 				"ISO_639_3_eng": "Floating point number"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for floating-point numbers. Values must be stored and treated as floating-point; integer values are accepted but treated as floats. A sub-type of `_number`; `_decimals` is permitted."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_number_float` is a sub-type of [`_number`](_number.md). It requires the value to be stored and displayed as a floating-point number. Integer values are accepted but treated as floats. [`_decimals`](_decimals.md) is permitted to control display precision. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A floating-point weight with two decimal places:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_weight_kg\"\n\t\t}\n\t}\n}\n```\n\nStored values: `3.14159`, `0.0`, `98.6`, `-2.5`."
 			}
 		},
 		"_data": {
@@ -117,13 +120,13 @@
 				"ISO_639_3_eng": "Integer number"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for integer numbers. Values must have no decimal part; floating-point numbers are rejected. A sub-type of `_number`; `_decimals` is not permitted."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_number_integer` is a sub-type of [`_number`](_number.md). It restricts values to whole numbers — no decimal part is allowed. [`_decimals`](_decimals.md) is not permitted. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A non-negative integer count:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `-7`, `2024`, `0`."
 			}
 		},
 		"_data": {
@@ -158,13 +161,13 @@
 				"ISO_639_3_eng": "String"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for generic UTF-8 strings. Short, indexable text suitable for use as a tag, database field, or dictionary key. Parent type of all `_string_*` sub-types; `_regexp` may constrain the accepted format."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string` serves a dual role. As a type key inside [`_scalar`](_scalar.md), it declares that the value is any UTF-8 string. [`_regexp`](_regexp.md) may be used to constrain the accepted format. As a parent type, it is the root of all `_string_*` sub-types, which carry their own format constraint and do not accept [`_regexp`](_regexp.md).\n\nUnlike [`_text`](_text.md), `_string` values are expected to be short and indexable — suitable for use as tags, property names, or dictionary keys. Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A string constrained by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t\t}\n\t}\n}\n```\n\nAn unconstrained string:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {}\n\t}\n}\n```\n\nStored values: `\"hello\"`, `\"IT\"`, `\"john.doe\"`, `\"2024-01-15\"`."
 			}
 		},
 		"_data": {
@@ -199,13 +202,13 @@
 				"ISO_639_3_eng": "Uniform Resource Identifier"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for Uniform Resource Identifiers conforming to RFC 3986. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_URI` declares that the value is a [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) string conforming to [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). The type itself defines the format; no companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_URI\": {}\n\t}\n}\n```\n\nStored values: `\"https://www.example.com/resource\"`, `\"urn:isbn:0451450523\"`, `\"mailto:user@example.com\"`."
 			}
 		},
 		"_data": {
@@ -231,13 +234,13 @@
 				"ISO_639_3_eng": "Email address"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for email addresses. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_Email` declares that the value is an email address. The type itself defines the format; no companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_Email\": {}\n\t}\n}\n```\n\nStored values: `\"user@example.com\"`, `\"john.doe+tag@company.org\"`."
 			}
 		},
 		"_data": {
@@ -263,13 +266,13 @@
 				"ISO_639_3_eng": "Hostname"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for internet hostnames. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_Hostname` declares that the value is an [internet hostname](https://en.wikipedia.org/wiki/Hostname). The type itself defines the format; no companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_Hostname\": {}\n\t}\n}\n```\n\nStored values: `\"www.example.com\"`, `\"localhost\"`, `\"mail.server.org\"`."
 			}
 		},
 		"_data": {
@@ -295,13 +298,13 @@
 				"ISO_639_3_eng": "Internet Protocol version 4 address"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for IPv4 addresses in dotted-decimal notation (e.g. `192.168.0.1`). The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_IPv4` declares that the value is an [IPv4 address](https://en.wikipedia.org/wiki/IPv4) in dotted-decimal notation (e.g. `192.168.0.1`). The type itself defines the format; no companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_IPv4\": {}\n\t}\n}\n```\n\nStored values: `\"192.168.0.1\"`, `\"127.0.0.1\"`, `\"10.0.0.255\"`."
 			}
 		},
 		"_data": {
@@ -327,13 +330,13 @@
 				"ISO_639_3_eng": "Internet Protocol version 6 address"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for IPv6 addresses. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_IPv6` declares that the value is an [IPv6 address](https://en.wikipedia.org/wiki/IPv6). The type itself defines the format; no companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_IPv6\": {}\n\t}\n}\n```\n\nStored values: `\"2001:db8::1\"`, `\"::1\"`, `\"fe80::1\"`."
 			}
 		},
 		"_data": {
@@ -359,13 +362,13 @@
 				"ISO_639_3_eng": "Date"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for full dates in ISO 8601 `YYYY-MM-DD` format. Comparable; string range constraints may be applied. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_date` stores a full calendar date with hyphen separators. Lexicographic ordering is meaningful. String range constraints may be applied via [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md). A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A date with a lower bound:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_min-range-inclusive_string\": \"1900-01-01\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024-03-15\"`, `\"1970-01-01\"`, `\"2000-12-31\"`."
 			}
 		},
 		"_data": {
@@ -396,13 +399,13 @@
 				"ISO_639_3_eng": "Time"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for times in `HH:MM:SS` format. Comparable; string range constraints may be applied. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_time` stores a time-of-day value in `HH:MM:SS` format. Lexicographic ordering is meaningful. String range constraints may be applied via [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md). A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_time\": {}\n\t}\n}\n```\n\nStored values: `\"14:30:00\"`, `\"09:00:00\"`, `\"23:59:59\"`."
 			}
 		},
 		"_data": {
@@ -433,13 +436,13 @@
 				"ISO_639_3_eng": "Date and time"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for combined date-time values in ISO 8601 `YYYY-MM-DDTHH:MM:SS` format. Comparable; string range constraints may be applied. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_date-time` stores a combined date and time value with the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) `T` separator. Lexicographic ordering is meaningful. String range constraints may be applied via [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md). A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date-time\": {}\n\t}\n}\n```\n\nStored values: `\"2024-03-15T14:30:00\"`, `\"2000-01-01T00:00:00\"`."
 			}
 		},
 		"_data": {
@@ -470,13 +473,13 @@
 				"ISO_639_3_eng": "YYYYMMDD date"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for partial or full dates in YYYYMMDD format: `YYYY` (year only), `YYYYMM` (year and month), or `YYYYMMDD` (full date). Comparable; string range constraints may be applied. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_YMD` stores dates without separators, allowing partial dates (year only or year-month) unlike [`_string_date`](_string_date.md). Lexicographic ordering is meaningful and [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md) may be applied. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A YMD date field accepting any date from year 2000 onwards:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_YMD\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_min-range-inclusive_string\": \"2000\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024\"` (year only), `\"202403\"` (year-month), `\"20240315\"` (full date)."
 			}
 		},
 		"_data": {
@@ -507,13 +510,13 @@
 				"ISO_639_3_eng": "LaTeX string"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for LaTeX expressions. Plain Unicode characters are also valid. Rendered in frontends using KaTeX. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_LaTeX` declares that the value is a LaTeX string. [LaTeX](https://www.latex-project.org) is a superset of plain [UTF-8](https://en.wikipedia.org/wiki/UTF-8) text, so simple symbols (e.g. `°C`, `μg`) may be stored as plain [Unicode](https://en.wikipedia.org/wiki/Unicode) while complex expressions use LaTeX syntax (e.g. `\\bar{x} \\pm \\sigma`). No companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_LaTeX\": {}\n\t}\n}\n```\n\nStored values: `\"°C\"`, `\"E = mc^{2}\"`, `\"r^{2}\"`."
 			}
 		},
 		"_data": {
@@ -539,13 +542,13 @@
 				"ISO_639_3_eng": "Hexadecimal string"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for hexadecimal strings (digits 0–9 and letters A–F or a–f). Comparable; string range constraints and unit properties apply. A sub-type of `_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_HEX` declares that the value is a hexadecimal string. Lexicographic range constraints may be applied. Unit properties are permitted for hex values that represent physical quantities (e.g. memory addresses, colour codes). A [`_regexp`](_regexp.md) may further constrain the length or case. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A six-character hex colour code:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_HEX\": {\n\t\t\t\"_regexp\": \"^[0-9A-Fa-f]{6}$\"\n\t\t}\n\t}\n}\n```\n\nStored values: `\"FF0000\"`, `\"deadbeef\"`, `\"0A1B2C3D\"`."
 			}
 		},
 		"_data": {
@@ -577,13 +580,13 @@
 				"ISO_639_3_eng": "Regular expression string"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for regular expression patterns. The stored value is itself a pattern, not a string to be validated against a pattern. A sub-type of `_string`; comparable but not usable as a dictionary key."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_string_regexp` declares that the value is a regular expression string. This is distinct from the [`_regexp`](_regexp.md) companion property: [`_regexp`](_regexp.md) holds a *validation pattern* applied to a string value; `_string_regexp` declares that the *stored value itself* is a pattern. No companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_string_regexp\": {}\n\t}\n}\n```\n\nStored values: `\"^[A-Z]{2,3}$\"`, `\"\\d{4}-\\d{2}-\\d{2}\"`, `\"^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$\"`."
 			}
 		},
 		"_data": {
@@ -610,13 +613,13 @@
 				"ISO_639_3_eng": "Text"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for long-form, non-indexable text content. Not suitable for use as a database tag, set element, or dictionary key. Parent type of `_text_HTML`, `_text_Markdown`, and `_text_SVG`, which declare the markup format."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_text` is the parent type for long-form text content. Unlike [`_string`](_string.md), text values are expected to be lengthy — narrative descriptions, formatted markup, or embedded images — and are not suitable for indexing, sorting, or use as dictionary keys. The sub-types [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), and [`_text_SVG`](_text_SVG.md) declare the markup format. No companion properties apply — the format is encoded in the type key itself. Non-comparable; cannot appear in sets or as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_text\": {}\n\t}\n}\n```\n\nA stored `_text` value is typically a paragraph or longer narrative — for example, a full definition, a methodology description, or a multi-page report excerpt. Unlike `_string`, it is not suitable for indexing or use as a tag."
 			}
 		},
 		"_data": {
@@ -642,13 +645,13 @@
 				"ISO_639_3_eng": "HTML"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for HTML-formatted text. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_text`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_text_HTML` declares that the value is an [HTML](https://en.wikipedia.org/wiki/HTML) string. No companion properties apply — the type itself defines the format. A sub-type of [`_text`](_text.md). Non-comparable; cannot appear in sets or as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_text_HTML\": {}\n\t}\n}\n```\n\nStored value example:\n\n```html\n<p>A paragraph with <strong>bold</strong> and <em>italic</em> text.</p>\n<ul>\n  <li>Item one</li>\n  <li>Item two</li>\n</ul>\n```"
 			}
 		},
 		"_data": {
@@ -674,13 +677,13 @@
 				"ISO_639_3_eng": "Markdown"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for Markdown-formatted text, rendered in frontends using a Markdown parser. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_text`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_text_Markdown` declares that the value is a [Markdown](https://en.wikipedia.org/wiki/Markdown) string. No companion properties apply — the type itself defines the format. A sub-type of [`_text`](_text.md). Non-comparable; cannot appear in sets or as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_text_Markdown\": {}\n\t}\n}\n```\n\nStored value example:\n\n```\n# Title\n\nA paragraph with **bold** and *italic* text.\n\n- Item one\n- Item two\n```"
 			}
 		},
 		"_data": {
@@ -706,13 +709,13 @@
 				"ISO_639_3_eng": "SVG"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for SVG image markup stored as a string. The type carries its own format constraint; no companion properties are applicable. A sub-type of `_text`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_text_SVG` declares that the value is an [SVG](https://en.wikipedia.org/wiki/SVG) image encoded as a string. No companion properties apply — the type itself defines the format. A sub-type of [`_text`](_text.md). Non-comparable; cannot appear in sets or as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_text_SVG\": {}\n\t}\n}\n```\n\nStored value example:\n\n```xml\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"steelblue\"/>\n</svg>\n```"
 			}
 		},
 		"_data": {
@@ -739,13 +742,13 @@
 				"ISO_639_3_eng": "Term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for term document keys. The stored value is the `_gid` of any term in the terms collection, without constraining the term's role. Parent type of the `_term_key_*` sub-types, which add role constraints."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key` declares that the value is the [`_gid`](_gid.md) of a term document. As a parent type, it is the root of [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md), [`_term_key_predicate`](_term_key_predicate.md), and [`_term_key_typedef`](_term_key_typedef.md), which further constrain the referenced term's role. When none of the sub-types is specific enough, `_term_key` accepts any term regardless of role. No companion properties apply. Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key\": {}\n\t}\n}\n```\n\nStored values: `\"_string_date\"`, `\"ISO_639_3_eng\"`, `\"_predicate_enum-of\"`."
 			}
 		},
 		"_data": {
@@ -771,13 +774,13 @@
 				"ISO_639_3_eng": "Enumeration element term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A term key that must reference a valid enumeration element — a term reachable from an enumeration root via `_predicate_enum-of` edges."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key_enum-item` is used when a property value must be the `_gid` of an enumeration element term. The referenced term must be reachable (directly or through sections or bridges) from at least one enumeration root. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_enum-item\": {}\n\t}\n}\n```\n\nStored values: `\"ISO_639_3_eng\"`, `\"ISO_3166_3_ITA\"`."
 			}
 		},
 		"_data": {
@@ -803,13 +806,13 @@
 				"ISO_639_3_eng": "Enumeration root term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A term key that must reference an enumeration root — a term that is the root of a controlled vocabulary graph."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key_enum-root` is used when a property value must be the `_gid` of an enumeration root term. Typical use: the [`_enums`](_enums.md) companion property, which holds a set of vocabulary root keys that constrain an [`_enum`](_enum.md) value. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_enum-root\": {}\n\t}\n}\n```\n\nStored values: `\"ISO_639_3\"`, `\"ISO_3166_3\"`."
 			}
 		},
 		"_data": {
@@ -835,13 +838,13 @@
 				"ISO_639_3_eng": "Descriptor term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A term key that must reference a descriptor — a term carrying a `_data` section."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key_descriptor` is used when a property value must be the `_gid` of a descriptor term. A descriptor is any term that carries a [`_data`](_data.md) section. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_descriptor\": {}\n\t}\n}\n```\n\nStored values: `\"_string_date\"`, `\"_number_float\"`, `\"_enum\"`."
 			}
 		},
 		"_data": {
@@ -867,13 +870,13 @@
 				"ISO_639_3_eng": "Predicate term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A term key that must reference a predicate term — a term that represents a relationship type in the dictionary graph."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key_predicate` is used when a property value must be the `_gid` of a predicate term. Predicate terms are elements of the [`_predicate`](_predicate.md) controlled vocabulary and qualify the nature of directed edges in the graph. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_predicate\": {}\n\t}\n}\n```\n\nStored values: `\"_predicate_enum-of\"`, `\"_predicate_property-of\"`."
 			}
 		},
 		"_data": {
@@ -899,13 +902,13 @@
 				"ISO_639_3_eng": "Type definition term document key"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A term key that must reference a typedef term — a term that defines a reusable data shape."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_term_key_typedef` is the type of the [`_typedef`](_typedef.md) property in a [`_data`](_data.md) section. It constrains the reference to point only at terms declared as reusable type definitions, preventing accidental references to ordinary descriptors. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_typedef\": {}\n\t}\n}\n```\n\nStored values: `\"_type_scalar\"`, `\"_type_set\"`, `\"_type_key\"`."
 			}
 		},
 		"_data": {
@@ -932,21 +935,21 @@
 				"ISO_639_3_eng": "Time stamp"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for Unix timestamps — integer values representing the number of seconds elapsed since 1970-01-01T00:00:00 UTC. Range constraints may be applied."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_timestamp` declares that the value is a Unix timestamp: a signed integer counting seconds since the Unix epoch (1970-01-01T00:00:00 UTC). The companion properties [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md) may constrain the acceptable time range. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A timestamp accepting only dates from year 2000 onwards (Unix time 946684800):\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_timestamp\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 946684800\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `946684800` (2000-01-01T00:00:00Z), `1704067200` (2024-01-01T00:00:00Z)."
 			}
 		},
 		"_data": {
 			"_object": {
 				"_closed": {
 					"_recommended": [
-						"_range_valid_string",
-						"_range_normal_string"
+						"_range_valid",
+						"_range_normal"
 					]
 				}
 			}
@@ -969,13 +972,13 @@
 				"ISO_639_3_eng": "Boolean"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for native boolean values. The stored value is `true` or `false`; no companion properties are applicable."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_boolean` represents a native boolean. No companion properties — range, unit, or regexp — apply to boolean values. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_boolean\": {}\n\t}\n}\n```\n\nStored values: `true`, `false`."
 			}
 		},
 		"_data": {
@@ -1001,13 +1004,13 @@
 				"ISO_639_3_eng": "Document handle"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for ArangoDB document handles — strings in the form `<collection>/<_key>` identifying a specific document in a specific collection."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_handle` declares that the value is an ArangoDB document handle (document ID): a string combining the collection name and the document key separated by a forward slash (e.g. `terms/_code`). Used in edge document [`_from`](_from.md) and [`_to`](_to.md) fields and in graph [`_path`](_path.md) sets. No companion properties apply. Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_handle\": {}\n\t}\n}\n```\n\nStored values: `\"terms/_string_date\"`, `\"terms/ISO_3166_3_ITA\"`, `\"edges/00ab12cd\"`."
 			}
 		},
 		"_data": {
@@ -1033,13 +1036,13 @@
 				"ISO_639_3_eng": "Enumerated value"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The scalar data type for enumeration values — strings that must be the `_gid` of a valid enumeration element within a controlled vocabulary. The optional `_enums` companion property constrains which vocabularies are accepted."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_enum` declares that the value is the [`_gid`](_gid.md) of an enumeration element term. The optional [`_enums`](_enums.md) companion property holds a set of enumeration root `_gid`s that constrain which controlled vocabularies the value may be drawn from; when absent, any enumeration element from any vocabulary is accepted. Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "An enumeration value constrained to ISO 639-3 language codes:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nAn unconstrained enumeration value:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {}\n\t}\n}\n```\n\nStored values (enumeration element `_gid`s): `\"ISO_639_3_eng\"`, `\"ISO_3166_3_ITA\"`, `\"ISO_4217_EUR\"`."
 			}
 		},
 		"_data": {
@@ -1070,13 +1073,13 @@
 				"ISO_639_3_eng": "Controlled vocabularies"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_enums` is an optional companion property of [`_enum`](_enum.md). When present, the [`_enum`](_enum.md) value must be the `_gid` of an element that belongs to at least one of the listed enumeration roots. When absent, any enumeration element from any controlled vocabulary is accepted.\n\nEach element in `_enums` must be the `_gid` of an enumeration root term. The data type of `_enums` itself is a set of [`_term_key_enum-root`](_term_key_enum-root.md) values."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "Restricting an `_enum` value to ISO 639-3 or ISO 639-1 language codes:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\", \"ISO_639_1\"]\n\t\t}\n\t}\n}\n```\n\nStored values: `[\"ISO_639_3\"]` (single vocabulary), `[\"ISO_639_3\", \"ISO_639_1\"]` (two vocabularies), `[\"ISO_3166_3\"]` (country codes only)."
 			}
 		},
 		"_data": {
@@ -1376,8 +1379,8 @@
 								}
 							],
 							"_selection": [
-								[ "_range_string_min-exclusive", "_range_string_min-inclusive_" ],
-								[ "_range_string_max-exclusive", "_range_string_max-inclusive" ]
+								[ "_min-exclusive_string", "_min-inclusive_string" ],
+								[ "_max-exclusive_string", "_max-inclusive_string" ]
 							]
 						}
 					]
@@ -1393,7 +1396,7 @@
 	
 	{
 		"_code": {
-			"_nid": "_range",
+			"_nid": "",
 			"_lid": "min-exclusive",
 			"_gid": "_min-exclusive",
 			"_aid": ["min-exclusive"]
@@ -1421,7 +1424,7 @@
 	},
 	{
 		"_code": {
-			"_nid": "_range",
+			"_nid": "",
 			"_lid": "min-inclusive",
 			"_gid": "_min-inclusive",
 			"_aid": ["min-inclusive"]
@@ -1450,14 +1453,14 @@
 	
 	{
 		"_code": {
-			"_nid": "_range",
-			"_lid": "min-exclusive",
-			"_gid": "_min-exclusive",
-			"_aid": ["min-exclusive"]
+			"_nid": "",
+			"_lid": "max-exclusive",
+			"_gid": "_max-exclusive",
+			"_aid": ["max-exclusive"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Range minimum exclusive"
+				"ISO_639_3_eng": "Range maximum exclusive"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""
@@ -1478,14 +1481,14 @@
 	},
 	{
 		"_code": {
-			"_nid": "_range",
-			"_lid": "min-inclusive",
-			"_gid": "_min-inclusive",
-			"_aid": ["min-inclusive"]
+			"_nid": "",
+			"_lid": "max-inclusive",
+			"_gid": "_miax-inclusive",
+			"_aid": ["max-inclusive"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Range minimum inclusive"
+				"ISO_639_3_eng": "Range maximum inclusive"
 			},
 			"_definition": {
 				"ISO_639_3_eng": ""

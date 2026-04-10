@@ -4,28 +4,18 @@
 
 Unit symbol
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_unit",
+  "_lid": "symbol",
+  "_gid": "_unit_symbol",
+  "_aid": [
     "symbol"
-  ],
-  "_gid" : "_unit_symbol",
-  "_lid" : "symbol",
-  "_nid" : "_unit"
+  ]
 }
 ```
 
@@ -33,10 +23,8 @@ Unit symbol
 
 ```json
 {
-  "_scalar" : {
-    "_string_LaTeX" : {
-
-    }
+  "_scalar": {
+    "_string_LaTeX": {}
   }
 }
 ```

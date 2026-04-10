@@ -23,7 +23,7 @@ When the edge carries **no data**, `_path_data` is an empty object (`{}`), which
 
 When the edge encodes a **conditional schema rule** (on a [`_predicate_property-of`](_predicate_property-of.md) or [`_predicate_value-of`](_predicate_value-of.md) edge), `_path_data` contains a schema object keyed by the graph root handle. The schema object uses the same format as [`_object`](_object.md): its single key is either [`_closed`](_closed.md) or [`_open`](_open.md), and its value is a constraint object that may contain [`_required`](_required.md), [`_recommended`](_recommended.md), and [`_banned`](_banned.md). Using `_closed` means only the properties listed in the constraint are permitted in that context; using `_open` means additional properties are also accepted. [`_required`](_required.md) always accumulates with the base schema; [`_banned`](_banned.md) is unconditional.
 
-Keys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be any valid data shape as defined by the [`_data`](_data.md) section.
+Keys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be of any shape and type.
 
 **`_examples`**
 
@@ -94,9 +94,7 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
     "_dict_key": {
       "_handle": {}
     },
-    "_dict_value": {
-      "_typedef": "_data"
-    }
+    "_dict_value": {}
   }
 }
 ```

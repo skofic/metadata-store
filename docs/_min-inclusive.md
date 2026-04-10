@@ -4,28 +4,18 @@
 
 Range minimum inclusive
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "min-inclusive",
+  "_gid": "_min-inclusive",
+  "_aid": [
     "min-inclusive"
-  ],
-  "_gid" : "_min-inclusive",
-  "_lid" : "min-inclusive",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -33,10 +23,8 @@ Range minimum inclusive
 
 ```json
 {
-  "_scalar" : {
-    "_number" : {
-
-    }
+  "_scalar": {
+    "_number": {}
   }
 }
 ```

@@ -21,10 +21,10 @@ The edge encodes four things in one record:
 
 Create a `_predicate_value-of` edge for a value whenever **the effective allowed property set differs from the base rule** in either direction — more properties required, fewer permitted, or both. Do not create an edge when the value changes nothing relative to the base rule.
 
-The conditional rule object in `_path_data` must include [`_closed`](_closed.md):
+The conditional rule object in `_path_data` is keyed by the graph root handle and uses the same form as an object schema constraint:
 
-- **`_closed: true`**: replaces the base [`_recommended`](_recommended.md) entirely; the rule's `_recommended` becomes the complete optional-property whitelist for that value context.
-- **`_closed: false`**: accumulates — unions with the base `_recommended`; `_banned` entries conditionally remove properties.
+- **`_closed: {...}`**: replaces the base [`_recommended`](_recommended.md) entirely; the constraint's `_recommended` becomes the complete optional-property whitelist for that value context.
+- **`_open: {...}`**: accumulates — unions with the base `_recommended`; `_banned` entries conditionally remove properties.
 
 [`_required`](_required.md) always accumulates regardless of closure mode. The same value may produce different conditional rules in different structural contexts: a `_predicate_value-of` edge for [`_type_enum`](_type_enum.md) in [`_scalar`](_scalar.md) (path root `terms/_scalar`) is a separate edge from one in [`_dict_key`](_dict_key.md) (path root `terms/_dict_key`).
 
@@ -32,28 +32,32 @@ The rule graph is designed to be **self-sufficient**: both the validator and the
 
 **`_examples`**
 
-When [`_scalar_type`](_scalar_type.md) holds [`_type_enum`](_type_enum.md), the [`_enum_types`](_enum_types.md) property becomes permitted:
+When [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_integer.md), `_decimals` is banned (integers have no decimal part) and the recommended companion properties are restricted to numeric range and unit properties only:
 
 ```json
 {
-	"_from": "terms/_type_enum",
+	"_from": "terms/_number_integer",
 	"_predicate": "_predicate_value-of",
-	"_to": "terms/_scalar_type",
+	"_to": "terms/_scalar",
 	"_path": ["terms/_scalar"],
 	"_path_data": {
 		"terms/_scalar": {
-			"_closed": true,
-			"_required": [
-				{
-					"_selection_rules": [{"_selection_type": "_type_selection_mandatory"}],
-					"_selection_descriptors": ["_scalar_type"]
-				}
-			],
-			"_recommended": ["_enum_types", "_unit", "_unit-name", "_unit-symbol"]
+			"_closed": {
+				"_recommended": [
+					"_unit",
+					"_unit_name",
+					"_unit_symbol",
+					"_range_valid",
+					"_range_normal"
+				],
+				"_banned": ["_decimals"]
+			}
 		}
 	}
 }
 ```
+
+`_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally. The rule applies only within the `terms/_scalar` schema context.
 
 ---
 

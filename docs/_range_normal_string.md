@@ -4,28 +4,18 @@
 
 Normal string range
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range_normal",
+  "_lid": "string",
+  "_gid": "_range_normal_string",
+  "_aid": [
     "string"
-  ],
-  "_gid" : "_range_normal_string",
-  "_lid" : "string",
-  "_nid" : "_range_normal"
+  ]
 }
 ```
 
@@ -33,6 +23,6 @@ Normal string range
 
 ```json
 {
-  "_typedef" : "_range_string"
+  "_typedef": "_range_string"
 }
 ```

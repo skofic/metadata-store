@@ -38,11 +38,20 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- **CLAUDE.md rewritten for Version 3.** Next task: rewrite `data/core/` JSON files to conform to the Version 3 design.
+- **`_scalar.json`**: user is adding missing terms; after that, write `_info` for the remaining terms in the file (`_unit`, `_unit_name`, `_unit_symbol`, `_range_valid`, `_range_normal`, `_range_valid_string`, `_range_normal_string`, `_decimals`, `_elements`, `_min-items`, `_max-items`, and any others present). Then regenerate all term cards.
+- After `_scalar.json` is complete, continue with remaining `data/core/` JSON files.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-10) — `_scalar.json` `_info` content
+- Fixed `_dict_value._data` (reverted to `_typedef: "_data"`), `_path_data._dict_value` to `{}` in `_edge.json`.
+- Updated `_predicate.json`: fixed V3 terminology in `_predicate_property-of`, `_predicate_value-of`, `_predicate_structural`, `_predicate_required-by`, `_predicate_banned-by`, `_predicate_recommended-by`. Fixed `"aid"` typo. Rendered all predicate cards.
+- Wrote `_info` for `_scalar` (first term): type-as-key convention, five type-family tables with Markdown links, four usage examples.
+- Wrote `_info` for all 31 remaining type terms in `_scalar.json`: `_number`, `_number_float`, `_number_integer`, `_string`, all `_string_*` variants, `_text` (new), all `_text_*`, all `_term_key_*`, `_handle`, `_timestamp`, `_boolean`, `_enum`, `_enums`. Each has definition, description, and schema + stored-value examples.
+- Key content decisions: `_string` vs `_text` distinction (short/indexable vs long/non-indexable); `_string_LaTeX` is comparable and dict-key in V3; `_string_regexp` is comparable but NOT dict-key; timestamp and boolean are NOT dict-key; text types are non-comparable.
+- Regenerated all 44 term cards in `docs/`.
 
 ### Recent session (2026-04-08) — VERSION 3 PROTOTYPE + CLAUDE.MD REWRITE
 - Rewrote CLAUDE.md Data Dictionary Rules section to reflect Version 3.

@@ -4,28 +4,18 @@
 
 Unit name
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_unit",
+  "_lid": "name",
+  "_gid": "_unit_name",
+  "_aid": [
     "name"
-  ],
-  "_gid" : "_unit_name",
-  "_lid" : "name",
-  "_nid" : "_unit"
+  ]
 }
 ```
 
@@ -33,10 +23,8 @@ Unit name
 
 ```json
 {
-  "_scalar" : {
-    "_string" : {
-
-    }
+  "_scalar": {
+    "_string": {}
   }
 }
 ```

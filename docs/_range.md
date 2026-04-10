@@ -4,28 +4,18 @@
 
 Numeric range
 
-**`_definition`**
-
-
-
-**`_description`**
-
-
-
-**`_examples`**
-
 ---
 
 **`_code`**
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "range",
+  "_gid": "_range",
+  "_aid": [
     "range"
-  ],
-  "_gid" : "_range",
-  "_lid" : "range",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -33,11 +23,24 @@ Numeric range
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {
+                "_min-items": 1,
+                "_max-items": 1
+              }
+            },
+            {
+              "_any": {
+                "_min-items": 1
+              }
+            }
+          ],
+          "_selection": [
             [
               "_min-exclusive",
               "_min-inclusive"
@@ -46,19 +49,6 @@ Numeric range
               "_max-exclusive",
               "_max-inclusive"
             ]
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-                "_max-items" : 1,
-                "_min-items" : 1
-              }
-            },
-            {
-              "_any" : {
-                "_min-items" : 1
-              }
-            }
           ]
         }
       ]

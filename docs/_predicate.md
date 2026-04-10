@@ -6,13 +6,32 @@ Relationship predicate
 
 **`_definition`**
 
-
+The edge property that identifies the type of a directed relationship between two nodes in a dictionary graph. Its value must be one of the enumeration elements in the `_predicate` controlled vocabulary.
 
 **`_description`**
 
+`_predicate` qualifies the nature of a directed relationship. Every edge document must carry a `_predicate` value drawn from one of four predicate groups:
 
+- **Functional** ([`_predicate_functional`](_predicate_functional.md)): semantically meaningful predicates followed during graph traversal — [`_predicate_enum-of`](_predicate_enum-of.md), [`_predicate_property-of`](_predicate_property-of.md), [`_predicate_field-of`](_predicate_field-of.md), and [`_predicate_value-of`](_predicate_value-of.md).
+- **Structural** ([`_predicate_structural`](_predicate_structural.md)): inter-variable dependency predicates for dataset validation — [`_predicate_required-by`](_predicate_required-by.md), [`_predicate_banned-by`](_predicate_banned-by.md), and [`_predicate_recommended-by`](_predicate_recommended-by.md).
+- **Section** ([`_predicate_section`](_predicate_section.md)): display grouping predicates — [`_predicate_section-of`](_predicate_section-of.md).
+- **Bridge** ([`_predicate_bridge`](_predicate_bridge.md)): element-sharing and alias predicates — [`_predicate_bridge-of`](_predicate_bridge-of.md).
+
+All predicates follow the **many-to-one direction**: [`_from`](_from.md) is always the leaf (child, member, element) and [`_to`](_to.md) is always the root (parent, container, category).
 
 **`_examples`**
+
+An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-3 vocabulary:
+
+```json
+{
+	"_from": "terms/ISO_3166_3_ITA",
+	"_predicate": "_predicate_enum-of",
+	"_to": "terms/ISO_3166_3",
+	"_path": ["terms/ISO_3166_3"],
+	"_path_data": {}
+}
+```
 
 ---
 
@@ -20,12 +39,10 @@ Relationship predicate
 
 ```json
 {
-  "_gid" : "_predicate",
-  "_lid" : "predicate",
-  "_nid" : "",
-  "aid" : [
-    "predicate"
-  ]
+  "_aid": ["predicate"],
+  "_gid": "_predicate",
+  "_lid": "predicate",
+  "_nid": ""
 }
 ```
 
@@ -33,11 +50,9 @@ Relationship predicate
 
 ```json
 {
-  "_scalar" : {
-    "_enum" : {
-      "_enums" : [
-        "_predicate"
-      ]
+  "_scalar": {
+    "_enum": {
+      "_enums": ["_predicate"]
     }
   }
 }
