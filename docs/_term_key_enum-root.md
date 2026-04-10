@@ -30,12 +30,12 @@ Stored values: `"ISO_639_3"`, `"ISO_3166_3"`.
 
 ```json
 {
-  "_nid": "_term_key",
-  "_lid": "enum-root",
-  "_gid": "_term_key_enum-root",
-  "_aid": [
+  "_aid" : [
     "enum-root"
-  ]
+  ],
+  "_gid" : "_term_key_enum-root",
+  "_lid" : "enum-root",
+  "_nid" : "_term_key"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"ISO_639_3"`, `"ISO_3166_3"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

@@ -10,7 +10,7 @@ The sub-property of a dictionary that defines the type and shape of its values. 
 
 **`_description`**
 
-`_dict_value` defines the type of the value side of a dictionary entry. At most one shape property may be present — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_nested`](_nested.md), [`_dict`](_dict.md), or [`_typedef`](_typedef.md) — following the same conventions as a [`_data`](_data.md) section.
+`_dict_value` defines the type of the value side of a dictionary entry. At most one shape property may be present — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_array`](_array.md), [`_set`](_set.md), [`_tuple`](_tuple.md), [`_nested`](_nested.md), [`_dict`](_dict.md), or [`_typedef`](_typedef.md).
 
 When `_dict_value` is an **empty object** (`{}`), the value side accepts any value of any shape and type without constraint.
 
@@ -71,6 +71,6 @@ Unconstrained values — any shape and type accepted:
 
 ```json
 {
-  "_typedef": "_data"
+  "_typedef" : "_data"
 }
 ```

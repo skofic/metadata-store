@@ -30,12 +30,12 @@ Stored values: `"2001:db8::1"`, `"::1"`, `"fe80::1"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "IPv6",
-  "_gid": "_string_IPv6",
-  "_aid": [
+  "_aid" : [
     "IPv6"
-  ]
+  ],
+  "_gid" : "_string_IPv6",
+  "_lid" : "IPv6",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"2001:db8::1"`, `"::1"`, `"fe80::1"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

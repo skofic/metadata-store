@@ -60,10 +60,12 @@ Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs
 
 ```json
 {
-  "_gid": "_edge",
-  "_lid": "edge",
-  "_nid": "",
-  "_aid": ["edge"]
+  "_aid" : [
+    "edge"
+  ],
+  "_gid" : "_edge",
+  "_lid" : "edge",
+  "_nid" : ""
 }
 ```
 
@@ -71,20 +73,44 @@ Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
-        {
-          "_selectors": [{"_all": {}}],
-          "_selection": ["_from", "_to", "_predicate", "_path", "_path_data"]
-        }
+  "_object" : {
+    "_closed" : {
+      "_computed" : [
+        "_key"
       ],
-      "_computed": ["_key"],
-      "_immutable": ["_key", "_from", "_to", "_predicate"],
-      "_locked": ["_id", "_rev"],
-      "_default-value": {
-        "_path_data": {}
-      }
+      "_default-value" : {
+        "_path_data" : {
+
+        }
+      },
+      "_immutable" : [
+        "_key",
+        "_from",
+        "_to",
+        "_predicate"
+      ],
+      "_locked" : [
+        "_id",
+        "_rev"
+      ],
+      "_required" : [
+        {
+          "_selection" : [
+            "_from",
+            "_to",
+            "_predicate",
+            "_path",
+            "_path_data"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

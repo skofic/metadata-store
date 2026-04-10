@@ -30,12 +30,12 @@ Stored values: `"www.example.com"`, `"localhost"`, `"mail.server.org"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "Hostname",
-  "_gid": "_string_Hostname",
-  "_aid": [
+  "_aid" : [
     "Hostname"
-  ]
+  ],
+  "_gid" : "_string_Hostname",
+  "_lid" : "Hostname",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"www.example.com"`, `"localhost"`, `"mail.server.org"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

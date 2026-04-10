@@ -30,12 +30,12 @@ Stored values: `"_string_date"`, `"_number_float"`, `"_enum"`.
 
 ```json
 {
-  "_nid": "_term_key",
-  "_lid": "descriptor",
-  "_gid": "_term_key_descriptor",
-  "_aid": [
+  "_aid" : [
     "descriptor"
-  ]
+  ],
+  "_gid" : "_term_key_descriptor",
+  "_lid" : "descriptor",
+  "_nid" : "_term_key"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"_string_date"`, `"_number_float"`, `"_enum"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

@@ -23,8 +23,8 @@ A number with a valid range:
 	"_scalar": {
 		"_number": {
 			"_range_valid": {
-				"_min-range-inclusive": 0,
-				"_max-range-exclusive": 100
+				"_min-inclusive": 0,
+				"_max-exclusive": 100
 			}
 		}
 	}
@@ -39,12 +39,12 @@ Stored values: `42`, `3.14`, `-100`.
 
 ```json
 {
-  "_nid": "",
-  "_lid": "number",
-  "_gid": "_number",
-  "_aid": [
+  "_aid" : [
     "number"
-  ]
+  ],
+  "_gid" : "_number",
+  "_lid" : "number",
+  "_nid" : ""
 }
 ```
 
@@ -52,9 +52,9 @@ Stored values: `42`, `3.14`, `-100`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_unit",
         "_unit_name",
         "_unit_symbol",

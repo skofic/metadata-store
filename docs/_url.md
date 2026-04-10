@@ -32,10 +32,12 @@ A URL entry linking to an ISO standard page:
 
 ```json
 {
-  "_gid": "_url",
-  "_lid": "url",
-  "_nid": "",
-  "_aid": ["url"]
+  "_aid" : [
+    "url"
+  ],
+  "_gid" : "_url",
+  "_lid" : "url",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A URL entry linking to an ISO standard page:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

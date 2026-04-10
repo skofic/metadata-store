@@ -30,12 +30,12 @@ A stored `_text` value is typically a paragraph or longer narrative — for exam
 
 ```json
 {
-  "_nid": "",
-  "_lid": "text",
-  "_gid": "_text",
-  "_aid": [
+  "_aid" : [
     "text"
-  ]
+  ],
+  "_gid" : "_text",
+  "_lid" : "text",
+  "_nid" : ""
 }
 ```
 
@@ -43,8 +43,10 @@ A stored `_text` value is typically a paragraph or longer narrative — for exam
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

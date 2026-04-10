@@ -36,12 +36,12 @@ Stored value example:
 
 ```json
 {
-  "_nid": "_text",
-  "_lid": "SVG",
-  "_gid": "_text_SVG",
-  "_aid": [
+  "_aid" : [
     "SVG"
-  ]
+  ],
+  "_gid" : "_text_SVG",
+  "_lid" : "SVG",
+  "_nid" : "_text"
 }
 ```
 
@@ -49,8 +49,10 @@ Stored value example:
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

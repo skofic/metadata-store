@@ -32,10 +32,10 @@ Domains section
   "_object" : {
     "_closed" : {
       "_computed" : [
-        "_term_roles"
+        "_term_role"
       ],
       "_recommended" : [
-        "_term_roles"
+        "_term_role"
       ]
     }
   }

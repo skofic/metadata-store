@@ -39,12 +39,12 @@ A paragraph with **bold** and *italic* text.
 
 ```json
 {
-  "_nid": "_text",
-  "_lid": "Markdown",
-  "_gid": "_text_Markdown",
-  "_aid": [
+  "_aid" : [
     "Markdown"
-  ]
+  ],
+  "_gid" : "_text_Markdown",
+  "_lid" : "Markdown",
+  "_nid" : "_text"
 }
 ```
 
@@ -52,8 +52,10 @@ A paragraph with **bold** and *italic* text.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

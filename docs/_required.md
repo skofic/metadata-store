@@ -45,9 +45,9 @@ In an **open schema**: `_required` defines which properties must be present, wit
 }
 ```
 
-Valid: `{"_min-inclusive": 0, "_max-exclusive": 100}`, `{"_min-inclusive": 0, "_max-inclusive": 100, "_max-exclusive": 99.9}`.
-Invalid: `{"_min-exclusive": 0, "_min-inclusive": 0}` — both lower-bound properties are present; exactly one is required.
-Invalid: `{"_min-inclusive": 0}` — no upper-bound property is present.
+Valid: `{"_min-inclusive": 0, "_max-exclusive": 100}`, `{"_min-inclusive": 0, "_max-inclusive": 100, "_max-exclusive": 99.9}` (two max bounds are allowed since `_any: {_min-items: 1}` only requires at least one).
+Invalid: `{"_min-exclusive": 0, "_min-inclusive": 0}` — both min bounds are present; exactly one is required.
+Invalid: `{"_min-inclusive": 0}` — no max bound is present.
 
 ---
 
@@ -78,10 +78,12 @@ Both `_selectors` and `_selection` must be present. Any other dictionary propert
 
 ```json
 {
-  "_gid": "_required",
-  "_lid": "required",
-  "_nid": "",
-  "_aid": ["required"]
+  "_aid" : [
+    "required"
+  ],
+  "_gid" : "_required",
+  "_lid" : "required",
+  "_nid" : ""
 }
 ```
 
@@ -89,8 +91,8 @@ Both `_selectors` and `_selection` must be present. Any other dictionary propert
 
 ```json
 {
-  "_array": {
-    "_typedef": "_selector"
+  "_array" : {
+    "_typedef" : "_selector"
   }
 }
 ```

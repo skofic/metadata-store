@@ -57,10 +57,12 @@ The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: 
 
 ```json
 {
-  "_gid": "_selection",
-  "_lid": "selection",
-  "_nid": "",
-  "_aid": ["selection"]
+  "_aid" : [
+    "selection"
+  ],
+  "_gid" : "_selection",
+  "_lid" : "selection",
+  "_nid" : ""
 }
 ```
 
@@ -68,8 +70,10 @@ The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: 
 
 ```json
 {
-  "_nested": {
-    "_term_key_descriptor": {}
+  "_nested" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

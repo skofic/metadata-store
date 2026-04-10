@@ -32,10 +32,12 @@ A note flagging a pending design decision:
 
 ```json
 {
-  "_gid": "_notes",
-  "_lid": "notes",
-  "_nid": "",
-  "_aid": ["notes"]
+  "_aid" : [
+    "notes"
+  ],
+  "_gid" : "_notes",
+  "_lid" : "notes",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A note flagging a pending design decision:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

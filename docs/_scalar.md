@@ -90,8 +90,8 @@ A floating-point number with unit and valid range:
 			"_decimals": 2,
 			"_unit": "_unit_length_cm",
 			"_range_valid": {
-				"_min-range-inclusive": 0.0,
-				"_max-range-exclusive": 300.0
+				"_min-inclusive": 0.0,
+				"_max-exclusive": 300.0
 			}
 		}
 	}
@@ -136,10 +136,12 @@ An unconstrained scalar — any type and value accepted:
 
 ```json
 {
-  "_aid": ["scalar"],
-  "_gid": "_scalar",
-  "_lid": "scalar",
-  "_nid": ""
+  "_aid" : [
+    "scalar"
+  ],
+  "_gid" : "_scalar",
+  "_lid" : "scalar",
+  "_nid" : ""
 }
 ```
 
@@ -147,6 +149,6 @@ An unconstrained scalar — any type and value accepted:
 
 ```json
 {
-  "_typedef": "_type_scalar"
+  "_typedef" : "_type_scalar"
 }
 ```

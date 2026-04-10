@@ -46,12 +46,12 @@ Stored values: `"hello"`, `"IT"`, `"john.doe"`, `"2024-01-15"`.
 
 ```json
 {
-  "_nid": "",
-  "_lid": "string",
-  "_gid": "_string",
-  "_aid": [
+  "_aid" : [
     "string"
-  ]
+  ],
+  "_gid" : "_string",
+  "_lid" : "string",
+  "_nid" : ""
 }
 ```
 
@@ -59,9 +59,9 @@ Stored values: `"hello"`, `"IT"`, `"john.doe"`, `"2024-01-15"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_unit",
         "_unit_name",
         "_unit_symbol",

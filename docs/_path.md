@@ -73,10 +73,12 @@ FOR e IN edges
 
 ```json
 {
-  "_gid": "_path",
-  "_lid": "path",
-  "_nid": "",
-  "_aid": ["path"]
+  "_aid" : [
+    "path"
+  ],
+  "_gid" : "_path",
+  "_lid" : "path",
+  "_nid" : ""
 }
 ```
 
@@ -84,8 +86,10 @@ FOR e IN edges
 
 ```json
 {
-  "_set": {
-    "_handle": {}
+  "_set" : {
+    "_handle" : {
+
+    }
   }
 }
 ```

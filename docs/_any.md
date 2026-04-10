@@ -63,10 +63,12 @@ At least two and at most five of the six candidates must be present. Having one 
 
 ```json
 {
-  "_gid": "_any",
-  "_lid": "any",
-  "_nid": "",
-  "_aid": ["any"]
+  "_aid" : [
+    "any"
+  ],
+  "_gid" : "_any",
+  "_lid" : "any",
+  "_nid" : ""
 }
 ```
 
@@ -74,6 +76,6 @@ At least two and at most five of the six candidates must be present. Having one 
 
 ```json
 {
-  "_typedef": "_elements"
+  "_typedef" : "_elements"
 }
 ```

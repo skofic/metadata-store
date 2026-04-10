@@ -53,8 +53,6 @@ When `_selection` is a nested array of sub-arrays, `_selectors` operates as a tw
 
 `_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required.
 
----
-
 **`_notes`**
 
 Previously named `_rule_selector` in earlier versions of the dictionary.
@@ -65,10 +63,12 @@ Previously named `_rule_selector` in earlier versions of the dictionary.
 
 ```json
 {
-  "_gid": "_selector",
-  "_lid": "selector",
-  "_nid": "",
-  "_aid": ["selector"]
+  "_aid" : [
+    "selector"
+  ],
+  "_gid" : "_selector",
+  "_lid" : "selector",
+  "_nid" : ""
 }
 ```
 
@@ -76,16 +76,20 @@ Previously named `_rule_selector` in earlier versions of the dictionary.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_required" : [
         {
-          "_selectors": [
-            {"_all": {}}
-          ],
-          "_selection": [
+          "_selection" : [
             "_selectors",
             "_selection"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
           ]
         }
       ]

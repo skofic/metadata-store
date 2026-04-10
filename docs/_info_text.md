@@ -24,16 +24,22 @@ A multilingual formatted text value — a description containing a Markdown link
 }
 ```
 
+**`_notes`**
+
+Renamed from `_info_string_formatted` in version 3.
+
 ---
 
 **`_code`**
 
 ```json
 {
-  "_gid": "_info_text",
-  "_lid": "text",
-  "_nid": "_info",
-  "_aid": ["text"]
+  "_aid" : [
+    "text"
+  ],
+  "_gid" : "_info_text",
+  "_lid" : "text",
+  "_nid" : "_info"
 }
 ```
 
@@ -41,15 +47,19 @@ A multilingual formatted text value — a description containing a Markdown link
 
 ```json
 {
-  "_dict": {
-    "_dict_key": {
-      "_enum": {
-        "_enums": ["ISO_639_3"]
+  "_dict" : {
+    "_dict_key" : {
+      "_enum" : {
+        "_enums" : [
+          "ISO_639_3"
+        ]
       }
     },
-    "_dict_value": {
-      "_scalar": {
-        "_text_Markdown": {}
+    "_dict_value" : {
+      "_scalar" : {
+        "_text_Markdown" : {
+
+        }
       }
     }
   }

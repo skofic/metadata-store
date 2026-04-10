@@ -4,18 +4,61 @@
 
 Valid string range
 
+**`_definition`**
+
+The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.
+
+**`_description`**
+
+`_range_valid_string` is an optional companion property for string scalar types. When present, the stored string value must fall within the specified lexicographic boundaries; a value outside the valid range is treated as a **validation error**.
+
+The value is a [`_range_string`](_range_string.md) object containing at least one of `_string_min-inclusive`, `_string_min-exclusive`, `_string_max-inclusive`, `_string_max-exclusive`. Comparison is lexicographic (code-point order).
+
+For date and time types, lexicographic order corresponds to chronological order because these formats are designed to sort correctly as strings.
+
+**`_examples`**
+
+A date field restricted to dates from year 2000 onwards:
+
+```json
+{
+	"_scalar": {
+		"_string_date": {
+			"_range_valid_string": {
+				"_string_min-inclusive": "2000-01-01"
+			}
+		}
+	}
+}
+```
+
+A string field restricted to uppercase ASCII letters:
+
+```json
+{
+	"_scalar": {
+		"_string": {
+			"_range_valid_string": {
+				"_string_min-inclusive": "A",
+				"_string_max-inclusive": "Z"
+			}
+		}
+	}
+}
+```
+
 ---
 
 **`_code`**
 
 ```json
 {
-  "_nid": "_range_valid",
-  "_lid": "string",
-  "_gid": "_range_valid_string",
-  "_aid": [
+  "_aid" : [
     "string"
-  ]
+  ],
+  "_gid" : "_range_valid_string",
+  "_lid" : "string",
+  "_nid" : "_range_valid"
 }
 ```
 
@@ -23,6 +66,6 @@ Valid string range
 
 ```json
 {
-  "_typedef": "_range_string"
+  "_typedef" : "_range_string"
 }
 ```

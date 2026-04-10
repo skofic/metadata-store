@@ -30,12 +30,12 @@ Stored values: `"14:30:00"`, `"09:00:00"`, `"23:59:59"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "time",
-  "_gid": "_string_time",
-  "_aid": [
+  "_aid" : [
     "time"
-  ]
+  ],
+  "_gid" : "_string_time",
+  "_lid" : "time",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,9 +43,9 @@ Stored values: `"14:30:00"`, `"09:00:00"`, `"23:59:59"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_range_valid_string",
         "_range_normal_string"
       ]

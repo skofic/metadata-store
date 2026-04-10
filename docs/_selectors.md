@@ -6,7 +6,7 @@ Properties selectors
 
 **`_definition`**
 
-An ordered array of cardinality rule objects (`_all` or `_any`) that defines the selection logic within a `_selector`. Each element specifies a cardinality rule at one phase of the evaluation pipeline.
+An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on.
 
 **`_description`**
 
@@ -37,8 +37,6 @@ The first `_selectors` entry — `_all: {_min-items: 1, _max-items: 1}` — is t
 
 The second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group rule. Applied to the 2 selected elements, at least 1 must be present in the actual object.
 
----
-
 **`_notes`**
 
 Previously named `_selection_rules` in earlier versions of the dictionary.
@@ -49,10 +47,12 @@ Previously named `_selection_rules` in earlier versions of the dictionary.
 
 ```json
 {
-  "_gid": "_selectors",
-  "_lid": "selectors",
-  "_nid": "",
-  "_aid": ["selectors"]
+  "_aid" : [
+    "selectors"
+  ],
+  "_gid" : "_selectors",
+  "_lid" : "selectors",
+  "_nid" : ""
 }
 ```
 
@@ -60,22 +60,22 @@ Previously named `_selection_rules` in earlier versions of the dictionary.
 
 ```json
 {
-  "_array": {
-    "_object": {
-      "_closed": {
-        "_required": [
+  "_array" : {
+    "_object" : {
+      "_closed" : {
+        "_required" : [
           {
-            "_selectors": [
-              {
-                "_all": {
-                  "_min-items": 1,
-                  "_max-items": 1
-                }
-              }
-            ],
-            "_selection": [
+            "_selection" : [
               "_all",
               "_any"
+            ],
+            "_selectors" : [
+              {
+                "_all" : {
+                  "_max-items" : 1,
+                  "_min-items" : 1
+                }
+              }
             ]
           }
         ]

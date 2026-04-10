@@ -21,7 +21,7 @@ A YMD date field accepting any date from year 2000 onwards:
 	"_scalar": {
 		"_string_YMD": {
 			"_range_valid_string": {
-				"_min-range-inclusive_string": "2000"
+				"_string_min-inclusive": "2000"
 			}
 		}
 	}
@@ -36,12 +36,12 @@ Stored values: `"2024"` (year only), `"202403"` (year-month), `"20240315"` (full
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "YMD",
-  "_gid": "_string_YMD",
-  "_aid": [
+  "_aid" : [
     "YMD"
-  ]
+  ],
+  "_gid" : "_string_YMD",
+  "_lid" : "YMD",
+  "_nid" : "_string"
 }
 ```
 
@@ -49,9 +49,9 @@ Stored values: `"2024"` (year only), `"202403"` (year-month), `"20240315"` (full
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_range_valid_string",
         "_range_normal_string"
       ]

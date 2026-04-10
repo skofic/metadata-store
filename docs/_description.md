@@ -10,13 +10,13 @@ A full description of the term aimed at a general audience. Expressed as formatt
 
 **`_description`**
 
-`_description` is the primary documentation field for a term. It is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. Unlike [`_definition`](_definition.md), which is plain text and compact, `_description` may span multiple paragraphs and include lists, tables, fenced code blocks, and links to other terms or external references.
+`_description` is the primary documentation field for a term. It is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. Unlike [`_definition`](_definition.md), which is plain text and compact, `_description` may span multiple paragraphs and include lists, tables, fenced code blocks, and cross-reference links to other term cards.
 
 The target audience is an informed non-expert: someone familiar with the domain but not necessarily with the design decisions behind the dictionary. A good description explains what the term is, how it is used in practice, and why the design choices were made.
 
 **`_examples`**
 
-A description using Markdown formatting and a link to another term:
+A description using Markdown formatting and a link to another term card:
 
 ```json
 {
@@ -32,10 +32,12 @@ A description using Markdown formatting and a link to another term:
 
 ```json
 {
-  "_gid": "_description",
-  "_lid": "description",
-  "_nid": "",
-  "_aid": ["description"]
+  "_aid" : [
+    "description"
+  ],
+  "_gid" : "_description",
+  "_lid" : "description",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A description using Markdown formatting and a link to another term:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

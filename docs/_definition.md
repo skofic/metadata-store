@@ -32,10 +32,12 @@ A definition for a body weight descriptor:
 
 ```json
 {
-  "_gid": "_definition",
-  "_lid": "definition",
-  "_nid": "",
-  "_aid": ["definition"]
+  "_aid" : [
+    "definition"
+  ],
+  "_gid" : "_definition",
+  "_lid" : "definition",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A definition for a body weight descriptor:
 
 ```json
 {
-  "_typedef": "_info_string"
+  "_typedef" : "_info_string"
 }
 ```

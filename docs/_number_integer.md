@@ -21,7 +21,7 @@ A non-negative integer count:
 	"_scalar": {
 		"_number_integer": {
 			"_range_valid": {
-				"_min-range-inclusive": 0
+				"_min-inclusive": 0
 			}
 		}
 	}
@@ -36,12 +36,12 @@ Stored values: `42`, `-7`, `2024`, `0`.
 
 ```json
 {
-  "_nid": "_number",
-  "_lid": "integer",
-  "_gid": "_number_integer",
-  "_aid": [
+  "_aid" : [
     "integer"
-  ]
+  ],
+  "_gid" : "_number_integer",
+  "_lid" : "integer",
+  "_nid" : "_number"
 }
 ```
 
@@ -49,9 +49,9 @@ Stored values: `42`, `-7`, `2024`, `0`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_unit",
         "_unit_name",
         "_unit_symbol",

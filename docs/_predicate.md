@@ -39,10 +39,12 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
 
 ```json
 {
-  "_aid": ["predicate"],
-  "_gid": "_predicate",
-  "_lid": "predicate",
-  "_nid": ""
+  "_aid" : [
+    "predicate"
+  ],
+  "_gid" : "_predicate",
+  "_lid" : "predicate",
+  "_nid" : ""
 }
 ```
 
@@ -50,9 +52,11 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
 
 ```json
 {
-  "_scalar": {
-    "_enum": {
-      "_enums": ["_predicate"]
+  "_scalar" : {
+    "_enum" : {
+      "_enums" : [
+        "_predicate"
+      ]
     }
   }
 }

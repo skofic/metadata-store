@@ -34,10 +34,12 @@ A multilingual title for a body weight descriptor:
 
 ```json
 {
-  "_gid": "_title",
-  "_lid": "title",
-  "_nid": "",
-  "_aid": ["title"]
+  "_aid" : [
+    "title"
+  ],
+  "_gid" : "_title",
+  "_lid" : "title",
+  "_nid" : ""
 }
 ```
 
@@ -45,6 +47,6 @@ A multilingual title for a body weight descriptor:
 
 ```json
 {
-  "_typedef": "_info_string"
+  "_typedef" : "_info_string"
 }
 ```

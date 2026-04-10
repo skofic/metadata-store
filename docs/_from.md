@@ -43,10 +43,12 @@ Here `terms/ISO_3166_3_ITA` is the handle of the leaf node — the Italian count
 
 ```json
 {
-  "_gid": "_from",
-  "_lid": "from",
-  "_nid": "",
-  "_aid": ["from"]
+  "_aid" : [
+    "from"
+  ],
+  "_gid" : "_from",
+  "_lid" : "from",
+  "_nid" : ""
 }
 ```
 
@@ -54,8 +56,10 @@ Here `terms/ISO_3166_3_ITA` is the handle of the leaf node — the Italian count
 
 ```json
 {
-  "_scalar": {
-    "_handle": {}
+  "_scalar" : {
+    "_handle" : {
+
+    }
   }
 }
 ```

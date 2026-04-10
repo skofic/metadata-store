@@ -30,12 +30,12 @@ Stored values: `"_type_scalar"`, `"_type_set"`, `"_type_key"`.
 
 ```json
 {
-  "_nid": "_term_key",
-  "_lid": "typedef",
-  "_gid": "_term_key_typedef",
-  "_aid": [
+  "_aid" : [
     "typedef"
-  ]
+  ],
+  "_gid" : "_term_key_typedef",
+  "_lid" : "typedef",
+  "_nid" : "_term_key"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"_type_scalar"`, `"_type_set"`, `"_type_key"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

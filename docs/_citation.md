@@ -32,10 +32,12 @@ A citation for a term derived from an ISO standard:
 
 ```json
 {
-  "_gid": "_citation",
-  "_lid": "citation",
-  "_nid": "",
-  "_aid": ["citation"]
+  "_aid" : [
+    "citation"
+  ],
+  "_gid" : "_citation",
+  "_lid" : "citation",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A citation for a term derived from an ISO standard:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

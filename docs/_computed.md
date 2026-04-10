@@ -48,10 +48,12 @@ The [`_code`](_code.md) section computes three properties automatically:
 
 ```json
 {
-  "_gid": "_computed",
-  "_lid": "computed",
-  "_nid": "",
-  "_aid": ["computed"]
+  "_aid" : [
+    "computed"
+  ],
+  "_gid" : "_computed",
+  "_lid" : "computed",
+  "_nid" : ""
 }
 ```
 
@@ -59,8 +61,10 @@ The [`_code`](_code.md) section computes three properties automatically:
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

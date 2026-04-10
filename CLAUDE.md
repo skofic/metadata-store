@@ -38,12 +38,20 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- **`_scalar.json`**: user is adding missing terms; after that, write `_info` for the remaining terms in the file (`_unit`, `_unit_name`, `_unit_symbol`, `_range_valid`, `_range_normal`, `_range_valid_string`, `_range_normal_string`, `_decimals`, `_elements`, `_min-items`, `_max-items`, and any others present). Then regenerate all term cards.
-- After `_scalar.json` is complete, continue with remaining `data/core/` JSON files.
+- **`_scalar.json`** is complete. Next: `_set.json`.
+- After remaining `data/core/` JSON files are complete, continue with edge files and standards.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-10, continued) — `_scalar.json` corrections and companion terms
+- Fixed wrong range bound property names everywhere (`_min-range-inclusive` → `_min-inclusive`, etc.) in `_scalar.json`, `_array.json`, `CLAUDE.md`, and all `docs/` cards.
+- Fixed two `_gid` typos: `_miax-inclusive` → `_max-inclusive` and `_string_miax-inclusive` → `_string_max-inclusive`.
+- Fixed `_data` bug in `_string_min-*` / `_string_max-*` terms: `"_number": {}` → `"_string": {}`.
+- Wrote `_info` for 17 companion/range terms: `_unit`, `_unit_name`, `_unit_symbol`, `_range_valid`, `_range_normal`, `_range_valid_string`, `_range_normal_string`, `_range`, `_range_string`, `_min-exclusive`, `_min-inclusive`, `_max-exclusive`, `_max-inclusive`, `_string_min-exclusive`, `_string_min-inclusive`, `_string_max-exclusive`, `_string_max-inclusive`.
+- Key content decisions: `_unit` is a scalar `_enum` (single value, not a set); `_unit` accepted by `_number`, `_number_float`, `_number_integer`, `_string` only (not `_timestamp`); `_range` typedef enforces at-least-one-bound constraint via two-phase `_selectors`.
+- Regenerated all term cards.
 
 ### Recent session (2026-04-10) — `_scalar.json` `_info` content
 - Fixed `_dict_value._data` (reverted to `_typedef: "_data"`), `_path_data._dict_value` to `{}` in `_edge.json`.
@@ -313,8 +321,8 @@ Companion properties for number types: `_unit`, `_unit_name`, `_unit_symbol`, `_
             "_decimals": 2,
             "_unit": "_unit_length_cm",
             "_range_valid": {
-                "_min-range-inclusive": 0.0,
-                "_max-range-exclusive": 300.0
+                "_min-inclusive": 0.0,
+                "_max-exclusive": 300.0
             }
         }
     }
@@ -427,30 +435,30 @@ Two range families exist:
 
 **Numeric ranges** (`_range_valid`, `_range_normal`):
 
-| Property               | Description |
-|------------------------|-------------|
-| `_min-range-inclusive` | Lower bound, value included (≥) |
-| `_min-range-exclusive` | Lower bound, value excluded (>) |
-| `_max-range-inclusive` | Upper bound, value included (≤) |
-| `_max-range-exclusive` | Upper bound, value excluded (<) |
+| Property         | Description |
+|------------------|-------------|
+| `_min-inclusive` | Lower bound, value included (≥) |
+| `_min-exclusive` | Lower bound, value excluded (>) |
+| `_max-inclusive` | Upper bound, value included (≤) |
+| `_max-exclusive` | Upper bound, value excluded (<) |
 
 ```json
 {
     "_range_valid": {
-        "_min-range-inclusive": 0,
-        "_max-range-exclusive": 100
+        "_min-inclusive": 0,
+        "_max-exclusive": 100
     }
 }
 ```
 
 **String ranges** (`_range_valid_string`, `_range_normal_string`):
 
-| Property                      | Description |
-|-------------------------------|-------------|
-| `_min-range-inclusive_string` | Lower bound, value included |
-| `_min-range-exclusive_string` | Lower bound, value excluded |
-| `_max-range-inclusive_string` | Upper bound, value included |
-| `_max-range-exclusive_string` | Upper bound, value excluded |
+| Property                | Description |
+|-------------------------|-------------|
+| `_string_min-inclusive` | Lower bound, value included |
+| `_string_min-exclusive` | Lower bound, value excluded |
+| `_string_max-inclusive` | Upper bound, value included |
+| `_string_max-exclusive` | Upper bound, value excluded |
 
 At most one min-property and one max-property should be present; omitting a bound leaves that end open.
 

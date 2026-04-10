@@ -67,10 +67,12 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_title": {...}}` — `_title` is no
 
 ```json
 {
-  "_gid": "_closed",
-  "_lid": "closed",
-  "_nid": "",
-  "_aid": ["closed"]
+  "_aid" : [
+    "closed"
+  ],
+  "_gid" : "_closed",
+  "_lid" : "closed",
+  "_nid" : ""
 }
 ```
 
@@ -78,9 +80,9 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_title": {...}}` — `_title` is no
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_required",
         "_recommended",
         "_banned",

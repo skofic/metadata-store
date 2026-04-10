@@ -21,7 +21,7 @@ A timestamp accepting only dates from year 2000 onwards (Unix time 946684800):
 	"_scalar": {
 		"_timestamp": {
 			"_range_valid": {
-				"_min-range-inclusive": 946684800
+				"_min-inclusive": 946684800
 			}
 		}
 	}
@@ -36,12 +36,12 @@ Stored values: `946684800` (2000-01-01T00:00:00Z), `1704067200` (2024-01-01T00:0
 
 ```json
 {
-  "_nid": "",
-  "_lid": "timestamp",
-  "_gid": "_timestamp",
-  "_aid": [
+  "_aid" : [
     "timestamp"
-  ]
+  ],
+  "_gid" : "_timestamp",
+  "_lid" : "timestamp",
+  "_nid" : ""
 }
 ```
 
@@ -49,9 +49,9 @@ Stored values: `946684800` (2000-01-01T00:00:00Z), `1704067200` (2024-01-01T00:0
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_range_valid",
         "_range_normal"
       ]

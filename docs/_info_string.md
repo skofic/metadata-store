@@ -32,10 +32,12 @@ A multilingual plain-text value — the title of a term in three languages:
 
 ```json
 {
-  "_gid": "_info_string",
-  "_lid": "string",
-  "_nid": "_info",
-  "_aid": ["string"]
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_info_string",
+  "_lid" : "string",
+  "_nid" : "_info"
 }
 ```
 
@@ -43,15 +45,19 @@ A multilingual plain-text value — the title of a term in three languages:
 
 ```json
 {
-  "_dict": {
-    "_dict_key": {
-      "_enum": {
-        "_enums": ["ISO_639_3"]
+  "_dict" : {
+    "_dict_key" : {
+      "_enum" : {
+        "_enums" : [
+          "ISO_639_3"
+        ]
       }
     },
-    "_dict_value": {
-      "_scalar": {
-        "_text": {}
+    "_dict_value" : {
+      "_scalar" : {
+        "_text" : {
+
+        }
       }
     }
   }

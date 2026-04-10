@@ -30,12 +30,12 @@ Stored values: `"°C"`, `"E = mc^{2}"`, `"r^{2}"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "LaTeX",
-  "_gid": "_string_LaTeX",
-  "_aid": [
+  "_aid" : [
     "LaTeX"
-  ]
+  ],
+  "_gid" : "_string_LaTeX",
+  "_lid" : "LaTeX",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"°C"`, `"E = mc^{2}"`, `"r^{2}"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

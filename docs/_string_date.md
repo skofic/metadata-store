@@ -21,7 +21,7 @@ A date with a lower bound:
 	"_scalar": {
 		"_string_date": {
 			"_range_valid_string": {
-				"_min-range-inclusive_string": "1900-01-01"
+				"_string_min-inclusive": "1900-01-01"
 			}
 		}
 	}
@@ -36,12 +36,12 @@ Stored values: `"2024-03-15"`, `"1970-01-01"`, `"2000-12-31"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "date",
-  "_gid": "_string_date",
-  "_aid": [
+  "_aid" : [
     "date"
-  ]
+  ],
+  "_gid" : "_string_date",
+  "_lid" : "date",
+  "_nid" : "_string"
 }
 ```
 
@@ -49,9 +49,9 @@ Stored values: `"2024-03-15"`, `"1970-01-01"`, `"2000-12-31"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_range_valid_string",
         "_range_normal_string"
       ]

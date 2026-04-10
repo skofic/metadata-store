@@ -32,10 +32,12 @@ A provider entry for a term maintained by a research group:
 
 ```json
 {
-  "_gid": "_provider",
-  "_lid": "provider",
-  "_nid": "",
-  "_aid": ["provider"]
+  "_aid" : [
+    "provider"
+  ],
+  "_gid" : "_provider",
+  "_lid" : "provider",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A provider entry for a term maintained by a research group:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

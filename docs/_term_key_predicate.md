@@ -30,12 +30,12 @@ Stored values: `"_predicate_enum-of"`, `"_predicate_property-of"`.
 
 ```json
 {
-  "_nid": "_term_key",
-  "_lid": "predicate",
-  "_gid": "_term_key_predicate",
-  "_aid": [
+  "_aid" : [
     "predicate"
-  ]
+  ],
+  "_gid" : "_term_key_predicate",
+  "_lid" : "predicate",
+  "_nid" : "_term_key"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"_predicate_enum-of"`, `"_predicate_property-of"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

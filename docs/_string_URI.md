@@ -30,12 +30,12 @@ Stored values: `"https://www.example.com/resource"`, `"urn:isbn:0451450523"`, `"
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "URI",
-  "_gid": "_string_URI",
-  "_aid": [
+  "_aid" : [
     "URI"
-  ]
+  ],
+  "_gid" : "_string_URI",
+  "_lid" : "URI",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"https://www.example.com/resource"`, `"urn:isbn:0451450523"`, `"
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

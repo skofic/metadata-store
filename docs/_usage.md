@@ -32,10 +32,12 @@ A usage note for a body weight descriptor:
 
 ```json
 {
-  "_gid": "_usage",
-  "_lid": "usage",
-  "_nid": "",
-  "_aid": ["usage"]
+  "_aid" : [
+    "usage"
+  ],
+  "_gid" : "_usage",
+  "_lid" : "usage",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A usage note for a body weight descriptor:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

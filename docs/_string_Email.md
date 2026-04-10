@@ -30,12 +30,12 @@ Stored values: `"user@example.com"`, `"john.doe+tag@company.org"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "Email",
-  "_gid": "_string_Email",
-  "_aid": [
+  "_aid" : [
     "Email"
-  ]
+  ],
+  "_gid" : "_string_Email",
+  "_lid" : "Email",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"user@example.com"`, `"john.doe+tag@company.org"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

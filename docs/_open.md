@@ -65,10 +65,12 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 
 ```json
 {
-  "_gid": "_open",
-  "_lid": "open",
-  "_nid": "",
-  "_aid": ["open"]
+  "_aid" : [
+    "open"
+  ],
+  "_gid" : "_open",
+  "_lid" : "open",
+  "_nid" : ""
 }
 ```
 
@@ -76,9 +78,9 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_required",
         "_recommended",
         "_banned",

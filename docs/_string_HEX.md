@@ -34,12 +34,12 @@ Stored values: `"FF0000"`, `"deadbeef"`, `"0A1B2C3D"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "HEX",
-  "_gid": "_string_HEX",
-  "_aid": [
+  "_aid" : [
     "HEX"
-  ]
+  ],
+  "_gid" : "_string_HEX",
+  "_lid" : "HEX",
+  "_nid" : "_string"
 }
 ```
 
@@ -47,9 +47,9 @@ Stored values: `"FF0000"`, `"deadbeef"`, `"0A1B2C3D"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_regexp",
         "_range_valid_string",
         "_range_normal_string"

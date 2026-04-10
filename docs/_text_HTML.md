@@ -38,12 +38,12 @@ Stored value example:
 
 ```json
 {
-  "_nid": "_text",
-  "_lid": "HTML",
-  "_gid": "_text_HTML",
-  "_aid": [
+  "_aid" : [
     "HTML"
-  ]
+  ],
+  "_gid" : "_text_HTML",
+  "_lid" : "HTML",
+  "_nid" : "_text"
 }
 ```
 
@@ -51,8 +51,10 @@ Stored value example:
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

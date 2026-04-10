@@ -44,12 +44,12 @@ Stored values (enumeration element `_gid`s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA
 
 ```json
 {
-  "_nid": "",
-  "_lid": "enum",
-  "_gid": "_enum",
-  "_aid": [
+  "_aid" : [
     "enum"
-  ]
+  ],
+  "_gid" : "_enum",
+  "_lid" : "enum",
+  "_nid" : ""
 }
 ```
 
@@ -57,9 +57,9 @@ Stored values (enumeration element `_gid`s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_enums"
       ]
     }

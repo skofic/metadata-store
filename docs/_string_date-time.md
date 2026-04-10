@@ -30,12 +30,12 @@ Stored values: `"2024-03-15T14:30:00"`, `"2000-01-01T00:00:00"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "date-time",
-  "_gid": "_string_date-time",
-  "_aid": [
+  "_aid" : [
     "date-time"
-  ]
+  ],
+  "_gid" : "_string_date-time",
+  "_lid" : "date-time",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,9 +43,9 @@ Stored values: `"2024-03-15T14:30:00"`, `"2000-01-01T00:00:00"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_range_valid_string",
         "_range_normal_string"
       ]

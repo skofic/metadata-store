@@ -30,12 +30,12 @@ Stored values: `"terms/_string_date"`, `"terms/ISO_3166_3_ITA"`, `"edges/00ab12c
 
 ```json
 {
-  "_nid": "",
-  "_lid": "handle",
-  "_gid": "_handle",
-  "_aid": [
+  "_aid" : [
     "handle"
-  ]
+  ],
+  "_gid" : "_handle",
+  "_lid" : "handle",
+  "_nid" : ""
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"terms/_string_date"`, `"terms/ISO_3166_3_ITA"`, `"edges/00ab12c
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

@@ -30,12 +30,12 @@ Stored values: `"^[A-Z]{2,3}$"`, `"\d{4}-\d{2}-\d{2}"`, `"^[a-z0-9._%+-]+@[a-z0-
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "regexp",
-  "_gid": "_string_regexp",
-  "_aid": [
+  "_aid" : [
     "regexp"
-  ]
+  ],
+  "_gid" : "_string_regexp",
+  "_lid" : "regexp",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"^[A-Z]{2,3}$"`, `"\d{4}-\d{2}-\d{2}"`, `"^[a-z0-9._%+-]+@[a-z0-
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

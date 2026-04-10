@@ -79,10 +79,12 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
 
 ```json
 {
-  "_gid": "_path_data",
-  "_lid": "data",
-  "_nid": "_path",
-  "_aid": ["data"]
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_path_data",
+  "_lid" : "data",
+  "_nid" : "_path"
 }
 ```
 
@@ -90,11 +92,15 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
 
 ```json
 {
-  "_dict": {
-    "_dict_key": {
-      "_handle": {}
+  "_dict" : {
+    "_dict_key" : {
+      "_handle" : {
+
+      }
     },
-    "_dict_value": {}
+    "_dict_value" : {
+
+    }
   }
 }
 ```

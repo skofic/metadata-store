@@ -36,12 +36,12 @@ Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]`
 
 ```json
 {
-  "_nid": "",
-  "_lid": "enums",
-  "_gid": "_enums",
-  "_aid": [
+  "_aid" : [
     "enums"
-  ]
+  ],
+  "_gid" : "_enums",
+  "_lid" : "enums",
+  "_nid" : ""
 }
 ```
 
@@ -49,8 +49,10 @@ Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]`
 
 ```json
 {
-  "_set": {
-    "_term_key_enum-root": {}
+  "_set" : {
+    "_term_key_enum-root" : {
+
+    }
   }
 }
 ```

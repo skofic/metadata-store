@@ -30,8 +30,8 @@ An array of integers with 1 to 5 elements, each between 5 and 10:
 			"_scalar": {
 				"_number_integer": {
 					"_range_valid": {
-						"_min-range-inclusive": 5,
-						"_max-range-inclusive": 10
+						"_min-inclusive": 5,
+						"_max-inclusive": 10
 					}
 				}
 			}

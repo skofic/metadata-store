@@ -64,10 +64,12 @@ Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional
 
 ```json
 {
-  "_gid": "_banned",
-  "_lid": "banned",
-  "_nid": "",
-  "_aid": ["banned"]
+  "_aid" : [
+    "banned"
+  ],
+  "_gid" : "_banned",
+  "_lid" : "banned",
+  "_nid" : ""
 }
 ```
 
@@ -75,8 +77,10 @@ Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

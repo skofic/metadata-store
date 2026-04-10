@@ -30,12 +30,12 @@ Stored values: `"192.168.0.1"`, `"127.0.0.1"`, `"10.0.0.255"`.
 
 ```json
 {
-  "_nid": "_string",
-  "_lid": "IPv4",
-  "_gid": "_string_IPv4",
-  "_aid": [
+  "_aid" : [
     "IPv4"
-  ]
+  ],
+  "_gid" : "_string_IPv4",
+  "_lid" : "IPv4",
+  "_nid" : "_string"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"192.168.0.1"`, `"127.0.0.1"`, `"10.0.0.255"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

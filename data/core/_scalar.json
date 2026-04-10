@@ -17,7 +17,7 @@
 				"ISO_639_3_eng": "`_scalar` is the data shape for a single value. It uses the **type-as-key** convention: the property key present inside `_scalar` identifies the data type; its value is an object of **companion properties** that apply additional constraints (units, ranges, patterns, etc.). An empty `_scalar` (`{}`) imposes no type constraint.\n\nThe validator reads the single key present in `_scalar` to determine the type, then validates the companion properties against that type's schema.\n\nScalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a `_string_URI` value must first satisfy the `_string` check (valid UTF-8 string) before the URI format check is applied.\n\n**Number types** — comparable; usable in sets but not as dictionary keys:\n\n| Type | Accepts |\n|---|---|\n| [`_number`](_number.md) | Any number (integer or float) |\n| [`_number_float`](_number_float.md) | Floating-point; must be stored as float |\n| [`_number_integer`](_number_integer.md) | Integer; no decimal part |\n\nCompanion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid`](_range_valid.md), [`_range_normal`](_range_normal.md). [`_decimals`](_decimals.md) is also accepted by `_number` and `_number_float` but not `_number_integer`.\n\n**String types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_string`](_string.md) | Generic UTF-8 string |\n| [`_string_URI`](_string_URI.md) | Uniform Resource Identifier |\n| [`_string_Email`](_string_Email.md) | Email address |\n| [`_string_Hostname`](_string_Hostname.md) | Internet hostname |\n| [`_string_IPv4`](_string_IPv4.md) | IPv4 address |\n| [`_string_IPv6`](_string_IPv6.md) | IPv6 address |\n| [`_string_YMD`](_string_YMD.md) | Partial or full date (YYYYMMDD) |\n| [`_string_date`](_string_date.md) | Date (YYYY-MM-DD) |\n| [`_string_time`](_string_time.md) | Time (HH:MM:SS) |\n| [`_string_date-time`](_string_date-time.md) | Date-time (YYYY-MM-DDTHH:MM:SS) |\n| [`_string_LaTeX`](_string_LaTeX.md) | LaTeX expression |\n| [`_string_HEX`](_string_HEX.md) | Hexadecimal string |\n| [`_string_regexp`](_string_regexp.md) | A regular expression (the stored value is itself a pattern) |\n\n`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.\n\n**Text types** — **non-comparable**; cannot be used in sets or as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_text`](_text.md) | Generic rich text |\n| [`_text_HTML`](_text_HTML.md) | HTML |\n| [`_text_Markdown`](_text_Markdown.md) | Markdown |\n| [`_text_SVG`](_text_SVG.md) | SVG image |\n\nNo companion properties. The markup format is declared by the type key itself.\n\n**Term key types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Constraint on the referenced term |\n|---|---|\n| [`_term_key`](_term_key.md) | Any term |\n| [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |\n| [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |\n| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |\n| [`_term_key_predicate`](_term_key_predicate.md) | Predicate |\n| [`_term_key_typedef`](_term_key_typedef.md) | Typedef term |\n\nNo companion properties — the type key encodes the constraint on the referenced term.\n\n**Other types**:\n\n| Type | Description | Comparable | Companion properties |\n|---|---|---|---|\n| [`_handle`](_handle.md) | ArangoDB document `_id` (`<collection>/<key>`) | Yes | — |\n| [`_timestamp`](_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC) | Yes | `_range_valid`, `_range_normal` |\n| [`_boolean`](_boolean.md) | True/false | Yes | — |\n| [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |"
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A floating-point number with unit and valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0.0,\n\t\t\t\t\"_max-range-exclusive\": 300.0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA plain string constrained by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t\t}\n\t}\n}\n```\n\nAn enumeration value constrained to the ISO 639-3 language vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nAn unconstrained scalar — any type and value accepted:\n\n```json\n{\n\t\"_scalar\": {}\n}\n```"
+				"ISO_639_3_eng": "A floating-point number with unit and valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0.0,\n\t\t\t\t\"_max-exclusive\": 300.0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA plain string constrained by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t\t}\n\t}\n}\n```\n\nAn enumeration value constrained to the ISO 639-3 language vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nAn unconstrained scalar — any type and value accepted:\n\n```json\n{\n\t\"_scalar\": {}\n}\n```"
 			}
 		},
 		"_data": {
@@ -44,7 +44,7 @@
 				"ISO_639_3_eng": "`_number` serves a dual role. As a type key inside [`_scalar`](_scalar.md), it declares that the value is any numeric value — integer or floating-point. As a parent type, it is the root of [`_number_float`](_number_float.md) and [`_number_integer`](_number_integer.md), which further constrain the accepted format.\n\nWhen `_number` is the type key, companion properties [`_decimals`](_decimals.md) and all range and unit properties are permitted. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A number with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0,\n\t\t\t\t\"_max-range-exclusive\": 100\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `3.14`, `-100`."
+				"ISO_639_3_eng": "A number with a valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0,\n\t\t\t\t\"_max-exclusive\": 100\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `3.14`, `-100`."
 			}
 		},
 		"_data": {
@@ -126,7 +126,7 @@
 				"ISO_639_3_eng": "`_number_integer` is a sub-type of [`_number`](_number.md). It restricts values to whole numbers — no decimal part is allowed. [`_decimals`](_decimals.md) is not permitted. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A non-negative integer count:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `-7`, `2024`, `0`."
+				"ISO_639_3_eng": "A non-negative integer count:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `42`, `-7`, `2024`, `0`."
 			}
 		},
 		"_data": {
@@ -368,7 +368,7 @@
 				"ISO_639_3_eng": "`_string_date` stores a full calendar date with hyphen separators. Lexicographic ordering is meaningful. String range constraints may be applied via [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md). A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A date with a lower bound:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_min-range-inclusive_string\": \"1900-01-01\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024-03-15\"`, `\"1970-01-01\"`, `\"2000-12-31\"`."
+				"ISO_639_3_eng": "A date with a lower bound:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"1900-01-01\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024-03-15\"`, `\"1970-01-01\"`, `\"2000-12-31\"`."
 			}
 		},
 		"_data": {
@@ -479,7 +479,7 @@
 				"ISO_639_3_eng": "`_string_YMD` stores dates without separators, allowing partial dates (year only or year-month) unlike [`_string_date`](_string_date.md). Lexicographic ordering is meaningful and [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md) may be applied. A sub-type of [`_string`](_string.md). Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A YMD date field accepting any date from year 2000 onwards:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_YMD\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_min-range-inclusive_string\": \"2000\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024\"` (year only), `\"202403\"` (year-month), `\"20240315\"` (full date)."
+				"ISO_639_3_eng": "A YMD date field accepting any date from year 2000 onwards:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_YMD\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"2000\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `\"2024\"` (year only), `\"202403\"` (year-month), `\"20240315\"` (full date)."
 			}
 		},
 		"_data": {
@@ -941,7 +941,7 @@
 				"ISO_639_3_eng": "`_timestamp` declares that the value is a Unix timestamp: a signed integer counting seconds since the Unix epoch (1970-01-01T00:00:00 UTC). The companion properties [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md) may constrain the acceptable time range. Comparable; may appear in sets but not as dictionary keys."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "A timestamp accepting only dates from year 2000 onwards (Unix time 946684800):\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_timestamp\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-range-inclusive\": 946684800\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `946684800` (2000-01-01T00:00:00Z), `1704067200` (2024-01-01T00:00:00Z)."
+				"ISO_639_3_eng": "A timestamp accepting only dates from year 2000 onwards (Unix time 946684800):\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_timestamp\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 946684800\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nStored values: `946684800` (2000-01-01T00:00:00Z), `1704067200` (2024-01-01T00:00:00Z)."
 			}
 		},
 		"_data": {
@@ -1102,17 +1102,17 @@
 				"ISO_639_3_eng": "Unit"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property for specifying the unit of measurement of a scalar value using a controlled vocabulary term from the `_unit` enumeration graph. Its value is a single `_unit` element `_gid`. Mutually exclusive with `_unit_name` and `_unit_symbol`: use `_unit` when the unit exists in the controlled vocabulary, or `_unit_name` / `_unit_symbol` otherwise."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_unit` is an optional companion property accepted by [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md), and [`_string`](_string.md). When present, it declares the unit of measurement by referencing a single term from the `_unit` controlled vocabulary.\n\nThe value is an [`_enum`](_enum.md) scalar — the `_gid` of the enumeration element that identifies the unit, constrained to the `_unit` enumeration root.\n\n`_unit` is mutually exclusive with [`_unit_name`](_unit_name.md) and [`_unit_symbol`](_unit_symbol.md). When `_unit` is present, neither `_unit_name` nor `_unit_symbol` may appear in the same scalar descriptor."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A floating-point body temperature in degrees Celsius:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit\": \"_unit_temperature_C\"\n\t\t}\n\t}\n}\n```\n\nStored values: `\"_unit_length_m\"`, `\"_unit_temperature_C\"`, `\"_unit_weight_kg\"`."
 			}
 		},
 		"_data": {
-			"_set": {
+			"_scalar": {
 				"_enum": {
 					"_enums": [
 						"_unit"
@@ -1134,13 +1134,13 @@
 				"ISO_639_3_eng": "Unit name"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property for specifying the plain-text name of a unit of measurement when the unit is not available in the `_unit` controlled vocabulary. Its value is a plain UTF-8 string. Mutually exclusive with `_unit` and `_unit_symbol`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_unit_name` is an optional companion property for numeric and string scalar types, used when the required unit of measurement has no corresponding term in the [`_unit`](_unit.md) controlled vocabulary. The value is a plain UTF-8 string containing the human-readable unit name.\n\n`_unit_name` is mutually exclusive with [`_unit`](_unit.md): if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside [`_unit_symbol`](_unit_symbol.md) to provide both a readable name and a typographic symbol for the same unit."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A measurement in millibars, a unit not in the core vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit_name\": \"millibar\"\n\t\t}\n\t}\n}\n```\n\nStored values: `\"millibar\"`, `\"international unit\"`, `\"parts per million\"`."
 			}
 		},
 		"_data": {
@@ -1162,13 +1162,13 @@
 				"ISO_639_3_eng": "Unit symbol"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property for specifying the unit symbol in LaTeX format when the unit is not available in the `_unit` controlled vocabulary. Its value is a `_string_LaTeX` expression, suitable for rendering with KaTeX. Mutually exclusive with `_unit` and `_unit_symbol`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_unit_symbol` is an optional companion property for numeric and string scalar types, used alongside [`_unit_name`](_unit_name.md) when the unit of measurement has no term in the [`_unit`](_unit.md) controlled vocabulary. The value is a [`_string_LaTeX`](_string_LaTeX.md) expression that produces the typographic symbol for the unit when rendered.\n\n`_unit_symbol` is mutually exclusive with [`_unit`](_unit.md): if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside `_unit_name` to provide both a readable name and a symbol."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A concentration measurement with name and symbol:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit_name\": \"micrograms per litre\",\n\t\t\t\"_unit_symbol\": \"\\\\mu\\\\text{g/L}\"\n\t\t}\n\t}\n}\n```\n\nStored values (LaTeX strings): `\"\\\\text{mbar}\"`, `\"\\\\mathrm{kg/m^3}\"`, `\"\\\\mu\\\\text{g/L}\"`."
 			}
 		},
 		"_data": {
@@ -1191,13 +1191,13 @@
 				"ISO_639_3_eng": "Valid numeric range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property that defines hard numeric boundaries for a scalar value. Values outside the valid range are treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef: an object containing at least one of `_min-inclusive`, `_min-exclusive`, `_max-inclusive`, `_max-exclusive`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range_valid` is an optional companion property for numeric scalar types. When present, the stored value must fall within the specified boundaries; a value outside the valid range is treated as a **validation error**.\n\nThe value is a [`_range`](_range.md) object — it must contain at least one bound: a minimum (`_min-inclusive` or `_min-exclusive`) or a maximum (`_max-inclusive` or `_max-exclusive`), or both. At most one min-bound and one max-bound may be present.\n\nFor non-critical out-of-range values that should be flagged as outliers rather than errors, use [`_range_normal`](_range_normal.md) instead."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A percentage value that must be between 0 and 100 (inclusive):\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0.0,\n\t\t\t\t\"_max-inclusive\": 100.0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA count that must be non-negative (lower bound only):\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1217,13 +1217,13 @@
 				"ISO_639_3_eng": "Normal numeric range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range_normal` is an optional companion property for numeric scalar types. When present, the stored value is compared against the specified boundaries to determine whether it is within the expected distribution; a value outside the normal range is treated as an **outlier warning**, not an error.\n\nThe value is a [`_range`](_range.md) object with the same structure as [`_range_valid`](_range_valid.md). The two properties may both be present on the same scalar: `_range_valid` enforces hard limits, while `_range_normal` marks the subset of valid values considered typical."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "Human body temperature in degrees Celsius — valid up to 45 °C, normal between 35.5 and 38.5 °C:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit\": [\"_unit_temperature_C\"],\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 25.0,\n\t\t\t\t\"_max-inclusive\": 45.0\n\t\t\t},\n\t\t\t\"_range_normal\": {\n\t\t\t\t\"_min-inclusive\": 35.5,\n\t\t\t\t\"_max-inclusive\": 38.5\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1231,7 +1231,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "_range_valid",
@@ -1244,13 +1244,13 @@
 				"ISO_639_3_eng": "Valid string range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range_valid_string` is an optional companion property for string scalar types. When present, the stored string value must fall within the specified lexicographic boundaries; a value outside the valid range is treated as a **validation error**.\n\nThe value is a [`_range_string`](_range_string.md) object containing at least one of `_string_min-inclusive`, `_string_min-exclusive`, `_string_max-inclusive`, `_string_max-exclusive`. Comparison is lexicographic (code-point order).\n\nFor date and time types, lexicographic order corresponds to chronological order because these formats are designed to sort correctly as strings."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A date field restricted to dates from year 2000 onwards:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"2000-01-01\"\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA string field restricted to uppercase ASCII letters:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"A\",\n\t\t\t\t\"_string_max-inclusive\": \"Z\"\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1270,13 +1270,13 @@
 				"ISO_639_3_eng": "Normal string range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The companion property that defines the expected lexicographic boundaries for a string scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range_normal_string` is an optional companion property for string scalar types. When present, the stored string value is compared against the specified lexicographic boundaries to determine whether it is within the expected distribution; a value outside the normal range is treated as an **outlier warning**, not an error.\n\nThe value is a [`_range_string`](_range_string.md) object with the same structure as [`_range_valid_string`](_range_valid_string.md). The two properties may both be present on the same scalar: `_range_valid_string` enforces hard limits, while `_range_normal_string` marks the subset of valid values considered typical."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A date field where dates before 2000 are valid but unusual:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string_date\": {\n\t\t\t\"_range_valid_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"1900-01-01\"\n\t\t\t},\n\t\t\t\"_range_normal_string\": {\n\t\t\t\t\"_string_min-inclusive\": \"2000-01-01\"\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1297,13 +1297,13 @@
 				"ISO_639_3_eng": "Numeric range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "Typedef that defines the shape of a numeric range object. A range must contain at most one minimum bound (`_min-inclusive` or `_min-exclusive`) and at most one maximum bound (`_max-inclusive` or `_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid` and `_range_normal`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range` is a typedef term defining the shape of a numeric range object used by [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md). It is not used directly as a `_data` type — only through `_typedef: \"_range\"`.\n\nA range object may contain:\n- A lower bound: exactly one of [`_min-inclusive`](_min-inclusive.md) (≥) or [`_min-exclusive`](_min-exclusive.md) (>).\n- An upper bound: exactly one of [`_max-inclusive`](_max-inclusive.md) (≤) or [`_max-exclusive`](_max-exclusive.md) (<).\n\nAt least one bound must be present. Both bounds may be omitted independently — a range with only a lower bound or only an upper bound is valid (open-ended range)."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A closed interval from 0 to 100 (both bounds inclusive):\n\n```json\n{\n\t\"_min-inclusive\": 0,\n\t\"_max-inclusive\": 100\n}\n```\n\nA half-open interval — values must be ≥ 0 but may be any size (lower bound only):\n\n```json\n{\n\t\"_min-inclusive\": 0\n}\n```\n\nA half-open interval — values must be strictly less than 1.0 (upper bound only):\n\n```json\n{\n\t\"_max-exclusive\": 1.0\n}\n```"
 			}
 		},
 		"_data": {
@@ -1351,13 +1351,13 @@
 				"ISO_639_3_eng": "String range"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "Typedef that defines the shape of a lexicographic string range object. A range must contain at most one minimum bound (`_string_min-inclusive` or `_string_min-exclusive`) and at most one maximum bound (`_string_max-inclusive` or `_string_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid_string` and `_range_normal_string`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_range_string` is a typedef term defining the shape of a string range object used by [`_range_valid_string`](_range_valid_string.md) and [`_range_normal_string`](_range_normal_string.md). It is the string counterpart of [`_range`](_range.md) and follows the same structural rules, but uses string-specific bound properties.\n\nA string range object may contain:\n- A lower bound: exactly one of [`_string_min-inclusive`](_string_min-inclusive.md) (≥) or [`_string_min-exclusive`](_string_min-exclusive.md) (>).\n- An upper bound: exactly one of [`_string_max-inclusive`](_string_max-inclusive.md) (≤) or [`_string_max-exclusive`](_string_max-exclusive.md) (<).\n\nComparison is lexicographic (Unicode code-point order). At least one bound must be present."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A date range accepting dates from 2000-01-01 through 2099-12-31 (both bounds inclusive):\n\n```json\n{\n\t\"_string_min-inclusive\": \"2000-01-01\",\n\t\"_string_max-inclusive\": \"2099-12-31\"\n}\n```\n\nA half-open range — any date from 2000 onwards:\n\n```json\n{\n\t\"_string_min-inclusive\": \"2000-01-01\"\n}\n```"
 			}
 		},
 		"_data": {
@@ -1379,8 +1379,8 @@
 								}
 							],
 							"_selection": [
-								[ "_min-exclusive_string", "_min-inclusive_string" ],
-								[ "_max-exclusive_string", "_max-inclusive_string" ]
+								[ "_string_min-exclusive", "_string_min-inclusive" ],
+								[ "_string_max-exclusive", "_string_max-inclusive" ]
 							]
 						}
 					]
@@ -1406,13 +1406,13 @@
 				"ISO_639_3_eng": "Range minimum exclusive"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The strict lower bound property of a numeric range object. The validated value must be strictly greater than this number (value > bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-inclusive`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_min-exclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **strictly greater than** this bound (open lower bound). It is mutually exclusive with [`_min-inclusive`](_min-inclusive.md) — at most one minimum bound may appear in a single range object."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A value that must be strictly positive (greater than zero):\n\n```json\n{\n\t\"_range_valid\": {\n\t\t\"_min-exclusive\": 0\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1434,13 +1434,13 @@
 				"ISO_639_3_eng": "Range minimum inclusive"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The closed lower bound property of a numeric range object. The validated value must be greater than or equal to this number (value ≥ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-exclusive`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_min-inclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **greater than or equal to** this bound (closed lower bound). It is mutually exclusive with [`_min-exclusive`](_min-exclusive.md) — at most one minimum bound may appear in a single range object."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A value that must be non-negative (zero or greater):\n\n```json\n{\n\t\"_range_valid\": {\n\t\t\"_min-inclusive\": 0\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1450,7 +1450,7 @@
 		},
 		"_domn": {}
 	},
-	
+
 	{
 		"_code": {
 			"_nid": "",
@@ -1463,13 +1463,13 @@
 				"ISO_639_3_eng": "Range maximum exclusive"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The strict upper bound property of a numeric range object. The validated value must be strictly less than this number (value < bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_max-inclusive`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_max-exclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **strictly less than** this bound (open upper bound). It is mutually exclusive with [`_max-inclusive`](_max-inclusive.md) — at most one maximum bound may appear in a single range object."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A probability value that must be in the range [0, 1) — zero is allowed, one is not:\n\n```json\n{\n\t\"_range_valid\": {\n\t\t\"_min-inclusive\": 0.0,\n\t\t\"_max-exclusive\": 1.0\n\t}\n}\n```"
 			}
 		},
 		"_data": {
@@ -1483,7 +1483,7 @@
 		"_code": {
 			"_nid": "",
 			"_lid": "max-inclusive",
-			"_gid": "_miax-inclusive",
+			"_gid": "_max-inclusive",
 			"_aid": ["max-inclusive"]
 		},
 		"_info": {
@@ -1491,18 +1491,132 @@
 				"ISO_639_3_eng": "Range maximum inclusive"
 			},
 			"_definition": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "The closed upper bound property of a numeric range object. The validated value must be less than or equal to this number (value ≤ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_max-exclusive`."
 			},
 			"_description": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "`_max-inclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **less than or equal to** this bound (closed upper bound). It is mutually exclusive with [`_max-exclusive`](_max-exclusive.md) — at most one maximum bound may appear in a single range object."
 			},
 			"_examples": {
-				"ISO_639_3_eng": ""
+				"ISO_639_3_eng": "A percentage value that must be between 0 and 100 (both bounds inclusive):\n\n```json\n{\n\t\"_range_valid\": {\n\t\t\"_min-inclusive\": 0,\n\t\t\"_max-inclusive\": 100\n\t}\n}\n```"
 			}
 		},
 		"_data": {
 			"_scalar": {
 				"_number": {}
+			}
+		},
+		"_domn": {}
+	},
+
+	{
+		"_code": {
+			"_nid": "_string",
+			"_lid": "min-exclusive",
+			"_gid": "_string_min-exclusive",
+			"_aid": ["min-exclusive"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "String range minimum exclusive"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The strict lower bound property of a string range object. The validated string must be lexicographically greater than this value (value > bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_min-inclusive`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_string_min-exclusive` is a property of a [`_range_string`](_range_string.md) object. When present, the string value being validated must be **lexicographically greater than** this bound (open lower bound, code-point order). It is mutually exclusive with [`_string_min-inclusive`](_string_min-inclusive.md) — at most one minimum bound may appear in a single range object."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A date field that must be strictly after 1999-12-31 (i.e., from 2000 onwards):\n\n```json\n{\n\t\"_range_valid_string\": {\n\t\t\"_string_min-exclusive\": \"1999-12-31\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_string",
+			"_lid": "min-inclusive",
+			"_gid": "_string_min-inclusive",
+			"_aid": ["min-inclusive"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "String range minimum inclusive"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The closed lower bound property of a string range object. The validated string must be lexicographically greater than or equal to this value (value ≥ bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_min-exclusive`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_string_min-inclusive` is a property of a [`_range_string`](_range_string.md) object. When present, the string value being validated must be **lexicographically greater than or equal to** this bound (closed lower bound, code-point order). It is mutually exclusive with [`_string_min-exclusive`](_string_min-exclusive.md) — at most one minimum bound may appear in a single range object."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A date field accepting any date from 2000-01-01 onwards (inclusive):\n\n```json\n{\n\t\"_range_valid_string\": {\n\t\t\"_string_min-inclusive\": \"2000-01-01\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {}
+	},
+
+	{
+		"_code": {
+			"_nid": "_string",
+			"_lid": "max-exclusive",
+			"_gid": "_string_max-exclusive",
+			"_aid": ["max-exclusive"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "String range maximum exclusive"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The strict upper bound property of a string range object. The validated string must be lexicographically less than this value (value < bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_max-inclusive`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_string_max-exclusive` is a property of a [`_range_string`](_range_string.md) object. When present, the string value being validated must be **lexicographically less than** this bound (open upper bound, code-point order). It is mutually exclusive with [`_string_max-inclusive`](_string_max-inclusive.md) — at most one maximum bound may appear in a single range object."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A date field accepting dates strictly before 2100-01-01:\n\n```json\n{\n\t\"_range_valid_string\": {\n\t\t\"_string_max-exclusive\": \"2100-01-01\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "_string",
+			"_lid": "max-inclusive",
+			"_gid": "_string_max-inclusive",
+			"_aid": ["max-inclusive"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "String range maximum inclusive"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The closed upper bound property of a string range object. The validated string must be lexicographically less than or equal to this value (value ≤ bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_max-exclusive`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_string_max-inclusive` is a property of a [`_range_string`](_range_string.md) object. When present, the string value being validated must be **lexicographically less than or equal to** this bound (closed upper bound, code-point order). It is mutually exclusive with [`_string_max-exclusive`](_string_max-exclusive.md) — at most one maximum bound may appear in a single range object."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A date field accepting dates up to and including 2099-12-31:\n\n```json\n{\n\t\"_range_valid_string\": {\n\t\t\"_string_max-inclusive\": \"2099-12-31\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
 			}
 		},
 		"_domn": {}

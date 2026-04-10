@@ -32,10 +32,12 @@ A methods entry for a body weight measurement:
 
 ```json
 {
-  "_gid": "_methods",
-  "_lid": "methods",
-  "_nid": "",
-  "_aid": ["methods"]
+  "_aid" : [
+    "methods"
+  ],
+  "_gid" : "_methods",
+  "_lid" : "methods",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ A methods entry for a body weight measurement:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

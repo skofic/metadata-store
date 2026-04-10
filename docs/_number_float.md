@@ -35,12 +35,12 @@ Stored values: `3.14159`, `0.0`, `98.6`, `-2.5`.
 
 ```json
 {
-  "_nid": "_number",
-  "_lid": "float",
-  "_gid": "_number_float",
-  "_aid": [
+  "_aid" : [
     "float"
-  ]
+  ],
+  "_gid" : "_number_float",
+  "_lid" : "float",
+  "_nid" : "_number"
 }
 ```
 
@@ -48,9 +48,9 @@ Stored values: `3.14159`, `0.0`, `98.6`, `-2.5`.
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_unit",
         "_unit_name",
         "_unit_symbol",

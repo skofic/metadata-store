@@ -48,10 +48,12 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
 ```json
 {
-  "_gid": "_immutable",
-  "_lid": "immutable",
-  "_nid": "",
-  "_aid": ["immutable"]
+  "_aid" : [
+    "immutable"
+  ],
+  "_gid" : "_immutable",
+  "_lid" : "immutable",
+  "_nid" : ""
 }
 ```
 
@@ -59,8 +61,10 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

@@ -30,12 +30,12 @@ Stored values: `true`, `false`.
 
 ```json
 {
-  "_nid": "",
-  "_lid": "boolean",
-  "_gid": "_boolean",
-  "_aid": [
+  "_aid" : [
     "boolean"
-  ]
+  ],
+  "_gid" : "_boolean",
+  "_lid" : "boolean",
+  "_nid" : ""
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `true`, `false`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

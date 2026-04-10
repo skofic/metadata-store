@@ -45,10 +45,12 @@ A schema that locks the ArangoDB-managed document identifier and revision counte
 
 ```json
 {
-  "_gid": "_locked",
-  "_lid": "locked",
-  "_nid": "",
-  "_aid": ["locked"]
+  "_aid" : [
+    "locked"
+  ],
+  "_gid" : "_locked",
+  "_lid" : "locked",
+  "_nid" : ""
 }
 ```
 
@@ -56,8 +58,10 @@ A schema that locks the ArangoDB-managed document identifier and revision counte
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

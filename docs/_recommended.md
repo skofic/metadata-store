@@ -72,10 +72,12 @@ Valid: `{"_title": {...}}`, `{"_title": {...}, "_notes": {...}}` — `_notes` is
 
 ```json
 {
-  "_gid": "_recommended",
-  "_lid": "recommended",
-  "_nid": "",
-  "_aid": ["recommended"]
+  "_aid" : [
+    "recommended"
+  ],
+  "_gid" : "_recommended",
+  "_lid" : "recommended",
+  "_nid" : ""
 }
 ```
 
@@ -83,8 +85,10 @@ Valid: `{"_title": {...}}`, `{"_title": {...}, "_notes": {...}}` — `_notes` is
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

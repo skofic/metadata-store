@@ -50,10 +50,12 @@ A schema that defaults `chr_status` to `"active"` and `chr_confidence` to `1.0`:
 
 ```json
 {
-  "_gid": "_default-value",
-  "_lid": "default-value",
-  "_nid": "",
-  "_aid": ["default-value"]
+  "_aid" : [
+    "default-value"
+  ],
+  "_gid" : "_default-value",
+  "_lid" : "default-value",
+  "_nid" : ""
 }
 ```
 
@@ -61,11 +63,15 @@ A schema that defaults `chr_status` to `"active"` and `chr_confidence` to `1.0`:
 
 ```json
 {
-  "_dict": {
-    "_dict_key": {
-      "_term_key_descriptor": {}
+  "_dict" : {
+    "_dict_key" : {
+      "_term_key_descriptor" : {
+
+      }
     },
-    "_dict_value": {}
+    "_dict_value" : {
+
+    }
   }
 }
 ```

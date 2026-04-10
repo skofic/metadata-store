@@ -90,10 +90,12 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not 
 
 ```json
 {
-  "_gid": "_object",
-  "_lid": "object",
-  "_nid": "",
-  "_aid": ["object"]
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_object",
+  "_lid" : "object",
+  "_nid" : ""
 }
 ```
 
@@ -101,20 +103,20 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not 
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_required" : [
         {
-          "_selectors": [
-            {
-              "_any": {
-                "_max-items": 1
-              }
-            }
-          ],
-          "_selection": [
+          "_selection" : [
             "_open",
             "_closed"
+          ],
+          "_selectors" : [
+            {
+              "_any" : {
+                "_max-items" : 1
+              }
+            }
           ]
         }
       ]

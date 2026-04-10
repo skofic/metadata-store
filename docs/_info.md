@@ -58,10 +58,12 @@ A fuller `_info` section with multilingual title and formatted description:
 
 ```json
 {
-  "_gid": "_info",
-  "_lid": "info",
-  "_nid": "",
-  "_aid": ["info"]
+  "_aid" : [
+    "info"
+  ],
+  "_gid" : "_info",
+  "_lid" : "info",
+  "_nid" : ""
 }
 ```
 
@@ -69,15 +71,9 @@ A fuller `_info` section with multilingual title and formatted description:
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
-        {
-          "_selectors": [{"_all": {}}],
-          "_selection": ["_title", "_definition"]
-        }
-      ],
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_description",
         "_examples",
         "_methods",
@@ -86,6 +82,21 @@ A fuller `_info` section with multilingual title and formatted description:
         "_provider",
         "_url",
         "_notes"
+      ],
+      "_required" : [
+        {
+          "_selection" : [
+            "_title",
+            "_definition"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
       ]
     }
   }

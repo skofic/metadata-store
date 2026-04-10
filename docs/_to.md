@@ -43,10 +43,12 @@ Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 contro
 
 ```json
 {
-  "_gid": "_to",
-  "_lid": "to",
-  "_nid": "",
-  "_aid": ["to"]
+  "_aid" : [
+    "to"
+  ],
+  "_gid" : "_to",
+  "_lid" : "to",
+  "_nid" : ""
 }
 ```
 
@@ -54,8 +56,10 @@ Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 contro
 
 ```json
 {
-  "_scalar": {
-    "_handle": {}
+  "_scalar" : {
+    "_handle" : {
+
+    }
   }
 }
 ```

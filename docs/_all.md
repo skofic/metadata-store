@@ -63,10 +63,12 @@ At least two and at most five of the six candidate properties must be present. H
 
 ```json
 {
-  "_gid": "_all",
-  "_lid": "all",
-  "_nid": "",
-  "_aid": ["all"]
+  "_aid" : [
+    "all"
+  ],
+  "_gid" : "_all",
+  "_lid" : "all",
+  "_nid" : ""
 }
 ```
 
@@ -74,6 +76,6 @@ At least two and at most five of the six candidate properties must be present. H
 
 ```json
 {
-  "_typedef": "_elements"
+  "_typedef" : "_elements"
 }
 ```

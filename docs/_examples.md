@@ -16,7 +16,7 @@ For descriptor terms, examples typically show the term used as a JSON property i
 
 **`_examples`**
 
-An `_examples` entry containing a JSON code block:
+An `_examples` entry showing a JSON usage example:
 
 ```json
 {
@@ -32,10 +32,12 @@ An `_examples` entry containing a JSON code block:
 
 ```json
 {
-  "_gid": "_examples",
-  "_lid": "examples",
-  "_nid": "",
-  "_aid": ["examples"]
+  "_aid" : [
+    "examples"
+  ],
+  "_gid" : "_examples",
+  "_lid" : "examples",
+  "_nid" : ""
 }
 ```
 
@@ -43,6 +45,6 @@ An `_examples` entry containing a JSON code block:
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```

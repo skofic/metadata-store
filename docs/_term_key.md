@@ -30,12 +30,12 @@ Stored values: `"_string_date"`, `"ISO_639_3_eng"`, `"_predicate_enum-of"`.
 
 ```json
 {
-  "_nid": "_term",
-  "_lid": "key",
-  "_gid": "_term_key",
-  "_aid": [
+  "_aid" : [
     "key"
-  ]
+  ],
+  "_gid" : "_term_key",
+  "_lid" : "key",
+  "_nid" : "_term"
 }
 ```
 
@@ -43,8 +43,10 @@ Stored values: `"_string_date"`, `"ISO_639_3_eng"`, `"_predicate_enum-of"`.
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```
