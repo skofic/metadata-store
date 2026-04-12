@@ -59,7 +59,7 @@
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Title or label"
+				"ISO_639_3_eng": "Title"
 			},
 			"_definition": {
 				"ISO_639_3_eng": "A short label or name for the term. Expressed as plain unformatted text. Typically one to five words, with no punctuation."
@@ -349,7 +349,9 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": ["_term_role_typedef"]
+		}
 	},
 	{
 		"_code": {
@@ -389,6 +391,8 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": ["_term_role_typedef"]
+		}
 	}
 ]

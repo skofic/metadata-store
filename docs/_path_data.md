@@ -1,14 +1,44 @@
-# `_path_data`
+# Relationship path data
+<p style="color: #888; margin-top: -0.5em;"><code>_path_data</code></p>
 
-**`_title`**
+> An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to.
 
-Relationship path data
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Relationship path](_path.md) |
+| [Local identifier](_lid.md) | `data` |
+| [Global identifier](_gid.md) | `_path_data` |
+| [Official identifiers](_aid.md) | `data` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_path_data",
+  "_lid" : "data",
+  "_nid" : "_path"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Relationship path data
+
+**[Definition](_definition.md):** An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to.
+
+**[Description](_description.md)**
 
 `_path_data` is the payload of an edge document. It is an open key/value dictionary whose entries are scoped by context — each key identifies the node that the associated data belongs to.
 
@@ -25,7 +55,7 @@ When the edge encodes a **conditional schema rule** (on a [`_predicate_property-
 
 Keys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be of any shape and type.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A travel-graph edge carrying per-airline fares and per-location transfer costs:
 
@@ -73,22 +103,42 @@ A `_predicate_value-of` edge encoding a closed conditional rule — when `_scala
 
 The constraint is keyed by the graph root handle `terms/_scalar` and applies only within that schema context. `_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "data"
-  ],
-  "_gid" : "_path_data",
-  "_lid" : "data",
-  "_nid" : "_path"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship path data"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Dictionary](_dict.md)
+
+**[Dictionary key](_dict_key.md):** [Document handle](_handle.md)
+
+**[Dictionary value](_dict_value.md)**
+
+*Any*
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -104,3 +154,5 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
   }
 }
 ```
+
+</details>

@@ -1,20 +1,50 @@
-# `_enums`
+# Controlled vocabularies
+<p style="color: #888; margin-top: -0.5em;"><code>_enums</code></p>
 
-**`_title`**
+> The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph.
 
-Controlled vocabularies
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `enums` |
+| [Global identifier](_gid.md) | `_enums` |
+| [Official identifiers](_aid.md) | `enums` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "enums"
+  ],
+  "_gid" : "_enums",
+  "_lid" : "enums",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Controlled vocabularies
+
+**[Definition](_definition.md):** The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph.
+
+**[Description](_description.md)**
 
 `_enums` is an optional companion property of [`_enum`](_enum.md). When present, the [`_enum`](_enum.md) value must be the `_gid` of an element that belongs to at least one of the listed enumeration roots. When absent, any enumeration element from any controlled vocabulary is accepted.
 
 Each element in `_enums` must be the `_gid` of an enumeration root term. The data type of `_enums` itself is a set of [`_term_key_enum-root`](_term_key_enum-root.md) values.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 Restricting an `_enum` value to ISO 639-3 or ISO 639-1 language codes:
 
@@ -30,22 +60,36 @@ Restricting an `_enum` value to ISO 639-3 or ISO 639-1 language codes:
 
 Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]` (two vocabularies), `["ISO_3166_3"]` (country codes only).
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "enums"
-  ],
-  "_gid" : "_enums",
-  "_lid" : "enums",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Controlled vocabularies"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Set](_set.md) — [Enumeration root term document key](_term_key_enum-root.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -56,3 +100,5 @@ Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]`
   }
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_range_valid`
+# Valid numeric range
+<p style="color: #888; margin-top: -0.5em;"><code>_range_valid</code></p>
 
-**`_title`**
+> The companion property that defines hard numeric boundaries for a scalar value. Values outside the valid range are treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef: an object containing at least one of `_min-inclusive`, `_min-exclusive`, `_max-inclusive`, `_max-exclusive`.
 
-Valid numeric range
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The companion property that defines hard numeric boundaries for a scalar value. Values outside the valid range are treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef: an object containing at least one of `_min-inclusive`, `_min-exclusive`, `_max-inclusive`, `_max-exclusive`.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Numeric range](_range.md) |
+| [Local identifier](_lid.md) | `valid` |
+| [Global identifier](_gid.md) | `_range_valid` |
+| [Official identifiers](_aid.md) | `valid` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "valid"
+  ],
+  "_gid" : "_range_valid",
+  "_lid" : "valid",
+  "_nid" : "_range"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Valid numeric range
+
+**[Definition](_definition.md):** The companion property that defines hard numeric boundaries for a scalar value. Values outside the valid range are treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef: an object containing at least one of `_min-inclusive`, `_min-exclusive`, `_max-inclusive`, `_max-exclusive`.
+
+**[Description](_description.md)**
 
 `_range_valid` is an optional companion property for numeric scalar types. When present, the stored value must fall within the specified boundaries; a value outside the valid range is treated as a **validation error**.
 
@@ -16,7 +46,7 @@ The value is a [`_range`](_range.md) object — it must contain at least one bou
 
 For non-critical out-of-range values that should be flagged as outliers rather than errors, use [`_range_normal`](_range_normal.md) instead.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A percentage value that must be between 0 and 100 (inclusive):
 
@@ -47,25 +77,41 @@ A count that must be non-negative (lower bound only):
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "valid"
-  ],
-  "_gid" : "_range_valid",
-  "_lid" : "valid",
-  "_nid" : "_range"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Valid numeric range"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Numeric range](_range.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_range"
 }
 ```
+
+</details>

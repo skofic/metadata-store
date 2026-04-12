@@ -1,14 +1,44 @@
-# `_selector`
+# Properties selector
+<p style="color: #888; margin-top: -0.5em;"><code>_selector</code></p>
 
-**`_title`**
+> A selection rule object that pairs a set of cardinality rules (`_selectors`) with a pool of candidate properties (`_selection`). Both properties are required. Multiple `_selector` objects within `_required` are AND-connected: all must be satisfied simultaneously.
 
-Properties selector
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A selection rule object that pairs a set of cardinality rules (`_selectors`) with a pool of candidate properties (`_selection`). Both properties are required. Multiple `_selector` objects within `_required` are AND-connected: all must be satisfied simultaneously.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `selector` |
+| [Global identifier](_gid.md) | `_selector` |
+| [Official identifiers](_aid.md) | `selector` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "selector"
+  ],
+  "_gid" : "_selector",
+  "_lid" : "selector",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Properties selector
+
+**[Definition](_definition.md):** A selection rule object that pairs a set of cardinality rules (`_selectors`) with a pool of candidate properties (`_selection`). Both properties are required. Multiple `_selector` objects within `_required` are AND-connected: all must be satisfied simultaneously.
+
+**[Description](_description.md)**
 
 A `_selector` object is the unit of selection logic within [`_required`](_required.md). It has two required properties:
 
@@ -19,7 +49,7 @@ When `_selection` is a flat array, `_selectors` has a single element applied to 
 
 When `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. `_selectors[0]` (the intra-group phase) is applied to each sub-array of `_selection` independently: it defines how many elements from each sub-array can simultaneously be present. `_selectors[1]` (the inter-group phase) is applied to the combined result — one candidate slot per sub-array: it defines how many of the sub-array groups must be represented.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **Example 1** — the [`_range`](_range.md) numeric range object:
 
@@ -53,26 +83,48 @@ When `_selection` is a nested array of sub-arrays, `_selectors` operates as a tw
 
 `_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required.
 
-**`_notes`**
+**[Notes](_notes.md)**
 
 Previously named `_rule_selector` in earlier versions of the dictionary.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "selector"
-  ],
-  "_gid" : "_selector",
-  "_lid" : "selector",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_notes" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Properties selector"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Properties selectors](_selectors.md) · [Properties selection](_selection.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -97,3 +149,5 @@ Previously named `_rule_selector` in earlier versions of the dictionary.
   }
 }
 ```
+
+</details>

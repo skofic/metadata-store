@@ -1,14 +1,44 @@
-# `_range_valid_string`
+# Valid string range
+<p style="color: #888; margin-top: -0.5em;"><code>_range_valid_string</code></p>
 
-**`_title`**
+> The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.
 
-Valid string range
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Valid numeric range](_range_valid.md) |
+| [Local identifier](_lid.md) | `string` |
+| [Global identifier](_gid.md) | `_range_valid_string` |
+| [Official identifiers](_aid.md) | `string` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "string"
+  ],
+  "_gid" : "_range_valid_string",
+  "_lid" : "string",
+  "_nid" : "_range_valid"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Valid string range
+
+**[Definition](_definition.md):** The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.
+
+**[Description](_description.md)**
 
 `_range_valid_string` is an optional companion property for string scalar types. When present, the stored string value must fall within the specified lexicographic boundaries; a value outside the valid range is treated as a **validation error**.
 
@@ -16,7 +46,7 @@ The value is a [`_range_string`](_range_string.md) object containing at least on
 
 For date and time types, lexicographic order corresponds to chronological order because these formats are designed to sort correctly as strings.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A date field restricted to dates from year 2000 onwards:
 
@@ -47,25 +77,41 @@ A string field restricted to uppercase ASCII letters:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "string"
-  ],
-  "_gid" : "_range_valid_string",
-  "_lid" : "string",
-  "_nid" : "_range_valid"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Valid string range"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [String range](_range_string.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_range_string"
 }
 ```
+
+</details>

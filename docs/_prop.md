@@ -1,14 +1,44 @@
-# `_prop`
+# Properties section
+<p style="color: #888; margin-top: -0.5em;"><code>_prop</code></p>
 
-**`_title`**
+> The section of a term that records the concrete attributes of the real-world entity the term represents. Each property must be a descriptor defined in the dictionary, and its value must conform to that descriptor's type definition.
 
-Properties section
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The section of a term that records the concrete attributes of the real-world entity the term represents. Each property must be a descriptor defined in the dictionary, and its value must conform to that descriptor's type definition.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `prop` |
+| [Global identifier](_gid.md) | `_prop` |
+| [Official identifiers](_aid.md) | `prop` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "prop"
+  ],
+  "_gid" : "_prop",
+  "_lid" : "prop",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Properties section
+
+**[Definition](_definition.md):** The section of a term that records the concrete attributes of the real-world entity the term represents. Each property must be a descriptor defined in the dictionary, and its value must conform to that descriptor's type definition.
+
+**[Description](_description.md)**
 
 The properties section turns a classification or identification term into a structured instance record. Where the [code section](_code.md) provides identifiers and the [information section](_info.md) provides documentation, `_prop` holds factual, typed data about the entity itself — attributes that are intrinsic to the real-world concept rather than metadata about the dictionary entry.
 
@@ -16,7 +46,7 @@ For example, a country term in the ISO 3166 vocabulary might carry identifiers a
 
 Every property in `_prop` must be a descriptor defined in the dictionary; its value must conform to that descriptor's type definition. The section has no fixed schema: any dictionary-defined descriptor may appear as a property. Unlike the [domains section](_domn.md), which classifies terms categorically, `_prop` carries the actual measured or factual values of the entity's attributes.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A country term's properties section recording its dialling code, area, official languages, currencies, and land borders:
 
@@ -39,22 +69,36 @@ A country term's properties section recording its dialling code, area, official 
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "prop"
-  ],
-  "_gid" : "_prop",
-  "_lid" : "prop",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Properties section"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Open schema](_open.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -65,3 +109,5 @@ A country term's properties section recording its dialling code, area, official 
   }
 }
 ```
+
+</details>

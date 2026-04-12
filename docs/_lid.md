@@ -1,14 +1,44 @@
-# `_lid`
+# Local identifier
+<p style="color: #888; margin-top: -0.5em;"><code>_lid</code></p>
 
-**`_title`**
+> The unique identifier of the term within its namespace. Combined with the namespace identifier it forms the global identifier. Required on every term and immutable once set.
 
-Local identifier
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The unique identifier of the term within its namespace. Combined with the namespace identifier it forms the global identifier. Required on every term and immutable once set.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `lid` |
+| [Global identifier](_gid.md) | `_lid` |
+| [Official identifiers](_aid.md) | `lid` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "lid"
+  ],
+  "_gid" : "_lid",
+  "_lid" : "lid",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Local identifier
+
+**[Definition](_definition.md):** The unique identifier of the term within its namespace. Combined with the namespace identifier it forms the global identifier. Required on every term and immutable once set.
+
+**[Description](_description.md)**
 
 Terms are uniquely identified by their [global identifier](_gid.md), which is the concatenation of the [namespace identifier](_nid.md) and this local identifier, separated by an underscore (`_`). The local identifier must therefore be unique within its namespace; it need not be unique across the entire dictionary.
 
@@ -16,7 +46,7 @@ The allowed character set is restricted to avoid ambiguity: the underscore is re
 
 This property is required on every term and is immutable once set — changing it would alter the term's [global identifier](_gid.md) and invalidate all references to it.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 `ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace `ISO_3166_3` it forms the global identifier `ISO_3166_3_ITA`:
 
@@ -43,22 +73,36 @@ For a top-level namespace term with no [`_nid`](_nid.md), `_lid` and [`_gid`](_g
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "lid"
-  ],
-  "_gid" : "_lid",
-  "_lid" : "lid",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Local identifier"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [String](_string.md) ([Regular expression](_regexp.md): `^[a-zA-Z0-9\-:.@+,=;$!*'%()]{1,254}$`)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -69,3 +113,5 @@ For a top-level namespace term with no [`_nid`](_nid.md), `_lid` and [`_gid`](_g
   }
 }
 ```
+
+</details>

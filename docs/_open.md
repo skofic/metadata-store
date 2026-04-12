@@ -1,14 +1,44 @@
-# `_open`
+# Open schema
+<p style="color: #888; margin-top: -0.5em;"><code>_open</code></p>
 
-**`_title`**
+> A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction.
 
-Open schema
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `open` |
+| [Global identifier](_gid.md) | `_open` |
+| [Official identifiers](_aid.md) | `open` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "open"
+  ],
+  "_gid" : "_open",
+  "_lid" : "open",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Open schema
+
+**[Definition](_definition.md):** A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction.
+
+**[Description](_description.md)**
 
 `_open` is the schema section for the open form of [`_object`](_object.md). It may contain any combination of the constraint properties — [`_required`](_required.md), [`_recommended`](_recommended.md), [`_banned`](_banned.md), [`_computed`](_computed.md), [`_locked`](_locked.md), [`_immutable`](_immutable.md), [`_default-value`](_default-value.md) — to define what is mandatory, advisory, or forbidden within the object. Beyond those explicit constraints, the object may contain any other property defined in the data dictionary.
 
@@ -16,7 +46,7 @@ An empty `_open` section (`"_open": {}`) means no constraints apply: the object 
 
 `_recommended` in an open schema is advisory: the listed properties are expected or encouraged but their absence does not make the object invalid. Properties not listed in `_recommended` are still accepted.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **Empty `_open` section** — no constraints; any dictionary property is accepted:
 
@@ -59,22 +89,38 @@ Valid: `{"_title": {...}}`, `{"_title": {...}, "_definition": {...}, "_examples"
 Invalid: `{}` — `_title` is missing.
 Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "open"
-  ],
-  "_gid" : "_open",
-  "_lid" : "open",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Open schema"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Recommended properties](_recommended.md):** [Required properties](_required.md) · [Recommended properties](_recommended.md) · [Banned properties](_banned.md) · [Computed properties](_computed.md) · [Locked properties](_locked.md) · [Immutable properties](_immutable.md) · [Default values](_default-value.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -93,3 +139,5 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
   }
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_predicate_enum-of`
+# Enumeration of
+<p style="color: #888; margin-top: -0.5em;"><code>_predicate_enum-of</code></p>
 
-**`_title`**
+> The source node is a valid enumeration element of the destination node's controlled vocabulary. Used to declare membership in an enumeration, making the source a selectable value within that vocabulary.
 
-Enumeration of
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The source node is a valid enumeration element of the destination node's controlled vocabulary. Used to declare membership in an enumeration, making the source a selectable value within that vocabulary.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Local identifier](_lid.md) | `enum-of` |
+| [Global identifier](_gid.md) | `_predicate_enum-of` |
+| [Official identifiers](_aid.md) | `enum-of` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "enum-of"
+  ],
+  "_gid" : "_predicate_enum-of",
+  "_lid" : "enum-of",
+  "_nid" : "_predicate"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Enumeration of
+
+**[Definition](_definition.md):** The source node is a valid enumeration element of the destination node's controlled vocabulary. Used to declare membership in an enumeration, making the source a selectable value within that vocabulary.
+
+**[Description](_description.md)**
 
 `_predicate_enum-of` is the primary relationship for building controlled vocabularies. An edge with this predicate states that [`_from`](_from.md) is a valid, selectable value within the vocabulary rooted at (or containing) [`_to`](_to.md).
 
@@ -20,7 +50,7 @@ Enumerations can be hierarchical: if `_to` is itself an element of a larger voca
 
 The [`_path`](_path.md) set on an edge determines which vocabularies the edge participates in, enabling element sharing across multiple vocabularies without duplicating edge documents.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 Italy is a valid element of the ISO 3166-3 country vocabulary:
 
@@ -34,17 +64,24 @@ Italy is a valid element of the ISO 3166-3 country vocabulary:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "enum-of"
-  ],
-  "_gid" : "_predicate_enum-of",
-  "_lid" : "enum-of",
-  "_nid" : "_predicate"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Enumeration of"
+  }
 }
 ```
+
+</details>

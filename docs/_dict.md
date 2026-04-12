@@ -1,20 +1,50 @@
-# `_dict`
+# Dictionary
+<p style="color: #888; margin-top: -0.5em;"><code>_dict</code></p>
 
-**`_title`**
+> The data shape property for a key/value structure with explicitly typed keys and values. Both `_dict_key` and `_dict_value` must be present: `_dict_key` constrains the key type, `_dict_value` defines the value shape.
 
-Dictionary
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The data shape property for a key/value structure with explicitly typed keys and values. Both `_dict_key` and `_dict_value` must be present: `_dict_key` constrains the key type, `_dict_value` defines the value shape.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `dict` |
+| [Global identifier](_gid.md) | `_dict` |
+| [Official identifiers](_aid.md) | `dict` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "dict"
+  ],
+  "_gid" : "_dict",
+  "_lid" : "dict",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Dictionary
+
+**[Definition](_definition.md):** The data shape property for a key/value structure with explicitly typed keys and values. Both `_dict_key` and `_dict_value` must be present: `_dict_key` constrains the key type, `_dict_value` defines the value shape.
+
+**[Description](_description.md)**
 
 A *dictionary* is a set of key/value pairs in which both keys and values are typed. Keys are defined by the required [`_dict_key`](_dict_key.md) sub-property, which constrains the key to a string-compatible comparable type using the type-as-key convention. Values are defined by the required [`_dict_value`](_dict_value.md) sub-property, which specifies the data shape of dictionary values — making the dictionary structure fully recursive when the value type is itself a dictionary. When `_dict_value` is an empty object, values may be of any type and shape.
 
 The canonical use of `_dict` in the core dictionary is the multilingual string structure used throughout the [`_info`](_info.md) section: keys are ISO 639-3 language `_gid`s (constrained with `_enum` to the `ISO_639_3` vocabulary) and values are plain strings.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A multilingual string — ISO 639-3 language codes as keys, plain strings as values:
 
@@ -88,22 +118,41 @@ A recursive dictionary — ISO 3166-3 country codes as outer keys, multilingual 
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "dict"
-  ],
-  "_gid" : "_dict",
-  "_lid" : "dict",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Dictionary"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Dictionary key](_dict_key.md) · [Dictionary value](_dict_value.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -128,3 +177,5 @@ A recursive dictionary — ISO 3166-3 country codes as outer keys, multilingual 
   }
 }
 ```
+
+</details>

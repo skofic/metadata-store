@@ -1,14 +1,44 @@
-# `_set`
+# Set
+<p style="color: #888; margin-top: -0.5em;"><code>_set</code></p>
 
-**`_title`**
+> The data shape property for an unordered collection of unique elements. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the element type, and the value associated with that key is an object of companion properties. Uniqueness is enforced by restricting element types to comparable types only. An empty `_set` (`{}`) accepts elements of any comparable type without further constraint.
 
-Set
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The data shape property for an unordered collection of unique elements. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the element type, and the value associated with that key is an object of companion properties. Uniqueness is enforced by restricting element types to comparable types only. An empty `_set` (`{}`) accepts elements of any comparable type without further constraint.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `set` |
+| [Global identifier](_gid.md) | `_set` |
+| [Official identifiers](_aid.md) | `set` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "set"
+  ],
+  "_gid" : "_set",
+  "_lid" : "set",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Set
+
+**[Definition](_definition.md):** The data shape property for an unordered collection of unique elements. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the element type, and the value associated with that key is an object of companion properties. Uniqueness is enforced by restricting element types to comparable types only. An empty `_set` (`{}`) accepts elements of any comparable type without further constraint.
+
+**[Description](_description.md)**
 
 `_set` is the data shape for an unordered collection of values in which every element is unique. It uses the same **type-as-key** convention as [`_scalar`](_scalar.md): the property key present inside `_set` identifies the element type; its value is an object of **companion properties** that apply additional constraints. An empty `_set` (`{}`) imposes no type constraint beyond comparability.
 
@@ -25,9 +55,9 @@ Allowed element types:
 
 The optional [`_elements`](_elements.md) companion property constrains the number of elements in the set.
 
-`_set` delegates to the [`_type_set`](_type_set.md) typedef, which encodes the full list of comparable types and recommends `_elements`. For a recursively nested variant that uses the same element-type constraint, see [`_nested`](_nested.md).
+`_set` delegates to the [`_type_comparable`](_type_comparable.md) typedef, which encodes the full list of comparable types and recommends `_elements`. For a recursively nested variant that uses the same element-type constraint, see [`_nested`](_nested.md).
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A set of ISO 639-3 language codes:
 
@@ -74,25 +104,41 @@ An unconstrained set — any comparable type accepted:
 }
 ```
 
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Set"
+  }
+}
+```
+
+</details>
+
 ---
 
-**`_code`**
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Comparable data type](_type_comparable.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "set"
-  ],
-  "_gid" : "_set",
-  "_lid" : "set",
-  "_nid" : ""
+  "_typedef" : "_type_comparable"
 }
 ```
 
-**`_data`**
-
-```json
-{
-  "_typedef" : "_type_set"
-}
-```
+</details>

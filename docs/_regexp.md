@@ -1,14 +1,44 @@
-# `_regexp`
+# Regular expression
+<p style="color: #888; margin-top: -0.5em;"><code>_regexp</code></p>
 
-**`_title`**
+> A regular expression pattern. In the identification section it constrains the format of local identifiers within the namespace; in the data section it constrains the value of string scalars that accept it as a companion property.
 
-Regular expression
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A regular expression pattern. In the identification section it constrains the format of local identifiers within the namespace; in the data section it constrains the value of string scalars that accept it as a companion property.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `regexp` |
+| [Global identifier](_gid.md) | `_regexp` |
+| [Official identifiers](_aid.md) | `regexp` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "regexp"
+  ],
+  "_gid" : "_regexp",
+  "_lid" : "regexp",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Regular expression
+
+**[Definition](_definition.md):** A regular expression pattern. In the identification section it constrains the format of local identifiers within the namespace; in the data section it constrains the value of string scalars that accept it as a companion property.
+
+**[Description](_description.md)**
 
 This property stores a regular expression and is used in two distinct contexts:
 
@@ -18,7 +48,7 @@ This property stores a regular expression and is used in two distinct contexts:
 
 The value stored in this property is itself a regular expression string.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A namespace term enforcing that all member [`_lid`](_lid.md) values are exactly three uppercase letters (ISO 3166-3 country codes):
 
@@ -48,22 +78,36 @@ A descriptor whose value must be a valid hex colour code:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "regexp"
-  ],
-  "_gid" : "_regexp",
-  "_lid" : "regexp",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Regular expression"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [Regular expression string](_string_regexp.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -74,3 +118,5 @@ A descriptor whose value must be a valid hex colour code:
   }
 }
 ```
+
+</details>

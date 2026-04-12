@@ -1,14 +1,44 @@
-# `_banned`
+# Banned properties
+<p style="color: #888; margin-top: -0.5em;"><code>_banned</code></p>
 
-**`_title`**
+> A set of descriptor global identifiers listing properties that must never be present in the object. The ban is unconditional and takes precedence over all other schema rules, including conditional rules applied via graph edges.
 
-Banned properties
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A set of descriptor global identifiers listing properties that must never be present in the object. The ban is unconditional and takes precedence over all other schema rules, including conditional rules applied via graph edges.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `banned` |
+| [Global identifier](_gid.md) | `_banned` |
+| [Official identifiers](_aid.md) | `banned` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "banned"
+  ],
+  "_gid" : "_banned",
+  "_lid" : "banned",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Banned properties
+
+**[Definition](_definition.md):** A set of descriptor global identifiers listing properties that must never be present in the object. The ban is unconditional and takes precedence over all other schema rules, including conditional rules applied via graph edges.
+
+**[Description](_description.md)**
 
 `_banned` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Any property listed in `_banned` must be absent from the object — the ban cannot be overridden by [`_required`](_required.md), [`_recommended`](_recommended.md), or any conditional rule stored in [`_path_data`](_path_data.md) on graph edges.
 
@@ -19,7 +49,7 @@ The practical effect of `_banned` differs by schema type:
 
 Because `_banned` is unconditional, it also overrides conditional rules. A property banned in the base schema cannot be permitted by any activation condition.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **In an open schema** — any dictionary property is accepted except `_notes` and `_citation`:
 
@@ -58,22 +88,36 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 Valid: `{}`, `{"_unit": "_unit_length_cm"}`.
 Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional rule has activated it.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "banned"
-  ],
-  "_gid" : "_banned",
-  "_lid" : "banned",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Banned properties"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Set](_set.md) — [Descriptor term document key](_term_key_descriptor.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -84,3 +128,5 @@ Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional
   }
 }
 ```
+
+</details>

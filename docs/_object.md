@@ -1,14 +1,44 @@
-# `_object`
+# Object
+<p style="color: #888; margin-top: -0.5em;"><code>_object</code></p>
 
-**`_title`**
+> A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
 
-Object
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `object` |
+| [Global identifier](_gid.md) | `_object` |
+| [Official identifiers](_aid.md) | `object` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "object"
+  ],
+  "_gid" : "_object",
+  "_lid" : "object",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Object
+
+**[Definition](_definition.md):** A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
+
+**[Description](_description.md)**
 
 `_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Three forms are available depending on what `_object` contains:
 
@@ -18,7 +48,7 @@ A data shape for structured objects. Three forms are available: an empty `_objec
 
 At most one of `_open` or `_closed` may be present. Having both simultaneously is invalid.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **Unrestricted object** — the descriptor accepts any object structure:
 
@@ -84,22 +114,41 @@ Invalid: `{}` — `_title` is missing.
 Valid: `{"_lid": "code", "_gid": "_code"}`, `{"_lid": "code", "_gid": "_code", "_nid": "", "_aid": ["code"]}`.
 Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not in the permitted set.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "object"
-  ],
-  "_gid" : "_object",
-  "_lid" : "object",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Object"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Optional selection](_any.md) ([Maximum element count](_max-items.md): 1)
+[Open schema](_open.md) · [Closed schema](_closed.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -124,3 +173,5 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not 
   }
 }
 ```
+
+</details>

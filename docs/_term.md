@@ -1,14 +1,44 @@
-# `_term`
+# Term
+<p style="color: #888; margin-top: -0.5em;"><code>_term</code></p>
 
-**`_title`**
+> The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges.
 
-Term
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `term` |
+| [Global identifier](_gid.md) | `_term` |
+| [Official identifiers](_aid.md) | `term` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "term"
+  ],
+  "_gid" : "_term",
+  "_lid" : "term",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Term
+
+**[Definition](_definition.md):** The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges.
+
+**[Description](_description.md)**
 
 Terms are the nodes of the data dictionary graph. Each term is a JSON document stored in the terms collection of the ArangoDB database. The sections a term contains determine what it represents:
 
@@ -26,7 +56,7 @@ This mechanism is used, for example, to expose a curated subset of a large stand
 
 The ArangoDB system properties [`_id`](_id.md), [`_key`](_key.md), and [`_rev`](_rev.md) are present on every stored document but are not written to the source JSON — `_key` is computed from [`_gid`](_gid.md) at insertion time, and `_id` and `_rev` are assigned by ArangoDB.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A minimal term — a namespace root with only an identification section:
 
@@ -75,22 +105,51 @@ A descriptor term — a floating-point body temperature:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "term"
-  ],
-  "_gid" : "_term",
-  "_lid" : "term",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Term"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Identification section](_code.md)
+
+**[Recommended properties](_recommended.md):** [Information section](_info.md) · [Data section](_data.md) · [Domains section](_domn.md) · [Properties section](_prop.md)
+
+**[Computed properties](_computed.md):** [Document key](_key.md)
+
+**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
+
+**[Immutable properties](_immutable.md):** [Document key](_key.md)
+
+**[Default values](_default-value.md):** *see JSON*
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -135,3 +194,5 @@ A descriptor term — a floating-point body temperature:
   }
 }
 ```
+
+</details>

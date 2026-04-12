@@ -1,14 +1,44 @@
-# `_predicate_bridge-of`
+# Bridge of
+<p style="color: #888; margin-top: -0.5em;"><code>_predicate_bridge-of</code></p>
 
-**`_title`**
+> The source node is a bridge connecting the destination vocabulary root to elements from another vocabulary. During traversal, the bridge node is skipped and the traversal continues into the source vocabulary's elements using the destination graph's `_path` filter.
 
-Bridge of
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The source node is a bridge connecting the destination vocabulary root to elements from another vocabulary. During traversal, the bridge node is skipped and the traversal continues into the source vocabulary's elements using the destination graph's `_path` filter.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Local identifier](_lid.md) | `bridge-of` |
+| [Global identifier](_gid.md) | `_predicate_bridge-of` |
+| [Official identifiers](_aid.md) | `bridge-of` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "bridge-of"
+  ],
+  "_gid" : "_predicate_bridge-of",
+  "_lid" : "bridge-of",
+  "_nid" : "_predicate"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Bridge of
+
+**[Definition](_definition.md):** The source node is a bridge connecting the destination vocabulary root to elements from another vocabulary. During traversal, the bridge node is skipped and the traversal continues into the source vocabulary's elements using the destination graph's `_path` filter.
+
+**[Description](_description.md)**
 
 `_predicate_bridge-of` enables a vocabulary to include elements from a separate, pre-existing vocabulary without duplicating edge documents. An edge with this predicate states: [`_from`](_from.md) is a bridge node that, when encountered during traversal of [`_to`](_to.md), causes the traversal to switch into `_from`'s vocabulary and continue there.
 
@@ -18,7 +48,7 @@ The source node is a bridge connecting the destination vocabulary root to elemen
 
 Bridge nodes are always skipped during traversal — they are never returned as valid values.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 Italy included in a custom `MyCountries` vocabulary via a bridge to `ISO_3166_3`:
 
@@ -39,17 +69,24 @@ Italy included in a custom `MyCountries` vocabulary via a bridge to `ISO_3166_3`
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "bridge-of"
-  ],
-  "_gid" : "_predicate_bridge-of",
-  "_lid" : "bridge-of",
-  "_nid" : "_predicate"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Bridge of"
+  }
 }
 ```
+
+</details>

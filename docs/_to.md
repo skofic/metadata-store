@@ -1,14 +1,44 @@
-# `_to`
+# Relationship destination
+<p style="color: #888; margin-top: -0.5em;"><code>_to</code></p>
 
-**`_title`**
+> The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points.
 
-Relationship destination
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `to` |
+| [Global identifier](_gid.md) | `_to` |
+| [Official identifiers](_aid.md) | `to` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "to"
+  ],
+  "_gid" : "_to",
+  "_lid" : "to",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Relationship destination
+
+**[Definition](_definition.md):** The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points.
+
+**[Description](_description.md)**
 
 `_to` holds the handle of the **root** node in a directed edge. Together with [`_from`](_from.md) and [`_predicate`](_predicate.md), it uniquely identifies the relationship. It is part of the triple used to compute the edge [`_key`](_key.md) and is immutable once set.
 
@@ -21,7 +51,7 @@ The many-to-one convention means the interpretation of `_to` depends on the pred
 - For [`_predicate_section-of`](_predicate_section-of.md): `_to` is the graph root under which the section heading is grouped.
 - For [`_predicate_bridge-of`](_predicate_bridge-of.md): `_to` is the custom graph whose traversal continues into the bridge's target.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 The `_to` field of an edge connecting Italy to the ISO 3166-3 enumeration root:
 
@@ -37,22 +67,36 @@ The `_to` field of an edge connecting Italy to the ISO 3166-3 enumeration root:
 
 Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 controlled vocabulary.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "to"
-  ],
-  "_gid" : "_to",
-  "_lid" : "to",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship destination"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [Document handle](_handle.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -63,3 +107,5 @@ Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 contro
   }
 }
 ```
+
+</details>

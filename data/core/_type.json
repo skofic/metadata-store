@@ -14,7 +14,7 @@
 				"ISO_639_3_eng": "The namespace root for the dictionary's built-in typedef terms. Groups the three typedef terms that encode the allowed type sets for scalar, set-element, and dictionary-key contexts."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_type` is the namespace under which the three built-in typedef terms are organised: [`_type_scalar`](_type_scalar.md), [`_type_set`](_type_set.md), and [`_type_key`](_type_key.md). These terms carry the complete allowed-type lists used when validating the type key present in [`_scalar`](_scalar.md), [`_set`](_set.md), [`_nested`](_nested.md), and [`_dict_key`](_dict_key.md) objects.\n\nAs a namespace root, `_type` itself carries no data section."
+				"ISO_639_3_eng": "`_type` is the namespace under which the three built-in typedef terms are organised: [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md). These terms carry the complete allowed-type lists used when validating the type key present in [`_scalar`](_scalar.md), [`_set`](_set.md), [`_nested`](_nested.md), and [`_dict_key`](_dict_key.md) objects.\n\nAs a namespace root, `_type` itself carries no data section."
 			}
 		},
 		"_domn": {}
@@ -93,19 +93,19 @@
 	{
 		"_code": {
 			"_nid": "_type",
-			"_lid": "set",
-			"_gid": "_type_set",
-			"_aid": ["set"]
+			"_lid": "comparable",
+			"_gid": "_type_comparable",
+			"_aid": ["comparable"]
 		},
 		"_info": {
 			"_title": {
-				"ISO_639_3_eng": "Set data type"
+				"ISO_639_3_eng": "Comparable data type"
 			},
 			"_definition": {
 				"ISO_639_3_eng": "The typedef term that defines the set of comparable types accepted as the element type in `_set` and `_nested` data shapes. Excludes non-comparable text types. Recommends `_elements` as a companion property for controlling the number of elements."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_type_set` is the reusable type definition used by the [`_set`](_set.md) and [`_nested`](_nested.md) data shapes. Uniqueness in a set requires comparability — the validator must be able to determine whether two values are equal — so only comparable types are included. The non-comparable text types ([`_text`](_text.md), [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), [`_text_SVG`](_text_SVG.md)) are therefore excluded.\n\nCompared to [`_type_scalar`](_type_scalar.md), `_type_set` omits the entire text family. All other scalar types are accepted:\n\n| Family | Types |\n|---|---|\n| Number | [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md) |\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md), [`_string_regexp`](_string_regexp.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_timestamp`](_timestamp.md), [`_boolean`](_boolean.md), [`_enum`](_enum.md) |\n\nThe [`_elements`](_elements.md) property is recommended to constrain the minimum and maximum number of elements."
+				"ISO_639_3_eng": "`_type_comparable` is the reusable type definition used by the [`_set`](_set.md) and [`_nested`](_nested.md) data shapes. Uniqueness in a set requires comparability — the validator must be able to determine whether two values are equal — so only comparable types are included. The non-comparable text types ([`_text`](_text.md), [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), [`_text_SVG`](_text_SVG.md)) are therefore excluded.\n\nCompared to [`_type_scalar`](_type_scalar.md), `_type_comparable` omits the entire text family. All other scalar types are accepted:\n\n| Family | Types |\n|---|---|\n| Number | [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md) |\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md), [`_string_regexp`](_string_regexp.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_timestamp`](_timestamp.md), [`_boolean`](_boolean.md), [`_enum`](_enum.md) |\n\nThe [`_elements`](_elements.md) property is recommended to constrain the minimum and maximum number of elements."
 			}
 		},
 		"_data": {
@@ -174,7 +174,7 @@
 				"ISO_639_3_eng": "The typedef term that defines the set of string-compatible types accepted as the key type in a `_dict_key` object. Excludes number types, boolean, timestamp, text types, and `_string_regexp`, which are not suitable as dictionary keys."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_type_key` is the reusable type definition used by the [`_dict_key`](_dict_key.md) data shape. Dictionary keys must be string-compatible and unambiguously comparable, so several types accepted in [`_type_set`](_type_set.md) are excluded: number types (`_number`, `_number_float`, `_number_integer`), [`_boolean`](_boolean.md), [`_timestamp`](_timestamp.md), all text types, and [`_string_regexp`](_string_regexp.md) (using a pattern as a dictionary key would be ambiguous).\n\nAccepted key types:\n\n| Family | Types |\n|---|---|\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_enum`](_enum.md) |"
+				"ISO_639_3_eng": "`_type_key` is the reusable type definition used by the [`_dict_key`](_dict_key.md) data shape. Dictionary keys must be string-compatible and unambiguously comparable, so several types accepted in [`_type_comparable`](_type_comparable.md) are excluded: number types (`_number`, `_number_float`, `_number_integer`), [`_boolean`](_boolean.md), [`_timestamp`](_timestamp.md), all text types, and [`_string_regexp`](_string_regexp.md) (using a pattern as a dictionary key would be ambiguous).\n\nAccepted key types:\n\n| Family | Types |\n|---|---|\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_enum`](_enum.md) |"
 			}
 		},
 		"_data": {

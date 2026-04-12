@@ -1,14 +1,44 @@
-# `_required`
+# Required properties
+<p style="color: #888; margin-top: -0.5em;"><code>_required</code></p>
 
-**`_title`**
+> An array of `_selector` objects that define mandatory property presence rules for the enclosing schema. All selectors in the array must be satisfied simultaneously. Properties listed in `_computed` or given a value in `_default-value` satisfy their requirements automatically, since those are resolved first.
 
-Required properties
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-An array of `_selector` objects that define mandatory property presence rules for the enclosing schema. All selectors in the array must be satisfied simultaneously. Properties listed in `_computed` or given a value in `_default-value` satisfy their requirements automatically, since those are resolved first.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `required` |
+| [Global identifier](_gid.md) | `_required` |
+| [Official identifiers](_aid.md) | `required` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "required"
+  ],
+  "_gid" : "_required",
+  "_lid" : "required",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Required properties
+
+**[Definition](_definition.md):** An array of `_selector` objects that define mandatory property presence rules for the enclosing schema. All selectors in the array must be satisfied simultaneously. Properties listed in `_computed` or given a value in `_default-value` satisfy their requirements automatically, since those are resolved first.
+
+**[Description](_description.md)**
 
 `_required` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Its value is an array of [`_selector`](_selector.md) objects. Each `_selector` object pairs a set of cardinality rules ([`_selectors`](_selectors.md)) with a pool of candidate properties ([`_selection`](_selection.md)). All `_selector` objects in the array must be satisfied simultaneously — the array is implicitly AND-connected.
 
@@ -18,7 +48,7 @@ In a **closed schema**: `_required` defines the mandatory tier of the permitted 
 
 In an **open schema**: `_required` defines which properties must be present, without restricting the set of permitted properties.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **In a closed schema** — the [`_range`](_range.md) numeric range object. Exactly one of `_min-exclusive` or `_min-inclusive` must be present, and at least one of `_max-exclusive` or `_max-inclusive` must be present:
 
@@ -72,22 +102,36 @@ Invalid: `{"_min-inclusive": 0}` — no max bound is present.
 
 Both `_selectors` and `_selection` must be present. Any other dictionary property is also permitted.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "required"
-  ],
-  "_gid" : "_required",
-  "_lid" : "required",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Required properties"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Array](_array.md) — [Properties selector](_selector.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -96,3 +140,5 @@ Both `_selectors` and `_selection` must be present. Any other dictionary propert
   }
 }
 ```
+
+</details>

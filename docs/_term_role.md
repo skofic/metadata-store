@@ -1,14 +1,44 @@
-# `_term_role`
+# Term role
+<p style="color: #888; margin-top: -0.5em;"><code>_term_role</code></p>
 
-**`_title`**
+> A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_type`](_term_role_type.md) and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned.
 
-Term role
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_type`](_term_role_type.md) and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `term_role` |
+| [Global identifier](_gid.md) | `_term_role` |
+| [Official identifiers](_aid.md) | `term_role` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "term_role"
+  ],
+  "_gid" : "_term_role",
+  "_lid" : "term_role",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Term role
+
+**[Definition](_definition.md):** A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_type`](_term_role_type.md) and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned.
+
+**[Description](_description.md)**
 
 `_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both `_term_role_descriptor` and `_term_role_typedef`.
 
@@ -28,22 +58,33 @@ The following roles are **user-assigned**:
 | [`_term_role_type`](_term_role_type.md) | The term defines a data type in the dictionary's type system |
 | [`_term_role_typedef`](_term_role_typedef.md) | The term is intended for use as a reusable type definition via `_typedef` |
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "term_role"
-  ],
-  "_gid" : "_term_role",
-  "_lid" : "term_role",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Term role"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Set](_set.md) — [Enumerated value](_enum.md) ([Controlled vocabularies](_enums.md): [Term role](_term_role.md))
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -56,3 +97,5 @@ The following roles are **user-assigned**:
   }
 }
 ```
+
+</details>

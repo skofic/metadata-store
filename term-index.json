@@ -118,7 +118,7 @@
     "_type": "data/core/_type.json",
     "_type_key": "data/core/_type.json",
     "_type_scalar": "data/core/_type.json",
-    "_type_set": "data/core/_type.json",
+    "_type_comparable": "data/core/_type.json",
     "_typedef": "data/core/_data.json",
     "_unit": "data/core/_scalar.json",
     "_unit_name": "data/core/_scalar.json",

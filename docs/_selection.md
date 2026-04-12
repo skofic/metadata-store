@@ -1,14 +1,44 @@
-# `_selection`
+# Properties selection
+<p style="color: #888; margin-top: -0.5em;"><code>_selection</code></p>
 
-**`_title`**
+> A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`.
 
-Properties selection
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `selection` |
+| [Global identifier](_gid.md) | `_selection` |
+| [Official identifiers](_aid.md) | `selection` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "selection"
+  ],
+  "_gid" : "_selection",
+  "_lid" : "selection",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Properties selection
+
+**[Definition](_definition.md):** A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`.
+
+**[Description](_description.md)**
 
 `_selection` is the candidate pool within a [`_selector`](_selector.md) object. Its structure is coordinated with [`_selectors`](_selectors.md):
 
@@ -19,7 +49,7 @@ All values in `_selection` must be descriptor global identifiers. The nesting ma
 
 The name `_selection` was previously `_selection_descriptors` in earlier versions of the dictionary.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **Flat `_selection`** — a single selector governs all candidates:
 
@@ -51,22 +81,36 @@ One `_selectors` entry governs both `_selectors` and `_selection` as a flat grou
 
 The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: exactly one lower-bound property is required. The second applies to `["_max-exclusive", "_max-inclusive"]`: at least one upper-bound property is required.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "selection"
-  ],
-  "_gid" : "_selection",
-  "_lid" : "selection",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Properties selection"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Nested array](_nested.md) — [Descriptor term document key](_term_key_descriptor.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -77,3 +121,5 @@ The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: 
   }
 }
 ```
+
+</details>

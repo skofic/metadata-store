@@ -1,14 +1,44 @@
-# `_selectors`
+# Properties selectors
+<p style="color: #888; margin-top: -0.5em;"><code>_selectors</code></p>
 
-**`_title`**
+> An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on.
 
-Properties selectors
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `selectors` |
+| [Global identifier](_gid.md) | `_selectors` |
+| [Official identifiers](_aid.md) | `selectors` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "selectors"
+  ],
+  "_gid" : "_selectors",
+  "_lid" : "selectors",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Properties selectors
+
+**[Definition](_definition.md):** An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on.
+
+**[Description](_description.md)**
 
 `_selectors` is the array of cardinality rules within a [`_selector`](_selector.md) object. Each element of `_selectors` is an object containing exactly one of [`_all`](_all.md) (mandatory group) or [`_any`](_any.md) (optional group).
 
@@ -16,7 +46,7 @@ When [`_selection`](_selection.md) is a flat array, `_selectors` has a single el
 
 When `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. The first element (`_selectors[0]`) is the intra-group rule: applied to each sub-array of `_selection` independently, it constrains how many elements from each group can simultaneously be present. The second element (`_selectors[1]`) is the inter-group rule: applied to the combined result (one candidate slot per sub-array), it constrains how many of the groups must be represented.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 The `_selectors` from the [`_range`](_range.md) numeric range term:
 
@@ -37,26 +67,43 @@ The first `_selectors` entry — `_all: {_min-items: 1, _max-items: 1}` — is t
 
 The second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group rule. Applied to the 2 selected elements, at least 1 must be present in the actual object.
 
-**`_notes`**
+**[Notes](_notes.md)**
 
 Previously named `_selection_rules` in earlier versions of the dictionary.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "selectors"
-  ],
-  "_gid" : "_selectors",
-  "_lid" : "selectors",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_notes" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Properties selectors"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Array](_array.md) — [Object](_object.md) — [Closed schema](_closed.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -84,3 +131,5 @@ Previously named `_selection_rules` in earlier versions of the dictionary.
   }
 }
 ```
+
+</details>

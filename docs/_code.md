@@ -1,14 +1,44 @@
-# `_code`
+# Identification section
+<p style="color: #888; margin-top: -0.5em;"><code>_code</code></p>
 
-**`_title`**
+> The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary.
 
-Identification section
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `code` |
+| [Global identifier](_gid.md) | `_code` |
+| [Official identifiers](_aid.md) | `code` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "code"
+  ],
+  "_gid" : "_code",
+  "_lid" : "code",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Identification section
+
+**[Definition](_definition.md):** The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary.
+
+**[Description](_description.md)**
 
 The identification section is mandatory in every [term](_term.md). It provides the identifiers that locate the term within the dictionary's namespace hierarchy.
 
@@ -18,7 +48,7 @@ Terms with an empty-string namespace (`_nid: ""`) are core dictionary building b
 
 The [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), [`_regexp`](_regexp.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A country term with several secondary properties:
 
@@ -60,22 +90,49 @@ A top-level namespace term with no parent:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "code"
-  ],
-  "_gid" : "_code",
-  "_lid" : "code",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Identification section"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Local identifier](_lid.md) · [Global identifier](_gid.md) · [Official identifiers](_aid.md)
+
+**[Recommended properties](_recommended.md):** [Namespace](_nid.md) · [Provider identifiers](_pid.md) · [Name](_name.md) · [Symbol](_symbol.md) · [Regular expression](_regexp.md) · [Emoji](_emoji.md)
+
+**[Computed properties](_computed.md):** [Global identifier](_gid.md) · [Official identifiers](_aid.md)
+
+**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
+
+**[Immutable properties](_immutable.md):** [Namespace](_nid.md) · [Local identifier](_lid.md) · [Global identifier](_gid.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -122,3 +179,5 @@ A top-level namespace term with no parent:
   }
 }
 ```
+
+</details>

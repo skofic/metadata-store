@@ -1,14 +1,44 @@
-# `_any`
+# Optional selection
+<p style="color: #888; margin-top: -0.5em;"><code>_any</code></p>
 
-**`_title`**
+> A cardinality constraint object within `_selectors` that defines an optional rule for its candidate group. With no item limits (`_any: {}`), any number of candidates — including none — may be present. `_min-items` and `_max-items` impose a count range when selection is not entirely open-ended.
 
-Optional selection
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A cardinality constraint object within `_selectors` that defines an optional rule for its candidate group. With no item limits (`_any: {}`), any number of candidates — including none — may be present. `_min-items` and `_max-items` impose a count range when selection is not entirely open-ended.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `any` |
+| [Global identifier](_gid.md) | `_any` |
+| [Official identifiers](_aid.md) | `any` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "any"
+  ],
+  "_gid" : "_any",
+  "_lid" : "any",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Optional selection
+
+**[Definition](_definition.md):** A cardinality constraint object within `_selectors` that defines an optional rule for its candidate group. With no item limits (`_any: {}`), any number of candidates — including none — may be present. `_min-items` and `_max-items` impose a count range when selection is not entirely open-ended.
+
+**[Description](_description.md)**
 
 `_any` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as optional — no candidates are required unless `_min-items` is set. Its value is an object that may contain [`_min-items`](_min-items.md), [`_max-items`](_max-items.md), or both, or it may be empty.
 
@@ -18,7 +48,7 @@ A cardinality constraint object within `_selectors` that defines an optional rul
 
 The "optional" quality of `_any` means having none of the candidates is valid by default. [`_all`](_all.md) requires all candidates when no item limits are given; `_any` requires none.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **`_any: {}`** — candidates are fully optional; any number may appear:
 
@@ -57,25 +87,41 @@ At most one schema form may be present. Zero is valid; both `_open` and `_closed
 
 At least two and at most five of the six candidates must be present. Having one or zero, or having all six, is invalid.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "any"
-  ],
-  "_gid" : "_any",
-  "_lid" : "any",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Optional selection"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Elements count range](_elements.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_elements"
 }
 ```
+
+</details>

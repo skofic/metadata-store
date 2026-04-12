@@ -1,14 +1,44 @@
-# `_emoji`
+# Emoji
+<p style="color: #888; margin-top: -0.5em;"><code>_emoji</code></p>
 
-**`_title`**
+> A single emoji character or sequence used as a visual icon for the term. Stored as a plain UTF-8 string.
 
-Emoji
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A single emoji character or sequence used as a visual icon for the term. Stored as a plain UTF-8 string.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `emoji` |
+| [Global identifier](_gid.md) | `_emoji` |
+| [Official identifiers](_aid.md) | `emoji` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "emoji"
+  ],
+  "_gid" : "_emoji",
+  "_lid" : "emoji",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Emoji
+
+**[Definition](_definition.md):** A single emoji character or sequence used as a visual icon for the term. Stored as a plain UTF-8 string.
+
+**[Description](_description.md)**
 
 The emoji provides an instantly recognisable visual identifier for the term. It is stored as a plain UTF-8 string containing a single emoji character or standard emoji sequence — including flag sequences, keycap sequences, and ZWJ sequences.
 
@@ -16,7 +46,7 @@ This property is optional. It is most useful for terms whose concept has a widel
 
 Emoji are displayed alongside the term's textual label wherever it is rendered in the user interface, providing an at-a-glance visual cue.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 ```json
 {
@@ -35,22 +65,36 @@ Other examples:
 - 🇫🇷 — French flag, on the ISO 3166 term for France
 - 🇺🇳 — United Nations flag, on a supranational organisation term
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "emoji"
-  ],
-  "_gid" : "_emoji",
-  "_lid" : "emoji",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Emoji"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [String](_string.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -61,3 +105,5 @@ Other examples:
   }
 }
 ```
+
+</details>

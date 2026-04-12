@@ -1,14 +1,44 @@
-# `_path`
+# Relationship path
+<p style="color: #888; margin-top: -0.5em;"><code>_path</code></p>
 
-**`_title`**
+> The set of document handles identifying the graphs to which this edge belongs. Each handle points to a graph root node. Filtering edges by a value present in `_path` isolates all edges that belong to that specific graph.
 
-Relationship path
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The set of document handles identifying the graphs to which this edge belongs. Each handle points to a graph root node. Filtering edges by a value present in `_path` isolates all edges that belong to that specific graph.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `path` |
+| [Global identifier](_gid.md) | `_path` |
+| [Official identifiers](_aid.md) | `path` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "path"
+  ],
+  "_gid" : "_path",
+  "_lid" : "path",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Relationship path
+
+**[Definition](_definition.md):** The set of document handles identifying the graphs to which this edge belongs. Each handle points to a graph root node. Filtering edges by a value present in `_path` isolates all edges that belong to that specific graph.
+
+**[Description](_description.md)**
 
 `_path` is the mechanism by which edges are assigned to named graphs. Each element of the set is a document handle of a **graph root** — the term that anchors and identifies a particular graph.
 
@@ -20,7 +50,7 @@ To traverse a specific graph, an AQL query filters the edge collection to docume
 
 Because edge uniqueness is enforced on the `_from`/`_predicate`/`_to` triple, a graph root handle should never appear more than once in a given `_path` set.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 An edge belonging to a single graph:
 
@@ -67,22 +97,36 @@ FOR e IN edges
 	RETURN e._from
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "path"
-  ],
-  "_gid" : "_path",
-  "_lid" : "path",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship path"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Set](_set.md) — [Document handle](_handle.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -93,3 +137,5 @@ FOR e IN edges
   }
 }
 ```
+
+</details>

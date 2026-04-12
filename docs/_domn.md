@@ -1,14 +1,44 @@
-# `_domn`
+# Domains section
+<p style="color: #888; margin-top: -0.5em;"><code>_domn</code></p>
 
-**`_title`**
+> The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary.
 
-Domains section
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `domn` |
+| [Global identifier](_gid.md) | `_domn` |
+| [Official identifiers](_aid.md) | `domn` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "domn"
+  ],
+  "_gid" : "_domn",
+  "_lid" : "domn",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Domains section
+
+**[Definition](_definition.md):** The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary.
+
+**[Description](_description.md)**
 
 The domains section is a flexible classification container. Unlike the fixed sections of a term (`_code`, `_info`, `_data`, `_prop`), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.
 
@@ -16,7 +46,7 @@ The primary classification property is [`_term_role`](_term_role.md), a set of e
 
 Future classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A descriptor term classified as both a descriptor and a data type:
 
@@ -42,22 +72,40 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "domn"
-  ],
-  "_gid" : "_domn",
-  "_lid" : "domn",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Domains section"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Open schema](_open.md)
+
+**[Recommended properties](_recommended.md):** [Term role](_term_role.md)
+
+**[Computed properties](_computed.md):** [Term role](_term_role.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -73,3 +121,5 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
   }
 }
 ```
+
+</details>

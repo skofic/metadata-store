@@ -1,14 +1,45 @@
-# `_range`
+# Numeric range
+<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a></p>
+<p style="color: #888; margin-top: -0.5em;"><code>_range</code></p>
 
-**`_title`**
+> Typedef that defines the shape of a numeric range object. A range must contain at most one minimum bound (`_min-inclusive` or `_min-exclusive`) and at most one maximum bound (`_max-inclusive` or `_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid` and `_range_normal`.
 
-Numeric range
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-Typedef that defines the shape of a numeric range object. A range must contain at most one minimum bound (`_min-inclusive` or `_min-exclusive`) and at most one maximum bound (`_max-inclusive` or `_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid` and `_range_normal`.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `range` |
+| [Global identifier](_gid.md) | `_range` |
+| [Official identifiers](_aid.md) | `range` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "range"
+  ],
+  "_gid" : "_range",
+  "_lid" : "range",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Numeric range
+
+**[Definition](_definition.md):** Typedef that defines the shape of a numeric range object. A range must contain at most one minimum bound (`_min-inclusive` or `_min-exclusive`) and at most one maximum bound (`_max-inclusive` or `_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid` and `_range_normal`.
+
+**[Description](_description.md)**
 
 `_range` is a typedef term defining the shape of a numeric range object used by [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md). It is not used directly as a `_data` type — only through `_typedef: "_range"`.
 
@@ -18,7 +49,7 @@ A range object may contain:
 
 At least one bound must be present. Both bounds may be omitted independently — a range with only a lower bound or only an upper bound is valid (open-ended range).
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A closed interval from 0 to 100 (both bounds inclusive):
 
@@ -45,22 +76,44 @@ A half-open interval — values must be strictly less than 1.0 (upper bound only
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "range"
-  ],
-  "_gid" : "_range",
-  "_lid" : "range",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Numeric range"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
+[Range minimum exclusive](_min-exclusive.md) · [Range minimum inclusive](_min-inclusive.md)
+
+[Optional selection](_any.md) ([Minimum element count](_min-items.md): 1)
+[Range maximum exclusive](_max-exclusive.md) · [Range maximum inclusive](_max-inclusive.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -97,3 +150,5 @@ A half-open interval — values must be strictly less than 1.0 (upper bound only
   }
 }
 ```
+
+</details>

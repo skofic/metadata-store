@@ -1,32 +1,21 @@
-# `_min-inclusive`
+# Range minimum inclusive
+<p style="color: #888; margin-top: -0.5em;"><code>_min-inclusive</code></p>
 
-**`_title`**
-
-Range minimum inclusive
-
-**`_definition`**
-
-The closed lower bound property of a numeric range object. The validated value must be greater than or equal to this number (value ≥ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-exclusive`.
-
-**`_description`**
-
-`_min-inclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **greater than or equal to** this bound (closed lower bound). It is mutually exclusive with [`_min-exclusive`](_min-exclusive.md) — at most one minimum bound may appear in a single range object.
-
-**`_examples`**
-
-A value that must be non-negative (zero or greater):
-
-```json
-{
-	"_range_valid": {
-		"_min-inclusive": 0
-	}
-}
-```
+> The closed lower bound property of a numeric range object. The validated value must be greater than or equal to this number (value ≥ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-exclusive`.
 
 ---
 
-**`_code`**
+## [Identification section](_code.md)
+
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `min-inclusive` |
+| [Global identifier](_gid.md) | `_min-inclusive` |
+| [Official identifiers](_aid.md) | `min-inclusive` |
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -39,7 +28,62 @@ A value that must be non-negative (zero or greater):
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Range minimum inclusive
+
+**[Definition](_definition.md):** The closed lower bound property of a numeric range object. The validated value must be greater than or equal to this number (value ≥ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-exclusive`.
+
+**[Description](_description.md)**
+
+`_min-inclusive` is a property of a [`_range`](_range.md) object. When present, the numeric value being validated must be **greater than or equal to** this bound (closed lower bound). It is mutually exclusive with [`_min-exclusive`](_min-exclusive.md) — at most one minimum bound may appear in a single range object.
+
+**[Examples](_examples.md)**
+
+A value that must be non-negative (zero or greater):
+
+```json
+{
+	"_range_valid": {
+		"_min-inclusive": 0
+	}
+}
+```
+
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Range minimum inclusive"
+  }
+}
+```
+
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [Number](_number.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -50,3 +94,5 @@ A value that must be non-negative (zero or greater):
   }
 }
 ```
+
+</details>

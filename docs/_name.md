@@ -1,14 +1,44 @@
-# `_name`
+# Name
+<p style="color: #888; margin-top: -0.5em;"><code>_name</code></p>
 
-**`_title`**
+> The human-readable name of the term, used when the term has an official or well-established name that is distinct from its identifier.
 
-Name
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The human-readable name of the term, used when the term has an official or well-established name that is distinct from its identifier.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `name` |
+| [Global identifier](_gid.md) | `_name` |
+| [Official identifiers](_aid.md) | `name` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "name"
+  ],
+  "_gid" : "_name",
+  "_lid" : "name",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Name
+
+**[Definition](_definition.md):** The human-readable name of the term, used when the term has an official or well-established name that is distinct from its identifier.
+
+**[Description](_description.md)**
 
 This property holds a name for the term — a human-readable label that is more descriptive or recognisable than the [local identifier](_lid.md). It is typically used in two situations:
 
@@ -17,7 +47,7 @@ This property holds a name for the term — a human-readable label that is more 
 
 This property is a plain string with no language tag: it records the name as it naturally appears in its own script or language. Multilingual labels intended for display in a user interface belong in the [documentation section](_info.md)'s [title](_title.md) property instead.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 The native name of the Cantonese language, written in Chinese script — distinct from its identifier `yue`:
 
@@ -33,22 +63,36 @@ The native name of the Cantonese language, written in Chinese script — distinc
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "name"
-  ],
-  "_gid" : "_name",
-  "_lid" : "name",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Name"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [String](_string.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -59,3 +103,5 @@ The native name of the Cantonese language, written in Chinese script — distinc
   }
 }
 ```
+
+</details>

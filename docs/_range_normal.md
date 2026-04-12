@@ -1,20 +1,50 @@
-# `_range_normal`
+# Normal numeric range
+<p style="color: #888; margin-top: -0.5em;"><code>_range_normal</code></p>
 
-**`_title`**
+> The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef.
 
-Normal numeric range
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Numeric range](_range.md) |
+| [Local identifier](_lid.md) | `normal` |
+| [Global identifier](_gid.md) | `_range_normal` |
+| [Official identifiers](_aid.md) | `normal` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "normal"
+  ],
+  "_gid" : "_range_normal",
+  "_lid" : "normal",
+  "_nid" : "_range"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Normal numeric range
+
+**[Definition](_definition.md):** The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef.
+
+**[Description](_description.md)**
 
 `_range_normal` is an optional companion property for numeric scalar types. When present, the stored value is compared against the specified boundaries to determine whether it is within the expected distribution; a value outside the normal range is treated as an **outlier warning**, not an error.
 
 The value is a [`_range`](_range.md) object with the same structure as [`_range_valid`](_range_valid.md). The two properties may both be present on the same scalar: `_range_valid` enforces hard limits, while `_range_normal` marks the subset of valid values considered typical.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 Human body temperature in degrees Celsius — valid up to 45 °C, normal between 35.5 and 38.5 °C:
 
@@ -37,25 +67,41 @@ Human body temperature in degrees Celsius — valid up to 45 °C, normal between
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "normal"
-  ],
-  "_gid" : "_range_normal",
-  "_lid" : "normal",
-  "_nid" : "_range"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Normal numeric range"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Numeric range](_range.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_range"
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_data`
+# Data section
+<p style="color: #888; margin-top: -0.5em;"><code>_data</code></p>
 
-**`_title`**
+> The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present.
 
-Data section
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `data` |
+| [Global identifier](_gid.md) | `_data` |
+| [Official identifiers](_aid.md) | `data` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "data"
+  ],
+  "_gid" : "_data",
+  "_lid" : "data",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Data section
+
+**[Definition](_definition.md):** The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present.
+
+**[Description](_description.md)**
 
 The data section is present on descriptor terms — terms that represent a typed data variable. It defines the *shape* of the data: whether the value is a scalar, an object, an array, a set, a tuple, a nested array, a dictionary, or a reference to a typedef term.
 
@@ -26,7 +56,7 @@ The seven inline shapes are:
 
 The eighth option is [`_typedef`](_typedef.md), a reference to an existing typedef term that supplies the shape by delegation rather than inline definition. It is mutually exclusive with all seven inline shapes.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A descriptor that accepts any value (empty data section):
 
@@ -164,22 +194,41 @@ A typedef reference — delegates to the built-in scalar type list:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "data"
-  ],
-  "_gid" : "_data",
-  "_lid" : "data",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Data section"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
+[Scalar](_scalar.md) · [Object](_object.md) · [Dictionary](_dict.md) · [Tuple](_tuple.md) · [Array](_array.md) · [Set](_set.md) · [Nested array](_nested.md) · [Type definition](_typedef.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -211,3 +260,5 @@ A typedef reference — delegates to the built-in scalar type list:
   }
 }
 ```
+
+</details>

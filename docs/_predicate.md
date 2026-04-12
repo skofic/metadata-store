@@ -1,14 +1,44 @@
-# `_predicate`
+# Relationship predicate
+<p style="color: #888; margin-top: -0.5em;"><code>_predicate</code></p>
 
-**`_title`**
+> The edge property that identifies the type of a directed relationship between two nodes in a dictionary graph. Its value must be one of the enumeration elements in the `_predicate` controlled vocabulary.
 
-Relationship predicate
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The edge property that identifies the type of a directed relationship between two nodes in a dictionary graph. Its value must be one of the enumeration elements in the `_predicate` controlled vocabulary.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `predicate` |
+| [Global identifier](_gid.md) | `_predicate` |
+| [Official identifiers](_aid.md) | `predicate` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "predicate"
+  ],
+  "_gid" : "_predicate",
+  "_lid" : "predicate",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Relationship predicate
+
+**[Definition](_definition.md):** The edge property that identifies the type of a directed relationship between two nodes in a dictionary graph. Its value must be one of the enumeration elements in the `_predicate` controlled vocabulary.
+
+**[Description](_description.md)**
 
 `_predicate` qualifies the nature of a directed relationship. Every edge document must carry a `_predicate` value drawn from one of four predicate groups:
 
@@ -19,7 +49,7 @@ The edge property that identifies the type of a directed relationship between tw
 
 All predicates follow the **many-to-one direction**: [`_from`](_from.md) is always the leaf (child, member, element) and [`_to`](_to.md) is always the root (parent, container, category).
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-3 vocabulary:
 
@@ -33,22 +63,36 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "predicate"
-  ],
-  "_gid" : "_predicate",
-  "_lid" : "predicate",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship predicate"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [Enumerated value](_enum.md) ([Controlled vocabularies](_enums.md): [Relationship predicate](_predicate.md))
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -61,3 +105,5 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
   }
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_key`
+# Document key
+<p style="color: #888; margin-top: -0.5em;"><code>_key</code></p>
 
-**`_title`**
+> The ArangoDB system property that uniquely identifies a document within its collection. May be user-specified at insertion time or generated automatically by ArangoDB. Immutable once set.
 
-Document key
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The ArangoDB system property that uniquely identifies a document within its collection. May be user-specified at insertion time or generated automatically by ArangoDB. Immutable once set.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `key` |
+| [Global identifier](_gid.md) | `_key` |
+| [Official identifiers](_aid.md) | `key` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "key"
+  ],
+  "_gid" : "_key",
+  "_lid" : "key",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Document key
+
+**[Definition](_definition.md):** The ArangoDB system property that uniquely identifies a document within its collection. May be user-specified at insertion time or generated automatically by ArangoDB. Immutable once set.
+
+**[Description](_description.md)**
 
 `_key` is a built-in ArangoDB property that uniquely identifies a document within its collection. It forms the second part of the document handle ([`_id`](_id.md)), which has the format `<collection>/<key>`.
 
@@ -23,22 +53,33 @@ When specifying a key, the value must conform to these rules:
 
 If `_key` is omitted when inserting a document, ArangoDB generates a unique key automatically. When working with named graphs, graph names are used as `_key` values in the `_graphs` system collection and are subject to the same restrictions.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "key"
-  ],
-  "_gid" : "_key",
-  "_lid" : "key",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Document key"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — `_string_key`
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -49,3 +90,5 @@ If `_key` is omitted when inserting a document, ArangoDB generates a unique key 
   }
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_info`
+# Information section
+<p style="color: #888; margin-top: -0.5em;"><code>_info</code></p>
 
-**`_title`**
+> The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers.
 
-Information section
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `info` |
+| [Global identifier](_gid.md) | `_info` |
+| [Official identifiers](_aid.md) | `info` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "info"
+  ],
+  "_gid" : "_info",
+  "_lid" : "info",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Information section
+
+**[Definition](_definition.md):** The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers.
+
+**[Description](_description.md)**
 
 The `_info` section is present on most terms and carries the documentation that makes a term meaningful to human readers — what it means, how it is used, and who curates it. It is absent only on alias terms, which carry a [`_code`](_code.md) section alone and delegate all content to the canonical term they alias.
 
@@ -16,7 +46,7 @@ All `_info` properties share the same multilingual structure: each property's va
 
 The two underlying dictionary types are [`_info_string`](_info_string.md) for plain text and [`_info_text`](_info_text.md) for formatted text. Required properties use plain text; descriptive and documentary properties use formatted text.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A minimal `_info` section with required properties only:
 
@@ -52,22 +82,43 @@ A fuller `_info` section with multilingual title and formatted description:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "info"
-  ],
-  "_gid" : "_info",
-  "_lid" : "info",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Information section"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Title](_title.md) · [Definition](_definition.md)
+
+**[Recommended properties](_recommended.md):** [Description](_description.md) · [Examples](_examples.md) · [Methods](_methods.md) · [Usage](_usage.md) · [Citations](_citation.md) · [Providers](_provider.md) · [URLs](_url.md) · [Notes](_notes.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -102,3 +153,5 @@ A fuller `_info` section with multilingual title and formatted description:
   }
 }
 ```
+
+</details>

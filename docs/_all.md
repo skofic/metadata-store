@@ -1,14 +1,44 @@
-# `_all`
+# Mandatory selection
+<p style="color: #888; margin-top: -0.5em;"><code>_all</code></p>
 
-**`_title`**
+> A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead.
 
-Mandatory selection
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `all` |
+| [Global identifier](_gid.md) | `_all` |
+| [Official identifiers](_aid.md) | `all` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "all"
+  ],
+  "_gid" : "_all",
+  "_lid" : "all",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Mandatory selection
+
+**[Definition](_definition.md):** A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead.
+
+**[Description](_description.md)**
 
 `_all` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as mandatory — the constraint is always evaluated. Its value is an object that may contain [`_min-items`](_min-items.md), [`_max-items`](_max-items.md), or both, or it may be empty.
 
@@ -18,7 +48,7 @@ A cardinality constraint object within `_selectors` that defines a mandatory rul
 
 The "mandatory" quality of `_all` means the constraint itself is always enforced — unlike [`_any`](_any.md), which only enforces a minimum when `_min-items` is set.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 **`_all: {}`** — all candidates must be present:
 
@@ -57,25 +87,41 @@ Both `_selectors` and `_selection` must be present. An object missing either pro
 
 At least two and at most five of the six candidate properties must be present. Having one or zero, or having all six, is invalid.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "all"
-  ],
-  "_gid" : "_all",
-  "_lid" : "all",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Mandatory selection"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Elements count range](_elements.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_elements"
 }
 ```
+
+</details>

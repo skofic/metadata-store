@@ -1,199 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="1100" height="700"
-     font-family="monospace" font-size="11" fill="none">
-  <defs>
-    <marker id="ah-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#999" stroke="none"/>
-    </marker>
-    <marker id="ah-o" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#c0622a" stroke="none"/>
-    </marker>
-    <marker id="ah-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#2b65d9" stroke="none"/>
-    </marker>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="335"
+     font-family="monospace" font-size="11" fill="#222">
 
-  <!-- ===== EDGES (drawn first so nodes render on top) ===== -->
+  <!-- ===== OUTER: _type_scalar ===== -->
+  <rect x="8" y="8" width="684" height="319" rx="8" fill="#f0f4ff" stroke="#4466cc" stroke-width="2"/>
+  <text x="20" y="30" fill="#4466cc" font-size="12" font-weight="bold">_type_scalar</text>
+  <text x="688" y="30" text-anchor="end" fill="#4466cc" font-size="10" font-style="italic">used by _scalar</text>
 
-  <!-- _type_scalar property-of → _scalar (gray dashed) -->
-  <path d="M 300,117 C 300,70 540,70 540,43" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#ah-g)"/>
+  <!-- Outer exclusive: text types -->
+  <text x="22" y="52" fill="#666" font-size="10" font-style="italic">text types — non-comparable; not usable in sets or as dictionary keys:</text>
+  <text x="22" y="68" fill="#333">_text  ·  _text_HTML  ·  _text_Markdown  ·  _text_SVG</text>
 
-  <!-- Presence property-of → _scalar (orange solid) -->
-  <path d="M 780,117 C 780,30 680,30 556,30" stroke="#c0622a" stroke-width="1.5" fill="none" marker-end="url(#ah-o)"/>
-  <path d="M 880,117 C 880,25 720,25 556,25" stroke="#c0622a" stroke-width="1.5" fill="none" marker-end="url(#ah-o)"/>
-  <path d="M 980,117 C 980,20 760,20 556,20" stroke="#c0622a" stroke-width="1.5" fill="none" marker-end="url(#ah-o)"/>
+  <!-- ===== MIDDLE: _type_comparable ===== -->
+  <rect x="16" y="80" width="668" height="241" rx="6" fill="#e2eaff" stroke="#2b65d9" stroke-width="1.5"/>
+  <text x="28" y="100" fill="#2b65d9" font-size="12" font-weight="bold">_type_comparable</text>
+  <text x="684" y="100" text-anchor="end" fill="#2b65d9" font-size="10" font-style="italic">used by _set · _nested</text>
 
-  <!-- value-of → _type_scalar (blue solid): boolean group col 1 -->
-  <path d="M 55,210  C 55,176 280,176 284,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
+  <!-- Middle exclusive: numbers + other comparable -->
+  <text x="30" y="120" fill="#666" font-size="10" font-style="italic">adds number types and other comparable types — usable in sets but not as dictionary keys:</text>
+  <text x="30" y="136" fill="#333">_number  ·  _number_float  ·  _number_integer  ·  _boolean  ·  _timestamp  ·  _string_regexp</text>
 
-  <!-- value-of → _type_scalar (blue solid): number group col 1 -->
-  <path d="M 55,260  C 55,196 280,196 288,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,310  C 55,216 280,216 292,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,360  C 55,236 280,236 296,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
+  <!-- ===== INNER: _type_key ===== -->
+  <rect x="24" y="149" width="652" height="164" rx="5" fill="#d4e0ff" stroke="#1a3fa8" stroke-width="1.5"/>
+  <text x="36" y="168" fill="#1a3fa8" font-size="12" font-weight="bold">_type_key</text>
+  <text x="676" y="168" text-anchor="end" fill="#1a3fa8" font-size="10" font-style="italic">used by _dict_key</text>
 
-  <!-- value-of → _type_scalar (blue solid): string group col 1 -->
-  <path d="M 55,410  C 55,256 280,256 300,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,460  C 55,276 280,276 304,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,510  C 55,296 280,296 308,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,560  C 55,316 280,316 312,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 55,610  C 55,336 280,336 316,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
+  <!-- Inner: string family -->
+  <text x="38" y="188" fill="#666" font-size="10" font-style="italic">string family:</text>
+  <text x="38" y="204" fill="#333">_string · _string_URI · _string_Email · _string_Hostname · _string_IPv4 · _string_IPv6</text>
+  <text x="38" y="220" fill="#333">_string_YMD · _string_date · _string_time · _string_date-time · _string_LaTeX · _string_HEX</text>
 
-  <!-- value-of → _type_scalar (blue solid): string group col 2 -->
-  <path d="M 215,410 C 215,256 300,256 316,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 215,460 C 215,276 300,276 318,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 215,510 C 215,296 300,296 320,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 215,560 C 215,316 300,316 322,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 215,610 C 215,336 300,336 324,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
+  <!-- Inner: term key family -->
+  <text x="38" y="240" fill="#666" font-size="10" font-style="italic">term key family:</text>
+  <text x="38" y="256" fill="#333">_term_key · _term_key_enum-root · _term_key_enum-item · _term_key_descriptor</text>
 
-  <!-- value-of → _type_scalar (blue solid): key group col 1 -->
-  <path d="M 440,210 C 440,176 316,176 320,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,260 C 440,196 318,196 322,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,310 C 440,216 320,216 324,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,360 C 440,236 322,236 326,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,410 C 440,256 324,256 328,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,460 C 440,276 326,276 330,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 440,510 C 440,296 328,296 332,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
+  <!-- Inner: other -->
+  <text x="38" y="276" fill="#666" font-size="10" font-style="italic">other:</text>
+  <text x="38" y="292" fill="#333">_handle · _enum</text>
 
-  <!-- value-of → _type_scalar (blue solid): misc group col 1 -->
-  <path d="M 620,210 C 620,176 336,176 336,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 620,260 C 620,196 338,196 338,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 620,310 C 620,216 340,216 340,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <path d="M 620,360 C 620,236 342,236 342,143" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-
-  <!-- ===== NODES ===== -->
-
-  <!-- _scalar (schema root) -->
-  <rect x="510" y="17" width="72" height="26" rx="4" fill="#f2f2f2" stroke="#333" stroke-width="2"/>
-  <text x="546" y="35" text-anchor="middle" fill="#111" font-weight="bold">_scalar</text>
-
-  <!-- _type_scalar (governing property) -->
-  <rect x="230" y="117" width="140" height="26" rx="4" fill="#fff" stroke="#555" stroke-width="1.5"/>
-  <text x="300" y="135" text-anchor="middle" fill="#333">_type_scalar</text>
-
-  <!-- Presence properties (orange) -->
-  <rect x="740" y="117" width="80" height="26" rx="4" fill="#fff9f5" stroke="#c0622a" stroke-width="1.5"/>
-  <text x="780" y="135" text-anchor="middle" fill="#8b3a10">_unit</text>
-
-  <rect x="832" y="117" width="96" height="26" rx="4" fill="#fff9f5" stroke="#c0622a" stroke-width="1.5"/>
-  <text x="880" y="135" text-anchor="middle" fill="#8b3a10">_unit-name</text>
-
-  <rect x="934" y="117" width="92" height="26" rx="4" fill="#fff9f5" stroke="#c0622a" stroke-width="1.5"/>
-  <text x="980" y="135" text-anchor="middle" fill="#8b3a10">_unit-symbol</text>
-
-  <!-- Divider -->
-  <line x1="718" y1="108" x2="718" y2="152" stroke="#ddd" stroke-width="1"/>
-
-  <!-- ===== TYPE VALUES — col 1 (cx=55) ===== -->
-
-  <!-- boolean -->
-  <rect x="0" y="197" width="110" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="215" text-anchor="middle" fill="#1a3fa8">_type_boolean</text>
-
-  <!-- number -->
-  <rect x="5" y="247" width="100" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="265" text-anchor="middle" fill="#1a3fa8">_type_number</text>
-
-  <rect x="0" y="297" width="110" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="315" text-anchor="middle" fill="#1a3fa8">_type_number_float</text>
-
-  <rect x="0" y="347" width="110" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="365" text-anchor="middle" fill="#1a3fa8">_type_number_integer</text>
-
-  <!-- string group col 1 -->
-  <rect x="5" y="397" width="100" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="415" text-anchor="middle" fill="#1a3fa8">_type_string</text>
-
-  <rect x="0" y="447" width="110" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="465" text-anchor="middle" fill="#1a3fa8">_type_string_Markdown</text>
-
-  <rect x="5" y="497" width="100" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="515" text-anchor="middle" fill="#1a3fa8">_type_string_HTML</text>
-
-  <rect x="5" y="547" width="100" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="565" text-anchor="middle" fill="#1a3fa8">_type_string_URI</text>
-
-  <rect x="5" y="597" width="100" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="55" y="615" text-anchor="middle" fill="#1a3fa8">_type_string_HEX</text>
-
-  <!-- string group col 2 (cx=215) -->
-  <rect x="145" y="397" width="140" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="215" y="415" text-anchor="middle" fill="#1a3fa8">_type_string_SVG</text>
-
-  <rect x="145" y="447" width="140" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="215" y="465" text-anchor="middle" fill="#1a3fa8">_type_string_email</text>
-
-  <rect x="145" y="497" width="140" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="215" y="515" text-anchor="middle" fill="#1a3fa8">_type_string_date</text>
-
-  <rect x="145" y="547" width="140" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="215" y="565" text-anchor="middle" fill="#1a3fa8">_type_string_time</text>
-
-  <rect x="145" y="597" width="140" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="215" y="615" text-anchor="middle" fill="#1a3fa8">_type_string_date-time</text>
-
-  <!-- ===== TYPE VALUES — col 3 key types (cx=440) ===== -->
-  <rect x="355" y="197" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="215" text-anchor="middle" fill="#1a3fa8">_type_key</text>
-
-  <rect x="355" y="247" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="265" text-anchor="middle" fill="#1a3fa8">_type_key_term</text>
-
-  <rect x="355" y="297" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="315" text-anchor="middle" fill="#1a3fa8">_type_key_term_enum</text>
-
-  <rect x="355" y="347" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="365" text-anchor="middle" fill="#1a3fa8">_type_key_term_enum_element</text>
-
-  <rect x="355" y="397" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="415" text-anchor="middle" fill="#1a3fa8">_type_key_term_descriptor</text>
-
-  <rect x="355" y="447" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="465" text-anchor="middle" fill="#1a3fa8">_type_key_term_object</text>
-
-  <rect x="355" y="497" width="170" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="440" y="515" text-anchor="middle" fill="#1a3fa8">_type_key_term_predicate</text>
-
-  <!-- ===== TYPE VALUES — col 4 misc (cx=620) ===== -->
-  <rect x="545" y="197" width="150" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="620" y="215" text-anchor="middle" fill="#1a3fa8">_type_handle</text>
-
-  <rect x="545" y="247" width="150" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="620" y="265" text-anchor="middle" fill="#1a3fa8">_type_enum</text>
-
-  <rect x="545" y="297" width="150" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="620" y="315" text-anchor="middle" fill="#1a3fa8">_type_object</text>
-
-  <rect x="545" y="347" width="150" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5"/>
-  <text x="620" y="365" text-anchor="middle" fill="#1a3fa8">_type_struct</text>
-
-  <!-- omitted types note -->
-  <rect x="545" y="397" width="150" height="26" rx="4" fill="#eff3ff" stroke="#2b65d9" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="620" y="415" text-anchor="middle" fill="#1a3fa8" font-style="italic">+ 6 more …</text>
-  <text x="620" y="435" text-anchor="middle" fill="#2b65d9" font-size="9">(YMD, LaTeX, regexp, …)</text>
-
-  <!-- Column headers -->
-  <text x="55"  y="188" text-anchor="middle" fill="#888" font-size="9">boolean · number</text>
-  <text x="215" y="388" text-anchor="middle" fill="#888" font-size="9">string (cont.)</text>
-  <text x="55"  y="388" text-anchor="middle" fill="#888" font-size="9">string</text>
-  <text x="440" y="188" text-anchor="middle" fill="#888" font-size="9">key types</text>
-  <text x="620" y="188" text-anchor="middle" fill="#888" font-size="9">other types</text>
-
-  <!-- Passive properties box -->
-  <rect x="760" y="200" width="300" height="120" rx="4" fill="#f8f8f8" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="910" y="218" text-anchor="middle" fill="#aaa" font-style="italic" font-size="10">passive (no edges)</text>
-  <text x="774" y="238" fill="#ccc">· _regexp</text>
-  <text x="774" y="255" fill="#ccc">· _decimals</text>
-  <text x="774" y="272" fill="#ccc">· _valid-range</text>
-  <text x="774" y="289" fill="#ccc">· _normal-range</text>
-  <text x="774" y="306" fill="#ccc">· _valid-range_string</text>
-  <text x="774" y="323" fill="#ccc">· _normal-range_string</text>
-
-  <!-- ===== LEGEND ===== -->
-  <rect x="10" y="648" width="420" height="45" rx="4" fill="#fafafa" stroke="#ddd" stroke-width="1"/>
-  <text x="20" y="664" fill="#444" font-weight="bold">Edge types  (arrows point toward root)</text>
-  <path d="M 20,678 L 70,678" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#ah-g)"/>
-  <text x="78" y="682" fill="#555">property-of (governs conditionals)</text>
-  <path d="M 220,678 L 270,678" stroke="#c0622a" stroke-width="1.5" fill="none" marker-end="url(#ah-o)"/>
-  <text x="278" y="682" fill="#555">property-of (presence rule)</text>
-  <path d="M 20,693 L 70,693" stroke="#2b65d9" stroke-width="1.5" fill="none" marker-end="url(#ah-b)"/>
-  <text x="78" y="697" fill="#555">value-of (conditional trigger)</text>
 </svg>

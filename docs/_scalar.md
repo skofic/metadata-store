@@ -1,14 +1,44 @@
-# `_scalar`
+# Scalar
+<p style="color: #888; margin-top: -0.5em;"><code>_scalar</code></p>
 
-**`_title`**
+> The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint.
 
-Scalar
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `scalar` |
+| [Global identifier](_gid.md) | `_scalar` |
+| [Official identifiers](_aid.md) | `scalar` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "scalar"
+  ],
+  "_gid" : "_scalar",
+  "_lid" : "scalar",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Scalar
+
+**[Definition](_definition.md):** The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint.
+
+**[Description](_description.md)**
 
 `_scalar` is the data shape for a single value. It uses the **type-as-key** convention: the property key present inside `_scalar` identifies the data type; its value is an object of **companion properties** that apply additional constraints (units, ranges, patterns, etc.). An empty `_scalar` (`{}`) imposes no type constraint.
 
@@ -77,7 +107,9 @@ No companion properties — the type key encodes the constraint on the reference
 | [`_boolean`](_boolean.md) | True/false | Yes | — |
 | [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |
 
-**`_examples`**
+`_scalar` delegates to the [`_type_scalar`](_type_scalar.md) typedef, which encodes the full list of accepted type keys.
+
+**[Examples](_examples.md)**
 
 A floating-point number with unit and valid range:
 
@@ -128,25 +160,41 @@ An unconstrained scalar — any type and value accepted:
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "scalar"
-  ],
-  "_gid" : "_scalar",
-  "_lid" : "scalar",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Scalar"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Type definition](_typedef.md): [Scalar data type](_type_scalar.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
   "_typedef" : "_type_scalar"
 }
 ```
+
+</details>

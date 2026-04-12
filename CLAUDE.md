@@ -47,7 +47,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 
 ### Recent session (2026-04-12) — Phase 2 complete
 - Wrote `_info` for all terms in `_term.json`: `_term`, `_id`, `_key`, `_rev`, `_domn`, `_prop`, `_term_role`, and all six `_term_role_*` terms.
-- Wrote `_info` for all terms in `_type.json`: `_type`, `_type_scalar`, `_type_set`, `_type_key`. Added `_term_role_typedef` to `_domn` of the three typedef terms.
+- Wrote `_info` for all terms in `_type.json`: `_type`, `_type_scalar`, `_type_comparable`, `_type_key`. Added `_term_role_typedef` to `_domn` of the three typedef terms.
 - Moved `_set` from its own file into `_data.json`; wrote `_info` for it.
 - Removed `_term_key_predicate` and `_term_key_typedef` from `_scalar.json`, `_type.json`, `_type.enum.json`, `CLAUDE.md`, and `term-index.json`. Rationale: official predicates are queried via the `_predicate` enumeration; all-predicate usage is tracked by `_term_role_predicate`; typedef usage is queryable via `_data._typedef`. The `_term_key_*` variants added no value over existing mechanisms.
 - Various `_info` corrections across `_term.json` and `_code.json`: links, bold text, ArangoDB-accurate `_key` description, alias term explanation in `_term`.
@@ -73,7 +73,7 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - **Key V3 change**: data types are property keys within the shape object, not enumeration values of a `_scalar_type` property. `"_scalar": {"_number_float": {"_decimals": 2}}` replaces `"_scalar": {"_scalar_type": "_type_number_float", "_decimals": 2}`.
 - **`_object` is now a data shape** (not a scalar type). `{}` = any struct; `{_open: {}}` = open schema; `{_closed: {}}` = closed schema. Inline schema constraints replace the separate `_rule` section.
 - Selection mechanism: `_selectors` (array of `_all`/`_any` objects) + `_selection` (nested array of descriptor keys). `_all` = mandatory group; `_any` = optional group.
-- `_type` namespace: `_type_scalar`, `_type_set`, `_type_key` as typedef terms. `_scalar`, `_set`, `_dict_key`, `_nested` reference these via `_typedef`.
+- `_type` namespace: `_type_scalar`, `_type_comparable`, `_type_key` as typedef terms. `_scalar`, `_set`, `_dict_key`, `_nested` reference these via `_typedef`.
 - Type naming: `_number`, `_string`, `_text`, `_boolean`, `_timestamp`, `_handle`, `_enum`, `_term_key*`. `_text*` (HTML/Markdown/SVG) are non-comparable; `_string_LaTeX` is comparable.
 - Units: `_unit_name`, `_unit_symbol` (underscore namespace, replacing hyphenated forms).
 - Enum constraint: `_enums` (set of enum-root `_gid`s, replaces `_kind_enum`).
@@ -631,7 +631,7 @@ This open schema lists recommended properties but accepts any additional propert
 
 `_set` defines an unordered array of **unique** elements. Because uniqueness requires comparability, element types are restricted to comparable types (all scalar types except `_text`, `_text_HTML`, `_text_Markdown`, `_text_SVG`).
 
-`_set` uses `_typedef: "_type_set"` to constrain the element type. The type is expressed as a property key inside `_set`, exactly as in `_scalar`:
+`_set` uses `_typedef: "_type_comparable"` to constrain the element type. The type is expressed as a property key inside `_set`, exactly as in `_scalar`:
 
 ```json
 {
@@ -645,13 +645,13 @@ This open schema lists recommended properties but accepts any additional propert
 }
 ```
 
-The `_type_set` typedef adds `_elements` as a recommended companion property for controlling the number of elements.
+The `_type_comparable` typedef adds `_elements` as a recommended companion property for controlling the number of elements.
 
 ---
 
 #### `_nested`
 
-`_nested` is a recursively nested array whose leaves are sets. It uses `_typedef: "_type_set"` — the leaf-level type follows set semantics (comparable types only). The nesting depth is unlimited; the validator descends until it reaches the leaf elements.
+`_nested` is a recursively nested array whose leaves are sets. It uses `_typedef: "_type_comparable"` — the leaf-level type follows set semantics (comparable types only). The nesting depth is unlimited; the validator descends until it reaches the leaf elements.
 
 ```json
 {
@@ -790,7 +790,7 @@ A **typedef** term defines a reusable data shape. Any term carrying `_term_role_
 | Typedef       | Covers |
 |---------------|--------|
 | `_type_scalar`| All scalar types (full `_type_scalar` selection) |
-| `_type_set`   | Comparable scalar types only (excludes `_text*`); adds `_elements` as recommended |
+| `_type_comparable`   | Comparable scalar types only (excludes `_text*`); adds `_elements` as recommended |
 | `_type_key`   | String-compatible types only (excludes numbers, boolean, timestamp, `_string_regexp`, `_text*`) |
 
 `_scalar`, `_set`, `_dict_key`, and `_nested` use `_typedef` to inherit from these rather than duplicating the type list:

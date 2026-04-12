@@ -1,14 +1,44 @@
-# `_predicate_value-of`
+# Value of
+<p style="color: #888; margin-top: -0.5em;"><code>_predicate_value-of</code></p>
 
-**`_title`**
+> The source term is a possible value of the destination property within a specific structural context. When the property holds this value, the rules in `_path_data` are activated. Used to implement value-triggered conditional schema constraints.
 
-Value of
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The source term is a possible value of the destination property within a specific structural context. When the property holds this value, the rules in `_path_data` are activated. Used to implement value-triggered conditional schema constraints.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Local identifier](_lid.md) | `value-of` |
+| [Global identifier](_gid.md) | `_predicate_value-of` |
+| [Official identifiers](_aid.md) | `value-of` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "value-of"
+  ],
+  "_gid" : "_predicate_value-of",
+  "_lid" : "value-of",
+  "_nid" : "_predicate"
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Value of
+
+**[Definition](_definition.md):** The source term is a possible value of the destination property within a specific structural context. When the property holds this value, the rules in `_path_data` are activated. Used to implement value-triggered conditional schema constraints.
+
+**[Description](_description.md)**
 
 `_predicate_value-of` is the mechanism for value-triggered conditional rules. An edge with this predicate states: within the structural context identified by [`_path`](_path.md), when [`_to`](_to.md) (the property) holds the value [`_from`](_from.md), apply the rules in [`_path_data`](_path_data.md).
 
@@ -30,7 +60,7 @@ The conditional rule object in `_path_data` is keyed by the graph root handle an
 
 The rule graph is designed to be **self-sufficient**: both the validator and the UI derive behaviour entirely from the graph, with no out-of-graph knowledge about type semantics.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 When [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_integer.md), `_decimals` is banned (integers have no decimal part) and the recommended companion properties are restricted to numeric range and unit properties only:
 
@@ -59,17 +89,24 @@ When [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_intege
 
 `_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally. The rule applies only within the `terms/_scalar` schema context.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "value-of"
-  ],
-  "_gid" : "_predicate_value-of",
-  "_lid" : "value-of",
-  "_nid" : "_predicate"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Value of"
+  }
 }
 ```
+
+</details>

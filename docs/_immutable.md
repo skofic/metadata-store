@@ -1,14 +1,44 @@
-# `_immutable`
+# Immutable properties
+<p style="color: #888; margin-top: -0.5em;"><code>_immutable</code></p>
 
-**`_title`**
+> A set of descriptor global identifiers listing properties that cannot be modified once their initial value has been set, whether by the user or by the system. Any subsequent write that changes an immutable property's value is rejected.
 
-Immutable properties
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-A set of descriptor global identifiers listing properties that cannot be modified once their initial value has been set, whether by the user or by the system. Any subsequent write that changes an immutable property's value is rejected.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `immutable` |
+| [Global identifier](_gid.md) | `_immutable` |
+| [Official identifiers](_aid.md) | `immutable` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "immutable"
+  ],
+  "_gid" : "_immutable",
+  "_lid" : "immutable",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Immutable properties
+
+**[Definition](_definition.md):** A set of descriptor global identifiers listing properties that cannot be modified once their initial value has been set, whether by the user or by the system. Any subsequent write that changes an immutable property's value is rejected.
+
+**[Description](_description.md)**
 
 `_immutable` is a constraint property within [`_open`](_open.md) or [`_closed`](_closed.md). Once a value is written to an immutable property — by the user or by the system via [`_computed`](_computed.md) — it is fixed for the lifetime of the object. Updates that would change the value are rejected.
 
@@ -16,7 +46,7 @@ Immutability is used when changing a property's value would have cascading conse
 
 A property may appear in both `_computed` and `_immutable`: the system computes the value on first write and that value is then permanently fixed.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
@@ -42,22 +72,36 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
 `_lid` is immutable because modifying it after insertion would cascade: `_gid` (computed as `_nid + "_" + _lid`) would change, and `_key` (set to `_gid`) would become inconsistent with the stored document identifier — invalidating all edges and cross-references that use the old key. `_gid` is also immutable because it is derived from `_lid` and must remain stable for the same reason.
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "immutable"
-  ],
-  "_gid" : "_immutable",
-  "_lid" : "immutable",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Immutable properties"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Set](_set.md) — [Descriptor term document key](_term_key_descriptor.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -68,3 +112,5 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
   }
 }
 ```
+
+</details>

@@ -1,14 +1,44 @@
-# `_nid`
+# Namespace
+<p style="color: #888; margin-top: -0.5em;"><code>_nid</code></p>
 
-**`_title`**
+> The global identifier of the term that defines the namespace of the current term. When present and non-empty, it is prepended to the local identifier to form the global identifier. When absent, the term defines a top-level namespace with no parent.
 
-Namespace
+---
 
-**`_definition`**
+## [Identification section](_code.md)
 
-The global identifier of the term that defines the namespace of the current term. When present and non-empty, it is prepended to the local identifier to form the global identifier. When absent, the term defines a top-level namespace with no parent.
+| Property | Value |
+|---|---|
+| [Namespace](_nid.md) | (default) |
+| [Local identifier](_lid.md) | `nid` |
+| [Global identifier](_gid.md) | `_nid` |
+| [Official identifiers](_aid.md) | `nid` |
 
-**`_description`**
+<details>
+<summary>JSON</summary>
+
+```json
+{
+  "_aid" : [
+    "nid"
+  ],
+  "_gid" : "_nid",
+  "_lid" : "nid",
+  "_nid" : ""
+}
+```
+
+</details>
+
+---
+
+## [Information section](_info.md)
+
+**[Title](_title.md):** Namespace
+
+**[Definition](_definition.md):** The global identifier of the term that defines the namespace of the current term. When present and non-empty, it is prepended to the local identifier to form the global identifier. When absent, the term defines a top-level namespace with no parent.
+
+**[Description](_description.md)**
 
 Namespaces group and organise [terms](_term.md) under a common category or classification. The value of `_nid` is the [global identifier](_gid.md) of the term that represents the namespace of the current term.
 
@@ -22,7 +52,7 @@ Three distinct cases exist depending on the value of this property:
 
 Any term's [global identifier](_gid.md) may serve as a namespace for other terms, allowing namespaces to form chains from general to specific — for example `ISO` → `ISO_3166` → `ISO_3166_3`.
 
-**`_examples`**
+**[Examples](_examples.md)**
 
 A term whose namespace is `ISO_3166_3` — the `_nid` must be the [`_gid`](_gid.md) of an existing term:
 
@@ -62,22 +92,36 @@ A top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and [`_gid`]
 }
 ```
 
----
-
-**`_code`**
+<details>
+<summary>JSON</summary>
 
 ```json
 {
-  "_aid" : [
-    "nid"
-  ],
-  "_gid" : "_nid",
-  "_lid" : "nid",
-  "_nid" : ""
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_description" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
+  },
+  "_title" : {
+    "ISO_639_3_eng" : "Namespace"
+  }
 }
 ```
 
-**`_data`**
+</details>
+
+---
+
+## [Data section](_data.md)
+
+**Shape:** [Scalar](_scalar.md) — [Descriptor term document key](_term_key_descriptor.md)
+
+<details>
+<summary>JSON</summary>
 
 ```json
 {
@@ -88,3 +132,5 @@ A top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and [`_gid`]
   }
 }
 ```
+
+</details>
