@@ -100,8 +100,6 @@
     "_term_key_descriptor": "data/core/_scalar.json",
     "_term_key_enum-item": "data/core/_scalar.json",
     "_term_key_enum-root": "data/core/_scalar.json",
-    "_term_key_predicate": "data/core/_scalar.json",
-    "_term_key_typedef": "data/core/_scalar.json",
     "_term_role": "data/core/_term.json",
     "_term_role_descriptor": "data/core/_term.json",
     "_term_role_enum-item": "data/core/_term.json",

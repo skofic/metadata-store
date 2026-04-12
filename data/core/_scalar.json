@@ -14,7 +14,7 @@
 				"ISO_639_3_eng": "The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_scalar` is the data shape for a single value. It uses the **type-as-key** convention: the property key present inside `_scalar` identifies the data type; its value is an object of **companion properties** that apply additional constraints (units, ranges, patterns, etc.). An empty `_scalar` (`{}`) imposes no type constraint.\n\nThe validator reads the single key present in `_scalar` to determine the type, then validates the companion properties against that type's schema.\n\nScalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a `_string_URI` value must first satisfy the `_string` check (valid UTF-8 string) before the URI format check is applied.\n\n**Number types** — comparable; usable in sets but not as dictionary keys:\n\n| Type | Accepts |\n|---|---|\n| [`_number`](_number.md) | Any number (integer or float) |\n| [`_number_float`](_number_float.md) | Floating-point; must be stored as float |\n| [`_number_integer`](_number_integer.md) | Integer; no decimal part |\n\nCompanion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid`](_range_valid.md), [`_range_normal`](_range_normal.md). [`_decimals`](_decimals.md) is also accepted by `_number` and `_number_float` but not `_number_integer`.\n\n**String types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_string`](_string.md) | Generic UTF-8 string |\n| [`_string_URI`](_string_URI.md) | Uniform Resource Identifier |\n| [`_string_Email`](_string_Email.md) | Email address |\n| [`_string_Hostname`](_string_Hostname.md) | Internet hostname |\n| [`_string_IPv4`](_string_IPv4.md) | IPv4 address |\n| [`_string_IPv6`](_string_IPv6.md) | IPv6 address |\n| [`_string_YMD`](_string_YMD.md) | Partial or full date (YYYYMMDD) |\n| [`_string_date`](_string_date.md) | Date (YYYY-MM-DD) |\n| [`_string_time`](_string_time.md) | Time (HH:MM:SS) |\n| [`_string_date-time`](_string_date-time.md) | Date-time (YYYY-MM-DDTHH:MM:SS) |\n| [`_string_LaTeX`](_string_LaTeX.md) | LaTeX expression |\n| [`_string_HEX`](_string_HEX.md) | Hexadecimal string |\n| [`_string_regexp`](_string_regexp.md) | A regular expression (the stored value is itself a pattern) |\n\n`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.\n\n**Text types** — **non-comparable**; cannot be used in sets or as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_text`](_text.md) | Generic rich text |\n| [`_text_HTML`](_text_HTML.md) | HTML |\n| [`_text_Markdown`](_text_Markdown.md) | Markdown |\n| [`_text_SVG`](_text_SVG.md) | SVG image |\n\nNo companion properties. The markup format is declared by the type key itself.\n\n**Term key types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Constraint on the referenced term |\n|---|---|\n| [`_term_key`](_term_key.md) | Any term |\n| [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |\n| [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |\n| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |\n| [`_term_key_predicate`](_term_key_predicate.md) | Predicate |\n| [`_term_key_typedef`](_term_key_typedef.md) | Typedef term |\n\nNo companion properties — the type key encodes the constraint on the referenced term.\n\n**Other types**:\n\n| Type | Description | Comparable | Companion properties |\n|---|---|---|---|\n| [`_handle`](_handle.md) | ArangoDB document `_id` (`<collection>/<key>`) | Yes | — |\n| [`_timestamp`](_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC) | Yes | `_range_valid`, `_range_normal` |\n| [`_boolean`](_boolean.md) | True/false | Yes | — |\n| [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |"
+				"ISO_639_3_eng": "`_scalar` is the data shape for a single value. It uses the **type-as-key** convention: the property key present inside `_scalar` identifies the data type; its value is an object of **companion properties** that apply additional constraints (units, ranges, patterns, etc.). An empty `_scalar` (`{}`) imposes no type constraint.\n\nThe validator reads the single key present in `_scalar` to determine the type, then validates the companion properties against that type's schema.\n\nScalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a `_string_URI` value must first satisfy the `_string` check (valid UTF-8 string) before the URI format check is applied.\n\n**Number types** — comparable; usable in sets but not as dictionary keys:\n\n| Type | Accepts |\n|---|---|\n| [`_number`](_number.md) | Any number (integer or float) |\n| [`_number_float`](_number_float.md) | Floating-point; must be stored as float |\n| [`_number_integer`](_number_integer.md) | Integer; no decimal part |\n\nCompanion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid`](_range_valid.md), [`_range_normal`](_range_normal.md). [`_decimals`](_decimals.md) is also accepted by `_number` and `_number_float` but not `_number_integer`.\n\n**String types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_string`](_string.md) | Generic UTF-8 string |\n| [`_string_URI`](_string_URI.md) | Uniform Resource Identifier |\n| [`_string_Email`](_string_Email.md) | Email address |\n| [`_string_Hostname`](_string_Hostname.md) | Internet hostname |\n| [`_string_IPv4`](_string_IPv4.md) | IPv4 address |\n| [`_string_IPv6`](_string_IPv6.md) | IPv6 address |\n| [`_string_YMD`](_string_YMD.md) | Partial or full date (YYYYMMDD) |\n| [`_string_date`](_string_date.md) | Date (YYYY-MM-DD) |\n| [`_string_time`](_string_time.md) | Time (HH:MM:SS) |\n| [`_string_date-time`](_string_date-time.md) | Date-time (YYYY-MM-DDTHH:MM:SS) |\n| [`_string_LaTeX`](_string_LaTeX.md) | LaTeX expression |\n| [`_string_HEX`](_string_HEX.md) | Hexadecimal string |\n| [`_string_regexp`](_string_regexp.md) | A regular expression (the stored value is itself a pattern) |\n\n`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.\n\n**Text types** — **non-comparable**; cannot be used in sets or as dictionary keys:\n\n| Type | Description |\n|---|---|\n| [`_text`](_text.md) | Generic rich text |\n| [`_text_HTML`](_text_HTML.md) | HTML |\n| [`_text_Markdown`](_text_Markdown.md) | Markdown |\n| [`_text_SVG`](_text_SVG.md) | SVG image |\n\nNo companion properties. The markup format is declared by the type key itself.\n\n**Term key types** — comparable; usable in sets and as dictionary keys:\n\n| Type | Constraint on the referenced term |\n|---|---|\n| [`_term_key`](_term_key.md) | Any term |\n| [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |\n| [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |\n| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |\n\nNo companion properties — the type key encodes the constraint on the referenced term.\n\n**Other types**:\n\n| Type | Description | Comparable | Companion properties |\n|---|---|---|---|\n| [`_handle`](_handle.md) | ArangoDB document `_id` (`<collection>/<key>`) | Yes | — |\n| [`_timestamp`](_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC) | Yes | `_range_valid`, `_range_normal` |\n| [`_boolean`](_boolean.md) | True/false | Yes | — |\n| [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |"
 			},
 			"_examples": {
 				"ISO_639_3_eng": "A floating-point number with unit and valid range:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 0.0,\n\t\t\t\t\"_max-exclusive\": 300.0\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA plain string constrained by a regular expression:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_string\": {\n\t\t\t\"_regexp\": \"^[A-Z]{2,3}$\"\n\t\t}\n\t}\n}\n```\n\nAn enumeration value constrained to the ISO 639-3 language vocabulary:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nAn unconstrained scalar — any type and value accepted:\n\n```json\n{\n\t\"_scalar\": {}\n}\n```"
@@ -745,7 +745,7 @@
 				"ISO_639_3_eng": "The scalar data type for term document keys. The stored value is the `_gid` of any term in the terms collection, without constraining the term's role. Parent type of the `_term_key_*` sub-types, which add role constraints."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_term_key` declares that the value is the [`_gid`](_gid.md) of a term document. As a parent type, it is the root of [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md), [`_term_key_predicate`](_term_key_predicate.md), and [`_term_key_typedef`](_term_key_typedef.md), which further constrain the referenced term's role. When none of the sub-types is specific enough, `_term_key` accepts any term regardless of role. No companion properties apply. Comparable; may appear in sets and as dictionary keys."
+				"ISO_639_3_eng": "`_term_key` declares that the value is the [`_gid`](_gid.md) of a term document. As a parent type, it is the root of [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md), which further constrain the referenced term's role. When none of the sub-types is specific enough, `_term_key` accepts any term regardless of role. No companion properties apply. Comparable; may appear in sets and as dictionary keys."
 			},
 			"_examples": {
 				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key\": {}\n\t}\n}\n```\n\nStored values: `\"_string_date\"`, `\"ISO_639_3_eng\"`, `\"_predicate_enum-of\"`."
@@ -858,71 +858,6 @@
 			]
 		}
 	},
-	{
-		"_code": {
-			"_nid": "_term_key",
-			"_lid": "predicate",
-			"_gid": "_term_key_predicate",
-			"_aid": ["predicate"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Predicate term document key"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "A term key that must reference a predicate term — a term that represents a relationship type in the dictionary graph."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_term_key_predicate` is used when a property value must be the `_gid` of a predicate term. Predicate terms are elements of the [`_predicate`](_predicate.md) controlled vocabulary and qualify the nature of directed edges in the graph. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_predicate\": {}\n\t}\n}\n```\n\nStored values: `\"_predicate_enum-of\"`, `\"_predicate_property-of\"`."
-			}
-		},
-		"_data": {
-			"_object": {
-				"_closed": {}
-			}
-		},
-		"_domn": {
-			"_term_role": [
-				"_term_role_type"
-			]
-		}
-	},
-	{
-		"_code": {
-			"_nid": "_term_key",
-			"_lid": "typedef",
-			"_gid": "_term_key_typedef",
-			"_aid": ["typedef"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Type definition term document key"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "A term key that must reference a typedef term — a term that defines a reusable data shape."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_term_key_typedef` is the type of the [`_typedef`](_typedef.md) property in a [`_data`](_data.md) section. It constrains the reference to point only at terms declared as reusable type definitions, preventing accidental references to ordinary descriptors. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "```json\n{\n\t\"_scalar\": {\n\t\t\"_term_key_typedef\": {}\n\t}\n}\n```\n\nStored values: `\"_type_scalar\"`, `\"_type_set\"`, `\"_type_key\"`."
-			}
-		},
-		"_data": {
-			"_object": {
-				"_closed": {}
-			}
-		},
-		"_domn": {
-			"_term_role": [
-				"_term_role_type"
-			]
-		}
-	},
-	
 	{
 		"_code": {
 			"_nid": "",

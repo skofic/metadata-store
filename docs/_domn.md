@@ -6,9 +6,41 @@ Domains section
 
 **`_definition`**
 
-
+The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary.
 
 **`_description`**
+
+The domains section is a flexible classification container. Unlike the fixed sections of a term (`_code`, `_info`, `_data`, `_prop`), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.
+
+The primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The dictionary loader computes `_term_role` automatically from the term's structure (presence of `_data`, graph membership as enum root or enum item, appearance in edge `_predicate` fields). Users may additionally assign [`_term_role_type`](_term_role_type.md) or [`_term_role_typedef`](_term_role_typedef.md) to indicate design intent that cannot be inferred structurally.
+
+Future classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required.
+
+**`_examples`**
+
+A descriptor term classified as both a descriptor and a data type:
+
+```json
+{
+	"_domn": {
+		"_term_role": [
+			"_term_role_descriptor",
+			"_term_role_type"
+		]
+	}
+}
+```
+
+A term classified as a typedef, with an additional subject-domain tag (hypothetical future descriptor):
+
+```json
+{
+	"_domn": {
+		"_term_role": ["_term_role_typedef"],
+		"std_domain": "std_domain_health"
+	}
+}
+```
 
 ---
 
@@ -17,10 +49,10 @@ Domains section
 ```json
 {
   "_aid" : [
-    "domns"
+    "domn"
   ],
   "_gid" : "_domn",
-  "_lid" : "domns",
+  "_lid" : "domn",
   "_nid" : ""
 }
 ```
@@ -30,7 +62,7 @@ Domains section
 ```json
 {
   "_object" : {
-    "_closed" : {
+    "_open" : {
       "_computed" : [
         "_term_role"
       ],

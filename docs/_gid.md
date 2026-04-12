@@ -18,7 +18,7 @@ The global identifier uniquely identifies a term across the entire dictionary. I
 | Empty string `""` | `_` + [`_lid`](_lid.md) | [`_code`](_code.md) |
 | Absent | [`_lid`](_lid.md) | `ISO` |
 
-Because `_gid` is computed before the document is stored, it is a plain string value — not a reference to an existing document. The computed value is copied to the ArangoDB document key (`_key`), making it the primary key within the terms collection and enforcing uniqueness across the dictionary.
+Because `_gid` is computed before the document is stored, it is a plain string value — not a reference to an existing document. **The computed value is copied to the ArangoDB document key ([`_key`](_key.md)), making it the primary key within the terms collection and enforcing uniqueness across the dictionary.**
 
 **`_examples`**
 

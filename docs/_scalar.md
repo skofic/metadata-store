@@ -65,8 +65,6 @@ No companion properties. The markup format is declared by the type key itself.
 | [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |
 | [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |
 | [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |
-| [`_term_key_predicate`](_term_key_predicate.md) | Predicate |
-| [`_term_key_typedef`](_term_key_typedef.md) | Typedef term |
 
 No companion properties — the type key encodes the constraint on the referenced term.
 

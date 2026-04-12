@@ -2,7 +2,7 @@
 
 **`_title`**
 
-Properties Section
+Properties section
 
 **`_definition`**
 
@@ -58,8 +58,10 @@ A country term's properties section recording its dialling code, area, official 
 
 ```json
 {
-  "_scalar" : {
-    "_scalar_type" : "_type_object"
+  "_object" : {
+    "_open" : {
+
+    }
   }
 }
 ```

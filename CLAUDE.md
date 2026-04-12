@@ -31,19 +31,26 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - `_info` section — multilingual structure, core and secondary properties, alias term exception
 - `_data` section — **Version 3 design** documented in this file. Prototype terms in `notes/prototype/`.
 - Graphs section — edge structure, `_path`/`_path_data`, functional and non-functional predicates, sections, bridge graphs, alias resolution, conditional rules, traversal semantics
-- Phase 2 core term JSON files: `_term.json`, `_code.json`, `_info.json`, `_data.json` (40 terms), `_type.json` (55 terms), `_rule.json` (15 terms, superseded by V3 — retained for reference), `_predicates.json` (13 terms)
-- Edge JSON files: `_scalar.edge.json`, `_comparable.edge.json`, `_dict_key.edge.json` — all verified correct
+- **Phase 2 complete** — all core term JSON files finished: 182 terms across 10 source files, all with complete `_info`. Files: `_term.json`, `_code.json`, `_info.json`, `_data.json`, `_scalar.json`, `_array.json`, `_dict.json`, `_object.json`, `_type.json`, `_predicate.json`.
+- Edge JSON files: `_type.enum.json`, `_term.enum.json`, `_predicate.enum.json` — enum membership edges for core terms.
 
 ### In Progress
 - Nothing currently in progress.
 
 ### Pending
-- **`_scalar.json`** is complete. Next: `_set.json`.
-- After remaining `data/core/` JSON files are complete, continue with edge files and standards.
+- **Phase 3**: Standards (`data/standards/`) — ISO 639, 3166, 4217, 15924 from Debian iso-codes; supplementary from mledoze/countries and flag-icons.
+- **Phase 5**: Remaining edge files — rule/schema edges (`_predicate_property-of`, `_predicate_value-of`) for core terms.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-12) — Phase 2 complete
+- Wrote `_info` for all terms in `_term.json`: `_term`, `_id`, `_key`, `_rev`, `_domn`, `_prop`, `_term_role`, and all six `_term_role_*` terms.
+- Wrote `_info` for all terms in `_type.json`: `_type`, `_type_scalar`, `_type_set`, `_type_key`. Added `_term_role_typedef` to `_domn` of the three typedef terms.
+- Moved `_set` from its own file into `_data.json`; wrote `_info` for it.
+- Removed `_term_key_predicate` and `_term_key_typedef` from `_scalar.json`, `_type.json`, `_type.enum.json`, `CLAUDE.md`, and `term-index.json`. Rationale: official predicates are queried via the `_predicate` enumeration; all-predicate usage is tracked by `_term_role_predicate`; typedef usage is queryable via `_data._typedef`. The `_term_key_*` variants added no value over existing mechanisms.
+- Various `_info` corrections across `_term.json` and `_code.json`: links, bold text, ArangoDB-accurate `_key` description, alias term explanation in `_term`.
 
 ### Recent session (2026-04-10, continued) — `_scalar.json` corrections and companion terms
 - Fixed wrong range bound property names everywhere (`_min-range-inclusive` → `_min-inclusive`, etc.) in `_scalar.json`, `_array.json`, `CLAUDE.md`, and all `docs/` cards.
@@ -388,8 +395,6 @@ No companion properties are accepted for text types (the format is self-declared
 | `_term_key_enum-root`   | Enumeration root |
 | `_term_key_enum-item`   | Enumeration element |
 | `_term_key_descriptor`  | Descriptor (has `_data` section) |
-| `_term_key_predicate`   | Predicate |
-| `_term_key_typedef`     | Typedef term |
 
 No companion properties needed — the type itself encodes the constraint.
 
