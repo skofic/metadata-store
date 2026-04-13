@@ -1,4 +1,5 @@
 # Properties selection
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_selection</code></p>
 
 > A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`.

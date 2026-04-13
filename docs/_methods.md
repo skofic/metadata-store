@@ -1,4 +1,5 @@
 # Methods
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_methods</code></p>
 
 > Documentation of the measurement conditions, methods, and protocols required to produce a valid value for the term. Expressed as formatted text.

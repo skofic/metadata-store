@@ -1,4 +1,5 @@
 # Description
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_description</code></p>
 
 > A full description of the term aimed at a general audience. Expressed as formatted text. Covers what the term is, how it is used, and why it exists. May include links to other terms, external references, and code blocks.

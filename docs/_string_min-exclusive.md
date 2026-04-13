@@ -1,4 +1,5 @@
 # String range minimum exclusive
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_string_min-exclusive</code></p>
 
 > The strict lower bound property of a string range object. The validated string must be lexicographically greater than this value (value > bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_min-inclusive`.

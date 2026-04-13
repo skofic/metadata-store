@@ -1,4 +1,5 @@
 # Type definition
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_typedef</code></p>
 
 > A reference to an existing typedef term by its global identifier. Delegates the shape definition to the referenced typedef term, making it mutually exclusive with all inline shape properties.

@@ -1,4 +1,5 @@
 # Information section
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_info</code></p>
 
 > The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers.

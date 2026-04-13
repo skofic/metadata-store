@@ -1,4 +1,5 @@
 # Banned by
+<p><a href="_term_role_predicate.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Predicate</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_banned-by</code></p>
 
 > The source variable must not be present in a dataset record whenever the destination variable is present. A dataset record containing both `_to` and `_from` must be rejected.

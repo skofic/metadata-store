@@ -1,4 +1,5 @@
 # Property of
+<p><a href="_term_role_predicate.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Predicate</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_property-of</code></p>
 
 > The source descriptor is a property of the destination schema term. Declares the descriptor's membership in a schema and, when `_path_data` is non-empty, activates a conditional rule whenever the property is present in an object, regardless of its value.

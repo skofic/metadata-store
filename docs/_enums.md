@@ -1,4 +1,5 @@
 # Controlled vocabularies
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_enums</code></p>
 
 > The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph.

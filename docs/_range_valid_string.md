@@ -1,4 +1,5 @@
 # Valid string range
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_valid_string</code></p>
 
 > The companion property that defines hard lexicographic boundaries for a string scalar value. Values outside the valid range are treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.

@@ -1,4 +1,5 @@
 # Open schema
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_open</code></p>
 
 > A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction.

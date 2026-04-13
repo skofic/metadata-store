@@ -1,4 +1,5 @@
 # Nested array
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_nested</code></p>
 
 > The data shape property for a recursively nested array whose leaf elements are of a comparable type. The leaf element type is expressed as a property key inside the object, following the same type-as-key convention as `_scalar` and `_set`.

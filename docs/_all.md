@@ -1,4 +1,5 @@
 # Mandatory selection
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_all</code></p>
 
 > A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead.

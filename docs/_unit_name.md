@@ -1,4 +1,5 @@
 # Unit name
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_unit_name</code></p>
 
 > The companion property for specifying the plain-text name of a unit of measurement when the unit is not available in the `_unit` controlled vocabulary. Its value is a plain UTF-8 string. Mutually exclusive with `_unit` and `_unit_symbol`.

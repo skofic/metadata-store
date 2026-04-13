@@ -1,4 +1,5 @@
 # Normal numeric range
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_normal</code></p>
 
 > The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef.

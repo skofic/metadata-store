@@ -1,172 +1,208 @@
 [
-	{
-		"_code": {
-			"_nid": "",
-			"_lid": "edge",
-			"_gid": "_edge",
-			"_aid": ["edge"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Edge"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The document structure of a directed relationship between two nodes in a dictionary graph. Each edge encodes its source, destination, predicate, graph membership, and any associated data. The `_key` is computed from the MD5 hash of the source, predicate, and destination."
-			},
-			"_description": {
-				"ISO_639_3_eng": "An *edge* document represents a directed relationship between two term documents stored in an ArangoDB edge collection. It is the fundamental building block of every graph in the dictionary — enumerations, schemas, aliases, and bridge graphs are all expressed as sets of edges.\n\nFive custom properties define an edge:\n\n- [`_from`](_from.md) — the document handle of the **source** node (leaf, child, element)\n- [`_to`](_to.md) — the document handle of the **destination** node (root, parent, container)\n- [`_predicate`](_predicate.md) — the enumeration value that qualifies the relationship type\n- [`_path`](_path.md) — the set of graph root handles whose traversal passes through this edge\n- [`_path_data`](_path_data.md) — an open dictionary of data associated with the edge\n\nAll edges follow the **many-to-one direction**: `_from` is always the leaf and `_to` is always the root. This convention applies to all currently defined predicate types; future predicate types may define different traversal directions.\n\n[`_key`](_key.md) is set automatically by the system as the lowercase MD5 hash of the concatenation `_from + \"/\" + _predicate + \"/\" + _to`. This guarantees that no two edges can share the same `_from`/`_predicate`/`_to` triple, and that when multiple graphs share the same directed relationship they reuse a single edge document — with each graph root handle added to `_path`.\n\nThe two built-in ArangoDB properties [`_id`](_id.md) and [`_rev`](_rev.md) are locked (managed by the system). `_key`, `_from`, `_to`, and `_predicate` are immutable once set."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "A minimal edge connecting Italy to the ISO 3166-3 enumeration:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nThe same edge shared by two graphs — the full ISO 3166-3 vocabulary and a custom `MyCountries` subset:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\nBoth graphs traverse the same edge document. Adding Italy to `MyCountries` costs only a handle insertion into `_path`, not a new edge record."
-			}
-		},
-		"_data": {
-			"_object": {
-				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{ "_all": {} }
-							],
-							"_selection": [
-								"_from",
-								"_to",
-								"_predicate",
-								"_path",
-								"_path_data"
-							]
-						}
-					],
-					"_computed": ["_key"],
-					"_immutable": [
-						"_key",
-						"_from",
-						"_to",
-						"_predicate"
-					],
-					"_locked": ["_id", "_rev"],
-					"_default-value": {
-						"_path_data": {}
-					}
-				}
-			}
-		},
-		"_domn": {}
-	},
-
-	{
-		"_code": {
-			"_nid": "",
-			"_lid": "from",
-			"_gid": "_from",
-			"_aid": ["from"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Relationship source"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The ArangoDB document handle of the source node of a directed relationship. In the dictionary's many-to-one convention, `_from` is always the leaf — an element, member, or property — pointing toward its root, container, or schema."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_from` holds the handle of the **leaf** node in a directed edge. Together with [`_to`](_to.md) and [`_predicate`](_predicate.md), it uniquely identifies the relationship. It is part of the triple used to compute the edge [`_key`](_key.md) and is immutable once set.\n\nThe value is an ArangoDB document handle in the format `<collection>/<key>` — for example `terms/ISO_3166_3_ITA`. Because all dictionary terms are stored in the `terms` collection, the handle for a term with [`_gid`](_gid.md) value `X` is always `terms/X`.\n\nThe many-to-one convention means the interpretation of `_from` depends on the predicate:\n\n- For [`_predicate_enum-of`](_predicate_enum-of.md): `_from` is an enumeration element, `_to` is the vocabulary root.\n- For [`_predicate_property-of`](_predicate_property-of.md): `_from` is a descriptor, `_to` is the schema object.\n- For [`_predicate_section-of`](_predicate_section-of.md): `_from` is a section heading, `_to` is the graph root.\n- For [`_predicate_bridge-of`](_predicate_bridge-of.md): `_from` is a bridge node pointing into a complete graph, `_to` is the custom graph root."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "The `_from` field of an edge connecting Italy to the ISO 3166-3 enumeration root:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nHere `terms/ISO_3166_3_ITA` is the handle of the leaf node — the Italian country term."
-			}
-		},
-		"_data": {
-			"_scalar": {
-				"_handle": {}
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "",
-			"_lid": "to",
-			"_gid": "_to",
-			"_aid": ["to"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Relationship destination"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_to` holds the handle of the **root** node in a directed edge. Together with [`_from`](_from.md) and [`_predicate`](_predicate.md), it uniquely identifies the relationship. It is part of the triple used to compute the edge [`_key`](_key.md) and is immutable once set.\n\nThe value is an ArangoDB document handle in the format `<collection>/<key>`. For dictionary terms, the handle for a term with [`_gid`](_gid.md) value `X` is `terms/X`.\n\nThe many-to-one convention means the interpretation of `_to` depends on the predicate:\n\n- For [`_predicate_enum-of`](_predicate_enum-of.md): `_to` is the controlled vocabulary root that `_from` belongs to.\n- For [`_predicate_property-of`](_predicate_property-of.md): `_to` is the schema object term that `_from` is a property of.\n- For [`_predicate_section-of`](_predicate_section-of.md): `_to` is the graph root under which the section heading is grouped.\n- For [`_predicate_bridge-of`](_predicate_bridge-of.md): `_to` is the custom graph whose traversal continues into the bridge's target."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "The `_to` field of an edge connecting Italy to the ISO 3166-3 enumeration root:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nHere `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 controlled vocabulary."
-			}
-		},
-		"_data": {
-			"_scalar": {
-				"_handle": {}
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "",
-			"_lid": "path",
-			"_gid": "_path",
-			"_aid": ["path"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Relationship path"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The set of document handles identifying the graphs to which this edge belongs. Each handle points to a graph root node. Filtering edges by a value present in `_path` isolates all edges that belong to that specific graph."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_path` is the mechanism by which edges are assigned to named graphs. Each element of the set is a document handle of a **graph root** — the term that anchors and identifies a particular graph.\n\nBecause `_path` is a set, a single edge can belong to multiple graphs simultaneously. When two graphs need to express the same directed relationship (the same [`_from`](_from.md)/[`_predicate`](_predicate.md)/[`_to`](_to.md) triple), the edge document is shared: both graph root handles are placed in `_path`. This eliminates redundant edge records and keeps the edge collection compact.\n\nTo traverse a specific graph, an AQL query filters the edge collection to documents where `_path` contains the handle of that graph's root node. Restricting to [`_predicate_enum-of`](_predicate_enum-of.md) edges produces the list of valid enumeration values; including [`_predicate_section-of`](_predicate_section-of.md) edges produces the display tree.\n\n**Bridge graphs** exploit this mechanism directly. A bridge allows a custom subset graph to share individual edges from a complete graph without duplicating them. Adding an element to the subset requires only inserting its graph root handle into `_path` on the relevant edge — no new document is written. The [`_predicate_bridge-of`](_predicate_bridge-of.md) predicate marks the bridge node itself.\n\nBecause edge uniqueness is enforced on the `_from`/`_predicate`/`_to` triple, a graph root handle should never appear more than once in a given `_path` set."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "An edge belonging to a single graph:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nA bridge graph: `MyCountries` is a custom subset that includes Italy from the full ISO 3166-3 vocabulary. Two edges are needed — the shared element edge and the bridge declaration:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3\",\n\t\"_predicate\": \"_predicate_bridge-of\",\n\t\"_to\": \"terms/MyCountries\",\n\t\"_path\": [\"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\nThe first edge belongs to both graphs: Italy is a member of the full ISO 3166-3 vocabulary and, through the bridge, also a member of `MyCountries`. The second edge marks `terms/ISO_3166_3` as a bridge node within `MyCountries`: during traversal of `MyCountries`, the bridge node is skipped and `terms/ISO_3166_3_ITA` is treated as a direct `_predicate_enum-of` member of `terms/MyCountries`.\n\nTo retrieve all members of the `MyCountries` graph:\n\n```aql\nFOR e IN edges\n\tFILTER \"terms/MyCountries\" IN e._path\n\tFILTER e._predicate == \"_predicate_enum-of\"\n\tRETURN e._from\n```"
-			}
-		},
-		"_data": {
-			"_set": {
-				"_handle": {}
-			}
-		},
-		"_domn": {}
-	},
-	{
-		"_code": {
-			"_nid": "_path",
-			"_lid": "data",
-			"_gid": "_path_data",
-			"_aid": ["data"]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Relationship path data"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to."
-			},
-			"_description": {
-				"ISO_639_3_eng": "`_path_data` is the payload of an edge document. It is an open key/value dictionary whose entries are scoped by context — each key identifies the node that the associated data belongs to.\n\nTwo key patterns are used:\n\n| Key pattern | Meaning |\n|---|---|\n| Graph root handle (present in [`_path`](_path.md)) | Data specific to this edge within that graph. |\n| [`_from`](_from.md) or [`_to`](_to.md) handle | Data related to a node at one end of the relationship. |\n\nWhen the edge carries **no data**, `_path_data` is an empty object (`{}`), which is also its default value.\n\nWhen the edge encodes a **conditional schema rule** (on a [`_predicate_property-of`](_predicate_property-of.md) or [`_predicate_value-of`](_predicate_value-of.md) edge), `_path_data` contains a schema object keyed by the graph root handle. The schema object uses the same format as [`_object`](_object.md): its single key is either [`_closed`](_closed.md) or [`_open`](_open.md), and its value is a constraint object that may contain [`_required`](_required.md), [`_recommended`](_recommended.md), and [`_banned`](_banned.md). Using `_closed` means only the properties listed in the constraint are permitted in that context; using `_open` means additional properties are also accepted. [`_required`](_required.md) always accumulates with the base schema; [`_banned`](_banned.md) is unconditional.\n\nKeys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be of any shape and type."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "A travel-graph edge carrying per-airline fares and per-location transfer costs:\n\n```json\n{\n\t\"_from\": \"locations/Roma\",\n\t\"_predicate\": \"_predicate_travel-to\",\n\t\"_to\": \"locations/Milano\",\n\t\"_path\": [\"airlines/airline-A\", \"airlines/airline-B\"],\n\t\"_path_data\": {\n\t\t\"airlines/airline-A\": {\"price\": 150, \"duration\": 75},\n\t\t\"airlines/airline-B\": {\"price\": 200, \"duration\": 45},\n\t\t\"locations/Roma\": {\"taxi\": 70, \"duration\": 45},\n\t\t\"locations/Milano\": {\"taxi\": 90, \"duration\": 30}\n\t}\n}\n```\n\nEach airline graph root handle keys its own fare data; each location handle keys its transfer cost.\n\nA `_predicate_value-of` edge encoding a closed conditional rule — when `_scalar` contains the key `_number_integer`, `_decimals` is banned and the recommended companion properties are restricted to the numeric range and unit properties only (integers have no decimal part):\n\n```json\n{\n\t\"_from\": \"terms/_number_integer\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_recommended\": [\n\t\t\t\t\t\"_unit\",\n\t\t\t\t\t\"_unit_name\",\n\t\t\t\t\t\"_unit_symbol\",\n\t\t\t\t\t\"_range_valid\",\n\t\t\t\t\t\"_range_normal\"\n\t\t\t\t],\n\t\t\t\t\"_banned\": [\"_decimals\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe constraint is keyed by the graph root handle `terms/_scalar` and applies only within that schema context. `_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally."
-			}
-		},
-		"_data": {
-			"_dict": {
-				"_dict_key": {
-					"_handle": {}
-				},
-				"_dict_value": {}
-			}
-		},
-		"_domn": {}
-	}
+    {
+        "_code": {
+            "_nid": "",
+            "_lid": "edge",
+            "_gid": "_edge",
+            "_aid": [
+                "edge"
+            ]
+        },
+        "_info": {
+            "_title": {
+                "ISO_639_3_eng": "Edge"
+            },
+            "_definition": {
+                "ISO_639_3_eng": "The document structure of a directed relationship between two nodes in a dictionary graph. Each edge encodes its source, destination, predicate, graph membership, and any associated data. The `_key` is computed from the MD5 hash of the source, predicate, and destination."
+            },
+            "_description": {
+                "ISO_639_3_eng": "An *edge* document represents a directed relationship between two term documents stored in an ArangoDB edge collection. It is the fundamental building block of every graph in the dictionary — enumerations, schemas, aliases, and bridge graphs are all expressed as sets of edges.\n\nFive custom properties define an edge:\n\n- [`_from`](_from.md) — the document handle of the **source** node (leaf, child, element)\n- [`_to`](_to.md) — the document handle of the **destination** node (root, parent, container)\n- [`_predicate`](_predicate.md) — the enumeration value that qualifies the relationship type\n- [`_path`](_path.md) — the set of graph root handles whose traversal passes through this edge\n- [`_path_data`](_path_data.md) — an open dictionary of data associated with the edge\n\nAll edges follow the **many-to-one direction**: `_from` is always the leaf and `_to` is always the root. This convention applies to all currently defined predicate types; future predicate types may define different traversal directions.\n\n[`_key`](_key.md) is set automatically by the system as the lowercase MD5 hash of the concatenation `_from + \"/\" + _predicate + \"/\" + _to`. This guarantees that no two edges can share the same `_from`/`_predicate`/`_to` triple, and that when multiple graphs share the same directed relationship they reuse a single edge document — with each graph root handle added to `_path`.\n\nThe two built-in ArangoDB properties [`_id`](_id.md) and [`_rev`](_rev.md) are locked (managed by the system). `_key`, `_from`, `_to`, and `_predicate` are immutable once set."
+            },
+            "_examples": {
+                "ISO_639_3_eng": "A minimal edge connecting Italy to the ISO 3166-3 enumeration:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nThe same edge shared by two graphs — the full ISO 3166-3 vocabulary and a custom `MyCountries` subset:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\nBoth graphs traverse the same edge document. Adding Italy to `MyCountries` costs only a handle insertion into `_path`, not a new edge record."
+            }
+        },
+        "_data": {
+            "_object": {
+                "_closed": {
+                    "_required": [
+                        {
+                            "_selectors": [
+                                {
+                                    "_all": {}
+                                }
+                            ],
+                            "_selection": [
+                                "_from",
+                                "_to",
+                                "_predicate",
+                                "_path",
+                                "_path_data"
+                            ]
+                        }
+                    ],
+                    "_computed": [
+                        "_key"
+                    ],
+                    "_immutable": [
+                        "_key",
+                        "_from",
+                        "_to",
+                        "_predicate"
+                    ],
+                    "_locked": [
+                        "_id",
+                        "_rev"
+                    ],
+                    "_default-value": {
+                        "_path_data": {}
+                    }
+                }
+            }
+        },
+        "_domn": {
+            "_term_role": [
+                "_term_role_descriptor"
+            ]
+        }
+    },
+    {
+        "_code": {
+            "_nid": "",
+            "_lid": "from",
+            "_gid": "_from",
+            "_aid": [
+                "from"
+            ]
+        },
+        "_info": {
+            "_title": {
+                "ISO_639_3_eng": "Relationship source"
+            },
+            "_definition": {
+                "ISO_639_3_eng": "The ArangoDB document handle of the source node of a directed relationship. In the dictionary's many-to-one convention, `_from` is always the leaf — an element, member, or property — pointing toward its root, container, or schema."
+            },
+            "_description": {
+                "ISO_639_3_eng": "`_from` holds the handle of the **leaf** node in a directed edge. Together with [`_to`](_to.md) and [`_predicate`](_predicate.md), it uniquely identifies the relationship. It is part of the triple used to compute the edge [`_key`](_key.md) and is immutable once set.\n\nThe value is an ArangoDB document handle in the format `<collection>/<key>` — for example `terms/ISO_3166_3_ITA`. Because all dictionary terms are stored in the `terms` collection, the handle for a term with [`_gid`](_gid.md) value `X` is always `terms/X`.\n\nThe many-to-one convention means the interpretation of `_from` depends on the predicate:\n\n- For [`_predicate_enum-of`](_predicate_enum-of.md): `_from` is an enumeration element, `_to` is the vocabulary root.\n- For [`_predicate_property-of`](_predicate_property-of.md): `_from` is a descriptor, `_to` is the schema object.\n- For [`_predicate_section-of`](_predicate_section-of.md): `_from` is a section heading, `_to` is the graph root.\n- For [`_predicate_bridge-of`](_predicate_bridge-of.md): `_from` is a bridge node pointing into a complete graph, `_to` is the custom graph root."
+            },
+            "_examples": {
+                "ISO_639_3_eng": "The `_from` field of an edge connecting Italy to the ISO 3166-3 enumeration root:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nHere `terms/ISO_3166_3_ITA` is the handle of the leaf node — the Italian country term."
+            }
+        },
+        "_data": {
+            "_scalar": {
+                "_handle": {}
+            }
+        },
+        "_domn": {
+            "_term_role": [
+                "_term_role_descriptor"
+            ]
+        }
+    },
+    {
+        "_code": {
+            "_nid": "",
+            "_lid": "to",
+            "_gid": "_to",
+            "_aid": [
+                "to"
+            ]
+        },
+        "_info": {
+            "_title": {
+                "ISO_639_3_eng": "Relationship destination"
+            },
+            "_definition": {
+                "ISO_639_3_eng": "The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points."
+            },
+            "_description": {
+                "ISO_639_3_eng": "`_to` holds the handle of the **root** node in a directed edge. Together with [`_from`](_from.md) and [`_predicate`](_predicate.md), it uniquely identifies the relationship. It is part of the triple used to compute the edge [`_key`](_key.md) and is immutable once set.\n\nThe value is an ArangoDB document handle in the format `<collection>/<key>`. For dictionary terms, the handle for a term with [`_gid`](_gid.md) value `X` is `terms/X`.\n\nThe many-to-one convention means the interpretation of `_to` depends on the predicate:\n\n- For [`_predicate_enum-of`](_predicate_enum-of.md): `_to` is the controlled vocabulary root that `_from` belongs to.\n- For [`_predicate_property-of`](_predicate_property-of.md): `_to` is the schema object term that `_from` is a property of.\n- For [`_predicate_section-of`](_predicate_section-of.md): `_to` is the graph root under which the section heading is grouped.\n- For [`_predicate_bridge-of`](_predicate_bridge-of.md): `_to` is the custom graph whose traversal continues into the bridge's target."
+            },
+            "_examples": {
+                "ISO_639_3_eng": "The `_to` field of an edge connecting Italy to the ISO 3166-3 enumeration root:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nHere `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 controlled vocabulary."
+            }
+        },
+        "_data": {
+            "_scalar": {
+                "_handle": {}
+            }
+        },
+        "_domn": {
+            "_term_role": [
+                "_term_role_descriptor"
+            ]
+        }
+    },
+    {
+        "_code": {
+            "_nid": "",
+            "_lid": "path",
+            "_gid": "_path",
+            "_aid": [
+                "path"
+            ]
+        },
+        "_info": {
+            "_title": {
+                "ISO_639_3_eng": "Relationship path"
+            },
+            "_definition": {
+                "ISO_639_3_eng": "The set of document handles identifying the graphs to which this edge belongs. Each handle points to a graph root node. Filtering edges by a value present in `_path` isolates all edges that belong to that specific graph."
+            },
+            "_description": {
+                "ISO_639_3_eng": "`_path` is the mechanism by which edges are assigned to named graphs. Each element of the set is a document handle of a **graph root** — the term that anchors and identifies a particular graph.\n\nBecause `_path` is a set, a single edge can belong to multiple graphs simultaneously. When two graphs need to express the same directed relationship (the same [`_from`](_from.md)/[`_predicate`](_predicate.md)/[`_to`](_to.md) triple), the edge document is shared: both graph root handles are placed in `_path`. This eliminates redundant edge records and keeps the edge collection compact.\n\nTo traverse a specific graph, an AQL query filters the edge collection to documents where `_path` contains the handle of that graph's root node. Restricting to [`_predicate_enum-of`](_predicate_enum-of.md) edges produces the list of valid enumeration values; including [`_predicate_section-of`](_predicate_section-of.md) edges produces the display tree.\n\n**Bridge graphs** exploit this mechanism directly. A bridge allows a custom subset graph to share individual edges from a complete graph without duplicating them. Adding an element to the subset requires only inserting its graph root handle into `_path` on the relevant edge — no new document is written. The [`_predicate_bridge-of`](_predicate_bridge-of.md) predicate marks the bridge node itself.\n\nBecause edge uniqueness is enforced on the `_from`/`_predicate`/`_to` triple, a graph root handle should never appear more than once in a given `_path` set."
+            },
+            "_examples": {
+                "ISO_639_3_eng": "An edge belonging to a single graph:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\"],\n\t\"_path_data\": {}\n}\n```\n\nA bridge graph: `MyCountries` is a custom subset that includes Italy from the full ISO 3166-3 vocabulary. Two edges are needed — the shared element edge and the bridge declaration:\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3_ITA\",\n\t\"_predicate\": \"_predicate_enum-of\",\n\t\"_to\": \"terms/ISO_3166_3\",\n\t\"_path\": [\"terms/ISO_3166_3\", \"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\n```json\n{\n\t\"_from\": \"terms/ISO_3166_3\",\n\t\"_predicate\": \"_predicate_bridge-of\",\n\t\"_to\": \"terms/MyCountries\",\n\t\"_path\": [\"terms/MyCountries\"],\n\t\"_path_data\": {}\n}\n```\n\nThe first edge belongs to both graphs: Italy is a member of the full ISO 3166-3 vocabulary and, through the bridge, also a member of `MyCountries`. The second edge marks `terms/ISO_3166_3` as a bridge node within `MyCountries`: during traversal of `MyCountries`, the bridge node is skipped and `terms/ISO_3166_3_ITA` is treated as a direct `_predicate_enum-of` member of `terms/MyCountries`.\n\nTo retrieve all members of the `MyCountries` graph:\n\n```aql\nFOR e IN edges\n\tFILTER \"terms/MyCountries\" IN e._path\n\tFILTER e._predicate == \"_predicate_enum-of\"\n\tRETURN e._from\n```"
+            }
+        },
+        "_data": {
+            "_set": {
+                "_handle": {}
+            }
+        },
+        "_domn": {
+            "_term_role": [
+                "_term_role_descriptor"
+            ]
+        }
+    },
+    {
+        "_code": {
+            "_nid": "_path",
+            "_lid": "data",
+            "_gid": "_path_data",
+            "_aid": [
+                "data"
+            ]
+        },
+        "_info": {
+            "_title": {
+                "ISO_639_3_eng": "Relationship path data"
+            },
+            "_definition": {
+                "ISO_639_3_eng": "An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to."
+            },
+            "_description": {
+                "ISO_639_3_eng": "`_path_data` is the payload of an edge document. It is an open key/value dictionary whose entries are scoped by context — each key identifies the node that the associated data belongs to.\n\nTwo key patterns are used:\n\n| Key pattern | Meaning |\n|---|---|\n| Graph root handle (present in [`_path`](_path.md)) | Data specific to this edge within that graph. |\n| [`_from`](_from.md) or [`_to`](_to.md) handle | Data related to a node at one end of the relationship. |\n\nWhen the edge carries **no data**, `_path_data` is an empty object (`{}`), which is also its default value.\n\nWhen the edge encodes a **conditional schema rule** (on a [`_predicate_property-of`](_predicate_property-of.md) or [`_predicate_value-of`](_predicate_value-of.md) edge), `_path_data` contains a schema object keyed by the graph root handle. The schema object uses the same format as [`_object`](_object.md): its single key is either [`_closed`](_closed.md) or [`_open`](_open.md), and its value is a constraint object that may contain [`_required`](_required.md), [`_recommended`](_recommended.md), and [`_banned`](_banned.md). Using `_closed` means only the properties listed in the constraint are permitted in that context; using `_open` means additional properties are also accepted. [`_required`](_required.md) always accumulates with the base schema; [`_banned`](_banned.md) is unconditional.\n\nKeys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be of any shape and type."
+            },
+            "_examples": {
+                "ISO_639_3_eng": "A travel-graph edge carrying per-airline fares and per-location transfer costs:\n\n```json\n{\n\t\"_from\": \"locations/Roma\",\n\t\"_predicate\": \"_predicate_travel-to\",\n\t\"_to\": \"locations/Milano\",\n\t\"_path\": [\"airlines/airline-A\", \"airlines/airline-B\"],\n\t\"_path_data\": {\n\t\t\"airlines/airline-A\": {\"price\": 150, \"duration\": 75},\n\t\t\"airlines/airline-B\": {\"price\": 200, \"duration\": 45},\n\t\t\"locations/Roma\": {\"taxi\": 70, \"duration\": 45},\n\t\t\"locations/Milano\": {\"taxi\": 90, \"duration\": 30}\n\t}\n}\n```\n\nEach airline graph root handle keys its own fare data; each location handle keys its transfer cost.\n\nA `_predicate_value-of` edge encoding a closed conditional rule — when `_scalar` contains the key `_number_integer`, `_decimals` is banned and the recommended companion properties are restricted to the numeric range and unit properties only (integers have no decimal part):\n\n```json\n{\n\t\"_from\": \"terms/_number_integer\",\n\t\"_predicate\": \"_predicate_value-of\",\n\t\"_to\": \"terms/_scalar\",\n\t\"_path\": [\"terms/_scalar\"],\n\t\"_path_data\": {\n\t\t\"terms/_scalar\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_recommended\": [\n\t\t\t\t\t\"_unit\",\n\t\t\t\t\t\"_unit_name\",\n\t\t\t\t\t\"_unit_symbol\",\n\t\t\t\t\t\"_range_valid\",\n\t\t\t\t\t\"_range_normal\"\n\t\t\t\t],\n\t\t\t\t\"_banned\": [\"_decimals\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nThe constraint is keyed by the graph root handle `terms/_scalar` and applies only within that schema context. `_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally."
+            }
+        },
+        "_data": {
+            "_dict": {
+                "_dict_key": {
+                    "_handle": {}
+                },
+                "_dict_value": {}
+            }
+        },
+        "_domn": {
+            "_term_role": [
+                "_term_role_descriptor"
+            ]
+        }
+    }
 ]

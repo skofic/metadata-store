@@ -1,4 +1,5 @@
 # Dictionary value
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_dict_value</code></p>
 
 > The sub-property of a dictionary that defines the type and shape of its values. At most one data shape property may be present, following the same conventions as a `_data` section. When empty, the value may be of any shape and type.
