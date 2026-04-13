@@ -223,7 +223,7 @@ When `_nid` is an empty string, the term is a core building block of the data di
 | `_pid`    | No       | "Provided identifiers" — custom identifiers used by data providers. |
 | `_name`   | No       | A string containing the name of the term. |
 | `_symbol` | No       | A LaTeX string containing the symbol of the term. |
-| `_regexp` | No       | A regular expression used to validate the `_lid` of this term. |
+| `_regexp` | No       | A regular expression that constrains the `_lid` of enumeration elements whose closest graph ancestor carrying `_regexp` is this term. May be placed on enumeration root terms or on section nodes within an enumeration graph. |
 | `_emoji`  | No       | An emoji character used as a visual icon for the term. |
 
 ### `_info` Section

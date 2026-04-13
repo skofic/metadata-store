@@ -1,0 +1,124 @@
+[
+	{
+		"_from": "terms/ISO_639_scope_I",
+		"_to": "terms/ISO_639_scope",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_scope"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_scope_M",
+		"_to": "terms/ISO_639_scope",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_scope"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_scope_S",
+		"_to": "terms/ISO_639_scope",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_scope"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/ISO_639_type_A",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_C",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_E",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_H",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_L",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_S",
+		"_to": "terms/ISO_639_type",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/ISO_639_type"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/ISO_639_scope_I",
+		"_to": "terms/ISO_639_3",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_scope_M",
+		"_to": "terms/ISO_639_3",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_scope_S",
+		"_to": "terms/ISO_639_3",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/ISO_639_type_A",
+		"_to": "terms/ISO_639_scope_I",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_C",
+		"_to": "terms/ISO_639_scope_I",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_E",
+		"_to": "terms/ISO_639_scope_I",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_H",
+		"_to": "terms/ISO_639_scope_I",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_639_type_L",
+		"_to": "terms/ISO_639_scope_I",
+		"_predicate": "_predicate_section-of",
+		"_path": ["terms/ISO_639_3"],
+		"_path_data": {}
+	}
+]

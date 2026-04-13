@@ -1,0 +1,151 @@
+[
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "scope",
+			"_gid": "ISO_639_scope",
+			"_aid": ["scope"],
+			"_regexp": "^[IMS]$"
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Language scope"}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"ISO_639_scope"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "type",
+			"_gid": "ISO_639_type",
+			"_aid": ["type"],
+			"_regexp": "^[ACEHLS]$"
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Language type"}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"ISO_639_type"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root"
+			]
+		}
+	},
+	
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "alpha2",
+			"_gid": "ISO_639_alpha2",
+			"_aid": ["alpha2"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Alpha-2 code"},
+			"_definition": {"ISO_639_3_eng": "Two letter alphabetic code of the language from part 1."},
+			"_description": {"ISO_639_3_eng": "*Alpha-2* codes (for codes composed of 2 letters of the [ISO basic Latin alphabet](https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet \"ISO basic Latin alphabet\")) are used in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1 \"ISO 639-1\"). When codes for a wider range of languages were desired, more than 2 letter combinations could cover (a maximum of 262 = 676), [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2 \"ISO 639-2\") was developed using Alpha-3 codes."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {
+					"_regexp": "^[a-z]{2}$"
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "alpha3",
+			"_gid": "ISO_639_alpha3",
+			"_aid": ["alpha3"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Alpha-3 code"},
+			"_definition": {"ISO_639_3_eng": "Three letter terminology code of the language."},
+			"_description": {"ISO_639_3_eng": "*Alpha-3* codes (for codes composed of 3 letters of the [ISO basic Latin alphabet](https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet \"ISO basic Latin alphabet\")) are used in [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2 \"ISO 639-2\"), [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3 \"ISO 639-3\"), and [ISO 639-5](https://en.wikipedia.org/wiki/ISO_639-5 \"ISO 639-5\"). The number of languages and language groups that can be so represented is 263 = 17,576."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {
+					"_regexp": "^[a-z]{3}$"
+				}
+			}
+		},
+		"_domn": {}
+	},
+	
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "bibliographic",
+			"_gid": "ISO_639_bibliographic",
+			"_aid": ["bibliographic"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Bibliographic code"},
+			"_definition": {"ISO_639_3_eng": "Three letter bibliographic code of the language from part 2."},
+			"_description": {"ISO_639_3_eng": "Bibliographic codes are *legacy* codes based on language *names in English*, as opposed to *Terminologic* codes which are the *preferred codes* based on *native language names*, romanized if needed."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {
+					"_regexp": "^[a-z]{3}$"
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "common",
+			"_gid": "ISO_639_common",
+			"_aid": ["common"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Common name"},
+			"_definition": {"ISO_639_3_eng": "Common name of the language."}
+		},
+		"_data": {
+			"_typedef": "_info_string"
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_639",
+			"_lid": "inverted",
+			"_gid": "ISO_639_inverted",
+			"_aid": ["inverted"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Inverted name"},
+			"_definition": {"ISO_639_3_eng": "Inverted name of the language."}
+		},
+		"_data": {
+			"_typedef": "_info_string"
+		},
+		"_domn": {}
+	}
+]

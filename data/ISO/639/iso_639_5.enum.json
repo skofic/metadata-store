@@ -1,0 +1,1037 @@
+[
+    {
+        "_from": "terms/ISO_639_5_aav",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_afa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_alg",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_alv",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_apa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_aqa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_aql",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_art",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ath",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_auf",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_aus",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_awd",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_azc",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_bad",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_bai",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_bat",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ber",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_bih",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_bnt",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_btk",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cai",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cau",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cba",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ccn",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ccs",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cdc",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cdd",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cel",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cmc",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cpe",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cpf",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cpp",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_crp",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_csu",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_cus",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_day",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_dmn",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_dra",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_egx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_esx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_euq",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_fiu",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_fox",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_gem",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_gme",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_gmq",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_gmw",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_grk",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_hmx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_hok",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_hyx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_iir",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ijo",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_inc",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ine",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ira",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_iro",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_itc",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_jpx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_kar",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_kdo",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_khi",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_kro",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_map",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_mkh",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_mno",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_mun",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_myn",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_nah",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_nai",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ngf",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_nic",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_nub",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_omq",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_omv",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_oto",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_paa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_phi",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_plf",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_poz",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_pqe",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_pqw",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_pra",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_qwe",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_roa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sai",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sal",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sdv",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sem",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sgn",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sio",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sit",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sla",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_smi",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_son",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_sqj",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ssa",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_syd",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_tai",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_tbq",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_trk",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_tup",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_tut",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_tuw",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_urj",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_wak",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_wen",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_xgn",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_xnd",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_ypk",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_zhx",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_zle",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_zls",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_zlw",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    },
+    {
+        "_from": "terms/ISO_639_5_znd",
+        "_predicate": "_predicate_enum-of",
+        "_to": "terms/ISO_639_5",
+        "_path": [
+            "terms/ISO_639_5"
+        ],
+        "_path_data": {}
+    }
+]

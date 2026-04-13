@@ -1,0 +1,44 @@
+[
+	{
+		"_code": {
+			"_nid": "ISO_15924",
+			"_lid": "alpha4",
+			"_gid": "ISO_15924_alpha4",
+			"_aid": ["alpha4"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Alpha-4 code"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of scripts, four character code."},
+			"_description": {"ISO_639_3_eng": "[ISO 15924]([ISO 15924 - Wikipedia](https://en.wikipedia.org/wiki/ISO_15924)), is an [international standard](https://en.wikipedia.org/wiki/ISO_standard \"ISO standard\") defining codes for [writing systems](https://en.wikipedia.org/wiki/Writing_systems \"Writing systems\") or *scripts* (a *set of graphic characters used for the written form of one or more languages*). Each script is given both a four-letter code and a numeric code."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {
+					"_regexp": "^[A-Z]{1}[a-z]{3}$"
+				}
+			}
+		},
+		"_domn": {}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_15924",
+			"_lid": "numeric",
+			"_gid": "ISO_15924_numeric",
+			"_aid": ["numeric"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Numeric code"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of scripts, numeric code."},
+			"_description": {"ISO_639_3_eng": "[ISO 15924]([ISO 15924 - Wikipedia](https://en.wikipedia.org/wiki/ISO_15924)), is an [international standard](https://en.wikipedia.org/wiki/ISO_standard \"ISO standard\") defining codes for [writing systems](https://en.wikipedia.org/wiki/Writing_systems \"Writing systems\") or *scripts* (a *set of graphic characters used for the written form of one or more languages*). Each script is given both a four-letter code and a three character numeric code."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {
+					"_regexp": "^[0-9]{3}$"
+				}
+			}
+		},
+		"_domn": {}
+	}
+]

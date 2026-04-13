@@ -1,0 +1,55 @@
+[
+	{
+		"_code": {
+			"_nid": "ISO",
+			"_lid": "3166",
+			"_gid": "ISO_3166",
+			"_aid": ["3166"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Countries"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of countries and their subdivisions."},
+			"_description": {"ISO_639_3_eng": "[ISO 3166](https://en.wikipedia.org/wiki/ISO_3166) is a [standard](https://en.wikipedia.org/wiki/Standardization \"Standardization\") published by the [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization \"International Organization for Standardization\") (ISO) that defines [codes](https://en.wikipedia.org/wiki/Code \"Code\") for the names of [countries](https://en.wikipedia.org/wiki/Country \"Country\"), [dependent territories](https://en.wikipedia.org/wiki/Dependent_territory \"Dependent territory\"), special areas of geographical interest, and their principal [subdivisions](https://en.wikipedia.org/wiki/Administrative_divisions \"Administrative divisions\") (e.g., [provinces](https://en.wikipedia.org/wiki/Province \"Province\") or [states](https://en.wikipedia.org/wiki/State_(administrative_division) \"State (administrative division)\"))."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "ISO_3166",
+			"_lid": "1",
+			"_gid": "ISO_3166_1",
+			"_aid": ["1"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Country codes"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of countries and their subdivisions - Part 1: Country codes."},
+			"_description": {"ISO_639_3_eng": "[ISO 3166-1]([ISO 3166-1 - Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1)) is a standard defining codes for the names of countries, dependent territories, and special areas of geographical interest. It is the first part of the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166 \"ISO 3166\") standard published by the [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization \"International Organization for Standardization\")."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_3166",
+			"_lid": "2",
+			"_gid": "ISO_3166_2",
+			"_aid": ["2"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Country subdivision codes"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of countries and their subdivisions - Part 2: Country subdivision code."},
+			"_description": {"ISO_639_3_eng": "[ISO 3166-2]([ISO 3166-2 - Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-2)) is part of the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166 \"ISO 3166\") [standard](https://en.wikipedia.org/wiki/Standardization \"Standardization\") published by the [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization \"International Organization for Standardization\") (ISO), and defines [codes](https://en.wikipedia.org/wiki/Code \"Code\") for identifying the principal [subdivisions](https://en.wikipedia.org/wiki/Administrative_division \"Administrative division\") (e.g., [provinces](https://en.wikipedia.org/wiki/Province \"Province\") or [states](https://en.wikipedia.org/wiki/State_(administrative_division) \"State (administrative division)\")) of all [countries](https://en.wikipedia.org/wiki/Country \"Country\") coded in [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 \"ISO 3166-1\")."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "ISO_3166",
+			"_lid": "3",
+			"_gid": "ISO_3166_3",
+			"_aid": ["3"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Codes for formerly used names of countries"},
+			"_definition": {"ISO_639_3_eng": "Codes for the representation of names of countries and their subdivisions - Part 3: Code for formerly used names of countries."},
+			"_description": {"ISO_639_3_eng": "[ISO 3166-3]([ISO 3166-3 - Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-3)) is part of the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166 \"ISO 3166\") [standard](https://en.wikipedia.org/wiki/Standardization \"Standardization\") published by the [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization \"International Organization for Standardization\") (ISO), and defines [codes](https://en.wikipedia.org/wiki/Code \"Code\") for [country](https://en.wikipedia.org/wiki/Country \"Country\") names which have been deleted from [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 \"ISO 3166-1\") since its first publication in 1974."}
+		}
+	}
+]

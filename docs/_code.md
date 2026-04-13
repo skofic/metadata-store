@@ -47,7 +47,7 @@ The [local identifier](_lid.md) ([`_lid`](_lid.md)) is the only property the cur
 
 Terms with an empty-string namespace (`_nid: ""`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` — for example `_code`, `_info`, `_data`. Terms with no `_nid` property define top-level namespaces — for example `ISO`.
 
-The [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), [`_regexp`](_regexp.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes.
+The [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes. [`_regexp`](_regexp.md) is also optional; when present on an enumeration root or section node it constrains the [`_lid`](_lid.md) format of the term's direct enumeration element children in the graph.
 
 **[Examples](_examples.md)**
 
