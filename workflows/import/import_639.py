@@ -29,13 +29,16 @@ Part 3  (_lid = alpha_3, e.g. eng, fra, deu)
 Part 5  (_lid = alpha_3, e.g. aav, ber, cel)
 
 _prop keys used:
-  ISO_639_scope       — scope code (I/M/S), parts 1 and 3
-  ISO_639_type        — type code (A/C/E/H/L/S), parts 1 and 3
+  ISO_639_scope       — full GID of scope enumeration element (e.g. ISO_639_scope_I)
+  ISO_639_type        — full GID of type enumeration element (e.g. ISO_639_type_L)
   ISO_639_alpha2      — 2-letter code when present
   ISO_639_alpha3      — 3-letter terminological code
   ISO_639_bibliographic — 3-letter bibliographic code when different from alpha_3
   ISO_639_common      — common name as _info_string, when different from name
   ISO_639_inverted    — inverted name as _info_string, when present
+
+Note: _name is intentionally omitted from _code — languages have no single
+canonical name across scripts and languages.
 """
 
 import json
@@ -107,8 +110,9 @@ def import_639_3(data, translations):
 
         prop = {
             "ISO_639_alpha3": alpha3,
-            "ISO_639_scope":  scope,
-            "ISO_639_type":   lang_type,
+            # Full GIDs so values are valid enumeration element references
+            "ISO_639_scope":  f"ISO_639_scope_{scope}",
+            "ISO_639_type":   f"ISO_639_type_{lang_type}",
         }
         if alpha2:
             prop["ISO_639_alpha2"] = alpha2
@@ -119,8 +123,7 @@ def import_639_3(data, translations):
         if inverted_name:
             prop["ISO_639_inverted"] = {"ISO_639_3_eng": inverted_name}
 
-        display = common_name or name
-        terms.append(build_term("ISO_639_3", lid, gid, aid, titles, prop=prop, name=display))
+        terms.append(build_term("ISO_639_3", lid, gid, aid, titles, prop=prop))
 
         # Enum-of edge: language → section node, graph root = ISO_639_3
         section = _section_gid(scope, lang_type)
@@ -205,7 +208,7 @@ def import_639_5(lang_map):
         titles = get_titles(name, translations)
         prop   = {"ISO_639_alpha3": alpha3}
 
-        terms.append(build_term("ISO_639_5", lid, gid, aid, titles, prop=prop, name=name))
+        terms.append(build_term("ISO_639_5", lid, gid, aid, titles, prop=prop))
         edges.append(build_enum_edge(gid, "ISO_639_5"))
 
     return terms, edges

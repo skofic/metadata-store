@@ -1,5 +1,4 @@
 # Mandatory selection
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_all</code></p>
 
 > A cardinality constraint object within `_selectors` that defines a mandatory rule for its candidate group. With no item limits (`_all: {}`), all candidates must be present. `_min-items` and `_max-items` override the default all-required behaviour and specify an exact count range instead.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "all",
+  "_gid": "_all",
+  "_aid": [
     "all"
-  ],
-  "_gid" : "_all",
-  "_lid" : "all",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -93,17 +92,17 @@ At least two and at most five of the six candidate properties must be present. H
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Mandatory selection"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Mandatory selection"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -114,14 +113,14 @@ At least two and at most five of the six candidate properties must be present. H
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Elements count range](_elements.md)
+**Shape:** [Type definition](_typedef.md): `_elements`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_elements"
+  "_typedef": "_elements"
 }
 ```
 

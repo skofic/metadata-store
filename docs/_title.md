@@ -1,5 +1,4 @@
 # Title
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_title</code></p>
 
 > A short label or name for the term. Expressed as plain unformatted text. Typically one to five words, with no punctuation.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "title",
+  "_gid": "_title",
+  "_aid": [
     "title"
-  ],
-  "_gid" : "_title",
-  "_lid" : "title",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -64,17 +63,17 @@ A multilingual title for a body weight descriptor:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Title"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Title"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -85,14 +84,14 @@ A multilingual title for a body weight descriptor:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Multilingual plain text](_info_string.md)
+**Shape:** [Type definition](_typedef.md): [Multilingual plain text string](_info_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_info_string"
+  "_typedef": "_info_string"
 }
 ```
 

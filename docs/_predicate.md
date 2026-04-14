@@ -1,5 +1,4 @@
 # Relationship predicate
-<p><a href="_term_role_enum-root.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration root</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate</code></p>
 
 > The edge property that identifies the type of a directed relationship between two nodes in a dictionary graph. Its value must be one of the enumeration elements in the `_predicate` controlled vocabulary.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "predicate",
+  "_gid": "_predicate",
+  "_aid": [
     "predicate"
-  ],
-  "_gid" : "_predicate",
-  "_lid" : "predicate",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -69,17 +68,17 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Relationship predicate"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Relationship predicate"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -90,16 +89,16 @@ An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Enumerated value](_enum.md) ([Controlled vocabularies](_enums.md): [Relationship predicate](_predicate.md))
+**Shape:** [Scalar](_scalar.md) — [Enumerated value](_enum.md) from vocabulary `_predicate`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_enum" : {
-      "_enums" : [
+  "_scalar": {
+    "_enum": {
+      "_enums": [
         "_predicate"
       ]
     }

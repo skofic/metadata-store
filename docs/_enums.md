@@ -1,5 +1,4 @@
 # Controlled vocabularies
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_enums</code></p>
 
 > The companion property of `_enum` that constrains the value to elements of one or more specified controlled vocabularies. Its value is a set of enumeration root `_gid`s; each must identify a term that is the root of a controlled vocabulary graph.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "enums",
+  "_gid": "_enums",
+  "_aid": [
     "enums"
-  ],
-  "_gid" : "_enums",
-  "_lid" : "enums",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -66,17 +65,17 @@ Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]`
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Controlled vocabularies"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Controlled vocabularies"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -87,17 +86,15 @@ Stored values: `["ISO_639_3"]` (single vocabulary), `["ISO_639_3", "ISO_639_1"]`
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) — [Enumeration root term document key](_term_key_enum-root.md)
+**Shape:** [Set](_set.md) of [Enumeration root key](_term_key_enum-root.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set" : {
-    "_term_key_enum-root" : {
-
-    }
+  "_set": {
+    "_term_key_enum-root": {}
   }
 }
 ```

@@ -1,5 +1,4 @@
 # Description
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_description</code></p>
 
 > A full description of the term aimed at a general audience. Expressed as formatted text. Covers what the term is, how it is used, and why it exists. May include links to other terms, external references, and code blocks.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "description",
+  "_gid": "_description",
+  "_aid": [
     "description"
-  ],
-  "_gid" : "_description",
-  "_lid" : "description",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -62,17 +61,17 @@ A description using Markdown formatting and a link to another term card:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Description"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Description"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -83,14 +82,14 @@ A description using Markdown formatting and a link to another term card:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Multilingual formatted text](_info_text.md)
+**Shape:** [Type definition](_typedef.md): `_info_text`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_info_text"
+  "_typedef": "_info_text"
 }
 ```
 

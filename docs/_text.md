@@ -1,5 +1,4 @@
 # Text
-<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_text</code></p>
 
 > The scalar data type for long-form, non-indexable text content. Not suitable for use as a database tag, set element, or dictionary key. Parent type of `_text_HTML`, `_text_Markdown`, and `_text_SVG`, which declare the markup format.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "text",
+  "_gid": "_text",
+  "_aid": [
     "text"
-  ],
-  "_gid" : "_text",
-  "_lid" : "text",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ A stored `_text` value is typically a paragraph or longer narrative — for exam
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Text"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Text"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,17 +80,15 @@ A stored `_text` value is typically a paragraph or longer narrative — for exam
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-
-    }
+  "_object": {
+    "_closed": {}
   }
 }
 ```

@@ -9,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Namespace](_nid.md) | `_predicate` |
 | [Local identifier](_lid.md) | `section` |
 | [Global identifier](_gid.md) | `_predicate_section` |
 | [Official identifiers](_aid.md) | `section` |
@@ -19,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_predicate",
+  "_lid": "section",
+  "_gid": "_predicate_section",
+  "_aid": [
     "section"
-  ],
-  "_gid" : "_predicate_section",
-  "_lid" : "section",
-  "_nid" : "_predicate"
+  ]
 }
 ```
 
@@ -51,14 +51,14 @@ As a sub-enumeration root, `_predicate_section` may be used in [`_enum_types`](_
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Section predicates"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Section predicates"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

@@ -1,0 +1,455 @@
+[
+	{
+		"_code": {
+			"_lid": "UN",
+			"_gid": "UN",
+			"_aid": ["UN"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "United Nations"},
+			"_definition": {"ISO_639_3_eng": "Namespace for United Nations organisational and statistical identifiers, including General Assembly regional groups and M.49 geographic region codes."},
+			"_description": {"ISO_639_3_eng": "The United Nations namespace collects identifiers derived from UN systems used to classify countries and territories. Currently it covers two classification schemes: the UN General Assembly regional groups (used for electoral and procedural purposes) and the UN Statistics Division M.49 geographic regions (used for statistical reporting)."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN",
+			"_lid": "M49",
+			"_gid": "UN_M49",
+			"_aid": ["M49"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "UN M.49 geographic regions"},
+			"_definition": {"ISO_639_3_eng": "Namespace for United Nations Statistics Division M.49 geographic region and sub-region identifiers used for statistical reporting."},
+			"_description": {"ISO_639_3_eng": "The United Nations M.49 standard defines a hierarchy of geographic regions used by the UN Statistics Division for statistical purposes. At the top level are macro-regions (continental groupings such as Africa, Asia, Europe). Each macro-region is subdivided into sub-regions (e.g. Northern Africa, Eastern Asia). Countries and territories are assigned to exactly one sub-region and thereby to one macro-region.\n\nThis namespace holds the macro-region and sub-region terms. The descriptor properties [`UN_Macro-region`](UN_Macro-region.md) and [`UN_Sub-region`](UN_Sub-region.md) reference these enumeration roots."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Africa",
+			"_gid": "UN_M49_Africa",
+			"_aid": ["Africa", "002"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Africa"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering the African continent. M.49 code 002."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Americas",
+			"_gid": "UN_M49_Americas",
+			"_aid": ["Americas", "019"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Americas"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering North America, Central America, the Caribbean, and South America. M.49 code 019."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Asia",
+			"_gid": "UN_M49_Asia",
+			"_aid": ["Asia", "142"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Asia"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering the Asian continent. M.49 code 142."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Europe",
+			"_gid": "UN_M49_Europe",
+			"_aid": ["Europe", "150"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Europe"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering the European continent. M.49 code 150."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Oceania",
+			"_gid": "UN_M49_Oceania",
+			"_aid": ["Oceania", "009"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Oceania"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering Australia, New Zealand, Melanesia, Micronesia, and Polynesia. M.49 code 009."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Antarctic",
+			"_gid": "UN_M49_Antarctic",
+			"_aid": ["Antarctic", "010"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Antarctic"},
+			"_definition": {"ISO_639_3_eng": "The UN M.49 macro-region covering Antarctica and its dependent territories. M.49 code 010."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Northern-Africa",
+			"_gid": "UN_M49_Northern-Africa",
+			"_aid": ["Northern-Africa", "015"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Northern Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region of Africa covering the countries of northern Africa. M.49 code 015."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Sub-Saharan-Africa",
+			"_gid": "UN_M49_Sub-Saharan-Africa",
+			"_aid": ["Sub-Saharan-Africa", "202"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Sub-Saharan Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 intermediate grouping covering Africa south of the Sahara, encompassing Eastern, Middle, Southern, and Western Africa. M.49 code 202."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Eastern-Africa",
+			"_gid": "UN_M49_Eastern-Africa",
+			"_aid": ["Eastern-Africa", "014"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Eastern Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of eastern Africa. M.49 code 014."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Middle-Africa",
+			"_gid": "UN_M49_Middle-Africa",
+			"_aid": ["Middle-Africa", "017"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Middle Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of central Africa. M.49 code 017."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Southern-Africa",
+			"_gid": "UN_M49_Southern-Africa",
+			"_aid": ["Southern-Africa", "018"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Southern Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of southern Africa. M.49 code 018."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Western-Africa",
+			"_gid": "UN_M49_Western-Africa",
+			"_aid": ["Western-Africa", "011"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Western Africa"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of western Africa. M.49 code 011."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Latin-America-and-the-Caribbean",
+			"_gid": "UN_M49_Latin-America-and-the-Caribbean",
+			"_aid": ["Latin-America-and-the-Caribbean", "419"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Latin America and the Caribbean"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 intermediate grouping covering Latin America and the Caribbean, encompassing Caribbean, Central America, and South America. M.49 code 419."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Northern-America",
+			"_gid": "UN_M49_Northern-America",
+			"_aid": ["Northern-America", "021"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Northern America"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Canada, the United States, Bermuda, Greenland, and Saint Pierre and Miquelon. M.49 code 021."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Caribbean",
+			"_gid": "UN_M49_Caribbean",
+			"_aid": ["Caribbean", "029"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Caribbean"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the island nations and territories of the Caribbean Sea. M.49 code 029."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Central-America",
+			"_gid": "UN_M49_Central-America",
+			"_aid": ["Central-America", "013"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Central America"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of Central America from Mexico to Panama. M.49 code 013."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "South-America",
+			"_gid": "UN_M49_South-America",
+			"_aid": ["South-America", "005"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "South America"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of South America. M.49 code 005."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Central-Asia",
+			"_gid": "UN_M49_Central-Asia",
+			"_aid": ["Central-Asia", "143"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Central Asia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, and Uzbekistan. M.49 code 143."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Eastern-Asia",
+			"_gid": "UN_M49_Eastern-Asia",
+			"_aid": ["Eastern-Asia", "030"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Eastern Asia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering China, Japan, the Korean peninsula, Mongolia, and adjacent territories. M.49 code 030."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "South-eastern-Asia",
+			"_gid": "UN_M49_South-eastern-Asia",
+			"_aid": ["South-eastern-Asia", "035"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "South-eastern Asia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of Southeast Asia, including mainland and island nations. M.49 code 035."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Southern-Asia",
+			"_gid": "UN_M49_Southern-Asia",
+			"_aid": ["Southern-Asia", "034"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Southern Asia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of the Indian subcontinent and adjacent territories. M.49 code 034."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Western-Asia",
+			"_gid": "UN_M49_Western-Asia",
+			"_aid": ["Western-Asia", "145"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Western Asia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of the Middle East and the Caucasus. M.49 code 145."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Eastern-Europe",
+			"_gid": "UN_M49_Eastern-Europe",
+			"_aid": ["Eastern-Europe", "151"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Eastern Europe"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Belarus, Bulgaria, Czechia, Hungary, Moldova, Poland, Romania, Russia, Slovakia, and Ukraine. M.49 code 151."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Northern-Europe",
+			"_gid": "UN_M49_Northern-Europe",
+			"_aid": ["Northern-Europe", "154"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Northern Europe"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Denmark, Estonia, Finland, Iceland, Ireland, Latvia, Lithuania, Norway, Sweden, and the United Kingdom. M.49 code 154."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Southern-Europe",
+			"_gid": "UN_M49_Southern-Europe",
+			"_aid": ["Southern-Europe", "039"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Southern Europe"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering the countries of the Mediterranean basin in Europe, including Italy, Spain, Portugal, Greece, and the Balkan states. M.49 code 039."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Western-Europe",
+			"_gid": "UN_M49_Western-Europe",
+			"_aid": ["Western-Europe", "155"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Western Europe"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Austria, Belgium, France, Germany, Liechtenstein, Luxembourg, Monaco, Netherlands, and Switzerland. M.49 code 155."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Australia-and-New-Zealand",
+			"_gid": "UN_M49_Australia-and-New-Zealand",
+			"_aid": ["Australia-and-New-Zealand", "053"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Australia and New Zealand"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Australia, New Zealand, and their external territories. M.49 code 053."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Melanesia",
+			"_gid": "UN_M49_Melanesia",
+			"_aid": ["Melanesia", "054"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Melanesia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Fiji, New Caledonia, Papua New Guinea, Solomon Islands, and Vanuatu. M.49 code 054."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Micronesia",
+			"_gid": "UN_M49_Micronesia",
+			"_aid": ["Micronesia", "057"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Micronesia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering Guam, Kiribati, the Marshall Islands, the Federated States of Micronesia, Nauru, the Northern Mariana Islands, and Palau. M.49 code 057."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_M49",
+			"_lid": "Polynesia",
+			"_gid": "UN_M49_Polynesia",
+			"_aid": ["Polynesia", "061"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Polynesia"},
+			"_definition": {"ISO_639_3_eng": "UN M.49 sub-region covering American Samoa, the Cook Islands, French Polynesia, Niue, Pitcairn, Samoa, Tokelau, Tonga, Tuvalu, and Wallis and Futuna. M.49 code 061."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "UN_GA",
+			"_lid": "African-Group",
+			"_gid": "UN_GA_African-Group",
+			"_aid": ["African-Group"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "African Group"},
+			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group comprising member states from the African continent."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_GA",
+			"_lid": "Asia-Pacific-Group",
+			"_gid": "UN_GA_Asia-Pacific-Group",
+			"_aid": ["Asia-Pacific-Group"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Asia-Pacific Group"},
+			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group comprising member states from Asia and the Pacific region."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_GA",
+			"_lid": "Latin-American-Caribbean-Group",
+			"_gid": "UN_GA_Latin-American-Caribbean-Group",
+			"_aid": ["Latin-American-Caribbean-Group"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Latin-American-Caribbean Group"},
+			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group comprising member states from Latin America and the Caribbean."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_GA",
+			"_lid": "Western-European-Others-Group",
+			"_gid": "UN_GA_Western-European-Others-Group",
+			"_aid": ["Western-European-Others-Group"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Western-European-Others Group"},
+			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group comprising Western European member states and a small number of other countries including the United States, Canada, Australia, Israel, and New Zealand."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "UN_GA",
+			"_lid": "Eastern-European-Group",
+			"_gid": "UN_GA_Eastern-European-Group",
+			"_aid": ["Eastern-European-Group"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Eastern-European Group"},
+			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group comprising member states from Eastern Europe."}
+		}
+	}
+]

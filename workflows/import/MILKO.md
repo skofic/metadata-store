@@ -16,13 +16,14 @@ No database access is involved — outputs are plain JSON files intended to be l
 
 ```
 workflows/import/
-  utils.py            Shared utilities: PO parsing, term building, edge building, JSON writing
-  import_639.py       ISO 639 — Language codes (parts 1, 3, 5)
-  import_3166_1.py    ISO 3166-1 — Country codes
-  import_3166_2.py    ISO 3166-2 — Country subdivision codes
-  import_3166_3.py    ISO 3166-3 — Former country codes
-  import_4217.py      ISO 4217 — Currency codes
-  import_15924.py     ISO 15924 — Script codes
+  utils.py                Shared utilities: PO parsing, term building, edge building, JSON writing
+  import_639.py           ISO 639 — Language codes (parts 1, 3, 5)
+  import_3166_1.py        ISO 3166-1 — Country codes
+  import_3166_2.py        ISO 3166-2 — Country subdivision codes
+  import_3166_3.py        ISO 3166-3 — Former country codes
+  import_4217.py          ISO 4217 — Currency codes
+  import_15924.py         ISO 15924 — Script codes
+  add_wikidata_uris.py    Post-import: add Wikidata entity URIs to all ISO term files
 ```
 
 ### Vendor repositories (not tracked in git)
@@ -54,6 +55,24 @@ Recommended import order (later scripts may depend on earlier outputs):
 4. `import_3166_1.py` — current countries
 5. `import_3166_3.py` — former countries
 6. `import_3166_2.py` — subdivisions (references country terms from 3166-1)
+7. `add_wikidata_uris.py` — run once after all import scripts; adds `_uri` to every term
+
+### `add_wikidata_uris.py` — Wikidata URI Patch
+
+Run after all import scripts have generated their JSON files. Requires internet access (queries the Wikidata SPARQL endpoint):
+
+```bash
+# Patch all seven ISO files
+python workflows/import/add_wikidata_uris.py
+
+# Dry run — see what would change without writing
+python workflows/import/add_wikidata_uris.py --dry-run
+
+# Patch only specific standards (substring match, case-insensitive)
+python workflows/import/add_wikidata_uris.py --only 3166-1 --only 4217
+```
+
+The script adds `_uri` (a Wikidata entity URL, e.g. `https://www.wikidata.org/entity/Q38`) inside the `_code` section of each term. It also re-indents every patched file with tabs. Terms that already have `_uri` set are skipped. Wikidata SPARQL calls are separated by a 2-second pause to avoid rate limiting.
 
 ---
 
@@ -136,6 +155,10 @@ Used for: section-of edges, bridge-of edges, and ISO 3166-2 type-as-predicate ed
 
 ## ISO 639 (`import_639.py`) — Three-Part Structure
 
+**_name is not set** on any ISO 639 term — languages have no single canonical name across scripts and writing systems.
+
+`ISO_639_scope` and `ISO_639_type` in `_prop` are stored as **full enumeration element GIDs** (e.g. `ISO_639_scope_I`, `ISO_639_type_L`), not bare letter codes — values must be valid `_gid` references to terms in the `ISO_639_scope` and `ISO_639_type` controlled vocabularies defined in `data/ISO/639/namespace.json`.
+
 ### What it produces
 
 | File | Content |
@@ -191,14 +214,18 @@ Plus one global edge per run (placed first in the file):
 
 **_lid** = alpha-3 code (e.g. `ITA`). Alpha-2 and numeric go in `_aid`.  
 **Augmented** by mledoze/countries: additional translations keyed by ISO 639-1 alpha_2 code; flag emoji.  
-**_prop**: `ISO_3166_alpha2`, `ISO_3166_alpha3`, `ISO_3166_numeric`, optionally `ISO_3166_official-name`, `ISO_3166_common-name`.
+**_info._title**: multilingual common name (from iso-codes `.po` files + mledoze).  
+**_info._definition**: multilingual official name (e.g. "Italian Republic") when it differs from the common name. Translated via the same `.po` files — msgid is the English official name.  
+**_prop**: `ISO_3166_alpha2`, `ISO_3166_alpha3`, `ISO_3166_numeric` only.  
+**_name is not set** — countries have no single canonical name across languages.
 
 ---
 
 ## ISO 3166-3 (`import_3166_3.py`)
 
 **_lid** = alpha-4 code (e.g. `YUCS`, `CSHH`). Former countries only.  
-**_prop**: alpha2, alpha3, alpha4, optionally numeric and `ISO_3166_3_withdrawal`.
+**_name is not set** — same rationale as 3166-1.  
+**_prop**: `ISO_3166_alpha2`, `ISO_3166_alpha3`, `ISO_3166_3_alpha4`, optionally `ISO_3166_numeric` and `ISO_3166_3_withdrawal`.
 
 ---
 

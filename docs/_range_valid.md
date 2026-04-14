@@ -1,5 +1,4 @@
 # Valid numeric range
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_valid</code></p>
 
 > The companion property that defines hard numeric boundaries for a scalar value. Values outside the valid range are treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef: an object containing at least one of `_min-inclusive`, `_min-exclusive`, `_max-inclusive`, `_max-exclusive`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Numeric range](_range.md) |
+| [Namespace](_nid.md) | `_range` |
 | [Local identifier](_lid.md) | `valid` |
 | [Global identifier](_gid.md) | `_range_valid` |
 | [Official identifiers](_aid.md) | `valid` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "valid",
+  "_gid": "_range_valid",
+  "_aid": [
     "valid"
-  ],
-  "_gid" : "_range_valid",
-  "_lid" : "valid",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -83,17 +82,17 @@ A count that must be non-negative (lower bound only):
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Valid numeric range"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Valid numeric range"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -104,14 +103,14 @@ A count that must be non-negative (lower bound only):
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Numeric range](_range.md)
+**Shape:** [Type definition](_typedef.md): `_range`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_range"
+  "_typedef": "_range"
 }
 ```
 

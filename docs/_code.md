@@ -1,5 +1,4 @@
 # Identification section
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_code</code></p>
 
 > The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "code",
+  "_gid": "_code",
+  "_aid": [
     "code"
-  ],
-  "_gid" : "_code",
-  "_lid" : "code",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -47,7 +46,7 @@ The [local identifier](_lid.md) ([`_lid`](_lid.md)) is the only property the cur
 
 Terms with an empty-string namespace (`_nid: ""`) are core dictionary building blocks, recognisable by the leading underscore in their `_gid` — for example `_code`, `_info`, `_data`. Terms with no `_nid` property define top-level namespaces — for example `ISO`.
 
-The [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), and [`_emoji`](_emoji.md) are optional and serve matching and presentational purposes. [`_regexp`](_regexp.md) is also optional; when present on an enumeration root or section node it constrains the [`_lid`](_lid.md) format of the term's direct enumeration element children in the graph.
+The [all-identifiers](_aid.md) set (`_aid`) is computed automatically from `_lid` if not supplied and grows as aliases are added. The secondary properties [`_uri`](_uri.md), [`_pid`](_pid.md), [`_name`](_name.md), [`_symbol`](_symbol.md), and [`_emoji`](_emoji.md) are optional and serve identification and presentational purposes. [`_uri`](_uri.md) records a persistent external URI that links the term to the same concept in an authority file or knowledge graph such as Wikidata or GeoNames — an identity link, not a documentation reference. [`_regexp`](_regexp.md) is also optional; when present on an enumeration root or section node it constrains the [`_lid`](_lid.md) format of the term's direct enumeration element children in the graph.
 
 **[Examples](_examples.md)**
 
@@ -96,17 +95,17 @@ A top-level namespace term with no parent:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Identification section"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Identification section"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -117,64 +116,50 @@ A top-level namespace term with no parent:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md)
-[Local identifier](_lid.md) · [Global identifier](_gid.md) · [Official identifiers](_aid.md)
-
-**[Recommended properties](_recommended.md):** [Namespace](_nid.md) · [Provider identifiers](_pid.md) · [Name](_name.md) · [Symbol](_symbol.md) · [Regular expression](_regexp.md) · [Emoji](_emoji.md)
-
-**[Computed properties](_computed.md):** [Global identifier](_gid.md) · [Official identifiers](_aid.md)
-
-**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
-
-**[Immutable properties](_immutable.md):** [Namespace](_nid.md) · [Local identifier](_lid.md) · [Global identifier](_gid.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_computed" : [
-        "_gid",
-        "_aid"
+  "_object": {
+    "_closed": {
+      "_required": [
+        {
+          "_selectors": [
+            {
+              "_all": {}
+            }
+          ],
+          "_selection": [
+            "_lid",
+            "_gid",
+            "_aid"
+          ]
+        }
       ],
-      "_immutable" : [
+      "_recommended": [
         "_nid",
-        "_lid",
-        "_gid"
-      ],
-      "_locked" : [
-        "_id",
-        "_rev"
-      ],
-      "_recommended" : [
-        "_nid",
+        "_uri",
         "_pid",
         "_name",
         "_symbol",
         "_regexp",
         "_emoji"
       ],
-      "_required" : [
-        {
-          "_selection" : [
-            "_lid",
-            "_gid",
-            "_aid"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-
-              }
-            }
-          ]
-        }
+      "_computed": [
+        "_gid",
+        "_aid"
+      ],
+      "_immutable": [
+        "_nid",
+        "_lid",
+        "_gid"
+      ],
+      "_locked": [
+        "_id",
+        "_rev"
       ]
     }
   }

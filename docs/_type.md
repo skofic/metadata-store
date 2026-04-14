@@ -19,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "type",
+  "_gid": "_type",
+  "_aid": [
     "type"
-  ],
-  "_gid" : "_type",
-  "_lid" : "type",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -49,14 +49,14 @@ As a namespace root, `_type` itself carries no data section.
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Type"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Type"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

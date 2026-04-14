@@ -1,5 +1,4 @@
 # Usage
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_usage</code></p>
 
 > Explains how and why the value represented by the term is used in a dataset or application. Expressed as formatted text.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "usage",
+  "_gid": "_usage",
+  "_aid": [
     "usage"
-  ],
-  "_gid" : "_usage",
-  "_lid" : "usage",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -62,17 +61,17 @@ A usage note for a body weight descriptor:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Usage"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Usage"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -83,14 +82,14 @@ A usage note for a body weight descriptor:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Multilingual formatted text](_info_text.md)
+**Shape:** [Type definition](_typedef.md): `_info_text`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_info_text"
+  "_typedef": "_info_text"
 }
 ```
 

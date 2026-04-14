@@ -1,5 +1,4 @@
 # Type definition
-<p><a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_role_typedef</code></p>
 
 > A term role indicating that the term is intended to serve as a reusable type definition referenced via the `_typedef` mechanism. User-assigned.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Term role](_term_role.md) |
+| [Namespace](_nid.md) | `_term_role` |
 | [Local identifier](_lid.md) | `typedef` |
 | [Global identifier](_gid.md) | `_term_role_typedef` |
 | [Official identifiers](_aid.md) | `typedef` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_term_role",
+  "_lid": "typedef",
+  "_gid": "_term_role_typedef",
+  "_aid": [
     "typedef"
-  ],
-  "_gid" : "_term_role_typedef",
-  "_lid" : "typedef",
-  "_nid" : "_term_role"
+  ]
 }
 ```
 
@@ -52,14 +51,14 @@ The three built-in typedef terms — [`_type_scalar`](_type_scalar.md), [`_type_
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Type definition"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Type definition"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

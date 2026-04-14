@@ -1,5 +1,4 @@
 # Data section
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_data</code></p>
 
 > The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "data",
+  "_gid": "_data",
+  "_aid": [
     "data"
-  ],
-  "_gid" : "_data",
-  "_lid" : "data",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -200,17 +199,17 @@ A typedef reference — delegates to the built-in scalar type list:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Data section"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Data section"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -221,23 +220,26 @@ A typedef reference — delegates to the built-in scalar type list:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
-[Scalar](_scalar.md) · [Object](_object.md) · [Dictionary](_dict.md) · [Tuple](_tuple.md) · [Array](_array.md) · [Set](_set.md) · [Nested array](_nested.md) · [Type definition](_typedef.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {
+                "_min-items": 1,
+                "_max-items": 1
+              }
+            }
+          ],
+          "_selection": [
             "_scalar",
             "_object",
             "_dict",
@@ -246,14 +248,6 @@ A typedef reference — delegates to the built-in scalar type list:
             "_set",
             "_nested",
             "_typedef"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-                "_max-items" : 1,
-                "_min-items" : 1
-              }
-            }
           ]
         }
       ]

@@ -1,475 +1,523 @@
 [
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "info",
-            "_gid": "_info",
-            "_aid": [
-                "info"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Information section"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers."
-            },
-            "_description": {
-                "ISO_639_3_eng": "The `_info` section is present on most terms and carries the documentation that makes a term meaningful to human readers — what it means, how it is used, and who curates it. It is absent only on alias terms, which carry a [`_code`](_code.md) section alone and delegate all content to the canonical term they alias.\n\nAll `_info` properties share the same multilingual structure: each property's value is a dictionary mapping ISO 639-3 language [`_gid`](_gid.md) values to text strings. Two properties are required: [`_title`](_title.md) and [`_definition`](_definition.md). [`_description`](_description.md) is strongly recommended for most terms. The remaining properties are optional.\n\nThe two underlying dictionary types are [`_info_string`](_info_string.md) for plain text and [`_info_text`](_info_text.md) for formatted text. Required properties use plain text; descriptive and documentary properties use formatted text."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A minimal `_info` section with required properties only:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The total mass of a person's body measured at a specific point in time.\"\n\t\t}\n\t}\n}\n```\n\nA fuller `_info` section with multilingual title and formatted description:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight\",\n\t\t\t\"ISO_639_3_ita\": \"Peso corporeo\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The total mass of a person's body. Expressed in kilograms.\"\n\t\t},\n\t\t\"_description\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight is recorded to two decimal places in kilograms...\"\n\t\t}\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_object": {
-                "_closed": {
-                    "_required": [
-                        {
-                            "_selectors": [
-                                {
-                                    "_all": {}
-                                }
-                            ],
-                            "_selection": [
-                                "_title",
-                                "_definition"
-                            ]
-                        }
-                    ],
-                    "_recommended": [
-                        "_description",
-                        "_examples",
-                        "_methods",
-                        "_usage",
-                        "_citation",
-                        "_provider",
-                        "_url",
-                        "_notes"
-                    ]
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "title",
-            "_gid": "_title",
-            "_aid": [
-                "title"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Title"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A short label or name for the term. Expressed as plain unformatted text. Typically one to five words, with no punctuation."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_title` is the concise label by which a term is identified in user interfaces, lists, and headings. It is expressed as an [`_info_string`](_info_string.md) — a multilingual plain-text dictionary. Markdown formatting, HTML, links, and terminal punctuation should not appear in a title.\n\nThe title should be descriptive enough to identify the term in a list but short enough to serve as a label. For namespace or enumeration root terms, the title is typically a noun or noun phrase. For descriptor terms, it is the name of the field or variable the term represents."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A multilingual title for a body weight descriptor:\n\n```json\n{\n\t\"_title\": {\n\t\t\"ISO_639_3_eng\": \"Body weight\",\n\t\t\"ISO_639_3_ita\": \"Peso corporeo\",\n\t\t\"ISO_639_3_fra\": \"Poids corporel\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_string"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "definition",
-            "_gid": "_definition",
-            "_aid": [
-                "definition"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Definition"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A self-contained definition of the term in plain text. Sufficient for an informed reader to understand the term without additional context. Typically two to four sentences."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_definition` provides a compact, authoritative definition of what the term represents. It is expressed as an [`_info_string`](_info_string.md) — a multilingual plain-text dictionary. Unlike [`_description`](_description.md), which may include formatting and links, `_definition` is always plain text; backtick formatting for identifiers is the only exception.\n\nA good definition names the entity type, states the key attribute or constraint, and distinguishes the term from closely related terms. It should stand alone without requiring the reader to consult other properties."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A definition for a body weight descriptor:\n\n```json\n{\n\t\"_definition\": {\n\t\t\"ISO_639_3_eng\": \"The total mass of a person's body measured at a specific point in time. Expressed in kilograms. Used to monitor health status and calculate body mass index.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_string"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "description",
-            "_gid": "_description",
-            "_aid": [
-                "description"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Description"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A full description of the term aimed at a general audience. Expressed as formatted text. Covers what the term is, how it is used, and why it exists. May include links to other terms, external references, and code blocks."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_description` is the primary documentation field for a term. It is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. Unlike [`_definition`](_definition.md), which is plain text and compact, `_description` may span multiple paragraphs and include lists, tables, fenced code blocks, and cross-reference links to other term cards.\n\nThe target audience is an informed non-expert: someone familiar with the domain but not necessarily with the design decisions behind the dictionary. A good description explains what the term is, how it is used in practice, and why the design choices were made."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A description using Markdown formatting and a link to another term card:\n\n```json\n{\n\t\"_description\": {\n\t\t\"ISO_639_3_eng\": \"Body weight is recorded in kilograms to two decimal places. See [`_unit_weight_kg`](_unit_weight_kg.md) for the unit definition.\\n\\nMeasurement must follow the protocol defined in [`_methods`](_methods.md).\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "examples",
-            "_gid": "_examples",
-            "_aid": [
-                "examples"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Examples"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Usage examples for the term. Expressed as formatted text. Typically includes JSON code blocks, sample values, or worked examples illustrating how the term is used in practice."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_examples` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It complements [`_description`](_description.md) by showing concrete instances rather than abstract explanations.\n\nFor descriptor terms, examples typically show the term used as a JSON property inside a containing structure. For enumeration terms, examples show the term as a valid value within a controlled vocabulary. Code blocks use fenced Markdown syntax with a language tag such as ` ```json ` or ` ```aql `."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "An `_examples` entry showing a JSON usage example:\n\n```json\n{\n\t\"_examples\": {\n\t\t\"ISO_639_3_eng\": \"A floating-point weight in kilograms:\\n\\n```json\\n{\\n\\t\\\"_data\\\": {\\n\\t\\t\\\"_scalar\\\": {\\n\\t\\t\\t\\\"_number_float\\\": {\\n\\t\\t\\t\\t\\\"_unit\\\": \\\"_unit_weight_kg\\\"\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n}\\n```\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "methods",
-            "_gid": "_methods",
-            "_aid": [
-                "methods"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Methods"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Documentation of the measurement conditions, methods, and protocols required to produce a valid value for the term. Expressed as formatted text."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_methods` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It is used for descriptor terms that represent measured or observed quantities where the value is only meaningful in the context of a specific measurement protocol — for example, body weight measured on an empty stomach, or blood pressure recorded after five minutes of rest.\n\nWhen measurement conditions affect the comparability of values across datasets, `_methods` should be provided so that data consumers understand under what circumstances the value was obtained."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A methods entry for a body weight measurement:\n\n```json\n{\n\t\"_methods\": {\n\t\t\"ISO_639_3_eng\": \"Measure in the morning after an overnight fast, with the subject standing upright on a calibrated scale, wearing minimal clothing. Record to the nearest 0.1 kg.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "usage",
-            "_gid": "_usage",
-            "_aid": [
-                "usage"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Usage"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Explains how and why the value represented by the term is used in a dataset or application. Expressed as formatted text."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_usage` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It documents the intended application context: which datasets use the term, which workflows depend on it, and any conventions around when to include or omit it.\n\n`_usage` differs from [`_description`](_description.md) in focus: `_description` explains what the term *is*; `_usage` explains how it is *applied* in practice."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A usage note for a body weight descriptor:\n\n```json\n{\n\t\"_usage\": {\n\t\t\"ISO_639_3_eng\": \"Used in nutritional surveys and clinical records to track changes over time. Always pair with a measurement date descriptor. Do not use for cargo or object weight — use the generic weight descriptor instead.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "citation",
-            "_gid": "_citation",
-            "_aid": [
-                "citation"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Citations"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "One or more citations required when using or referencing the term. Expressed as formatted text. Each element is a bibliographic reference or acknowledgement that data users must include when publishing datasets that use the term."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_citation` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It is used when the term originates from a published standard, scientific paper, or data resource that requires attribution.\n\nFor terms derived from ISO standards or other normative sources, the citation identifies the source document. For terms derived from scientific literature, the citation is the primary reference for the underlying concept or measurement."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A citation for a term derived from an ISO standard:\n\n```json\n{\n\t\"_citation\": {\n\t\t\"ISO_639_3_eng\": \"ISO 3166-1:2020 — Codes for the representation of names of countries and their subdivisions. Geneva: International Organization for Standardization.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "provider",
-            "_gid": "_provider",
-            "_aid": [
-                "provider"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Providers"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Contact information for the metadata curators responsible for the term. Expressed as formatted text. Identifies who to contact for questions, corrections, or contributions."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_provider` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It records the individuals or organisations that manage the term — who created it, who maintains it, and how to reach them.\n\nFor terms maintained by international standards bodies, the provider is the standards organisation. For terms created by data projects, the provider is the project or research group responsible."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A provider entry for a term maintained by a research group:\n\n```json\n{\n\t\"_provider\": {\n\t\t\"ISO_639_3_eng\": \"Biodiversity Data Institute — metadata@bdi.example.org\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "url",
-            "_gid": "_url",
-            "_aid": [
-                "url"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "URLs"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Internet references relevant to the term. Expressed as formatted text. Each entry is a URL or a Markdown-linked reference pointing to an authoritative external resource."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_url` is expressed as an [`_info_text`](_info_text.md) — a multilingual formatted text dictionary. It contains links to external resources that provide additional context for the term: the homepage of a standard, an online specification, a reference database entry, or related documentation.\n\nLinks should be stable and authoritative. Prefer the canonical URL of the issuing body over secondary sources."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A URL entry linking to an ISO standard page:\n\n```json\n{\n\t\"_url\": {\n\t\t\"ISO_639_3_eng\": \"[ISO 639-3](https://iso639-3.sil.org/) — Codes for the representation of names of languages.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "notes",
-            "_gid": "_notes",
-            "_aid": [
-                "notes"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Notes"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "Internal notes, comments, and curator feedback about the term. Expressed as formatted text. Intended for dictionary maintainers, not end users."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_notes` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It captures working notes useful to the curation team but not part of the formal term documentation: known issues, pending decisions, historical context, or flags for review.\n\nContents of `_notes` should not be surfaced to end users in production interfaces."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A note flagging a pending design decision:\n\n```json\n{\n\t\"_notes\": {\n\t\t\"ISO_639_3_eng\": \"The unit convention for this term is under review. Currently kilograms; may be extended to support pounds in a future revision.\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_info_text"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "_info",
-            "_lid": "string",
-            "_gid": "_info_string",
-            "_aid": [
-                "string"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Multilingual plain text"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A multilingual dictionary mapping ISO 639-3 language identifiers to plain text strings. The data type of `_title` and `_definition`."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_info_string` defines the structure shared by all plain-text `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are plain text strings — no Markdown, no HTML, no links.\n\nIn practice, only [`_title`](_title.md) and [`_definition`](_definition.md) use this type. All other `_info` properties use [`_info_text`](_info_text.md), which allows formatted content."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A multilingual plain-text value — the title of a term in three languages:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight\",\n\t\"ISO_639_3_ita\": \"Peso corporeo\",\n\t\"ISO_639_3_fra\": \"Poids corporel\"\n}\n```"
-            }
-        },
-        "_data": {
-            "_dict": {
-                "_dict_key": {
-                    "_enum": {
-                        "_enums": [
-                            "ISO_639_3"
-                        ]
-                    }
-                },
-                "_dict_value": {
-                    "_scalar": {
-                        "_text": {}
-                    }
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_typedef",
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "_info",
-            "_lid": "text",
-            "_gid": "_info_text",
-            "_aid": [
-                "text"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Multilingual formatted text"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A multilingual dictionary mapping ISO 639-3 language identifiers to Markdown-formatted text strings. The data type of all `_info` properties except `_title` and `_definition`."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_info_text` defines the structure shared by all formatted `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are Markdown strings — prose, lists, tables, fenced code blocks, and links to other terms or external references are all valid.\n\nAll `_info` properties except [`_title`](_title.md) and [`_definition`](_definition.md) use this type: [`_description`](_description.md), [`_examples`](_examples.md), [`_methods`](_methods.md), [`_usage`](_usage.md), [`_citation`](_citation.md), [`_provider`](_provider.md), [`_url`](_url.md), and [`_notes`](_notes.md)."
-            },
-            "_notes": {
-                "ISO_639_3_eng": "Renamed from `_info_string_formatted` in version 3."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A multilingual formatted text value — a description containing a Markdown link:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight is recorded in kilograms to two decimal places. See [`_unit_weight_kg`](_unit_weight_kg.md) for the unit definition.\"\n}\n```"
-            }
-        },
-        "_data": {
-            "_dict": {
-                "_dict_key": {
-                    "_enum": {
-                        "_enums": [
-                            "ISO_639_3"
-                        ]
-                    }
-                },
-                "_dict_value": {
-                    "_scalar": {
-                        "_text_Markdown": {}
-                    }
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_typedef",
-                "_term_role_descriptor"
-            ]
-        }
-    }
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "info",
+			"_gid": "_info",
+			"_aid": [
+				"info"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Information section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The `_info` section is present on most terms and carries the documentation that makes a term meaningful to human readers — what it means, how it is used, and who curates it. It is absent only on alias terms, which carry a [`_code`](_code.md) section alone and delegate all content to the canonical term they alias.\n\nAll `_info` properties share the same multilingual structure: each property's value is a dictionary mapping ISO 639-3 language [`_gid`](_gid.md) values to text strings. Two properties are required: [`_title`](_title.md) and [`_definition`](_definition.md). [`_description`](_description.md) is strongly recommended for most terms. The remaining properties are optional.\n\nThe two underlying dictionary types are [`_info_string`](_info_string.md) for plain text and [`_info_text`](_info_text.md) for formatted text. Required properties use plain text; descriptive and documentary properties use formatted text."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A minimal `_info` section with required properties only:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The total mass of a person's body measured at a specific point in time.\"\n\t\t}\n\t}\n}\n```\n\nA fuller `_info` section with multilingual title and formatted description:\n\n```json\n{\n\t\"_info\": {\n\t\t\"_title\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight\",\n\t\t\t\"ISO_639_3_ita\": \"Peso corporeo\"\n\t\t},\n\t\t\"_definition\": {\n\t\t\t\"ISO_639_3_eng\": \"The total mass of a person's body. Expressed in kilograms.\"\n\t\t},\n\t\t\"_description\": {\n\t\t\t\"ISO_639_3_eng\": \"Body weight is recorded to two decimal places in kilograms...\"\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {}
+								}
+							],
+							"_selection": [
+								"_title",
+								"_definition"
+							]
+						}
+					],
+					"_recommended": [
+						"_description",
+						"_examples",
+						"_methods",
+						"_usage",
+						"_citation",
+						"_provider",
+						"_url",
+						"_notes"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "title",
+			"_gid": "_title",
+			"_aid": [
+				"title"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Title"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A short label or name for the term. Expressed as plain unformatted text. Typically one to five words, with no punctuation."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_title` is the concise label by which a term is identified in user interfaces, lists, and headings. It is expressed as an [`_info_string`](_info_string.md) — a multilingual plain-text dictionary. Markdown formatting, HTML, links, and terminal punctuation should not appear in a title.\n\nThe title should be descriptive enough to identify the term in a list but short enough to serve as a label. For namespace or enumeration root terms, the title is typically a noun or noun phrase. For descriptor terms, it is the name of the field or variable the term represents."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A multilingual title for a body weight descriptor:\n\n```json\n{\n\t\"_title\": {\n\t\t\"ISO_639_3_eng\": \"Body weight\",\n\t\t\"ISO_639_3_ita\": \"Peso corporeo\",\n\t\t\"ISO_639_3_fra\": \"Poids corporel\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_string"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "definition",
+			"_gid": "_definition",
+			"_aid": [
+				"definition"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Definition"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A self-contained definition of the term in plain text. Sufficient for an informed reader to understand the term without additional context. Typically two to four sentences."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_definition` provides a compact, authoritative definition of what the term represents. It is expressed as an [`_info_string`](_info_string.md) — a multilingual plain-text dictionary. Unlike [`_description`](_description.md), which may include formatting and links, `_definition` is always plain text; backtick formatting for identifiers is the only exception.\n\nA good definition names the entity type, states the key attribute or constraint, and distinguishes the term from closely related terms. It should stand alone without requiring the reader to consult other properties."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A definition for a body weight descriptor:\n\n```json\n{\n\t\"_definition\": {\n\t\t\"ISO_639_3_eng\": \"The total mass of a person's body measured at a specific point in time. Expressed in kilograms. Used to monitor health status and calculate body mass index.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_string"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "description",
+			"_gid": "_description",
+			"_aid": [
+				"description"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Description"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A full description of the term aimed at a general audience. Expressed as formatted text. Covers what the term is, how it is used, and why it exists. May include links to other terms, external references, and code blocks."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_description` is the primary documentation field for a term. It is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. Unlike [`_definition`](_definition.md), which is plain text and compact, `_description` may span multiple paragraphs and include lists, tables, fenced code blocks, and cross-reference links to other term cards.\n\nThe target audience is an informed non-expert: someone familiar with the domain but not necessarily with the design decisions behind the dictionary. A good description explains what the term is, how it is used in practice, and why the design choices were made."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A description using Markdown formatting and a link to another term card:\n\n```json\n{\n\t\"_description\": {\n\t\t\"ISO_639_3_eng\": \"Body weight is recorded in kilograms to two decimal places. See [`_unit_weight_kg`](_unit_weight_kg.md) for the unit definition.\\n\\nMeasurement must follow the protocol defined in [`_methods`](_methods.md).\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "examples",
+			"_gid": "_examples",
+			"_aid": [
+				"examples"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Examples"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Usage examples for the term. Expressed as formatted text. Typically includes JSON code blocks, sample values, or worked examples illustrating how the term is used in practice."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_examples` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It complements [`_description`](_description.md) by showing concrete instances rather than abstract explanations.\n\nFor descriptor terms, examples typically show the term used as a JSON property inside a containing structure. For enumeration terms, examples show the term as a valid value within a controlled vocabulary. Code blocks use fenced Markdown syntax with a language tag such as ` ```json ` or ` ```aql `."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "An `_examples` entry showing a JSON usage example:\n\n```json\n{\n\t\"_examples\": {\n\t\t\"ISO_639_3_eng\": \"A floating-point weight in kilograms:\\n\\n```json\\n{\\n\\t\\\"_data\\\": {\\n\\t\\t\\\"_scalar\\\": {\\n\\t\\t\\t\\\"_number_float\\\": {\\n\\t\\t\\t\\t\\\"_unit\\\": \\\"_unit_weight_kg\\\"\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n}\\n```\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "methods",
+			"_gid": "_methods",
+			"_aid": [
+				"methods"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Methods"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Documentation of the measurement conditions, methods, and protocols required to produce a valid value for the term. Expressed as formatted text."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_methods` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It is used for descriptor terms that represent measured or observed quantities where the value is only meaningful in the context of a specific measurement protocol — for example, body weight measured on an empty stomach, or blood pressure recorded after five minutes of rest.\n\nWhen measurement conditions affect the comparability of values across datasets, `_methods` should be provided so that data consumers understand under what circumstances the value was obtained."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A methods entry for a body weight measurement:\n\n```json\n{\n\t\"_methods\": {\n\t\t\"ISO_639_3_eng\": \"Measure in the morning after an overnight fast, with the subject standing upright on a calibrated scale, wearing minimal clothing. Record to the nearest 0.1 kg.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "usage",
+			"_gid": "_usage",
+			"_aid": [
+				"usage"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Usage"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Explains how and why the value represented by the term is used in a dataset or application. Expressed as formatted text."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_usage` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It documents the intended application context: which datasets use the term, which workflows depend on it, and any conventions around when to include or omit it.\n\n`_usage` differs from [`_description`](_description.md) in focus: `_description` explains what the term *is*; `_usage` explains how it is *applied* in practice."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A usage note for a body weight descriptor:\n\n```json\n{\n\t\"_usage\": {\n\t\t\"ISO_639_3_eng\": \"Used in nutritional surveys and clinical records to track changes over time. Always pair with a measurement date descriptor. Do not use for cargo or object weight — use the generic weight descriptor instead.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "citation",
+			"_gid": "_citation",
+			"_aid": [
+				"citation"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Citations"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "One or more citations required when using or referencing the term. Expressed as formatted text. Each element is a bibliographic reference or acknowledgement that data users must include when publishing datasets that use the term."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_citation` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It is used when the term originates from a published standard, scientific paper, or data resource that requires attribution.\n\nFor terms derived from ISO standards or other normative sources, the citation identifies the source document. For terms derived from scientific literature, the citation is the primary reference for the underlying concept or measurement."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A citation for a term derived from an ISO standard:\n\n```json\n{\n\t\"_citation\": {\n\t\t\"ISO_639_3_eng\": \"ISO 3166-1:2020 — Codes for the representation of names of countries and their subdivisions. Geneva: International Organization for Standardization.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "provider",
+			"_gid": "_provider",
+			"_aid": [
+				"provider"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Providers"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Contact information for the metadata curators responsible for the term. Expressed as formatted text. Identifies who to contact for questions, corrections, or contributions."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_provider` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It records the individuals or organisations that manage the term — who created it, who maintains it, and how to reach them.\n\nFor terms maintained by international standards bodies, the provider is the standards organisation. For terms created by data projects, the provider is the project or research group responsible."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A provider entry for a term maintained by a research group:\n\n```json\n{\n\t\"_provider\": {\n\t\t\"ISO_639_3_eng\": \"Biodiversity Data Institute — metadata@bdi.example.org\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "url",
+			"_gid": "_url",
+			"_aid": [
+				"url"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "URLs"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Internet references relevant to the term. Expressed as formatted text. Each entry is a URL or a Markdown-linked reference pointing to an authoritative external resource."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_url` is expressed as an [`_info_text`](_info_text.md) — a multilingual formatted text dictionary. It contains links to external resources that provide additional context for the term: the homepage of a standard, an online specification, a reference database entry, or related documentation.\n\nLinks should be stable and authoritative. Prefer the canonical URL of the issuing body over secondary sources."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A URL entry linking to an ISO standard page:\n\n```json\n{\n\t\"_url\": {\n\t\t\"ISO_639_3_eng\": \"[ISO 639-3](https://iso639-3.sil.org/) — Codes for the representation of names of languages.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "notes",
+			"_gid": "_notes",
+			"_aid": [
+				"notes"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Notes"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Internal notes, comments, and curator feedback about the term. Expressed as formatted text. Intended for dictionary maintainers, not end users."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_notes` is expressed as an [`_info_text`](_info_text.md) — a multilingual [Markdown](_text_Markdown.md) or [HTML](_text_HTML.md) formatted text dictionary. It captures working notes useful to the curation team but not part of the formal term documentation: known issues, pending decisions, historical context, or flags for review.\n\nContents of `_notes` should not be surfaced to end users in production interfaces."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A note flagging a pending design decision:\n\n```json\n{\n\t\"_notes\": {\n\t\t\"ISO_639_3_eng\": \"The unit convention for this term is under review. Currently kilograms; may be extended to support pounds in a future revision.\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_info_text"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_info",
+			"_lid": "string",
+			"_gid": "_info_string",
+			"_aid": [
+				"string"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multilingual plain text"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A multilingual dictionary mapping ISO 639-3 language identifiers to plain text strings. The data type of `_title` and `_definition`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_info_string` defines the structure shared by all plain-text `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are plain text strings — no Markdown, no HTML, no links.\n\nIn practice, only [`_title`](_title.md) and [`_definition`](_definition.md) use this type. All other `_info` properties use [`_info_text`](_info_text.md), which allows formatted content."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A multilingual plain-text value — the title of a term in three languages:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight\",\n\t\"ISO_639_3_ita\": \"Peso corporeo\",\n\t\"ISO_639_3_fra\": \"Poids corporel\"\n}\n```"
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_enum": {
+						"_enums": [
+							"ISO_639_3"
+						]
+					}
+				},
+				"_dict_value": {
+					"_scalar": {
+						"_text": {}
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_typedef",
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_info",
+			"_lid": "text",
+			"_gid": "_info_text",
+			"_aid": [
+				"text"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multilingual formatted text"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A multilingual dictionary mapping ISO 639-3 language identifiers to Markdown-formatted text strings. The data type of all `_info` properties except `_title` and `_definition`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_info_text` defines the structure shared by all formatted `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are Markdown strings — prose, lists, tables, fenced code blocks, and links to other terms or external references are all valid.\n\nAll `_info` properties except [`_title`](_title.md) and [`_definition`](_definition.md) use this type: [`_description`](_description.md), [`_examples`](_examples.md), [`_methods`](_methods.md), [`_usage`](_usage.md), [`_citation`](_citation.md), [`_provider`](_provider.md), [`_url`](_url.md), and [`_notes`](_notes.md)."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Renamed from `_info_string_formatted` in version 3."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A multilingual formatted text value — a description containing a Markdown link:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight is recorded in kilograms to two decimal places. See [`_unit_weight_kg`](_unit_weight_kg.md) for the unit definition.\"\n}\n```"
+			}
+		},
+		"_data": {
+			"_dict": {
+				"_dict_key": {
+					"_enum": {
+						"_enums": [
+							"ISO_639_3"
+						]
+					}
+				},
+				"_dict_value": {
+					"_scalar": {
+						"_text_Markdown": {}
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_typedef",
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_info",
+			"_lid": "strings",
+			"_gid": "_info_strings",
+			"_aid": [
+				"strings"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multilingual plain text strings"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An array of multilingual plain-text string dictionaries. Each element maps ISO 639-3 language identifiers to plain-text strings, allowing a single field to carry multiple named values each expressed in multiple languages."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_info_strings` is the data type for fields that need to store **multiple values**, each of which can be expressed in multiple languages. It differs from [`_info_string`](_info_string.md), which stores a single multilingual string, by being an **array** of such strings.\n\nThe canonical use case is national capitals: a country may have more than one capital (e.g. South Africa has Pretoria, Cape Town, and Bloemfontein), and each capital name should be available in multiple languages.\n\nEach element of the array is a dictionary whose keys are ISO 639-3 language `_gid` values and whose values are plain-text strings — the same structure as [`_info_string`](_info_string.md). The array order is significant: elements should be listed in the order they are conventionally named (e.g. primary capital first).\n\nDescriptors whose data type is `_info_strings` reference it via `_data._typedef`:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_info_strings\"\n\t}\n}\n```"
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A country with two capitals, each named in English and French:\n\n```json\n[\n\t{\"ISO_639_3_eng\": \"Pretoria\", \"ISO_639_3_fra\": \"Pretoria\"},\n\t{\"ISO_639_3_eng\": \"Cape Town\", \"ISO_639_3_fra\": \"Le Cap\"},\n\t{\"ISO_639_3_eng\": \"Bloemfontein\", \"ISO_639_3_fra\": \"Bloemfontein\"}\n]\n```\n\nA country with a single capital:\n\n```json\n[\n\t{\"ISO_639_3_eng\": \"Rome\", \"ISO_639_3_ita\": \"Roma\", \"ISO_639_3_fra\": \"Rome\"}\n]\n```"
+			}
+		},
+		"_data": {
+			"_array": {
+				"_dict": {
+					"_dict_key": {
+						"_enum": {
+							"_enums": [
+								"ISO_639_3"
+							]
+						}
+					},
+					"_dict_value": {
+						"_scalar": {
+							"_text": {}
+						}
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_typedef",
+				"_term_role_descriptor"
+			]
+		}
+	}
 ]

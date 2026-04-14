@@ -1,5 +1,4 @@
 # Provider identifiers
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_pid</code></p>
 
 > The set of identifiers assigned to this term by data providers or metadata curators. Used to match variable names in incoming datasets to known dictionary terms.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "pid",
+  "_gid": "_pid",
+  "_aid": [
     "pid"
-  ],
-  "_gid" : "_pid",
-  "_lid" : "pid",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -66,17 +65,17 @@ A dataset from a legacy system uses `I` as its internal country code for Italy (
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Provider identifiers"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Provider identifiers"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -87,17 +86,15 @@ A dataset from a legacy system uses `I` as its internal country code for Italy (
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) — [String](_string.md)
+**Shape:** [Set](_set.md) of [Generic string](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set" : {
-    "_string" : {
-
-    }
+  "_set": {
+    "_string": {}
   }
 }
 ```

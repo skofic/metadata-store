@@ -1,5 +1,4 @@
 # Normal string range
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_normal_string</code></p>
 
 > The companion property that defines the expected lexicographic boundaries for a string scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_string`, `_string_HEX`, and date/time string types. Its shape follows the `_range_string` typedef.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Normal numeric range](_range_normal.md) |
+| [Namespace](_nid.md) | `_range_normal` |
 | [Local identifier](_lid.md) | `string` |
 | [Global identifier](_gid.md) | `_range_normal_string` |
 | [Official identifiers](_aid.md) | `string` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range_normal",
+  "_lid": "string",
+  "_gid": "_range_normal_string",
+  "_aid": [
     "string"
-  ],
-  "_gid" : "_range_normal_string",
-  "_lid" : "string",
-  "_nid" : "_range_normal"
+  ]
 }
 ```
 
@@ -69,17 +68,17 @@ A date field where dates before 2000 are valid but unusual:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Normal string range"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Normal string range"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -90,14 +89,14 @@ A date field where dates before 2000 are valid but unusual:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [String range](_range_string.md)
+**Shape:** [Type definition](_typedef.md): `_range_string`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_range_string"
+  "_typedef": "_range_string"
 }
 ```
 

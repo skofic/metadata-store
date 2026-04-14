@@ -1,5 +1,4 @@
 # Range minimum exclusive
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_min-exclusive</code></p>
 
 > The strict lower bound property of a numeric range object. The validated value must be strictly greater than this number (value > bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_min-inclusive`.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "min-exclusive",
+  "_gid": "_min-exclusive",
+  "_aid": [
     "min-exclusive"
-  ],
-  "_gid" : "_min-exclusive",
-  "_lid" : "min-exclusive",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ A value that must be strictly positive (greater than zero):
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Range minimum exclusive"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Range minimum exclusive"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,17 +80,15 @@ A value that must be strictly positive (greater than zero):
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Number](_number.md)
+**Shape:** [Scalar](_scalar.md) — [Floating-point or integer number](_number.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_number" : {
-
-    }
+  "_scalar": {
+    "_number": {}
   }
 }
 ```

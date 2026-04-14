@@ -1,5 +1,4 @@
 # Immutable properties
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_immutable</code></p>
 
 > A set of descriptor global identifiers listing properties that cannot be modified once their initial value has been set, whether by the user or by the system. Any subsequent write that changes an immutable property's value is rejected.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "immutable",
+  "_gid": "_immutable",
+  "_aid": [
     "immutable"
-  ],
-  "_gid" : "_immutable",
-  "_lid" : "immutable",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -78,17 +77,17 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Immutable properties"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Immutable properties"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -99,17 +98,15 @@ The [`_code`](_code.md) section marks `_lid` and `_gid` as immutable:
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) — [Descriptor term document key](_term_key_descriptor.md)
+**Shape:** [Set](_set.md) of [Descriptor term key](_term_key_descriptor.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set" : {
-    "_term_key_descriptor" : {
-
-    }
+  "_set": {
+    "_term_key_descriptor": {}
   }
 }
 ```

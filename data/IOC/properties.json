@@ -1,0 +1,20 @@
+[
+	{
+		"_code": {
+			"_nid": "IOC",
+			"_lid": "code",
+			"_gid": "IOC_code",
+			"_aid": ["code"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "IOC code"},
+			"_definition": {"ISO_639_3_eng": "The three-letter code assigned by the International Olympic Committee to identify a National Olympic Committee in competition."},
+			"_description": {"ISO_639_3_eng": "IOC codes are uppercase three-letter strings. They resemble but are not identical to ISO 3166-1 alpha-3 codes — several countries use different codes in the two systems. Not every sovereign country has an IOC code; conversely, some dependent territories have their own National Olympic Committee and therefore their own code."}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		}
+	}
+]

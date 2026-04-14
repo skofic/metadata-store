@@ -1,5 +1,4 @@
 # Required by
-<p><a href="_term_role_predicate.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Predicate</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_required-by</code></p>
 
 > The source variable must be present in a dataset record whenever the destination variable is present. A dataset record containing `_to` but lacking `_from` must be rejected.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Namespace](_nid.md) | `_predicate` |
 | [Local identifier](_lid.md) | `required-by` |
 | [Global identifier](_gid.md) | `_predicate_required-by` |
 | [Official identifiers](_aid.md) | `required-by` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_predicate",
+  "_lid": "required-by",
+  "_gid": "_predicate_required-by",
+  "_aid": [
     "required-by"
-  ],
-  "_gid" : "_predicate_required-by",
-  "_lid" : "required-by",
-  "_nid" : "_predicate"
+  ]
 }
 ```
 
@@ -52,14 +51,14 @@ Typical use case: a variable representing a derived measurement requires the sou
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Required by"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Required by"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

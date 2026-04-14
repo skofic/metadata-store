@@ -1,0 +1,319 @@
+[
+	{
+		"_from": "terms/UN_GA_African-Group",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_GA",
+		"_path": [
+			"terms/UN_GA"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_GA_Asia-Pacific-Group",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_GA",
+		"_path": [
+			"terms/UN_GA"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_GA_Latin-American-Caribbean-Group",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_GA",
+		"_path": [
+			"terms/UN_GA"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_GA_Western-European-Others-Group",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_GA",
+		"_path": [
+			"terms/UN_GA"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_GA_Eastern-European-Group",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_GA",
+		"_path": [
+			"terms/UN_GA"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/UN_M49_Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Americas",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Europe",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Oceania",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Antarctic",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Macro-region",
+		"_path": [
+			"terms/UN_Macro-region"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/UN_M49_Northern-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Sub-Saharan-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Eastern-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Middle-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Southern-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Western-Africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Latin-America-and-the-Caribbean",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Northern-America",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Caribbean",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Central-America",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_South-America",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Central-Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Eastern-Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_South-eastern-Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Southern-Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Western-Asia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Eastern-Europe",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Northern-Europe",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Southern-Europe",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Western-Europe",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Australia-and-New-Zealand",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Melanesia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Micronesia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/UN_M49_Polynesia",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/UN_Sub-region",
+		"_path": [
+			"terms/UN_Sub-region"
+		],
+		"_path_data": {}
+	}
+]

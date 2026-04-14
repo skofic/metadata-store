@@ -1,5 +1,4 @@
 # Computed properties
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_computed</code></p>
 
 > A set of descriptor global identifiers listing properties whose values are automatically derived and set by the system at write time. Users may not supply values for computed properties. Because computed properties are resolved before `_required` is checked, a property that is both computed and required will always satisfy the requirement.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "computed",
+  "_gid": "_computed",
+  "_aid": [
     "computed"
-  ],
-  "_gid" : "_computed",
-  "_lid" : "computed",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -78,17 +77,17 @@ The [`_code`](_code.md) section computes three properties automatically:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Computed properties"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Computed properties"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -99,17 +98,15 @@ The [`_code`](_code.md) section computes three properties automatically:
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) — [Descriptor term document key](_term_key_descriptor.md)
+**Shape:** [Set](_set.md) of [Descriptor term key](_term_key_descriptor.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set" : {
-    "_term_key_descriptor" : {
-
-    }
+  "_set": {
+    "_term_key_descriptor": {}
   }
 }
 ```

@@ -9,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Namespace](_nid.md) | `_predicate` |
 | [Local identifier](_lid.md) | `structural` |
 | [Global identifier](_gid.md) | `_predicate_structural` |
 | [Official identifiers](_aid.md) | `structural` |
@@ -19,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_predicate",
+  "_lid": "structural",
+  "_gid": "_predicate_structural",
+  "_aid": [
     "structural"
-  ],
-  "_gid" : "_predicate_structural",
-  "_lid" : "structural",
-  "_nid" : "_predicate"
+  ]
 }
 ```
 
@@ -55,14 +55,14 @@ As a sub-enumeration root, `_predicate_structural` may be used in [`_enum_types`
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Structural predicates"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Structural predicates"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

@@ -1,5 +1,4 @@
 # Emoji
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_emoji</code></p>
 
 > A single emoji character or sequence used as a visual icon for the term. Stored as a plain UTF-8 string.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "emoji",
+  "_gid": "_emoji",
+  "_aid": [
     "emoji"
-  ],
-  "_gid" : "_emoji",
-  "_lid" : "emoji",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -71,17 +70,17 @@ Other examples:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Emoji"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Emoji"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -92,17 +91,15 @@ Other examples:
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [String](_string.md)
+**Shape:** [Scalar](_scalar.md) — [Generic string](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_string" : {
-
-    }
+  "_scalar": {
+    "_string": {}
   }
 }
 ```

@@ -9,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Namespace](_nid.md) | `_predicate` |
 | [Local identifier](_lid.md) | `bridge` |
 | [Global identifier](_gid.md) | `_predicate_bridge` |
 | [Official identifiers](_aid.md) | `bridge` |
@@ -19,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_predicate",
+  "_lid": "bridge",
+  "_gid": "_predicate_bridge",
+  "_aid": [
     "bridge"
-  ],
-  "_gid" : "_predicate_bridge",
-  "_lid" : "bridge",
-  "_nid" : "_predicate"
+  ]
 }
 ```
 
@@ -51,14 +51,14 @@ As a sub-enumeration root, `_predicate_bridge` may be used in [`_enum_types`](_e
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Bridge predicates"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Bridge predicates"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

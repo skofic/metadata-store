@@ -1,5 +1,4 @@
 # String range
-<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_string</code></p>
 
 > Typedef that defines the shape of a lexicographic string range object. A range must contain at most one minimum bound (`_string_min-inclusive` or `_string_min-exclusive`) and at most one maximum bound (`_string_max-inclusive` or `_string_max-exclusive`), and at least one bound must be present. Referenced by `_range_valid_string` and `_range_normal_string`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Numeric range](_range.md) |
+| [Namespace](_nid.md) | `_range` |
 | [Local identifier](_lid.md) | `string` |
 | [Global identifier](_gid.md) | `_range_string` |
 | [Official identifiers](_aid.md) | `string` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "string",
+  "_gid": "_range_string",
+  "_aid": [
     "string"
-  ],
-  "_gid" : "_range_string",
-  "_lid" : "string",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -73,17 +72,17 @@ A half-open range — any date from 2000 onwards:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "String range"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "String range"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -94,26 +93,31 @@ A half-open range — any date from 2000 onwards:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
-[String range minimum exclusive](_string_min-exclusive.md) · [String range minimum inclusive](_string_min-inclusive.md)
-
-[Optional selection](_any.md) ([Minimum element count](_min-items.md): 1)
-[String range maximum exclusive](_string_max-exclusive.md) · [String range maximum inclusive](_string_max-inclusive.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {
+                "_min-items": 1,
+                "_max-items": 1
+              }
+            },
+            {
+              "_any": {
+                "_min-items": 1
+              }
+            }
+          ],
+          "_selection": [
             [
               "_string_min-exclusive",
               "_string_min-inclusive"
@@ -122,19 +126,6 @@ A half-open range — any date from 2000 onwards:
               "_string_max-exclusive",
               "_string_max-inclusive"
             ]
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-                "_max-items" : 1,
-                "_min-items" : 1
-              }
-            },
-            {
-              "_any" : {
-                "_min-items" : 1
-              }
-            }
           ]
         }
       ]

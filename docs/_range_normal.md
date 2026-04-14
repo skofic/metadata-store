@@ -1,5 +1,4 @@
 # Normal numeric range
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_range_normal</code></p>
 
 > The companion property that defines the expected numeric boundaries for a scalar value. Values outside the normal range are flagged as outliers but are not treated as errors. Accepted by `_number`, `_number_float`, `_number_integer`, and `_timestamp`. Its shape follows the `_range` typedef.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Numeric range](_range.md) |
+| [Namespace](_nid.md) | `_range` |
 | [Local identifier](_lid.md) | `normal` |
 | [Global identifier](_gid.md) | `_range_normal` |
 | [Official identifiers](_aid.md) | `normal` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_range",
+  "_lid": "normal",
+  "_gid": "_range_normal",
+  "_aid": [
     "normal"
-  ],
-  "_gid" : "_range_normal",
-  "_lid" : "normal",
-  "_nid" : "_range"
+  ]
 }
 ```
 
@@ -73,17 +72,17 @@ Human body temperature in degrees Celsius — valid up to 45 °C, normal between
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Normal numeric range"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Normal numeric range"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -94,14 +93,14 @@ Human body temperature in degrees Celsius — valid up to 45 °C, normal between
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Numeric range](_range.md)
+**Shape:** [Type definition](_typedef.md): `_range`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_range"
+  "_typedef": "_range"
 }
 ```
 

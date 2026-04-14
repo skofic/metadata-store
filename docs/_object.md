@@ -1,5 +1,4 @@
 # Object
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_object</code></p>
 
 > A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "object",
+  "_gid": "_object",
+  "_aid": [
     "object"
-  ],
-  "_gid" : "_object",
-  "_lid" : "object",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -120,17 +119,17 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not 
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Object"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Object"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -141,32 +140,27 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not 
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Optional selection](_any.md) ([Maximum element count](_max-items.md): 1)
-[Open schema](_open.md) · [Closed schema](_closed.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
-            "_open",
-            "_closed"
-          ],
-          "_selectors" : [
+          "_selectors": [
             {
-              "_any" : {
-                "_max-items" : 1
+              "_any": {
+                "_max-items": 1
               }
             }
+          ],
+          "_selection": [
+            "_open",
+            "_closed"
           ]
         }
       ]

@@ -1,5 +1,4 @@
 # String range minimum inclusive
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_string_min-inclusive</code></p>
 
 > The closed lower bound property of a string range object. The validated string must be lexicographically greater than or equal to this value (value ≥ bound). Used inside `_range_valid_string` or `_range_normal_string` objects; mutually exclusive with `_string_min-exclusive`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [String](_string.md) |
+| [Namespace](_nid.md) | `_string` |
 | [Local identifier](_lid.md) | `min-inclusive` |
 | [Global identifier](_gid.md) | `_string_min-inclusive` |
 | [Official identifiers](_aid.md) | `min-inclusive` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_string",
+  "_lid": "min-inclusive",
+  "_gid": "_string_min-inclusive",
+  "_aid": [
     "min-inclusive"
-  ],
-  "_gid" : "_string_min-inclusive",
-  "_lid" : "min-inclusive",
-  "_nid" : "_string"
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ A date field accepting any date from 2000-01-01 onwards (inclusive):
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "String range minimum inclusive"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "String range minimum inclusive"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,17 +80,15 @@ A date field accepting any date from 2000-01-01 onwards (inclusive):
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [String](_string.md)
+**Shape:** [Scalar](_scalar.md) — [Generic string](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_string" : {
-
-    }
+  "_scalar": {
+    "_string": {}
   }
 }
 ```

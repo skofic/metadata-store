@@ -1,5 +1,4 @@
 # Scalar
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_scalar</code></p>
 
 > The data shape property for a single typed value. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the scalar type, and the value associated with that key is an object of companion properties that further constrain the value. An empty `_scalar` (`{}`) accepts any scalar type without constraint.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "scalar",
+  "_gid": "_scalar",
+  "_aid": [
     "scalar"
-  ],
-  "_gid" : "_scalar",
-  "_lid" : "scalar",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -166,17 +165,17 @@ An unconstrained scalar — any type and value accepted:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Scalar"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Scalar"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -194,7 +193,7 @@ An unconstrained scalar — any type and value accepted:
 
 ```json
 {
-  "_typedef" : "_type_scalar"
+  "_typedef": "_type_scalar"
 }
 ```
 

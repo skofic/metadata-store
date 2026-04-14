@@ -1,5 +1,4 @@
 # Unit
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_unit</code></p>
 
 > The companion property for specifying the unit of measurement of a scalar value using a controlled vocabulary term from the `_unit` enumeration graph. Its value is a single `_unit` element `_gid`. Mutually exclusive with `_unit_name` and `_unit_symbol`: use `_unit` when the unit exists in the controlled vocabulary, or `_unit_name` / `_unit_symbol` otherwise.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "unit",
+  "_gid": "_unit",
+  "_aid": [
     "unit"
-  ],
-  "_gid" : "_unit",
-  "_lid" : "unit",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -69,17 +68,17 @@ Stored values: `"_unit_length_m"`, `"_unit_temperature_C"`, `"_unit_weight_kg"`.
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Unit"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Unit"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -90,16 +89,16 @@ Stored values: `"_unit_length_m"`, `"_unit_temperature_C"`, `"_unit_weight_kg"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Enumerated value](_enum.md) ([Controlled vocabularies](_enums.md): [Unit](_unit.md))
+**Shape:** [Scalar](_scalar.md) — [Enumerated value](_enum.md) from vocabulary `_unit`
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_enum" : {
-      "_enums" : [
+  "_scalar": {
+    "_enum": {
+      "_enums": [
         "_unit"
       ]
     }

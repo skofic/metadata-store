@@ -1,5 +1,4 @@
 # Multilingual plain text
-<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_info_string</code></p>
 
 > A multilingual dictionary mapping ISO 639-3 language identifiers to plain text strings. The data type of `_title` and `_definition`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Information section](_info.md) |
+| [Namespace](_nid.md) | `_info` |
 | [Local identifier](_lid.md) | `string` |
 | [Global identifier](_gid.md) | `_info_string` |
 | [Official identifiers](_aid.md) | `string` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_info",
+  "_lid": "string",
+  "_gid": "_info_string",
+  "_aid": [
     "string"
-  ],
-  "_gid" : "_info_string",
-  "_lid" : "string",
-  "_nid" : "_info"
+  ]
 }
 ```
 
@@ -62,17 +61,17 @@ A multilingual plain-text value — the title of a term in three languages:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Multilingual plain text"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Multilingual plain text"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -85,30 +84,22 @@ A multilingual plain-text value — the title of a term in three languages:
 
 **Shape:** [Dictionary](_dict.md)
 
-**[Dictionary key](_dict_key.md):** [Enumerated value](_enum.md) ([Controlled vocabularies](_enums.md): [ISO_639_3](ISO_639_3.md))
-
-**[Dictionary value](_dict_value.md)**
-
-[Scalar](_scalar.md) — [Text](_text.md)
-
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_dict" : {
-    "_dict_key" : {
-      "_enum" : {
-        "_enums" : [
+  "_dict": {
+    "_dict_key": {
+      "_enum": {
+        "_enums": [
           "ISO_639_3"
         ]
       }
     },
-    "_dict_value" : {
-      "_scalar" : {
-        "_text" : {
-
-        }
+    "_dict_value": {
+      "_scalar": {
+        "_text": {}
       }
     }
   }

@@ -1,5 +1,4 @@
 # Document key
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_key</code></p>
 
 > The ArangoDB system property that uniquely identifies a document within its collection. May be user-specified at insertion time or generated automatically by ArangoDB. Immutable once set.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "key",
+  "_gid": "_key",
+  "_aid": [
     "key"
-  ],
-  "_gid" : "_key",
-  "_lid" : "key",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -59,14 +58,14 @@ If `_key` is omitted when inserting a document, ArangoDB generates a unique key 
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Document key"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Document key"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -77,17 +76,15 @@ If `_key` is omitted when inserting a document, ArangoDB generates a unique key 
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — `_string_key`
+**Shape:** [Scalar](_scalar.md) — [_string_key](_string_key.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_string_key" : {
-
-    }
+  "_scalar": {
+    "_string_key": {}
   }
 }
 ```

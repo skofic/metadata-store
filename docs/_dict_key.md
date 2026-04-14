@@ -1,5 +1,4 @@
 # Dictionary key
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_dict_key</code></p>
 
 > The sub-property of a dictionary that defines the type of its keys. Uses the type-as-key convention: the key type is expressed as a property key inside the object. Only string-compatible comparable types are accepted.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Dictionary](_dict.md) |
+| [Namespace](_nid.md) | `_dict` |
 | [Local identifier](_lid.md) | `key` |
 | [Global identifier](_gid.md) | `_dict_key` |
 | [Official identifiers](_aid.md) | `key` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_dict",
+  "_lid": "key",
+  "_gid": "_dict_key",
+  "_aid": [
     "key"
-  ],
-  "_gid" : "_dict_key",
-  "_lid" : "key",
-  "_nid" : "_dict"
+  ]
 }
 ```
 
@@ -94,17 +93,17 @@ Descriptor term keys:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Dictionary key"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Dictionary key"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -115,14 +114,14 @@ Descriptor term keys:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Key data type](_type_key.md)
+**Shape:** [Type definition](_typedef.md): [Dictionary key type](_type_key.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef" : "_type_key"
+  "_typedef": "_type_key"
 }
 ```
 

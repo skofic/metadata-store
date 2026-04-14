@@ -1,5 +1,4 @@
 # Term
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term</code></p>
 
 > The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "term",
+  "_gid": "_term",
+  "_aid": [
     "term"
-  ],
-  "_gid" : "_term",
-  "_lid" : "term",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -111,17 +110,17 @@ A descriptor term — a floating-point body temperature:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Term"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Term"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -132,65 +131,46 @@ A descriptor term — a floating-point body temperature:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md)
-[Identification section](_code.md)
-
-**[Recommended properties](_recommended.md):** [Information section](_info.md) · [Data section](_data.md) · [Domains section](_domn.md) · [Properties section](_prop.md)
-
-**[Computed properties](_computed.md):** [Document key](_key.md)
-
-**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
-
-**[Immutable properties](_immutable.md):** [Document key](_key.md)
-
-**[Default values](_default-value.md):** *see JSON*
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_computed" : [
-        "_key"
-      ],
-      "_default-value" : {
-        "_domn" : {
-
+  "_object": {
+    "_closed": {
+      "_required": [
+        {
+          "_selectors": [
+            {
+              "_all": {}
+            }
+          ],
+          "_selection": [
+            "_code"
+          ]
         }
-      },
-      "_immutable" : [
-        "_key"
       ],
-      "_locked" : [
-        "_id",
-        "_rev"
-      ],
-      "_recommended" : [
+      "_recommended": [
         "_info",
         "_data",
         "_domn",
         "_prop"
       ],
-      "_required" : [
-        {
-          "_selection" : [
-            "_code"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-
-              }
-            }
-          ]
-        }
-      ]
+      "_computed": [
+        "_key"
+      ],
+      "_immutable": [
+        "_key"
+      ],
+      "_locked": [
+        "_id",
+        "_rev"
+      ],
+      "_default-value": {
+        "_domn": {}
+      }
     }
   }
 }

@@ -1,5 +1,4 @@
 # Enumeration element term document key
-<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_key_enum-item</code></p>
 
 > A term key that must reference a valid enumeration element — a term reachable from an enumeration root via `_predicate_enum-of` edges.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Term document key](_term_key.md) |
+| [Namespace](_nid.md) | `_term_key` |
 | [Local identifier](_lid.md) | `enum-item` |
 | [Global identifier](_gid.md) | `_term_key_enum-item` |
 | [Official identifiers](_aid.md) | `enum-item` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_term_key",
+  "_lid": "enum-item",
+  "_gid": "_term_key_enum-item",
+  "_aid": [
     "enum-item"
-  ],
-  "_gid" : "_term_key_enum-item",
-  "_lid" : "enum-item",
-  "_nid" : "_term_key"
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ Stored values: `"ISO_639_3_eng"`, `"ISO_3166_3_ITA"`.
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Enumeration element term document key"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Enumeration element term document key"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,17 +80,15 @@ Stored values: `"ISO_639_3_eng"`, `"ISO_3166_3_ITA"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-
-    }
+  "_object": {
+    "_closed": {}
   }
 }
 ```

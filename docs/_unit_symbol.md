@@ -1,5 +1,4 @@
 # Unit symbol
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_unit_symbol</code></p>
 
 > The companion property for specifying the unit symbol in LaTeX format when the unit is not available in the `_unit` controlled vocabulary. Its value is a `_string_LaTeX` expression, suitable for rendering with KaTeX. Mutually exclusive with `_unit` and `_unit_symbol`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Unit](_unit.md) |
+| [Namespace](_nid.md) | `_unit` |
 | [Local identifier](_lid.md) | `symbol` |
 | [Global identifier](_gid.md) | `_unit_symbol` |
 | [Official identifiers](_aid.md) | `symbol` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_unit",
+  "_lid": "symbol",
+  "_gid": "_unit_symbol",
+  "_aid": [
     "symbol"
-  ],
-  "_gid" : "_unit_symbol",
-  "_lid" : "symbol",
-  "_nid" : "_unit"
+  ]
 }
 ```
 
@@ -68,17 +67,17 @@ Stored values (LaTeX strings): `"\\text{mbar}"`, `"\\mathrm{kg/m^3}"`, `"\\mu\\t
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Unit symbol"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Unit symbol"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -96,10 +95,8 @@ Stored values (LaTeX strings): `"\\text{mbar}"`, `"\\mathrm{kg/m^3}"`, `"\\mu\\t
 
 ```json
 {
-  "_scalar" : {
-    "_string_LaTeX" : {
-
-    }
+  "_scalar": {
+    "_string_LaTeX": {}
   }
 }
 ```

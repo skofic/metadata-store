@@ -1,5 +1,4 @@
 # Document handle
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_id</code></p>
 
 > The ArangoDB system property that uniquely identifies a document within the entire database. Its value is the concatenation of the collection name and the document key separated by a forward slash (`<collection>/<key>`). Assigned automatically by ArangoDB; locked and immutable once set.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "id",
+  "_gid": "_id",
+  "_aid": [
     "id"
-  ],
-  "_gid" : "_id",
-  "_lid" : "id",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -52,14 +51,14 @@ The field is system-managed: ArangoDB writes it at insertion and it cannot be ch
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Document handle"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Document handle"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -77,10 +76,8 @@ The field is system-managed: ArangoDB writes it at insertion and it cannot be ch
 
 ```json
 {
-  "_scalar" : {
-    "_handle" : {
-
-    }
+  "_scalar": {
+    "_handle": {}
   }
 }
 ```

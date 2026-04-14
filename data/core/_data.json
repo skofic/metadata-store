@@ -1,217 +1,217 @@
 [
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "data",
-            "_gid": "_data",
-            "_aid": [
-                "data"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Data section"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present."
-            },
-            "_description": {
-                "ISO_639_3_eng": "The data section is present on descriptor terms — terms that represent a typed data variable. It defines the *shape* of the data: whether the value is a scalar, an object, an array, a set, a tuple, a nested array, a dictionary, or a reference to a typedef term.\n\nAt most one shape property may be present. When the section is an **empty object** (`{}`), the descriptor accepts any value of any shape and type without constraint.\n\nThe seven inline shapes are:\n\n- [`_scalar`](_scalar.md) — a single indivisible value; the type is expressed as a property key inside the object\n- [`_object`](_object.md) — an object or struct; may be unconstrained (`{}`), open-schema, or closed-schema\n- [`_array`](_array.md) — an ordered list of elements of the same type\n- [`_set`](_set.md) — an unordered list of unique comparable elements\n- [`_tuple`](_tuple.md) — an ordered positional array where each position has its own independently defined type\n- [`_nested`](_nested.md) — a recursively nested array whose leaf elements are of a comparable type\n- [`_dict`](_dict.md) — a key/value dictionary with typed keys and values\n\nThe eighth option is [`_typedef`](_typedef.md), a reference to an existing typedef term that supplies the shape by delegation rather than inline definition. It is mutually exclusive with all seven inline shapes."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A descriptor that accepts any value (empty data section):\n\n```json\n{\n\t\"_data\": {}\n}\n```\n\nA scalar descriptor — a floating-point length in centimetres:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {\n\t\t\t\"_number_float\": {\n\t\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\t\"_decimals\": 2\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn object descriptor with a closed schema:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn array descriptor — an ordered list of generic strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_string\": {}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA set descriptor — an unordered set of ISO 639-3 language codes:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_set\": {\n\t\t\t\"_enum\": {\n\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA tuple descriptor — a date followed by a weight:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_tuple\": [\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string_date\": {}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_weight_kg\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n```\n\nA nested array descriptor — a nested structure of strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_nested\": {\n\t\t\t\"_string\": {}\n\t\t}\n\t}\n}\n```\n\nA dictionary descriptor — language-keyed string values (the multilingual pattern):\n\n```json\n{\n\t\"_data\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_enum\": {\n\t\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string\": {}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA typedef reference — delegates to the built-in scalar type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_scalar\"\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_object": {
-                "_closed": {
-                    "_required": [
-                        {
-                            "_selectors": [
-                                {
-                                    "_all": {
-                                        "_min-items": 1,
-                                        "_max-items": 1
-                                    }
-                                }
-                            ],
-                            "_selection": [
-                                "_scalar",
-                                "_object",
-                                "_dict",
-                                "_tuple",
-                                "_array",
-                                "_set",
-                                "_nested",
-                                "_typedef"
-                            ]
-                        }
-                    ]
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "set",
-            "_gid": "_set",
-            "_aid": [
-                "set"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Set"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The data shape property for an unordered collection of unique elements. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the element type, and the value associated with that key is an object of companion properties. Uniqueness is enforced by restricting element types to comparable types only. An empty `_set` (`{}`) accepts elements of any comparable type without further constraint."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_set` is the data shape for an unordered collection of values in which every element is unique. It uses the same **type-as-key** convention as [`_scalar`](_scalar.md): the property key present inside `_set` identifies the element type; its value is an object of **companion properties** that apply additional constraints. An empty `_set` (`{}`) imposes no type constraint beyond comparability.\n\nUniqueness requires that the element type be **comparable** — the validator must be able to determine whether two values are equal. Non-comparable types (`_text`, `_text_HTML`, `_text_Markdown`, `_text_SVG`) are therefore excluded. All other scalar types are permitted.\n\nAllowed element types:\n\n| Family | Types |\n|---|---|\n| Number | [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md) |\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md), [`_string_regexp`](_string_regexp.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_timestamp`](_timestamp.md), [`_boolean`](_boolean.md), [`_enum`](_enum.md) |\n\nThe optional [`_elements`](_elements.md) companion property constrains the number of elements in the set.\n\n`_set` delegates to the [`_type_comparable`](_type_comparable.md) typedef, which encodes the full list of comparable types and recommends `_elements`. For a recursively nested variant that uses the same element-type constraint, see [`_nested`](_nested.md)."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A set of ISO 639-3 language codes:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nA set of integers with a size constraint:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_elements\": {\n\t\t\t\t\"_min-items\": 1,\n\t\t\t\t\"_max-items\": 10\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA set of enumeration element term keys (any controlled vocabulary):\n\n```json\n{\n\t\"_set\": {\n\t\t\"_term_key_enum-item\": {}\n\t}\n}\n```\n\nAn unconstrained set — any comparable type accepted:\n\n```json\n{\n\t\"_set\": {}\n}\n```"
-            }
-        },
-        "_data": {
-            "_typedef": "_type_comparable"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "tuple",
-            "_gid": "_tuple",
-            "_aid": [
-                "tuple"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Tuple"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The data shape property for an ordered positional array where each element position is typed by a full data section object. The value at position n must satisfy the shape defined at position n in the tuple definition."
-            },
-            "_description": {
-                "ISO_639_3_eng": "A *tuple* is a fixed-structure ordered sequence where each position carries an independently defined type. Unlike an [`_array`](_array.md), which applies one uniform element type to all positions, a tuple assigns a distinct [`_data`](_data.md) section to each index.\n\nIn practice, a tuple value is an array of `_data` section objects — each element of the `_tuple` value is itself a complete `_data` section with exactly one shape property. At validation time, the value at position *n* is validated against the `_data` section at position *n* in the tuple definition. The optional [`_elements`](_elements.md) property constrains how many positions the tuple may contain; when absent, all defined positions are required.\n\nThis design means a tuple can mix any combination of shapes across its positions — a date string at position 0, a numeric measurement at position 1, an enumeration value at position 2, and so on."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A three-position tuple — date, body weight, and language code:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_tuple\": [\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string_date\": {}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_weight_kg\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_enum\": {\n\t\t\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n```\n\nPosition 0 is a date string, position 1 is a float weight, position 2 is a language code. All three positions are required."
-            }
-        },
-        "_data": {
-            "_object": {
-                "_closed": {
-                    "_required": [
-                        {
-                            "_selectors": [
-                                {
-                                    "_all": {
-                                        "_min-items": 1,
-                                        "_max-items": 1
-                                    }
-                                }
-                            ],
-                            "_selection": [
-                                "_scalar",
-                                "_object",
-                                "_dict",
-                                "_tuple",
-                                "_array",
-                                "_set",
-                                "_nested",
-                                "_typedef"
-                            ]
-                        }
-                    ],
-                    "_recommended": [
-                        "_elements"
-                    ]
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "nested",
-            "_gid": "_nested",
-            "_aid": [
-                "nested"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Nested array"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The data shape property for a recursively nested array whose leaf elements are of a comparable type. The leaf element type is expressed as a property key inside the object, following the same type-as-key convention as `_scalar` and `_set`."
-            },
-            "_description": {
-                "ISO_639_3_eng": "A *nested array* is an array of arrays, recursing to an arbitrary depth, whose leaf elements are all of the same comparable type. It differs from a recursive [`_array`](_array.md) in that the nesting structure is uniform and the leaf type is declared once — inside the `_nested` object — rather than being specified at each level of recursion.\n\n`_nested` uses `_typedef: \"_type_comparable\"` internally, meaning the leaf element type follows set semantics: only comparable types are accepted. Non-comparable types — [`_text`](_text.md), [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), and [`_text_SVG`](_text_SVG.md) — may not appear as leaf elements. The leaf type is expressed as a property key inside `_nested`, exactly as in [`_scalar`](_scalar.md) and [`_set`](_set.md).\n\nThe optional [`_elements`](_elements.md) property constrains the number of elements at each level of the array."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A nested array of generic strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_nested\": {\n\t\t\t\"_string\": {}\n\t\t}\n\t}\n}\n```\n\nAt validation time, a valid value for this descriptor would be an arbitrarily deep nesting of string arrays — for example `[[\"a\", \"b\"], [\"c\"]]` or `[[[\"x\"]]]`."
-            }
-        },
-        "_data": {
-            "_typedef": "_type_comparable"
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "typedef",
-            "_gid": "_typedef",
-            "_aid": [
-                "typedef"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Type definition"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "A reference to an existing typedef term by its global identifier. Delegates the shape definition to the referenced typedef term, making it mutually exclusive with all inline shape properties."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry `_term_role_typedef` in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.\n\nWhen the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its `_data` section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.\n\nThe three built-in typedef terms are [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md), which encode the full allowed-type lists for scalar, set-element, and dictionary-key contexts respectively. `_typedef` is mutually exclusive with all seven inline shape properties."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "Delegating to the built-in scalar type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_scalar\"\n\t}\n}\n```\n\nThis is how the [`_scalar`](_scalar.md) shape property itself is defined: it delegates to `_type_scalar`, which encodes the complete list of allowed scalar types.\n\nDelegating to the set-compatible type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_comparable\"\n\t}\n}\n```\n\nThis is how [`_nested`](_nested.md) is defined: it reuses `_type_comparable` to enforce comparable leaf types."
-            }
-        },
-        "_data": {
-            "_scalar": {
-                "_term_key_descriptor": {}
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    }
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "data",
+			"_gid": "_data",
+			"_aid": [
+				"data"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Data section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The section of a term that describes the type and shape of the data the term represents. When absent or empty, the descriptor accepts any value without type or shape constraints. When non-empty, at most one shape property is present."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The data section is present on descriptor terms — terms that represent a typed data variable. It defines the *shape* of the data: whether the value is a scalar, an object, an array, a set, a tuple, a nested array, a dictionary, or a reference to a typedef term.\n\nAt most one shape property may be present. When the section is an **empty object** (`{}`), the descriptor accepts any value of any shape and type without constraint.\n\nThe seven inline shapes are:\n\n- [`_scalar`](_scalar.md) — a single indivisible value; the type is expressed as a property key inside the object\n- [`_object`](_object.md) — an object or struct; may be unconstrained (`{}`), open-schema, or closed-schema\n- [`_array`](_array.md) — an ordered list of elements of the same type\n- [`_set`](_set.md) — an unordered list of unique comparable elements\n- [`_tuple`](_tuple.md) — an ordered positional array where each position has its own independently defined type\n- [`_nested`](_nested.md) — a recursively nested array whose leaf elements are of a comparable type\n- [`_dict`](_dict.md) — a key/value dictionary with typed keys and values\n\nThe eighth option is [`_typedef`](_typedef.md), a reference to an existing typedef term that supplies the shape by delegation rather than inline definition. It is mutually exclusive with all seven inline shapes."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A descriptor that accepts any value (empty data section):\n\n```json\n{\n\t\"_data\": {}\n}\n```\n\nA scalar descriptor — a floating-point length in centimetres:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_scalar\": {\n\t\t\t\"_number_float\": {\n\t\t\t\t\"_unit\": \"_unit_length_cm\",\n\t\t\t\t\"_decimals\": 2\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn object descriptor with a closed schema:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn array descriptor — an ordered list of generic strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_string\": {}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA set descriptor — an unordered set of ISO 639-3 language codes:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_set\": {\n\t\t\t\"_enum\": {\n\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA tuple descriptor — a date followed by a weight:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_tuple\": [\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string_date\": {}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_weight_kg\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n```\n\nA nested array descriptor — a nested structure of strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_nested\": {\n\t\t\t\"_string\": {}\n\t\t}\n\t}\n}\n```\n\nA dictionary descriptor — language-keyed string values (the multilingual pattern):\n\n```json\n{\n\t\"_data\": {\n\t\t\"_dict\": {\n\t\t\t\"_dict_key\": {\n\t\t\t\t\"_enum\": {\n\t\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"_dict_value\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string\": {}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA typedef reference — delegates to the built-in scalar type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_scalar\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_scalar",
+								"_object",
+								"_dict",
+								"_tuple",
+								"_array",
+								"_set",
+								"_nested",
+								"_typedef"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "set",
+			"_gid": "_set",
+			"_aid": [
+				"set"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Set"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The data shape property for an unordered collection of unique elements. Uses the type-as-key convention: its content is an object with exactly one property key that identifies the element type, and the value associated with that key is an object of companion properties. Uniqueness is enforced by restricting element types to comparable types only. An empty `_set` (`{}`) accepts elements of any comparable type without further constraint."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_set` is the data shape for an unordered collection of values in which every element is unique. It uses the same **type-as-key** convention as [`_scalar`](_scalar.md): the property key present inside `_set` identifies the element type; its value is an object of **companion properties** that apply additional constraints. An empty `_set` (`{}`) imposes no type constraint beyond comparability.\n\nUniqueness requires that the element type be **comparable** — the validator must be able to determine whether two values are equal. Non-comparable types (`_text`, `_text_HTML`, `_text_Markdown`, `_text_SVG`) are therefore excluded. All other scalar types are permitted.\n\nAllowed element types:\n\n| Family | Types |\n|---|---|\n| Number | [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md) |\n| String | [`_string`](_string.md), [`_string_URI`](_string_URI.md), [`_string_Email`](_string_Email.md), [`_string_Hostname`](_string_Hostname.md), [`_string_IPv4`](_string_IPv4.md), [`_string_IPv6`](_string_IPv6.md), [`_string_YMD`](_string_YMD.md), [`_string_date`](_string_date.md), [`_string_time`](_string_time.md), [`_string_date-time`](_string_date-time.md), [`_string_LaTeX`](_string_LaTeX.md), [`_string_HEX`](_string_HEX.md), [`_string_regexp`](_string_regexp.md) |\n| Term key | [`_term_key`](_term_key.md), [`_term_key_enum-root`](_term_key_enum-root.md), [`_term_key_enum-item`](_term_key_enum-item.md), [`_term_key_descriptor`](_term_key_descriptor.md) |\n| Other | [`_handle`](_handle.md), [`_timestamp`](_timestamp.md), [`_boolean`](_boolean.md), [`_enum`](_enum.md) |\n\nThe optional [`_elements`](_elements.md) companion property constrains the number of elements in the set.\n\n`_set` delegates to the [`_type_comparable`](_type_comparable.md) typedef, which encodes the full list of comparable types and recommends `_elements`. For a recursively nested variant that uses the same element-type constraint, see [`_nested`](_nested.md)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A set of ISO 639-3 language codes:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_enum\": {\n\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t}\n\t}\n}\n```\n\nA set of integers with a size constraint:\n\n```json\n{\n\t\"_set\": {\n\t\t\"_number_integer\": {\n\t\t\t\"_elements\": {\n\t\t\t\t\"_min-items\": 1,\n\t\t\t\t\"_max-items\": 10\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nA set of enumeration element term keys (any controlled vocabulary):\n\n```json\n{\n\t\"_set\": {\n\t\t\"_term_key_enum-item\": {}\n\t}\n}\n```\n\nAn unconstrained set — any comparable type accepted:\n\n```json\n{\n\t\"_set\": {}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_type_comparable"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "tuple",
+			"_gid": "_tuple",
+			"_aid": [
+				"tuple"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tuple"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The data shape property for an ordered positional array where each element position is typed by a full data section object. The value at position n must satisfy the shape defined at position n in the tuple definition."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *tuple* is a fixed-structure ordered sequence where each position carries an independently defined type. Unlike an [`_array`](_array.md), which applies one uniform element type to all positions, a tuple assigns a distinct [`_data`](_data.md) section to each index.\n\nIn practice, a tuple value is an array of `_data` section objects — each element of the `_tuple` value is itself a complete `_data` section with exactly one shape property. At validation time, the value at position *n* is validated against the `_data` section at position *n* in the tuple definition. The optional [`_elements`](_elements.md) property constrains how many positions the tuple may contain; when absent, all defined positions are required.\n\nThis design means a tuple can mix any combination of shapes across its positions — a date string at position 0, a numeric measurement at position 1, an enumeration value at position 2, and so on."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A three-position tuple — date, body weight, and language code:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_tuple\": [\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_string_date\": {}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_weight_kg\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_enum\": {\n\t\t\t\t\t\t\"_enums\": [\"ISO_639_3\"]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}\n```\n\nPosition 0 is a date string, position 1 is a float weight, position 2 is a language code. All three positions are required."
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_scalar",
+								"_object",
+								"_dict",
+								"_tuple",
+								"_array",
+								"_set",
+								"_nested",
+								"_typedef"
+							]
+						}
+					],
+					"_recommended": [
+						"_elements"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "nested",
+			"_gid": "_nested",
+			"_aid": [
+				"nested"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Nested array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The data shape property for a recursively nested array whose leaf elements are of a comparable type. The leaf element type is expressed as a property key inside the object, following the same type-as-key convention as `_scalar` and `_set`."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A *nested array* is an array of arrays, recursing to an arbitrary depth, whose leaf elements are all of the same comparable type. It differs from a recursive [`_array`](_array.md) in that the nesting structure is uniform and the leaf type is declared once — inside the `_nested` object — rather than being specified at each level of recursion.\n\n`_nested` uses `_typedef: \"_type_comparable\"` internally, meaning the leaf element type follows set semantics: only comparable types are accepted. Non-comparable types — [`_text`](_text.md), [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), and [`_text_SVG`](_text_SVG.md) — may not appear as leaf elements. The leaf type is expressed as a property key inside `_nested`, exactly as in [`_scalar`](_scalar.md) and [`_set`](_set.md).\n\nThe optional [`_elements`](_elements.md) property constrains the number of elements at each level of the array."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A nested array of generic strings:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_nested\": {\n\t\t\t\"_string\": {}\n\t\t}\n\t}\n}\n```\n\nAt validation time, a valid value for this descriptor would be an arbitrarily deep nesting of string arrays — for example `[[\"a\", \"b\"], [\"c\"]]` or `[[[\"x\"]]]`."
+			}
+		},
+		"_data": {
+			"_typedef": "_type_comparable"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "typedef",
+			"_gid": "_typedef",
+			"_aid": [
+				"typedef"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Type definition"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A reference to an existing typedef term by its global identifier. Delegates the shape definition to the referenced typedef term, making it mutually exclusive with all inline shape properties."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry `_term_role_typedef` in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.\n\nWhen the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its `_data` section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.\n\nThe three built-in typedef terms are [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md), which encode the full allowed-type lists for scalar, set-element, and dictionary-key contexts respectively. `_typedef` is mutually exclusive with all seven inline shape properties."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Delegating to the built-in scalar type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_scalar\"\n\t}\n}\n```\n\nThis is how the [`_scalar`](_scalar.md) shape property itself is defined: it delegates to `_type_scalar`, which encodes the complete list of allowed scalar types.\n\nDelegating to the set-compatible type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_comparable\"\n\t}\n}\n```\n\nThis is how [`_nested`](_nested.md) is defined: it reuses `_type_comparable` to enforce comparable leaf types."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_term_key_descriptor": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
 ]

@@ -1,5 +1,4 @@
 # Array
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_array</code></p>
 
 > The `_data` shape property for an ordered list of elements of the same type. When empty (`{}`), the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional `_elements` property constrains the element count. The element type may be defined inline or by reference to a typedef term.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "array",
+  "_gid": "_array",
+  "_aid": [
     "array"
-  ],
-  "_gid" : "_array",
-  "_lid" : "array",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -104,17 +103,17 @@ An unconstrained array:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Array"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Array"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -125,28 +124,26 @@ An unconstrained array:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
-[Scalar](_scalar.md) · [Object](_object.md) · [Dictionary](_dict.md) · [Tuple](_tuple.md) · [Array](_array.md) · [Set](_set.md) · [Nested array](_nested.md) · [Type definition](_typedef.md)
-
-**[Recommended properties](_recommended.md):** [Elements count range](_elements.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_recommended" : [
-        "_elements"
-      ],
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {
+                "_min-items": 1,
+                "_max-items": 1
+              }
+            }
+          ],
+          "_selection": [
             "_scalar",
             "_object",
             "_dict",
@@ -155,16 +152,11 @@ An unconstrained array:
             "_set",
             "_nested",
             "_typedef"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-                "_max-items" : 1,
-                "_min-items" : 1
-              }
-            }
           ]
         }
+      ],
+      "_recommended": [
+        "_elements"
       ]
     }
   }

@@ -9,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
+| [Namespace](_nid.md) | `_predicate` |
 | [Local identifier](_lid.md) | `functional` |
 | [Global identifier](_gid.md) | `_predicate_functional` |
 | [Official identifiers](_aid.md) | `functional` |
@@ -19,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_predicate",
+  "_lid": "functional",
+  "_gid": "_predicate_functional",
+  "_aid": [
     "functional"
-  ],
-  "_gid" : "_predicate_functional",
-  "_lid" : "functional",
-  "_nid" : "_predicate"
+  ]
 }
 ```
 
@@ -56,14 +56,14 @@ As a sub-enumeration root, `_predicate_functional` may be used in [`_enum_types`
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Functional predicates"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Functional predicates"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

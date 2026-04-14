@@ -1,0 +1,14 @@
+[
+	{
+		"_code": {
+			"_lid": "IDD",
+			"_gid": "IDD",
+			"_aid": ["IDD"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "International Direct Dialing"},
+			"_definition": {"ISO_639_3_eng": "Namespace for International Direct Dialing telephone calling codes assigned by the ITU."},
+			"_description": {"ISO_639_3_eng": "International Direct Dialing (IDD) codes, also called country calling codes, are the numeric prefixes dialled before a local telephone number when placing an international call. They are assigned by the International Telecommunication Union (ITU) under the ITU-T E.164 standard. A single country may be assigned multiple calling codes, and the same code may be shared among several countries (e.g. +1 covers the United States, Canada, and many Caribbean nations)."}
+		}
+	}
+]

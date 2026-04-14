@@ -1,5 +1,4 @@
 # Regular expression
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_regexp</code></p>
 
 > A regular expression pattern. In the identification section, when placed on an enumeration root or section node, it constrains the local identifier format of enumeration elements whose closest graph ancestor carrying this property is the current term. In the data section it constrains the value of string scalars that accept it as a companion property.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "regexp",
+  "_gid": "_regexp",
+  "_aid": [
     "regexp"
-  ],
-  "_gid" : "_regexp",
-  "_lid" : "regexp",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -102,17 +101,17 @@ A descriptor whose value must be a valid hex colour code (data section use):
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Regular expression"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Regular expression"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -123,17 +122,15 @@ A descriptor whose value must be a valid hex colour code (data section use):
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Regular expression string](_string_regexp.md)
+**Shape:** [Scalar](_scalar.md) — [Regular expression](_string_regexp.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_string_regexp" : {
-
-    }
+  "_scalar": {
+    "_string_regexp": {}
   }
 }
 ```

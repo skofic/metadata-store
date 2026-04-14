@@ -1,182 +1,182 @@
 [
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "array",
-            "_gid": "_array",
-            "_aid": [
-                "array"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Array"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The `_data` shape property for an ordered list of elements of the same type. When empty (`{}`), the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional `_elements` property constrains the element count. The element type may be defined inline or by reference to a typedef term."
-            },
-            "_description": {
-                "ISO_639_3_eng": "An *array* is an ordered sequence of values of the *same type*. Values may repeat; the type definition applies uniformly to every element.\n\nArrays are *recursive*: the element type is itself a shape property — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_dict`](_dict.md), [`_tuple`](_tuple.md), [`_array`](_array.md), [`_set`](_set.md), [`_nested`](_nested.md). Alternatively, [`_typedef`](_typedef.md) may be used to delegate the element type definition to an existing typedef term.\n\nWhen `_array` is an *empty object* (`{}`), the array may contain any number of elements of any shape or type, with no further constraints.\n\nWhen non-empty, exactly *one* shape sub-property must be present. The optional [`_elements`](_elements.md) property may always be added alongside any shape to constrain the minimum and maximum number of items."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "An array of integers with 1 to 5 elements, each between 5 and 10:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_elements\": {\"_min-items\": 1, \"_max-items\": 5},\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_number_integer\": {\n\t\t\t\t\t\"_range_valid\": {\n\t\t\t\t\t\t\"_min-inclusive\": 5,\n\t\t\t\t\t\t\"_max-inclusive\": 10\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn array of arrays of floating-point lengths:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_length_cm\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn unconstrained array:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {}\n\t}\n}\n```"
-            }
-        },
-        "_data": {
-            "_object": {
-                "_closed": {
-                    "_required": [
-                        {
-                            "_selectors": [
-                                {
-                                    "_all": {
-                                        "_min-items": 1,
-                                        "_max-items": 1
-                                    }
-                                }
-                            ],
-                            "_selection": [
-                                "_scalar",
-                                "_object",
-                                "_dict",
-                                "_tuple",
-                                "_array",
-                                "_set",
-                                "_nested",
-                                "_typedef"
-                            ]
-                        }
-                    ],
-                    "_recommended": [
-                        "_elements"
-                    ]
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "elements",
-            "_gid": "_elements",
-            "_aid": [
-                "elements"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Elements count range"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "An object constraining the minimum and maximum number of elements in a collection. At least one of `_min-items` or `_max-items` must be present."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_elements` constrains the cardinality of a collection. It may be added to [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), and [`_tuple`](_tuple.md) sections, and may also be used alongside [`_typedef`](_typedef.md) in an `_array` context.\n\nBoth [`_min-items`](_min-items.md) and [`_max-items`](_max-items.md) are optional; omitting one leaves that end of the interval open. An absent `_min-items` means the collection may be empty; an absent `_max-items` means no upper limit is imposed."
-            },
-            "_examples": {
-                "ISO_639_3_eng": "A collection must contain between 1 and 10 elements:\n\n```json\n{\"_elements\": {\"_min-items\": 1, \"_max-items\": 10}}\n```\n\nA collection must contain at least 1 element (no upper limit):\n\n```json\n{\"_elements\": {\"_min-items\": 1}}\n```"
-            }
-        },
-        "_data": {
-            "_object": {
-                "_closed": {
-                    "_required": [
-                        {
-                            "_selectors": [
-                                {
-                                    "_any": {
-                                        "_min-items": 1
-                                    }
-                                }
-                            ],
-                            "_selection": [
-                                "_min-items",
-                                "_max-items"
-                            ]
-                        }
-                    ]
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "min-items",
-            "_gid": "_min-items",
-            "_aid": [
-                "min-items"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Minimum element count"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The minimum number of elements a collection must contain. The bound is inclusive. A non-negative integer."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_min-items` sets the inclusive lower bound on the number of elements in an [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), or [`_tuple`](_tuple.md). A collection is valid only if its element count is greater than or equal to this value.\n\nWhen `_min-items` is absent, the collection may be empty (element count of zero is permitted). The value must be a non-negative integer."
-            }
-        },
-        "_data": {
-            "_scalar": {
-                "_number_integer": {
-                    "_range_valid": {
-                        "_min-inclusive": 0
-                    }
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    },
-    {
-        "_code": {
-            "_nid": "",
-            "_lid": "max-items",
-            "_gid": "_max-items",
-            "_aid": [
-                "max-items"
-            ]
-        },
-        "_info": {
-            "_title": {
-                "ISO_639_3_eng": "Maximum element count"
-            },
-            "_definition": {
-                "ISO_639_3_eng": "The maximum number of elements a collection may contain. The bound is inclusive. A positive integer."
-            },
-            "_description": {
-                "ISO_639_3_eng": "`_max-items` sets the inclusive upper bound on the number of elements in an [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), or [`_tuple`](_tuple.md). A collection is valid only if its element count is less than or equal to this value.\n\nWhen `_max-items` is absent, no upper limit is imposed on the collection size. The value must be a positive integer (at least 1)."
-            }
-        },
-        "_data": {
-            "_scalar": {
-                "_number_integer": {
-                    "_range_valid": {
-                        "_min-inclusive": 1
-                    }
-                }
-            }
-        },
-        "_domn": {
-            "_term_role": [
-                "_term_role_descriptor"
-            ]
-        }
-    }
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "array",
+			"_gid": "_array",
+			"_aid": [
+				"array"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Array"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The `_data` shape property for an ordered list of elements of the same type. When empty (`{}`), the array may contain any number of elements of any type. When non-empty, exactly one shape sub-property defines the element type, and the optional `_elements` property constrains the element count. The element type may be defined inline or by reference to a typedef term."
+			},
+			"_description": {
+				"ISO_639_3_eng": "An *array* is an ordered sequence of values of the *same type*. Values may repeat; the type definition applies uniformly to every element.\n\nArrays are *recursive*: the element type is itself a shape property — one of [`_scalar`](_scalar.md), [`_object`](_object.md), [`_dict`](_dict.md), [`_tuple`](_tuple.md), [`_array`](_array.md), [`_set`](_set.md), [`_nested`](_nested.md). Alternatively, [`_typedef`](_typedef.md) may be used to delegate the element type definition to an existing typedef term.\n\nWhen `_array` is an *empty object* (`{}`), the array may contain any number of elements of any shape or type, with no further constraints.\n\nWhen non-empty, exactly *one* shape sub-property must be present. The optional [`_elements`](_elements.md) property may always be added alongside any shape to constrain the minimum and maximum number of items."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "An array of integers with 1 to 5 elements, each between 5 and 10:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_elements\": {\"_min-items\": 1, \"_max-items\": 5},\n\t\t\t\"_scalar\": {\n\t\t\t\t\"_number_integer\": {\n\t\t\t\t\t\"_range_valid\": {\n\t\t\t\t\t\t\"_min-inclusive\": 5,\n\t\t\t\t\t\t\"_max-inclusive\": 10\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn array of arrays of floating-point lengths:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {\n\t\t\t\"_array\": {\n\t\t\t\t\"_scalar\": {\n\t\t\t\t\t\"_number_float\": {\n\t\t\t\t\t\t\"_unit\": \"_unit_length_cm\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nAn unconstrained array:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_array\": {}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_all": {
+										"_min-items": 1,
+										"_max-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_scalar",
+								"_object",
+								"_dict",
+								"_tuple",
+								"_array",
+								"_set",
+								"_nested",
+								"_typedef"
+							]
+						}
+					],
+					"_recommended": [
+						"_elements"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "elements",
+			"_gid": "_elements",
+			"_aid": [
+				"elements"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Elements count range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "An object constraining the minimum and maximum number of elements in a collection. At least one of `_min-items` or `_max-items` must be present."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_elements` constrains the cardinality of a collection. It may be added to [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), and [`_tuple`](_tuple.md) sections, and may also be used alongside [`_typedef`](_typedef.md) in an `_array` context.\n\nBoth [`_min-items`](_min-items.md) and [`_max-items`](_max-items.md) are optional; omitting one leaves that end of the interval open. An absent `_min-items` means the collection may be empty; an absent `_max-items` means no upper limit is imposed."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A collection must contain between 1 and 10 elements:\n\n```json\n{\"_elements\": {\"_min-items\": 1, \"_max-items\": 10}}\n```\n\nA collection must contain at least 1 element (no upper limit):\n\n```json\n{\"_elements\": {\"_min-items\": 1}}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {
+					"_required": [
+						{
+							"_selectors": [
+								{
+									"_any": {
+										"_min-items": 1
+									}
+								}
+							],
+							"_selection": [
+								"_min-items",
+								"_max-items"
+							]
+						}
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "min-items",
+			"_gid": "_min-items",
+			"_aid": [
+				"min-items"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Minimum element count"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The minimum number of elements a collection must contain. The bound is inclusive. A non-negative integer."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_min-items` sets the inclusive lower bound on the number of elements in an [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), or [`_tuple`](_tuple.md). A collection is valid only if its element count is greater than or equal to this value.\n\nWhen `_min-items` is absent, the collection may be empty (element count of zero is permitted). The value must be a non-negative integer."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "max-items",
+			"_gid": "_max-items",
+			"_aid": [
+				"max-items"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Maximum element count"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The maximum number of elements a collection may contain. The bound is inclusive. A positive integer."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_max-items` sets the inclusive upper bound on the number of elements in an [`_array`](_array.md), [`_nested`](_nested.md), [`_set`](_set.md), or [`_tuple`](_tuple.md). A collection is valid only if its element count is less than or equal to this value.\n\nWhen `_max-items` is absent, no upper limit is imposed on the collection size. The value must be a positive integer (at least 1)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-inclusive": 1
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
 ]

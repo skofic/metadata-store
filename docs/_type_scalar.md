@@ -1,5 +1,4 @@
 # Scalar data type
-<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_enum-root.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration root</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_type_scalar</code></p>
 
 > The typedef term that defines the complete set of types accepted as the type key in a `_scalar` object. Its schema requires exactly one of the listed type keys to be present. Referenced via `_typedef: "_type_scalar"` by the `_scalar` shape property.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Type](_type.md) |
+| [Namespace](_nid.md) | `_type` |
 | [Local identifier](_lid.md) | `scalar` |
 | [Global identifier](_gid.md) | `_type_scalar` |
 | [Official identifiers](_aid.md) | `scalar` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_type",
+  "_lid": "scalar",
+  "_gid": "_type_scalar",
+  "_aid": [
     "scalar"
-  ],
-  "_gid" : "_type_scalar",
-  "_lid" : "scalar",
-  "_nid" : "_type"
+  ]
 }
 ```
 
@@ -58,14 +57,14 @@ The full set of accepted type keys spans all scalar type families:
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Scalar data type"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Scalar data type"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -76,23 +75,26 @@ The full set of accepted type keys spans all scalar type families:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
-[Number](_number.md) · [Floating point number](_number_float.md) · [Integer number](_number_integer.md) · [String](_string.md) · [Uniform Resource Identifier](_string_URI.md) · [Email address](_string_Email.md) · [Hostname](_string_Hostname.md) · [Internet Protocol version 4 address](_string_IPv4.md) · [Internet Protocol version 6 address](_string_IPv6.md) · [YYYYMMDD date](_string_YMD.md) · [Date](_string_date.md) · [Time](_string_time.md) · [Date and time](_string_date-time.md) · [LaTeX string](_string_LaTeX.md) · [Hexadecimal string](_string_HEX.md) · [Regular expression string](_string_regexp.md) · [Text](_text.md) · [HTML](_text_HTML.md) · [Markdown](_text_Markdown.md) · [SVG](_text_SVG.md) · [Term document key](_term_key.md) · [Enumeration root term document key](_term_key_enum-root.md) · [Enumeration element term document key](_term_key_enum-item.md) · [Descriptor term document key](_term_key_descriptor.md) · [Document handle](_handle.md) · [Time stamp](_timestamp.md) · [Boolean](_boolean.md) · [Enumerated value](_enum.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {
+                "_min-items": 1,
+                "_max-items": 1
+              }
+            }
+          ],
+          "_selection": [
             "_number",
             "_number_float",
             "_number_integer",
@@ -121,14 +123,6 @@ The full set of accepted type keys spans all scalar type families:
             "_timestamp",
             "_boolean",
             "_enum"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-                "_max-items" : 1,
-                "_min-items" : 1
-              }
-            }
           ]
         }
       ]

@@ -1,0 +1,20 @@
+[
+	{
+		"_code": {
+			"_nid": "IDD",
+			"_lid": "codes",
+			"_gid": "IDD_codes",
+			"_aid": ["codes"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "International Direct Dialing codes"},
+			"_definition": {"ISO_639_3_eng": "The set of international telephone calling codes assigned to a country or territory by the ITU."},
+			"_description": {"ISO_639_3_eng": "Values are numeric strings prefixed with `+` (e.g. `+39` for Italy, `+1` for the United States). A country may have more than one calling code; equally, a single calling code may be shared among multiple countries or territories. The set contains all codes that can reach the country when dialling internationally."}
+		},
+		"_data": {
+			"_set": {
+				"_string": {}
+			}
+		}
+	}
+]

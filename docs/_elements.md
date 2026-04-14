@@ -1,5 +1,4 @@
 # Elements count range
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_elements</code></p>
 
 > An object constraining the minimum and maximum number of elements in a collection. At least one of `_min-items` or `_max-items` must be present.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "elements",
+  "_gid": "_elements",
+  "_aid": [
     "elements"
-  ],
-  "_gid" : "_elements",
-  "_lid" : "elements",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -64,17 +63,17 @@ A collection must contain at least 1 element (no upper limit):
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Elements count range"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Elements count range"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -85,32 +84,27 @@ A collection must contain at least 1 element (no upper limit):
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Optional selection](_any.md) ([Minimum element count](_min-items.md): 1)
-[Minimum element count](_min-items.md) · [Maximum element count](_max-items.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
-            "_min-items",
-            "_max-items"
-          ],
-          "_selectors" : [
+          "_selectors": [
             {
-              "_any" : {
-                "_min-items" : 1
+              "_any": {
+                "_min-items": 1
               }
             }
+          ],
+          "_selection": [
+            "_min-items",
+            "_max-items"
           ]
         }
       ]

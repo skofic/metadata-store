@@ -1,5 +1,4 @@
 # Term document key
-<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_key</code></p>
 
 > The scalar data type for term document keys. The stored value is the `_gid` of any term in the terms collection, without constraining the term's role. Parent type of the `_term_key_*` sub-types, which add role constraints.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Term](_term.md) |
+| [Namespace](_nid.md) | `_term` |
 | [Local identifier](_lid.md) | `key` |
 | [Global identifier](_gid.md) | `_term_key` |
 | [Official identifiers](_aid.md) | `key` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_term",
+  "_lid": "key",
+  "_gid": "_term_key",
+  "_aid": [
     "key"
-  ],
-  "_gid" : "_term_key",
-  "_lid" : "key",
-  "_nid" : "_term"
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ Stored values: `"_string_date"`, `"ISO_639_3_eng"`, `"_predicate_enum-of"`.
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Term document key"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Term document key"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,17 +80,15 @@ Stored values: `"_string_date"`, `"ISO_639_3_eng"`, `"_predicate_enum-of"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-
-    }
+  "_object": {
+    "_closed": {}
   }
 }
 ```

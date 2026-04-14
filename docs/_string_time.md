@@ -1,5 +1,4 @@
 # Time
-<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_string_time</code></p>
 
 > The scalar data type for times in `HH:MM:SS` format. Comparable; string range constraints may be applied. A sub-type of `_string`.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [String](_string.md) |
+| [Namespace](_nid.md) | `_string` |
 | [Local identifier](_lid.md) | `time` |
 | [Global identifier](_gid.md) | `_string_time` |
 | [Official identifiers](_aid.md) | `time` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_string",
+  "_lid": "time",
+  "_gid": "_string_time",
+  "_aid": [
     "time"
-  ],
-  "_gid" : "_string_time",
-  "_lid" : "time",
-  "_nid" : "_string"
+  ]
 }
 ```
 
@@ -60,17 +59,17 @@ Stored values: `"14:30:00"`, `"09:00:00"`, `"23:59:59"`.
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Time"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Time"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -81,18 +80,16 @@ Stored values: `"14:30:00"`, `"09:00:00"`, `"23:59:59"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Recommended properties](_recommended.md):** [Valid string range](_range_valid_string.md) · [Normal string range](_range_normal_string.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_recommended" : [
+  "_object": {
+    "_closed": {
+      "_recommended": [
         "_range_valid_string",
         "_range_normal_string"
       ]

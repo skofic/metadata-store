@@ -1,5 +1,4 @@
 # Enumeration root
-<p><a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_role_enum-root</code></p>
 
 > A term role indicating that the term is the root of a controlled vocabulary. The root defines the name and scope of the vocabulary; its `_gid` is used as the value of `_enums` when constraining an `_enum` scalar. Set automatically.
@@ -10,7 +9,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | [Term role](_term_role.md) |
+| [Namespace](_nid.md) | `_term_role` |
 | [Local identifier](_lid.md) | `enum-root` |
 | [Global identifier](_gid.md) | `_term_role_enum-root` |
 | [Official identifiers](_aid.md) | `enum-root` |
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "_term_role",
+  "_lid": "enum-root",
+  "_gid": "_term_role_enum-root",
+  "_aid": [
     "enum-root"
-  ],
-  "_gid" : "_term_role_enum-root",
-  "_lid" : "enum-root",
-  "_nid" : "_term_role"
+  ]
 }
 ```
 
@@ -50,14 +49,14 @@ This role is assigned automatically by the loader when it detects that the term 
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Enumeration root"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Enumeration root"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```

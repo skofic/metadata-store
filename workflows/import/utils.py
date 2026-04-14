@@ -159,8 +159,13 @@ def get_titles(eng_name, translations, common_name=None):
 # Term and edge builders
 # ---------------------------------------------------------------------------
 
-def build_term(nid, lid, gid, aid, titles, prop=None, name=None, emoji=None):
-    """Build a term document in the standard format."""
+def build_term(nid, lid, gid, aid, titles, prop=None, name=None, emoji=None, definition=None):
+    """Build a term document in the standard format.
+
+    name:       Optional _code._name (a plain string — avoid when the concept
+                has no single canonical name, e.g. countries or languages).
+    definition: Optional _info._definition multilingual dict.
+    """
     code = {
         "_nid": nid,
         "_lid": lid,
@@ -172,9 +177,13 @@ def build_term(nid, lid, gid, aid, titles, prop=None, name=None, emoji=None):
     if emoji:
         code["_emoji"] = emoji
 
+    info = {"_title": titles}
+    if definition:
+        info["_definition"] = definition
+
     term = {
         "_code": code,
-        "_info": {"_title": titles},
+        "_info": info,
     }
     if prop:
         term["_prop"] = prop
@@ -218,6 +227,6 @@ def write_json(path, data):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+        json.dump(data, f, indent="\t", ensure_ascii=False)
         f.write("\n")
     print(f"  → {path.relative_to(REPO_ROOT)}  ({len(data)} entries)")

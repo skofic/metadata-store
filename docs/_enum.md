@@ -1,5 +1,4 @@
 # Enumerated value
-<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_enum</code></p>
 
 > The scalar data type for enumeration values — strings that must be the `_gid` of a valid enumeration element within a controlled vocabulary. The optional `_enums` companion property constrains which vocabularies are accepted.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "enum",
+  "_gid": "_enum",
+  "_aid": [
     "enum"
-  ],
-  "_gid" : "_enum",
-  "_lid" : "enum",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -74,17 +73,17 @@ Stored values (enumeration element `_gid`s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Enumerated value"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Enumerated value"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -95,18 +94,16 @@ Stored values (enumeration element `_gid`s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Recommended properties](_recommended.md):** [Controlled vocabularies](_enums.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_recommended" : [
+  "_object": {
+    "_closed": {
+      "_recommended": [
         "_enums"
       ]
     }

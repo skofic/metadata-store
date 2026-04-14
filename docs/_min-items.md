@@ -1,5 +1,4 @@
 # Minimum element count
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_min-items</code></p>
 
 > The minimum number of elements a collection must contain. The bound is inclusive. A non-negative integer.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "min-items",
+  "_gid": "_min-items",
+  "_aid": [
     "min-items"
-  ],
-  "_gid" : "_min-items",
-  "_lid" : "min-items",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -50,14 +49,14 @@ When `_min-items` is absent, the collection may be empty (element count of zero 
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Minimum element count"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Minimum element count"
+  "_description": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -68,17 +67,17 @@ When `_min-items` is absent, the collection may be empty (element count of zero 
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Integer number](_number_integer.md) ([Valid numeric range](_range_valid.md): [Range minimum inclusive](_min-inclusive.md): 0)
+**Shape:** [Scalar](_scalar.md) — [Integer](_number_integer.md) — valid range: ≥ 0
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar" : {
-    "_number_integer" : {
-      "_range_valid" : {
-        "_min-inclusive" : 0
+  "_scalar": {
+    "_number_integer": {
+      "_range_valid": {
+        "_min-inclusive": 0
       }
     }
   }

@@ -1,5 +1,4 @@
 # Properties selection
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_selection</code></p>
 
 > A flat or nested array of descriptor global identifiers that serves as the candidate pool for the cardinality rules defined in `_selectors`. When nested, each sub-array corresponds positionally to one element of `_selectors`.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "selection",
+  "_gid": "_selection",
+  "_aid": [
     "selection"
-  ],
-  "_gid" : "_selection",
-  "_lid" : "selection",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -87,17 +86,17 @@ The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: 
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Properties selection"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Properties selection"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -108,17 +107,15 @@ The first `_selectors` entry applies to `["_min-exclusive", "_min-inclusive"]`: 
 
 ## [Data section](_data.md)
 
-**Shape:** [Nested array](_nested.md) — [Descriptor term document key](_term_key_descriptor.md)
+**Shape:** (complex)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_nested" : {
-    "_term_key_descriptor" : {
-
-    }
+  "_nested": {
+    "_term_key_descriptor": {}
   }
 }
 ```

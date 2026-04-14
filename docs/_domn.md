@@ -1,5 +1,4 @@
 # Domains section
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_domn</code></p>
 
 > The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "domn",
+  "_gid": "_domn",
+  "_aid": [
     "domn"
-  ],
-  "_gid" : "_domn",
-  "_lid" : "domn",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -78,17 +77,17 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Domains section"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Domains section"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -99,23 +98,19 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Open schema](_open.md)
-
-**[Recommended properties](_recommended.md):** [Term role](_term_role.md)
-
-**[Computed properties](_computed.md):** [Term role](_term_role.md)
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_open" : {
-      "_computed" : [
+  "_object": {
+    "_open": {
+      "_recommended": [
         "_term_role"
       ],
-      "_recommended" : [
+      "_computed": [
         "_term_role"
       ]
     }

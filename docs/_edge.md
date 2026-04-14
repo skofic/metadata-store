@@ -1,5 +1,4 @@
 # Edge
-<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_edge</code></p>
 
 > The document structure of a directed relationship between two nodes in a dictionary graph. Each edge encodes its source, destination, predicate, graph membership, and any associated data. The `_key` is computed from the MD5 hash of the source, predicate, and destination.
@@ -20,12 +19,12 @@
 
 ```json
 {
-  "_aid" : [
+  "_nid": "",
+  "_lid": "edge",
+  "_gid": "_edge",
+  "_aid": [
     "edge"
-  ],
-  "_gid" : "_edge",
-  "_lid" : "edge",
-  "_nid" : ""
+  ]
 }
 ```
 
@@ -90,17 +89,17 @@ Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs
 
 ```json
 {
-  "_definition" : {
-    "ISO_639_3_eng" : "..."
+  "_title": {
+    "ISO_639_3_eng": "Edge"
   },
-  "_description" : {
-    "ISO_639_3_eng" : "..."
+  "_definition": {
+    "ISO_639_3_eng": "..."
   },
-  "_examples" : {
-    "ISO_639_3_eng" : "..."
+  "_description": {
+    "ISO_639_3_eng": "..."
   },
-  "_title" : {
-    "ISO_639_3_eng" : "Edge"
+  "_examples": {
+    "ISO_639_3_eng": "..."
   }
 }
 ```
@@ -111,64 +110,47 @@ Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
-
-**[Required properties](_required.md)**
-
-[Mandatory selection](_all.md)
-[Relationship source](_from.md) · [Relationship destination](_to.md) · [Relationship predicate](_predicate.md) · [Relationship path](_path.md) · [Relationship path data](_path_data.md)
-
-**[Computed properties](_computed.md):** [Document key](_key.md)
-
-**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
-
-**[Immutable properties](_immutable.md):** [Document key](_key.md) · [Relationship source](_from.md) · [Relationship destination](_to.md) · [Relationship predicate](_predicate.md)
-
-**[Default values](_default-value.md):** *see JSON*
+**Shape:** [Object](_object.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object" : {
-    "_closed" : {
-      "_computed" : [
-        "_key"
-      ],
-      "_default-value" : {
-        "_path_data" : {
-
-        }
-      },
-      "_immutable" : [
-        "_key",
-        "_from",
-        "_to",
-        "_predicate"
-      ],
-      "_locked" : [
-        "_id",
-        "_rev"
-      ],
-      "_required" : [
+  "_object": {
+    "_closed": {
+      "_required": [
         {
-          "_selection" : [
+          "_selectors": [
+            {
+              "_all": {}
+            }
+          ],
+          "_selection": [
             "_from",
             "_to",
             "_predicate",
             "_path",
             "_path_data"
-          ],
-          "_selectors" : [
-            {
-              "_all" : {
-
-              }
-            }
           ]
         }
-      ]
+      ],
+      "_computed": [
+        "_key"
+      ],
+      "_immutable": [
+        "_key",
+        "_from",
+        "_to",
+        "_predicate"
+      ],
+      "_locked": [
+        "_id",
+        "_rev"
+      ],
+      "_default-value": {
+        "_path_data": {}
+      }
     }
   }
 }

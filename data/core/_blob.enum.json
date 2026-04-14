@@ -1,0 +1,45 @@
+[
+	{
+		"_from": "terms/_text",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_type",
+		"_path": ["terms/_blob_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_SVG",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_type",
+		"_path": ["terms/_blob_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_HTML",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_type",
+		"_path": ["terms/_blob_type"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_text_Markdown",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_type",
+		"_path": ["terms/_blob_type"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/_media_landscape",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_kind",
+		"_path": ["terms/_blob_kind"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_media_square",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_blob_kind",
+		"_path": ["terms/_blob_kind"],
+		"_path_data": {}
+	}
+]
