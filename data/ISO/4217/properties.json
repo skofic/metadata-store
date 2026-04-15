@@ -4,11 +4,17 @@
 			"_nid": "ISO_4217",
 			"_lid": "alpha3",
 			"_gid": "ISO_4217_alpha3",
-			"_aid": ["alpha3"]
+			"_aid": [
+				"alpha3"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Currency code"},
-			"_definition": {"ISO_639_3_eng": "Three letter code of the currency."}
+			"_title": {
+				"ISO_639_3_eng": "Currency code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Three letter code of the currency."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -17,19 +23,31 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_4217",
 			"_lid": "numeric",
 			"_gid": "ISO_4217_numeric",
-			"_aid": ["numeric"]
+			"_aid": [
+				"numeric"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Currency numeric code"},
-			"_definition": {"ISO_639_3_eng": "Three digit numeric code of the curreency, including leading zeros."},
-			"_description": {"ISO_639_3_eng": "[ISO 4217]([ISO 4217 - Wikipedia](https://en.wikipedia.org/wiki/ISO_4217)) also assigns a three-digit numeric code to each currency, much like the three-digit numeric code assigned to each country by [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166 \"ISO 3166\"). The numeric code assigned to a currency by ISO 4217 is usually the same as the numeric code assigned to the corresponding country by [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 \"ISO 3166-1\"). For example, USD ([United States dollar](https://en.wikipedia.org/wiki/United_States_dollar \"United States dollar\")) has numeric code 840 which is also the numeric code for the US (United States)."}
+			"_title": {
+				"ISO_639_3_eng": "Currency numeric code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Three digit numeric code of the curreency, including leading zeros."
+			},
+			"_description": {
+				"ISO_639_3_eng": "[ISO 4217]([ISO 4217 - Wikipedia](https://en.wikipedia.org/wiki/ISO_4217)) also assigns a three-digit numeric code to each currency, much like the three-digit numeric code assigned to each country by [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166 \"ISO 3166\"). The numeric code assigned to a currency by ISO 4217 is usually the same as the numeric code assigned to the corresponding country by [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 \"ISO 3166-1\"). For example, USD ([United States dollar](https://en.wikipedia.org/wiki/United_States_dollar \"United States dollar\")) has numeric code 840 which is also the numeric code for the US (United States)."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -38,6 +56,10 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	}
 ]

@@ -1,4 +1,5 @@
 # Providers
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_provider</code></p>
 
 > Contact information for the metadata curators responsible for the term. Expressed as formatted text. Identifies who to contact for questions, corrections, or contributions.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "provider",
-  "_gid": "_provider",
-  "_aid": [
+  "_aid" : [
     "provider"
-  ]
+  ],
+  "_gid" : "_provider",
+  "_lid" : "provider",
+  "_nid" : ""
 }
 ```
 
@@ -61,17 +62,17 @@ A provider entry for a term maintained by a research group:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Providers"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Providers"
   }
 }
 ```
@@ -82,14 +83,14 @@ A provider entry for a term maintained by a research group:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): `_info_text`
+**Shape:** [Type definition](_typedef.md): [Multilingual formatted text](_info_text.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef": "_info_text"
+  "_typedef" : "_info_text"
 }
 ```
 

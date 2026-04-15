@@ -1,4 +1,5 @@
 # Properties selectors
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_selectors</code></p>
 
 > An ordered array of cardinality rule objects (`_all` or `_any`), each applying positionally to the corresponding element of `_selection`. The first element of `_selectors` applies to the first element of `_selection`, the second to the second, and so on.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "selectors",
-  "_gid": "_selectors",
-  "_aid": [
+  "_aid" : [
     "selectors"
-  ]
+  ],
+  "_gid" : "_selectors",
+  "_lid" : "selectors",
+  "_nid" : ""
 }
 ```
 
@@ -67,25 +68,29 @@ The first `_selectors` entry — `_all: {_min-items: 1, _max-items: 1}` — is t
 
 The second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group rule. Applied to the 2 selected elements, at least 1 must be present in the actual object.
 
+**[Notes](_notes.md)**
+
+Previously named `_selection_rules` in earlier versions of the dictionary.
+
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Properties selectors"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_notes" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_notes": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Properties selectors"
   }
 }
 ```
@@ -96,29 +101,29 @@ The second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group
 
 ## [Data section](_data.md)
 
-**Shape:** [Array](_array.md)
+**Shape:** [Array](_array.md) — [Object](_object.md) — [Closed schema](_closed.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_array": {
-    "_object": {
-      "_closed": {
-        "_required": [
+  "_array" : {
+    "_object" : {
+      "_closed" : {
+        "_required" : [
           {
-            "_selectors": [
-              {
-                "_all": {
-                  "_min-items": 1,
-                  "_max-items": 1
-                }
-              }
-            ],
-            "_selection": [
+            "_selection" : [
               "_all",
               "_any"
+            ],
+            "_selectors" : [
+              {
+                "_all" : {
+                  "_max-items" : 1,
+                  "_min-items" : 1
+                }
+              }
             ]
           }
         ]

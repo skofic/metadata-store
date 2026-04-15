@@ -44,7 +44,6 @@
 		],
 		"_path_data": {}
 	},
-
 	{
 		"_from": "terms/UN_M49_Africa",
 		"_predicate": "_predicate_enum-of",
@@ -99,7 +98,6 @@
 		],
 		"_path_data": {}
 	},
-
 	{
 		"_from": "terms/UN_M49_Northern-Africa",
 		"_predicate": "_predicate_enum-of",

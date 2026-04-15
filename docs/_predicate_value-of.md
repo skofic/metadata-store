@@ -1,4 +1,5 @@
 # Value of
+<p><a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_value-of</code></p>
 
 > The source term is a possible value of the destination property within a specific structural context. When the property holds this value, the rules in `_path_data` are activated. Used to implement value-triggered conditional schema constraints.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_predicate` |
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
 | [Local identifier](_lid.md) | `value-of` |
 | [Global identifier](_gid.md) | `_predicate_value-of` |
 | [Official identifiers](_aid.md) | `value-of` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_predicate",
-  "_lid": "value-of",
-  "_gid": "_predicate_value-of",
-  "_aid": [
+  "_aid" : [
     "value-of"
-  ]
+  ],
+  "_gid" : "_predicate_value-of",
+  "_lid" : "value-of",
+  "_nid" : "_predicate"
 }
 ```
 
@@ -94,17 +95,17 @@ When [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_intege
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Value of"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Value of"
   }
 }
 ```

@@ -1,4 +1,5 @@
 # Identification section
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_code</code></p>
 
 > The section of a term that holds its identifiers: the local identifier within a namespace, the optional namespace reference, and the computed global identifier that uniquely identifies the term across the entire dictionary.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "code",
-  "_gid": "_code",
-  "_aid": [
+  "_aid" : [
     "code"
-  ]
+  ],
+  "_gid" : "_code",
+  "_lid" : "code",
+  "_nid" : ""
 }
 ```
 
@@ -95,17 +96,17 @@ A top-level namespace term with no parent:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Identification section"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Identification section"
   }
 }
 ```
@@ -116,30 +117,36 @@ A top-level namespace term with no parent:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Local identifier](_lid.md) · [Global identifier](_gid.md) · [Official identifiers](_aid.md)
+
+**[Recommended properties](_recommended.md):** [Namespace](_nid.md) · [Uniform Resource Identifier](_uri.md) · [Provider identifiers](_pid.md) · [Name](_name.md) · [Symbol](_symbol.md) · [Regular expression](_regexp.md) · [Emoji](_emoji.md)
+
+**[Computed properties](_computed.md):** [Global identifier](_gid.md) · [Official identifiers](_aid.md)
+
+**[Immutable properties](_immutable.md):** [Namespace](_nid.md) · [Local identifier](_lid.md) · [Global identifier](_gid.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
-        {
-          "_selectors": [
-            {
-              "_all": {}
-            }
-          ],
-          "_selection": [
-            "_lid",
-            "_gid",
-            "_aid"
-          ]
-        }
+  "_object" : {
+    "_closed" : {
+      "_computed" : [
+        "_gid",
+        "_aid"
       ],
-      "_recommended": [
+      "_immutable" : [
+        "_nid",
+        "_lid",
+        "_gid"
+      ],
+      "_recommended" : [
         "_nid",
         "_uri",
         "_pid",
@@ -148,18 +155,21 @@ A top-level namespace term with no parent:
         "_regexp",
         "_emoji"
       ],
-      "_computed": [
-        "_gid",
-        "_aid"
-      ],
-      "_immutable": [
-        "_nid",
-        "_lid",
-        "_gid"
-      ],
-      "_locked": [
-        "_id",
-        "_rev"
+      "_required" : [
+        {
+          "_selection" : [
+            "_lid",
+            "_gid",
+            "_aid"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
       ]
     }
   }

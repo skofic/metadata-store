@@ -1,4 +1,5 @@
 # National borders
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>national-borders</code></p>
 
 > The set of countries that share a land border with a given country, identified by their ISO 3166-1 alpha-3 codes.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | (none — top-level namespace) |
+| [Namespace](_nid.md) | (none) |
 | [Local identifier](_lid.md) | `national-borders` |
 | [Global identifier](_gid.md) | `national-borders` |
 | [Official identifiers](_aid.md) | `national-borders` |
@@ -19,11 +20,11 @@
 
 ```json
 {
-  "_lid": "national-borders",
-  "_gid": "national-borders",
-  "_aid": [
+  "_aid" : [
     "national-borders"
-  ]
+  ],
+  "_gid" : "national-borders",
+  "_lid" : "national-borders"
 }
 ```
 
@@ -46,14 +47,14 @@ Island nations and some countries separated by water from all neighbours will ha
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "National borders"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "National borders"
   }
 }
 ```
@@ -64,16 +65,16 @@ Island nations and some countries separated by water from all neighbours will ha
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) of [Enumerated value](_enum.md) from vocabulary `ISO_3166_1`
+**Shape:** [Set](_set.md) — [Enumerated value](_enum.md) ()
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set": {
-    "_enum": {
-      "_enums": "ISO_3166_1"
+  "_set" : {
+    "_enum" : {
+      "_enums" : "ISO_3166_1"
     }
   }
 }

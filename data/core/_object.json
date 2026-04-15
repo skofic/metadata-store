@@ -27,16 +27,16 @@
 				"_closed": {
 					"_required": [
 						{
+							"_selection": [
+								"_open",
+								"_closed"
+							],
 							"_selectors": [
 								{
 									"_any": {
 										"_max-items": 1
 									}
 								}
-							],
-							"_selection": [
-								"_open",
-								"_closed"
 							]
 						}
 					]
@@ -397,11 +397,11 @@
 			"_description": {
 				"ISO_639_3_eng": "A `_selector` object is the unit of selection logic within [`_required`](_required.md). It has two required properties:\n\n- [`_selectors`](_selectors.md) — an array of [`_all`](_all.md) or [`_any`](_any.md) objects defining cardinality rules.\n- [`_selection`](_selection.md) — a flat or nested array of descriptor global identifiers serving as the candidate pool.\n\nWhen `_selection` is a flat array, `_selectors` has a single element applied to all candidates directly.\n\nWhen `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. `_selectors[0]` (the intra-group phase) is applied to each sub-array of `_selection` independently: it defines how many elements from each sub-array can simultaneously be present. `_selectors[1]` (the inter-group phase) is applied to the combined result — one candidate slot per sub-array: it defines how many of the sub-array groups must be represented."
 			},
-			"_notes": {
-				"ISO_639_3_eng": "Previously named `_rule_selector` in earlier versions of the dictionary."
-			},
 			"_examples": {
 				"ISO_639_3_eng": "**Example 1** — the [`_range`](_range.md) numeric range object:\n\n```json\n{\n\t\"_selectors\": [\n\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_any\": {\"_min-items\": 1}}\n\t],\n\t\"_selection\": [\n\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t]\n}\n```\n\n`_selectors[0]` (`_all: {_min-items: 1, _max-items: 1}`) is the intra-group phase: applied to each sub-array independently. From `[\"_min-exclusive\", \"_min-inclusive\"]`, exactly 1 must be present; from `[\"_max-exclusive\", \"_max-inclusive\"]`, exactly 1 must be present. The combined result is exactly 2 selected elements (one per group).\n\n`_selectors[1]` (`_any: {_min-items: 1}`) is the inter-group phase: applied to the 2 selected elements, at least 1 must be present in the actual object.\n\n---\n\n**Example 2** — requiring that the closed schema form be present:\n\n```json\n{\n\t\"_selectors\": [{\"_all\": {}}],\n\t\"_selection\": [\"_closed\"]\n}\n```\n\n`_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Previously named `_rule_selector` in earlier versions of the dictionary."
 			}
 		},
 		"_data": {
@@ -409,14 +409,14 @@
 				"_closed": {
 					"_required": [
 						{
+							"_selection": [
+								"_selectors",
+								"_selection"
+							],
 							"_selectors": [
 								{
 									"_all": {}
 								}
-							],
-							"_selection": [
-								"_selectors",
-								"_selection"
 							]
 						}
 					]
@@ -448,11 +448,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_selectors` is the array of cardinality rules within a [`_selector`](_selector.md) object. Each element of `_selectors` is an object containing exactly one of [`_all`](_all.md) (mandatory group) or [`_any`](_any.md) (optional group).\n\nWhen [`_selection`](_selection.md) is a flat array, `_selectors` has a single element applied to all candidates directly.\n\nWhen `_selection` is a nested array of sub-arrays, `_selectors` operates as a two-phase pipeline. The first element (`_selectors[0]`) is the intra-group rule: applied to each sub-array of `_selection` independently, it constrains how many elements from each group can simultaneously be present. The second element (`_selectors[1]`) is the inter-group rule: applied to the combined result (one candidate slot per sub-array), it constrains how many of the groups must be represented."
 			},
-			"_notes": {
-				"ISO_639_3_eng": "Previously named `_selection_rules` in earlier versions of the dictionary."
-			},
 			"_examples": {
 				"ISO_639_3_eng": "The `_selectors` from the [`_range`](_range.md) numeric range term:\n\n```json\n{\n\t\"_selectors\": [\n\t\t{\"_all\": {\"_min-items\": 1, \"_max-items\": 1}},\n\t\t{\"_any\": {\"_min-items\": 1}}\n\t],\n\t\"_selection\": [\n\t\t[\"_min-exclusive\", \"_min-inclusive\"],\n\t\t[\"_max-exclusive\", \"_max-inclusive\"]\n\t]\n}\n```\n\nThe first `_selectors` entry — `_all: {_min-items: 1, _max-items: 1}` — is the intra-group rule. Applied to each sub-array independently: from `[\"_min-exclusive\", \"_min-inclusive\"]`, exactly 1 must be present; from `[\"_max-exclusive\", \"_max-inclusive\"]`, exactly 1 must be present. The combined result is exactly 2 selected elements.\n\nThe second `_selectors` entry — `_any: {_min-items: 1}` — is the inter-group rule. Applied to the 2 selected elements, at least 1 must be present in the actual object."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Previously named `_selection_rules` in earlier versions of the dictionary."
 			}
 		},
 		"_data": {
@@ -461,17 +461,17 @@
 					"_closed": {
 						"_required": [
 							{
-								"_selectors": [
-									{
-										"_all": {
-											"_min-items": 1,
-											"_max-items": 1
-										}
-									}
-								],
 								"_selection": [
 									"_all",
 									"_any"
+								],
+								"_selectors": [
+									{
+										"_all": {
+											"_max-items": 1,
+											"_min-items": 1
+										}
+									}
 								]
 							}
 						]

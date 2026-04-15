@@ -19,7 +19,11 @@
 				"ISO_639_3_eng": "`_type` is the namespace under which the three built-in typedef terms are organised: [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md). These terms carry the complete allowed-type lists used when validating the type key present in [`_scalar`](_scalar.md), [`_set`](_set.md), [`_nested`](_nested.md), and [`_dict_key`](_dict_key.md) objects.\n\nAs a namespace root, `_type` itself carries no data section."
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
 	},
 	{
 		"_code": {
@@ -46,14 +50,6 @@
 				"_closed": {
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
 							"_selection": [
 								"_number",
 								"_number_float",
@@ -83,6 +79,14 @@
 								"_timestamp",
 								"_boolean",
 								"_enum"
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								}
 							]
 						}
 					]
@@ -120,16 +124,11 @@
 		"_data": {
 			"_object": {
 				"_closed": {
+					"_recommended": [
+						"_elements"
+					],
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
 							"_selection": [
 								"_number",
 								"_number_float",
@@ -155,11 +154,16 @@
 								"_timestamp",
 								"_boolean",
 								"_enum"
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								}
 							]
 						}
-					],
-					"_recommended": [
-						"_elements"
 					]
 				}
 			}
@@ -197,14 +201,6 @@
 				"_closed": {
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
 							"_selection": [
 								"_string",
 								"_string_URI",
@@ -224,6 +220,14 @@
 								"_term_key_descriptor",
 								"_handle",
 								"_enum"
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								}
 							]
 						}
 					]

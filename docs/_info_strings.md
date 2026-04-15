@@ -1,4 +1,5 @@
 # Multilingual plain text strings
+<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_info_strings</code></p>
 
 > An array of multilingual plain-text string dictionaries. Each element maps ISO 639-3 language identifiers to plain-text strings, allowing a single field to carry multiple named values each expressed in multiple languages.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_info` |
+| [Namespace](_nid.md) | [Information section](_info.md) |
 | [Local identifier](_lid.md) | `strings` |
 | [Global identifier](_gid.md) | `_info_strings` |
 | [Official identifiers](_aid.md) | `strings` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_info",
-  "_lid": "strings",
-  "_gid": "_info_strings",
-  "_aid": [
+  "_aid" : [
     "strings"
-  ]
+  ],
+  "_gid" : "_info_strings",
+  "_lid" : "strings",
+  "_nid" : "_info"
 }
 ```
 
@@ -81,17 +82,17 @@ A country with a single capital:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Multilingual plain text strings"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Multilingual plain text strings"
   }
 }
 ```
@@ -102,25 +103,27 @@ A country with a single capital:
 
 ## [Data section](_data.md)
 
-**Shape:** [Array](_array.md)
+**Shape:** [Array](_array.md) — *Nested structure — see JSON*
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_array": {
-    "_dict": {
-      "_dict_key": {
-        "_enum": {
-          "_enums": [
+  "_array" : {
+    "_dict" : {
+      "_dict_key" : {
+        "_enum" : {
+          "_enums" : [
             "ISO_639_3"
           ]
         }
       },
-      "_dict_value": {
-        "_scalar": {
-          "_text": {}
+      "_dict_value" : {
+        "_scalar" : {
+          "_text" : {
+
+          }
         }
       }
     }

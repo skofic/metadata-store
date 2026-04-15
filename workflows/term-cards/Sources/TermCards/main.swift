@@ -173,6 +173,99 @@ func renderRoleTags(_ roleGids: [String], registry: TitleRegistry) -> String {
     return "<p>\(tags)</p>"
 }
 
+// MARK: - Prop / Domn Value Rendering
+
+/// Renders a single value from _prop or _domn for table display.
+///
+/// Handles:
+///   - Bool / NSNumber           → true/false or numeric
+///   - String (blob handle)      → truncated handle in backticks
+///   - String (term GID)         → linked if in registry, else backtick code
+///   - [String: Any] (multilingual dict)  → extract default-language string
+///   - [Any] (array)
+///       • of multilingual dicts → comma-separated extracted strings
+///       • of strings/numbers    → comma-separated, each rendered recursively
+///   - Anything else             → *see JSON*
+func renderPropValue(_ value: Any, registry: TitleRegistry) -> String {
+    // Bool (NSNumber wrapping CFBoolean)
+    if let n = value as? NSNumber, CFGetTypeID(n) == CFBooleanGetTypeID() {
+        return n.boolValue ? "true" : "false"
+    }
+    if let n = value as? NSNumber {
+        return formatNumber(n)
+    }
+    if let s = value as? String {
+        // Blob handle: shorten for readability
+        if s.hasPrefix("blob/") {
+            let key = String(s.dropFirst(5))
+            let short = key.count > 12 ? String(key.prefix(12)) + "…" : key
+            return "`blob/\(short)`"
+        }
+        return termLink(gid: s, registry: registry)
+    }
+    if let dict = value as? [String: Any] {
+        if let text = extractString(dict) { return text }
+        return "*see JSON*"
+    }
+    if let arr = value as? [Any] {
+        if arr.isEmpty { return "(none)" }
+        // Array of multilingual dicts?
+        if arr.first is [String: Any] {
+            let texts = arr.compactMap { $0 as? [String: Any] }
+                          .compactMap { extractString($0) }
+            if !texts.isEmpty { return texts.joined(separator: ", ") }
+        }
+        // Array of scalars
+        let items = arr.map { renderPropValue($0, registry: registry) }
+        return items.joined(separator: ", ")
+    }
+    return "*see JSON*"
+}
+
+// MARK: - Domn and Prop Section Renderers
+
+/// Renders the ## _domn section, excluding _term_role (shown as tags above).
+/// Returns an empty array when _domn has no keys other than _term_role.
+func renderDomainSection(_ domn: [String: Any], registry: TitleRegistry) -> [String] {
+    var other = domn
+    other.removeValue(forKey: "_term_role")
+    guard !other.isEmpty else { return [] }
+
+    var lines: [String] = []
+    lines.append("## \(termLink(gid: "_domn", registry: registry))")
+    lines.append("")
+    lines.append("| Property | Value |")
+    lines.append("|---|---|")
+    for key in other.keys.sorted() {
+        let keyDisplay = termLink(gid: key, registry: registry)
+        let valDisplay = renderPropValue(other[key]!, registry: registry)
+        lines.append("| \(keyDisplay) | \(valDisplay) |")
+    }
+    lines.append("")
+    appendJSONDisclosure(other, to: &lines)
+    return lines
+}
+
+/// Renders the ## _prop section as a key/value table.
+/// Returns an empty array when _prop is absent or empty.
+func renderPropSection(_ prop: [String: Any], registry: TitleRegistry) -> [String] {
+    guard !prop.isEmpty else { return [] }
+
+    var lines: [String] = []
+    lines.append("## \(termLink(gid: "_prop", registry: registry))")
+    lines.append("")
+    lines.append("| Property | Value |")
+    lines.append("|---|---|")
+    for key in prop.keys.sorted() {
+        let keyDisplay = termLink(gid: key, registry: registry)
+        let valDisplay = renderPropValue(prop[key]!, registry: registry)
+        lines.append("| \(keyDisplay) | \(valDisplay) |")
+    }
+    lines.append("")
+    appendJSONDisclosure(prop, to: &lines)
+    return lines
+}
+
 // MARK: - Bounds Rendering
 
 /// Renders `_min-items` / `_max-items` from an elements-like object.
@@ -656,6 +749,28 @@ func renderCard(gid: String, info: [String: Any], term: [String: Any], registry:
         lines += renderDataSection(data, registry: registry)
     }
 
+    // Domain section — non-role _domn properties (only when present)
+    if let domn = term["_domn"] as? [String: Any] {
+        let domLines = renderDomainSection(domn, registry: registry)
+        if !domLines.isEmpty {
+            lines.append("")
+            lines.append("---")
+            lines.append("")
+            lines += domLines
+        }
+    }
+
+    // Properties section — _prop key/value table (only when present)
+    if let prop = term["_prop"] as? [String: Any] {
+        let propLines = renderPropSection(prop, registry: registry)
+        if !propLines.isEmpty {
+            lines.append("")
+            lines.append("---")
+            lines.append("")
+            lines += propLines
+        }
+    }
+
     // Normalise trailing whitespace.
     while lines.last == "" { lines.removeLast() }
     lines.append("")
@@ -686,28 +801,36 @@ func run() throws {
     }
 
     let config = readConfig(repoRoot: repoRoot)
-    let dataCoreURL = repoRoot.appendingPathComponent(config["core"] ?? "data/core")
-    let termsURL    = repoRoot.appendingPathComponent(config["terms"] ?? "docs")
+    let termsURL = repoRoot.appendingPathComponent(config["terms"] ?? "docs")
+
+    // Source directories scanned for term cards, in order.
+    // Configurable via dictionary.config.json; defaults: data/core, data/standards.
+    let sourceDirectories: [URL] = [
+        repoRoot.appendingPathComponent(config["core"]      ?? "data/core"),
+        repoRoot.appendingPathComponent(config["standards"] ?? "data/standards"),
+    ]
 
     try fm.createDirectory(at: termsURL, withIntermediateDirectories: true)
 
-    // Phase 1: collect all terms.
+    // Phase 1: collect all terms from all source directories.
     var termsByGid: [String: [String: Any]] = [:]
 
-    let jsonFiles = try fm.contentsOfDirectory(at: dataCoreURL, includingPropertiesForKeys: nil)
-        .filter { $0.pathExtension == "json" }
-        .sorted { $0.lastPathComponent < $1.lastPathComponent }
-
-    for file in jsonFiles {
-        let raw = try Data(contentsOf: file)
-        guard let array = try JSONSerialization.jsonObject(with: raw) as? [[String: Any]] else {
-            fputs("Warning: \(file.lastPathComponent) is not a JSON array — skipping.\n", stderr)
-            continue
-        }
-        for term in array {
-            guard let code = term["_code"] as? [String: Any],
-                  let gid  = code["_gid"] as? String else { continue }
-            termsByGid[gid] = term
+    for sourceURL in sourceDirectories {
+        guard fm.fileExists(atPath: sourceURL.path) else { continue }
+        let jsonFiles = (try? fm.contentsOfDirectory(at: sourceURL, includingPropertiesForKeys: nil))?
+            .filter { $0.pathExtension == "json" }
+            .sorted { $0.lastPathComponent < $1.lastPathComponent } ?? []
+        for file in jsonFiles {
+            let raw = try Data(contentsOf: file)
+            guard let array = try JSONSerialization.jsonObject(with: raw) as? [[String: Any]] else {
+                fputs("Warning: \(file.lastPathComponent) is not a JSON array — skipping.\n", stderr)
+                continue
+            }
+            for term in array {
+                guard let code = term["_code"] as? [String: Any],
+                      let gid  = code["_gid"] as? String else { continue }
+                termsByGid[gid] = term
+            }
         }
     }
 

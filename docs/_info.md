@@ -1,4 +1,5 @@
 # Information section
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a> <a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_info</code></p>
 
 > The section of a term that provides human-readable information about what the term represents. Contains the term's title, definition, full description, and optional documentary properties. All values are multilingual dictionaries keyed by ISO 639-3 language identifiers.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "info",
-  "_gid": "_info",
-  "_aid": [
+  "_aid" : [
     "info"
-  ]
+  ],
+  "_gid" : "_info",
+  "_lid" : "info",
+  "_nid" : ""
 }
 ```
 
@@ -87,17 +88,17 @@ A fuller `_info` section with multilingual title and formatted description:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Information section"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Information section"
   }
 }
 ```
@@ -108,29 +109,23 @@ A fuller `_info` section with multilingual title and formatted description:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Title](_title.md) · [Definition](_definition.md)
+
+**[Recommended properties](_recommended.md):** [Description](_description.md) · [Examples](_examples.md) · [Methods](_methods.md) · [Usage](_usage.md) · [Citations](_citation.md) · [Providers](_provider.md) · [URLs](_url.md) · [Notes](_notes.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
-        {
-          "_selectors": [
-            {
-              "_all": {}
-            }
-          ],
-          "_selection": [
-            "_title",
-            "_definition"
-          ]
-        }
-      ],
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_description",
         "_examples",
         "_methods",
@@ -139,6 +134,21 @@ A fuller `_info` section with multilingual title and formatted description:
         "_provider",
         "_url",
         "_notes"
+      ],
+      "_required" : [
+        {
+          "_selection" : [
+            "_title",
+            "_definition"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
       ]
     }
   }

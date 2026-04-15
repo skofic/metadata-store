@@ -38,12 +38,30 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- **Phase 3**: Standards (`data/standards/`) — ISO 639, 3166, 4217, 15924 from Debian iso-codes; supplementary from mledoze/countries and flag-icons.
+- **Next**: Unit and measurement terms from external standards (SI, UCUM, or similar). These will extend `data/standards/` with namespaces and descriptor terms for physical units.
 - **Phase 5**: Remaining edge files — rule/schema edges (`_predicate_property-of`, `_predicate_value-of`) for core terms.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-15) — v0.1.1: term generation and role determination
+
+**`assign-roles` workflow** (new Swift package at `workflows/assign-roles/`):
+- Automatically computes `_domn._term_role` for all terms by scanning all term and edge files.
+- Five detection rules: `_term_role_descriptor` (has `_data`), `_term_role_namespace` (`_gid` used as `_nid`), `_term_role_predicate` (`_gid` used as `_predicate`), `_term_role_enum-root` (handle in `_path` of enum-of/bridge-of edges), `_term_role_enum-item` (two situations: direct enum-of `_from`, or alias bridge node).
+- Preserves user-assigned `_term_role_type` and `_term_role_typedef`.
+- Also normalises all JSON files (term and edge) to canonical key ordering and tab indentation on every run. Key order: term top level (`_code`, `_info`, `_data`, `_domn`, `_prop`), `_code` section, `_info` section, edge top level (`_from`, `_predicate`, `_to`, `_path`, `_path_data`), everything else alphabetical.
+- Added `_term_role_namespace` as a new auto-assigned role with full `_info` and term card.
+- Fixed `_locked: ["_id", "_rev"]` incorrectly present in `_code._data._object._closed` — removed; `_id`/`_rev` are top-level ArangoDB document fields and belong only in `_term._data`.
+
+**`term-cards` workflow** — two enhancements:
+- Added `_domn` section to cards: renders non-`_term_role` properties as a key/value table (role tags are already shown at the top). Section is omitted when `_domn` only contains `_term_role`.
+- Added `_prop` section to cards: key/value table with smart value rendering (numbers, GID links, blob handles, multilingual dicts, arrays).
+- Extended source directories: now reads from both `data/core/` and `data/standards/` (13 new cards for standards namespace and property terms). All `docs/` cards regenerated.
+- Decision: term cards are scoped to `data/core/` and `data/standards/` only. ISO and other large enumeration data (14K+ terms) remain out of `docs/` — a flat directory of that size is unusable.
+
+**`workflows/CLAUDE.md`**: added JSON formatting rules section (canonical key ordering, tab indentation, number format, empty collections) as the shared standard for all workflows that write JSON.
 
 ### Recent session (2026-04-12) — Phase 2 complete
 - Wrote `_info` for all terms in `_term.json`: `_term`, `_id`, `_key`, `_rev`, `_domn`, `_prop`, `_term_role`, and all six `_term_role_*` terms.

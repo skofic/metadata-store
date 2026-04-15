@@ -1,4 +1,5 @@
 # Key data type
+<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_enum-root.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration root</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_type_key</code></p>
 
 > The typedef term that defines the set of string-compatible types accepted as the key type in a `_dict_key` object. Excludes number types, boolean, timestamp, text types, and `_string_regexp`, which are not suitable as dictionary keys.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_type` |
+| [Namespace](_nid.md) | [Type](_type.md) |
 | [Local identifier](_lid.md) | `key` |
 | [Global identifier](_gid.md) | `_type_key` |
 | [Official identifiers](_aid.md) | `key` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_type",
-  "_lid": "key",
-  "_gid": "_type_key",
-  "_aid": [
+  "_aid" : [
     "key"
-  ]
+  ],
+  "_gid" : "_type_key",
+  "_lid" : "key",
+  "_nid" : "_type"
 }
 ```
 
@@ -55,14 +56,14 @@ Accepted key types:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Key data type"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Key data type"
   }
 }
 ```
@@ -73,26 +74,23 @@ Accepted key types:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
+[String](_string.md) · [Uniform Resource Identifier](_string_URI.md) · [Email address](_string_Email.md) · [Hostname](_string_Hostname.md) · [Internet Protocol version 4 address](_string_IPv4.md) · [Internet Protocol version 6 address](_string_IPv6.md) · [YYYYMMDD date](_string_YMD.md) · [Date](_string_date.md) · [Time](_string_time.md) · [Date and time](_string_date-time.md) · [LaTeX string](_string_LaTeX.md) · [Hexadecimal string](_string_HEX.md) · [Term document key](_term_key.md) · [Enumeration root term document key](_term_key_enum-root.md) · [Enumeration element term document key](_term_key_enum-item.md) · [Descriptor term document key](_term_key_descriptor.md) · [Document handle](_handle.md) · [Enumerated value](_enum.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_required" : [
         {
-          "_selectors": [
-            {
-              "_all": {
-                "_min-items": 1,
-                "_max-items": 1
-              }
-            }
-          ],
-          "_selection": [
+          "_selection" : [
             "_string",
             "_string_URI",
             "_string_Email",
@@ -111,6 +109,14 @@ Accepted key types:
             "_term_key_descriptor",
             "_handle",
             "_enum"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+                "_max-items" : 1,
+                "_min-items" : 1
+              }
+            }
           ]
         }
       ]

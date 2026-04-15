@@ -1,4 +1,5 @@
 # Dictionary
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a> <a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_dict</code></p>
 
 > The data shape property for a key/value structure with explicitly typed keys and values. Both `_dict_key` and `_dict_value` must be present: `_dict_key` constrains the key type, `_dict_value` defines the value shape.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "dict",
-  "_gid": "_dict",
-  "_aid": [
+  "_aid" : [
     "dict"
-  ]
+  ],
+  "_gid" : "_dict",
+  "_lid" : "dict",
+  "_nid" : ""
 }
 ```
 
@@ -123,17 +124,17 @@ A recursive dictionary — ISO 3166-3 country codes as outer keys, multilingual 
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Dictionary"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Dictionary"
   }
 }
 ```
@@ -144,25 +145,32 @@ A recursive dictionary — ISO 3166-3 country codes as outer keys, multilingual 
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Dictionary key](_dict_key.md) · [Dictionary value](_dict_value.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_required" : [
         {
-          "_selectors": [
-            {
-              "_all": {}
-            }
-          ],
-          "_selection": [
+          "_selection" : [
             "_dict_key",
             "_dict_value"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
           ]
         }
       ]

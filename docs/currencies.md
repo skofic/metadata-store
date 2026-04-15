@@ -1,4 +1,5 @@
 # Currencies
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>currencies</code></p>
 
 > The set of official currencies in circulation in a country or territory, identified by their ISO 4217 alpha-3 codes.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | (none — top-level namespace) |
+| [Namespace](_nid.md) | (none) |
 | [Local identifier](_lid.md) | `currencies` |
 | [Global identifier](_gid.md) | `currencies` |
 | [Official identifiers](_aid.md) | `currencies` |
@@ -19,11 +20,11 @@
 
 ```json
 {
-  "_lid": "currencies",
-  "_gid": "currencies",
-  "_aid": [
+  "_aid" : [
     "currencies"
-  ]
+  ],
+  "_gid" : "currencies",
+  "_lid" : "currencies"
 }
 ```
 
@@ -46,14 +47,14 @@ Most countries use a single national currency, but some use multiple (e.g. Panam
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Currencies"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Currencies"
   }
 }
 ```
@@ -64,16 +65,16 @@ Most countries use a single national currency, but some use multiple (e.g. Panam
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) of [Enumerated value](_enum.md) from vocabulary `ISO_4217`
+**Shape:** [Set](_set.md) — [Enumerated value](_enum.md) ()
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set": {
-    "_enum": {
-      "_enums": "ISO_4217"
+  "_set" : {
+    "_enum" : {
+      "_enums" : "ISO_4217"
     }
   }
 }

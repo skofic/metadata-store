@@ -1,4 +1,5 @@
 # Relationship path data
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_path_data</code></p>
 
 > An open dictionary that associates structured data with an edge, keyed by document handles. The meaning and schema of each value is determined by the node the key refers to.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_path` |
+| [Namespace](_nid.md) | [Relationship path](_path.md) |
 | [Local identifier](_lid.md) | `data` |
 | [Global identifier](_gid.md) | `_path_data` |
 | [Official identifiers](_aid.md) | `data` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_path",
-  "_lid": "data",
-  "_gid": "_path_data",
-  "_aid": [
+  "_aid" : [
     "data"
-  ]
+  ],
+  "_gid" : "_path_data",
+  "_lid" : "data",
+  "_nid" : "_path"
 }
 ```
 
@@ -108,17 +109,17 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Relationship path data"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship path data"
   }
 }
 ```
@@ -131,16 +132,26 @@ The constraint is keyed by the graph root handle `terms/_scalar` and applies onl
 
 **Shape:** [Dictionary](_dict.md)
 
+**[Dictionary key](_dict_key.md):** [Document handle](_handle.md)
+
+**[Dictionary value](_dict_value.md)**
+
+*Any*
+
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_dict": {
-    "_dict_key": {
-      "_handle": {}
+  "_dict" : {
+    "_dict_key" : {
+      "_handle" : {
+
+      }
     },
-    "_dict_value": {}
+    "_dict_value" : {
+
+    }
   }
 }
 ```

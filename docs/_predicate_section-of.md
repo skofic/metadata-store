@@ -1,4 +1,5 @@
 # Section of
+<p><a href="_term_role_predicate.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Predicate</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_section-of</code></p>
 
 > The source node is a display-only section (grouping header) within the destination graph. The source node and this edge are skipped during validation traversal; during display they serve as collapsible group headers for the elements nested below.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_predicate` |
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
 | [Local identifier](_lid.md) | `section-of` |
 | [Global identifier](_gid.md) | `_predicate_section-of` |
 | [Official identifiers](_aid.md) | `section-of` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_predicate",
-  "_lid": "section-of",
-  "_gid": "_predicate_section-of",
-  "_aid": [
+  "_aid" : [
     "section-of"
-  ]
+  ],
+  "_gid" : "_predicate_section-of",
+  "_lid" : "section-of",
+  "_nid" : "_predicate"
 }
 ```
 
@@ -76,17 +77,17 @@ Italy and France are valid elements grouped under a `EUROPE` section header:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Section of"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Section of"
   }
 }
 ```

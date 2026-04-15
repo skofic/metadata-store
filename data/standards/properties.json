@@ -3,12 +3,20 @@
 		"_code": {
 			"_lid": "currencies",
 			"_gid": "currencies",
-			"_aid": ["currencies"]
+			"_aid": [
+				"currencies"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Currencies"},
-			"_definition": {"ISO_639_3_eng": "The set of official currencies in circulation in a country or territory, identified by their ISO 4217 alpha-3 codes."},
-			"_description": {"ISO_639_3_eng": "Most countries use a single national currency, but some use multiple (e.g. Panama uses both the Panamanian balboa and the US dollar). Values are enumeration elements from the [`ISO_4217`](ISO_4217.md) controlled vocabulary."}
+			"_title": {
+				"ISO_639_3_eng": "Currencies"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The set of official currencies in circulation in a country or territory, identified by their ISO 4217 alpha-3 codes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Most countries use a single national currency, but some use multiple (e.g. Panama uses both the Panamanian balboa and the US dollar). Values are enumeration elements from the [`ISO_4217`](ISO_4217.md) controlled vocabulary."
+			}
 		},
 		"_data": {
 			"_set": {
@@ -16,35 +24,59 @@
 					"_enums": "ISO_4217"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_lid": "national-capitals",
 			"_gid": "national-capitals",
-			"_aid": ["national-capitals"]
+			"_aid": [
+				"national-capitals"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "National capitals"},
-			"_definition": {"ISO_639_3_eng": "The capital city or cities of a country, expressed as an array of multilingual plain-text name strings."},
-			"_description": {"ISO_639_3_eng": "Some countries have multiple capitals (e.g. South Africa has three: Pretoria, Cape Town, and Bloemfontein). Each capital is represented as a multilingual dictionary mapping ISO 639-3 language codes to the capital's name in that language. The value type is the [`_info_strings`](_info_strings.md) typedef — an array of such dictionaries."}
+			"_title": {
+				"ISO_639_3_eng": "National capitals"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The capital city or cities of a country, expressed as an array of multilingual plain-text name strings."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Some countries have multiple capitals (e.g. South Africa has three: Pretoria, Cape Town, and Bloemfontein). Each capital is represented as a multilingual dictionary mapping ISO 639-3 language codes to the capital's name in that language. The value type is the [`_info_strings`](_info_strings.md) typedef — an array of such dictionaries."
+			}
 		},
 		"_data": {
 			"_typedef": "_info_strings"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_lid": "spoken-languages",
 			"_gid": "spoken-languages",
-			"_aid": ["spoken-languages"]
+			"_aid": [
+				"spoken-languages"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Spoken languages"},
-			"_definition": {"ISO_639_3_eng": "The set of languages spoken in a country or territory, identified by their ISO 639-3 codes."},
-			"_description": {"ISO_639_3_eng": "Includes official, national, and widely spoken languages. Values are enumeration elements from the [`ISO_639_3`](ISO_639_3.md) controlled vocabulary. A country may appear with only its major languages or with a comprehensive set depending on the data source."}
+			"_title": {
+				"ISO_639_3_eng": "Spoken languages"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The set of languages spoken in a country or territory, identified by their ISO 639-3 codes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Includes official, national, and widely spoken languages. Values are enumeration elements from the [`ISO_639_3`](ISO_639_3.md) controlled vocabulary. A country may appear with only its major languages or with a comprehensive set depending on the data source."
+			}
 		},
 		"_data": {
 			"_set": {
@@ -52,30 +84,47 @@
 					"_enums": "ISO_639_3"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "latitude",
 			"_lid": "deg",
 			"_gid": "latitude_deg",
-			"_aid": ["deg"]
+			"_aid": [
+				"deg"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Latitude in decimal degrees"},
-			"_definition": {"ISO_639_3_eng": "The geographic latitude of a location expressed in decimal degrees, ranging from -90.0 (South Pole) to +90.0 (North Pole)."},
-			"_description": {"ISO_639_3_eng": "Positive values indicate northern latitudes; negative values indicate southern latitudes. The equator is at 0°. Values are stored as floating-point numbers. Valid range is [-90, +90] inclusive — both extremes represent real, distinct geographic locations (the South Pole and North Pole respectively)."}
+			"_title": {
+				"ISO_639_3_eng": "Latitude in decimal degrees"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The geographic latitude of a location expressed in decimal degrees, ranging from -90.0 (South Pole) to +90.0 (North Pole)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Positive values indicate northern latitudes; negative values indicate southern latitudes. The equator is at 0°. Values are stored as floating-point numbers. Valid range is [-90, +90] inclusive — both extremes represent real, distinct geographic locations (the South Pole and North Pole respectively)."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_number_float": {
 					"_range_valid": {
-						"_min-inclusive": -90.0,
-						"_max-inclusive": 90.0
+						"_max-inclusive": 90,
+						"_min-inclusive": -90
 					}
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
 	{
@@ -83,59 +132,91 @@
 			"_nid": "longitude",
 			"_lid": "deg",
 			"_gid": "longitude_deg",
-			"_aid": ["deg"]
+			"_aid": [
+				"deg"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Longitude in decimal degrees"},
-			"_definition": {"ISO_639_3_eng": "The geographic longitude of a location expressed in decimal degrees, ranging from -180.0 to +180.0, measured east and west of the prime meridian (Greenwich)."},
-			"_description": {"ISO_639_3_eng": "Positive values indicate eastern longitudes; negative values indicate western longitudes. The prime meridian (Greenwich) is at 0°. Values are stored as floating-point numbers. Valid range is [-180, +180] inclusive per the WGS84 standard."}
+			"_title": {
+				"ISO_639_3_eng": "Longitude in decimal degrees"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The geographic longitude of a location expressed in decimal degrees, ranging from -180.0 to +180.0, measured east and west of the prime meridian (Greenwich)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Positive values indicate eastern longitudes; negative values indicate western longitudes. The prime meridian (Greenwich) is at 0°. Values are stored as floating-point numbers. Valid range is [-180, +180] inclusive per the WGS84 standard."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_number_float": {
 					"_range_valid": {
-						"_min-inclusive": -180.0,
-						"_max-inclusive": 180.0
+						"_max-inclusive": 180,
+						"_min-inclusive": -180
 					}
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "area",
 			"_lid": "km2",
 			"_gid": "area_km2",
-			"_aid": ["km2"]
+			"_aid": [
+				"km2"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Area in square kilometers"},
-			"_definition": {"ISO_639_3_eng": "The total surface area of a country or territory expressed in square kilometers."},
-			"_description": {"ISO_639_3_eng": "Includes both land area and inland water bodies. Values are floating-point numbers in km². The unit symbol is `km^2`; the unit name is Square kilometers."}
+			"_title": {
+				"ISO_639_3_eng": "Area in square kilometers"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The total surface area of a country or territory expressed in square kilometers."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Includes both land area and inland water bodies. Values are floating-point numbers in km². The unit symbol is `km^2`; the unit name is Square kilometers."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_number_float": {
-					"_unit_symbol": "km^2",
 					"_unit_name": {
 						"ISO_639_3_eng": "Square kilometers"
-					}
+					},
+					"_unit_symbol": "km^2"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_lid": "national-borders",
 			"_gid": "national-borders",
-			"_aid": ["national-borders"]
+			"_aid": [
+				"national-borders"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "National borders"},
-			"_definition": {"ISO_639_3_eng": "The set of countries that share a land border with a given country, identified by their ISO 3166-1 alpha-3 codes."},
-			"_description": {"ISO_639_3_eng": "Island nations and some countries separated by water from all neighbours will have an empty set. Values are enumeration elements from the [`ISO_3166_1`](ISO_3166_1.md) controlled vocabulary."}
+			"_title": {
+				"ISO_639_3_eng": "National borders"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The set of countries that share a land border with a given country, identified by their ISO 3166-1 alpha-3 codes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Island nations and some countries separated by water from all neighbours will have an empty set. Values are enumeration elements from the [`ISO_3166_1`](ISO_3166_1.md) controlled vocabulary."
+			}
 		},
 		"_data": {
 			"_set": {
@@ -143,44 +224,73 @@
 					"_enums": "ISO_3166_1"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "country-flag",
 			"_lid": "landscape",
 			"_gid": "country-flag_landscape",
-			"_aid": ["landscape"]
+			"_aid": [
+				"landscape"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Country flag — landscape"},
-			"_definition": {"ISO_639_3_eng": "Handle to the blob document containing the landscape (4:3) SVG flag image for a country or territory."},
-			"_description": {"ISO_639_3_eng": "Points to a document in the blob collection whose [`_blob_kind`](_blob_kind.md) is [`_media_landscape`](_media_landscape.md) and [`_blob_type`](_blob_type.md) is [`_text_SVG`](_text_SVG.md). The handle takes the form `blob/<key>` where `<key>` is an MD5 hash of the blob's composite identifier."}
+			"_title": {
+				"ISO_639_3_eng": "Country flag — landscape"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Handle to the blob document containing the landscape (4:3) SVG flag image for a country or territory."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Points to a document in the blob collection whose [`_blob_kind`](_blob_kind.md) is [`_media_landscape`](_media_landscape.md) and [`_blob_type`](_blob_type.md) is [`_text_SVG`](_text_SVG.md). The handle takes the form `blob/<key>` where `<key>` is an MD5 hash of the blob's composite identifier."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_handle": {}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "country-flag",
 			"_lid": "square",
 			"_gid": "country-flag_square",
-			"_aid": ["square"]
+			"_aid": [
+				"square"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Country flag — square"},
-			"_definition": {"ISO_639_3_eng": "Handle to the blob document containing the square (1:1) SVG flag image for a country or territory."},
-			"_description": {"ISO_639_3_eng": "Points to a document in the blob collection whose [`_blob_kind`](_blob_kind.md) is [`_media_square`](_media_square.md) and [`_blob_type`](_blob_type.md) is [`_text_SVG`](_text_SVG.md). The handle takes the form `blob/<key>` where `<key>` is an MD5 hash of the blob's composite identifier."}
+			"_title": {
+				"ISO_639_3_eng": "Country flag — square"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Handle to the blob document containing the square (1:1) SVG flag image for a country or territory."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Points to a document in the blob collection whose [`_blob_kind`](_blob_kind.md) is [`_media_square`](_media_square.md) and [`_blob_type`](_blob_type.md) is [`_text_SVG`](_text_SVG.md). The handle takes the form `blob/<key>` where `<key>` is an MD5 hash of the blob's composite identifier."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_handle": {}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	}
 ]

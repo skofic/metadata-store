@@ -1,4 +1,5 @@
 # Global identifier
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_gid</code></p>
 
 > The unique identifier of the term across the entire dictionary. Computed as the concatenation of the namespace identifier and the local identifier, separated by an underscore. Copied to the document key before the record is stored.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "gid",
-  "_gid": "_gid",
-  "_aid": [
+  "_aid" : [
     "gid"
-  ]
+  ],
+  "_gid" : "_gid",
+  "_lid" : "gid",
+  "_nid" : ""
 }
 ```
 
@@ -83,17 +84,17 @@ Because `_gid` is computed before the document is stored, it is a plain string v
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Global identifier"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Global identifier"
   }
 }
 ```
@@ -104,16 +105,16 @@ Because `_gid` is computed before the document is stored, it is a plain string v
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Generic string](_string.md)
+**Shape:** [Scalar](_scalar.md) — [String](_string.md) ([Regular expression](_regexp.md): `^[a-zA-Z0-9\-_:.@+,=;$!*'%()]{1,254}$`)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_string": {
-      "_regexp": "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$"
+  "_scalar" : {
+    "_string" : {
+      "_regexp" : "^[a-zA-Z0-9\\-_:.@+,=;$!*'%()]{1,254}$"
     }
   }
 }

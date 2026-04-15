@@ -3,12 +3,25 @@
 		"_code": {
 			"_lid": "ISO",
 			"_gid": "ISO",
-			"_aid": ["ISO"]
+			"_aid": [
+				"ISO"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "International Organization for Standardization"},
-			"_definition": {"ISO_639_3_eng": "This namespace collects international standards used in the data dictionary."},
-			"_description": {"ISO_639_3_eng": "This *root* [namespace](/_nid) collects all data dictionary [international standards](https://www.iso.org/home.html) implemented as *controlled vocabulary terms*."}
+			"_title": {
+				"ISO_639_3_eng": "International Organization for Standardization"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "This namespace collects international standards used in the data dictionary."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This *root* [namespace](/_nid) collects all data dictionary [international standards](https://www.iso.org/home.html) implemented as *controlled vocabulary terms*."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	}
 ]

@@ -1,4 +1,5 @@
 # Optional selection
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_any</code></p>
 
 > A cardinality constraint object within `_selectors` that defines an optional rule for its candidate group. With no item limits (`_any: {}`), any number of candidates — including none — may be present. `_min-items` and `_max-items` impose a count range when selection is not entirely open-ended.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "any",
-  "_gid": "_any",
-  "_aid": [
+  "_aid" : [
     "any"
-  ]
+  ],
+  "_gid" : "_any",
+  "_lid" : "any",
+  "_nid" : ""
 }
 ```
 
@@ -92,17 +93,17 @@ At least two and at most five of the six candidates must be present. Having one 
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Optional selection"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Optional selection"
   }
 }
 ```
@@ -113,14 +114,14 @@ At least two and at most five of the six candidates must be present. Having one 
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): `_elements`
+**Shape:** [Type definition](_typedef.md): [Elements count range](_elements.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef": "_elements"
+  "_typedef" : "_elements"
 }
 ```
 

@@ -1,4 +1,5 @@
 # Media
+<p><a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_media</code></p>
 
 > Namespace for media presentation variant terms that categorise blob documents by their display format or aspect ratio.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "media",
-  "_gid": "_media",
-  "_aid": [
+  "_aid" : [
     "media"
-  ]
+  ],
+  "_gid" : "_media",
+  "_lid" : "media",
+  "_nid" : ""
 }
 ```
 
@@ -47,14 +48,14 @@ Terms in this namespace serve as enumeration elements of the [`_blob_kind`](_blo
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Media"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Media"
   }
 }
 ```

@@ -70,9 +70,10 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_descriptor",
 				"_term_role_enum-item",
-				"_term_role_descriptor"
+				"_term_role_namespace",
+				"_term_role_type"
 			]
 		}
 	},
@@ -204,9 +205,10 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_descriptor",
 				"_term_role_enum-item",
-				"_term_role_descriptor"
+				"_term_role_namespace",
+				"_term_role_type"
 			]
 		}
 	},
@@ -698,9 +700,10 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_descriptor",
 				"_term_role_enum-item",
-				"_term_role_descriptor"
+				"_term_role_namespace",
+				"_term_role_type"
 			]
 		}
 	},
@@ -842,9 +845,10 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_descriptor",
 				"_term_role_enum-item",
-				"_term_role_descriptor"
+				"_term_role_namespace",
+				"_term_role_type"
 			]
 		}
 	},
@@ -1177,7 +1181,8 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -1277,19 +1282,6 @@
 				"_closed": {
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								},
-								{
-									"_any": {
-										"_min-items": 1
-									}
-								}
-							],
 							"_selection": [
 								[
 									"_min-exclusive",
@@ -1299,6 +1291,19 @@
 									"_max-exclusive",
 									"_max-inclusive"
 								]
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								},
+								{
+									"_any": {
+										"_min-items": 1
+									}
+								}
 							]
 						}
 					]
@@ -1307,8 +1312,9 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_typedef",
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace",
+				"_term_role_typedef"
 			]
 		}
 	},
@@ -1340,19 +1346,6 @@
 				"_closed": {
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								},
-								{
-									"_any": {
-										"_min-items": 1
-									}
-								}
-							],
 							"_selection": [
 								[
 									"_string_min-exclusive",
@@ -1362,6 +1355,19 @@
 									"_string_max-exclusive",
 									"_string_max-inclusive"
 								]
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								},
+								{
+									"_any": {
+										"_min-items": 1
+									}
+								}
 							]
 						}
 					]
@@ -1403,7 +1409,8 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -1435,7 +1442,8 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},

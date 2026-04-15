@@ -1,4 +1,5 @@
 # Term
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a> <a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term</code></p>
 
 > The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "term",
-  "_gid": "_term",
-  "_aid": [
+  "_aid" : [
     "term"
-  ]
+  ],
+  "_gid" : "_term",
+  "_lid" : "term",
+  "_nid" : ""
 }
 ```
 
@@ -47,7 +48,7 @@ Terms are the nodes of the data dictionary graph. Each term is a JSON document s
 | [`_code`](_code.md) | Always — provides identifiers |
 | [`_info`](_info.md) | Always, except alias terms — provides human-readable documentation |
 | [`_data`](_data.md) | Descriptor terms — defines the type and shape of the represented data |
-| [`_domn`](_domn.md) | Any term — classifies and categorises the term within the dictionary |
+| [`_domn`](_domn.md) | Optional — only written when explicit classification is needed; auto-computed roles are added by the loader at insertion time |
 | [`_prop`](_prop.md) | Terms representing real-world entities — records factual attributes of the entity |
 
 Every term must be understandable by a human reader, so `_info` with at least a [`_title`](_title.md) is expected on all terms. The only exception is an **alias term**: a term that exists solely to provide an alternative identifier and whose content is fully supplied by a canonical term elsewhere in the dictionary. An alias term carries only its `_code` section; two graph edges connect it to its canonical counterpart — [`_predicate_bridge-of`](_predicate_bridge-of.md) marking the alias as a bridge node, and [`_predicate_enum-of`](_predicate_enum-of.md) pointing from the canonical term to the alias — so that traversal reaches the canonical term's complete content.
@@ -110,17 +111,17 @@ A descriptor term — a floating-point body temperature:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Term"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Term"
   }
 }
 ```
@@ -131,46 +132,58 @@ A descriptor term — a floating-point body temperature:
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Identification section](_code.md)
+
+**[Recommended properties](_recommended.md):** [Information section](_info.md) · [Data section](_data.md) · [Domains section](_domn.md) · [Properties section](_prop.md)
+
+**[Computed properties](_computed.md):** [Document key](_key.md)
+
+**[Locked properties](_locked.md):** [Document handle](_id.md) · [Document revision](_rev.md)
+
+**[Immutable properties](_immutable.md):** [Document key](_key.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
-        {
-          "_selectors": [
-            {
-              "_all": {}
-            }
-          ],
-          "_selection": [
-            "_code"
-          ]
-        }
+  "_object" : {
+    "_closed" : {
+      "_computed" : [
+        "_key"
       ],
-      "_recommended": [
+      "_immutable" : [
+        "_key"
+      ],
+      "_locked" : [
+        "_id",
+        "_rev"
+      ],
+      "_recommended" : [
         "_info",
         "_data",
         "_domn",
         "_prop"
       ],
-      "_computed": [
-        "_key"
-      ],
-      "_immutable": [
-        "_key"
-      ],
-      "_locked": [
-        "_id",
-        "_rev"
-      ],
-      "_default-value": {
-        "_domn": {}
-      }
+      "_required" : [
+        {
+          "_selection" : [
+            "_code"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

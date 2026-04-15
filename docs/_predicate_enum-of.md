@@ -1,4 +1,5 @@
 # Enumeration of
+<p><a href="_term_role_predicate.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Predicate</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_predicate_enum-of</code></p>
 
 > The source node is a valid enumeration element of the destination node's controlled vocabulary. Used to declare membership in an enumeration, making the source a selectable value within that vocabulary.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_predicate` |
+| [Namespace](_nid.md) | [Relationship predicate](_predicate.md) |
 | [Local identifier](_lid.md) | `enum-of` |
 | [Global identifier](_gid.md) | `_predicate_enum-of` |
 | [Official identifiers](_aid.md) | `enum-of` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_predicate",
-  "_lid": "enum-of",
-  "_gid": "_predicate_enum-of",
-  "_aid": [
+  "_aid" : [
     "enum-of"
-  ]
+  ],
+  "_gid" : "_predicate_enum-of",
+  "_lid" : "enum-of",
+  "_nid" : "_predicate"
 }
 ```
 
@@ -69,17 +70,17 @@ Italy is a valid element of the ISO 3166-3 country vocabulary:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Enumeration of"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Enumeration of"
   }
 }
 ```

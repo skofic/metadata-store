@@ -1,4 +1,5 @@
 # Definition
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_definition</code></p>
 
 > A self-contained definition of the term in plain text. Sufficient for an informed reader to understand the term without additional context. Typically two to four sentences.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "definition",
-  "_gid": "_definition",
-  "_aid": [
+  "_aid" : [
     "definition"
-  ]
+  ],
+  "_gid" : "_definition",
+  "_lid" : "definition",
+  "_nid" : ""
 }
 ```
 
@@ -61,17 +62,17 @@ A definition for a body weight descriptor:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Definition"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Definition"
   }
 }
 ```
@@ -82,14 +83,14 @@ A definition for a body weight descriptor:
 
 ## [Data section](_data.md)
 
-**Shape:** [Type definition](_typedef.md): [Multilingual plain text string](_info_string.md)
+**Shape:** [Type definition](_typedef.md): [Multilingual plain text](_info_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_typedef": "_info_string"
+  "_typedef" : "_info_string"
 }
 ```
 

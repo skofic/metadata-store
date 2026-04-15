@@ -3,46 +3,88 @@
 		"_code": {
 			"_lid": "latitude",
 			"_gid": "latitude",
-			"_aid": ["latitude"]
+			"_aid": [
+				"latitude"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Latitude"},
-			"_definition": {"ISO_639_3_eng": "Namespace for latitude measurement descriptors expressing angular distance north or south of the equator."}
+			"_title": {
+				"ISO_639_3_eng": "Latitude"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for latitude measurement descriptors expressing angular distance north or south of the equator."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	},
 	{
 		"_code": {
 			"_lid": "longitude",
 			"_gid": "longitude",
-			"_aid": ["longitude"]
+			"_aid": [
+				"longitude"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Longitude"},
-			"_definition": {"ISO_639_3_eng": "Namespace for longitude measurement descriptors expressing angular distance east or west of the prime meridian."}
+			"_title": {
+				"ISO_639_3_eng": "Longitude"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for longitude measurement descriptors expressing angular distance east or west of the prime meridian."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_lid": "area",
 			"_gid": "area",
-			"_aid": ["area"]
+			"_aid": [
+				"area"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Area"},
-			"_definition": {"ISO_639_3_eng": "Namespace for area measurement descriptors expressing the total surface area of a geographic entity."}
+			"_title": {
+				"ISO_639_3_eng": "Area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for area measurement descriptors expressing the total surface area of a geographic entity."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_lid": "country-flag",
 			"_gid": "country-flag",
-			"_aid": ["country-flag"]
+			"_aid": [
+				"country-flag"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Country flag"},
-			"_definition": {"ISO_639_3_eng": "Namespace for country flag blob handle descriptors, referencing SVG flag images stored in the blob collection."}
+			"_title": {
+				"ISO_639_3_eng": "Country flag"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for country flag blob handle descriptors, referencing SVG flag images stored in the blob collection."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	}
 ]

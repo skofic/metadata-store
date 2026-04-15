@@ -1,4 +1,5 @@
 # National capitals
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>national-capitals</code></p>
 
 > The capital city or cities of a country, expressed as an array of multilingual plain-text name strings.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | (none — top-level namespace) |
+| [Namespace](_nid.md) | (none) |
 | [Local identifier](_lid.md) | `national-capitals` |
 | [Global identifier](_gid.md) | `national-capitals` |
 | [Official identifiers](_aid.md) | `national-capitals` |
@@ -19,11 +20,11 @@
 
 ```json
 {
-  "_lid": "national-capitals",
-  "_gid": "national-capitals",
-  "_aid": [
+  "_aid" : [
     "national-capitals"
-  ]
+  ],
+  "_gid" : "national-capitals",
+  "_lid" : "national-capitals"
 }
 ```
 
@@ -46,14 +47,14 @@ Some countries have multiple capitals (e.g. South Africa has three: Pretoria, Ca
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "National capitals"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "National capitals"
   }
 }
 ```
@@ -71,7 +72,7 @@ Some countries have multiple capitals (e.g. South Africa has three: Pretoria, Ca
 
 ```json
 {
-  "_typedef": "_info_strings"
+  "_typedef" : "_info_strings"
 }
 ```
 

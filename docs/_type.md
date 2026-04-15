@@ -1,4 +1,5 @@
 # Type
+<p><a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_type</code></p>
 
 > The namespace root for the dictionary's built-in typedef terms. Groups the three typedef terms that encode the allowed type sets for scalar, set-element, and dictionary-key contexts.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "type",
-  "_gid": "_type",
-  "_aid": [
+  "_aid" : [
     "type"
-  ]
+  ],
+  "_gid" : "_type",
+  "_lid" : "type",
+  "_nid" : ""
 }
 ```
 
@@ -49,14 +50,14 @@ As a namespace root, `_type` itself carries no data section.
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Type"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Type"
   }
 }
 ```

@@ -1,4 +1,5 @@
 # Official identifiers
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_aid</code></p>
 
 > The set of all official, externally recognised identifiers by which this term can be referenced. Computed: defaults to the local identifier if not supplied. Grows as alias terms point to this term.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "aid",
-  "_gid": "_aid",
-  "_aid": [
+  "_aid" : [
     "aid"
-  ]
+  ],
+  "_gid" : "_aid",
+  "_lid" : "aid",
+  "_nid" : ""
 }
 ```
 
@@ -68,17 +69,17 @@ The ISO 3166-3 term for Italy carries the alpha-3 code `ITA` as its [`_lid`](_li
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Official identifiers"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Official identifiers"
   }
 }
 ```
@@ -89,15 +90,17 @@ The ISO 3166-3 term for Italy carries the alpha-3 code `ITA` as its [`_lid`](_li
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) of [Generic string](_string.md)
+**Shape:** [Set](_set.md) — [String](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set": {
-    "_string": {}
+  "_set" : {
+    "_string" : {
+
+    }
   }
 }
 ```

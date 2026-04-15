@@ -1,4 +1,5 @@
 # Properties section
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_prop</code></p>
 
 > The section of a term that records the concrete attributes of the real-world entity the term represents. Each property must be a descriptor defined in the dictionary, and its value must conform to that descriptor's type definition.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "prop",
-  "_gid": "_prop",
-  "_aid": [
+  "_aid" : [
     "prop"
-  ]
+  ],
+  "_gid" : "_prop",
+  "_lid" : "prop",
+  "_nid" : ""
 }
 ```
 
@@ -74,17 +75,17 @@ A country term's properties section recording its dialling code, area, official 
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Properties section"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Properties section"
   }
 }
 ```
@@ -95,15 +96,17 @@ A country term's properties section recording its dialling code, area, official 
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Open schema](_open.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_open": {}
+  "_object" : {
+    "_open" : {
+
+    }
   }
 }
 ```

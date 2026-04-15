@@ -17,7 +17,6 @@
 		],
 		"_path_data": {}
 	},
-	
 	{
 		"_from": "terms/_number",
 		"_predicate": "_predicate_enum-of",
@@ -48,7 +47,6 @@
 		],
 		"_path_data": {}
 	},
-	
 	{
 		"_from": "terms/_string",
 		"_predicate": "_predicate_enum-of",
@@ -191,7 +189,6 @@
 		],
 		"_path_data": {}
 	},
-	
 	{
 		"_from": "terms/_text",
 		"_predicate": "_predicate_enum-of",
@@ -228,7 +225,6 @@
 		],
 		"_path_data": {}
 	},
-	
 	{
 		"_from": "terms/_term_key",
 		"_predicate": "_predicate_enum-of",

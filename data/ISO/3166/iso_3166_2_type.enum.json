@@ -1,983 +1,983 @@
 [
-    {
-        "_from": "terms/ISO_3166_2_type_administration",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_administrative-atoll",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_administrative-precinct",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_administrative-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_administrative-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_arctic-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_area",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-city-in-north-africa",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-community",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-district",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-province",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-republic",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-sector",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_autonomous-territorial-unit",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_borough",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_canton",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_capital",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_capital-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_capital-district",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_capital-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_chain-(of-islands)",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_city-corporation",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_city-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_city-with-county-rights",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_commune",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_council-area",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_country",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_county",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_decentralized-regional-entity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_department",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_dependency",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_district",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_district-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_district-with-special-status",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_districts-under-republic-administration",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_division",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_economic-prefecture",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_emirate",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_entity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_european-collectivity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_federal-capital-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_federal-dependency",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_federal-district",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_federal-entity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_federal-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_free-municipal-consortium",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_geographical-entity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_geographical-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_geographical-unit",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_governorate",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_group-of-islands-(20-inhabited-islands)",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_indigenous-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_island",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_island-council",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_islands,-groups-of-islands",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_land",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_local-council",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_london-borough",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-administration",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-collectivity-with-special-status",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-department",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-district",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_metropolitan-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_oblast",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_outlying-area",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_overseas-collectivity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_overseas-collectivity-with-special-status",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_overseas-departmental-collectivity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_overseas-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_overseas-unique-territorial-collectivity",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_pakistan-administered-area",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_parish",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_popularate",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_prefecture",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_province",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_quarter",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_rayon",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_regional-state",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_republic",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_rural-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_self-governed-part",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-administrative-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-administrative-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-island-authority",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-region",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-self-governing-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_special-self-governing-province",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_state",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_state-city",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_territorial-unit",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_town",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_town-council",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_two-tier-county",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_union-territory",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_unitary-authority",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_urban-community",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_urban-municipality",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_voivodship",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    },
-    {
-        "_from": "terms/ISO_3166_2_type_ward",
-        "_predicate": "_predicate_enum-of",
-        "_to": "terms/ISO_3166_2_type",
-        "_path": [
-            "terms/ISO_3166_2_type"
-        ],
-        "_path_data": {}
-    }
+	{
+		"_from": "terms/ISO_3166_2_type_administration",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_administrative-atoll",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_administrative-precinct",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_administrative-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_administrative-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_arctic-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_area",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-city-in-north-africa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-community",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-district",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-province",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-republic",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-sector",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_autonomous-territorial-unit",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_borough",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_canton",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_capital",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_capital-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_capital-district",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_capital-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_chain-(of-islands)",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_city-corporation",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_city-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_city-with-county-rights",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_commune",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_council-area",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_country",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_county",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_decentralized-regional-entity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_department",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_dependency",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_district",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_district-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_district-with-special-status",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_districts-under-republic-administration",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_division",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_economic-prefecture",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_emirate",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_entity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_european-collectivity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_federal-capital-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_federal-dependency",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_federal-district",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_federal-entity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_federal-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_free-municipal-consortium",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_geographical-entity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_geographical-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_geographical-unit",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_governorate",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_group-of-islands-(20-inhabited-islands)",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_indigenous-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_island",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_island-council",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_islands,-groups-of-islands",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_land",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_local-council",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_london-borough",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-administration",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-collectivity-with-special-status",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-department",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-district",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_metropolitan-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_oblast",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_outlying-area",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_overseas-collectivity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_overseas-collectivity-with-special-status",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_overseas-departmental-collectivity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_overseas-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_overseas-unique-territorial-collectivity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_pakistan-administered-area",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_parish",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_popularate",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_prefecture",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_province",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_quarter",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_rayon",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_regional-state",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_republic",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_rural-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_self-governed-part",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-administrative-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-administrative-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-island-authority",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-self-governing-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_special-self-governing-province",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_state",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_state-city",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_territorial-unit",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_town",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_town-council",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_two-tier-county",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_union-territory",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_unitary-authority",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_urban-community",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_urban-municipality",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_voivodship",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/ISO_3166_2_type_ward",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/ISO_3166_2_type",
+		"_path": [
+			"terms/ISO_3166_2_type"
+		],
+		"_path_data": {}
+	}
 ]

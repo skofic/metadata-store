@@ -1,4 +1,5 @@
 # Enumeration option
+<p><a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_role_enum-item</code></p>
 
 > A term role indicating that the term is a valid element (selectable value) of at least one controlled vocabulary. Set automatically.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_term_role` |
+| [Namespace](_nid.md) | [Term role](_term_role.md) |
 | [Local identifier](_lid.md) | `enum-item` |
 | [Global identifier](_gid.md) | `_term_role_enum-item` |
 | [Official identifiers](_aid.md) | `enum-item` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_term_role",
-  "_lid": "enum-item",
-  "_gid": "_term_role_enum-item",
-  "_aid": [
+  "_aid" : [
     "enum-item"
-  ]
+  ],
+  "_gid" : "_term_role_enum-item",
+  "_lid" : "enum-item",
+  "_nid" : "_term_role"
 }
 ```
 
@@ -49,14 +50,14 @@ This role is assigned automatically by the loader when it detects that the term 
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Enumeration option"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Enumeration option"
   }
 }
 ```

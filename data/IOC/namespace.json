@@ -3,12 +3,25 @@
 		"_code": {
 			"_lid": "IOC",
 			"_gid": "IOC",
-			"_aid": ["IOC"]
+			"_aid": [
+				"IOC"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "International Olympic Committee"},
-			"_definition": {"ISO_639_3_eng": "Namespace for International Olympic Committee country codes used to identify nations and territories in Olympic competition."},
-			"_description": {"ISO_639_3_eng": "The International Olympic Committee assigns three-letter codes to each National Olympic Committee. These codes are used in all Olympic broadcasts, results, and medal tables. IOC codes broadly follow ISO 3166-1 alpha-3 but differ in a number of cases — for example, Germany is `GER` in IOC but `DEU` in ISO 3166-1."}
+			"_title": {
+				"ISO_639_3_eng": "International Olympic Committee"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for International Olympic Committee country codes used to identify nations and territories in Olympic competition."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The International Olympic Committee assigns three-letter codes to each National Olympic Committee. These codes are used in all Olympic broadcasts, results, and medal tables. IOC codes broadly follow ISO 3166-1 alpha-3 but differ in a number of cases — for example, Germany is `GER` in IOC but `DEU` in ISO 3166-1."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	}
 ]

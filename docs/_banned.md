@@ -1,4 +1,5 @@
 # Banned properties
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_banned</code></p>
 
 > A set of descriptor global identifiers listing properties that must never be present in the object. The ban is unconditional and takes precedence over all other schema rules, including conditional rules applied via graph edges.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "banned",
-  "_gid": "_banned",
-  "_aid": [
+  "_aid" : [
     "banned"
-  ]
+  ],
+  "_gid" : "_banned",
+  "_lid" : "banned",
+  "_nid" : ""
 }
 ```
 
@@ -93,17 +94,17 @@ Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Banned properties"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Banned properties"
   }
 }
 ```
@@ -114,15 +115,17 @@ Invalid: `{"_decimals": 2}` — `_decimals` is banned even though no conditional
 
 ## [Data section](_data.md)
 
-**Shape:** [Set](_set.md) of [Descriptor term key](_term_key_descriptor.md)
+**Shape:** [Set](_set.md) — [Descriptor term document key](_term_key_descriptor.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_set": {
-    "_term_key_descriptor": {}
+  "_set" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

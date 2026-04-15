@@ -1,4 +1,5 @@
 # Open schema
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_open</code></p>
 
 > A schema constraint section within `_object` that applies listed constraints to an object while permitting any additional property defined in the data dictionary. If the section is empty, the object may contain any dictionary property without restriction.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "open",
-  "_gid": "_open",
-  "_aid": [
+  "_aid" : [
     "open"
-  ]
+  ],
+  "_gid" : "_open",
+  "_lid" : "open",
+  "_nid" : ""
 }
 ```
 
@@ -94,17 +95,17 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Open schema"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Open schema"
   }
 }
 ```
@@ -115,16 +116,18 @@ Invalid: `{"_title": {...}, "_notes": "..."}` — `_notes` is banned.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Recommended properties](_recommended.md):** [Required properties](_required.md) · [Recommended properties](_recommended.md) · [Banned properties](_banned.md) · [Computed properties](_computed.md) · [Locked properties](_locked.md) · [Immutable properties](_immutable.md) · [Default values](_default-value.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_required",
         "_recommended",
         "_banned",

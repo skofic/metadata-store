@@ -1,4 +1,5 @@
 # Document revision
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_rev</code></p>
 
 > The ArangoDB system property containing the internal revision token of the document. Updated automatically by ArangoDB on every write operation. Used for optimistic locking and conflict detection.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "rev",
-  "_gid": "_rev",
-  "_aid": [
+  "_aid" : [
     "rev"
-  ]
+  ],
+  "_gid" : "_rev",
+  "_lid" : "rev",
+  "_nid" : ""
 }
 ```
 
@@ -49,14 +50,14 @@ The field is fully managed by ArangoDB and cannot be set by the user. It is list
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Document revision"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Document revision"
   }
 }
 ```
@@ -67,15 +68,17 @@ The field is fully managed by ArangoDB and cannot be set by the user. It is list
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Generic string](_string.md)
+**Shape:** [Scalar](_scalar.md) — [String](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_string": {}
+  "_scalar" : {
+    "_string" : {
+
+    }
   }
 }
 ```

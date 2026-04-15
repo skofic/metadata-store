@@ -4,12 +4,20 @@
 			"_nid": "ISO_3166",
 			"_lid": "alpha2",
 			"_gid": "ISO_3166_alpha2",
-			"_aid": ["alpha2"]
+			"_aid": [
+				"alpha2"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Alpha-2 code"},
-			"_definition": {"ISO_639_3_eng": "Two letter alphabetic code of the country."},
-			"_description": {"ISO_639_3_eng": "Two-letter country codes which are the most widely used of the three, and used most prominently for the Internet&apos;s country code top-level domains (with a few exceptions)."}
+			"_title": {
+				"ISO_639_3_eng": "Alpha-2 code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Two letter alphabetic code of the country."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Two-letter country codes which are the most widely used of the three, and used most prominently for the Internet&apos;s country code top-level domains (with a few exceptions)."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -18,19 +26,31 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_3166",
 			"_lid": "alpha3",
 			"_gid": "ISO_3166_alpha3",
-			"_aid": ["alpha3"]
+			"_aid": [
+				"alpha3"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Alpha-3 code"},
-			"_definition": {"ISO_639_3_eng": "Three letter alphabetic code of the country."},
-			"_description": {"ISO_639_3_eng": "Three-letter country codes which allow a better visual association between the codes and the country names than the alpha-2 codes."}
+			"_title": {
+				"ISO_639_3_eng": "Alpha-3 code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Three letter alphabetic code of the country."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Three-letter country codes which allow a better visual association between the codes and the country names than the alpha-2 codes."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -39,19 +59,31 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_3166",
 			"_lid": "numeric",
 			"_gid": "ISO_3166_numeric",
-			"_aid": ["numeric"]
+			"_aid": [
+				"numeric"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Numeric code"},
-			"_definition": {"ISO_639_3_eng": "Three digit numeric code of the country."},
-			"_description": {"ISO_639_3_eng": "Three-digit country codes which are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts."}
+			"_title": {
+				"ISO_639_3_eng": "Numeric code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Three digit numeric code of the country."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Three-digit country codes which are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -60,49 +92,74 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_3166",
 			"_lid": "official-name",
 			"_gid": "ISO_3166_official-name",
-			"_aid": ["official-name"]
+			"_aid": [
+				"official-name"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Official name"}
+			"_title": {
+				"ISO_639_3_eng": "Official name"
+			}
 		},
 		"_data": {
 			"_typedef": "_info_string"
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_3166",
 			"_lid": "common-name",
 			"_gid": "ISO_3166_common-name",
-			"_aid": ["common-name"]
+			"_aid": [
+				"common-name"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Common name"}
+			"_title": {
+				"ISO_639_3_eng": "Common name"
+			}
 		},
 		"_data": {
 			"_typedef": "_info_string"
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
-	
 	{
 		"_code": {
 			"_nid": "ISO_3166_2",
 			"_lid": "type",
 			"_gid": "ISO_3166_2_type",
-			"_aid": ["type"]
+			"_aid": [
+				"type"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Subset type"},
-			"_definition": {"ISO_639_3_eng": "Type of subset of the country."}
+			"_title": {
+				"ISO_639_3_eng": "Subset type"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Type of subset of the country."
+			}
 		},
 		"_data": {
 			"_enum": {
@@ -111,20 +168,33 @@
 				]
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
 	},
-	
 	{
 		"_code": {
 			"_nid": "ISO_3166_3",
 			"_lid": "alpha4",
 			"_gid": "ISO_3166_3_alpha4",
-			"_aid": ["alpha4"]
+			"_aid": [
+				"alpha4"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Alpha-4 code"},
-			"_definition": {"ISO_639_3_eng": "Four letter alphabetic code of the former country."},
-			"_description": {"ISO_639_3_eng": "Each former country name in ISO 3166-3 is assigned a four-letter alphabetic code. The first two letters are the [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 \"ISO 3166-1 alpha-2\") code of the former country, while the last two letters are allocated according to the following rules:[[2]](https://en.wikipedia.org/wiki/ISO_3166-3#cite_note-2)\n\n- If the country changed its name, the new ISO 3166-1 alpha-2 code is used, or the special code AA is used if its alpha-2 code was not changed.\n- If the country merged into an existing country, the ISO 3166-1 alpha-2 code of this country is used.\n- If the country was divided into several parts, the special code HH is used to indicate that there is no single successor country, with the exception of [Serbia and Montenegro](https://en.wikipedia.org/wiki/Serbia_and_Montenegro \"Serbia and Montenegro\"), for which XX is used to avoid duplicate use of the same ISO 3166-3 code, as the alpha-2 code CS had twice been deleted from ISO 3166-1, the first time due to the split of Czechoslovakia and the second time due to the split of Serbia and Montenegro."}
+			"_title": {
+				"ISO_639_3_eng": "Alpha-4 code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Four letter alphabetic code of the former country."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Each former country name in ISO 3166-3 is assigned a four-letter alphabetic code. The first two letters are the [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 \"ISO 3166-1 alpha-2\") code of the former country, while the last two letters are allocated according to the following rules:[[2]](https://en.wikipedia.org/wiki/ISO_3166-3#cite_note-2)\n\n- If the country changed its name, the new ISO 3166-1 alpha-2 code is used, or the special code AA is used if its alpha-2 code was not changed.\n- If the country merged into an existing country, the ISO 3166-1 alpha-2 code of this country is used.\n- If the country was divided into several parts, the special code HH is used to indicate that there is no single successor country, with the exception of [Serbia and Montenegro](https://en.wikipedia.org/wiki/Serbia_and_Montenegro \"Serbia and Montenegro\"), for which XX is used to avoid duplicate use of the same ISO 3166-3 code, as the alpha-2 code CS had twice been deleted from ISO 3166-1, the first time due to the split of Czechoslovakia and the second time due to the split of Serbia and Montenegro."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -133,18 +203,28 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	},
 	{
 		"_code": {
 			"_nid": "ISO_3166_3",
 			"_lid": "withdrawal",
 			"_gid": "ISO_3166_3_withdrawal",
-			"_aid": ["withdrawal"]
+			"_aid": [
+				"withdrawal"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Withdrawal date"},
-			"_definition": {"ISO_639_3_eng": "Date of withdrawal from ISO 3166-1."}
+			"_title": {
+				"ISO_639_3_eng": "Withdrawal date"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Date of withdrawal from ISO 3166-1."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -153,6 +233,10 @@
 				}
 			}
 		},
-		"_domn": {}
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
 	}
 ]

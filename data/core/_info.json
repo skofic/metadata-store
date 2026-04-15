@@ -25,19 +25,6 @@
 		"_data": {
 			"_object": {
 				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {}
-								}
-							],
-							"_selection": [
-								"_title",
-								"_definition"
-							]
-						}
-					],
 					"_recommended": [
 						"_description",
 						"_examples",
@@ -47,13 +34,27 @@
 						"_provider",
 						"_url",
 						"_notes"
+					],
+					"_required": [
+						{
+							"_selection": [
+								"_title",
+								"_definition"
+							],
+							"_selectors": [
+								{
+									"_all": {}
+								}
+							]
+						}
 					]
 				}
 			}
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -442,11 +443,11 @@
 			"_description": {
 				"ISO_639_3_eng": "`_info_text` defines the structure shared by all formatted `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are Markdown strings — prose, lists, tables, fenced code blocks, and links to other terms or external references are all valid.\n\nAll `_info` properties except [`_title`](_title.md) and [`_definition`](_definition.md) use this type: [`_description`](_description.md), [`_examples`](_examples.md), [`_methods`](_methods.md), [`_usage`](_usage.md), [`_citation`](_citation.md), [`_provider`](_provider.md), [`_url`](_url.md), and [`_notes`](_notes.md)."
 			},
-			"_notes": {
-				"ISO_639_3_eng": "Renamed from `_info_string_formatted` in version 3."
-			},
 			"_examples": {
 				"ISO_639_3_eng": "A multilingual formatted text value — a description containing a Markdown link:\n\n```json\n{\n\t\"ISO_639_3_eng\": \"Body weight is recorded in kilograms to two decimal places. See [`_unit_weight_kg`](_unit_weight_kg.md) for the unit definition.\"\n}\n```"
+			},
+			"_notes": {
+				"ISO_639_3_eng": "Renamed from `_info_string_formatted` in version 3."
 			}
 		},
 		"_data": {

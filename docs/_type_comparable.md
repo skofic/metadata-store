@@ -1,4 +1,5 @@
 # Comparable data type
+<p><a href="_term_role_typedef.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Type definition</a> <a href="_term_role_enum-root.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration root</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_type_comparable</code></p>
 
 > The typedef term that defines the set of comparable types accepted as the element type in `_set` and `_nested` data shapes. Excludes non-comparable text types. Recommends `_elements` as a companion property for controlling the number of elements.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_type` |
+| [Namespace](_nid.md) | [Type](_type.md) |
 | [Local identifier](_lid.md) | `comparable` |
 | [Global identifier](_gid.md) | `_type_comparable` |
 | [Official identifiers](_aid.md) | `comparable` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_type",
-  "_lid": "comparable",
-  "_gid": "_type_comparable",
-  "_aid": [
+  "_aid" : [
     "comparable"
-  ]
+  ],
+  "_gid" : "_type_comparable",
+  "_lid" : "comparable",
+  "_nid" : "_type"
 }
 ```
 
@@ -58,14 +59,14 @@ The [`_elements`](_elements.md) property is recommended to constrain the minimum
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Comparable data type"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Comparable data type"
   }
 }
 ```
@@ -76,26 +77,28 @@ The [`_elements`](_elements.md) property is recommended to constrain the minimum
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md) ([Minimum element count](_min-items.md): 1; [Maximum element count](_max-items.md): 1)
+[Number](_number.md) · [Floating point number](_number_float.md) · [Integer number](_number_integer.md) · [String](_string.md) · [Uniform Resource Identifier](_string_URI.md) · [Email address](_string_Email.md) · [Hostname](_string_Hostname.md) · [Internet Protocol version 4 address](_string_IPv4.md) · [Internet Protocol version 6 address](_string_IPv6.md) · [YYYYMMDD date](_string_YMD.md) · [Date](_string_date.md) · [Time](_string_time.md) · [Date and time](_string_date-time.md) · [LaTeX string](_string_LaTeX.md) · [Hexadecimal string](_string_HEX.md) · [Regular expression string](_string_regexp.md) · [Term document key](_term_key.md) · [Enumeration root term document key](_term_key_enum-root.md) · [Enumeration element term document key](_term_key_enum-item.md) · [Descriptor term document key](_term_key_descriptor.md) · [Document handle](_handle.md) · [Time stamp](_timestamp.md) · [Boolean](_boolean.md) · [Enumerated value](_enum.md)
+
+**[Recommended properties](_recommended.md):** [Elements count range](_elements.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
+        "_elements"
+      ],
+      "_required" : [
         {
-          "_selectors": [
-            {
-              "_all": {
-                "_min-items": 1,
-                "_max-items": 1
-              }
-            }
-          ],
-          "_selection": [
+          "_selection" : [
             "_number",
             "_number_float",
             "_number_integer",
@@ -120,11 +123,16 @@ The [`_elements`](_elements.md) property is recommended to constrain the minimum
             "_timestamp",
             "_boolean",
             "_enum"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+                "_max-items" : 1,
+                "_min-items" : 1
+              }
+            }
           ]
         }
-      ],
-      "_recommended": [
-        "_elements"
       ]
     }
   }

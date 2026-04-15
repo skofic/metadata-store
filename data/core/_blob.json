@@ -4,45 +4,77 @@
 			"_nid": "",
 			"_lid": "blob",
 			"_gid": "_blob",
-			"_aid": ["blob"]
+			"_aid": [
+				"blob"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob"},
-			"_definition": {"ISO_639_3_eng": "Namespace for blob collection document descriptors. A blob stores arbitrary text content alongside metadata fields that identify its purpose, format, and presentation variant."},
-			"_description": {"ISO_639_3_eng": "The blob collection is a general-purpose content store in the database, separate from the terms collection. Each blob document holds a text payload together with four metadata fields — [`_blob_item`](_blob_item.md), [`_blob_type`](_blob_type.md), [`_blob_kind`](_blob_kind.md), and [`_blob_identifier`](_blob_identifier.md) — that together uniquely identify the content. The document key is an MD5 hash of those four fields combined.\n\nTerms reference blob documents via [`_handle`](_handle.md) properties in their [`_prop`](_prop.md) section, allowing any term to attach arbitrary content blobs without embedding large payloads in the term document itself."}
+			"_title": {
+				"ISO_639_3_eng": "Blob"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for blob collection document descriptors. A blob stores arbitrary text content alongside metadata fields that identify its purpose, format, and presentation variant."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The blob collection is a general-purpose content store in the database, separate from the terms collection. Each blob document holds a text payload together with four metadata fields — [`_blob_item`](_blob_item.md), [`_blob_type`](_blob_type.md), [`_blob_kind`](_blob_kind.md), and [`_blob_identifier`](_blob_identifier.md) — that together uniquely identify the content. The document key is an MD5 hash of those four fields combined.\n\nTerms reference blob documents via [`_handle`](_handle.md) properties in their [`_prop`](_prop.md) section, allowing any term to attach arbitrary content blobs without embedding large payloads in the term document itself."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_blob",
 			"_lid": "item",
 			"_gid": "_blob_item",
-			"_aid": ["item"]
+			"_aid": [
+				"item"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob item"},
-			"_definition": {"ISO_639_3_eng": "A string identifying the subject or purpose of the blob content."},
-			"_description": {"ISO_639_3_eng": "Together with [`_blob_type`](_blob_type.md), [`_blob_kind`](_blob_kind.md), and [`_blob_identifier`](_blob_identifier.md), this field forms the composite key that uniquely identifies a blob document. Example value: `\"flag\"` for national flag images."}
+			"_title": {
+				"ISO_639_3_eng": "Blob item"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A string identifying the subject or purpose of the blob content."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Together with [`_blob_type`](_blob_type.md), [`_blob_kind`](_blob_kind.md), and [`_blob_identifier`](_blob_identifier.md), this field forms the composite key that uniquely identifies a blob document. Example value: `\"flag\"` for national flag images."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_string": {}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_blob",
 			"_lid": "type",
 			"_gid": "_blob_type",
-			"_aid": ["type"]
+			"_aid": [
+				"type"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob type"},
-			"_definition": {"ISO_639_3_eng": "The data type of the blob content, expressed as the _gid of a scalar type descriptor term."},
-			"_description": {"ISO_639_3_eng": "Determines how the [`_blob_content`](_blob_content.md) field should be interpreted. Valid values are drawn from the `_blob_type` controlled vocabulary, whose elements are scalar type terms from the core dictionary: [`_text`](_text.md), [`_text_SVG`](_text_SVG.md), [`_text_HTML`](_text_HTML.md), and [`_text_Markdown`](_text_Markdown.md).\n\nExample value: `\"_text_SVG\"` for an SVG image stored as text."}
+			"_title": {
+				"ISO_639_3_eng": "Blob type"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The data type of the blob content, expressed as the _gid of a scalar type descriptor term."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Determines how the [`_blob_content`](_blob_content.md) field should be interpreted. Valid values are drawn from the `_blob_type` controlled vocabulary, whose elements are scalar type terms from the core dictionary: [`_text`](_text.md), [`_text_SVG`](_text_SVG.md), [`_text_HTML`](_text_HTML.md), and [`_text_Markdown`](_text_Markdown.md).\n\nExample value: `\"_text_SVG\"` for an SVG image stored as text."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -50,20 +82,33 @@
 					"_enums": "_blob_type"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_blob",
 			"_lid": "kind",
 			"_gid": "_blob_kind",
-			"_aid": ["kind"]
+			"_aid": [
+				"kind"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob kind"},
-			"_definition": {"ISO_639_3_eng": "The presentation variant of the blob, expressed as an enumeration element."},
-			"_description": {"ISO_639_3_eng": "Distinguishes between different versions of the same content — for example, a flag image in landscape (4:3) versus square (1:1) aspect ratio. Values are drawn from the `_blob_kind` controlled vocabulary, currently comprising [`_media_landscape`](_media_landscape.md) and [`_media_square`](_media_square.md)."}
+			"_title": {
+				"ISO_639_3_eng": "Blob kind"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The presentation variant of the blob, expressed as an enumeration element."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Distinguishes between different versions of the same content — for example, a flag image in landscape (4:3) versus square (1:1) aspect ratio. Values are drawn from the `_blob_kind` controlled vocabulary, currently comprising [`_media_landscape`](_media_landscape.md) and [`_media_square`](_media_square.md)."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -71,86 +116,152 @@
 					"_enums": "_blob_kind"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_blob",
 			"_lid": "identifier",
 			"_gid": "_blob_identifier",
-			"_aid": ["identifier"]
+			"_aid": [
+				"identifier"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob identifier"},
-			"_definition": {"ISO_639_3_eng": "A string that, combined with item, type, and kind, uniquely identifies the subject of the blob."},
-			"_description": {"ISO_639_3_eng": "The four fields `_blob_item`, `_blob_type`, `_blob_kind`, and `_blob_identifier` together form the composite key from which the document's `_key` is derived (as an MD5 hash of their concatenation). This field carries the subject-specific part of that key — for example, the ISO 3166-1 alpha-2 code (`\"it\"`) for a country flag blob."}
+			"_title": {
+				"ISO_639_3_eng": "Blob identifier"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A string that, combined with item, type, and kind, uniquely identifies the subject of the blob."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The four fields `_blob_item`, `_blob_type`, `_blob_kind`, and `_blob_identifier` together form the composite key from which the document's `_key` is derived (as an MD5 hash of their concatenation). This field carries the subject-specific part of that key — for example, the ISO 3166-1 alpha-2 code (`\"it\"`) for a country flag blob."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_string": {}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_blob",
 			"_lid": "content",
 			"_gid": "_blob_content",
-			"_aid": ["content"]
+			"_aid": [
+				"content"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Blob content"},
-			"_definition": {"ISO_639_3_eng": "The text payload of the blob document."},
-			"_description": {"ISO_639_3_eng": "Stores the actual content as a generic text value. The format is declared by [`_blob_type`](_blob_type.md) and should be used by the application to parse or render the content correctly. For SVG flag images, this field holds the raw SVG markup."}
+			"_title": {
+				"ISO_639_3_eng": "Blob content"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The text payload of the blob document."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Stores the actual content as a generic text value. The format is declared by [`_blob_type`](_blob_type.md) and should be used by the application to parse or render the content correctly. For SVG flag images, this field holds the raw SVG markup."
+			}
 		},
 		"_data": {
 			"_scalar": {
 				"_text": {}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "",
 			"_lid": "media",
 			"_gid": "_media",
-			"_aid": ["media"]
+			"_aid": [
+				"media"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Media"},
-			"_definition": {"ISO_639_3_eng": "Namespace for media presentation variant terms that categorise blob documents by their display format or aspect ratio."},
-			"_description": {"ISO_639_3_eng": "Terms in this namespace serve as enumeration elements of the [`_blob_kind`](_blob_kind.md) controlled vocabulary. They describe how a blob's content is intended to be displayed — for example, in landscape or square orientation — independently of the content type or subject."}
+			"_title": {
+				"ISO_639_3_eng": "Media"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for media presentation variant terms that categorise blob documents by their display format or aspect ratio."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Terms in this namespace serve as enumeration elements of the [`_blob_kind`](_blob_kind.md) controlled vocabulary. They describe how a blob's content is intended to be displayed — for example, in landscape or square orientation — independently of the content type or subject."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_media",
 			"_lid": "landscape",
 			"_gid": "_media_landscape",
-			"_aid": ["landscape"]
+			"_aid": [
+				"landscape"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Landscape"},
-			"_definition": {"ISO_639_3_eng": "Indicates a blob intended for display in landscape orientation, wider than tall."},
-			"_description": {"ISO_639_3_eng": "For flag images, this corresponds to the standard 4:3 aspect ratio used in most flag displays and publications."}
+			"_title": {
+				"ISO_639_3_eng": "Landscape"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Indicates a blob intended for display in landscape orientation, wider than tall."
+			},
+			"_description": {
+				"ISO_639_3_eng": "For flag images, this corresponds to the standard 4:3 aspect ratio used in most flag displays and publications."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "_media",
 			"_lid": "square",
 			"_gid": "_media_square",
-			"_aid": ["square"]
+			"_aid": [
+				"square"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "Square"},
-			"_definition": {"ISO_639_3_eng": "Indicates a blob intended for display in square (1:1) orientation."},
-			"_description": {"ISO_639_3_eng": "For flag images, this corresponds to the 1:1 aspect ratio used in circular avatars, grid layouts, and other square UI elements."}
+			"_title": {
+				"ISO_639_3_eng": "Square"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Indicates a blob intended for display in square (1:1) orientation."
+			},
+			"_description": {
+				"ISO_639_3_eng": "For flag images, this corresponds to the 1:1 aspect ratio used in circular avatars, grid layouts, and other square UI elements."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
 		}
 	}
 ]

@@ -16,7 +16,7 @@
 				"ISO_639_3_eng": "The fundamental unit of the data dictionary. A term is a document whose sections determine its identity, documentation, data type, classification, and real-world properties. The `_code` section is always required. The `_info` section is required on all terms — at minimum a `_title` — so that every term is understandable by a human reader. The sole exception is an alias term, which carries only `_code` and delegates its content to a canonical term via graph edges."
 			},
 			"_description": {
-				"ISO_639_3_eng": "Terms are the nodes of the data dictionary graph. Each term is a JSON document stored in the terms collection of the ArangoDB database. The sections a term contains determine what it represents:\n\n| Section | Present when |\n|---|---|\n| [`_code`](_code.md) | Always — provides identifiers |\n| [`_info`](_info.md) | Always, except alias terms — provides human-readable documentation |\n| [`_data`](_data.md) | Descriptor terms — defines the type and shape of the represented data |\n| [`_domn`](_domn.md) | Any term — classifies and categorises the term within the dictionary |\n| [`_prop`](_prop.md) | Terms representing real-world entities — records factual attributes of the entity |\n\nEvery term must be understandable by a human reader, so `_info` with at least a [`_title`](_title.md) is expected on all terms. The only exception is an **alias term**: a term that exists solely to provide an alternative identifier and whose content is fully supplied by a canonical term elsewhere in the dictionary. An alias term carries only its `_code` section; two graph edges connect it to its canonical counterpart — [`_predicate_bridge-of`](_predicate_bridge-of.md) marking the alias as a bridge node, and [`_predicate_enum-of`](_predicate_enum-of.md) pointing from the canonical term to the alias — so that traversal reaches the canonical term's complete content.\n\nThis mechanism is used, for example, to expose a curated subset of a large standard under a more convenient identifier without duplicating any content. An ISO 639-1 alias term for an ISO 639-3 language code carries only its own `_code`; the ISO 639-3 term holds the `_info`, `_prop`, and all other content. Users navigating via the alias automatically resolve to the canonical term.\n\nThe ArangoDB system properties [`_id`](_id.md), [`_key`](_key.md), and [`_rev`](_rev.md) are present on every stored document but are not written to the source JSON — `_key` is computed from [`_gid`](_gid.md) at insertion time, and `_id` and `_rev` are assigned by ArangoDB."
+				"ISO_639_3_eng": "Terms are the nodes of the data dictionary graph. Each term is a JSON document stored in the terms collection of the ArangoDB database. The sections a term contains determine what it represents:\n\n| Section | Present when |\n|---|---|\n| [`_code`](_code.md) | Always — provides identifiers |\n| [`_info`](_info.md) | Always, except alias terms — provides human-readable documentation |\n| [`_data`](_data.md) | Descriptor terms — defines the type and shape of the represented data |\n| [`_domn`](_domn.md) | Optional — only written when explicit classification is needed; auto-computed roles are added by the loader at insertion time |\n| [`_prop`](_prop.md) | Terms representing real-world entities — records factual attributes of the entity |\n\nEvery term must be understandable by a human reader, so `_info` with at least a [`_title`](_title.md) is expected on all terms. The only exception is an **alias term**: a term that exists solely to provide an alternative identifier and whose content is fully supplied by a canonical term elsewhere in the dictionary. An alias term carries only its `_code` section; two graph edges connect it to its canonical counterpart — [`_predicate_bridge-of`](_predicate_bridge-of.md) marking the alias as a bridge node, and [`_predicate_enum-of`](_predicate_enum-of.md) pointing from the canonical term to the alias — so that traversal reaches the canonical term's complete content.\n\nThis mechanism is used, for example, to expose a curated subset of a large standard under a more convenient identifier without duplicating any content. An ISO 639-1 alias term for an ISO 639-3 language code carries only its own `_code`; the ISO 639-3 term holds the `_info`, `_prop`, and all other content. Users navigating via the alias automatically resolve to the canonical term.\n\nThe ArangoDB system properties [`_id`](_id.md), [`_key`](_key.md), and [`_rev`](_rev.md) are present on every stored document but are not written to the source JSON — `_key` is computed from [`_gid`](_gid.md) at insertion time, and `_id` and `_rev` are assigned by ArangoDB."
 			},
 			"_examples": {
 				"ISO_639_3_eng": "A minimal term — a namespace root with only an identification section:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_lid\": \"ISO\",\n\t\t\"_gid\": \"ISO\"\n\t}\n}\n```\n\nA descriptor term — a floating-point body temperature:\n\n```json\n{\n\t\"_code\": {\n\t\t\"_nid\": \"std_health\",\n\t\t\"_lid\": \"body-temp\",\n\t\t\"_gid\": \"std_health_body-temp\",\n\t\t\"_aid\": [\"body-temp\"]\n\t},\n\t\"_info\": {\n\t\t\"_title\": {\"ISO_639_3_eng\": \"Body temperature\"},\n\t\t\"_definition\": {\"ISO_639_3_eng\": \"Core body temperature measured in degrees Celsius.\"}\n\t},\n\t\"_data\": {\n\t\t\"_scalar\": {\n\t\t\t\"_number_float\": {\n\t\t\t\t\"_unit\": \"_unit_temperature_degC\",\n\t\t\t\t\"_decimals\": 1,\n\t\t\t\t\"_range_valid\": {\n\t\t\t\t\t\"_min-inclusive\": 30.0,\n\t\t\t\t\t\"_max-inclusive\": 45.0\n\t\t\t\t},\n\t\t\t\t\"_range_normal\": {\n\t\t\t\t\t\"_min-inclusive\": 36.1,\n\t\t\t\t\t\"_max-inclusive\": 37.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"_domn\": {\n\t\t\"_term_role\": [\"_term_role_descriptor\"]\n\t}\n}\n```"
@@ -25,24 +25,6 @@
 		"_data": {
 			"_object": {
 				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {}
-								}
-							],
-							"_selection": [
-								"_code"
-							]
-						}
-					],
-					"_recommended": [
-						"_info",
-						"_data",
-						"_domn",
-						"_prop"
-					],
 					"_computed": [
 						"_key"
 					],
@@ -53,15 +35,31 @@
 						"_id",
 						"_rev"
 					],
-					"_default-value": {
-						"_domn": {}
-					}
+					"_recommended": [
+						"_info",
+						"_data",
+						"_domn",
+						"_prop"
+					],
+					"_required": [
+						{
+							"_selection": [
+								"_code"
+							],
+							"_selectors": [
+								{
+									"_all": {}
+								}
+							]
+						}
+					]
 				}
 			}
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -172,10 +170,10 @@
 				"ISO_639_3_eng": "Domains section"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "The section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary."
+				"ISO_639_3_eng": "The optional section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary. `_domn` is omitted from source JSON when there is nothing explicit to declare; the loader writes auto-computed roles at insertion time regardless."
 			},
 			"_description": {
-				"ISO_639_3_eng": "The domains section is a flexible classification container. Unlike the fixed sections of a term (`_code`, `_info`, `_data`, `_prop`), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.\n\nThe primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The dictionary loader computes `_term_role` automatically from the term's structure (presence of `_data`, graph membership as enum root or enum item, appearance in edge `_predicate` fields). Users may additionally assign [`_term_role_type`](_term_role_type.md) or [`_term_role_typedef`](_term_role_typedef.md) to indicate design intent that cannot be inferred structurally.\n\nFuture classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required."
+				"ISO_639_3_eng": "The domains section is a flexible classification container. Unlike the fixed sections of a term (`_code`, `_info`, `_data`, `_prop`), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.\n\nThe primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge `_predicate` fields (predicate), and appearance as the `_nid` of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.\n\nAuthors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_type`](_term_role_type.md), [`_term_role_typedef`](_term_role_typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.\n\nFuture classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required."
 			},
 			"_examples": {
 				"ISO_639_3_eng": "A descriptor term classified as both a descriptor and a data type:\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\n\t\t\t\"_term_role_descriptor\",\n\t\t\t\"_term_role_type\"\n\t\t]\n\t}\n}\n```\n\nA term classified as a typedef, with an additional subject-domain tag (hypothetical future descriptor):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\"_term_role_typedef\"],\n\t\t\"std_domain\": \"std_domain_health\"\n\t}\n}\n```"
@@ -184,10 +182,10 @@
 		"_data": {
 			"_object": {
 				"_open": {
-					"_recommended": [
+					"_computed": [
 						"_term_role"
 					],
-					"_computed": [
+					"_recommended": [
 						"_term_role"
 					]
 				}
@@ -250,7 +248,7 @@
 				"ISO_639_3_eng": "A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_type`](_term_role_type.md) and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both `_term_role_descriptor` and `_term_role_typedef`.\n\nThe following roles are **set automatically** by the loader based on structural evidence:\n\n| Role | Set when |\n|---|---|\n| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one `_predicate_enum-of` edge |\n| [`_term_role_enum-item`](_term_role_enum-item.md) | The term is the source of at least one `_predicate_enum-of` edge |\n| [`_term_role_descriptor`](_term_role_descriptor.md) | The term has a `_data` section |\n| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the `_predicate` value of at least one edge document |\n\nThe following roles are **user-assigned**:\n\n| Role | Meaning |\n|---|---|\n| [`_term_role_type`](_term_role_type.md) | The term defines a data type in the dictionary's type system |\n| [`_term_role_typedef`](_term_role_typedef.md) | The term is intended for use as a reusable type definition via `_typedef` |"
+				"ISO_639_3_eng": "`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both `_term_role_descriptor` and `_term_role_typedef`.\n\nThe following roles are **set automatically** by the loader based on structural evidence:\n\n| Role | Set when |\n|---|---|\n| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one `_predicate_enum-of` edge |\n| [`_term_role_enum-item`](_term_role_enum-item.md) | The term is the source of at least one `_predicate_enum-of` edge |\n| [`_term_role_descriptor`](_term_role_descriptor.md) | The term has a `_data` section |\n| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the `_predicate` value of at least one edge document |\n| [`_term_role_namespace`](_term_role_namespace.md) | The term's `_gid` appears as the `_nid` of at least one other term |\n\nThe following roles are **user-assigned**:\n\n| Role | Meaning |\n|---|---|\n| [`_term_role_type`](_term_role_type.md) | The term defines a data type in the dictionary's type system |\n| [`_term_role_typedef`](_term_role_typedef.md) | The term is intended for use as a reusable type definition via `_typedef` |"
 			}
 		},
 		"_data": {
@@ -264,8 +262,9 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_descriptor",
 				"_term_role_enum-root",
-				"_term_role_descriptor"
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -290,6 +289,32 @@
 			},
 			"_notes": {
 				"ISO_639_3_eng": "The `_term_role_type` classification can be used by validator implementations to trigger type-specific validation code when processing the `_data` section of descriptor terms. By querying which terms carry this role, a validator can dynamically load or dispatch the correct validation routine for each type key it encounters."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_term_role",
+			"_lid": "namespace",
+			"_gid": "_term_role_namespace",
+			"_aid": [
+				"namespace"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Namespace"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A term role indicating that the term's `_gid` is used as the `_nid` value of at least one other term, making it a naming scope for those terms. Set automatically by the loader."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Terms tagged with `_term_role_namespace` act as naming containers in the dictionary's identifier hierarchy. When the loader encounters a term whose [`_nid`](_nid.md) field references a `_gid`, it assigns this role to the referenced term, marking it as the namespace parent of those subordinate terms.\n\nA namespace is a naming scope — it governs the [`_gid`](_gid.md) computation rule (`_nid + \"_\" + _lid`) and groups related terms under a shared prefix. It does not constrain valid values the way an enumeration root does. A term may carry both `_term_role_namespace` and [`_term_role_enum-root`](_term_role_enum-root.md) simultaneously: for example, `ISO_3166_1` is both the root of the ISO 3166-1 country code vocabulary and the namespace under which individual country terms (`ISO_3166_1_ITA`, `ISO_3166_1_FRA`, …) are identified.\n\nThis role is assigned automatically. No user action is required. It can be queried to discover all namespace terms in the dictionary, to build namespace browsers, or to validate that every `_nid` value references a term that exists and carries this role."
 			}
 		},
 		"_domn": {

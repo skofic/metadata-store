@@ -2,25 +2,44 @@
 
 Generates and synchronises one Markdown card per term in the `docs/` directory at the repository root.
 
-- **Input**: all `*.json` files in `data/core/`
+- **Input**: all `*.json` files in `data/core/` and `data/standards/`
 - **Output**: one `docs/<_gid>.md` file per term that has an `_info` section
 
-The output path is read from `dictionary.config.json` (`paths.terms`); the default is `docs/`.
+Paths are read from `dictionary.config.json` (`paths.core`, `paths.standards`, `paths.terms`); defaults are `data/core`, `data/standards`, and `docs/`.
 
 ## Card Format
 
 Each card contains:
 
-1. **`# \`_gid\``** — H1 heading with the term's global identifier.
-2. One labelled section per `_info` property, rendered in this order:
-   `_title`, `_definition`, `_description`, `_examples`, `_notes`, `_url`, `_citation`, `_provider`.
-   Unrecognised properties follow in alphabetical order.
-3. A horizontal rule (`---`) followed by pretty-printed JSON blocks for `_code`, `_data`, and `_rule`, if present, in that order.
+1. **`# Title`** — H1 heading with the term's English title.
+2. **Role tags** (if present) — `_domn._term_role` values rendered as blue pill badges.
+3. **Grey GID subtitle** — `_gid` in a small grey paragraph.
+4. **Blockquote definition** — `_info._definition` as a Markdown blockquote.
+5. Horizontal rule, then one section per top-level term property in this order:
 
-Property labels use the format **\`_property_name\`**.
+| Section | Rendered when | Format |
+|---------|--------------|--------|
+| `## _code` | Always | Property/value table + JSON disclosure |
+| `## _info` | Always | Labelled properties (description, examples, etc.) + JSON disclosure |
+| `## _data` | Term has `_data` | Shape display + JSON disclosure |
+| `## _domn` | `_domn` has keys other than `_term_role` | Property/value table + JSON disclosure |
+| `## _prop` | Term has `_prop` | Property/value table + JSON disclosure |
 
 Multilingual values: only the `ISO_639_3_eng` entry is rendered in this phase.
 Array properties (`_url`, `_citation`, `_provider`): rendered as a Markdown bullet list.
+
+### `_prop` / `_domn` value rendering
+
+| Value type | Rendered as |
+|-----------|-------------|
+| Number (int or float) | Bare number |
+| Bool | `true` / `false` |
+| String (GID in registry) | Markdown link to card |
+| String (any other) | Backtick code |
+| String starting with `blob/` | Truncated handle in backticks |
+| Multilingual dict | Extracted `ISO_639_3_eng` string |
+| Array of multilingual dicts | Comma-separated extracted strings |
+| Array of scalars | Comma-separated, each rendered by the same rules |
 
 Terms that have no `_info` section (alias terms) produce no card.
 

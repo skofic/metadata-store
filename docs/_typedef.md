@@ -1,4 +1,5 @@
 # Type definition
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_typedef</code></p>
 
 > A reference to an existing typedef term by its global identifier. Delegates the shape definition to the referenced typedef term, making it mutually exclusive with all inline shape properties.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "typedef",
-  "_gid": "_typedef",
-  "_aid": [
+  "_aid" : [
     "typedef"
-  ]
+  ],
+  "_gid" : "_typedef",
+  "_lid" : "typedef",
+  "_nid" : ""
 }
 ```
 
@@ -77,17 +78,17 @@ This is how [`_nested`](_nested.md) is defined: it reuses `_type_comparable` to 
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Type definition"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Type definition"
   }
 }
 ```
@@ -98,15 +99,17 @@ This is how [`_nested`](_nested.md) is defined: it reuses `_type_comparable` to 
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Descriptor term key](_term_key_descriptor.md)
+**Shape:** [Scalar](_scalar.md) — [Descriptor term document key](_term_key_descriptor.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_term_key_descriptor": {}
+  "_scalar" : {
+    "_term_key_descriptor" : {
+
+    }
   }
 }
 ```

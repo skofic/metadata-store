@@ -1,4 +1,5 @@
 # String
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a> <a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_string</code></p>
 
 > The scalar data type for generic UTF-8 strings. Short, indexable text suitable for use as a tag, database field, or dictionary key. Parent type of all `_string_*` sub-types; `_regexp` may constrain the accepted format.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "string",
-  "_gid": "_string",
-  "_aid": [
+  "_aid" : [
     "string"
-  ]
+  ],
+  "_gid" : "_string",
+  "_lid" : "string",
+  "_nid" : ""
 }
 ```
 
@@ -75,17 +76,17 @@ Stored values: `"hello"`, `"IT"`, `"john.doe"`, `"2024-01-15"`.
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "String"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "String"
   }
 }
 ```
@@ -96,16 +97,18 @@ Stored values: `"hello"`, `"IT"`, `"john.doe"`, `"2024-01-15"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Recommended properties](_recommended.md):** [Unit](_unit.md) · [Unit name](_unit_name.md) · [Unit symbol](_unit_symbol.md) · [Valid string range](_range_valid_string.md) · [Normal string range](_range_normal_string.md) · [Regular expression](_regexp.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_recommended": [
+  "_object" : {
+    "_closed" : {
+      "_recommended" : [
         "_unit",
         "_unit_name",
         "_unit_symbol",

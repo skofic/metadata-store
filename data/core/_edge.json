@@ -25,25 +25,12 @@
 		"_data": {
 			"_object": {
 				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {}
-								}
-							],
-							"_selection": [
-								"_from",
-								"_to",
-								"_predicate",
-								"_path",
-								"_path_data"
-							]
-						}
-					],
 					"_computed": [
 						"_key"
 					],
+					"_default-value": {
+						"_path_data": {}
+					},
 					"_immutable": [
 						"_key",
 						"_from",
@@ -54,9 +41,22 @@
 						"_id",
 						"_rev"
 					],
-					"_default-value": {
-						"_path_data": {}
-					}
+					"_required": [
+						{
+							"_selection": [
+								"_from",
+								"_to",
+								"_predicate",
+								"_path",
+								"_path_data"
+							],
+							"_selectors": [
+								{
+									"_all": {}
+								}
+							]
+						}
+					]
 				}
 			}
 		},
@@ -164,7 +164,8 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_descriptor"
+				"_term_role_descriptor",
+				"_term_role_namespace"
 			]
 		}
 	},

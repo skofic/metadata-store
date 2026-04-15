@@ -1,4 +1,5 @@
 # Range maximum inclusive
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_max-inclusive</code></p>
 
 > The closed upper bound property of a numeric range object. The validated value must be less than or equal to this number (value ≤ bound). Used inside `_range_valid` or `_range_normal` objects; mutually exclusive with `_max-exclusive`.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "max-inclusive",
-  "_gid": "_max-inclusive",
-  "_aid": [
+  "_aid" : [
     "max-inclusive"
-  ]
+  ],
+  "_gid" : "_max-inclusive",
+  "_lid" : "max-inclusive",
+  "_nid" : ""
 }
 ```
 
@@ -60,17 +61,17 @@ A percentage value that must be between 0 and 100 (both bounds inclusive):
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Range maximum inclusive"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Range maximum inclusive"
   }
 }
 ```
@@ -81,15 +82,17 @@ A percentage value that must be between 0 and 100 (both bounds inclusive):
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Floating-point or integer number](_number.md)
+**Shape:** [Scalar](_scalar.md) — [Number](_number.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_number": {}
+  "_scalar" : {
+    "_number" : {
+
+    }
   }
 }
 ```

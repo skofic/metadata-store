@@ -1,4 +1,5 @@
 # Unit name
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_unit_name</code></p>
 
 > The companion property for specifying the plain-text name of a unit of measurement when the unit is not available in the `_unit` controlled vocabulary. Its value is a plain UTF-8 string. Mutually exclusive with `_unit` and `_unit_symbol`.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_unit` |
+| [Namespace](_nid.md) | [Unit](_unit.md) |
 | [Local identifier](_lid.md) | `name` |
 | [Global identifier](_gid.md) | `_unit_name` |
 | [Official identifiers](_aid.md) | `name` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_unit",
-  "_lid": "name",
-  "_gid": "_unit_name",
-  "_aid": [
+  "_aid" : [
     "name"
-  ]
+  ],
+  "_gid" : "_unit_name",
+  "_lid" : "name",
+  "_nid" : "_unit"
 }
 ```
 
@@ -66,17 +67,17 @@ Stored values: `"millibar"`, `"international unit"`, `"parts per million"`.
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Unit name"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Unit name"
   }
 }
 ```
@@ -87,15 +88,17 @@ Stored values: `"millibar"`, `"international unit"`, `"parts per million"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [Generic string](_string.md)
+**Shape:** [Scalar](_scalar.md) — [String](_string.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_string": {}
+  "_scalar" : {
+    "_string" : {
+
+    }
   }
 }
 ```

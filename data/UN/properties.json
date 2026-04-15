@@ -4,12 +4,20 @@
 			"_nid": "UN",
 			"_lid": "GA",
 			"_gid": "UN_GA",
-			"_aid": ["GA"]
+			"_aid": [
+				"GA"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "United Nations Regional Group"},
-			"_definition": {"ISO_639_3_eng": "The United Nations General Assembly regional group to which a country belongs for electoral and procedural purposes."},
-			"_description": {"ISO_639_3_eng": "The UN General Assembly divides its 193 member states into five regional groups used to allocate seats on UN bodies, coordinate voting, and manage candidatures. The groups are: African Group, Asia-Pacific Group, Eastern European Group, Latin American and Caribbean Group (GRULAC), and Western European and Others Group (WEOG). Group membership does not always follow strict geographic lines — for example, Israel and the United States are in WEOG despite their geographic locations."}
+			"_title": {
+				"ISO_639_3_eng": "United Nations Regional Group"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The United Nations General Assembly regional group to which a country belongs for electoral and procedural purposes."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The UN General Assembly divides its 193 member states into five regional groups used to allocate seats on UN bodies, coordinate voting, and manage candidatures. The groups are: African Group, Asia-Pacific Group, Eastern European Group, Latin American and Caribbean Group (GRULAC), and Western European and Others Group (WEOG). Group membership does not always follow strict geographic lines — for example, Israel and the United States are in WEOG despite their geographic locations."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -17,20 +25,34 @@
 					"_enums": "UN_GA"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
 		}
 	},
-
 	{
 		"_code": {
 			"_nid": "UN",
 			"_lid": "Macro-region",
 			"_gid": "UN_Macro-region",
-			"_aid": ["Macro-region"]
+			"_aid": [
+				"Macro-region"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "United Nations Macro-region"},
-			"_definition": {"ISO_639_3_eng": "The United Nations M.49 macro-region (continental grouping) in which a country or territory is located."},
-			"_description": {"ISO_639_3_eng": "The UN Statistics Division M.49 standard organises the world into macro-regions — broad continental groupings used for statistical reporting. The six macro-regions are Africa, Americas, Asia, Europe, Oceania, and Antarctic. Each country and territory belongs to exactly one macro-region.\n\nThis term serves both as a descriptor (recording the macro-region of a country record) and as the enumeration root for the set of valid macro-region values in the [`UN_M49`](UN_M49.md) namespace."}
+			"_title": {
+				"ISO_639_3_eng": "United Nations Macro-region"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The United Nations M.49 macro-region (continental grouping) in which a country or territory is located."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The UN Statistics Division M.49 standard organises the world into macro-regions — broad continental groupings used for statistical reporting. The six macro-regions are Africa, Americas, Asia, Europe, Oceania, and Antarctic. Each country and territory belongs to exactly one macro-region.\n\nThis term serves both as a descriptor (recording the macro-region of a country record) and as the enumeration root for the set of valid macro-region values in the [`UN_M49`](UN_M49.md) namespace."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -38,6 +60,12 @@
 					"_enums": "UN_Macro-region"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root"
+			]
 		}
 	},
 	{
@@ -45,12 +73,20 @@
 			"_nid": "UN",
 			"_lid": "Sub-region",
 			"_gid": "UN_Sub-region",
-			"_aid": ["Sub-region"]
+			"_aid": [
+				"Sub-region"
+			]
 		},
 		"_info": {
-			"_title": {"ISO_639_3_eng": "United Nations Sub-region"},
-			"_definition": {"ISO_639_3_eng": "The United Nations M.49 sub-region in which a country or territory is located."},
-			"_description": {"ISO_639_3_eng": "The UN Statistics Division M.49 standard subdivides each macro-region into sub-regions — more granular geographic groupings used for statistical reporting. For example, the Africa macro-region is divided into Northern Africa, Eastern Africa, Middle Africa, Southern Africa, and Western Africa.\n\nThis term serves both as a descriptor (recording the sub-region of a country record) and as the enumeration root for the set of valid sub-region values in the [`UN_M49`](UN_M49.md) namespace."}
+			"_title": {
+				"ISO_639_3_eng": "United Nations Sub-region"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The United Nations M.49 sub-region in which a country or territory is located."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The UN Statistics Division M.49 standard subdivides each macro-region into sub-regions — more granular geographic groupings used for statistical reporting. For example, the Africa macro-region is divided into Northern Africa, Eastern Africa, Middle Africa, Southern Africa, and Western Africa.\n\nThis term serves both as a descriptor (recording the sub-region of a country record) and as the enumeration root for the set of valid sub-region values in the [`UN_M49`](UN_M49.md) namespace."
+			}
 		},
 		"_data": {
 			"_scalar": {
@@ -58,6 +94,12 @@
 					"_enums": "UN_Sub-region"
 				}
 			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-root"
+			]
 		}
 	}
 ]

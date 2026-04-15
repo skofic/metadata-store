@@ -1,4 +1,5 @@
 # Uniform Resource Identifier
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_uri</code></p>
 
 > A persistent URI that uniquely identifies the real-world entity, concept, or standard that this term represents in an external authority, knowledge graph, or registry. This is an identity reference, not a documentation link — it points to what the term is, not to material that describes it.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "uri",
-  "_gid": "_uri",
-  "_aid": [
+  "_aid" : [
     "uri"
-  ]
+  ],
+  "_gid" : "_uri",
+  "_lid" : "uri",
+  "_nid" : ""
 }
 ```
 
@@ -87,17 +88,17 @@ Other typical URIs:
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Uniform Resource Identifier"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Uniform Resource Identifier"
   }
 }
 ```
@@ -108,15 +109,17 @@ Other typical URIs:
 
 ## [Data section](_data.md)
 
-**Shape:** [Scalar](_scalar.md) — [URI string](_string_URI.md)
+**Shape:** [Scalar](_scalar.md) — [Uniform Resource Identifier](_string_URI.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_scalar": {
-    "_string_URI": {}
+  "_scalar" : {
+    "_string_URI" : {
+
+    }
   }
 }
 ```

@@ -1,4 +1,5 @@
 # Properties selector
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_selector</code></p>
 
 > A selection rule object that pairs a set of cardinality rules (`_selectors`) with a pool of candidate properties (`_selection`). Both properties are required. Multiple `_selector` objects within `_required` are AND-connected: all must be satisfied simultaneously.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "selector",
-  "_gid": "_selector",
-  "_aid": [
+  "_aid" : [
     "selector"
-  ]
+  ],
+  "_gid" : "_selector",
+  "_lid" : "selector",
+  "_nid" : ""
 }
 ```
 
@@ -83,25 +84,29 @@ When `_selection` is a nested array of sub-arrays, `_selectors` operates as a tw
 
 `_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required.
 
+**[Notes](_notes.md)**
+
+Previously named `_rule_selector` in earlier versions of the dictionary.
+
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Properties selector"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_notes" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_notes": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Properties selector"
   }
 }
 ```
@@ -112,25 +117,32 @@ When `_selection` is a nested array of sub-arrays, `_selectors` operates as a tw
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
+
+**[Required properties](_required.md)**
+
+[Mandatory selection](_all.md)
+[Properties selectors](_selectors.md) · [Properties selection](_selection.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {
-      "_required": [
+  "_object" : {
+    "_closed" : {
+      "_required" : [
         {
-          "_selectors": [
-            {
-              "_all": {}
-            }
-          ],
-          "_selection": [
+          "_selection" : [
             "_selectors",
             "_selection"
+          ],
+          "_selectors" : [
+            {
+              "_all" : {
+
+              }
+            }
           ]
         }
       ]

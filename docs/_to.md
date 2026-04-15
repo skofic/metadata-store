@@ -1,4 +1,5 @@
 # Relationship destination
+<p><a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_to</code></p>
 
 > The ArangoDB document handle of the destination node of a directed relationship. In the dictionary's many-to-one convention, `_to` is always the root — a container, controlled vocabulary, or schema term — toward which the source node points.
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "",
-  "_lid": "to",
-  "_gid": "_to",
-  "_aid": [
+  "_aid" : [
     "to"
-  ]
+  ],
+  "_gid" : "_to",
+  "_lid" : "to",
+  "_nid" : ""
 }
 ```
 
@@ -72,17 +73,17 @@ Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 contro
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Relationship destination"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Relationship destination"
   }
 }
 ```
@@ -100,8 +101,10 @@ Here `terms/ISO_3166_3` is the handle of the root node — the ISO 3166-3 contro
 
 ```json
 {
-  "_scalar": {
-    "_handle": {}
+  "_scalar" : {
+    "_handle" : {
+
+    }
   }
 }
 ```

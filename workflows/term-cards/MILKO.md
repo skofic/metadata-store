@@ -6,7 +6,7 @@ A Swift command-line tool that reads dictionary term JSON files and generates on
 
 ## Purpose
 
-Every term in `data/core/` that has an `_info` section gets a human-readable Markdown file in `docs/`. Cards are the primary way to browse and understand the dictionary outside a database environment. The tool is incremental: unchanged cards are left untouched; stale cards (whose source term was deleted) are removed.
+Every term in `data/core/` and `data/standards/` that has an `_info` section gets a human-readable Markdown file in `docs/`. Cards are the primary way to browse and understand the dictionary outside a database environment. The tool is incremental: unchanged cards are left untouched; stale cards (whose source term was deleted) are removed.
 
 ---
 
@@ -49,8 +49,8 @@ Declares one executable target `TermCards` pointing at `Sources/TermCards`. Targ
 Located at the bottom of `main.swift`:
 
 1. Detects the repository root by walking up from the current directory until `.git` is found.
-2. Reads `dictionary.config.json` for path overrides (`paths.core` → `data/core`, `paths.terms` → `docs`).
-3. **Phase 1**: Loads all `*.json` files from `data/core/` into a `termsByGid` dictionary.
+2. Reads `dictionary.config.json` for path overrides (`paths.core` → `data/core`, `paths.standards` → `data/standards`, `paths.terms` → `docs`).
+3. **Phase 1**: Loads all `*.json` files from each source directory (`data/core/`, `data/standards/`) into a `termsByGid` dictionary. Directories that do not exist are silently skipped.
 4. Builds a `TitleRegistry` (`[gid → English title]`) used for generating hyperlinks.
 5. **Phase 2**: For each term with an `_info` section, renders a Markdown card and writes it if the content has changed.
 6. **Phase 3**: Removes any card in `docs/` whose source term no longer exists.
@@ -84,6 +84,16 @@ Assembles the full Markdown string for one term. Structure:
 
 ## _data          ← only if term has _data
 (shape display + JSON disclosure)
+
+---
+
+## _domn          ← only if _domn has keys other than _term_role
+(property/value table + JSON disclosure)
+
+---
+
+## _prop          ← only if term has _prop
+(property/value table + JSON disclosure)
 ```
 
 ### 4. Section renderers
@@ -118,6 +128,26 @@ Dispatches to the appropriate shape renderer based on which key is present in `_
 | (empty) | "Any" |
 
 Followed by a full JSON disclosure of the `_data` object.
+
+**`renderDomainSection(_:registry:)`**  
+Strips `_term_role` from the `_domn` dict (already shown as role tags). Skips the section entirely when nothing remains. Otherwise renders a `| Property | Value |` table with keys sorted alphabetically, using `renderPropValue` for values. Followed by a JSON disclosure of the stripped dict.
+
+**`renderPropSection(_:registry:)`**  
+Same `| Property | Value |` table format, applied to the `_prop` dict. Keys sorted alphabetically. Followed by a JSON disclosure of the full `_prop` object.
+
+**`renderPropValue(_:registry:)`** — shared helper for both `_domn` and `_prop` tables:
+
+| Input type | Output |
+|-----------|--------|
+| NSNumber (bool) | `true` / `false` |
+| NSNumber (numeric) | Formatted number |
+| String starting with `blob/` | Truncated handle in backticks |
+| String (in registry) | `[Title](gid.md)` link |
+| String (not in registry) | `` `code` `` |
+| `[String: Any]` multilingual dict | Extracted `ISO_639_3_eng` string |
+| `[Any]` of multilingual dicts | Comma-separated extracted strings |
+| `[Any]` of scalars | Comma-separated, each rendered recursively |
+| Anything else | `*see JSON*` |
 
 ### 5. Companion rendering — `renderCompanions(_:registry:)`
 
@@ -168,8 +198,9 @@ Cross-term links use relative file references (`gid.md`) — they work correctly
 ```json
 {
     "paths": {
-        "core":  "data/core",
-        "terms": "docs"
+        "core":      "data/core",
+        "standards": "data/standards",
+        "terms":     "docs"
     }
 }
 ```

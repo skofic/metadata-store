@@ -25,19 +25,14 @@
 		"_data": {
 			"_object": {
 				"_closed": {
-					"_required": [
-						{
-							"_selectors": [
-								{
-									"_all": {}
-								}
-							],
-							"_selection": [
-								"_lid",
-								"_gid",
-								"_aid"
-							]
-						}
+					"_computed": [
+						"_gid",
+						"_aid"
+					],
+					"_immutable": [
+						"_nid",
+						"_lid",
+						"_gid"
 					],
 					"_recommended": [
 						"_nid",
@@ -48,18 +43,19 @@
 						"_regexp",
 						"_emoji"
 					],
-					"_computed": [
-						"_gid",
-						"_aid"
-					],
-					"_immutable": [
-						"_nid",
-						"_lid",
-						"_gid"
-					],
-					"_locked": [
-						"_id",
-						"_rev"
+					"_required": [
+						{
+							"_selection": [
+								"_lid",
+								"_gid",
+								"_aid"
+							],
+							"_selectors": [
+								{
+									"_all": {}
+								}
+							]
+						}
 					]
 				}
 			}

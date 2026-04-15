@@ -1,4 +1,5 @@
 # Enumeration root term document key
+<p><a href="_term_role_type.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data type</a> <a href="_term_role_enum-item.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Enumeration option</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_term_key_enum-root</code></p>
 
 > A term key that must reference an enumeration root — a term that is the root of a controlled vocabulary graph.
@@ -9,7 +10,7 @@
 
 | Property | Value |
 |---|---|
-| [Namespace](_nid.md) | `_term_key` |
+| [Namespace](_nid.md) | [Term document key](_term_key.md) |
 | [Local identifier](_lid.md) | `enum-root` |
 | [Global identifier](_gid.md) | `_term_key_enum-root` |
 | [Official identifiers](_aid.md) | `enum-root` |
@@ -19,12 +20,12 @@
 
 ```json
 {
-  "_nid": "_term_key",
-  "_lid": "enum-root",
-  "_gid": "_term_key_enum-root",
-  "_aid": [
+  "_aid" : [
     "enum-root"
-  ]
+  ],
+  "_gid" : "_term_key_enum-root",
+  "_lid" : "enum-root",
+  "_nid" : "_term_key"
 }
 ```
 
@@ -59,17 +60,17 @@ Stored values: `"ISO_639_3"`, `"ISO_3166_3"`.
 
 ```json
 {
-  "_title": {
-    "ISO_639_3_eng": "Enumeration root term document key"
+  "_definition" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_definition": {
-    "ISO_639_3_eng": "..."
+  "_description" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_description": {
-    "ISO_639_3_eng": "..."
+  "_examples" : {
+    "ISO_639_3_eng" : "..."
   },
-  "_examples": {
-    "ISO_639_3_eng": "..."
+  "_title" : {
+    "ISO_639_3_eng" : "Enumeration root term document key"
   }
 }
 ```
@@ -80,15 +81,17 @@ Stored values: `"ISO_639_3"`, `"ISO_3166_3"`.
 
 ## [Data section](_data.md)
 
-**Shape:** [Object](_object.md)
+**Shape:** [Object](_object.md) — [Closed schema](_closed.md)
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_object": {
-    "_closed": {}
+  "_object" : {
+    "_closed" : {
+
+    }
   }
 }
 ```

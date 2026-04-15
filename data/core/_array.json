@@ -25,16 +25,11 @@
 		"_data": {
 			"_object": {
 				"_closed": {
+					"_recommended": [
+						"_elements"
+					],
 					"_required": [
 						{
-							"_selectors": [
-								{
-									"_all": {
-										"_min-items": 1,
-										"_max-items": 1
-									}
-								}
-							],
 							"_selection": [
 								"_scalar",
 								"_object",
@@ -44,11 +39,16 @@
 								"_set",
 								"_nested",
 								"_typedef"
+							],
+							"_selectors": [
+								{
+									"_all": {
+										"_max-items": 1,
+										"_min-items": 1
+									}
+								}
 							]
 						}
-					],
-					"_recommended": [
-						"_elements"
 					]
 				}
 			}
@@ -87,16 +87,16 @@
 				"_closed": {
 					"_required": [
 						{
+							"_selection": [
+								"_min-items",
+								"_max-items"
+							],
 							"_selectors": [
 								{
 									"_any": {
 										"_min-items": 1
 									}
 								}
-							],
-							"_selection": [
-								"_min-items",
-								"_max-items"
 							]
 						}
 					]
