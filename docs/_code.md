@@ -124,7 +124,7 @@ A top-level namespace term with no parent:
 [Mandatory selection](_all.md)
 [Local identifier](_lid.md) · [Global identifier](_gid.md) · [Official identifiers](_aid.md)
 
-**[Recommended properties](_recommended.md):** [Namespace](_nid.md) · [Uniform Resource Identifier](_uri.md) · [Provider identifiers](_pid.md) · [Name](_name.md) · [Symbol](_symbol.md) · [Regular expression](_regexp.md) · [Emoji](_emoji.md)
+**[Recommended properties](_recommended.md):** [Namespace](_nid.md) · [Uniform Resource Identifier](_uri.md) · [Provider identifiers](_pid.md) · [Name](_name.md) · [Symbol](_symbol.md) · [Unicode symbol for display](_symbol_print.md) · [Regular expression](_regexp.md) · [Emoji](_emoji.md)
 
 **[Computed properties](_computed.md):** [Global identifier](_gid.md) · [Official identifiers](_aid.md)
 
@@ -152,6 +152,7 @@ A top-level namespace term with no parent:
         "_pid",
         "_name",
         "_symbol",
+        "_symbol_print",
         "_regexp",
         "_emoji"
       ],

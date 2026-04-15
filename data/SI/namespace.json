@@ -1,0 +1,27 @@
+[
+	{
+		"_code": {
+			"_lid": "SI",
+			"_gid": "SI",
+			"_aid": [
+				"SI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "International System of Units"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for International System of Units (SI) conversion descriptor terms."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The SI (Système International d'Unités) is the modern metric system, defining seven base units — metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol), and candela (cd) — and a coherent set of derived units. It is defined and maintained by the [Bureau International des Poids et Mesures (BIPM)](https://www.bipm.org/en/measurement-units).\n\nThis namespace groups descriptor terms that encode the relationship between a unit term and its SI coherent counterpart: whether the unit is itself an SI coherent unit ([`SI_base`](SI_base.md)), the multiplicative scale factor ([`SI_factor`](SI_factor.md)), and the additive offset ([`SI_offset`](SI_offset.md)) needed to convert values into SI coherent units. Together these three properties define the complete linear conversion formula used by the dictionary."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	}
+]

@@ -1,0 +1,27 @@
+[
+	{
+		"_code": {
+			"_lid": "UCUM",
+			"_gid": "UCUM",
+			"_aid": [
+				"UCUM"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Unified Code for Units of Measure"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Namespace for terms derived from the Unified Code for Units of Measure (UCUM)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "UCUM is a code system for units of measure designed for use in electronic data interchange, particularly in health informatics (HL7, FHIR) and scientific data exchange. It provides a case-sensitive, machine-readable string syntax for unit expressions that can be processed without ambiguity.\n\nThis dictionary stores UCUM unit codes in the [`UCUM_code`](UCUM_code.md) descriptor property of unit terms, providing an additional cross-reference for systems that already use UCUM. UCUM is maintained by the [Regenstrief Institute](https://ucum.org)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	}
+]

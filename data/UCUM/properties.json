@@ -1,0 +1,33 @@
+[
+	{
+		"_code": {
+			"_nid": "UCUM",
+			"_lid": "code",
+			"_gid": "UCUM_code",
+			"_aid": [
+				"code"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "UCUM unit code"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The UCUM (Unified Code for Units of Measure) expression string identifying the unit."
+			},
+			"_description": {
+				"ISO_639_3_eng": "UCUM codes are case-sensitive strings constructed from unit symbols, metric prefixes, and arithmetic operators following the UCUM specification. They uniquely identify a unit in a form that is both human-readable and machine-parseable.\n\nCommon examples:\n\n- `kg/m2` — kilograms per square metre\n- `t/ha` — metric tonnes per hectare\n- `Cel` — degree Celsius\n- `m.s-1` — metres per second\n- `[lb_av]/[acr_us]` — pounds per US acre\n\nThe UCUM specification distinguishes case-sensitive and case-insensitive codes; this dictionary always stores the case-sensitive form."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
+]

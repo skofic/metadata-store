@@ -803,12 +803,20 @@ func run() throws {
     let config = readConfig(repoRoot: repoRoot)
     let termsURL = repoRoot.appendingPathComponent(config["terms"] ?? "docs")
 
-    // Source directories scanned for term cards, in order.
-    // Configurable via dictionary.config.json; defaults: data/core, data/standards.
-    let sourceDirectories: [URL] = [
-        repoRoot.appendingPathComponent(config["core"]      ?? "data/core"),
-        repoRoot.appendingPathComponent(config["standards"] ?? "data/standards"),
-    ]
+    // Source directories scanned for term cards.
+    // Reads the "sources" array from dictionary.config.json when present;
+    // falls back to [data/core, data/standards] when absent.
+    let sourceDirectories: [URL]
+    if let configData = try? Data(contentsOf: repoRoot.appendingPathComponent("dictionary.config.json")),
+       let configJson = try? JSONSerialization.jsonObject(with: configData) as? [String: Any],
+       let sourcePaths = configJson["sources"] as? [String] {
+        sourceDirectories = sourcePaths.map { repoRoot.appendingPathComponent($0) }
+    } else {
+        sourceDirectories = [
+            repoRoot.appendingPathComponent(config["core"]      ?? "data/core"),
+            repoRoot.appendingPathComponent(config["standards"] ?? "data/standards"),
+        ]
+    }
 
     try fm.createDirectory(at: termsURL, withIntermediateDirectories: true)
 

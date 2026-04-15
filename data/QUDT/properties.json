@@ -1,0 +1,95 @@
+[
+	{
+		"_code": {
+			"_nid": "QUDT",
+			"_lid": "offset",
+			"_gid": "QUDT_offset",
+			"_aid": [
+				"offset"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "QUDT conversion offset"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The additive offset applied after the conversion multiplier when converting a unit value to the SI coherent unit, as recorded in the QUDT ontology."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Sourced from QUDT's `qudt:conversionOffset` RDF property. Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × QUDT_multiplier + QUDT_offset\n```\n\nNon-zero only for units whose zero point differs from the SI coherent unit. The most common case is degrees Celsius: offset = 273.15 (converting to kelvin). When zero, this property is omitted from the unit term's `_prop` section.\n\nThis property records the value as found in the QUDT source. The operational offset used by this dictionary is [`SI_offset`](SI_offset.md)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_float": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "QUDT",
+			"_lid": "multiplier",
+			"_gid": "QUDT_multiplier",
+			"_aid": [
+				"multiplier"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "QUDT conversion multiplier"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The multiplicative factor for converting a unit value to the SI coherent unit, as recorded in the QUDT ontology."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Sourced from QUDT's `qudt:conversionMultiplier` RDF property. Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × QUDT_multiplier + QUDT_offset\n```\n\nFor units that differ from the SI coherent unit by scale only (most units), [`QUDT_offset`](QUDT_offset.md) is zero and only this multiplier is needed. For SI coherent units the value is `1.0`.\n\nThis property records the value as found in the QUDT source. The operational conversion factor used by this dictionary is [`SI_factor`](SI_factor.md), which equals `QUDT_multiplier` in the vast majority of cases."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_float": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "QUDT_dimension",
+			"_lid": "vector",
+			"_gid": "QUDT_dimension_vector",
+			"_aid": [
+				"vector"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dimension vector"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The QUDT dimension vector string encoding the SI dimensional exponents of a quantity kind."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Sourced from QUDT's `qudt:dimensionVectorForSI` RDF property. Encodes the physical dimension of a quantity kind as a compact string of eight dimension-exponent pairs in the fixed order:\n\n| Letter | SI base dimension |\n|--------|------------------|\n| A | Amount of substance (mol) |\n| E | Electric current (A) |\n| L | Length (m) |\n| I | Luminous intensity (cd) |\n| M | Mass (kg) |\n| H | Thermodynamic temperature (K) |\n| T | Time (s) |\n| D | Dimensionless ratio |\n\nEach pair is the letter followed by its signed integer exponent. Example: `A0E0L-2I0M1H0T0D0` represents mass per area (M¹·L⁻²). Dimensionless quantities have all exponents zero except D."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
+]

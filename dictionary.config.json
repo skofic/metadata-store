@@ -3,5 +3,12 @@
 		"core": "data/core",
 		"docs": "docs",
 		"terms": "docs"
-	}
+	},
+	"sources": [
+		"data/core",
+		"data/standards",
+		"data/QUDT",
+		"data/UCUM",
+		"data/SI"
+	]
 }

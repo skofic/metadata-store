@@ -1,0 +1,95 @@
+[
+	{
+		"_code": {
+			"_nid": "SI",
+			"_lid": "base",
+			"_gid": "SI_base",
+			"_aid": [
+				"base"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Base unit"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Indicates whether the unit is the SI coherent unit for its quantity kind."
+			},
+			"_description": {
+				"ISO_639_3_eng": "When `true`, this unit is the SI coherent derived or base unit for its quantity kind — for example, kilogram per square metre for mass per area, or metre for length. For SI coherent units, [`SI_factor`](SI_factor.md) is `1.0` and [`SI_offset`](SI_offset.md) is absent.\n\nWhen `false`, or when this property is absent, the unit differs from the SI coherent unit and [`SI_factor`](SI_factor.md) (and [`SI_offset`](SI_offset.md) when non-zero) must be applied to convert values."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_boolean": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "SI",
+			"_lid": "factor",
+			"_gid": "SI_factor",
+			"_aid": [
+				"factor"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Multiplicative factor"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The multiplicative factor for converting a value in this unit to the SI coherent unit for the same quantity kind."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × SI_factor + SI_offset\n```\n\nFor SI coherent units ([`SI_base`](SI_base.md) is `true`) this value is `1.0`. For all other units, multiply the stored value by this factor — and add [`SI_offset`](SI_offset.md) if present — to obtain the equivalent value in the SI coherent unit.\n\nExample: 1 tonne per hectare × 0.1 = 0.1 kg/m².\n\nThe value is sourced from QUDT's `qudt:conversionMultiplier` at import time and stored in parallel as [`QUDT_multiplier`](QUDT_multiplier.md). `SI_factor` will equal `QUDT_multiplier` in the vast majority of cases; both are retained to distinguish the source record from the operational value."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_float": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "SI",
+			"_lid": "offset",
+			"_gid": "SI_offset",
+			"_aid": [
+				"offset"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Additive offset"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The additive offset applied after the SI factor when converting a value in this unit to the SI coherent unit."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × SI_factor + SI_offset\n```\n\nNon-zero only for units whose zero point is shifted relative to the SI coherent unit. The most common case is thermodynamic temperature: 1 °C × 1.0 + 273.15 = 274.15 K.\n\nWhen zero, this property is omitted from the unit term's `_prop` section — do not write `0` or `0.0`. The value is sourced from QUDT's `qudt:conversionOffset` at import time and stored in parallel as [`QUDT_offset`](QUDT_offset.md)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_float": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
+]
