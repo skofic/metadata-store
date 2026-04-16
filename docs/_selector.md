@@ -82,7 +82,7 @@ When `_selection` is a nested array of sub-arrays, `_selectors` operates as a tw
 }
 ```
 
-`_closed` must be present. With `_all: {}` and a single candidate, the candidate is simply required.
+[`_closed`](_closed.md) must be present. With `_all: {}` and a single candidate, the candidate is simply required.
 
 **[Notes](_notes.md)**
 

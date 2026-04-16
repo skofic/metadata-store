@@ -1,0 +1,661 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "m",
+			"_gid": "unit_Length_m",
+			"_aid": [
+				"m"
+			],
+			"_name": "Metre",
+			"_symbol": "\\mathrm{m}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Metre (m)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI base unit of length."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The metre is defined by fixing the numerical value of the speed of light in vacuum to exactly 299 792 458 m/s. It is the SI coherent unit for length and the pivot unit for conversion between all other length units in this dictionary.\n\nIn the EUFGIS database, metres appear as the primary unit for elevation, tree height, canopy height, crown radius, crown length, and liquid-water-equivalent precipitation depth."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "cm",
+			"_gid": "unit_Length_cm",
+			"_aid": [
+				"cm"
+			],
+			"_name": "Centimetre",
+			"_symbol": "\\mathrm{cm}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Centimetre (cm)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "One hundredth of a metre (0.01 m)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The centimetre is the standard unit for body-scale measurements in forestry and ecology. In the EUFGIS database it is used for trunk circumference at breast height (CBH), diameter at breast height (DBH), and soil-profile depth layers."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 0.01,
+			"SI_factor": 0.01,
+			"UCUM_code": "cm"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "mm",
+			"_gid": "unit_Length_mm",
+			"_aid": [
+				"mm"
+			],
+			"_name": "Millimetre",
+			"_symbol": "\\mathrm{mm}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Millimetre (mm)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "One thousandth of a metre (0.001 m)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "In climate data, precipitation totals are conventionally reported in millimetres of liquid-water equivalent. The millimetre is therefore the standard unit for monthly and annual precipitation sums in CHELSA, WorldClim, and ERA5-Land datasets ingested by the EUFGIS GeoService."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 0.001,
+			"SI_factor": 0.001,
+			"UCUM_code": "mm"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "km",
+			"_gid": "unit_Length_km",
+			"_aid": [
+				"km"
+			],
+			"_name": "Kilometre",
+			"_symbol": "\\mathrm{km}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilometre (km)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "One thousand metres (1 000 m)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The kilometre is used for geographic distances, spatial resolutions of remote-sensing products, and the spatial extent of gene conservation units (GCUs). CHELSA and WorldClim products are described in terms of arc-minute grids whose ground spacing is quoted in kilometres."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 1000.0,
+			"SI_factor": 1000.0,
+			"UCUM_code": "km"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "ft",
+			"_gid": "unit_Length_ft",
+			"_aid": [
+				"ft"
+			],
+			"_name": "Foot",
+			"_symbol": "\\mathrm{ft}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Foot (ft)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Imperial unit of length equal to exactly 0.3048 m."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The international foot is defined as exactly 0.3048 metres. Included for interoperability with datasets and instruments that report measurements in the imperial system, particularly those originating from North American sources."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 0.3048,
+			"SI_factor": 0.3048,
+			"UCUM_code": "[ft_i]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "in",
+			"_gid": "unit_Length_in",
+			"_aid": [
+				"in"
+			],
+			"_name": "Inch",
+			"_symbol": "\\mathrm{in}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Inch (in)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Imperial unit of length equal to exactly 0.0254 m (one twelfth of a foot)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The international inch is defined as exactly 25.4 millimetres. Included for interoperability with instruments and datasets that use the imperial system."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 0.0254,
+			"SI_factor": 0.0254,
+			"UCUM_code": "[in_i]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Length",
+			"_lid": "mi",
+			"_gid": "unit_Length_mi",
+			"_aid": [
+				"mi"
+			],
+			"_name": "Mile",
+			"_symbol": "\\mathrm{mi}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mile (mi)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Imperial unit of length equal to exactly 1 609.344 m."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The international mile is defined as exactly 1 609.344 metres. Included for interoperability with datasets that report spatial extents or distances in miles."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T0D0",
+			"QUDT_multiplier": 1609.344,
+			"SI_factor": 1609.344,
+			"UCUM_code": "[mi_i]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Area",
+			"_lid": "m2",
+			"_gid": "unit_Area_m2",
+			"_aid": [
+				"m2",
+				"m²"
+			],
+			"_name": "Square metre",
+			"_symbol": "\\mathrm{m^2}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square metre (m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of area, equal to the area of a square with sides of one metre."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The square metre is the SI coherent unit for area and the pivot for all area-unit conversions in this dictionary. In the EUFGIS characterisation database it appears as the unit for sapwood cross-sectional area and clone size."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Area",
+			"_lid": "cm2",
+			"_gid": "unit_Area_cm2",
+			"_aid": [
+				"cm2",
+				"cm²"
+			],
+			"_name": "Square centimetre",
+			"_symbol": "\\mathrm{cm^2}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square centimetre (cm²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of area equal to 10⁻⁴ m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The square centimetre is used for small cross-sectional areas. In the EUFGIS phenotypic dataset it appears as the unit for sapwood cross-sectional area (cm²) and Huber value (cm² sapwood per m² leaf area)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M0H0T0D0",
+			"QUDT_multiplier": 0.0001,
+			"SI_factor": 0.0001,
+			"UCUM_code": "cm2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Area",
+			"_lid": "ha",
+			"_gid": "unit_Area_ha",
+			"_aid": [
+				"ha"
+			],
+			"_name": "Hectare",
+			"_symbol": "\\mathrm{ha}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hectare (ha)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of area equal to 10 000 m² (one hundred ares)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The hectare is the standard unit for reporting forest stand area, land cover extent, and areal density of above-ground biomass in forestry and ecology. In the EUFGIS GeoService, ESA CCI Biomass reports carbon stocks in tonnes per hectare (t/ha). Gene conservation units (GCUs) are also characterised by their area in hectares."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M0H0T0D0",
+			"QUDT_multiplier": 10000.0,
+			"SI_factor": 10000.0,
+			"UCUM_code": "har"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Area",
+			"_lid": "km2",
+			"_gid": "unit_Area_km2",
+			"_aid": [
+				"km2",
+				"km²"
+			],
+			"_name": "Square kilometre",
+			"_symbol": "\\mathrm{km^2}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square kilometre (km²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of area equal to 10⁶ m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The square kilometre is used for large geographic extents, spatial resolutions of coarse remote-sensing products, and catchment or regional-scale area summaries."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M0H0T0D0",
+			"QUDT_multiplier": 1000000.0,
+			"SI_factor": 1000000.0,
+			"UCUM_code": "km2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Area",
+			"_lid": "acre",
+			"_gid": "unit_Area_acre",
+			"_aid": [
+				"acre"
+			],
+			"_name": "Acre",
+			"_symbol": "\\mathrm{acre}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Acre (acre)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Imperial unit of area equal to 4 046.856 4 m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The international acre is defined as exactly 4 046.856 4 square metres. Included for interoperability with datasets and inventories that report land area in acres, particularly from North American or UK sources."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M0H0T0D0",
+			"QUDT_multiplier": 4046.8564,
+			"SI_factor": 4046.8564,
+			"UCUM_code": "[acr_us]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Volume",
+			"_lid": "m3",
+			"_gid": "unit_Volume_m3",
+			"_aid": [
+				"m3",
+				"m³"
+			],
+			"_name": "Cubic metre",
+			"_symbol": "\\mathrm{m^3}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Cubic metre (m³)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of volume, equal to the volume of a cube with sides of one metre."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The cubic metre is the SI coherent unit for volume and the pivot for all volume-unit conversions. In forestry contexts it is used for standing timber volume per hectare (m³/ha) and individual tree stem volume."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L3I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m3"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Volume",
+			"_lid": "cm3",
+			"_gid": "unit_Volume_cm3",
+			"_aid": [
+				"cm3",
+				"cm³"
+			],
+			"_name": "Cubic centimetre",
+			"_symbol": "\\mathrm{cm^3}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Cubic centimetre (cm³)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of volume equal to 10⁻⁶ m³ (numerically equal to 1 mL)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The cubic centimetre is commonly used for small sample volumes in laboratory measurements. It is numerically equivalent to one millilitre (1 cm³ = 1 mL)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L3I0M0H0T0D0",
+			"QUDT_multiplier": 1e-06,
+			"SI_factor": 1e-06,
+			"UCUM_code": "cm3"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Volume",
+			"_lid": "L",
+			"_gid": "unit_Volume_L",
+			"_aid": [
+				"L",
+				"l"
+			],
+			"_name": "Litre",
+			"_symbol": "\\mathrm{L}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Litre (L)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of volume equal to 10⁻³ m³ (one cubic decimetre)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The litre is a non-SI unit accepted for use with the SI. It equals exactly one cubic decimetre (1 L = 0.001 m³). The uppercase symbol L is preferred to avoid confusion with the digit 1."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L3I0M0H0T0D0",
+			"QUDT_multiplier": 0.001,
+			"SI_factor": 0.001,
+			"UCUM_code": "L"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Volume",
+			"_lid": "mL",
+			"_gid": "unit_Volume_mL",
+			"_aid": [
+				"mL",
+				"ml"
+			],
+			"_name": "Millilitre",
+			"_symbol": "\\mathrm{mL}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Millilitre (mL)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of volume equal to 10⁻⁶ m³ (one thousandth of a litre)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The millilitre is the standard unit for small liquid volumes in laboratory and physiological measurements. It is numerically equivalent to one cubic centimetre (1 mL = 1 cm³)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L3I0M0H0T0D0",
+			"QUDT_multiplier": 1e-06,
+			"SI_factor": 1e-06,
+			"UCUM_code": "mL"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_PlaneAngle",
+			"_lid": "rad",
+			"_gid": "unit_PlaneAngle_rad",
+			"_aid": [
+				"rad"
+			],
+			"_name": "Radian",
+			"_symbol": "\\mathrm{rad}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Radian (rad)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of plane angle, equal to the angle subtended at the centre of a circle by an arc equal in length to the radius."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The radian is the SI coherent unit for plane angle. It is a dimensionless derived unit (m/m), consistent with the QUDT dimension vector `A0E0L0I0M0H0T0D0`. Radians are used in mathematical formulations of solar geometry, slope calculations, and trigonometric expressions in climate and terrain models."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "rad"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_PlaneAngle",
+			"_lid": "deg",
+			"_gid": "unit_PlaneAngle_deg",
+			"_aid": [
+				"deg",
+				"°"
+			],
+			"_name": "Degree",
+			"_symbol": "^\\circ"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Degree (°)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of plane angle equal to π/180 radians (approximately 0.017 453 rad)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The degree of arc is the conventional unit for expressing terrain slope and aspect in the EUFGIS characterisation database. Slope is reported in degrees from horizontal (0° = flat, 90° = vertical); aspect is reported as degrees clockwise from north (0°/360° = north, 90° = east). Geographic coordinates (latitude, longitude) are also expressed in decimal degrees."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 0.017453292519943,
+			"SI_factor": 0.017453292519943,
+			"UCUM_code": "deg"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_PlaneAngle",
+			"_lid": "grad",
+			"_gid": "unit_PlaneAngle_grad",
+			"_aid": [
+				"grad",
+				"gon"
+			],
+			"_name": "Gradian",
+			"_symbol": "\\mathrm{grad}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gradian (grad)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of plane angle equal to π/200 radians (one hundredth of a right angle)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The gradian (also called gon or grade) divides a full circle into 400 units, so a right angle is exactly 100 grad. It is used in surveying and some European geodetic instruments. Included for interoperability with surveying data."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 0.015707963267949,
+			"SI_factor": 0.015707963267949,
+			"UCUM_code": "grad"
+		}
+	}
+]

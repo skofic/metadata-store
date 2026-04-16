@@ -1,0 +1,121 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_Temperature",
+			"_lid": "K",
+			"_gid": "unit_Temperature_K",
+			"_aid": [
+				"K"
+			],
+			"_name": "Kelvin",
+			"_symbol": "\\mathrm{K}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kelvin (K)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI base unit of thermodynamic temperature."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The kelvin is defined by fixing the numerical value of the Boltzmann constant to exactly 1.380 649 × 10⁻²³ J/K. It is the SI coherent unit for thermodynamic temperature and uses an absolute zero reference point (0 K = −273.15 °C).\n\nIn the EUFGIS GeoService, land surface temperature (LST) from MODIS is distributed in kelvin, and CHELSA temperature variables are stored internally in kelvin before conversion to Celsius for display. The kelvin is the pivot unit for all temperature conversions in this dictionary."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H1T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"SI_offset": 0.0,
+			"UCUM_code": "K",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Temperature",
+			"_lid": "deg-C",
+			"_gid": "unit_Temperature_deg-C",
+			"_aid": [
+				"deg-C",
+				"°C"
+			],
+			"_name": "Degree Celsius",
+			"_symbol": "^\\circ\\mathrm{C}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Degree Celsius (°C)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of temperature with the same scale interval as the kelvin but with its zero point at 273.15 K (0 °C = 273.15 K)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The Celsius scale is the standard unit for reporting air temperature, soil temperature, and climate variables in applied ecology and forestry. Its interval is identical to the kelvin, so differences in Celsius equal differences in kelvin (ΔT in °C = ΔT in K).\n\nConversion to kelvin: K = °C + 273.15. The [`SI_factor`](SI_factor.md) is 1.0 and the [`SI_offset`](SI_offset.md) is 273.15, following the formula `SI_value = value × SI_factor + SI_offset`.\n\nIn the EUFGIS database, CHELSA and WorldClim temperature data (mean, min, max monthly temperatures; annual means) are published in degrees Celsius. ERA5-Land 2 m temperature is distributed in kelvin but displayed in Celsius."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H1T0D0",
+			"QUDT_multiplier": 1.0,
+			"QUDT_offset": 273.15,
+			"SI_factor": 1.0,
+			"SI_offset": 273.15,
+			"UCUM_code": "Cel",
+			"_range_valid": {
+				"_min-inclusive": -273.15
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Temperature",
+			"_lid": "deg-F",
+			"_gid": "unit_Temperature_deg-F",
+			"_aid": [
+				"deg-F",
+				"°F"
+			],
+			"_name": "Degree Fahrenheit",
+			"_symbol": "^\\circ\\mathrm{F}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Degree Fahrenheit (°F)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of temperature with the zero point at 255.372 2 K, and scale interval equal to 5/9 of a kelvin."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The Fahrenheit scale is used in the United States and a few other countries. Its relationship to kelvin is: K = (°F + 459.67) × 5/9, which can be expressed in the standard two-parameter formula as `SI_value = value × (5/9) + 255.372 2`.\n\nConversion factor: SI_factor = 5/9 ≈ 0.555 556. SI_offset = 255.372 2 K (= 459.67 × 5/9).\n\nIncluded for interoperability with datasets and instruments that report temperature in Fahrenheit."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H1T0D0",
+			"QUDT_multiplier": 0.55555555555556,
+			"QUDT_offset": 255.37222222222,
+			"SI_factor": 0.55555555555556,
+			"SI_offset": 255.37222222222,
+			"UCUM_code": "[degF]",
+			"_range_valid": {
+				"_min-inclusive": -459.67
+			}
+		}
+	}
+]

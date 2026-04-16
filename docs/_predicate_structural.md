@@ -48,7 +48,7 @@ Three structural predicates are defined:
 - [`_predicate_banned-by`](_predicate_banned-by.md): when `_to` is present in a record, `_from` must be absent.
 - [`_predicate_recommended-by`](_predicate_recommended-by.md): when `_to` is present in a record, `_from` is expected but not mandatory.
 
-As a sub-enumeration root, `_predicate_structural` may be used in [`_enum_types`](_enum_types.md) to constrain a property to structural predicates only.
+As a sub-enumeration root, `_predicate_structural` may be used in [`_enums`](_enums.md) to constrain a property to structural predicates only.
 
 <details>
 <summary>JSON</summary>

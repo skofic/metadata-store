@@ -69,9 +69,9 @@ The [`_code`](_code.md) section computes three properties automatically:
 }
 ```
 
-- `_gid` is computed as the concatenation of `_nid` and `_lid` separated by `"_"`. The user provides `_lid` (and optionally `_nid`); the system derives `_gid`.
-- `_key` (the ArangoDB document key) is then set to the value of `_gid` by the loader before the document is saved.
-- `_aid` (the set of all identifiers) is initialised to `[_lid]` if absent — the user's local identifier becomes the first official identifier.
+- [`_gid`](_gid.md) is computed as the concatenation of [`_nid`](_nid.md) and [`_lid`](_lid.md) separated by `"_"`. The user provides `_lid` (and optionally `_nid`); the system derives `_gid`.
+- [`_key`](_key.md) (the ArangoDB document key) is then set to the value of `_gid` by the loader before the document is saved.
+- [`_aid`](_aid.md) (the set of all identifiers) is initialised to `[_lid]` if absent — the user's local identifier becomes the first official identifier.
 
 <details>
 <summary>JSON</summary>

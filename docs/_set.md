@@ -43,7 +43,7 @@
 
 `_set` is the data shape for an unordered collection of values in which every element is unique. It uses the same **type-as-key** convention as [`_scalar`](_scalar.md): the property key present inside `_set` identifies the element type; its value is an object of **companion properties** that apply additional constraints. An empty `_set` (`{}`) imposes no type constraint beyond comparability.
 
-Uniqueness requires that the element type be **comparable** — the validator must be able to determine whether two values are equal. Non-comparable types (`_text`, `_text_HTML`, `_text_Markdown`, `_text_SVG`) are therefore excluded. All other scalar types are permitted.
+Uniqueness requires that the element type be **comparable** — the validator must be able to determine whether two values are equal. Non-comparable types ([`_text`](_text.md), [`_text_HTML`](_text_HTML.md), [`_text_Markdown`](_text_Markdown.md), [`_text_SVG`](_text_SVG.md)) are therefore excluded. All other scalar types are permitted.
 
 Allowed element types:
 

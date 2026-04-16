@@ -47,7 +47,7 @@ Where `_symbol` might be `\mathrm{kg\,m^{-2}}`, `_symbol_print` would be `kg/m²
 
 **[Examples](_examples.md)**
 
-| Term | `_symbol` (LaTeX) | `_symbol_print` (Unicode) |
+| Term | [`_symbol`](_symbol.md) (LaTeX) | `_symbol_print` (Unicode) |
 |---|---|---|
 | Kilometre | `\mathrm{km}` | `km` |
 | Kilograms per square metre | `\mathrm{kg\,m^{-2}}` | `kg/m²` |

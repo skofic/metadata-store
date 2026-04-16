@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_term_key_enum-item` is used when a property value must be the `_gid` of an enumeration element term. The referenced term must be reachable (directly or through sections or bridges) from at least one enumeration root. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
+`_term_key_enum-item` is used when a property value must be the [`_gid`](_gid.md) of an enumeration element term. The referenced term must be reachable (directly or through sections or bridges) from at least one enumeration root. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
 
 **[Examples](_examples.md)**
 

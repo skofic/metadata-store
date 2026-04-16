@@ -1,0 +1,422 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "s",
+			"_gid": "unit_Duration_s",
+			"_aid": [
+				"s"
+			],
+			"_name": "Second",
+			"_symbol": "\\mathrm{s}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Second (s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI base unit of time."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The second is defined by fixing the numerical value of the caesium-133 hyperfine transition frequency to exactly 9 192 631 770 Hz. It is the SI coherent unit for duration and the pivot for all time-unit conversions in this dictionary.\n\nThe second appears as the denominator in flux and rate expressions throughout the EUFGIS database: carbon flux (kgC/m²/s), stomatal conductance (mol/m²/s), wind speed (m/s), and photosynthetically active radiation (W/m²)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "s"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "min",
+			"_gid": "unit_Duration_min",
+			"_aid": [
+				"min"
+			],
+			"_name": "Minute",
+			"_symbol": "\\mathrm{min}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Minute (min)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of time equal to 60 seconds."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The minute is a conventional time unit widely used for measurement intervals and temporal resolution of datasets. It is not an SI unit but is accepted for use with the SI."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 60.0,
+			"SI_factor": 60.0,
+			"UCUM_code": "min"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "h",
+			"_gid": "unit_Duration_h",
+			"_aid": [
+				"h",
+				"hr"
+			],
+			"_name": "Hour",
+			"_symbol": "\\mathrm{h}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hour (h)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of time equal to 3 600 seconds."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The hour is the standard temporal resolution for sub-daily climate data. ERA5-Land Hourly provides variables at hourly resolution, and solar radiation datasets are commonly aggregated to hourly means. Evapotranspiration is sometimes expressed per hour."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 3600.0,
+			"SI_factor": 3600.0,
+			"UCUM_code": "h"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "day",
+			"_gid": "unit_Duration_day",
+			"_aid": [
+				"day",
+				"d"
+			],
+			"_name": "Day",
+			"_symbol": "\\mathrm{d}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Day (d)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of time equal to 86 400 seconds."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The day is the standard temporal unit for daily climate aggregates (daily mean temperature, daily precipitation sum, daily radiation totals). Carbon flux (GPP) is commonly reported per day (kgC/m²/day). Growing degree-day accumulation is computed over calendar days. The European Drought Observatory reports drought indices at daily resolution."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 86400.0,
+			"SI_factor": 86400.0,
+			"UCUM_code": "d"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "week",
+			"_gid": "unit_Duration_week",
+			"_aid": [
+				"week",
+				"wk"
+			],
+			"_name": "Week",
+			"_symbol": "\\mathrm{wk}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Week (wk)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of time equal to 7 days (604 800 seconds)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The week is occasionally used as a temporal aggregation period for remote-sensing composites (e.g., MODIS 8-day composites are close to weekly resolution) or for phenological event reporting."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 604800.0,
+			"SI_factor": 604800.0,
+			"UCUM_code": "wk"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "month",
+			"_gid": "unit_Duration_month",
+			"_aid": [
+				"month",
+				"mo"
+			],
+			"_name": "Month (mean)",
+			"_symbol": "\\mathrm{mo}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Month — mean calendar month (mo)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Conventional unit of time equal to the mean calendar month, taken as 30.436 875 days (1/12 of a 365.2425-day Gregorian year, equal to 2 629 746 seconds)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly aggregation is the standard temporal resolution for climate normals (monthly mean temperature, monthly precipitation sum). CHELSA and WorldClim bioclimatic variables are derived from monthly data. Because calendar months vary in length (28–31 days), a conventional mean month duration of 365.2425/12 days is used for unit conversion purposes.\n\n**Note:** when a specific calendar month is intended (January, July, etc.), the data field should carry the month identifier rather than expressing duration in months. The month unit is for reporting rates and accumulations normalised to a monthly interval."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 2629746.0,
+			"SI_factor": 2629746.0,
+			"UCUM_code": "mo"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "year",
+			"_gid": "unit_Duration_year",
+			"_aid": [
+				"year",
+				"yr",
+				"a"
+			],
+			"_name": "Year (Gregorian mean)",
+			"_symbol": "\\mathrm{a}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Year — mean Gregorian year (a)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Conventional unit of time equal to the mean Gregorian calendar year: 365.2425 days (31 556 952 seconds)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean Gregorian year is 365.2425 days (accounting for leap years in the Gregorian calendar). It is the standard temporal unit for annual climate aggregates, inter-annual trend rates, and long-term carbon flux budgets (kgC/m²/year or tC/ha/year).\n\nIn the EUFGIS context, annual values appear in temperature trend rates (°C/year from CHELSA temporal trends), annual precipitation sums, and annual mean NDVI. Tree ring width data and dendrological records use years as the time base."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 31556952.0,
+			"SI_factor": 31556952.0,
+			"UCUM_code": "a"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Duration",
+			"_lid": "decade",
+			"_gid": "unit_Duration_decade",
+			"_aid": [
+				"decade"
+			],
+			"_name": "Decade",
+			"_symbol": "\\mathrm{decade}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Decade"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Conventional unit of time equal to 10 mean Gregorian years (315 569 520 seconds)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The decade is used to express long-term trend rates, particularly for climate change analysis where temperature or precipitation trends are reported per decade (e.g., +0.3 °C/decade). CHELSA trend layers provide temporal change rates over multi-decadal periods."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T1D0",
+			"QUDT_multiplier": 315569520.0,
+			"SI_factor": 315569520.0,
+			"UCUM_code": "10.a"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Frequency",
+			"_lid": "Hz",
+			"_gid": "unit_Frequency_Hz",
+			"_aid": [
+				"Hz"
+			],
+			"_name": "Hertz",
+			"_symbol": "\\mathrm{Hz}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hertz (Hz)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of frequency, equal to one cycle per second (s⁻¹)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The hertz is the SI coherent unit for frequency and the pivot for all frequency-unit conversions in this dictionary. In the context of environmental data, frequency most commonly appears in the denominator of rate expressions. Atmospheric radiation frequency and sensor sampling rates are expressed in hertz."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T-1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "Hz"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Frequency",
+			"_lid": "per-day",
+			"_gid": "unit_Frequency_per-day",
+			"_aid": [
+				"per-day",
+				"d⁻¹"
+			],
+			"_name": "Per day",
+			"_symbol": "\\mathrm{d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Per day (d⁻¹)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of frequency (event rate) equal to 1/86 400 Hz."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Per-day rates are used for daily accumulation rates or daily occurrence frequencies in ecological and climate contexts, such as daily fire occurrence probability or daily drought event frequency."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T-1D0",
+			"QUDT_multiplier": 1.1574074074e-05,
+			"SI_factor": 1.1574074074e-05,
+			"UCUM_code": "/d"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Frequency",
+			"_lid": "per-month",
+			"_gid": "unit_Frequency_per-month",
+			"_aid": [
+				"per-month",
+				"mo⁻¹"
+			],
+			"_name": "Per month",
+			"_symbol": "\\mathrm{mo^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Per month (mo⁻¹)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of frequency (event rate) equal to 1/2 629 746 Hz (reciprocal of the mean calendar month)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Per-month rates express monthly accumulation or occurrence frequencies. They appear in monthly-resolved climate trend analyses and in expressions of phenological event rates per month."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T-1D0",
+			"QUDT_multiplier": 3.8026486e-07,
+			"SI_factor": 3.8026486e-07,
+			"UCUM_code": "/mo"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Frequency",
+			"_lid": "per-year",
+			"_gid": "unit_Frequency_per-year",
+			"_aid": [
+				"per-year",
+				"a⁻¹",
+				"yr⁻¹"
+			],
+			"_name": "Per year",
+			"_symbol": "\\mathrm{a^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Per year (a⁻¹)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of frequency (event rate) equal to 1/31 556 952 Hz (reciprocal of the mean Gregorian year)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Per-year rates are used for annual change rates. In the EUFGIS GeoService, CHELSA temporal trend layers express temperature trends in °C/year and precipitation trends in mm/year, both of which can be expressed as a quantity multiplied by a per-year frequency when the numerator unit is separated out."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T-1D0",
+			"QUDT_multiplier": 3.1688088e-08,
+			"SI_factor": 3.1688088e-08,
+			"UCUM_code": "/a"
+		}
+	}
+]

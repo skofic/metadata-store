@@ -45,7 +45,7 @@
 
 The canonical use case is national capitals: a country may have more than one capital (e.g. South Africa has Pretoria, Cape Town, and Bloemfontein), and each capital name should be available in multiple languages.
 
-Each element of the array is a dictionary whose keys are ISO 639-3 language `_gid` values and whose values are plain-text strings — the same structure as [`_info_string`](_info_string.md). The array order is significant: elements should be listed in the order they are conventionally named (e.g. primary capital first).
+Each element of the array is a dictionary whose keys are ISO 639-3 language [`_gid`](_gid.md) values and whose values are plain-text strings — the same structure as `_info_string`. The array order is significant: elements should be listed in the order they are conventionally named (e.g. primary capital first).
 
 Descriptors whose data type is `_info_strings` reference it via `_data._typedef`:
 

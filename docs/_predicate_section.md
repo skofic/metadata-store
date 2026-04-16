@@ -42,9 +42,9 @@
 
 The section sub-vocabulary contains one predicate: [`_predicate_section-of`](_predicate_section-of.md). Section edges do not carry semantic meaning — they are ignored during validation and element lookup. Their sole purpose is to provide display grouping: when rendering a controlled vocabulary as a tree or a picker, section nodes serve as collapsible group headers.
 
-Note the contrast with hierarchical enumerations where intermediate nodes are also valid selectable values (linked by `_predicate_enum-of`): in that pattern, both the group node and its members are valid choices. In a section-based pattern, only the leaf elements are valid choices; the section node is a display artefact.
+Note the contrast with hierarchical enumerations where intermediate nodes are also valid selectable values (linked by [`_predicate_enum-of`](_predicate_enum-of.md)): in that pattern, both the group node and its members are valid choices. In a section-based pattern, only the leaf elements are valid choices; the section node is a display artefact.
 
-As a sub-enumeration root, `_predicate_section` may be used in [`_enum_types`](_enum_types.md) to constrain a property to section predicates only.
+As a sub-enumeration root, `_predicate_section` may be used in [`_enums`](_enums.md) to constrain a property to section predicates only.
 
 <details>
 <summary>JSON</summary>

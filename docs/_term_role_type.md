@@ -47,7 +47,7 @@ This role is assigned by the user, not computed automatically. It signals that t
 
 **[Notes](_notes.md)**
 
-The `_term_role_type` classification can be used by validator implementations to trigger type-specific validation code when processing the `_data` section of descriptor terms. By querying which terms carry this role, a validator can dynamically load or dispatch the correct validation routine for each type key it encounters.
+The `_term_role_type` classification can be used by validator implementations to trigger type-specific validation code when processing the [`_data`](_data.md) section of descriptor terms. By querying which terms carry this role, a validator can dynamically load or dispatch the correct validation routine for each type key it encounters.
 
 <details>
 <summary>JSON</summary>

@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_type_key` is the reusable type definition used by the [`_dict_key`](_dict_key.md) data shape. Dictionary keys must be string-compatible and unambiguously comparable, so several types accepted in [`_type_comparable`](_type_comparable.md) are excluded: number types (`_number`, `_number_float`, `_number_integer`), [`_boolean`](_boolean.md), [`_timestamp`](_timestamp.md), all text types, and [`_string_regexp`](_string_regexp.md) (using a pattern as a dictionary key would be ambiguous).
+`_type_key` is the reusable type definition used by the [`_dict_key`](_dict_key.md) data shape. Dictionary keys must be string-compatible and unambiguously comparable, so several types accepted in [`_type_comparable`](_type_comparable.md) are excluded: number types ([`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md)), [`_boolean`](_boolean.md), [`_timestamp`](_timestamp.md), all text types, and [`_string_regexp`](_string_regexp.md) (using a pattern as a dictionary key would be ambiguous).
 
 Accepted key types:
 

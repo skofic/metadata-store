@@ -6,7 +6,7 @@
  *   _term_role_descriptor  : term has a _data section
  *   _term_role_namespace   : term's _gid appears as _nid of any other term
  *   _term_role_predicate   : term's _gid appears as _predicate in any edge
- *   _term_role_enum-root   : term's handle appears in _path of any enum-of or bridge-of edge
+ *   _term_role_enum-root   : term's handle appears in _path of any enum-of, bridge-of, or section-of edge
  *   _term_role_enum-item   : (sit.1) term is _from of any enum-of edge
  *                            (sit.2) term is _from of bridge-of to X, some enum-of edge
  *                                    targets it with X in path but term's handle NOT in path
@@ -55,8 +55,9 @@ private func buildIndexes(terms: [TermRecord], edges: [EdgeRecord]) -> Indexes {
 
 		let isEnumOf   = edge.predicate == Predicate.enumOf
 		let isBridgeOf = edge.predicate == Predicate.bridgeOf
+		let isSectionOf = edge.predicate == Predicate.sectionOf
 
-		if isEnumOf || isBridgeOf {
+		if isEnumOf || isBridgeOf || isSectionOf {
 			// _path members are graph roots
 			for handle in edge.path {
 				idx.pathRoots.insert(handle)
@@ -107,7 +108,7 @@ private func computeRoles(for term: TermRecord, idx: Indexes) -> [String] {
 		roles.insert(TermRole.predicate.rawValue)
 	}
 
-	// _term_role_enum-root: handle appears in _path of any enum-of or bridge-of edge
+	// _term_role_enum-root: handle appears in _path of any enum-of, bridge-of, or section-of edge
 	if idx.pathRoots.contains(handle) {
 		roles.insert(TermRole.enumRoot.rawValue)
 	}

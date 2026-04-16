@@ -52,7 +52,7 @@ All predicates follow the **many-to-one direction**: [`_from`](_from.md) is alwa
 
 **[Examples](_examples.md)**
 
-An edge using `_predicate_enum-of` to declare Italy as a member of the ISO 3166-3 vocabulary:
+An edge using [`_predicate_enum-of`](_predicate_enum-of.md) to declare Italy as a member of the ISO 3166-3 vocabulary:
 
 ```json
 {

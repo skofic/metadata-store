@@ -45,7 +45,7 @@
 
 The validator reads the single key present in `_scalar` to determine the type, then validates the companion properties against that type's schema.
 
-Scalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a `_string_URI` value must first satisfy the `_string` check (valid UTF-8 string) before the URI format check is applied.
+Scalar types are organised into families. Within each family the **parent type** defines the base validation that all family members must pass first; each **leaf type** adds its own specialised check on top. For example, a [`_string_URI`](_string_URI.md) value must first satisfy the [`_string`](_string.md) check (valid UTF-8 string) before the URI format check is applied.
 
 **Number types** — comparable; usable in sets but not as dictionary keys:
 
@@ -61,8 +61,8 @@ Companion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_uni
 
 | Type | Description |
 |---|---|
-| [`_string`](_string.md) | Generic UTF-8 string |
-| [`_string_URI`](_string_URI.md) | Uniform Resource Identifier |
+| `_string` | Generic UTF-8 string |
+| `_string_URI` | Uniform Resource Identifier |
 | [`_string_Email`](_string_Email.md) | Email address |
 | [`_string_Hostname`](_string_Hostname.md) | Internet hostname |
 | [`_string_IPv4`](_string_IPv4.md) | IPv4 address |
@@ -75,7 +75,7 @@ Companion properties: [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_uni
 | [`_string_HEX`](_string_HEX.md) | Hexadecimal string |
 | [`_string_regexp`](_string_regexp.md) | A regular expression (the stored value is itself a pattern) |
 
-`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), [`_unit`](_unit.md), [`_unit_name`](_unit_name.md), [`_unit_symbol`](_unit_symbol.md), [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.
+`_string` and `_string_HEX` accept companion properties [`_regexp`](_regexp.md), `_unit`, `_unit_name`, `_unit_symbol`, [`_range_valid_string`](_range_valid_string.md), [`_range_normal_string`](_range_normal_string.md). Date and time variants also accept `_range_valid_string` and `_range_normal_string`. All other string variants are self-describing and carry no companion properties.
 
 **Text types** — **non-comparable**; cannot be used in sets or as dictionary keys:
 
@@ -95,7 +95,7 @@ No companion properties. The markup format is declared by the type key itself.
 | [`_term_key`](_term_key.md) | Any term |
 | [`_term_key_enum-root`](_term_key_enum-root.md) | Enumeration root |
 | [`_term_key_enum-item`](_term_key_enum-item.md) | Enumeration element |
-| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a `_data` section) |
+| [`_term_key_descriptor`](_term_key_descriptor.md) | Descriptor (has a [`_data`](_data.md) section) |
 
 No companion properties — the type key encodes the constraint on the referenced term.
 
@@ -103,10 +103,10 @@ No companion properties — the type key encodes the constraint on the reference
 
 | Type | Description | Comparable | Companion properties |
 |---|---|---|---|
-| [`_handle`](_handle.md) | ArangoDB document `_id` (`<collection>/<key>`) | Yes | — |
+| [`_handle`](_handle.md) | ArangoDB document [`_id`](_id.md) (`<collection>/<key>`) | Yes | — |
 | [`_timestamp`](_timestamp.md) | Unix timestamp (integer seconds since 1970-01-01 UTC) | Yes | `_range_valid`, `_range_normal` |
 | [`_boolean`](_boolean.md) | True/false | Yes | — |
-| [`_enum`](_enum.md) | `_gid` of an enumeration element | Yes | [`_enums`](_enums.md) |
+| [`_enum`](_enum.md) | [`_gid`](_gid.md) of an enumeration element | Yes | [`_enums`](_enums.md) |
 
 `_scalar` delegates to the [`_type_scalar`](_type_scalar.md) typedef, which encodes the full list of accepted type keys.
 

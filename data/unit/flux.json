@@ -1,0 +1,355 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_MassFluxDensity",
+			"_lid": "kg-per-m2-per-s",
+			"_gid": "unit_MassFluxDensity_kg-per-m2-per-s",
+			"_aid": [
+				"kg-per-m2-per-s",
+				"kg/m²/s"
+			],
+			"_name": "Kilogram per square metre per second",
+			"_symbol": "\\mathrm{kg\\,m^{-2}\\,s^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram per square metre per second (kg/m²/s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of mass flux density (mass flow rate per unit area)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram per square metre per second is the SI coherent unit for mass flux density and the pivot for all mass-flux-density conversions. It describes the rate at which mass passes through or is deposited on a unit area of surface per unit time. Evapotranspiration and precipitation rate in physical models are expressed in this unit before conversion to more practical units (mm/day)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg/(m2.s)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassFluxDensity",
+			"_lid": "kg-per-m2-per-day",
+			"_gid": "unit_MassFluxDensity_kg-per-m2-per-day",
+			"_aid": [
+				"kg-per-m2-per-day",
+				"kg/m²/day"
+			],
+			"_name": "Kilogram per square metre per day",
+			"_symbol": "\\mathrm{kg\\,m^{-2}\\,d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram per square metre per day (kg/m²/day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass flux density equal to 1/86 400 kg/m²/s ≈ 1.157 × 10⁻⁵ kg/m²/s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Daily mass flux density is the practical unit for precipitation rate and evapotranspiration rate in hydrology and ecosystem modelling. For liquid water (density ≈ 1 000 kg/m³), 1 kg/m²/day ≈ 1 mm/day in liquid water equivalent depth, making this unit directly comparable to millimetres per day for water-related fluxes."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 1.1574074074e-05,
+			"SI_factor": 1.1574074074e-05,
+			"UCUM_code": "kg/(m2.d)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassFluxDensity",
+			"_lid": "g-per-m2-per-day",
+			"_gid": "unit_MassFluxDensity_g-per-m2-per-day",
+			"_aid": [
+				"g-per-m2-per-day",
+				"g/m²/day"
+			],
+			"_name": "Gram per square metre per day",
+			"_symbol": "\\mathrm{g\\,m^{-2}\\,d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gram per square metre per day (g/m²/day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass flux density equal to 10⁻³/86 400 kg/m²/s ≈ 1.157 × 10⁻⁸ kg/m²/s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Gram per square metre per day is used for small daily mass deposition rates such as nutrient deposition, litter fall, or fine-root turnover in ecosystem research."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 1.1574074e-08,
+			"SI_factor": 1.1574074e-08,
+			"UCUM_code": "g/(m2.d)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_CarbonFluxDensity",
+			"_lid": "kgC-per-m2-per-s",
+			"_gid": "unit_CarbonFluxDensity_kgC-per-m2-per-s",
+			"_aid": [
+				"kgC-per-m2-per-s",
+				"kgC/m²/s"
+			],
+			"_name": "Kilogram of carbon per square metre per second",
+			"_symbol": "\\mathrm{kg_{C}\\,m^{-2}\\,s^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram of carbon per square metre per second (kgC/m²/s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of carbon mass flux density, dimensionally identical to kg/m²/s but annotated to specify that the mass is elemental carbon."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Carbon flux density expresses the rate at which elemental carbon is assimilated or released per unit land area. The 'C' annotation is essential for carbon accounting: it distinguishes carbon mass from total dry-matter mass or CO₂ mass, which differ by the carbon fraction and molecular mass ratio respectively.\n\nThis is the SI coherent form for carbon flux. MODIS GPP (MOD17A2H) is distributed in this unit (kgC/m²/8-day, convertible to kgC/m²/s for SI representation).\n\nThe SI_factor is 1.0 because the physical dimensions are identical to kg/m²/s; no numeric conversion is required."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg/(m2.s)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_CarbonFluxDensity",
+			"_lid": "kgC-per-m2-per-day",
+			"_gid": "unit_CarbonFluxDensity_kgC-per-m2-per-day",
+			"_aid": [
+				"kgC-per-m2-per-day",
+				"kgC/m²/day"
+			],
+			"_name": "Kilogram of carbon per square metre per day",
+			"_symbol": "\\mathrm{kg_{C}\\,m^{-2}\\,d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram of carbon per square metre per day (kgC/m²/day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of carbon flux density equal to 1/86 400 kgC/m²/s ≈ 1.157 × 10⁻⁵ kgC/m²/s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram of carbon per square metre per day is the practical reporting unit for gross primary production (GPP) in MODIS products and ecosystem models. In the EUFGIS GeoService, MODIS GPP (MOD17A2H) data ingested from the GeoService database use this unit after conversion from the 8-day composite native resolution to a per-day rate."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 1.1574074074e-05,
+			"SI_factor": 1.1574074074e-05,
+			"UCUM_code": "kg/(m2.d)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_CarbonFluxDensity",
+			"_lid": "kgC-per-m2-per-year",
+			"_gid": "unit_CarbonFluxDensity_kgC-per-m2-per-year",
+			"_aid": [
+				"kgC-per-m2-per-year",
+				"kgC/m²/year"
+			],
+			"_name": "Kilogram of carbon per square metre per year",
+			"_symbol": "\\mathrm{kg_{C}\\,m^{-2}\\,a^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram of carbon per square metre per year (kgC/m²/year)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of carbon flux density equal to 1/31 556 952 kgC/m²/s ≈ 3.169 × 10⁻⁸ kgC/m²/s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram of carbon per square metre per year is used for annual net ecosystem production (NEP) and annual carbon budget summaries. It is the standard unit for comparing annual carbon fluxes across sites and ecosystem types in the context of climate change mitigation research."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T-1D0",
+			"QUDT_multiplier": 3.1688088e-08,
+			"SI_factor": 3.1688088e-08,
+			"UCUM_code": "kg/(m2.a)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassPerArea",
+			"_lid": "kg-per-m2",
+			"_gid": "unit_MassPerArea_kg-per-m2",
+			"_aid": [
+				"kg-per-m2",
+				"kg/m²"
+			],
+			"_name": "Kilogram per square metre",
+			"_symbol": "\\mathrm{kg\\,m^{-2}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram per square metre (kg/m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of areal mass density (mass per unit area)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram per square metre is the SI coherent unit for mass per area and the pivot for all mass-per-area conversions in this dictionary. It is the SI coherent expression for above-ground biomass and carbon stock density. Numerically, 1 kg/m² = 10 t/ha."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg/m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassPerArea",
+			"_lid": "t-per-ha",
+			"_gid": "unit_MassPerArea_t-per-ha",
+			"_aid": [
+				"t-per-ha",
+				"t/ha"
+			],
+			"_name": "Tonne per hectare",
+			"_symbol": "\\mathrm{t\\,ha^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tonne per hectare (t/ha)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of areal mass density equal to 0.1 kg/m² (since 1 t = 1 000 kg and 1 ha = 10 000 m²)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Tonne per hectare is the standard unit for above-ground biomass and carbon stock density in forest ecology and remote sensing. ESA CCI Biomass and GLAD Canopy Height products report above-ground biomass density in t/ha (dry matter). Conversion: 1 t/ha = 1000 kg / 10 000 m² = 0.1 kg/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T0D0",
+			"QUDT_multiplier": 0.1,
+			"SI_factor": 0.1,
+			"UCUM_code": "t/har"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassPerArea",
+			"_lid": "g-per-m2",
+			"_gid": "unit_MassPerArea_g-per-m2",
+			"_aid": [
+				"g-per-m2",
+				"g/m²"
+			],
+			"_name": "Gram per square metre",
+			"_symbol": "\\mathrm{g\\,m^{-2}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gram per square metre (g/m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of areal mass density equal to 10⁻³ kg/m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Gram per square metre is used for fine-scale biomass measurements such as leaf mass per area (LMA), canopy litter biomass, and surface-level deposition rates. It is numerically equal to 0.01 t/ha."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T0D0",
+			"QUDT_multiplier": 0.001,
+			"SI_factor": 0.001,
+			"UCUM_code": "g/m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassPerArea",
+			"_lid": "Mg-per-ha",
+			"_gid": "unit_MassPerArea_Mg-per-ha",
+			"_aid": [
+				"Mg-per-ha",
+				"Mg/ha"
+			],
+			"_name": "Megagram per hectare",
+			"_symbol": "\\mathrm{Mg\\,ha^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Megagram per hectare (Mg/ha)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of areal mass density numerically identical to tonne per hectare (Mg/ha = t/ha = 0.1 kg/m²)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Megagram per hectare is the formally correct SI-prefixed expression for the same quantity as tonne per hectare (since 1 Mg = 1 t = 1 000 kg). Some scientific publications and carbon accounting standards prefer Mg/ha to t/ha to avoid the informal 'tonne' denomination. Both are numerically identical and have the same conversion factor to kg/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-2I0M1H0T0D0",
+			"QUDT_multiplier": 0.1,
+			"SI_factor": 0.1,
+			"UCUM_code": "Mg/har"
+		}
+	}
+]

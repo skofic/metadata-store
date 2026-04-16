@@ -52,4 +52,5 @@ enum TermRole: String, CaseIterable {
 enum Predicate {
 	static let enumOf    = "_predicate_enum-of"
 	static let bridgeOf  = "_predicate_bridge-of"
+	static let sectionOf = "_predicate_section-of"
 }

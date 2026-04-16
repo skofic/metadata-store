@@ -43,7 +43,7 @@
 
 When `true`, this unit is the SI coherent derived or base unit for its quantity kind — for example, kilogram per square metre for mass per area, or metre for length. For SI coherent units, [`SI_factor`](SI_factor.md) is `1.0` and [`SI_offset`](SI_offset.md) is absent.
 
-When `false`, or when this property is absent, the unit differs from the SI coherent unit and [`SI_factor`](SI_factor.md) (and [`SI_offset`](SI_offset.md) when non-zero) must be applied to convert values.
+When `false`, or when this property is absent, the unit differs from the SI coherent unit and `SI_factor` (and `SI_offset` when non-zero) must be applied to convert values.
 
 <details>
 <summary>JSON</summary>

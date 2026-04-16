@@ -83,7 +83,7 @@ The same edge shared by two graphs — the full ISO 3166-3 vocabulary and a cust
 }
 ```
 
-Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs only a handle insertion into `_path`, not a new edge record.
+Both graphs traverse the same edge document. Adding Italy to `MyCountries` costs only a handle insertion into [`_path`](_path.md), not a new edge record.
 
 <details>
 <summary>JSON</summary>

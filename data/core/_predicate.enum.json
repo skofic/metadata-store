@@ -99,6 +99,24 @@
 		"_path_data": {}
 	},
 	{
+		"_from": "terms/_predicate_conversion",
+		"_predicate": "_predicate_section-of",
+		"_to": "terms/_predicate",
+		"_path": [
+			"terms/_predicate"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_predicate_converts-to",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_predicate_conversion",
+		"_path": [
+			"terms/_predicate"
+		],
+		"_path_data": {}
+	},
+	{
 		"_from": "terms/_predicate_bridge",
 		"_predicate": "_predicate_section-of",
 		"_to": "terms/_predicate",

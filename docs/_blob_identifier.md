@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-The four fields `_blob_item`, `_blob_type`, `_blob_kind`, and `_blob_identifier` together form the composite key from which the document's `_key` is derived (as an MD5 hash of their concatenation). This field carries the subject-specific part of that key — for example, the ISO 3166-1 alpha-2 code (`"it"`) for a country flag blob.
+The four fields [`_blob_item`](_blob_item.md), [`_blob_type`](_blob_type.md), [`_blob_kind`](_blob_kind.md), and `_blob_identifier` together form the composite key from which the document's [`_key`](_key.md) is derived (as an MD5 hash of their concatenation). This field carries the subject-specific part of that key — for example, the ISO 3166-1 alpha-2 code (`"it"`) for a country flag blob.
 
 <details>
 <summary>JSON</summary>

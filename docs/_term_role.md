@@ -41,24 +41,24 @@
 
 **[Description](_description.md)**
 
-`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both `_term_role_descriptor` and `_term_role_typedef`.
+`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both [`_term_role_descriptor`](_term_role_descriptor.md) and [`_term_role_typedef`](_term_role_typedef.md).
 
 The following roles are **set automatically** by the loader based on structural evidence:
 
 | Role | Set when |
 |---|---|
-| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one `_predicate_enum-of` edge |
+| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one [`_predicate_enum-of`](_predicate_enum-of.md) edge |
 | [`_term_role_enum-item`](_term_role_enum-item.md) | The term is the source of at least one `_predicate_enum-of` edge |
-| [`_term_role_descriptor`](_term_role_descriptor.md) | The term has a `_data` section |
-| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the `_predicate` value of at least one edge document |
-| [`_term_role_namespace`](_term_role_namespace.md) | The term's `_gid` appears as the `_nid` of at least one other term |
+| `_term_role_descriptor` | The term has a [`_data`](_data.md) section |
+| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the [`_predicate`](_predicate.md) value of at least one edge document |
+| [`_term_role_namespace`](_term_role_namespace.md) | The term's [`_gid`](_gid.md) appears as the [`_nid`](_nid.md) of at least one other term |
 
 The following roles are **user-assigned**:
 
 | Role | Meaning |
 |---|---|
 | [`_term_role_type`](_term_role_type.md) | The term defines a data type in the dictionary's type system |
-| [`_term_role_typedef`](_term_role_typedef.md) | The term is intended for use as a reusable type definition via `_typedef` |
+| `_term_role_typedef` | The term is intended for use as a reusable type definition via [`_typedef`](_typedef.md) |
 
 <details>
 <summary>JSON</summary>

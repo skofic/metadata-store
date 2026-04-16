@@ -47,7 +47,7 @@ This property stores a regular expression and is used in two distinct contexts:
 
 Note that this constraint is graph-positional, not namespace-based: an element's [`_nid`](_nid.md) does not need to match the constraining term's [`_gid`](_gid.md). What matters is the element's position in the enumeration graph, not which namespace its identifier belongs to.
 
-**In the [data section](_data.md)**: when present inside a [`_scalar`](_scalar.md) object, `_regexp` constrains the format of the string value the descriptor accepts. It is a companion property of [`_string`](_string.md) (generic UTF-8 strings) and [`_string_HEX`](_string_HEX.md) (hexadecimal strings). Format-specific string types such as `_string_date` or `_string_URI` are self-defining and do not accept a `_regexp` companion.
+**In the [data section](_data.md)**: when present inside a [`_scalar`](_scalar.md) object, `_regexp` constrains the format of the string value the descriptor accepts. It is a companion property of [`_string`](_string.md) (generic UTF-8 strings) and [`_string_HEX`](_string_HEX.md) (hexadecimal strings). Format-specific string types such as [`_string_date`](_string_date.md) or [`_string_URI`](_string_URI.md) are self-defining and do not accept a `_regexp` companion.
 
 The value stored in this property is itself a regular expression string.
 
@@ -67,7 +67,7 @@ An enumeration root enforcing that all element [`_lid`](_lid.md) values are exac
 }
 ```
 
-A section node within the `ISO_3166` graph that overrides the root pattern for its own children — here two-letter alpha-2 codes only:
+A section node within the [`ISO_3166`](ISO_3166.md) graph that overrides the root pattern for its own children — here two-letter alpha-2 codes only:
 
 ```json
 {
@@ -81,7 +81,7 @@ A section node within the `ISO_3166` graph that overrides the root pattern for i
 }
 ```
 
-Elements connected to `ISO_3166_alpha-2` via `_predicate_enum-of` must have a two-letter `_lid`; the root's three-letter pattern does not apply because `ISO_3166_alpha-2` is the closer ancestor.
+Elements connected to `ISO_3166_alpha-2` via [`_predicate_enum-of`](_predicate_enum-of.md) must have a two-letter `_lid`; the root's three-letter pattern does not apply because `ISO_3166_alpha-2` is the closer ancestor.
 
 A descriptor whose value must be a valid hex colour code (data section use):
 

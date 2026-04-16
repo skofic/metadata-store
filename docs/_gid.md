@@ -45,15 +45,15 @@ The global identifier uniquely identifies a term across the entire dictionary. I
 
 | [`_nid`](_nid.md) value | `_gid` formula | Example |
 |---|---|---|
-| Present and non-empty | [`_nid`](_nid.md) + `_` + [`_lid`](_lid.md) | `ISO_3166_3_ITA` |
-| Empty string `""` | `_` + [`_lid`](_lid.md) | [`_code`](_code.md) |
-| Absent | [`_lid`](_lid.md) | `ISO` |
+| Present and non-empty | `_nid` + `_` + [`_lid`](_lid.md) | `ISO_3166_3_ITA` |
+| Empty string `""` | `_` + `_lid` | [`_code`](_code.md) |
+| Absent | `_lid` | [`ISO`](ISO.md) |
 
 Because `_gid` is computed before the document is stored, it is a plain string value — not a reference to an existing document. **The computed value is copied to the ArangoDB document key ([`_key`](_key.md)), making it the primary key within the terms collection and enforcing uniqueness across the dictionary.**
 
 **[Examples](_examples.md)**
 
-`ISO_3166_3_ITA` is the global identifier of the Italy term: namespace `ISO_3166_3` concatenated with local identifier `ITA` via an underscore:
+`ISO_3166_3_ITA` is the global identifier of the Italy term: namespace [`ISO_3166_3`](ISO_3166_3.md) concatenated with local identifier `ITA` via an underscore:
 
 ```json
 {

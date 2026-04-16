@@ -47,7 +47,7 @@ Sourced from QUDT's `qudt:conversionOffset` RDF property. Part of the two-parame
 SI_value = value × QUDT_multiplier + QUDT_offset
 ```
 
-Non-zero only for units whose zero point differs from the SI coherent unit. The most common case is degrees Celsius: offset = 273.15 (converting to kelvin). When zero, this property is omitted from the unit term's `_prop` section.
+Non-zero only for units whose zero point differs from the SI coherent unit. The most common case is degrees Celsius: offset = 273.15 (converting to kelvin). When zero, this property is omitted from the unit term's [`_prop`](_prop.md) section.
 
 This property records the value as found in the QUDT source. The operational offset used by this dictionary is [`SI_offset`](SI_offset.md).
 

@@ -42,7 +42,7 @@
 
 QUDT is an open ontology for scientific measurement: it defines quantity kinds, units of measure, unit conversion factors, and dimensional analysis using a formal RDF/OWL model. Published at [qudt.org](https://qudt.org) and maintained in the [qudt/qudt-public-repo](https://github.com/qudt/qudt-public-repo) GitHub repository.
 
-This dictionary uses QUDT as an import source for unit URIs (`_uri`), conversion multipliers ([`QUDT_multiplier`](QUDT_multiplier.md)), conversion offsets ([`QUDT_offset`](QUDT_offset.md)), and dimension vectors ([`QUDT_dimension_vector`](QUDT_dimension_vector.md)). QUDT is not a live dependency — all values are copied into the term records at import time.
+This dictionary uses QUDT as an import source for unit URIs ([`_uri`](_uri.md)), conversion multipliers ([`QUDT_multiplier`](QUDT_multiplier.md)), conversion offsets ([`QUDT_offset`](QUDT_offset.md)), and dimension vectors ([`QUDT_dimension_vector`](QUDT_dimension_vector.md)). QUDT is not a live dependency — all values are copied into the term records at import time.
 
 <details>
 <summary>JSON</summary>

@@ -43,7 +43,7 @@
 
 This set collects every official or widely recognised identifier that can be used to reference the term — not just the dictionary's own [local identifier](_lid.md), but any standard code that an external source would use for the same concept.
 
-The property is **required** and **computed**: because [`_lid`](_lid.md) is a public identifier for the dictionary, the system initialises `_aid` to `[_lid]` if it is absent when a term is created. It is not immutable — when alias terms point to this term, their [`_lid`](_lid.md) values are appended to this set, keeping a consolidated list of all the codes by which the concept is officially known.
+The property is **required** and **computed**: because [`_lid`](_lid.md) is a public identifier for the dictionary, the system initialises `_aid` to `[_lid]` if it is absent when a term is created. It is not immutable — when alias terms point to this term, their `_lid` values are appended to this set, keeping a consolidated list of all the codes by which the concept is officially known.
 
 Keep this set restricted to official or standardised identifiers. Provider-specific or ad hoc names belong in [provider identifiers](_pid.md) instead.
 

@@ -49,7 +49,7 @@ This property is required on every term and is immutable once set — changing i
 
 **[Examples](_examples.md)**
 
-`ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace `ISO_3166_3` it forms the global identifier `ISO_3166_3_ITA`:
+`ITA` is the local identifier of the ISO 3166-3 term for Italy. Combined with the namespace [`ISO_3166_3`](ISO_3166_3.md) it forms the global identifier `ISO_3166_3_ITA`:
 
 ```json
 {

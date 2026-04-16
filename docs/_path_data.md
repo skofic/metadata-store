@@ -52,7 +52,7 @@ Two key patterns are used:
 
 When the edge carries **no data**, `_path_data` is an empty object (`{}`), which is also its default value.
 
-When the edge encodes a **conditional schema rule** (on a [`_predicate_property-of`](_predicate_property-of.md) or [`_predicate_value-of`](_predicate_value-of.md) edge), `_path_data` contains a schema object keyed by the graph root handle. The schema object uses the same format as [`_object`](_object.md): its single key is either [`_closed`](_closed.md) or [`_open`](_open.md), and its value is a constraint object that may contain [`_required`](_required.md), [`_recommended`](_recommended.md), and [`_banned`](_banned.md). Using `_closed` means only the properties listed in the constraint are permitted in that context; using `_open` means additional properties are also accepted. [`_required`](_required.md) always accumulates with the base schema; [`_banned`](_banned.md) is unconditional.
+When the edge encodes a **conditional schema rule** (on a [`_predicate_property-of`](_predicate_property-of.md) or [`_predicate_value-of`](_predicate_value-of.md) edge), `_path_data` contains a schema object keyed by the graph root handle. The schema object uses the same format as [`_object`](_object.md): its single key is either [`_closed`](_closed.md) or [`_open`](_open.md), and its value is a constraint object that may contain [`_required`](_required.md), [`_recommended`](_recommended.md), and [`_banned`](_banned.md). Using `_closed` means only the properties listed in the constraint are permitted in that context; using `_open` means additional properties are also accepted. `_required` always accumulates with the base schema; `_banned` is unconditional.
 
 Keys must be document handles. Semantically, each key should be the handle of the edge's `_from` or `_to` node, or a handle present in `_path`; handles referencing other documents are accepted by the type system but have no defined meaning. Values may be of any shape and type.
 
@@ -77,7 +77,7 @@ A travel-graph edge carrying per-airline fares and per-location transfer costs:
 
 Each airline graph root handle keys its own fare data; each location handle keys its transfer cost.
 
-A `_predicate_value-of` edge encoding a closed conditional rule — when `_scalar` contains the key `_number_integer`, `_decimals` is banned and the recommended companion properties are restricted to the numeric range and unit properties only (integers have no decimal part):
+A [`_predicate_value-of`](_predicate_value-of.md) edge encoding a closed conditional rule — when [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_integer.md), `_decimals` is banned and the recommended companion properties are restricted to the numeric range and unit properties only (integers have no decimal part):
 
 ```json
 {
@@ -102,7 +102,7 @@ A `_predicate_value-of` edge encoding a closed conditional rule — when `_scala
 }
 ```
 
-The constraint is keyed by the graph root handle `terms/_scalar` and applies only within that schema context. `_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally.
+The constraint is keyed by the graph root handle `terms/_scalar` and applies only within that schema context. [`_closed`](_closed.md) replaces the base recommended set; [`_banned`](_banned.md) removes `_decimals` unconditionally.
 
 <details>
 <summary>JSON</summary>

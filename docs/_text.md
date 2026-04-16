@@ -53,7 +53,7 @@
 }
 ```
 
-A stored `_text` value is typically a paragraph or longer narrative — for example, a full definition, a methodology description, or a multi-page report excerpt. Unlike `_string`, it is not suitable for indexing or use as a tag.
+A stored `_text` value is typically a paragraph or longer narrative — for example, a full definition, a methodology description, or a multi-page report excerpt. Unlike [`_string`](_string.md), it is not suitable for indexing or use as a tag.
 
 <details>
 <summary>JSON</summary>

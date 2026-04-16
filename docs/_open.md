@@ -65,7 +65,7 @@ Valid: `{}`, `{"_title": {...}}`, `{"_title": {...}, "_notes": {...}, "_custom_p
 
 ---
 
-**Filled `_open` section** — `_title` is required; `_definition` and `_description` are recommended; `_notes` is banned:
+**Filled `_open` section** — [`_title`](_title.md) is required; [`_definition`](_definition.md) and [`_description`](_description.md) are recommended; [`_notes`](_notes.md) is banned:
 
 ```json
 {

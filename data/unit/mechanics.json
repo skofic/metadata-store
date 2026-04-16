@@ -1,0 +1,467 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_Mass",
+			"_lid": "kg",
+			"_gid": "unit_Mass_kg",
+			"_aid": [
+				"kg"
+			],
+			"_name": "Kilogram",
+			"_symbol": "\\mathrm{kg}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram (kg)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI base unit of mass."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The kilogram is defined by fixing the numerical value of the Planck constant to exactly 6.626 070 15 × 10⁻³⁴ J·s. It is the SI coherent unit for mass and the pivot for all mass-unit conversions in this dictionary.\n\nIn the EUFGIS context, kilograms appear in mass-flux and mass-per-area expressions (kg C/m²/day for gross primary production, kg/m² for above-ground biomass in SI-coherent form)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Mass",
+			"_lid": "g",
+			"_gid": "unit_Mass_g",
+			"_aid": [
+				"g"
+			],
+			"_name": "Gram",
+			"_symbol": "\\mathrm{g}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gram (g)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass equal to 10⁻³ kg."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The gram is used for small sample masses in laboratory measurements. In the EUFGIS phenotypic dataset, specific leaf area (SLA) is expressed in cm²/g and wood density in g/cm³, both of which involve grams as the mass unit."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T0D0",
+			"QUDT_multiplier": 0.001,
+			"SI_factor": 0.001,
+			"UCUM_code": "g"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Mass",
+			"_lid": "mg",
+			"_gid": "unit_Mass_mg",
+			"_aid": [
+				"mg"
+			],
+			"_name": "Milligram",
+			"_symbol": "\\mathrm{mg}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Milligram (mg)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass equal to 10⁻⁶ kg."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The milligram is used for very small sample masses, such as dried leaf discs or seed weights in plant physiology experiments."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T0D0",
+			"QUDT_multiplier": 1e-06,
+			"SI_factor": 1e-06,
+			"UCUM_code": "mg"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Mass",
+			"_lid": "t",
+			"_gid": "unit_Mass_t",
+			"_aid": [
+				"t"
+			],
+			"_name": "Metric tonne",
+			"_symbol": "\\mathrm{t}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Metric tonne (t)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass equal to 1 000 kg."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The metric tonne (also called megagram, Mg) is the standard unit for reporting large masses in forestry and carbon accounting. Above-ground biomass is commonly expressed in tonnes per hectare (t/ha), and carbon stocks in tonnes of carbon per hectare (tC/ha). ESA CCI Biomass data ingested by the EUFGIS GeoService uses this unit."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T0D0",
+			"QUDT_multiplier": 1000.0,
+			"SI_factor": 1000.0,
+			"UCUM_code": "t"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Mass",
+			"_lid": "lb",
+			"_gid": "unit_Mass_lb",
+			"_aid": [
+				"lb"
+			],
+			"_name": "Pound (avoirdupois)",
+			"_symbol": "\\mathrm{lb}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Pound (lb)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Imperial unit of mass equal to exactly 0.453 592 37 kg."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The international avoirdupois pound is defined as exactly 0.453 592 37 kilograms. Included for interoperability with datasets and instruments that report mass in the imperial system."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T0D0",
+			"QUDT_multiplier": 0.45359237,
+			"SI_factor": 0.45359237,
+			"UCUM_code": "[lb_av]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassDensity",
+			"_lid": "kg-per-m3",
+			"_gid": "unit_MassDensity_kg-per-m3",
+			"_aid": [
+				"kg-per-m3",
+				"kg/m³"
+			],
+			"_name": "Kilogram per cubic metre",
+			"_symbol": "\\mathrm{kg\\,m^{-3}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram per cubic metre (kg/m³)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of mass density (mass per unit volume)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram per cubic metre is the SI coherent unit for volumetric mass density and the pivot for all mass-density conversions in this dictionary. It is used in atmospheric physics (air density ≈ 1.225 kg/m³) and in expressions of soil bulk density."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-3I0M1H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg/m3"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassDensity",
+			"_lid": "g-per-cm3",
+			"_gid": "unit_MassDensity_g-per-cm3",
+			"_aid": [
+				"g-per-cm3",
+				"g/cm³"
+			],
+			"_name": "Gram per cubic centimetre",
+			"_symbol": "\\mathrm{g\\,cm^{-3}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gram per cubic centimetre (g/cm³)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of mass density equal to 1 000 kg/m³."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Gram per cubic centimetre is the conventional unit for wood density in plant physiology and forest ecology. Wood density (also called wood specific gravity when normalised to water) typically ranges from 0.2 g/cm³ (balsa) to 1.3 g/cm³ (tropical hardwoods). The EUFGIS phenotypic dataset records wood density in this unit. Note that 1 g/cm³ = 1 000 kg/m³ (water density at 4 °C)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-3I0M1H0T0D0",
+			"QUDT_multiplier": 1000.0,
+			"SI_factor": 1000.0,
+			"UCUM_code": "g/cm3"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "Pa",
+			"_gid": "unit_Pressure_Pa",
+			"_aid": [
+				"Pa"
+			],
+			"_name": "Pascal",
+			"_symbol": "\\mathrm{Pa}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Pascal (Pa)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of pressure (force per unit area), equal to one newton per square metre (N/m²)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The pascal is the SI coherent unit for pressure and the pivot for all pressure-unit conversions in this dictionary. In plant hydraulics, turgor loss point (TLP) and P50 (xylem pressure at 50 % loss of hydraulic conductivity) are measured in megapascals (MPa). Atmospheric pressure is approximately 101 325 Pa. Vapour pressure deficit (VPD) is expressed in pascals or kilopascals."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "Pa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "kPa",
+			"_gid": "unit_Pressure_kPa",
+			"_aid": [
+				"kPa"
+			],
+			"_name": "Kilopascal",
+			"_symbol": "\\mathrm{kPa}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilopascal (kPa)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of pressure equal to 1 000 Pa."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The kilopascal is used for vapour pressure deficit (VPD), soil water potential, and atmospheric pressure in meteorological applications. ERA5-Land surface pressure and dewpoint data are sometimes derived in kilopascals."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 1000.0,
+			"SI_factor": 1000.0,
+			"UCUM_code": "kPa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "MPa",
+			"_gid": "unit_Pressure_MPa",
+			"_aid": [
+				"MPa"
+			],
+			"_name": "Megapascal",
+			"_symbol": "\\mathrm{MPa}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Megapascal (MPa)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of pressure equal to 10⁶ Pa."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The megapascal is the standard unit for plant water potential, xylem hydraulic stress, and turgor loss point in plant physiology. In the EUFGIS phenotypic characterisation dataset, turgor loss point (TLP) and P50 are recorded in MPa. Hydraulic capacitance is expressed as %RWC per MPa, where MPa is the denominator pressure unit."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 1000000.0,
+			"SI_factor": 1000000.0,
+			"UCUM_code": "MPa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "hPa",
+			"_gid": "unit_Pressure_hPa",
+			"_aid": [
+				"hPa"
+			],
+			"_name": "Hectopascal",
+			"_symbol": "\\mathrm{hPa}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hectopascal (hPa)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of pressure equal to 100 Pa, numerically identical to the millibar (mbar)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The hectopascal is the standard meteorological unit for surface atmospheric pressure, numerically equal to the traditional millibar. ERA5-Land reports surface pressure at single or multiple atmospheric levels in hPa. Standard sea-level atmospheric pressure is 1 013.25 hPa."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 100.0,
+			"SI_factor": 100.0,
+			"UCUM_code": "hPa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "bar",
+			"_gid": "unit_Pressure_bar",
+			"_aid": [
+				"bar"
+			],
+			"_name": "Bar",
+			"_symbol": "\\mathrm{bar}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Bar (bar)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of pressure equal to 10⁵ Pa."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The bar is a non-SI unit widely used in meteorology, oceanography, and engineering. Standard atmospheric pressure is approximately 1.013 25 bar. The millibar (mbar = 0.1 kPa = 1 hPa) is numerically identical to the hectopascal and appears in older meteorological records."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 100000.0,
+			"SI_factor": 100000.0,
+			"UCUM_code": "bar",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Pressure",
+			"_lid": "atm",
+			"_gid": "unit_Pressure_atm",
+			"_aid": [
+				"atm"
+			],
+			"_name": "Standard atmosphere",
+			"_symbol": "\\mathrm{atm}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Standard atmosphere (atm)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of pressure equal to exactly 101 325 Pa, defined as the standard atmospheric pressure at sea level."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The standard atmosphere is a defined constant used as a reference pressure in gas laws, altitude tables, and gas exchange calculations. It is not a unit commonly used for reporting measured values in the EUFGIS databases but is included as an interoperability reference."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L-1I0M1H0T-2D0",
+			"QUDT_multiplier": 101325.0,
+			"SI_factor": 101325.0,
+			"UCUM_code": "atm",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	}
+]

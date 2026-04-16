@@ -45,13 +45,13 @@
 
 **How it works**: elements in the source vocabulary that should appear in the custom vocabulary have the custom vocabulary's root added to their [`_path`](_path.md) set. When traversing the custom vocabulary, the bridge edge is encountered first; the bridge node is skipped; then element edges already sharing the `_path` value are found and returned.
 
-**Alias resolution**: the same mechanism implements aliases. An alias term (e.g. `ISO_639_1_en`) is linked to its canonical graph root with `_predicate_bridge-of`, marking it as a bridge. The canonical term (e.g. `ISO_639_3_eng`) is then linked to the alias term with [`_predicate_enum-of`](_predicate_enum-of.md) within the alias graph. Traversal through the alias graph resolves to the canonical term; looking up the bridge term's `_predicate_enum-of` edges directly yields the canonical term in one step.
+**Alias resolution**: the same mechanism implements aliases. An alias term (e.g. [`ISO_639_1_en`](ISO_639_1_en.md)) is linked to its canonical graph root with `_predicate_bridge-of`, marking it as a bridge. The canonical term (e.g. [`ISO_639_3_eng`](ISO_639_3_eng.md)) is then linked to the alias term with [`_predicate_enum-of`](_predicate_enum-of.md) within the alias graph. Traversal through the alias graph resolves to the canonical term; looking up the bridge term's `_predicate_enum-of` edges directly yields the canonical term in one step.
 
 Bridge nodes are always skipped during traversal — they are never returned as valid values.
 
 **[Examples](_examples.md)**
 
-Italy included in a custom `MyCountries` vocabulary via a bridge to `ISO_3166_3`:
+Italy included in a custom `MyCountries` vocabulary via a bridge to [`ISO_3166_3`](ISO_3166_3.md):
 
 ```json
 {

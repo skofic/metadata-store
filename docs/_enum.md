@@ -67,7 +67,7 @@ An unconstrained enumeration value:
 }
 ```
 
-Stored values (enumeration element `_gid`s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA"`, `"ISO_4217_EUR"`.
+Stored values (enumeration element [`_gid`](_gid.md)s): `"ISO_639_3_eng"`, `"ISO_3166_3_ITA"`, `"ISO_4217_EUR"`.
 
 <details>
 <summary>JSON</summary>

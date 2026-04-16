@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_info_text` defines the structure shared by all formatted `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are Markdown strings — prose, lists, tables, fenced code blocks, and links to other terms or external references are all valid.
+`_info_text` defines the structure shared by all formatted [`_info`](_info.md) properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the [`ISO_639_3`](ISO_639_3.md) enumeration. Its values are Markdown strings — prose, lists, tables, fenced code blocks, and links to other terms or external references are all valid.
 
 All `_info` properties except [`_title`](_title.md) and [`_definition`](_definition.md) use this type: [`_description`](_description.md), [`_examples`](_examples.md), [`_methods`](_methods.md), [`_usage`](_usage.md), [`_citation`](_citation.md), [`_provider`](_provider.md), [`_url`](_url.md), and [`_notes`](_notes.md).
 

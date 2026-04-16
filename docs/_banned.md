@@ -52,7 +52,7 @@ Because `_banned` is unconditional, it also overrides conditional rules. A prope
 
 **[Examples](_examples.md)**
 
-**In an open schema** — any dictionary property is accepted except `_notes` and `_citation`:
+**In an open schema** — any dictionary property is accepted except [`_notes`](_notes.md) and [`_citation`](_citation.md):
 
 ```json
 {

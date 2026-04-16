@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_term_key_enum-root` is used when a property value must be the `_gid` of an enumeration root term. Typical use: the [`_enums`](_enums.md) companion property, which holds a set of vocabulary root keys that constrain an [`_enum`](_enum.md) value. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
+`_term_key_enum-root` is used when a property value must be the [`_gid`](_gid.md) of an enumeration root term. Typical use: the [`_enums`](_enums.md) companion property, which holds a set of vocabulary root keys that constrain an [`_enum`](_enum.md) value. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
 
 **[Examples](_examples.md)**
 

@@ -1,0 +1,441 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_AreaRatio",
+			"_lid": "m2-per-m2",
+			"_gid": "unit_AreaRatio_m2-per-m2",
+			"_aid": [
+				"m2-per-m2",
+				"m²/m²"
+			],
+			"_name": "Square metre per square metre",
+			"_symbol": "\\mathrm{m^2\\,m^{-2}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square metre per square metre (m²/m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent (and only) unit for area ratio, a dimensionless quantity retaining explicit area notation for semantic clarity."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Although dimensionally equivalent to a pure number, m²/m² is the conventional notation for area-based ratios in vegetation science. The most important application is **Leaf Area Index (LAI)**: the ratio of total one-sided green leaf area to the ground area beneath the canopy. LAI is the primary variable in MODIS LAI products (MOD15A2H) ingested by the EUFGIS GeoService, with typical forest values between 1 and 8 m²/m².\n\nThe explicit m²/m² notation distinguishes area ratios from pure fractions or percentages, preventing ambiguity in data processing pipelines."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m2/m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_AreaPerMass",
+			"_lid": "m2-per-kg",
+			"_gid": "unit_AreaPerMass_m2-per-kg",
+			"_aid": [
+				"m2-per-kg",
+				"m²/kg"
+			],
+			"_name": "Square metre per kilogram",
+			"_symbol": "\\mathrm{m^2\\,kg^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square metre per kilogram (m²/kg)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of specific area (area per unit mass)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Square metre per kilogram is the SI coherent unit for area per mass. In plant physiology, **specific leaf area (SLA)** — the ratio of leaf area to leaf dry mass — quantifies leaf economy and is a key functional trait. SLA is often reported in cm²/g, which equals m²/kg (the conversion is exact: 10⁻⁴ m² / 10⁻³ kg = 0.1 m²/kg per cm²/g, so 1 cm²/g = 0.1 m²/kg).\n\nA related variable is the **Huber value** (sapwood cross-sectional area per leaf area), expressed in cm²/m² = 10⁻⁴ m²/m². This is a dimensionless area ratio, not an area-per-mass quantity, but it can be confused with SLA; the quantity kind ensures correct dimensioning."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M-1H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m2/kg"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_AreaPerMass",
+			"_lid": "cm2-per-g",
+			"_gid": "unit_AreaPerMass_cm2-per-g",
+			"_aid": [
+				"cm2-per-g",
+				"cm²/g"
+			],
+			"_name": "Square centimetre per gram",
+			"_symbol": "\\mathrm{cm^2\\,g^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Square centimetre per gram (cm²/g)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of specific area equal to 0.1 m²/kg."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Square centimetre per gram is the conventional unit for specific leaf area (SLA) and leaf mass per area (LMA = 1/SLA) in plant ecology and physiology. Forest and shrubland SLA values typically range from 5 to 200 cm²/g. In the EUFGIS phenotypic characterisation dataset, SLA is recorded in this unit.\n\nConversion: 1 cm²/g = (10⁻⁴ m²) / (10⁻³ kg) = 0.1 m²/kg."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L2I0M-1H0T0D0",
+			"QUDT_multiplier": 0.1,
+			"SI_factor": 0.1,
+			"UCUM_code": "cm2/g"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_VolumetricRatio",
+			"_lid": "m3-per-m3",
+			"_gid": "unit_VolumetricRatio_m3-per-m3",
+			"_aid": [
+				"m3-per-m3",
+				"m³/m³"
+			],
+			"_name": "Cubic metre per cubic metre",
+			"_symbol": "\\mathrm{m^3\\,m^{-3}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Cubic metre per cubic metre (m³/m³)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent (and only) unit for volumetric ratio, a dimensionless quantity retaining explicit volume notation for semantic clarity."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Cubic metre per cubic metre is the conventional notation for volumetric ratios in hydrology and soil science. The primary application in the EUFGIS context is **volumetric soil water content (SWC)**: the volume of water per volume of bulk soil. ERA5-Land provides soil water content at multiple depth layers in m³/m³ (typical values 0.05–0.5). MODIS Soil Moisture Index is also derived from this quantity.\n\nThe explicit m³/m³ notation prevents confusion with mass-based water content (g/g) or percentage expressions."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m3/m3"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MassRatio",
+			"_lid": "kg-per-kg",
+			"_gid": "unit_MassRatio_kg-per-kg",
+			"_aid": [
+				"kg-per-kg",
+				"kg/kg",
+				"g/g"
+			],
+			"_name": "Kilogram per kilogram",
+			"_symbol": "\\mathrm{kg\\,kg^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilogram per kilogram (kg/kg)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent (and only) unit for mass ratio, a dimensionless quantity retaining explicit mass notation for semantic clarity."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilogram per kilogram (equivalently, g/g or any mass/same-mass ratio) is the conventional notation for mass-based ratios. In the EUFGIS context it is used for **specific humidity** from ERA5-Land (kg of water vapour per kg of moist air) and for **fuel moisture content** from the European Drought Observatory wildfire vulnerability indicator (g_H₂O / g_DryMass).\n\nThe explicit kg/kg notation prevents confusion with volumetric ratios or percentage expressions."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "kg/kg"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MolarFluxDensity",
+			"_lid": "mol-per-m2-per-s",
+			"_gid": "unit_MolarFluxDensity_mol-per-m2-per-s",
+			"_aid": [
+				"mol-per-m2-per-s",
+				"mol/m²/s"
+			],
+			"_name": "Mole per square metre per second",
+			"_symbol": "\\mathrm{mol\\,m^{-2}\\,s^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mole per square metre per second (mol/m²/s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of molar flux density (amount of substance per unit area per unit time)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mole per square metre per second is the SI coherent unit for molar flux. In plant physiology, **stomatal conductance** (the ease with which gas molecules pass through stomata) is expressed in mol/m²/s for water vapour or CO₂. In the EUFGIS phenotypic dataset, residual stomatal conductance (Gres) is recorded in mmol/m²/s."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A1E0L-2I0M0H0T-1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "mol/(m2.s)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_MolarFluxDensity",
+			"_lid": "mmol-per-m2-per-s",
+			"_gid": "unit_MolarFluxDensity_mmol-per-m2-per-s",
+			"_aid": [
+				"mmol-per-m2-per-s",
+				"mmol/m²/s"
+			],
+			"_name": "Millimole per square metre per second",
+			"_symbol": "\\mathrm{mmol\\,m^{-2}\\,s^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Millimole per square metre per second (mmol/m²/s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of molar flux density equal to 10⁻³ mol/m²/s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Millimole per square metre per second is the standard unit for stomatal conductance and transpiration flux in plant physiology. In the EUFGIS phenotypic characterisation dataset, residual stomatal conductance (Gres — the minimum conductance at turgor loss) is recorded in this unit. Typical midday values for well-watered trees are 100–400 mmol/m²/s; Gres typically ranges from 1 to 20 mmol/m²/s."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A1E0L-2I0M0H0T-1D0",
+			"QUDT_multiplier": 0.001,
+			"SI_factor": 0.001,
+			"UCUM_code": "mmol/(m2.s)"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_HydraulicCapacitance",
+			"_lid": "RWC-per-MPa",
+			"_gid": "unit_HydraulicCapacitance_RWC-per-MPa",
+			"_aid": [
+				"RWC-per-MPa",
+				"%RWC/MPa"
+			],
+			"_name": "Percent relative water content per megapascal",
+			"_symbol": "\\%\\mathrm{RWC\\,MPa^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Percent relative water content per megapascal (%RWC/MPa)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Conventional unit for hydraulic capacitance of plant tissue: the change in relative water content (% RWC) per unit change in water potential (MPa). Dimensionally equivalent to Pa⁻¹ (or 10⁻⁸ Pa⁻¹ when % = 0.01 and MPa = 10⁶ Pa)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Hydraulic capacitance quantifies the ability of plant tissue to buffer water potential fluctuations by releasing stored water. It is defined as dRWC/dΨ, where RWC is relative water content (0–100 %) and Ψ is water potential (MPa).\n\nThe %RWC/MPa convention is dominant in the plant hydraulics literature. Dimensionally: (dimensionless / Pa) = Pa⁻¹. Since 1 % = 0.01 and 1 MPa = 10⁶ Pa, the conversion to SI (Pa⁻¹) is:\n\n1 %RWC/MPa = 0.01 / 10⁶ Pa = 10⁻⁸ Pa⁻¹\n\nThe SI coherent unit for hydraulic capacitance is Pa⁻¹ ([`unit_HydraulicCapacitance_per-Pa`](unit_HydraulicCapacitance_per-Pa.md))."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M-1H0T2D0",
+			"QUDT_multiplier": 1e-08,
+			"SI_factor": 1e-08,
+			"UCUM_code": "%/MPa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_HydraulicCapacitance",
+			"_lid": "per-Pa",
+			"_gid": "unit_HydraulicCapacitance_per-Pa",
+			"_aid": [
+				"per-Pa",
+				"Pa⁻¹"
+			],
+			"_name": "Per pascal",
+			"_symbol": "\\mathrm{Pa^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Per pascal (Pa⁻¹)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of hydraulic capacitance (fractional volume change per unit pressure change), dimensionally L·M⁻¹·T²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Pa⁻¹ is the SI coherent unit for hydraulic capacitance. It represents the fractional change in water content per unit change in pressure. In practice, plant hydraulic capacitance values in Pa⁻¹ are very small numbers (10⁻⁸ to 10⁻⁶ Pa⁻¹), which is why the %RWC/MPa convention is preferred in the literature.\n\nConversion: 1 Pa⁻¹ = 10⁸ %RWC/MPa."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M-1H0T2D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "/Pa",
+			"_range_valid": {
+				"_min-inclusive": 0
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_DegreeDays",
+			"_lid": "deg-C-day",
+			"_gid": "unit_DegreeDays_deg-C-day",
+			"_aid": [
+				"deg-C-day",
+				"°C·day",
+				"GDD"
+			],
+			"_name": "Degree Celsius day",
+			"_symbol": "^\\circ\\mathrm{C}\\cdot\\mathrm{d}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Degree Celsius day (°C·day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of thermal time (temperature integrated over duration), with the practical convention that temperature is expressed in Celsius degrees and duration in days. Dimensionally K·s in SI; 1 °C·day = 86 400 K·s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Degree-days accumulate temperature above a base threshold over time and are the standard unit for **growing degree days (GDD)** and **chilling units** in phenological models.\n\nDefinition: 1 °C·day = (mean temperature − base temperature) × 1 day, summed over the growing season. Common base temperatures are 0 °C (GDD0), 5 °C (GDD5), and 10 °C (GDD10). CHELSA bioclimatic variables include annual GDD0, GDD5, and GDD10 derived from daily mean temperatures, all expressed in °C·day.\n\nConversion to SI: 1 °C·day = 1 K × 86 400 s = 86 400 K·s.\n\n**Note:** Because the Celsius and Kelvin scales have the same interval size, degree-day calculations with Celsius temperatures give numerically identical results to those using kelvin — only the base temperature offset differs. The SI_factor converts °C·day to K·s by multiplying by 86 400."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H1T1D0",
+			"QUDT_multiplier": 86400.0,
+			"SI_factor": 86400.0,
+			"UCUM_code": "Cel.d"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Dimensionless",
+			"_lid": "1",
+			"_gid": "unit_Dimensionless_1",
+			"_aid": [
+				"1",
+				"unitless"
+			],
+			"_name": "Dimensionless unit one",
+			"_symbol": "1"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dimensionless unit one (1)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit for dimensionless quantities: a pure number with no unit of measurement."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Dimensionless quantities are pure ratios or indices whose value is independent of any unit system. In the EUFGIS database, dimensionless indices on the [0, 1] scale include:\n\n- **NDVI** (Normalized Difference Vegetation Index) — Sentinel-2 and MODIS derived, range −1 to 1\n- **NDWI** (Normalized Difference Water Index) — range −1 to 1\n- **FPAR** (Fraction of Absorbed Photosynthetically Active Radiation) — MODIS, range 0 to 1\n- **Genetic indices**: Fst (fixation index), Fis (inbreeding coefficient), nucleotide diversity π, admixture Q-values — range 0 to 1\n- **Frost damage fraction**, **carbon starvation fraction** (modelled variables)\n\nSI_factor is 1.0; no conversion is required. Values should be stored as the decimal fraction (0.0–1.0), not as a percentage."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "1"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Percent",
+			"_lid": "pct",
+			"_gid": "unit_Percent_pct",
+			"_aid": [
+				"pct",
+				"%"
+			],
+			"_name": "Percent",
+			"_symbol": "\\%"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Percent (%)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A dimensionless unit equal to one hundredth (0.01); a value of 1 % equals 0.01 in SI."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Percent is the conventional unit for quantities that are naturally expressed as a proportion of 100. It differs from the pure dimensionless unit [`unit_Dimensionless_1`](unit_Dimensionless_1.md) in its scale convention: data stored in percent (0–100 %) must be multiplied by 0.01 to obtain the SI dimensionless value (0.0–1.0).\n\nIn the EUFGIS database, percent is used for:\n\n- **Relative humidity** (ERA5-Land, 0–100 %)\n- **Cloud cover** (MODIS cloud fraction, 0–100 %)\n- **Desiccation risk** (modelled PLC — percent loss of hydraulic conductivity, 0–100 %)\n- **Relative water content (RWC)** — numerator in hydraulic capacitance (%RWC/MPa)\n- **Proportion of polymorphic loci** (genetic variable, 0–100 %)\n\nConversion: SI_value = value × 0.01. SI_factor = 0.01."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"QUDT_multiplier": 0.01,
+			"SI_factor": 0.01,
+			"UCUM_code": "%",
+			"_range_valid": {
+				"_max-inclusive": 100,
+				"_min-inclusive": 0
+			}
+		}
+	}
+]

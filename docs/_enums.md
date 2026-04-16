@@ -41,13 +41,13 @@
 
 **[Description](_description.md)**
 
-`_enums` is an optional companion property of [`_enum`](_enum.md). When present, the [`_enum`](_enum.md) value must be the `_gid` of an element that belongs to at least one of the listed enumeration roots. When absent, any enumeration element from any controlled vocabulary is accepted.
+`_enums` is an optional companion property of [`_enum`](_enum.md). When present, the `_enum` value must be the [`_gid`](_gid.md) of an element that belongs to at least one of the listed enumeration roots. When absent, any enumeration element from any controlled vocabulary is accepted.
 
 Each element in `_enums` must be the `_gid` of an enumeration root term. The data type of `_enums` itself is a set of [`_term_key_enum-root`](_term_key_enum-root.md) values.
 
 **[Examples](_examples.md)**
 
-Restricting an `_enum` value to ISO 639-3 or ISO 639-1 language codes:
+Restricting an [`_enum`](_enum.md) value to ISO 639-3 or ISO 639-1 language codes:
 
 ```json
 {

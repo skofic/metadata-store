@@ -49,7 +49,7 @@ The four functional predicates and their roles:
 - [`_predicate_field-of`](_predicate_field-of.md): declares a descriptor's membership in a form or data-table layout.
 - [`_predicate_value-of`](_predicate_value-of.md): declares a value's role within a specific property, and activates value-triggered conditional rules.
 
-As a sub-enumeration root, `_predicate_functional` may be used in [`_enum_types`](_enum_types.md) to constrain a property to functional predicates only.
+As a sub-enumeration root, `_predicate_functional` may be used in [`_enums`](_enums.md) to constrain a property to functional predicates only.
 
 <details>
 <summary>JSON</summary>

@@ -51,7 +51,7 @@ In an **open schema**: `_required` defines which properties must be present, wit
 
 **[Examples](_examples.md)**
 
-**In a closed schema** — the [`_range`](_range.md) numeric range object. Exactly one of `_min-exclusive` or `_min-inclusive` must be present, and at least one of `_max-exclusive` or `_max-inclusive` must be present:
+**In a closed schema** — the [`_range`](_range.md) numeric range object. Exactly one of [`_min-exclusive`](_min-exclusive.md) or [`_min-inclusive`](_min-inclusive.md) must be present, and at least one of [`_max-exclusive`](_max-exclusive.md) or [`_max-inclusive`](_max-inclusive.md) must be present:
 
 ```json
 {
@@ -82,7 +82,7 @@ Invalid: `{"_min-inclusive": 0}` — no max bound is present.
 
 ---
 
-**In an open schema** — both `_selectors` and `_selection` must be present:
+**In an open schema** — both [`_selectors`](_selectors.md) and [`_selection`](_selection.md) must be present:
 
 ```json
 {

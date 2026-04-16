@@ -65,7 +65,7 @@ The object may contain any properties (dictionary-defined or not) or be entirely
 
 ---
 
-**Open schema** — `_title` is required; any other dictionary property may also appear:
+**Open schema** — [`_title`](_title.md) is required; any other dictionary property may also appear:
 
 ```json
 {
@@ -90,7 +90,7 @@ Invalid: `{}` — `_title` is missing.
 
 ---
 
-**Closed schema** — `_lid` and `_gid` are required; only the listed properties are permitted:
+**Closed schema** — [`_lid`](_lid.md) and [`_gid`](_gid.md) are required; only the listed properties are permitted:
 
 ```json
 {
@@ -113,7 +113,7 @@ Invalid: `{}` — `_title` is missing.
 ```
 
 Valid: `{"_lid": "code", "_gid": "_code"}`, `{"_lid": "code", "_gid": "_code", "_nid": "", "_aid": ["code"]}`.
-Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — `_info` is not in the permitted set.
+Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — [`_info`](_info.md) is not in the permitted set.
 
 <details>
 <summary>JSON</summary>

@@ -60,7 +60,7 @@ The "mandatory" quality of `_all` means the constraint itself is always enforced
 }
 ```
 
-Both `_selectors` and `_selection` must be present. An object missing either property is invalid.
+Both [`_selectors`](_selectors.md) and [`_selection`](_selection.md) must be present. An object missing either property is invalid.
 
 ---
 
@@ -73,7 +73,7 @@ Both `_selectors` and `_selection` must be present. An object missing either pro
 }
 ```
 
-`_open` and `_closed` cannot both be present. Zero or one is valid; both together is invalid.
+[`_open`](_open.md) and [`_closed`](_closed.md) cannot both be present. Zero or one is valid; both together is invalid.
 
 ---
 

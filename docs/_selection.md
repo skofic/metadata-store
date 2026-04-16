@@ -61,7 +61,7 @@ The name `_selection` was previously `_selection_descriptors` in earlier version
 }
 ```
 
-One `_selectors` entry governs both `_selectors` and `_selection` as a flat group. Both must be present.
+One [`_selectors`](_selectors.md) entry governs both `_selectors` and `_selection` as a flat group. Both must be present.
 
 ---
 

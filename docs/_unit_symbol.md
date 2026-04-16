@@ -43,7 +43,7 @@
 
 `_unit_symbol` is an optional companion property for numeric and string scalar types, used alongside [`_unit_name`](_unit_name.md) when the unit of measurement has no term in the [`_unit`](_unit.md) controlled vocabulary. The value is a [`_string_LaTeX`](_string_LaTeX.md) expression that produces the typographic symbol for the unit when rendered.
 
-`_unit_symbol` is mutually exclusive with [`_unit`](_unit.md): if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside `_unit_name` to provide both a readable name and a symbol.
+`_unit_symbol` is mutually exclusive with `_unit`: if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside `_unit_name` to provide both a readable name and a symbol.
 
 **[Examples](_examples.md)**
 

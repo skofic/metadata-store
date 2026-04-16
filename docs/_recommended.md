@@ -50,7 +50,7 @@ The role of `_recommended` differs by schema type:
 
 **[Examples](_examples.md)**
 
-**In a closed schema** — `_lid` and `_gid` are required; `_nid`, `_aid`, `_pid`, `_name` are optional; no other property is permitted:
+**In a closed schema** — [`_lid`](_lid.md) and [`_gid`](_gid.md) are required; [`_nid`](_nid.md), [`_aid`](_aid.md), [`_pid`](_pid.md), [`_name`](_name.md) are optional; no other property is permitted:
 
 ```json
 {
@@ -71,11 +71,11 @@ The role of `_recommended` differs by schema type:
 ```
 
 Valid: `{"_lid": "x", "_gid": "_x", "_name": "X"}`.
-Invalid: `{"_lid": "x", "_gid": "_x", "_title": {...}}` — `_title` is not in the permitted set.
+Invalid: `{"_lid": "x", "_gid": "_x", "_title": {...}}` — [`_title`](_title.md) is not in the permitted set.
 
 ---
 
-**In an open schema** — `_title` is required; `_definition`, `_description`, `_examples` are recommended; any other dictionary property is also accepted:
+**In an open schema** — `_title` is required; [`_definition`](_definition.md), [`_description`](_description.md), [`_examples`](_examples.md) are recommended; any other dictionary property is also accepted:
 
 ```json
 {
@@ -95,7 +95,7 @@ Invalid: `{"_lid": "x", "_gid": "_x", "_title": {...}}` — `_title` is not in t
 }
 ```
 
-Valid: `{"_title": {...}}`, `{"_title": {...}, "_notes": {...}}` — `_notes` is not in `_recommended` but is still permitted.
+Valid: `{"_title": {...}}`, `{"_title": {...}, "_notes": {...}}` — [`_notes`](_notes.md) is not in `_recommended` but is still permitted.
 
 <details>
 <summary>JSON</summary>

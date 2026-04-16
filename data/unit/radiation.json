@@ -1,0 +1,250 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_Irradiance",
+			"_lid": "W-per-m2",
+			"_gid": "unit_Irradiance_W-per-m2",
+			"_aid": [
+				"W-per-m2",
+				"W/m²"
+			],
+			"_name": "Watt per square metre",
+			"_symbol": "\\mathrm{W\\,m^{-2}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Watt per square metre (W/m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of irradiance (power per unit area)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Watt per square metre is the SI coherent unit for irradiance and the pivot for all irradiance-unit conversions in this dictionary. It expresses the rate of radiant energy incident on a surface per unit area.\n\nIn the EUFGIS GeoService, shortwave downwelling radiation and photosynthetically active radiation (PAR) from ERA5-Land are distributed in W/m². MODIS LAI/FPAR products relate to the fraction of absorbed PAR, itself defined in W/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T-3D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "W/m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Irradiance",
+			"_lid": "kJ-per-m2-per-day",
+			"_gid": "unit_Irradiance_kJ-per-m2-per-day",
+			"_aid": [
+				"kJ-per-m2-per-day",
+				"kJ/m²/day"
+			],
+			"_name": "Kilojoule per square metre per day",
+			"_symbol": "\\mathrm{kJ\\,m^{-2}\\,d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilojoule per square metre per day (kJ/m²/day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of daily irradiation (energy per unit area per day) equal to 1 000/86 400 W/m² ≈ 0.011 574 W/m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Daily solar irradiation (or insolation) is the total radiant energy received per unit area over a day. It is commonly expressed as kilojoules per square metre per day in agrometeorology and ecology.\n\nConversion: 1 kJ/m²/day = 1000 J / (86 400 s × 1 m²) ≈ 0.011 574 W/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T-3D0",
+			"QUDT_multiplier": 0.011574074074074,
+			"SI_factor": 0.011574074074074,
+			"UCUM_code": "kJ/m2/d"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Irradiance",
+			"_lid": "MJ-per-m2-per-day",
+			"_gid": "unit_Irradiance_MJ-per-m2-per-day",
+			"_aid": [
+				"MJ-per-m2-per-day",
+				"MJ/m²/day"
+			],
+			"_name": "Megajoule per square metre per day",
+			"_symbol": "\\mathrm{MJ\\,m^{-2}\\,d^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Megajoule per square metre per day (MJ/m²/day)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of daily irradiation equal to 10⁶/86 400 W/m² ≈ 11.574 W/m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Megajoule per square metre per day is the standard unit for daily solar radiation totals in agrometeorological and reference evapotranspiration calculations (e.g., FAO Penman–Monteith equation). WorldClim solar radiation bioclimatic variables are expressed in this unit.\n\nConversion: 1 MJ/m²/day = 1 000 000 J / (86 400 s × 1 m²) ≈ 11.574 W/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T-3D0",
+			"QUDT_multiplier": 11.574074074074,
+			"SI_factor": 11.574074074074,
+			"UCUM_code": "MJ/m2/d"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Irradiance",
+			"_lid": "kWh-per-m2",
+			"_gid": "unit_Irradiance_kWh-per-m2",
+			"_aid": [
+				"kWh-per-m2",
+				"kWh/m²"
+			],
+			"_name": "Kilowatt-hour per square metre",
+			"_symbol": "\\mathrm{kWh\\,m^{-2}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilowatt-hour per square metre (kWh/m²)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of irradiation (energy per unit area) equal to 3 600 000 J/m² = 3 600 W·s/m²."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilowatt-hour per square metre is the conventional unit for cumulative solar irradiation in solar energy applications and some climate datasets. When expressed as kWh/m²/day, it describes the daily irradiation total.\n\nAs an energy-per-area unit (not a power unit), this term represents an accumulated irradiation, not an instantaneous irradiance rate. The SI_factor converts to W/m² under the assumption of a one-day (86 400 s) accumulation period only when used as a daily irradiation unit. For cumulative use, context determines the time base.\n\nConversion (as energy/area): 1 kWh/m² = 3 600 000 J/m². As a daily rate: 1 kWh/m²/day = 3 600 000 / 86 400 W/m² = 41.667 W/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M1H0T-3D0",
+			"QUDT_multiplier": 3600000.0,
+			"SI_factor": 41.666666666667,
+			"UCUM_code": "kWh/m2"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Velocity",
+			"_lid": "m-per-s",
+			"_gid": "unit_Velocity_m-per-s",
+			"_aid": [
+				"m-per-s",
+				"m/s"
+			],
+			"_name": "Metre per second",
+			"_symbol": "\\mathrm{m\\,s^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Metre per second (m/s)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The SI coherent unit of velocity (distance per unit time)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Metre per second is the SI coherent unit for velocity and the pivot for all velocity-unit conversions in this dictionary. In the EUFGIS GeoService, ERA5-Land provides 10 m wind speed in m/s. Mean wind speed is also used as an explanatory variable in evapotranspiration calculations."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T-1D0",
+			"QUDT_multiplier": 1.0,
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "m/s"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Velocity",
+			"_lid": "km-per-h",
+			"_gid": "unit_Velocity_km-per-h",
+			"_aid": [
+				"km-per-h",
+				"km/h"
+			],
+			"_name": "Kilometre per hour",
+			"_symbol": "\\mathrm{km\\,h^{-1}}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilometre per hour (km/h)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of velocity equal to 1/3.6 m/s (approximately 0.277 78 m/s)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Kilometre per hour is the standard unit for wind speed in everyday meteorological communication and weather reports. It is also used in some climate datasets and instruments. Conversion: 1 km/h = 1000/3600 m/s = 5/18 m/s ≈ 0.277 78 m/s."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T-1D0",
+			"QUDT_multiplier": 0.27777777777778,
+			"SI_factor": 0.27777777777778,
+			"UCUM_code": "km/h"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_Velocity",
+			"_lid": "knot",
+			"_gid": "unit_Velocity_knot",
+			"_aid": [
+				"knot",
+				"kn",
+				"kt"
+			],
+			"_name": "Knot",
+			"_symbol": "\\mathrm{kn}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Knot (kn)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of velocity equal to one nautical mile per hour (exactly 1 852/3 600 m/s ≈ 0.514 44 m/s)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The knot is the standard unit for wind speed and vessel speed in nautical and aviation contexts. It is defined as one international nautical mile (1 852 m) per hour. Included for interoperability with meteorological datasets and instruments that report wind speed in knots."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L1I0M0H0T-1D0",
+			"QUDT_multiplier": 0.51444444444444,
+			"SI_factor": 0.51444444444444,
+			"UCUM_code": "[kn_i]"
+		}
+	}
+]

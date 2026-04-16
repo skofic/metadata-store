@@ -43,7 +43,7 @@
 
 `_unit_name` is an optional companion property for numeric and string scalar types, used when the required unit of measurement has no corresponding term in the [`_unit`](_unit.md) controlled vocabulary. The value is a plain UTF-8 string containing the human-readable unit name.
 
-`_unit_name` is mutually exclusive with [`_unit`](_unit.md): if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside [`_unit_symbol`](_unit_symbol.md) to provide both a readable name and a typographic symbol for the same unit.
+`_unit_name` is mutually exclusive with `_unit`: if the unit exists in the controlled vocabulary, use `_unit` instead. It may appear alongside [`_unit_symbol`](_unit_symbol.md) to provide both a readable name and a typographic symbol for the same unit.
 
 **[Examples](_examples.md)**
 

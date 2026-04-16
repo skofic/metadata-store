@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_string` serves a dual role. As a type key inside [`_scalar`](_scalar.md), it declares that the value is any UTF-8 string. [`_regexp`](_regexp.md) may be used to constrain the accepted format. As a parent type, it is the root of all `_string_*` sub-types, which carry their own format constraint and do not accept [`_regexp`](_regexp.md).
+`_string` serves a dual role. As a type key inside [`_scalar`](_scalar.md), it declares that the value is any UTF-8 string. [`_regexp`](_regexp.md) may be used to constrain the accepted format. As a parent type, it is the root of all `_string_*` sub-types, which carry their own format constraint and do not accept `_regexp`.
 
 Unlike [`_text`](_text.md), `_string` values are expected to be short and indexable — suitable for use as tags, property names, or dictionary keys. Comparable; may appear in sets and as dictionary keys.
 

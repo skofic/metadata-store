@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_range` is a typedef term defining the shape of a numeric range object used by [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md). It is not used directly as a `_data` type — only through `_typedef: "_range"`.
+`_range` is a typedef term defining the shape of a numeric range object used by [`_range_valid`](_range_valid.md) and [`_range_normal`](_range_normal.md). It is not used directly as a [`_data`](_data.md) type — only through `_typedef: "_range"`.
 
 A range object may contain:
 - A lower bound: exactly one of [`_min-inclusive`](_min-inclusive.md) (≥) or [`_min-exclusive`](_min-exclusive.md) (>).

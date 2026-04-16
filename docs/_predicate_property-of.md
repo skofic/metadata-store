@@ -47,7 +47,7 @@
 
 **Presence-triggered rules**: when [`_path_data`](_path_data.md) is non-empty, the schema constraint stored there activates whenever `_from` is present in the object — regardless of its value. The primary use case is mutual exclusion: when [`_unit`](_unit.md) is present (any value), [`_unit_name`](_unit_name.md) and [`_unit_symbol`](_unit_symbol.md) must be absent. This cannot be expressed with [`_predicate_value-of`](_predicate_value-of.md) because the constraint is not tied to any specific value.
 
-Use `_open` for presence-triggered rules unless the property's presence alone fully determines the complete allowed set — which is rare.
+Use [`_open`](_open.md) for presence-triggered rules unless the property's presence alone fully determines the complete allowed set — which is rare.
 
 Note: for **passive properties** whose presence triggers no conditional rule, a `_predicate_property-of` edge with empty `_path_data` may be omitted. Membership for such properties is implicitly declared by their appearance in [`_recommended`](_recommended.md) lists of type and kind conditional rules. Tooling that inspects schema membership must therefore read both property-of edges and `_recommended` lists.
 

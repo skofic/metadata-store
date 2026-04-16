@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_any` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as optional — no candidates are required unless `_min-items` is set. Its value is an object that may contain [`_min-items`](_min-items.md), [`_max-items`](_max-items.md), or both, or it may be empty.
+`_any` is one of two selector types within [`_selectors`](_selectors.md). It marks its candidate group as optional — no candidates are required unless [`_min-items`](_min-items.md) is set. Its value is an object that may contain `_min-items`, [`_max-items`](_max-items.md), or both, or it may be empty.
 
 - **`_any: {}`** — no constraint. Any number of candidates — including none — may be present.
 - **`_any: {_max-items: N}`** — at most *N* candidates may be present; zero is still valid.
@@ -73,7 +73,7 @@ Zero, one, two, or all three of the unit properties may be present. No count con
 }
 ```
 
-At most one schema form may be present. Zero is valid; both `_open` and `_closed` simultaneously is invalid.
+At most one schema form may be present. Zero is valid; both [`_open`](_open.md) and [`_closed`](_closed.md) simultaneously is invalid.
 
 ---
 

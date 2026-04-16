@@ -43,7 +43,7 @@
 
 `_unit` is an optional companion property accepted by [`_number`](_number.md), [`_number_float`](_number_float.md), [`_number_integer`](_number_integer.md), and [`_string`](_string.md). When present, it declares the unit of measurement by referencing a single term from the `_unit` controlled vocabulary.
 
-The value is an [`_enum`](_enum.md) scalar — the `_gid` of the enumeration element that identifies the unit, constrained to the `_unit` enumeration root.
+The value is an [`_enum`](_enum.md) scalar — the [`_gid`](_gid.md) of the enumeration element that identifies the unit, constrained to the `_unit` enumeration root.
 
 `_unit` is mutually exclusive with [`_unit_name`](_unit_name.md) and [`_unit_symbol`](_unit_symbol.md). When `_unit` is present, neither `_unit_name` nor `_unit_symbol` may appear in the same scalar descriptor.
 

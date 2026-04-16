@@ -1,0 +1,703 @@
+[
+	{
+		"_code": {
+			"_lid": "unit",
+			"_gid": "unit",
+			"_aid": [
+				"unit"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Units of measurement"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Root namespace and enumeration root for the physical unit ontology of the data dictionary."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This namespace organises the dictionary's unit terms into a two-level hierarchy. The first level is **quantity kinds** — categories of physical measurement such as length, temperature, or pressure. Each quantity kind is itself a sub-namespace whose members are the individual **unit terms** that express measurements of that kind (e.g., metre, kilometre, foot for length).\n\nAll unit terms carry a [`_prop`](_prop.md) section with SI conversion parameters ([`SI_factor`](SI_factor.md), [`SI_offset`](SI_offset.md)) that define the linear formula `SI_value = value × SI_factor + SI_offset`. This enables runtime conversion between any two units of the same quantity kind via their shared SI coherent unit as an intermediate pivot. The SI coherent unit of each quantity kind has [`SI_base`](SI_base.md)`: true` and `SI_factor: 1.0`.\n\nUnit terms carry cross-references to three external standards:\n\n- **SI** (Système International d'Unités) — the international metric system, maintained by the [BIPM](https://www.bipm.org/en/measurement-units). The `SI_factor` and `SI_offset` properties encode the linear conversion to the SI coherent unit for each quantity kind.\n- **UCUM** (Unified Code for Units of Measure) — a code system for machine-readable unit expressions used in health informatics and scientific data exchange, maintained by the [Regenstrief Institute](https://ucum.org). The [`UCUM_code`](UCUM_code.md) property stores the case-sensitive UCUM expression for each unit.\n- **QUDT** (Quantities, Units, Dimensions and Types) — an open RDF/OWL ontology for scientific measurement, published at [qudt.org](https://qudt.org). The [`QUDT_multiplier`](QUDT_multiplier.md), [`QUDT_offset`](QUDT_offset.md), and [`QUDT_dimension_vector`](QUDT_dimension_vector.md) properties store values sourced from QUDT at import time.\n\nConversion relationships between units of the same quantity kind are encoded as bidirectional [`_predicate_converts-to`](_predicate_converts-to.md) edges. Each edge stores both conversion directions in [`_path_data`](_path_data.md) keyed by the target unit handle."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Length",
+			"_gid": "unit_Length",
+			"_aid": [
+				"Length"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Length"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for one-dimensional spatial extent."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Length measures the distance between two points along a straight line. The SI coherent unit is the **metre** ([`unit_Length_m`](unit_Length_m.md)).\n\nDimensional analysis (QUDT): `A0E0L1I0M0H0T0D0`.\n\nIn the EUFGIS database, length units appear in elevation (m), tree height (m), canopy height (m), crown dimensions (m), trunk circumference (cm), soil depth (cm), rooting depth (cm), and precipitation depth expressed as a liquid water equivalent (mm). Imperial units (foot, inch, mile) are included for interoperability with datasets that use them."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Area",
+			"_gid": "unit_Area",
+			"_aid": [
+				"Area"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for two-dimensional spatial extent."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Area measures the size of a two-dimensional region. The SI coherent unit is the **square metre** ([`unit_Area_m2`](unit_Area_m2.md)).\n\nDimensional analysis (QUDT): `A0E0L2I0M0H0T0D0`.\n\nIn the EUFGIS database, area units appear in GCU footprint area (m²), sapwood cross-sectional area (cm²), crown projected area (m²), and clone spatial extent (m²). The hectare (ha) and square kilometre (km²) are used for landscape-scale reporting. The acre is included for international interoperability."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Volume",
+			"_gid": "unit_Volume",
+			"_aid": [
+				"Volume"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Volume"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for three-dimensional spatial extent."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Volume measures the amount of three-dimensional space enclosed by a boundary. The SI coherent unit is the **cubic metre** ([`unit_Volume_m3`](unit_Volume_m3.md)).\n\nDimensional analysis (QUDT): `A0E0L3I0M0H0T0D0`.\n\nVolume units are used in dendrology (crown volume estimation), soil science (sample volumes), and forestry modelling. The litre (L) and millilitre (mL) are included as practical laboratory units."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "PlaneAngle",
+			"_gid": "unit_PlaneAngle",
+			"_aid": [
+				"PlaneAngle"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Plane angle"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the angle between two rays sharing a common endpoint, measured in a single plane."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Plane angle is technically a dimensionless quantity (the ratio of arc length to radius), but it is treated as a distinct quantity kind in practice. The SI coherent unit is the **radian** ([`unit_PlaneAngle_rad`](unit_PlaneAngle_rad.md)).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless).\n\nIn the EUFGIS database, angle units appear in topographic measurements (slope in degrees, aspect in degrees) and in geographic coordinates (decimal degrees of latitude and longitude). The degree (°), decimal degree (DD), and gradian (grad) are the practical units used by field instruments and GIS systems."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Mass",
+			"_gid": "unit_Mass",
+			"_aid": [
+				"Mass"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mass"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the amount of matter in an object."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mass is one of the seven SI base quantities. The SI coherent unit is the **kilogram** ([`unit_Mass_kg`](unit_Mass_kg.md)).\n\nDimensional analysis (QUDT): `A0E0L0I0M1H0T0D0`.\n\nIn the EUFGIS database, mass units appear in biomass computations (tonnes), leaf dry mass measurements (grams, milligrams), and wood sample weights (grams). The metric tonne (t, equal to 1 Mg = 1000 kg) is widely used in forest biomass reporting."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "MassDensity",
+			"_gid": "unit_MassDensity",
+			"_aid": [
+				"MassDensity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mass density"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for mass per unit volume."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mass density (volumetric mass density) is the mass of a substance divided by its volume. The SI coherent unit is the **kilogram per cubic metre** ([`unit_MassDensity_kg-per-m3`](unit_MassDensity_kg-per-m3.md)).\n\nDimensional analysis (QUDT): `A0E0L-3I0M1H0T0D0`.\n\nIn the EUFGIS database, mass density appears in wood density measurements, which are conventionally expressed in grams per cubic centimetre (g/cm³). A wood density of 0.5 g/cm³ equals 500 kg/m³."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Pressure",
+			"_gid": "unit_Pressure",
+			"_aid": [
+				"Pressure"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Pressure"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for force per unit area."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Pressure is force applied perpendicular to a surface divided by the area of that surface. The SI coherent unit is the **pascal** ([`unit_Pressure_Pa`](unit_Pressure_Pa.md), equal to 1 N/m² = 1 kg·m⁻¹·s⁻²).\n\nDimensional analysis (QUDT): `A0E0L-1I0M1H0T-2D0`.\n\nIn the EUFGIS database, pressure units cover several distinct physical phenomena: plant water potential (turgor loss point, xylem embolism P50) in megapascals (MPa, negative values); atmospheric vapour pressure deficit (VPD) in kilopascals (kPa) or hectopascals (hPa); and atmospheric pressure in hectopascals. Negative water potential values indicate water stress — the more negative, the greater the tension in the xylem."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Temperature",
+			"_gid": "unit_Temperature",
+			"_aid": [
+				"Temperature"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Thermodynamic temperature"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for thermodynamic temperature, measuring thermal energy relative to absolute zero."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Thermodynamic temperature is one of the seven SI base quantities. The SI coherent unit is the **kelvin** ([`unit_Temperature_K`](unit_Temperature_K.md)), where 0 K is absolute zero.\n\nDimensional analysis (QUDT): `A0E0L0I0M0H1T0D0`.\n\nIn the EUFGIS database, temperature units are used for: air temperature (K or °C in climate datasets), land surface temperature from MODIS (K), soil temperature at multiple depths (K), and growing degree-days (°C·day). The Celsius scale is offset from kelvin by exactly 273.15 K. The Fahrenheit scale is included for international interoperability."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Duration",
+			"_gid": "unit_Duration",
+			"_aid": [
+				"Duration"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Duration"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for a measured interval of time between two events."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Duration (time interval) is derived from time, one of the seven SI base quantities. The SI coherent unit is the **second** ([`unit_Duration_s`](unit_Duration_s.md)).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T1D0`.\n\nIn the EUFGIS database, duration units appear in: tree age (years), satellite observation cadence (days, 8-day, 16-day composites), growing season length (days), snow cover duration (days), drought duration (days), and temporal trend slopes expressed per month or per year. Practical calendar units (day, month, year) are used throughout despite not being strict SI units."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Frequency",
+			"_gid": "unit_Frequency",
+			"_aid": [
+				"Frequency"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Frequency"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the number of occurrences of a repeating event per unit time."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Frequency is the reciprocal of the period of a periodic phenomenon. The SI coherent unit is the **hertz** ([`unit_Frequency_Hz`](unit_Frequency_Hz.md), equal to 1/s).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T-1D0`.\n\nIn the EUFGIS database, frequency-like units express rates of occurrence over ecological time scales: number of frost events per year, number of growing days per year, number of drought events per season. These are practically expressed as per-day, per-month, or per-year rates rather than in hertz."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Irradiance",
+			"_gid": "unit_Irradiance",
+			"_aid": [
+				"Irradiance"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Irradiance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for radiant power received per unit area of a surface."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Irradiance is the power of electromagnetic radiation incident on a unit area. The SI coherent unit is the **watt per square metre** ([`unit_Irradiance_W-per-m2`](unit_Irradiance_W-per-m2.md), equal to kg·s⁻³).\n\nDimensional analysis (QUDT): `A0E0L0I0M1H0T-3D0`.\n\nIn the EUFGIS database, irradiance units cover: downwelling shortwave solar radiation (`rsds`) from ERA5 and CHELSA in W/m²; solar radiation from WorldClim in kJ/m²/day; and surface latent heat flux (`slhf`) from ERA5 in W/m². The kilowatt-hour per square metre (kWh/m²) is included for energy-sector interoperability."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Velocity",
+			"_gid": "unit_Velocity",
+			"_aid": [
+				"Velocity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Velocity"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the rate of change of position with respect to time."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Velocity (or speed when direction is not specified) is distance divided by time. The SI coherent unit is the **metre per second** ([`unit_Velocity_m-per-s`](unit_Velocity_m-per-s.md)).\n\nDimensional analysis (QUDT): `A0E0L1I0M0H0T-1D0`.\n\nIn the EUFGIS database, velocity units appear exclusively as wind speed, typically expressed in metres per second (ERA5, CHELSA) or kilometres per hour. The knot is included for interoperability with meteorological datasets that follow nautical conventions."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "MassFluxDensity",
+			"_gid": "unit_MassFluxDensity",
+			"_aid": [
+				"MassFluxDensity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mass flux density"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the mass flow rate per unit area of a surface."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mass flux density is the rate at which mass passes through a unit area per unit time. The SI coherent unit is the **kilogram per square metre per second** ([`unit_MassFluxDensity_kg-per-m2-per-s`](unit_MassFluxDensity_kg-per-m2-per-s.md), equal to kg·m⁻²·s⁻¹).\n\nDimensional analysis (QUDT): `A0E0L-2I0M1H0T-1D0`.\n\nIn the EUFGIS database, mass flux density units express rates of material deposition or exchange over land surface: precipitation rate (kg/m²/s in ERA5, equivalent to mm/s of water depth), evapotranspiration, and biomass accumulation rates. For ecological reporting, the practical units are kg/m²/day and g/m²/day."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "CarbonFluxDensity",
+			"_gid": "unit_CarbonFluxDensity",
+			"_aid": [
+				"CarbonFluxDensity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Carbon flux density"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the mass flow rate of carbon per unit area of land surface."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Carbon flux density is a specialisation of mass flux density where the transported substance is carbon (C). It has the same physical dimension as mass flux density. The SI coherent unit is the **kilogram of carbon per square metre per second** ([`unit_CarbonFluxDensity_kgC-per-m2-per-s`](unit_CarbonFluxDensity_kgC-per-m2-per-s.md)).\n\nDimensional analysis (QUDT): `A0E0L-2I0M1H0T-1D0`.\n\nIn the EUFGIS database, carbon flux density units appear in remote-sensing gross primary productivity (GPP) and net primary productivity (NPP) products from MODIS, CHELSA, and field models. The conventional ecological units are kg C/m²/day and kg C/m²/year. The 'C' suffix in unit labels marks the mass as carbon-specific, which is essential for correct interpretation in carbon accounting."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "MassPerArea",
+			"_gid": "unit_MassPerArea",
+			"_aid": [
+				"MassPerArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mass per area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for mass distributed over a unit area of surface."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mass per area (also called areal density or surface density) is the total mass of a substance divided by the area over which it is spread. The SI coherent unit is the **kilogram per square metre** ([`unit_MassPerArea_kg-per-m2`](unit_MassPerArea_kg-per-m2.md), equal to kg·m⁻²).\n\nDimensional analysis (QUDT): `A0E0L-2I0M1H0T0D0`.\n\nIn the EUFGIS database, mass per area units are central to biomass reporting. Above-ground biomass from ESA CCI, field measurements, and carbon stock estimates are expressed in tonnes per hectare (t/ha), where 1 t/ha = 0.1 kg/m². Megagram per hectare (Mg/ha) is numerically identical to t/ha and is used in scientific publications. Snow water equivalent is expressed in mm, which equals kg/m²."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "AreaRatio",
+			"_gid": "unit_AreaRatio",
+			"_aid": [
+				"AreaRatio"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Area ratio"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the ratio of one area to another area of the same unit."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Area ratio is a dimensionless quantity that expresses one area as a fraction of another. The SI coherent unit is the **square metre per square metre** ([`unit_AreaRatio_m2-per-m2`](unit_AreaRatio_m2-per-m2.md), numerically equal to 1).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless).\n\nIn the EUFGIS database, area ratio units appear in: leaf area index (LAI, m²/m² — one-sided leaf area per unit ground area), plant area index (PAI, m² of plant per m² of soil), and the Huber value (sapwood cross-sectional area per subtended leaf area, expressed in cm²/m²). The area ratio is distinguished from a plain dimensionless ratio because its physical interpretation — two commensurate areas — is meaningful for ecological modelling."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "AreaPerMass",
+			"_gid": "unit_AreaPerMass",
+			"_aid": [
+				"AreaPerMass"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Area per mass"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for surface area per unit mass."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Area per mass expresses how much area is associated with a given mass of material. The SI coherent unit is the **square metre per kilogram** ([`unit_AreaPerMass_m2-per-kg`](unit_AreaPerMass_m2-per-kg.md), equal to m²·kg⁻¹).\n\nDimensional analysis (QUDT): `A0E0L2I0M-1H0T0D0`.\n\nIn the EUFGIS database, area per mass units appear in specific leaf area (SLA) measurements — the ratio of projected leaf area to leaf dry mass. SLA is conventionally expressed in cm²/g or cm²/kg. A related unit mm²/mg is used in some publications and is numerically identical to m²/kg. High SLA indicates thin, productive leaves with short lifespan; low SLA indicates thick, long-lived leaves."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "VolumetricRatio",
+			"_gid": "unit_VolumetricRatio",
+			"_aid": [
+				"VolumetricRatio"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Volumetric ratio"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the ratio of one volume to another volume of the same unit."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Volumetric ratio is a dimensionless quantity expressing one volume as a fraction of another. The SI coherent unit is the **cubic metre per cubic metre** ([`unit_VolumetricRatio_m3-per-m3`](unit_VolumetricRatio_m3-per-m3.md), numerically equal to 1).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless).\n\nIn the EUFGIS database, volumetric ratio units appear in soil volumetric water content (VWC) from ERA5-Land, expressed as m³ of water per m³ of soil. ERA5 provides VWC at four soil depths (0–7 cm, 7–28 cm, 28–100 cm, 100–289 cm). Values range from 0 (completely dry) to about 0.6 (saturated clay soil)."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "MassRatio",
+			"_gid": "unit_MassRatio",
+			"_aid": [
+				"MassRatio"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mass ratio"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the ratio of one mass to another mass of the same unit."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mass ratio is a dimensionless quantity expressing one mass as a fraction of another. The SI coherent unit is the **kilogram per kilogram** ([`unit_MassRatio_kg-per-kg`](unit_MassRatio_kg-per-kg.md), numerically equal to 1).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless).\n\nIn the EUFGIS database, mass ratio units appear in canopy fuel moisture content — the mass of water per mass of dry leaf matter (g H₂O / g dry matter). This quantity is a key driver of wildfire ignition risk in the SurEau model; when the canopy moisture content falls below 0.66 g/g, flammability increases sharply."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "MolarFluxDensity",
+			"_gid": "unit_MolarFluxDensity",
+			"_aid": [
+				"MolarFluxDensity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Molar flux density"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the molar flow rate of a substance per unit area."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Molar flux density (also called molar flux or molar conductance per area) is the amount of substance crossing a unit area per unit time. The SI coherent unit is the **mole per square metre per second** ([`unit_MolarFluxDensity_mol-per-m2-per-s`](unit_MolarFluxDensity_mol-per-m2-per-s.md), equal to mol·m⁻²·s⁻¹).\n\nDimensional analysis (QUDT): `A1E0L-2I0M0H0T-1D0`.\n\nIn the EUFGIS database, molar flux density units appear in stomatal and residual leaf conductance measurements. Leaf conductance to water vapour (Gres — residual conductance after stomatal closure) is conventionally expressed in millimoles per square metre per second (mmol/m²/s). A high residual conductance means the leaf continues to lose water at a significant rate even when stomata are fully closed."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "HydraulicCapacitance",
+			"_gid": "unit_HydraulicCapacitance",
+			"_aid": [
+				"HydraulicCapacitance"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hydraulic capacitance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the change in relative water content of plant tissue per unit change in water potential."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Hydraulic capacitance is a plant physiology quantity that describes the ability of tissue to buffer changes in water potential by releasing stored water. It is the ratio of a fractional change in tissue water content (expressed as % relative water content, %RWC) to the corresponding change in water potential (expressed in MPa). The SI coherent unit is the **pascal inverse** ([`unit_HydraulicCapacitance_per-Pa`](unit_HydraulicCapacitance_per-Pa.md), equal to m·kg⁻¹·s²), since %RWC is dimensionless and MPa is pressure.\n\nDimensional analysis (QUDT): `A0E0L1I0M-1H0T2D0`.\n\nIn the EUFGIS database, hydraulic capacitance (Cbranch) is expressed in %RWC MPa⁻¹. A high capacitance means the branch can buffer a large change in water potential from a relatively small release of stored water, buffering the plant against rapid desiccation during drought."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "DegreeDays",
+			"_gid": "unit_DegreeDays",
+			"_aid": [
+				"DegreeDays"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Degree-days"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the product of temperature difference and duration, used in phenological and climate modelling."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Degree-days accumulate the temperature excess (or deficit) above a baseline threshold over time. They are used to model biological development rates that depend on thermal energy rather than elapsed time. The physical SI coherent unit is the **kelvin-second** (K·s), but that unit is not represented in this dictionary. The conventional ecological unit is the **degree-Celsius-day** ([`unit_DegreeDays_deg-C-day`](unit_DegreeDays_deg-C-day.md)), equal to 86 400 K·s.\n\nDimensional analysis (QUDT): `A0E0L0I0M0H1T1D0`.\n\nIn the EUFGIS database, growing degree-days (GDD) appear in CHELSA bioclimatic variables: GDD0 (base 0 °C), GDD5 (base 5 °C), and GDD10 (base 10 °C). Each counts the cumulative daily temperature excess above the baseline for the growing season, providing a thermal time index for phenological modelling."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Dimensionless",
+			"_gid": "unit_Dimensionless",
+			"_aid": [
+				"Dimensionless"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dimensionless"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for pure ratios and indices that have no physical dimension."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Dimensionless quantities are ratios of two commensurable physical quantities, so their units cancel. The SI coherent unit is the **unit one** ([`unit_Dimensionless_1`](unit_Dimensionless_1.md), numerically equal to 1).\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0`.\n\nIn the EUFGIS database, dimensionless units appear in all remote-sensing spectral indices and ecological ratios that are not expressed as percentages: NDVI (−1 to 1), NDWI (−1 to 1), FPAR (0 to 1), SMI (0 to 1), aridity index, proportions (0 to 1), and population genetics indices (Hs, Fst, Fis, allele frequencies, admixture coefficients). All of these are stored as plain floating-point numbers with no scaling."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "Percent",
+			"_gid": "unit_Percent",
+			"_aid": [
+				"Percent"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Percent"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for dimensionless quantities expressed on a scale of 0 to 100."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Percent is a dimensionless unit equal to 0.01 (one hundredth). Values expressed in percent are identical to the corresponding fraction multiplied by 100. The SI coherent unit is the **unit one** ([`unit_Dimensionless_1`](unit_Dimensionless_1.md)); the percent unit ([`unit_Percent_pct`](unit_Percent_pct.md)) has `SI_factor: 0.01`.\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless).\n\nIn the EUFGIS database, percent units appear in: relative humidity (0–100%), cloud cover fraction (clt, 0–100%), soil coarse element proportion (0–100%), canopy defoliation class (%RWC in hydraulic capacitance), and desiccation risk (percentage loss of hydraulic conductance, 0–100%). Percent and the pure dimensionless ratio are kept as separate quantity kinds because 80% and 0.80 convey the same quantity but require different scale expectations in a user interface."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "SequenceLength",
+			"_gid": "unit_SequenceLength",
+			"_aid": [
+				"SequenceLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sequence length"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Quantity kind for the number of nucleotide base pairs in a DNA or RNA sequence."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Sequence length counts the number of nucleotide base pairs (bp) in a sequenced DNA or RNA fragment. It is a dimensionless integer count, but the base pair (bp) is the conventional unit in genomics and bioinformatics. The base unit is the **base pair** ([`unit_SequenceLength_bp`](unit_SequenceLength_bp.md)), with the SI coherent unit being the dimensionless count 1.\n\nDimensional analysis (QUDT): `A0E0L0I0M0H0T0D0` (dimensionless count).\n\nIn the EUFGIS database, sequence length appears in the metadata of genetic marker datasets: the length of the sequenced loci used to compute genetic diversity indices. Genome-scale analyses require kilobase (kb), megabase (Mb), and gigabase (Gb) units. UCUM codes: `bp`, `kbp`, `Mbp`, `Gbp`."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-root",
+				"_term_role_namespace"
+			]
+		}
+	}
+]

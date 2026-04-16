@@ -43,7 +43,7 @@
 
 `_range_valid` is an optional companion property for numeric scalar types. When present, the stored value must fall within the specified boundaries; a value outside the valid range is treated as a **validation error**.
 
-The value is a [`_range`](_range.md) object — it must contain at least one bound: a minimum (`_min-inclusive` or `_min-exclusive`) or a maximum (`_max-inclusive` or `_max-exclusive`), or both. At most one min-bound and one max-bound may be present.
+The value is a [`_range`](_range.md) object — it must contain at least one bound: a minimum ([`_min-inclusive`](_min-inclusive.md) or [`_min-exclusive`](_min-exclusive.md)) or a maximum ([`_max-inclusive`](_max-inclusive.md) or [`_max-exclusive`](_max-exclusive.md)), or both. At most one min-bound and one max-bound may be present.
 
 For non-critical out-of-range values that should be flagged as outliers rather than errors, use [`_range_normal`](_range_normal.md) instead.
 

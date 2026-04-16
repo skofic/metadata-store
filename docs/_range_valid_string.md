@@ -43,7 +43,7 @@
 
 `_range_valid_string` is an optional companion property for string scalar types. When present, the stored string value must fall within the specified lexicographic boundaries; a value outside the valid range is treated as a **validation error**.
 
-The value is a [`_range_string`](_range_string.md) object containing at least one of `_string_min-inclusive`, `_string_min-exclusive`, `_string_max-inclusive`, `_string_max-exclusive`. Comparison is lexicographic (code-point order).
+The value is a [`_range_string`](_range_string.md) object containing at least one of [`_string_min-inclusive`](_string_min-inclusive.md), [`_string_min-exclusive`](_string_min-exclusive.md), [`_string_max-inclusive`](_string_max-inclusive.md), [`_string_max-exclusive`](_string_max-exclusive.md). Comparison is lexicographic (code-point order).
 
 For date and time types, lexicographic order corresponds to chronological order because these formats are designed to sort correctly as strings.
 

@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_term_key_descriptor` is used when a property value must be the `_gid` of a descriptor term. A descriptor is any term that carries a [`_data`](_data.md) section. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
+`_term_key_descriptor` is used when a property value must be the [`_gid`](_gid.md) of a descriptor term. A descriptor is any term that carries a [`_data`](_data.md) section. A sub-type of [`_term_key`](_term_key.md). Comparable; may appear in sets and as dictionary keys.
 
 **[Examples](_examples.md)**
 

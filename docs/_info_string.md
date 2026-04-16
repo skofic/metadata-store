@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_info_string` defines the structure shared by all plain-text `_info` properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the `ISO_639_3` enumeration. Its values are plain text strings — no Markdown, no HTML, no links.
+`_info_string` defines the structure shared by all plain-text [`_info`](_info.md) properties. Its keys are the [`_gid`](_gid.md) values of ISO 639-3 language terms, constrained to the [`ISO_639_3`](ISO_639_3.md) enumeration. Its values are plain text strings — no Markdown, no HTML, no links.
 
 In practice, only [`_title`](_title.md) and [`_definition`](_definition.md) use this type. All other `_info` properties use [`_info_text`](_info_text.md), which allows formatted content.
 

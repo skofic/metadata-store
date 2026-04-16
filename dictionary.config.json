@@ -9,6 +9,7 @@
 		"data/standards",
 		"data/QUDT",
 		"data/UCUM",
-		"data/SI"
+		"data/SI",
+		"data/unit"
 	]
 }

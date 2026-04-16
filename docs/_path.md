@@ -87,7 +87,7 @@ A bridge graph: `MyCountries` is a custom subset that includes Italy from the fu
 }
 ```
 
-The first edge belongs to both graphs: Italy is a member of the full ISO 3166-3 vocabulary and, through the bridge, also a member of `MyCountries`. The second edge marks `terms/ISO_3166_3` as a bridge node within `MyCountries`: during traversal of `MyCountries`, the bridge node is skipped and `terms/ISO_3166_3_ITA` is treated as a direct `_predicate_enum-of` member of `terms/MyCountries`.
+The first edge belongs to both graphs: Italy is a member of the full ISO 3166-3 vocabulary and, through the bridge, also a member of `MyCountries`. The second edge marks `terms/ISO_3166_3` as a bridge node within `MyCountries`: during traversal of `MyCountries`, the bridge node is skipped and `terms/ISO_3166_3_ITA` is treated as a direct [`_predicate_enum-of`](_predicate_enum-of.md) member of `terms/MyCountries`.
 
 To retrieve all members of the `MyCountries` graph:
 

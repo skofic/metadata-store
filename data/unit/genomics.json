@@ -1,0 +1,135 @@
+[
+	{
+		"_code": {
+			"_nid": "unit_SequenceLength",
+			"_lid": "bp",
+			"_gid": "unit_SequenceLength_bp",
+			"_aid": [
+				"bp"
+			],
+			"_name": "Base pair",
+			"_symbol": "\\mathrm{bp}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Base pair (bp)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The fundamental unit of nucleic acid sequence length: one complementary pair of nucleotide bases (adenine–thymine or guanine–cytosine in DNA)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The base pair is the standard unit for measuring the length of DNA or RNA sequences, genomic regions, and chromosomes. One base pair (bp) is the smallest unit of double-stranded nucleic acid sequence and the pivot for all sequence-length conversions in this dictionary.\n\nIn the EUFGIS characterisation database, sequence length appears as the unit for the `chr_SequenceLength` descriptor, which records the number of base pairs of aligned genomic sequence used in population genetic analyses. Typical values range from a few hundred bp (RADseq loci, microsatellite flanking regions) to tens of megabases (whole-chromosome scaffolds).\n\n**Note:** The QUDT ontology does not define base pairs. The UCUM code is `[bp]`. The SI_base flag is set to true because bp is the reference unit for its quantity kind; there is no SI-system coherent unit for sequence length — this is a domain-specific quantity with no physical dimension in the SI framework. The QUDT_dimension_vector `A0E0L0I0M0H0T0D0` (all zeros) is assigned by convention to reflect the dimensionless character of a count."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"SI_base": true,
+			"SI_factor": 1.0,
+			"UCUM_code": "[bp]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_SequenceLength",
+			"_lid": "kb",
+			"_gid": "unit_SequenceLength_kb",
+			"_aid": [
+				"kb"
+			],
+			"_name": "Kilobase pair",
+			"_symbol": "\\mathrm{kb}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Kilobase pair (kb)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of sequence length equal to 1 000 base pairs."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The kilobase pair (kb) is used for gene lengths, intergenic regions, and short-read sequencing library insert sizes. Typical gene lengths in plants range from 1 to 10 kb. RADseq loci used in EUFGIS population genetics studies are typically 100–500 bp, but RADseq library fragments are described in kb."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"SI_factor": 1000.0,
+			"UCUM_code": "[kbp]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_SequenceLength",
+			"_lid": "Mb",
+			"_gid": "unit_SequenceLength_Mb",
+			"_aid": [
+				"Mb"
+			],
+			"_name": "Megabase pair",
+			"_symbol": "\\mathrm{Mb}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Megabase pair (Mb)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of sequence length equal to 10⁶ base pairs."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The megabase pair (Mb) is used for genome assembly scaffold sizes, chromosome lengths, and whole-genome comparisons. Tree genomes typically range from 400 Mb (poplar) to several gigabases (conifers can exceed 20 Gb). Genomic windows for landscape genomics analyses in EUFGIS studies are often defined in Mb."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"SI_factor": 1000000.0,
+			"UCUM_code": "[Mbp]"
+		}
+	},
+	{
+		"_code": {
+			"_nid": "unit_SequenceLength",
+			"_lid": "Gb",
+			"_gid": "unit_SequenceLength_Gb",
+			"_aid": [
+				"Gb"
+			],
+			"_name": "Gigabase pair",
+			"_symbol": "\\mathrm{Gb}"
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Gigabase pair (Gb)"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unit of sequence length equal to 10⁹ base pairs."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The gigabase pair (Gb) is the appropriate unit for whole-genome sizes. Many economically and ecologically important tree genomes are in the gigabase range: Norway spruce (Picea abies) ≈ 19.6 Gb, Scots pine (Pinus sylvestris) ≈ 22 Gb, pedunculate oak (Quercus robur) ≈ 0.81 Gb. Reporting genome size in Gb is standard in genomics and genome assembly publications."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		},
+		"_prop": {
+			"QUDT_dimension_vector": "A0E0L0I0M0H0T0D0",
+			"SI_factor": 1000000000.0,
+			"UCUM_code": "[Gbp]"
+		}
+	}
+]

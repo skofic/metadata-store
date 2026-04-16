@@ -55,9 +55,9 @@ Create a `_predicate_value-of` edge for a value whenever **the effective allowed
 The conditional rule object in `_path_data` is keyed by the graph root handle and uses the same form as an object schema constraint:
 
 - **`_closed: {...}`**: replaces the base [`_recommended`](_recommended.md) entirely; the constraint's `_recommended` becomes the complete optional-property whitelist for that value context.
-- **`_open: {...}`**: accumulates — unions with the base `_recommended`; `_banned` entries conditionally remove properties.
+- **`_open: {...}`**: accumulates — unions with the base `_recommended`; [`_banned`](_banned.md) entries conditionally remove properties.
 
-[`_required`](_required.md) always accumulates regardless of closure mode. The same value may produce different conditional rules in different structural contexts: a `_predicate_value-of` edge for [`_type_enum`](_type_enum.md) in [`_scalar`](_scalar.md) (path root `terms/_scalar`) is a separate edge from one in [`_dict_key`](_dict_key.md) (path root `terms/_dict_key`).
+[`_required`](_required.md) always accumulates regardless of closure mode. The same value may produce different conditional rules in different structural contexts: a `_predicate_value-of` edge for [`_enum`](_enum.md) in [`_scalar`](_scalar.md) (path root `terms/_scalar`) is a separate edge from one in [`_dict_key`](_dict_key.md) (path root `terms/_dict_key`).
 
 The rule graph is designed to be **self-sufficient**: both the validator and the UI derive behaviour entirely from the graph, with no out-of-graph knowledge about type semantics.
 
@@ -88,7 +88,7 @@ When [`_scalar`](_scalar.md) contains the key [`_number_integer`](_number_intege
 }
 ```
 
-`_closed` replaces the base recommended set; `_banned` removes `_decimals` unconditionally. The rule applies only within the `terms/_scalar` schema context.
+[`_closed`](_closed.md) replaces the base recommended set; [`_banned`](_banned.md) removes `_decimals` unconditionally. The rule applies only within the `terms/_scalar` schema context.
 
 <details>
 <summary>JSON</summary>

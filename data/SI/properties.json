@@ -16,7 +16,7 @@
 				"ISO_639_3_eng": "Indicates whether the unit is the SI coherent unit for its quantity kind."
 			},
 			"_description": {
-				"ISO_639_3_eng": "When `true`, this unit is the SI coherent derived or base unit for its quantity kind — for example, kilogram per square metre for mass per area, or metre for length. For SI coherent units, [`SI_factor`](SI_factor.md) is `1.0` and [`SI_offset`](SI_offset.md) is absent.\n\nWhen `false`, or when this property is absent, the unit differs from the SI coherent unit and [`SI_factor`](SI_factor.md) (and [`SI_offset`](SI_offset.md) when non-zero) must be applied to convert values."
+				"ISO_639_3_eng": "When `true`, this unit is the SI coherent derived or base unit for its quantity kind — for example, kilogram per square metre for mass per area, or metre for length. For SI coherent units, [`SI_factor`](SI_factor.md) is `1.0` and [`SI_offset`](SI_offset.md) is absent.\n\nWhen `false`, or when this property is absent, the unit differs from the SI coherent unit and `SI_factor` (and `SI_offset` when non-zero) must be applied to convert values."
 			}
 		},
 		"_data": {
@@ -78,7 +78,7 @@
 				"ISO_639_3_eng": "The additive offset applied after the SI factor when converting a value in this unit to the SI coherent unit."
 			},
 			"_description": {
-				"ISO_639_3_eng": "Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × SI_factor + SI_offset\n```\n\nNon-zero only for units whose zero point is shifted relative to the SI coherent unit. The most common case is thermodynamic temperature: 1 °C × 1.0 + 273.15 = 274.15 K.\n\nWhen zero, this property is omitted from the unit term's `_prop` section — do not write `0` or `0.0`. The value is sourced from QUDT's `qudt:conversionOffset` at import time and stored in parallel as [`QUDT_offset`](QUDT_offset.md)."
+				"ISO_639_3_eng": "Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × SI_factor + SI_offset\n```\n\nNon-zero only for units whose zero point is shifted relative to the SI coherent unit. The most common case is thermodynamic temperature: 1 °C × 1.0 + 273.15 = 274.15 K.\n\nWhen zero, this property is omitted from the unit term's [`_prop`](_prop.md) section — do not write `0` or `0.0`. The value is sourced from QUDT's `qudt:conversionOffset` at import time and stored in parallel as [`QUDT_offset`](QUDT_offset.md)."
 			}
 		},
 		"_data": {

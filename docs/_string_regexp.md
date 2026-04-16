@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_string_regexp` declares that the value is a regular expression string. This is distinct from the [`_regexp`](_regexp.md) companion property: [`_regexp`](_regexp.md) holds a *validation pattern* applied to a string value; `_string_regexp` declares that the *stored value itself* is a pattern. No companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets but not as dictionary keys.
+`_string_regexp` declares that the value is a regular expression string. This is distinct from the [`_regexp`](_regexp.md) companion property: `_regexp` holds a *validation pattern* applied to a string value; `_string_regexp` declares that the *stored value itself* is a pattern. No companion properties apply. A sub-type of [`_string`](_string.md). Comparable; may appear in sets but not as dictionary keys.
 
 **[Examples](_examples.md)**
 

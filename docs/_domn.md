@@ -41,9 +41,9 @@
 
 **[Description](_description.md)**
 
-The domains section is a flexible classification container. Unlike the fixed sections of a term (`_code`, `_info`, `_data`, `_prop`), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.
+The domains section is a flexible classification container. Unlike the fixed sections of a term ([`_code`](_code.md), [`_info`](_info.md), [`_data`](_data.md), [`_prop`](_prop.md)), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.
 
-The primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge `_predicate` fields (predicate), and appearance as the `_nid` of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.
+The primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge [`_predicate`](_predicate.md) fields (predicate), and appearance as the [`_nid`](_nid.md) of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.
 
 Authors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_type`](_term_role_type.md), [`_term_role_typedef`](_term_role_typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.
 

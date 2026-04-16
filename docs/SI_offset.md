@@ -49,7 +49,7 @@ SI_value = value × SI_factor + SI_offset
 
 Non-zero only for units whose zero point is shifted relative to the SI coherent unit. The most common case is thermodynamic temperature: 1 °C × 1.0 + 273.15 = 274.15 K.
 
-When zero, this property is omitted from the unit term's `_prop` section — do not write `0` or `0.0`. The value is sourced from QUDT's `qudt:conversionOffset` at import time and stored in parallel as [`QUDT_offset`](QUDT_offset.md).
+When zero, this property is omitted from the unit term's [`_prop`](_prop.md) section — do not write `0` or `0.0`. The value is sourced from QUDT's `qudt:conversionOffset` at import time and stored in parallel as [`QUDT_offset`](QUDT_offset.md).
 
 <details>
 <summary>JSON</summary>

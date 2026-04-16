@@ -68,7 +68,7 @@ A schema that locks the ArangoDB-managed document identifier and revision counte
 }
 ```
 
-`_id` (the ArangoDB document handle, `<collection>/<key>`) and `_rev` (the document revision token) are generated and updated by the database engine. A user submitting a document that includes either property will have those values silently overwritten or the write will be rejected, depending on the application policy.
+[`_id`](_id.md) (the ArangoDB document handle, `<collection>/<key>`) and [`_rev`](_rev.md) (the document revision token) are generated and updated by the database engine. A user submitting a document that includes either property will have those values silently overwritten or the write will be rejected, depending on the application policy.
 
 <details>
 <summary>JSON</summary>

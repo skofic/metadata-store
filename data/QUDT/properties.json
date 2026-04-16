@@ -16,7 +16,7 @@
 				"ISO_639_3_eng": "The additive offset applied after the conversion multiplier when converting a unit value to the SI coherent unit, as recorded in the QUDT ontology."
 			},
 			"_description": {
-				"ISO_639_3_eng": "Sourced from QUDT's `qudt:conversionOffset` RDF property. Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × QUDT_multiplier + QUDT_offset\n```\n\nNon-zero only for units whose zero point differs from the SI coherent unit. The most common case is degrees Celsius: offset = 273.15 (converting to kelvin). When zero, this property is omitted from the unit term's `_prop` section.\n\nThis property records the value as found in the QUDT source. The operational offset used by this dictionary is [`SI_offset`](SI_offset.md)."
+				"ISO_639_3_eng": "Sourced from QUDT's `qudt:conversionOffset` RDF property. Part of the two-parameter linear conversion formula:\n\n```\nSI_value = value × QUDT_multiplier + QUDT_offset\n```\n\nNon-zero only for units whose zero point differs from the SI coherent unit. The most common case is degrees Celsius: offset = 273.15 (converting to kelvin). When zero, this property is omitted from the unit term's [`_prop`](_prop.md) section.\n\nThis property records the value as found in the QUDT source. The operational offset used by this dictionary is [`SI_offset`](SI_offset.md)."
 			}
 		},
 		"_data": {

@@ -41,9 +41,9 @@
 
 **[Description](_description.md)**
 
-`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry `_term_role_typedef` in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.
+`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry [`_term_role_typedef`](_term_role_typedef.md) in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.
 
-When the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its `_data` section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.
+When the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its [`_data`](_data.md) section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.
 
 The three built-in typedef terms are [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md), which encode the full allowed-type lists for scalar, set-element, and dictionary-key contexts respectively. `_typedef` is mutually exclusive with all seven inline shape properties.
 
@@ -59,7 +59,7 @@ Delegating to the built-in scalar type list:
 }
 ```
 
-This is how the [`_scalar`](_scalar.md) shape property itself is defined: it delegates to `_type_scalar`, which encodes the complete list of allowed scalar types.
+This is how the [`_scalar`](_scalar.md) shape property itself is defined: it delegates to [`_type_scalar`](_type_scalar.md), which encodes the complete list of allowed scalar types.
 
 Delegating to the set-compatible type list:
 
@@ -71,7 +71,7 @@ Delegating to the set-compatible type list:
 }
 ```
 
-This is how [`_nested`](_nested.md) is defined: it reuses `_type_comparable` to enforce comparable leaf types.
+This is how [`_nested`](_nested.md) is defined: it reuses [`_type_comparable`](_type_comparable.md) to enforce comparable leaf types.
 
 <details>
 <summary>JSON</summary>

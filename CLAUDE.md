@@ -22,6 +22,56 @@ This project is in early initialization. No source code exists yet. The `.gitign
 
 ---
 
+## Domain Context — EUFGIS / FORGENIUS
+
+This dictionary is built to serve the **EUFGIS** (European Forest Genetic Resources Information System) project at [eufgis.org](https://eufgis.org). EUFGIS catalogues **forest gene conservation units (GCUs)** — defined forest areas managed to conserve the genetic diversity of one or more tree species across Europe.
+
+The current development effort is driven by the **FORGENIUS** project ([forgenius.eu](https://www.forgenius.eu)), which adds characterisation data (remote sensing, field measurements, ecophysiology, modelling) to the existing EUFGIS database.
+
+### Two data source streams
+
+**Stream 1 — GeoService (external environmental databases)**
+Grid and polygon-averaged remote sensing and climate data covering extended Europe. Key sources:
+- **CHELSA v2.1** — high-resolution historical and projected climate (30 arc-seconds); 80+ bioclimatic variables including temperature, precipitation, solar radiation, wind, humidity, aridity, growing degree-days, phenology.
+- **WorldClim v2.1** — global climate surfaces (30 arc-seconds); bioclimatic variables, historical and CMIP6 future scenarios.
+- **ERA5-Land Hourly** — Copernicus reanalysis; temperature at 2m, precipitation, wind, soil moisture and temperature at four depths (7, 28, 100, 289 cm), latent heat flux, solar radiation, relative humidity.
+- **MODIS products** — MOD15A2H (LAI/FPAR), MOD11A2 (land surface temperature), MYD17A2H (gross primary productivity).
+- **EDO** — European Drought Observatory; soil moisture index, combined drought indicator, GRACE water storage anomaly, heat/cold wave index, FAPAR.
+- **ESA CCI Biomass** — 100 m above-ground biomass (5 epochs: 2010–2020).
+- **GLAD Canopy Height** — global 30 m forest canopy height (GEDI + Landsat).
+- **EU-DEM** — 25 m digital elevation model; elevation, slope, aspect.
+- **Copernicus DLT** — dominant leaf type (broadleaved / coniferous) at 10 m.
+- **Sentinel-2 MSI** — NDVI monthly time series.
+- **MODIS NDWI** — normalised difference water index monthly time series.
+
+**Stream 2 — Characterisation Database (scientist-submitted datasets)**
+Field data collected under FORGENIUS WP2 protocol from representative 15 m circular plots around GCUs. Organised into four domains:
+
+| Domain | Key variables | Units |
+|--------|--------------|-------|
+| **Environmental** | Elevation, slope, aspect, land surface temperature, NDVI, NDWI, LAI, GPP, biomass, soil depth, coarse elements, relative humidity | m, °, K, °C, m²/m², t/ha, kg C/m²/day, cm, % |
+| **Forestry** | Tree height, canopy height, CBH/DBH, crown height/length, basal area, tree age, regeneration, dead trees, PAI | m, cm, m²/ha, years |
+| **Phenotypic** | Total tree height, turgor loss point (TLP), xylem embolism (P50), residual conductance (Gres), hydraulic capacitance, Huber value, specific leaf area (SLA), wood density, sapwood area, crown area, basal crown height | m, MPa, mmol/m²/s, %RWC/MPa, cm²/m², cm²/kg, g/cm³, cm² |
+| **Modelled** | Frost damage, desiccation risk (PLC), carbon starvation, wildfire vulnerability, drought index | fraction (0–1), %, g_H₂O/g_DM, days |
+
+### Key terminology
+
+- **GCU** — Gene Conservation Unit: a delineated forest area managed for genetic conservation of a target tree species.
+- **FS tree** — Functional Subset tree: one of the ~10 adult dominant/co-dominant trees measured per plot.
+- **Target species** — the tree species the GCU was designated for (e.g., *Quercus robur*, *Pinus sylvestris*).
+- **NFP** — National Focal Point: the national coordinator submitting GCU data.
+- **WP2 protocol** — the FORGENIUS field measurement protocol defining exactly how each trait is measured.
+
+### Why the unit ontology matters here
+
+Variables arrive with inconsistent unit expressions (`_unit_length_m`, `_unit-name: "t/ha"`, `_unit-symbol: "kg of C/m^2/day"`). The unit ontology will:
+1. Normalise all variable definitions to reference standard unit terms.
+2. Enable automatic SI conversion for cross-variable comparisons.
+3. Power unit-aware UI controls (unit selector, range validation in the user's preferred unit).
+4. Support the conversion edge graph to convert values on the fly between units in the same quantity kind.
+
+---
+
 ## Session Progress
 
 > This section is maintained by Claude and updated at the end of each working session to allow seamless resumption across sessions.
@@ -38,12 +88,32 @@ This project is in early initialization. No source code exists yet. The `.gitign
 - Nothing currently in progress.
 
 ### Pending
-- **Next**: Unit and measurement terms from external standards (SI, UCUM, or similar). These will extend `data/standards/` with namespaces and descriptor terms for physical units.
+- **Next**: Add example descriptor terms provided by the user to the dictionary.
+- Fill skeleton `_info` content in `data/core/_code.json` (`_symbol_print`), `data/QUDT/namespace.json`, `data/QUDT/properties.json`, `data/UCUM/namespace.json`, `data/UCUM/properties.json`, `data/SI/namespace.json`, `data/SI/properties.json` — detailed plan at `/Users/milko/.claude/plans/humble-mapping-sifakis.md`.
 - **Phase 5**: Remaining edge files — rule/schema edges (`_predicate_property-of`, `_predicate_value-of`) for core terms.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-16) — Unit ontology term files complete
+
+Created all individual unit term files under `data/unit/`:
+- `namespace.json` — 26 terms: root `unit` + 25 quantity kind sub-namespaces (carried over from previous session)
+- `geometry.json` — 18 terms: Length (m, cm, mm, km, ft, in, mi), Area (m², cm², ha, km², acre), Volume (m³, cm³, L, mL), PlaneAngle (rad, deg, grad)
+- `mechanics.json` — 13 terms: Mass (kg, g, mg, t, lb), MassDensity (kg/m³, g/cm³), Pressure (Pa, kPa, MPa, hPa, bar, atm)
+- `thermodynamics.json` — 3 terms: Temperature (K, °C, °F)
+- `time.json` — 12 terms: Duration (s, min, h, day, week, month, year, decade), Frequency (Hz, per-day, per-month, per-year)
+- `radiation.json` — 7 terms: Irradiance (W/m², kJ/m²/day, MJ/m²/day, kWh/m²), Velocity (m/s, km/h, knot)
+- `flux.json` — 10 terms: MassFluxDensity (kg/m²/s, kg/m²/day, g/m²/day), CarbonFluxDensity (kgC/m²/s, kgC/m²/day, kgC/m²/year), MassPerArea (kg/m², t/ha, g/m², Mg/ha)
+- `ratios.json` — 12 terms: AreaRatio (m²/m²), AreaPerMass (m²/kg, cm²/g), VolumetricRatio (m³/m³), MassRatio (kg/kg), MolarFluxDensity (mol/m²/s, mmol/m²/s), HydraulicCapacitance (%RWC/MPa, Pa⁻¹), DegreeDays (°C·day), Dimensionless (1), Percent (%)
+- `genomics.json` — 4 terms: SequenceLength (bp, kb, Mb, Gb)
+
+Total: 99 unit terms. Each carries full `_info` and `_prop` with SI_factor, SI_offset (when non-zero), QUDT_multiplier, QUDT_offset (temperature only), UCUM_code, QUDT_dimension_vector.
+
+Ran `assign-roles` (26 role updates, all files normalised) and `term-cards` (106 new cards written).
+
+**Pending for unit ontology**: edge files connecting units to their quantity kind roots (enum-of) and encoding pairwise SI conversion (converts-to bidirectional).
 
 ### Recent session (2026-04-15) — v0.1.1: term generation and role determination
 
@@ -167,6 +237,34 @@ A term is a document with top-level **sections**. Which sections a term contains
 
 > **Note:** The `_rule` section of Version 2 is eliminated. Schema constraints (required/recommended/banned properties) are now expressed inline within `_data._object._open` or `_data._object._closed`.
 
+#### Physical constraints in `_prop` — unit terms
+
+Unit terms may carry a `_range_valid` object in their `_prop` section to express a **physical constraint** imposed by the measurement scale itself — a bound that no value of that unit can ever legitimately exceed, regardless of the quantity being measured.
+
+```json
+{
+    "_prop": {
+        "SI_factor": 1.0,
+        "SI_base": true,
+        "UCUM_code": "K",
+        "_range_valid": { "_min-inclusive": 0 }
+    }
+}
+```
+
+**Scope**: only add `_range_valid` to a unit term when the *unit definition* prohibits certain values. Do not add it for quantities that happen to be non-negative in a given use case (e.g. mass, length, area — all can be negative in displacement or anomaly contexts). The rule applies to:
+
+| Unit kind | Constraint | Rationale |
+|-----------|-----------|-----------|
+| Temperature (K) | `_min-inclusive: 0` | Absolute zero is the physical floor of the kelvin scale |
+| Temperature (°C) | `_min-inclusive: -273.15` | Equivalent absolute zero in Celsius |
+| Temperature (°F) | `_min-inclusive: -459.67` | Equivalent absolute zero in Fahrenheit |
+| Pressure (all units) | `_min-inclusive: 0` | Absolute pressure cannot be negative |
+| Hydraulic capacitance (all units) | `_min-inclusive: 0` | Capacitance is a non-negative ratio by definition |
+| Percent | `_min-inclusive: 0`, `_max-inclusive: 100` | A percentage is bounded to [0, 100] |
+
+**Inheritance and validation semantics**: when a descriptor selects a unit via `_unit` and that unit carries `_range_valid` in its `_prop`, the validator applies the unit's constraint as a hard physical bound in addition to any `_range_valid` declared on the descriptor itself. The effective range is the **intersection** of both: `effective_min = max(unit_min, descriptor_min)` and `effective_max = min(unit_max, descriptor_max)`. A descriptor may narrow but never widen the unit's physical constraint.
+
 ### `_code` Section
 
 The `_code` section provides a series of identifiers for the term.
@@ -278,6 +376,20 @@ The `_info` section contains human-oriented information about the term. All prop
 | `_provider`  | No       | Array of Markdown/HTML strings| Contact information for metadata curators. |
 | `_methods`   | No       | Markdown/HTML string          | Measurement conditions and methods. |
 | `_usage`     | No       | Markdown/HTML string          | How and why the value is used. |
+
+#### Cross-references and link format
+
+Two linking rules govern how term `_gid`s are referenced in Markdown strings. Both are defined in full in `data/core/CLAUDE.md § Link Format`.
+
+**Rule A — Term cards** (`_description`, `_examples`, `_notes`, `_methods`, `_usage`, `_citation`, `_provider`, `_url`; not `_title` or `_definition`):
+- First occurrence of a term `_gid` as a backtick reference → `` [`gid`](gid.md) ``
+- Subsequent occurrences in the same field → plain `` `gid` ``
+- Self-references → always plain backtick, never a link
+- Each field is independent; content inside fenced code blocks is never transformed
+
+**Rule B — Large Markdown documents** (CLAUDE.md files, standalone docs):
+- Term reference in a heading → always a link
+- Within each heading section, first mention resets: first → link, subsequent → plain backtick
 
 #### Alias terms and omitting `_info`
 

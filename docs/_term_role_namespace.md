@@ -41,9 +41,9 @@
 
 **[Description](_description.md)**
 
-Terms tagged with `_term_role_namespace` act as naming containers in the dictionary's identifier hierarchy. When the loader encounters a term whose [`_nid`](_nid.md) field references a `_gid`, it assigns this role to the referenced term, marking it as the namespace parent of those subordinate terms.
+Terms tagged with `_term_role_namespace` act as naming containers in the dictionary's identifier hierarchy. When the loader encounters a term whose [`_nid`](_nid.md) field references a [`_gid`](_gid.md), it assigns this role to the referenced term, marking it as the namespace parent of those subordinate terms.
 
-A namespace is a naming scope — it governs the [`_gid`](_gid.md) computation rule (`_nid + "_" + _lid`) and groups related terms under a shared prefix. It does not constrain valid values the way an enumeration root does. A term may carry both `_term_role_namespace` and [`_term_role_enum-root`](_term_role_enum-root.md) simultaneously: for example, `ISO_3166_1` is both the root of the ISO 3166-1 country code vocabulary and the namespace under which individual country terms (`ISO_3166_1_ITA`, `ISO_3166_1_FRA`, …) are identified.
+A namespace is a naming scope — it governs the `_gid` computation rule (`_nid + "_" + _lid`) and groups related terms under a shared prefix. It does not constrain valid values the way an enumeration root does. A term may carry both `_term_role_namespace` and [`_term_role_enum-root`](_term_role_enum-root.md) simultaneously: for example, [`ISO_3166_1`](ISO_3166_1.md) is both the root of the ISO 3166-1 country code vocabulary and the namespace under which individual country terms ([`ISO_3166_1_ITA`](ISO_3166_1_ITA.md), [`ISO_3166_1_FRA`](ISO_3166_1_FRA.md), …) are identified.
 
 This role is assigned automatically. No user action is required. It can be queried to discover all namespace terms in the dictionary, to build namespace browsers, or to validate that every `_nid` value references a term that exists and carries this role.
 

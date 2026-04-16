@@ -51,11 +51,11 @@ Three distinct cases exist depending on the value of this property:
 - **Empty string** (`""`): the term is a core dictionary building block. The resulting [global identifier](_gid.md) begins with an underscore, marking it as a structural term. This is the only case where `_nid` does not reference an existing term.
 - **Absent**: the term defines a top-level namespace with no parent.
 
-Any term's [global identifier](_gid.md) may serve as a namespace for other terms, allowing namespaces to form chains from general to specific — for example `ISO` → `ISO_3166` → `ISO_3166_3`.
+Any term's [global identifier](_gid.md) may serve as a namespace for other terms, allowing namespaces to form chains from general to specific — for example [`ISO`](ISO.md) → [`ISO_3166`](ISO_3166.md) → [`ISO_3166_3`](ISO_3166_3.md).
 
 **[Examples](_examples.md)**
 
-A term whose namespace is `ISO_3166_3` — the `_nid` must be the [`_gid`](_gid.md) of an existing term:
+A term whose namespace is [`ISO_3166_3`](ISO_3166_3.md) — the `_nid` must be the [`_gid`](_gid.md) of an existing term:
 
 ```json
 {
@@ -68,7 +68,7 @@ A term whose namespace is `ISO_3166_3` — the `_nid` must be the [`_gid`](_gid.
 }
 ```
 
-A core dictionary term with an empty-string namespace — `_nid` is `""` and [`_gid`](_gid.md) begins with an underscore:
+A core dictionary term with an empty-string namespace — `_nid` is `""` and `_gid` begins with an underscore:
 
 ```json
 {
@@ -81,7 +81,7 @@ A core dictionary term with an empty-string namespace — `_nid` is `""` and [`_
 }
 ```
 
-A top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and [`_gid`](_gid.md) are equal:
+A top-level namespace term with `_nid` absent — [`_lid`](_lid.md) and `_gid` are equal:
 
 ```json
 {

@@ -66,7 +66,7 @@ Invalid: `{"_title": {...}}` — no properties are permitted.
 
 ---
 
-**Filled `_closed` section** — `_lid` and `_gid` are required; `_nid`, `_aid`, `_pid` are optional; no other properties are allowed:
+**Filled `_closed` section** — [`_lid`](_lid.md) and [`_gid`](_gid.md) are required; [`_nid`](_nid.md), [`_aid`](_aid.md), [`_pid`](_pid.md) are optional; no other properties are allowed:
 
 ```json
 {
@@ -90,7 +90,7 @@ Invalid: `{"_title": {...}}` — no properties are permitted.
 
 Valid: `{"_lid": "code", "_gid": "_code"}`, `{"_lid": "code", "_gid": "_code", "_nid": "", "_aid": ["code"]}`.
 Invalid: `{"_gid": "_code"}` — `_lid` is missing.
-Invalid: `{"_lid": "code", "_gid": "_code", "_title": {...}}` — `_title` is not in the permitted set.
+Invalid: `{"_lid": "code", "_gid": "_code", "_title": {...}}` — [`_title`](_title.md) is not in the permitted set.
 
 <details>
 <summary>JSON</summary>
