@@ -1,0 +1,178 @@
+[
+	{
+		"_code": {
+			"_lid": "chr",
+			"_gid": "chr",
+			"_aid": [
+				"chr"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Characterisation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Characterisation data."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This category is used as the namespace for characterisation data."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "domain",
+			"_gid": "chr_domain",
+			"_aid": [
+				"domain"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Characterisation domains"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Domains that apply to to characterisation terms."
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "tag",
+			"_gid": "chr_tag",
+			"_aid": [
+				"tag"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Characterisation tags"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Tags that apply to characterisation terms."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "subject",
+			"_gid": "chr_subject",
+			"_aid": [
+				"subject"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Characterisation subject"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The subject of the characterisation dataset record."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "tree",
+			"_gid": "chr_tree",
+			"_aid": [
+				"tree"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tree"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Individual tree."
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "measured",
+			"_gid": "chr_measured",
+			"_aid": [
+				"measured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Measured"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Directly measured observation, not derived from remote sensing."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "trend",
+			"_gid": "chr_trend",
+			"_aid": [
+				"trend"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal dynamics trend."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "operator",
+			"_gid": "chr_operator",
+			"_aid": [
+				"operator"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Operator"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Information about the person that conducted an experiment or measurement."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	}
+]

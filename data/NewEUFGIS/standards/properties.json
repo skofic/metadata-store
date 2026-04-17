@@ -1,0 +1,419 @@
+[
+	{
+		"_code": {
+			"_lid": "geometry",
+			"_gid": "geometry",
+			"_aid": [
+				"geometry"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geographic shape"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "GeoJSON geometry describing a geographic feature."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor can be used to define the geometry of a geographic feature. The value must be a [GeoJSON](https://geojson.org) `geometry` structure."
+			}
+		},
+		"_data": {
+			"_object": {
+				"_object_GeoJSON": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry",
+			"_lid": "area",
+			"_gid": "geometry_area",
+			"_aid": [
+				"area"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geographic shape area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Area of the GeoJSON geometry in square meters."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "unit_Area_m2"
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry",
+			"_lid": "point",
+			"_gid": "geometry_point",
+			"_aid": [
+				"point"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geometry point"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A GeoJSON Point geometry."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor can be used to indicate a precise point in space or the centroid of a complex shape. The value must be a [GeoJSON](https://geojson.org) `Point` geometry."
+			}
+		},
+		"_data": {
+			"_object": {
+				"_object_GeoJSON": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry_point",
+			"_lid": "radius",
+			"_gid": "geometry_point_radius",
+			"_aid": [
+				"radius"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geometry point radius"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The radius from a point or centroid that determines the geometry area."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor can be used, in conjunction with a *centroid* or *point* to determine the area of the current geometry."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 6,
+					"_unit_name": "Decimal degrees",
+					"_unit_symbol": "DD",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 90.0
+					}
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry",
+			"_lid": "bounds",
+			"_gid": "geometry_bounds",
+			"_aid": [
+				"bounds"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geometry bounds"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A GeoJSON geometry enclosing a shape."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor can be used to provide a frame around another shape, it will generally be a polygon that delimits one or more shapes including an optional buffer. These shapes will typically be the [geometry](geometry.md) property of the current object. The value must be a [GeoJSON](https://geojson.org) `geometry` structure.\n\nOne usage is when dealing with raster data of fixed resolution: the geometry could be a point and the geometry bounds could be the bounding box around the point representing the resolution."
+			}
+		},
+		"_data": {
+			"_object": {
+				"_object_GeoJSON": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry",
+			"_lid": "hash",
+			"_gid": "geometry_hash",
+			"_aid": [
+				"hash"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geometry hash"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Unique identifier of a shape or geometry."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor should be the *unique reference* of a [geometry](geometry.md) in a *collection* containing only *distinct geometries*.\n\nThe value is obtained by *hashing* the [geometry](geometry.md) [GeoJSON](https://geojson.org) structure: the result is a *string* that *uniquely identifies* the *shape*. This string *will* then *become* the [unique ID](_key.md) of the *record containing the shape*.\n\nHashing the shape structure allows mixing different geometry types and guarantees that each shape will have a different identifier. Currently we use the [MD5](https://en.wikipedia.org/wiki/MD5) hash function on the string representation of the [geometry](geometry.md).\n\nThe hashing means that if you *change* the *shape* of the polygon, it becomes a *new polygon*. This means that remote sensing data will have to be extracted for that new shape."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string_HEX": {
+					"_regexp": "^[0-9a-f]{32}$"
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geometry_hash",
+			"_lid": "list",
+			"_gid": "geometry_hash_list",
+			"_aid": [
+				"list"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "List of geometry hashes"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "List of shape or geometry unique identifiers."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor contains a list of [unique references](geometry_hash.md) to a [geometry](geometry.md) record belonging to another *collection*."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_string_HEX": {
+					"_regexp": "^[0-9a-f]{32}$"
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_lid": "properties",
+			"_gid": "properties",
+			"_aid": [
+				"properties"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Features or properties."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor is generally used to *group* properties or features in a [GeoJSON](https://geojson.org) record. The goal is to *prevent* having *feature properties* at the *top level* of the *record* and, instead, have a *property* that will *only* contain *feature data*.\n\nThis is not reserved only to geographic records."
+			}
+		},
+		"_data": {
+			"_object": {}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_lid": "count",
+			"_gid": "count",
+			"_aid": [
+				"count"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Count"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of items."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_lid": "genus",
+			"_gid": "genus",
+			"_aid": [
+				"genus"
+			],
+			"_pid": [
+				"Genus"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genus"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "In biological classification, a genus is a rank in the hierarchical system of taxonomy that is above species and below family."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A genus groups together species that are structurally similar or phylogenetically related. The genus name is part of the binomial nomenclature (two-part scientific name) of an organism, where it is the first part and is always capitalized."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_lid": "genera",
+			"_gid": "genera",
+			"_aid": [
+				"genera"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genera"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A list of biological genus names."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A genus groups together species that are structurally similar or phylogenetically related. The genus name is part of the binomial nomenclature (two-part scientific name) of an organism, where it is the first part and is always capitalized. This descriptor represents a list of genus names."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_lid": "species",
+			"_gid": "species",
+			"_aid": [
+				"species"
+			],
+			"_pid": [
+				"Species"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Species"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Tree or population species."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Provide the *species* of the *individual tree* or *population* to which *data* is *referring* to."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Pinus sylvestris, Abies alba, Delonix regia var. genuina"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "species",
+			"_lid": "list",
+			"_gid": "species_list",
+			"_aid": [
+				"list"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Species list"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A list of tree or population species names."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The species name is the second part of the binomial nomenclature and is written in lowercase. This descriptor represents a list of species names."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_string": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
+]

@@ -1,0 +1,447 @@
+[
+	{
+		"_from": "terms/iso_3166_1",
+		"_predicate": "_predicate_bridge-of",
+		"_to": "terms/eufgis_countries",
+		"_path": [
+			"terms/eufgis_countries"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_ownerships_public",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_ownerships",
+		"_path": [
+			"terms/gcu_ownerships"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_ownerships_private",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_ownerships",
+		"_path": [
+			"terms/gcu_ownerships"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_ownerships_both",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_ownerships",
+		"_path": [
+			"terms/gcu_ownerships"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_ownerships_other",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_ownerships",
+		"_path": [
+			"terms/gcu_ownerships"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_types_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_types",
+		"_path": [
+			"terms/gcu_types"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_types_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_types",
+		"_path": [
+			"terms/gcu_types"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_types_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_types",
+		"_path": [
+			"terms/gcu_types"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_types_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_types",
+		"_path": [
+			"terms/gcu_types"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_types_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_types",
+		"_path": [
+			"terms/gcu_types"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_statuses_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_statuses",
+		"_path": [
+			"terms/gcu_pop_statuses"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_statuses_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_statuses",
+		"_path": [
+			"terms/gcu_pop_statuses"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_statuses_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_statuses",
+		"_path": [
+			"terms/gcu_pop_statuses"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_situs_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_situs",
+		"_path": [
+			"terms/gcu_pop_situs"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_situs_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_situs",
+		"_path": [
+			"terms/gcu_pop_situs"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_origins_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_origins",
+		"_path": [
+			"terms/gcu_pop_origins"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_origins_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_origins",
+		"_path": [
+			"terms/gcu_pop_origins"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_origins_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_origins",
+		"_path": [
+			"terms/gcu_pop_origins"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_systems_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_systems_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_systems_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_systems_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_systems_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_systems_6",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_systems",
+		"_path": [
+			"terms/gcu_pop_systems"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_managements_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_managements",
+		"_path": [
+			"terms/gcu_pop_managements"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_managements_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_managements",
+		"_path": [
+			"terms/gcu_pop_managements"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_managements_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_managements",
+		"_path": [
+			"terms/gcu_pop_managements"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_justifications_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_justifications",
+		"_path": [
+			"terms/gcu_pop_justifications"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_justifications_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_justifications",
+		"_path": [
+			"terms/gcu_pop_justifications"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_justifications_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_justifications",
+		"_path": [
+			"terms/gcu_pop_justifications"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_justifications_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_justifications",
+		"_path": [
+			"terms/gcu_pop_justifications"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_reproducing-statuses_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducing-statuses",
+		"_path": [
+			"terms/gcu_pop_reproducing-statuses"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducing-statuses_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducing-statuses",
+		"_path": [
+			"terms/gcu_pop_reproducing-statuses"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducing-statuses_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducing-statuses",
+		"_path": [
+			"terms/gcu_pop_reproducing-statuses"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_reproducings_0",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducings",
+		"_path": [
+			"terms/gcu_pop_reproducings"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducings_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducings",
+		"_path": [
+			"terms/gcu_pop_reproducings"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducings_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducings",
+		"_path": [
+			"terms/gcu_pop_reproducings"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducings_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducings",
+		"_path": [
+			"terms/gcu_pop_reproducings"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_reproducings_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_reproducings",
+		"_path": [
+			"terms/gcu_pop_reproducings"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_sex-ratios_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_sex-ratios",
+		"_path": [
+			"terms/gcu_pop_sex-ratios"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_sex-ratios_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_sex-ratios",
+		"_path": [
+			"terms/gcu_pop_sex-ratios"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_sex-ratios_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_sex-ratios",
+		"_path": [
+			"terms/gcu_pop_sex-ratios"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_regenerations_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_regenerations",
+		"_path": [
+			"terms/gcu_pop_regenerations"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_regenerations_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_regenerations",
+		"_path": [
+			"terms/gcu_pop_regenerations"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_regenerations_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_regenerations",
+		"_path": [
+			"terms/gcu_pop_regenerations"
+		],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/gcu_pop_distributions_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_distributions",
+		"_path": [
+			"terms/gcu_pop_distributions"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_distributions_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_distributions",
+		"_path": [
+			"terms/gcu_pop_distributions"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/gcu_pop_distributions_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/gcu_pop_distributions",
+		"_path": [
+			"terms/gcu_pop_distributions"
+		],
+		"_path_data": {}
+	}
+]

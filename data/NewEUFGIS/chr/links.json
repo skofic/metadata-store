@@ -1,0 +1,335 @@
+[
+	{
+		"_from": "terms/chr_subject_tree",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_subject",
+		"_path": [
+			"terms/chr_subject"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_subject_stand",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_subject",
+		"_path": [
+			"terms/chr_subject"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_subject_GCU",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_subject",
+		"_path": [
+			"terms/chr_subject"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_subject_target",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_subject",
+		"_path": [
+			"terms/chr_subject"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_pheno",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_fore",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_model",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_gent",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_envi",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_multi",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_domain",
+		"_path": [
+			"terms/chr_domain"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_tag_diversity",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_tag",
+		"_path": [
+			"terms/chr_tag"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_tag_distinct-pop",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_tag",
+		"_path": [
+			"terms/chr_tag"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_tag_vulnerability",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_tag",
+		"_path": [
+			"terms/chr_tag"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_DomLeafType_broadleaved",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_DomLeafType",
+		"_path": [
+			"terms/chr_DomLeafType"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_DomLeafType_coniferous",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_DomLeafType",
+		"_path": [
+			"terms/chr_DomLeafType"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_MicroTopography_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_MicroTopography",
+		"_path": [
+			"terms/chr_MicroTopography"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_MicroTopography_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_MicroTopography",
+		"_path": [
+			"terms/chr_MicroTopography"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_MicroTopography_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_MicroTopography",
+		"_path": [
+			"terms/chr_MicroTopography"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_ForestStructure_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_ForestStructure",
+		"_path": [
+			"terms/chr_ForestStructure"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_ForestStructure_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_ForestStructure",
+		"_path": [
+			"terms/chr_ForestStructure"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_ForestStructure_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_ForestStructure",
+		"_path": [
+			"terms/chr_ForestStructure"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_ForestComposition_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_ForestComposition",
+		"_path": [
+			"terms/chr_ForestComposition"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_ForestComposition_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_ForestComposition",
+		"_path": [
+			"terms/chr_ForestComposition"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_Dieback_0",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_Dieback",
+		"_path": [
+			"terms/chr_Dieback"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_Dieback_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_Dieback",
+		"_path": [
+			"terms/chr_Dieback"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_Dieback_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_Dieback",
+		"_path": [
+			"terms/chr_Dieback"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_Dieback_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_Dieback",
+		"_path": [
+			"terms/chr_Dieback"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_TreeSocialStatus_Do",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_TreeSocialStatus",
+		"_path": [
+			"terms/chr_TreeSocialStatus"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_TreeSocialStatus_Co",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_TreeSocialStatus",
+		"_path": [
+			"terms/chr_TreeSocialStatus"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_TreeSocialStatus_de",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_TreeSocialStatus",
+		"_path": [
+			"terms/chr_TreeSocialStatus"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_SoilMethod_auger",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_SoilMethod",
+		"_path": [
+			"terms/chr_SoilMethod"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_SoilMethod_pit",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_SoilMethod",
+		"_path": [
+			"terms/chr_SoilMethod"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_CircBreastHeight_DBH-1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_CircBreastHeight",
+		"_path": [
+			"terms/chr_CircBreastHeight"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_CircBreastHeight_DBH-2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_CircBreastHeight",
+		"_path": [
+			"terms/chr_CircBreastHeight"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_database_NFI",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_database",
+		"_path": [
+			"terms/chr_database"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_database_FF",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_database",
+		"_path": [
+			"terms/chr_database"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/chr_database_BS",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/chr_database",
+		"_path": [
+			"terms/chr_database"
+		],
+		"_path_data": {}
+	}
+]

@@ -402,6 +402,84 @@
 	{
 		"_code": {
 			"_nid": "_predicate",
+			"_lid": "requires",
+			"_gid": "_predicate_requires",
+			"_aid": [
+				"requires"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Requires predicates"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sub-vocabulary of predicates encoding co-occurrence dependencies between characterisation indicators and their required metadata or companion indicators in a dataset record."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The requires sub-vocabulary contains two predicates:\n\n- [`_predicate_requires_indicator`](_predicate_requires_indicator.md): when the destination indicator is present in a dataset record, the source indicator must also be present.\n- [`_predicate_requires_metadata`](_predicate_requires_metadata.md): when the destination indicator is present, the source metadata descriptor must also be present.\n\nThese predicates are used in the dataset validation layer to enforce co-occurrence rules between characterisation measurements and the contextual or ancillary data that must accompany them.\n\nAs a sub-enumeration root, `_predicate_requires` may be used in [`_enums`](_enums.md) to constrain a property to requires predicates only."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate_requires",
+			"_lid": "indicator",
+			"_gid": "_predicate_requires_indicator",
+			"_aid": [
+				"indicator"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Requires indicator"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "When the destination characterisation indicator is present in a dataset record, the source indicator must also be present in the same record."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_requires_indicator` encodes a mandatory co-occurrence dependency between two characterisation indicators. An edge with this predicate states: if [`_to`](_to.md) is recorded in a dataset record, then [`_from`](_from.md) must also appear in that record; if it is absent, the record is invalid.\n\nThis predicate is part of the [`_predicate_requires`](_predicate_requires.md) sub-vocabulary and is used in the dataset validation layer.\n\nTypical use case: a derived ecophysiological indicator (e.g. a ratio or index) that can only be interpreted when its constituent measurements are also present in the same record."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate_requires",
+			"_lid": "metadata",
+			"_gid": "_predicate_requires_metadata",
+			"_aid": [
+				"metadata"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Requires metadata"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "When the destination characterisation indicator is present in a dataset record, the source metadata descriptor must also be present in the same record."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_predicate_requires_metadata` encodes a mandatory co-occurrence dependency between a characterisation indicator and a metadata descriptor. An edge with this predicate states: if [`_to`](_to.md) is recorded in a dataset record, then the metadata descriptor [`_from`](_from.md) must also be present; if it is absent, the record is invalid.\n\nThis predicate is part of the [`_predicate_requires`](_predicate_requires.md) sub-vocabulary and is used in the dataset validation layer.\n\nTypical use case: a measurement indicator that is only meaningful when contextual metadata is present — for example, a field measurement requires the plot identifier and measurement date to be recorded in the same record."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_predicate",
 			"_lid": "bridge-of",
 			"_gid": "_predicate_bridge-of",
 			"_aid": [

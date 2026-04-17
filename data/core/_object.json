@@ -13,10 +13,10 @@
 				"ISO_639_3_eng": "Object"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present."
+				"ISO_639_3_eng": "A data shape for structured objects. Four forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it; an `_object` containing a named object type such as `_object_GeoJSON` delegates validation to a dedicated type-specific validator. At most one of `_open`, `_closed`, or a named type may be present."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Three forms are available depending on what `_object` contains:\n\n- **`{}`** — unrestricted object. The value may have any properties, including properties not defined in the dictionary, or none at all.\n- **`{\"_open\": {...}}`** — [`_open`](_open.md) schema. The constraints listed in `_open` apply, but the object may also contain any additional property defined in the data dictionary.\n- **`{\"_closed\": {...}}`** — [`_closed`](_closed.md) schema. Only the properties listed within `_closed` are permitted; any other property makes the object invalid.\n\nAt most one of `_open` or `_closed` may be present. Having both simultaneously is invalid."
+				"ISO_639_3_eng": "`_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Four forms are available depending on what `_object` contains:\n\n- **`{}`** — unrestricted object. The value may have any properties, including properties not defined in the dictionary, or none at all.\n- **`{\"_open\": {...}}`** — [`_open`](_open.md) schema. The constraints listed in `_open` apply, but the object may also contain any additional property defined in the data dictionary.\n- **`{\"_closed\": {...}}`** — [`_closed`](_closed.md) schema. Only the properties listed within `_closed` are permitted; any other property makes the object invalid.\n- **`{\"_object_GeoJSON\": {}}`** — a named object type. Delegates validation entirely to a type-specific validator rather than the dictionary schema system. [`_object_GeoJSON`](_object_GeoJSON.md) is the first such named type; further named types may be added here without changing the top-level data shape table.\n\nAt most one of `_open`, `_closed`, or a named type key may be present."
 			},
 			"_examples": {
 				"ISO_639_3_eng": "**Unrestricted object** — the descriptor accepts any object structure:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {}\n\t}\n}\n```\n\nThe object may contain any properties (dictionary-defined or not) or be entirely empty.\n\n---\n\n**Open schema** — [`_title`](_title.md) is required; any other dictionary property may also appear:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_open\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_title\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_definition\", \"_description\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_title\": {...}}`, `{\"_title\": {...}, \"_description\": {...}, \"_notes\": {...}}`.\nInvalid: `{}` — `_title` is missing.\n\n---\n\n**Closed schema** — [`_lid`](_lid.md) and [`_gid`](_gid.md) are required; only the listed properties are permitted:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_closed\": {\n\t\t\t\t\"_required\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"_selectors\": [{\"_all\": {}}],\n\t\t\t\t\t\t\"_selection\": [\"_lid\", \"_gid\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"_recommended\": [\"_nid\", \"_aid\", \"_pid\"],\n\t\t\t\t\"_computed\": [\"_gid\", \"_aid\"],\n\t\t\t\t\"_immutable\": [\"_lid\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nValid: `{\"_lid\": \"code\", \"_gid\": \"_code\"}`, `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_nid\": \"\", \"_aid\": [\"code\"]}`.\nInvalid: `{\"_lid\": \"code\", \"_gid\": \"_code\", \"_info\": {...}}` — [`_info`](_info.md) is not in the permitted set."
@@ -29,7 +29,8 @@
 						{
 							"_selection": [
 								"_open",
-								"_closed"
+								"_closed",
+								"_object_GeoJSON"
 							],
 							"_selectors": [
 								{
@@ -46,6 +47,39 @@
 		"_domn": {
 			"_term_role": [
 				"_term_role_data-shape",
+				"_term_role_descriptor",
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_object",
+			"_lid": "GeoJSON",
+			"_gid": "_object_GeoJSON",
+			"_aid": [
+				"GeoJSON"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GeoJSON object"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A data shape for a GeoJSON geometry or feature object conforming to RFC 7946 and compatible with ArangoDB's geospatial indexing requirements. The value is validated against the GeoJSON specification with the additional constraint that polygon exterior rings must be ordered counter-clockwise."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_object_GeoJSON` is a terminal data shape that marks a descriptor's value as a GeoJSON object. Unlike the general [`_object`](_object.md) shape, it carries no schema constraints expressed in the dictionary's rule language — its validation is performed entirely by a dedicated GeoJSON validator enforcing the requirements of both [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946) and ArangoDB's geospatial indexing engine.\n\n**Supported geometry types** (RFC 7946 §3.1):\n\n| Type | `coordinates` structure |\n|------|------------------------|\n| `Point` | `[longitude, latitude]` — a single position |\n| `MultiPoint` | array of positions |\n| `LineString` | array of two or more positions |\n| `MultiLineString` | array of `LineString` coordinate arrays |\n| `Polygon` | array of linear rings (exterior first, then holes) |\n| `MultiPolygon` | array of `Polygon` coordinate arrays |\n| `GeometryCollection` | `geometries` array instead of `coordinates` |\n\n`Feature` and `FeatureCollection` wrappers are also accepted.\n\n**ArangoDB constraint — polygon ring orientation:**\n\nArangoDB's GEO index requires polygon rings to follow the **right-hand rule** (RFC 7946 §3.1.6): exterior rings must be ordered **counter-clockwise** (CCW) and interior rings (holes) **clockwise** (CW). A polygon submitted with rings in the wrong orientation may be silently accepted by the database but will produce incorrect geospatial query results. The validator must enforce CCW/CW orientation before insertion.\n\n**Coordinate order:** GeoJSON always uses `[longitude, latitude]` order — the reverse of the traditional latitude/longitude convention.\n\nThe companion value is always `{}` — no additional configuration properties are defined for this type. Usage in a descriptor's `_data` section:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_object\": {\n\t\t\t\"_object_GeoJSON\": {}\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_closed": {}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_data-type",
 				"_term_role_descriptor"
 			]
 		}

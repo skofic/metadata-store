@@ -88,13 +88,22 @@ Variables arrive with inconsistent unit expressions (`_unit_length_m`, `_unit-na
 - Nothing currently in progress.
 
 ### Pending
-- **Next**: Add example descriptor terms provided by the user to the dictionary.
-- Fill skeleton `_info` content in `data/core/_code.json` (`_symbol_print`), `data/QUDT/namespace.json`, `data/QUDT/properties.json`, `data/UCUM/namespace.json`, `data/UCUM/properties.json`, `data/SI/namespace.json`, `data/SI/properties.json` — detailed plan at `/Users/milko/.claude/plans/humble-mapping-sifakis.md`.
+- **Next**: Build FORGENIUS/EUFGIS domain terms in `data/eufgis/` (user will supply old-format variable definitions for conversion). New units go into `data/unit/` as needed. Once stable, `data/eufgis/` migrates to `metadata-store-eufgis`.
+- **Loader workflow**: Add `workflows/loader/` — scans a directory and loads JSON into ArangoDB. Flag `--validate` for domain data. Domain repos call it twice: core first (no validate), then own data (validate).
 - **Phase 5**: Remaining edge files — rule/schema edges (`_predicate_property-of`, `_predicate_value-of`) for core terms.
 - **Open design questions**:
   1. **Modification cost**: graph-based schemas — cost of renaming/removing a term that acts as a property needs analysis.
   2. **Conflict detection**: general mechanism for detecting contradictory rules (start: check `_path_data` rules against `_banned`).
   3. **UI rendering hints (`_display` section)**: deferred — design after core dictionary structure is stable.
+
+### Recent session (2026-04-17) — v0.1.3: new term roles, _domn.json, unit standard _info
+
+- **New term roles**: `_term_role_data-type` (renamed from `_term_role_type`), `_term_role_data-shape` (new, user-assigned, marks the 7 shape keys), `_term_role_enum-source` (new, auto-computed, assigned when `_gid` appears in any `_enums` array).
+- **`data/core/_domn.json`**: new file containing `_domn`, `_domain`, `_category`, `_tag` with full `_info`. Semantic distinction: domain = scientific field, category = functional role in dictionary, tag = free-form keyword.
+- **`unit_range` descriptor**: moved to `data/unit/properties.json` (not `namespace.json`); uses `_data._typedef: "_range"`; applied to temperature, pressure, hydraulic capacitance, and percent unit terms in `_prop`.
+- **`_info` content**: filled for `_symbol_print` (`data/core/_code.json`) and all terms in `data/QUDT/`, `data/UCUM/`, `data/SI/`.
+- **Multi-repo architecture confirmed**: `metadata-store` = core + loader workflow (no validate); domain repos call loader twice (core first, then own data with validate). Loader lives in `metadata-store`, domain repos reference it.
+- Committed and tagged as v0.1.3 (commit 0e361c7).
 
 ### Recent session (2026-04-16) — Unit ontology term files complete
 
@@ -408,13 +417,13 @@ At most one of the following top-level properties is present in `_data`:
 | Property   | Description |
 |------------|-------------|
 | `_scalar`  | A single value. Type is expressed as a property key inside the object. |
-| `_object`  | An object/struct. Three forms: `{}` = any struct; `{_open: {...}}` = open schema; `{_closed: {...}}` = closed schema. |
+| `_object`  | An object/struct. Four forms: `{}` = any struct; `{_open: {...}}` = open schema; `{_closed: {...}}` = closed schema; `{_object_GeoJSON: {}}` = named object type (extensible). |
 | `_dict`    | A key/value dictionary. `_dict_key` defines key type; `_dict_value` defines value type. |
 | `_tuple`   | An ordered positional array where each element is a full `_data` section. |
 | `_array`   | An ordered list of same-type elements. |
 | `_set`     | An unordered list of unique elements. Element type must be comparable. |
 | `_nested`  | A recursively nested array whose leaves are typed sets. |
-| `_typedef` | A reference to a typedef term by `_gid`. Mutually exclusive with all six inline shapes. |
+| `_typedef` | A reference to a typedef term by `_gid`. Mutually exclusive with all seven inline shapes. |
 
 ---
 

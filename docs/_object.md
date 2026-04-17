@@ -1,8 +1,8 @@
 # Object
-<p><a href="_term_role_data-shape.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data shape</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a></p>
+<p><a href="_term_role_data-shape.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Data shape</a> <a href="_term_role_descriptor.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Descriptor</a> <a href="_term_role_namespace.md" style="background:#EBF8FF;border:1px solid #BEE3F8;border-radius:4px;padding:2px 10px;font-size:0.85em;color:#2C5282;text-decoration:none">Namespace</a></p>
 <p style="color: #888; margin-top: -0.5em;"><code>_object</code></p>
 
-> A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
+> A data shape for structured objects. Four forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it; an `_object` containing a named object type such as `_object_GeoJSON` delegates validation to a dedicated type-specific validator. At most one of `_open`, `_closed`, or a named type may be present.
 
 ---
 
@@ -37,17 +37,18 @@
 
 **[Title](_title.md):** Object
 
-**[Definition](_definition.md):** A data shape for structured objects. Three forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema that enforces the listed constraints while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it. At most one of `_open` or `_closed` may be present.
+**[Definition](_definition.md):** A data shape for structured objects. Four forms are available: an empty `_object` imposes no constraint on the object's contents; an `_object` containing `_open` applies an open schema while accepting any additional dictionary property; an `_object` containing `_closed` restricts the object to only the properties explicitly listed within it; an `_object` containing a named object type such as `_object_GeoJSON` delegates validation to a dedicated type-specific validator. At most one of `_open`, `_closed`, or a named type may be present.
 
 **[Description](_description.md)**
 
-`_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Three forms are available depending on what `_object` contains:
+`_object` describes the shape of a structured object value. It is one of the top-level shape properties available in a [`_data`](_data.md) section. Four forms are available depending on what `_object` contains:
 
 - **`{}`** — unrestricted object. The value may have any properties, including properties not defined in the dictionary, or none at all.
 - **`{"_open": {...}}`** — [`_open`](_open.md) schema. The constraints listed in `_open` apply, but the object may also contain any additional property defined in the data dictionary.
 - **`{"_closed": {...}}`** — [`_closed`](_closed.md) schema. Only the properties listed within `_closed` are permitted; any other property makes the object invalid.
+- **`{"_object_GeoJSON": {}}`** — a named object type. Delegates validation entirely to a type-specific validator rather than the dictionary schema system. [`_object_GeoJSON`](_object_GeoJSON.md) is the first such named type; further named types may be added here without changing the top-level data shape table.
 
-At most one of `_open` or `_closed` may be present. Having both simultaneously is invalid.
+At most one of `_open`, `_closed`, or a named type key may be present.
 
 **[Examples](_examples.md)**
 
@@ -146,7 +147,7 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — [`_info`](_info
 **[Required properties](_required.md)**
 
 [Optional selection](_any.md) ([Maximum element count](_max-items.md): 1)
-[Open schema](_open.md) · [Closed schema](_closed.md)
+[Open schema](_open.md) · [Closed schema](_closed.md) · [GeoJSON object](_object_GeoJSON.md)
 
 <details>
 <summary>JSON</summary>
@@ -159,7 +160,8 @@ Invalid: `{"_lid": "code", "_gid": "_code", "_info": {...}}` — [`_info`](_info
         {
           "_selection" : [
             "_open",
-            "_closed"
+            "_closed",
+            "_object_GeoJSON"
           ],
           "_selectors" : [
             {

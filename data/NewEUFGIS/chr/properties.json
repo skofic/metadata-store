@@ -1,0 +1,5498 @@
+[
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "database",
+			"_gid": "chr_database",
+			"_aid": [
+				"database"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Database"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Name of the database to which the occurrences are belonging to"
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor is used to indicate in which public databases the data is published, a set of selected databases is used for the enumeration."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_database"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "EOO",
+			"_gid": "chr_EOO",
+			"_aid": [
+				"EOO"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Extent of Occurrence"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The property is a flag that indicates whether the observation falls within the species geographical range, measured as the extent of occurrence (EOO)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_boolean": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_operator",
+			"_lid": "names",
+			"_gid": "chr_operator_names",
+			"_aid": [
+				"names"
+			],
+			"_pid": [
+				"operators"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Operators"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "List of the people that performed the experiment or measurement."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This descriptor is relevant to experiments or measurements in the field. Provide the list of names of the personnel that conducted the experiment or measurement."
+			}
+		},
+		"_data": {
+			"_set": {
+				"_string": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvElevation",
+			"_gid": "chr_AvElevation",
+			"_aid": [
+				"AvElevation"
+			],
+			"_pid": [
+				"AvElevation"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average elevation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average height above sea level."
+			},
+			"_description": {
+				"ISO_639_3_eng": "*Height above sea level* in *meters* extracted from the [Digital Elevation Model](https://www.eea.europa.eu/en/datahub/datahubitem-view/d08852bc-7b5f-4835-a776-08362e2fbf4b) (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset). The *average* is calculated for the GCU area defined with the polygon of GCU boundaries.  Beware that for some GCU (i) there are no shapefile available so that the average elvevation over a 5km buffer around the GCU coordinate is taken (ii) it may happen that GCU visited by the wield team (WP2) does not fall in the shapefile available on EUFGIS, this mismatch is reported."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 3000.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MinElevation",
+			"_gid": "chr_MinElevation",
+			"_aid": [
+				"MinElevation"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Minimum elevation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Minimum height above sea level."
+			},
+			"_description": {
+				"ISO_639_3_eng": "*Minimum height above sea level* in *meters* extracted from the [Digital Elevation Model](https://www.eea.europa.eu/en/datahub/datahubitem-view/d08852bc-7b5f-4835-a776-08362e2fbf4b) (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset). The *average* is calculated for the GCU area defined with the polygon of GCU boundaries.  Beware that for some GCU (i) there are no shapefile available so that the average elvevation over a 5km buffer around the GCU coordinate is taken (ii) it may happen that GCU visited by the wield team (WP2) does not fall in the shapefile available on EUFGIS, this mismatch is reported."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MaxElevation",
+			"_gid": "chr_MaxElevation",
+			"_aid": [
+				"MaxElevation"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Maximum elevation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Maximum height above sea level."
+			},
+			"_description": {
+				"ISO_639_3_eng": "*Maximum height above sea level* in *meters* extracted from the [Digital Elevation Model](https://www.eea.europa.eu/en/datahub/datahubitem-view/d08852bc-7b5f-4835-a776-08362e2fbf4b) (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset). The *average* is calculated for the GCU area defined with the polygon of GCU boundaries.  Beware that for some GCU (i) there are no shapefile available so that the average elvevation over a 5km buffer around the GCU coordinate is taken (ii) it may happen that GCU visited by the wield team (WP2) does not fall in the shapefile available on EUFGIS, this mismatch is reported."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "StdElevation",
+			"_gid": "chr_StdElevation",
+			"_aid": [
+				"StdElevation"
+			],
+			"_pid": [
+				"StdElevation"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Elevation standard deviation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Standard deviation of average height above sea level."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Standard deviation of height above sea level, extracted from the Digital Elevation Model (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset), for the referenced GCU geometry."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvSlope",
+			"_gid": "chr_AvSlope",
+			"_aid": [
+				"AvSlope"
+			],
+			"_pid": [
+				"AvSlope"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average slope."
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average slope."
+			},
+			"_description": {
+				"ISO_639_3_eng": "*Slope* in *degrees* extracted from the [Digital Elevation Model](https://www.eea.europa.eu/en/datahub/datahubitem-view/d08852bc-7b5f-4835-a776-08362e2fbf4b) (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset). The *average* is calculated for the GCU area defined with the polygon of GCU boundaries.  Beware that for some GCU (i) there are no shapefile available so that the average elvevation over a 5km buffer around the GCU coordinate is taken (ii) it may happen that GCU visited by the wield team (WP2) does not fall in the shapefile available on EUFGIS, this mismatch is reported."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "degrees DMS",
+					"_unit_symbol": "DMS",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 90.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvAspect",
+			"_gid": "chr_AvAspect",
+			"_aid": [
+				"AvAspect"
+			],
+			"_pid": [
+				"AvAspect"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average aspect"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average aspect."
+			},
+			"_description": {
+				"ISO_639_3_eng": "*Aspect* in *degrees* extracted from the [Digital Elevation Model](https://www.eea.europa.eu/en/datahub/datahubitem-view/d08852bc-7b5f-4835-a776-08362e2fbf4b) (EU-DEM Copernicus Land Monitoring Service 25 meter resolution dataset). The *average* is calculated for the GCU area defined with the polygon of GCU boundaries.  Beware that for some GCU (i) there are no shapefile available so that the average elvevation over a 5km buffer around the GCU coordinate is taken (ii) it may happen that GCU visited by the wield team (WP2) does not fall in the shapefile available on EUFGIS, this mismatch is reported."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "Degrees DMS",
+					"_unit_symbol": "DMS",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 360.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "LatPlot",
+			"_gid": "chr_measured_LatPlot",
+			"_aid": [
+				"LatPlot"
+			],
+			"_pid": [
+				"LatPlot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Latitude measured in the field"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Latitude measured in the circular plot around a FS tree with the GPS Garmin 64s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 6,
+					"_unit_name": "Decimal degrees",
+					"_unit_symbol": "DD",
+					"_range_valid": {
+						"_min-inclusive": -90.0,
+						"_max-inclusive": 90.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "LonPlot",
+			"_gid": "chr_measured_LonPlot",
+			"_aid": [
+				"LonPlot"
+			],
+			"_pid": [
+				"LongPlot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Longitude measured in the field"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Longitude measured in the circular plot around a FS tree with the GPS Garmin 64s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 6,
+					"_unit_name": "Decimal degrees",
+					"_unit_symbol": "DD",
+					"_range_valid": {
+						"_min-inclusive": -180.0,
+						"_max-inclusive": 180.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "plot",
+			"_gid": "chr_measured_plot",
+			"_aid": [
+				"plot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Coordinates measured in the field"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Coordinates measured in the circular plot around a FS tree with the GPS Garmin 64s."
+			},
+			"_description": {
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
+			}
+		},
+		"_data": {
+			"_object": {
+				"_object_GeoJSON": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "Elevation",
+			"_gid": "chr_measured_Elevation",
+			"_aid": [
+				"Elevation"
+			],
+			"_pid": [
+				"ElevationMeasured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU elevation - measured"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Local elevation measured in the representative circular plot with a radius of 15 m."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-inclusive": 0,
+						"_max-inclusive": 5000
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "Slope",
+			"_gid": "chr_measured_Slope",
+			"_aid": [
+				"Slope"
+			],
+			"_pid": [
+				"SlopeMeasured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU slope - measured"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Local slope measured in the representative circular plot with a radius of 15 m."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "grades",
+					"_unit_symbol": "°",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 90.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_measured",
+			"_lid": "Aspect",
+			"_gid": "chr_measured_Aspect",
+			"_aid": [
+				"Aspect"
+			],
+			"_pid": [
+				"AspectMeasured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU aspect - measured"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Local aspect measured in the representative circular plot with a radius of 15 m."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "Gradient",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 400.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MicroTopography",
+			"_gid": "chr_MicroTopography",
+			"_aid": [
+				"MicroTopography"
+			],
+			"_pid": [
+				"MicroTopography"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU topography"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Micro-topography assessed in the representative circular plot within the GCU"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Micro-topography is assessed at the *scale* of the *representative circular plot* with a *radius of 15 m*. with the following three categories:\n\n-  `chr_MicroTopography_1`: convex\n-  `chr_MicroTopography_2`: neutral\n-  `chr_MicroTopography_3`: concave\n\nThe index allows to determine whether there is more in- or outflow of water which has an influence on the soil available water capacity. For example, there is more water inflow if the topography is concave but there is more outflow if the topography is convex."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_MicroTopography"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "LandSurfTemp",
+			"_gid": "chr_LandSurfTemp",
+			"_aid": [
+				"LandSurfTemp"
+			],
+			"_pid": [
+				"LST"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU Land surface temperature"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Land Surface Temperature (skin temperature)of the GCU."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Remotely sensed *monthly average* land surface temperature in *Kelvin*. The monthly average is calculated for the GCU area defined with the polygon of GCU boundaries. Beware that for some GCU (i) there are no shapefile available so that the average Land surface temperature over a 5km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_number": {
+						"_unit_name": "Kelvin",
+						"_unit_symbol": "K"
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvLandSurfTemp",
+			"_gid": "chr_trend_AvLandSurfTemp",
+			"_aid": [
+				"AvLandSurfTemp"
+			],
+			"_pid": [
+				"TrendAvLST"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual mean of GCU averaged Land surface temperature"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the remotely sensed annual mean land surface temperature."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between remotely sensed annual mean land surface temperature of the GCU and time (°C/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "Degrees Centigrades/year",
+					"_unit_symbol": "°C/year"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MaxLandSurfTemp",
+			"_gid": "chr_MaxLandSurfTemp",
+			"_aid": [
+				"MaxLandSurfTemp"
+			],
+			"_pid": [
+				"MaxLST"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU Max Land surface temperature"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Land Surface Temperature (skin temperature) of the GCU during summer month."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Remotely sensed *maximum monthly land surface temperature* in *°C*. The average of the maximum values of the GCU area is computed for the polygon foot print of GCU boundaries. Beware that for some GCU (i) there are no shapefile available so that the average Land surface temperature over a 5km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "°C"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "MaxLandSurfTemp",
+			"_gid": "chr_trend_MaxLandSurfTemp",
+			"_aid": [
+				"MaxLandSurfTemp"
+			],
+			"_pid": [
+				"TrendMaxLST"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in GCU Max Land surface temperature"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal changes of the maximum canopy surface temperature in degree and per month."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The changes in land surface temperature per month are given in degrees and indicate whether the canopy tends to warm up or cool down over time. If the value is positive, the canopy tends to warm up. If the sign is negative, the canopy tends to cool down. The surface temperature of the tree canopy is estimated by a sensor on the MODIS satellite, which measures the thermal infrared emissions of the vegetation. The maximum canopy surface temperature can serve as an indicator of drought and heat stress in a forest, as the canopy heats up when the water supply to the trees is insufficient to cool the leaves."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "Degrees Centigrades/month",
+					"_unit_symbol": "°C/month"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "NormDiffVegIdx",
+			"_gid": "chr_trend_NormDiffVegIdx",
+			"_aid": [
+				"NormDiffVegIdx"
+			],
+			"_pid": [
+				"TrendNDVI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in GCU's NDVI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the Normalized Difference Vegetation Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Linear trend in temporal dynamics of the normalised difference vegetation index (NDVI) across the GCU,  to find out whether the health of the population is declining, remaining stable or increasing. The NDVI is a widely used metric based on remote sensing and is calculated as the normalised difference of spectrometric reflectance measurements in two specific bands: one in which the leaf absorbs light (red) and one in which the leaf absorbs little light (near infrared). The spectrometric data comes from MODIS satellites. The NDVI value varies between -1 (for water) and 1 for dense vegetation. A value close to 0 indicates rocks or poorly vegetated areas."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "-/month",
+					"_unit_symbol": "-/month",
+					"_range_valid": {
+						"_min-inclusive": -1.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvNormDiffVegIdx",
+			"_gid": "chr_AvNormDiffVegIdx",
+			"_aid": [
+				"AvNormDiffVegIdx"
+			],
+			"_pid": [
+				"AvNDVI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU NDVI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Monthly average of the Normalized Difference Vegetation Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly average value for the whole GCU, to quantify the seasonal variation in the health and density of the vegetation. The normalised difference vegetation index (NDVI) is a widely used metric based on remote sensing and is calculated as the normalised difference of spectrometric reflectance measurements in two specific bands: one in which the leaf absorbs light (red) and one in which the leaf absorbs little light (near infrared). The spectrometric data comes from MODIS satellites. The NDVI value varies between -1 (for water) and 1 for dense vegetation. A value close to 0 indicates rocks or poorly vegetated areas."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "-/month",
+					"_unit_symbol": "-/month",
+					"_range_valid": {
+						"_min-inclusive": -1.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvNormDiffVegIdx",
+			"_gid": "chr_trend_AvNormDiffVegIdx",
+			"_aid": [
+				"AvNormDiffVegIdx"
+			],
+			"_pid": [
+				"TrendAvNDVI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual mean of GCU averaged NDVI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual mean remotely sensed Normalized Difference Vegetation Index."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly mean remotely sensed NDVI over the GCU and time (NDVI/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MaxNormDiffVegIdx",
+			"_gid": "chr_MaxNormDiffVegIdx",
+			"_aid": [
+				"MaxNormDiffVegIdx"
+			],
+			"_pid": [
+				"MaxNDVI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Max GCU NDVI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Maximum of the Normalized Difference Vegetation Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly maximum value for the whole GCU, to quantify the seasonal variation in the health and density of the vegetation. The normalised difference vegetation index (NDVI) is a widely used metric based on remote sensing and is calculated as the normalised difference of spectrometric reflectance measurements in two specific bands: one in which the leaf absorbs light (red) and one in which the leaf absorbs little light (near infrared). The spectrometric data comes from MODIS satellites. The NDVI value varies between -1 (for water) and 1 for dense vegetation. A value close to 0 indicates rocks or poorly vegetated areas."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "-/month",
+					"_unit_symbol": "-/month",
+					"_range_valid": {
+						"_min-inclusive": -1.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "MaxNormDiffVegIdx",
+			"_gid": "chr_trend_MaxNormDiffVegIdx",
+			"_aid": [
+				"MaxNormDiffVegIdx"
+			],
+			"_pid": [
+				"TrendMaxNDVI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual max of monthly GCU averaged NDVI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual maximal of monthly remotely sensed Normalized Difference Vegetation Index (NDVI)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly maximum of monthly remotely sensed NDVI over the GCU and time (NDVI/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvLeafAreaIdx",
+			"_gid": "chr_AvLeafAreaIdx",
+			"_aid": [
+				"AvLeafAreaIdx"
+			],
+			"_pid": [
+				"AvLai"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU LAI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Monthly average of the Leaf Area Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly average value of the leaf area index (LAI) for the whole GCU, giving an idea of the seasonal dynamics of the vegetation. The LAI is an indicator of leaf area (one side) relative to the soil surface. I.e., a LAI of 2 represents a leaf area of 2 m2 for 1 m2 of soil. This gives an overview of the density of the plant cover and therefore the extent of energy and gas exchange between the plant and its environment. The data come from the reflectance of the top of the canopy measured with satellite data at 0.5km resolution (from MODIS)."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "m^2 Leaf/m^2 Soil",
+					"_unit_symbol": "m2 Leaf/m2 Soil",
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvLeafAreaIdx",
+			"_gid": "chr_trend_AvLeafAreaIdx",
+			"_aid": [
+				"AvLeafAreaIdx"
+			],
+			"_pid": [
+				"TrendLai"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in GCU's LAI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the Leaf Area Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Average variation in leaf area, giving an idea of the annual dynamics of the vegetation. If the value is positive, then there is a tendency for leaf area to increase, often a sign of improved environmental conditions. If the value is negative, this indicates a decrease in leaf area, often implying greater stress. The leaf area index (LAI) is an indicator of leaf area (one side) relative to the soil surface. I.e., a LAI of 2 represents a leaf area of 2 m2 for 1 m2 of soil. This gives an overview of the density of the plant cover and therefore the extent of energy and gas exchange between the plant and its environment.These data come from the reflectance of the top of the canopy measured with satellite data at 0.5km resolution (from MODIS)."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "-/month",
+					"_unit_symbol": "-/month"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MaxLeafAreaIdx",
+			"_gid": "chr_MaxLeafAreaIdx",
+			"_aid": [
+				"MaxLeafAreaIdx"
+			],
+			"_pid": [
+				"MaxLai"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Maximum GCU LAI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Maximum of the Leaf Area Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Average maximum leaf area index (LAI) for the whole GCU (exactly the quantile 90 of yearly maximum to avoid outlier data), is a very good indicator of the state of the forest studied, mainly in terms of leaf density and forest development conditions.  The LAI is an indicator of leaf area (one side) relative to the soil surface. I.e., a LAI of 2 represents a leaf area of 2 m2 for 1 m2 of soil. This gives an overview of the density of the plant cover and therefore the extent of energy and gas exchange between the plant and its environment.These data come from the reflectance of the top of the canopy measured with satellite data at 0.5km resolution (from MODIS)."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "m^2 Leaf/m^2 Soil",
+					"_unit_symbol": "m2 Leaf/m2 Soil",
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "MaxLeafAreaIdx",
+			"_gid": "chr_trend_MaxLeafAreaIdx",
+			"_aid": [
+				"MaxLeafAreaIdx"
+			],
+			"_pid": [
+				"TrendMaxLai"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual maximum of monthly GCU averaged LAI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual max of monthly remotely sensed LAI."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly maximum of monthly remotely sensed LAI over the GCU and time (LAI/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "m^2 Leaf/m^2 Soil",
+					"_unit_symbol": "m2 Leaf/m2 Soil"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvGrossPrimProd",
+			"_gid": "chr_AvGrossPrimProd",
+			"_aid": [
+				"AvGrossPrimProd"
+			],
+			"_pid": [
+				"AvGPP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU GPP"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Monthly average of the Gross Primary Productivity"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly average gross primary productivity (GPP) for the whole GCU, to establish the seasonal variation in photosynthesis. The GPP (kg of C/m2/day) corresponds to the amount of carbon that enters the ecosystem per unit surface and time. This value is derived from the sattelite MODIS at 1 km resolution that provides the fraction of light intercepted by the canopy and a model of photosynthesis that converts the intercepted light into carbon assimilation. This makes it possible to define the amount of energy available for the plant to function (respiration) and the amount available for growth (net primary productivity). Beware that this value is known to be incorrect during drought stress periods."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "kg of C/m2/day",
+					"_unit_symbol": "kg of C/m^2/day",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvGrossPrimProd",
+			"_gid": "chr_trend_AvGrossPrimProd",
+			"_aid": [
+				"AvGrossPrimProd"
+			],
+			"_pid": [
+				"TrendGPP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in GCU's GPP"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the  Gross Primary Productivity"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Linear temporal trend in gross primary productivity (GPP) for the whole GCU, which is a key indicator of whether or not the forest is growing and storing carbon. The Gross Primary Productivity (kg of C/m2/day) corresponds to the amount of carbon produced in the ecosystem per unit surface and time. This value is derived from the satellite MODIS at 1 km resolution that provides the fraction of light intercepted by the canopy and a model of photosynthesis that converts the intercepted light in to a carbon assimilation. This makes it possible to define the amount of energy available for the plant to function (respiration) and the amount available for growth (net primary productivity)."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "kg of C/m2/day/month",
+					"_unit_symbol": "kg of C/m2/day/month"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SumGrossPrimProd",
+			"_gid": "chr_SumGrossPrimProd",
+			"_aid": [
+				"SumGrossPrimProd"
+			],
+			"_pid": [
+				"SumGPP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average Annual GCU GPP"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average of yearly Gross Primary Productivity"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Average annual sum of gross primary productivity (GPP) for the whole GCU, to establish the typical photosynthetic activity of vegetation. This value is obtained by summing all months and divided by the number of years in the time series (2003-2021 here). The GPP (kg of C/m2/day) corresponds to the amount of carbon that enters the ecosystem per unit surface and time. This value is derived from the sattelite MODIS at 1 km resolution that provides the fraction of light intercepted by the canopy and a model of photosynthesis that converts the intercepted light in to a carbon assimilation. This makes it possible to define the amount of energy available for the plant to function (respiration) and the amount available for growth (net primary productivity)."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "kg of C/m2/year",
+					"_unit_symbol": "kg of C/m2/year",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "SumGrossPrimProd",
+			"_gid": "chr_trend_SumGrossPrimProd",
+			"_aid": [
+				"SumGrossPrimProd"
+			],
+			"_pid": [
+				"TrendSumGPP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual sum of GCU averaged GPP"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual sum remotely sensed GPP."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly sum remotely sensed biomass of the GCU and time (Kg C/m2/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "kg/m2/year",
+					"_unit_symbol": "kg/m^2"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "MaxGrossPrimProd",
+			"_gid": "chr_trend_MaxGrossPrimProd",
+			"_aid": [
+				"MaxGrossPrimProd"
+			],
+			"_pid": [
+				"TrendMaxGPP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual max of monthly GCU averaged GPP"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual max of monthly remotely sensed GPP."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly max of monthly remotely sensed biomass of the GCU and time (Kg C/m2/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "kg/m2/year",
+					"_unit_symbol": "kg/m^2"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "StdGrossPrimProd",
+			"_gid": "chr_StdGrossPrimProd",
+			"_aid": [
+				"StdGrossPrimProd"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU GPP standard deviation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Standard deviation of monthly average of the Gross Primary Productivity"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Standard deviation of monthly average gross primary productivity (GPP) for the whole GCU, to establish the seasonal variation in photosynthesis. The GPP (kg of C/m2/day) corresponds to the amount of carbon that enters the ecosystem per unit surface and time. This value is derived from the sattelite MODIS at 500 m. resolution that provides the fraction of light intercepted by the canopy and a model of photosynthesis that converts the intercepted light into carbon assimilation. This makes it possible to define the amount of energy available for the plant to function (respiration) and the amount available for growth (net primary productivity). Beware that this value is known to be incorrect during drought stress periods."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "kg of C/m2/day",
+					"_unit_symbol": "kg of C/m2/day"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvNormDiffWaterIdx",
+			"_gid": "chr_AvNormDiffWaterIdx",
+			"_aid": [
+				"AvNormDiffWaterIdx"
+			],
+			"_pid": [
+				"AvNDWI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU NDWI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average Normalized Difference Water Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Monthly average of normalised difference water index (NDWI) for the whole GCU, to observe seasonal variations in water stress through plant water content. NDWI provides an effective measure of moisture content. This index is calculated on the basis of the GREEN-NIR combination (visible green and near infrared spectrum) and enables the detection of water pools as well as subtle changes in the water content of vegetation. These values (from MODIS at 1 km resolution) range from -1 (no water) to 1 (water surface), and their variation is a very good indicator of plant water stress."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": -1.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvNormDiffWaterIdx",
+			"_gid": "chr_trend_AvNormDiffWaterIdx",
+			"_aid": [
+				"AvNormDiffWaterIdx"
+			],
+			"_pid": [
+				"TrendNDWI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in GCU's NDWI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the remotely sensed Normalized Difference Water Index"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Linear temporal trend in normalized difference water index (NDWI) for the whole GCU, to observe long-term trends of vegetation water content. NDWI provides an effective measure of moisture content. This index is calculated on the basis of the GREEN-NIR combination (visible green and near infrared spectrum) and enables the detection of water bodies as well as subtle changes in the water content of vegetation. These values (from MODIS at 1km resolution) range from -1 (no water) to 1 (water surface), and the temporal trend is an indicator of long-term changes in canopy water status."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "-/month",
+					"_unit_symbol": "-/month",
+					"_range_valid": {
+						"_min-inclusive": -1.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MaxNormDiffWaterIdx",
+			"_gid": "chr_MaxNormDiffWaterIdx",
+			"_aid": [
+				"MaxNormDiffWaterIdx"
+			],
+			"_pid": [
+				"MaxNDWI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Annual maximum of monthly GCU averaged NDWI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Annual maximum of monthly GCU averaged Normalized Difference Water Index. GCU Normalized Difference Water Index."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Remotely sensed annual maximum of the monthly GCU averaged Normalized Difference Water Index. The average is calculated for the GCU area defined with the polygon of GCU boundaries. Beware that for some GCUs there are no shapefiles available so that the average Normalised Difference Water Index over a 5 km buffer around the GCU coordinate is callculated."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_number": {}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "MaxNormDiffWaterIdx",
+			"_gid": "chr_trend_MaxNormDiffWaterIdx",
+			"_aid": [
+				"MaxNormDiffWaterIdx"
+			],
+			"_pid": [
+				"TrendMaxNDWI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in annual maximum of monthly GCU averaged NDWI"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the annual max of monthly remotely sensed Normalized Difference Water Index (NDWI)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Slope of the relationship between yearly maximum of monthly remotely sensed NDWI over the GCU and time (NDWI/year).\n\nBeware that for some GCUs there are no shapefile available so that the average Land surface temperature over a 5 km buffer around the GCU coordinate is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvBiomass",
+			"_gid": "chr_AvBiomass",
+			"_aid": [
+				"AvBiomass"
+			],
+			"_pid": [
+				"AvBiomass"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU Biomass"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Above-ground biomass af all species (tree, shrubs, annuals)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Above ground biomass for the whole GCU, to describe the state of the vegetation. The above ground biomasse (in t/ha) includes all of the vegetation present and in forest and makes it possible to quantitatively consider the importance of wood in forests."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "t/ha",
+					"_unit_symbol": "t/ha",
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "StdBiomass",
+			"_gid": "chr_StdBiomass",
+			"_aid": [
+				"StdBiomass"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU Biomass standard deviation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Standard deviation of above-ground biomass af all species (tree, shrubs, annuals)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Standard deviation of above ground biomass for the whole GCU, or for the current shape, to describe the state of the vegetation. The above ground biomasse (in t/ha) includes all of the vegetation present and in forest and makes it possible to quantitatively consider the importance of wood in forests."
+			},
+			"_provider": [
+				"JRC"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "t/ha",
+					"_unit_symbol": "t/ha"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_trend",
+			"_lid": "AvBiomass",
+			"_gid": "chr_trend_AvBiomass",
+			"_aid": [
+				"AvBiomass"
+			],
+			"_pid": [
+				"TrendAvBiomass"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trend (temporal dynamics) in Average GCU Biomass"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Temporal trends of the above-ground biomass of all species"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Biomass annual trends in above ground biomass for the whole GCU, to define and quantify whether the forest can be considered a carbon sink (increase in biomass) or a carbon source (decrease in biomass). The above ground biomasse (in t/ha) includes all of the vegetation present and in forest makes it possible to quantitatively consider the importance of wood."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "t/ha/year",
+					"_unit_symbol": "t/ha/year"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "GCUFootprintArea",
+			"_gid": "chr_GCUFootprintArea",
+			"_aid": [
+				"GCUFootprintArea"
+			],
+			"_pid": [
+				"GCUFootprintArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Area of the GCU foot print"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Area of the GCU foot print computed from the shapefile."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Beware that for some GCU there are no shapefile available in which case NA is reported here."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_area_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Dsoil",
+			"_gid": "chr_Dsoil",
+			"_aid": [
+				"Dsoil"
+			],
+			"_pid": [
+				"Dsoil"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU soil depth"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Vertical distance from soil surface to the bottom of the excavated pit or of the soil auger core"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The soil depth is determined either by excavating a pit or by extracting a soil core with a soil auger to the depth at which rocks are found or the extraction of further soil is impossible.\nIt can be used together with soil texture to calculate the amount of water stored in the soil that can be utilised by trees."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit": "_unit_length_cm",
+					"_range_valid": {
+						"_min-inclusive": 0,
+						"_max-inclusive": 200
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Esoil",
+			"_gid": "chr_Esoil",
+			"_aid": [
+				"Esoil"
+			],
+			"_pid": [
+				"Esoil"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU soil coarse elements"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average percentage of soil coarse elements in the soil of the GCU"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The soil coarse elements are the individual mineral constituents greater than 2 mm and include gravel, pebbles, stones and blocks. The values are estimated in horisons of 20 cm in the soil pit inside the representative circular plot and then averaged across all horisons. It gives average share of soil corse elements in the soil of the GCU."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "DomLeafType",
+			"_gid": "chr_DomLeafType",
+			"_aid": [
+				"DomLeafType"
+			],
+			"_pid": [
+				"DLT",
+				"dominant_leaf_type"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dominant leaf type"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Land cover classification with 2 thematic classes (Broadleaved / Coniferous)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The [Copernicus DLT](https://land.copernicus.eu/pan-european/high-resolution-layers/forests/dominant-leaf-type/status-maps/dominant-leaf-type-2018?tab=mapview) raster product provides a basic land cover classification with 3 thematic classes (All *non-tree covered areas* / *Broadleaved* / *Coniferous*) at 10m spatial resolution and covers the full of EEA39 area. The data refers to the unit polygons and the value is obtained by a mode reducer.\n\nIn this dataset we only track *Broadleaved*  and *Coniferous*, *non-tree covered* areas are not tracked."
+			}
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_enum": {
+						"_enums": [
+							"chr_DomLeafType"
+						]
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "RelHumid",
+			"_gid": "chr_RelHumid",
+			"_aid": [
+				"RelHumid"
+			],
+			"_pid": [
+				"relative_humidity"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Relative humidity"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Relative humidity (RH) refers to the moisture content (i.e., water vapor) of the atmosphere, expressed as a percentage of the amount of moisture that can be retained by the atmosphere (moisture-holding capacity) at a given temperature and pressure without condensation."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Relative humidity is [calculated](https://en.wikipedia.org/wiki/Dew_point) using the temperature and the dewpoint temperature at 2 meters above surface."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "Percentage",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "PercentCoarseElement",
+			"_gid": "chr_PercentCoarseElement",
+			"_aid": [
+				"PercentCoarseElement"
+			],
+			"_pid": [
+				"coarse_element"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Percentage of the soil coarse elements"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average of the percentage of coarse elements assessed in the soil pit inside the plot. Percentage in volume of soil."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "Percentage",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SoilMethod",
+			"_gid": "chr_SoilMethod",
+			"_aid": [
+				"SoilMethod"
+			],
+			"_pid": [
+				"method"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Method used for the soil description : pit or auger"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Method used for the description of the soil characteristics either by excavating a pit (pit) or by extrating a soil core using an auger down to the depth where rocks are found (auger)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_SoilMethod"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "TruePAI",
+			"_gid": "chr_TruePAI",
+			"_aid": [
+				"TruePAI"
+			],
+			"_pid": [
+				"TruePAI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Overal True PAI index"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The projected area of green leaves, needles and some branches or trunk per unit horizontal ground surface area"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The true plant area index value (PAI) is assessed at the position corresponding to and in between 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. Its is assessed using a digital camera (hemispherical pictures). It includes all tree species present in the plot. The effect of foliage agregation is removed."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "m2 of plant/m2 soil",
+					"_unit_symbol": "m^2 of plant/m^2 soil",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 20.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "LatPlotMeasured",
+			"_gid": "chr_LatPlotMeasured",
+			"_aid": [
+				"LatPlotMeasured"
+			],
+			"_pid": [
+				"LatPlotMeasured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Measured latitude of the plot"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Latitude measured in the field by projects (not NFPs)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Latitude measured in the circular plot within the GCU"
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 4,
+					"_unit_name": "latitude",
+					"_unit_symbol": "decimal degrees",
+					"_range_valid": {
+						"_min-inclusive": -90.0,
+						"_max-inclusive": 90.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "LonPlotMeasured",
+			"_gid": "chr_LonPlotMeasured",
+			"_aid": [
+				"LonPlotMeasured"
+			],
+			"_pid": [
+				"LongPlotMeasured"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Measured longitude of the plot"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Longitude measured in the field by projects (not NFPs)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Longitude measured in the circular plot within the GCU"
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 4,
+					"_unit_name": "longitude",
+					"_unit_symbol": "decimal degrees",
+					"_range_valid": {
+						"_min-inclusive": -180.0,
+						"_max-inclusive": 180.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "ForestStructure",
+			"_gid": "chr_ForestStructure",
+			"_aid": [
+				"ForestStructure"
+			],
+			"_pid": [
+				"ForestStructure"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU forest structure"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Forest stand structure of the GCU assessed visually"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Forest stand structure assessed *by eye* at the GCU level:\n\n-  `chr_ForestStructure_1`: tree crowns inside a single horizontal stratum\n\n-  `chr_ForestStructure_2`: tree crowns contained inside multiple horizontal strata\n\n-  `chr_ForestStructure_3`: stand composed of scattered tree crowns"
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_ForestStructure"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "ForestComposition",
+			"_gid": "chr_ForestComposition",
+			"_aid": [
+				"ForestComposition"
+			],
+			"_pid": [
+				"ForestComposition"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU forest composition"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Tree composition of the GCU assessed visually"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Composition of the forest stand assessed *by eye*:\n\n- `chr_ForestComposition_1`: single species\n\n-  `chr_ForestComposition_1`: mixed forest"
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_ForestComposition"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvTreeHeight",
+			"_gid": "chr_AvTreeHeight",
+			"_aid": [
+				"AvTreeHeight"
+			],
+			"_pid": [
+				"AvTreeHeight"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU tree height"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Average tree height of the GCU."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Remotely sensed average tree height in the GCU (for all tree species in present in the GCU) in meters. The value come from the beam of the GEDI lidar falling inside the GCU area defined with the polygon (shapefile) of GCU boundaries. If the polygon is not available, the beam falling if a 5km buffer around the coordinate of the GCU is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvCanopyHeight",
+			"_gid": "chr_AvCanopyHeight",
+			"_aid": [
+				"AvCanopyHeight"
+			],
+			"_pid": [
+				"Av_canopy_height"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Average GCU canopy height"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Averaged canopy height over the polygon in meters."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Remotely sensed averaged to canopy length (m) of the GCU.  The value come from the beam of the GEDI lidar falling inside the GCU area defined with the polygon (shapefile) of GCU boundaries. If the polygon is not available, the beam falling if a 5km buffer around the coordinate of the GCU is taken."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CircBreastHeight",
+			"_gid": "chr_CircBreastHeight",
+			"_aid": [
+				"CircBreastHeight"
+			],
+			"_pid": [
+				"CBH"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Breast height trunk circumference"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Circumference of the trunk at breash height (1.30 m)."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A measure of tree size, circumference of the trunk at breath height (1.30 m) in cm measured with circular tape. Tree level data."
+			},
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_cm",
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 1000.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvCircBreastHeight",
+			"_gid": "chr_AvCircBreastHeight",
+			"_aid": [
+				"AvCircBreastHeight"
+			],
+			"_pid": [
+				"Mean.cbh"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trunk circumference mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Mean trunk circumference measured at breast height in a representative circular plot within the GCU (only for trees of circumference > 23.6 cm)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of trunk circumference measured at breast height (1.3 m) for all individual trees measured in a circular plot of 15 m radius, representative for the entire GCU. Only trees with circumference > 23.6 cm (DBH > 7.5 cm) are measured."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_cm",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarCircBreastHeight",
+			"_gid": "chr_VarCircBreastHeight",
+			"_aid": [
+				"VarCircBreastHeight"
+			],
+			"_pid": [
+				"Var.cbh"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Trunk circumference variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Variance of the trunk circumference measured at breast height in a representative circular plot within the GCU (only for trees of circumference > 23.6 cm)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of trunk circumference measured at breast height (1.3 m) for all individual trees measured in a circular plot of 15 m radius, representative for the entire GCU. Only trees with circumference > 23.6 cm (DBH > 7.5 cm) are measured."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_cm",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_CircBreastHeight",
+			"_lid": "CI95",
+			"_gid": "chr_CircBreastHeight_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.cbh"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Breast height trunk circumference 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for circumference of the trunk at breash height."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [circumference of the trunk at breash height](./chr_CBH.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_cm"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_CircBreastHeight",
+			"_lid": "DBH",
+			"_gid": "chr_CircBreastHeight_DBH",
+			"_aid": [
+				"DBH"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Diameter at breast height class"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The class for the diameter at breast height (DBH) of the trunk, which is used to distinguish a new recruit of a given tree."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_CircBreastHeight_DBH"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CrownLength",
+			"_gid": "chr_CrownLength",
+			"_aid": [
+				"CrownLength"
+			],
+			"_pid": [
+				"CrownLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Crown length"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The lenght of the crown is calculated by substracting basal crown height from total height of the tree."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Together with crown projection, crown length can be used to calculate crown volume, and index of the photosynthetic leaf area of the tree."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-exclusive": 0.1,
+						"_max-exclusive": 50.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvCrownLength",
+			"_gid": "chr_AvCrownLength",
+			"_aid": [
+				"AvCrownLength"
+			],
+			"_pid": [
+				"AvCrownLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Crown length mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the crown lenght across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of  the crown lenght across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The crown lenght is calculated from the [total height] value subtracted from the [Basal crown height] value. It corresponds to the healthy and functional green crown envelope lenght."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarCrownLength",
+			"_gid": "chr_VarCrownLength",
+			"_aid": [
+				"VarCrownLength"
+			],
+			"_pid": [
+				"VarCrownLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Crown length variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the crown lenght across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of  the crown lenght across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The crown lenght is calculated from the [total height] value subtracted from the [Basal crown height] value. It corresponds to the healthy and functional green crown envelope lenght."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvCrownHeight",
+			"_gid": "chr_AvCrownHeight",
+			"_aid": [
+				"AvCrownHeight"
+			],
+			"_pid": [
+				"AvCrownHeight"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the vertical distance from ground level to the lowermost point on the main stem where the tree crown starts across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of height of the base of the tree crown across 10 individual adult dominant/co-dominant trees sampled either inside or in the vicinity of the circular plot with a radius of 15 m, which is representative of the GCU.\nThe tree crown corresponds to the healthy and functional green crown envelope. Different criteria have to be taken into account: sanitary and continuity between the lower and upper branches. So that, the base of the tree crown could correspond to the first living branch or could start upper of the first living branch. "
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarCrownHeight",
+			"_gid": "chr_VarCrownHeight",
+			"_aid": [
+				"VarCrownHeight"
+			],
+			"_pid": [
+				"Var.Hcrown",
+				"VarCrownLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the vertical distance from ground level to the lowermost point on the main stem where the tree crown starts across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of height of the base of the tree crown across 10 individual adult dominant/co-dominant trees sampled either inside or in the vicinity of the circular plot with a radius of 15 m, which is representative of the GCU.\nThe tree crown corresponds to the healthy and functional green crown envelope. Different criteria have to be taken into account: sanitary and continuity between the lower and upper branches. So that, the base of the tree crown could correspond to the first living branch or could start upper of the first living branch. "
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CrownHeight",
+			"_gid": "chr_CrownHeight",
+			"_aid": [
+				"CrownHeight"
+			],
+			"_pid": [
+				"hbc"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The vertical tree height from ground level to the lowermost live branches on the main stem across all measured trees."
+			},
+			"_provider": [
+				"Maurizio Mencuccini, Florence JEAN"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_min-exclusive": 0,
+						"_max-exclusive": 50
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvBasalArea",
+			"_gid": "chr_AvBasalArea",
+			"_aid": [
+				"AvBasalArea"
+			],
+			"_pid": [
+				"AvBasalArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal area mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the basal area per ha across all measured trees, whether living or dead"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the trunk cross-sectional area per hectar (10000 m2) of all living and dead trees measured at breast height (1.3 m). All tree species in the GCU confunded."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "m2/ha",
+					"_unit_symbol": "m^2/ha",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarBasalArea",
+			"_gid": "chr_VarBasalArea",
+			"_aid": [
+				"VarBasalArea"
+			],
+			"_pid": [
+				"VarBasalArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal area variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the basal area across all measured trees, whether living or dead"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Variance of the trunk cross-sectional area per hectar (10000 m2) of all living and dead trees measured at breast height (1.3 m). All tree species in the GCU confunded."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "m2/ha",
+					"_unit_symbol": "m^2/ha",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "PlotBasalArea",
+			"_gid": "chr_PlotBasalArea",
+			"_aid": [
+				"PlotBasalArea"
+			],
+			"_pid": [
+				"PlotBasalArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Total basal area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Total basal area of living or dead trees inside the representative circular plot, for all species in the plot"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The sum of the cross-sectional areas measured at breast height of all trees, all species combined, inside a circular plot of 15 m radius, which is representative of the GCU (for all individual trees with circumference > 23.6 cm). The plot is placed around the tree having the reading from the Bitterlisch relascope closest to the mean."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "m2/ha",
+					"_unit_symbol": "m^2/ha",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MedDeadTrees",
+			"_gid": "chr_MedDeadTrees",
+			"_aid": [
+				"MedDeadTrees"
+			],
+			"_pid": [
+				"MedDeadTrees"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Presence of dead trees median"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Median of the presence of dead trees in the GCU"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Median of the presence of dead trees inside and around the circular plot with a radius of 15 m, which is representative of the GCU, where 0 means that there are no dead trees and 1 that there are dead trees for the target species."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MedNaturalRegeneration",
+			"_gid": "chr_MedNaturalRegeneration",
+			"_aid": [
+				"MedNaturalRegeneration"
+			],
+			"_pid": [
+				"MedNaturalRegeneration"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Abundance of natural regeneration median"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Median of the abundance of natural regeneration for the target species of the GCU assessed around all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Median of the abundance of natural regeneration assessed around 10 trees inside or around the circular plot with a radius of 15 m, which is representative of the GCU, where 0 means absence of natural regeneration, 1 means scattered regeneration, 2 regeneration in groups and 3 abundant regeneration."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 3.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "PropRepTrees",
+			"_gid": "chr_PropRepTrees",
+			"_aid": [
+				"PropRepTrees"
+			],
+			"_pid": [
+				"PropRepTrees"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Proportion of reproductive trees"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Proportion of trees with reproductive structures"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Proportion of trees with reproductive structures (cones, flowers, fruits...) inferred either by total visual counts, estimated based on incomplete counts (e.g. counting of reproductive trees in transects) or remote sensing (e.g. drones, LIDAR)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "TreeSocialStatus",
+			"_gid": "chr_TreeSocialStatus",
+			"_aid": [
+				"TreeSocialStatus"
+			],
+			"_pid": [
+				"TreeSocialStatus"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genomic Subset"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Social status of each tree."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Do = dominant tree\nCo = codominant tree\nde = dominated tree\n\nSee the WP2 protocol for more informations"
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_TreeSocialStatus"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "FPAR",
+			"_gid": "chr_FPAR",
+			"_aid": [
+				"FPAR"
+			],
+			"_pid": [
+				"FPAR"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Fraction of Photosynthetically Active Radiation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "This biophysical variable is directly related to the primary productivity of forests and some models use it to estimate the assimilation of carbon dioxide in vegetation. FPAR can also be used as an indicator of the state and evolution of the vegetation cover"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The fraction of absorbed photosynthetically active radiation (FPAR, sometimes also noted fAPAR or fPAR ) is the fraction of the incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a photosynthetic organism , typically describing the light absorption across an integrated plant canopy. This biophysical variable is directly related to the primary productivity of photosynthesis and some models use it to estimate the assimilation of carbon dioxide in vegetation in conjunction with the leaf area index . FPAR can also be used as an indicator of the state and evolution of the vegetation cover; with this function, it advantageously replaces the Normalized Difference Vegetation Index (NDVI), provided it is itself properly estimated."
+			},
+			"_provider": [
+				"Jan-Peter George"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit_name": "Percentage",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-inclusive": 0,
+						"_max-inclusive": 94
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SMI",
+			"_gid": "chr_SMI",
+			"_aid": [
+				"SMI"
+			],
+			"_pid": [
+				"SMI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Soil moisture index"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "SMI is an indicator of moisture conditions in the uppermost soil layers (skin layer and root zone). SMI is equal to 0 when the soil is severely dry (wilting point) and equal to 1 when the soil moisture is high (above field capacity)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "LISFLOOD is a hydrological rainfall runoff model which has been developed by the JRC of the European Commission in order to reproduce the hydrology of large and trans national European river catchments (de Roo et al., 2000; van der Knijff et al., 2008), and which currently runs operationally within the Copernicus European Flood Awareness System (EFAS, http://www.efas.eu/). Input data for the LISFLOOD model include daily meteorological observations for the European continent, updated with a two day delay, which are obtained from the JRC's MARS AGRI4CAST database1 , and which are extended for seven days using numerical 1 http://agri4cast.jrc.ec.europa.eu/DataPortal/ Copernicus European Drought Observatory (EDO): http://edo.jrc.ec.europa.eu/ © European Commission, 2019. 3 weather forecasts produced by the European Centre for Medium Range Weather Forecasts (ECMWF). The LISFLOOD model simulates soil moisture in two surface layers (skin layer and root zone) separately for forested and other layers. These four soil moisture layers are averaged daily to derive a single mean root zone soil moisture conditions to be successively standardized to 1."
+			},
+			"_provider": [
+				"Jan-Peter George"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CDI",
+			"_gid": "chr_CDI",
+			"_aid": [
+				"CDI"
+			],
+			"_pid": [
+				"CDI"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Combined Drought Indicator"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "CDI is a combined drought indicator aiming to identify areas affected by agricultural droughts. It contains meteorological, hydrological and satellite-derived biophysical variables and distinguishes between five drought levels: 1) Watch, 2) Warning, 3) Alert, 4) partial recovery, 5) full recovery"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The Combined Drought Indicator (CDI) identifies areas with the potential to suffer agricultural drought, areas where the vegetation is already affected by drought conditions, and areas in the process of recovery to normal conditions after a drought episode. The CDI is based on the cause effect relationship for agricultural drought, whereby a shortage of precipitation leads to a soil moisture deficit, which in turn results in a reduction of vegetation productivity. The indicator is computed by combining anomalies of precipitation, soil moisture and satellite-measured plant growth - as measured by, respectively, the EDO drought indicators Standardized Precipitation Index, Soil Moisture Anomaly, and FAPAR Anomaly – using a classification scheme consisting of five drought levels (Watch, Warning, Alert, partial recovery, full recovery)."
+			},
+			"_provider": [
+				"Jan-Peter George"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 1.0,
+						"_max-inclusive": 5.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvTreeAge",
+			"_gid": "chr_AvTreeAge",
+			"_aid": [
+				"AvTreeAge"
+			],
+			"_pid": [
+				"AvTreeAge",
+				"MeanTreeAge"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Mean tree age"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Mean age of the trees belonging to the target species"
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "years",
+					"_unit_symbol": "years",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1000.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "FrostDamage",
+			"_gid": "chr_FrostDamage",
+			"_aid": [
+				"FrostDamage"
+			],
+			"_pid": [
+				"FD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Risk of frost damage"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year. The vulnerability of buds to late frosts depends on the stage of bud development. We use CASTANEA to model the process of breaking dormancy, during which this vulnerability increases. The damage is then calculated by crossing the vulnerability of the buds and the minimum temperatures."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "DessiccationTolerance",
+			"_gid": "chr_DessiccationTolerance",
+			"_aid": [
+				"DessiccationTolerance"
+			],
+			"_pid": [
+				"PLC"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Risk of desiccation during drought"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Simulated loss of hydraulic conductance"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The risk of tree desiccation during drought is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. Here, this risk is taken as the yearly maximum percent loss of hydraulic conductance of the plant (between 0 and 100 %). The closer to 100 the higher the risk. In general we assume that conifers die at 50% loss of hydraulic conductance whereas angioperms die at 90% loss of hydraulic conductance."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_unit_name": "Percentage loss of hydraulic conductance",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarDessiccationTolerance",
+			"_gid": "chr_VarDessiccationTolerance",
+			"_aid": [
+				"VarDessiccationTolerance"
+			],
+			"_pid": [
+				"Var.PLC"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Risk of desiccation during drought - variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Variance of the simulated loss of hydraulic conductance, which represents the risk of mortality"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Variance of the risk of tree desiccation during drought. Tree desiccation is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. This index can be only calculated for GCUs where the trees have been measured for hydraulic traits in the field and should be always interpreted together with its mean.  If the variance is small, trees of the target population are experiencing similar desiccation risk and if variance is high, this means that some trees are at high risk of mortality, and some are at no risk."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_unit_name": "Percentage loss of hydraulic conductance",
+					"_unit_symbol": "%",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 100.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CarbonStarvation",
+			"_gid": "chr_CarbonStarvation",
+			"_aid": [
+				"CarbonStarvation"
+			],
+			"_pid": [
+				"CS"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Risk of carbon starvation"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The simulated annual risk of mortality due to carbon starvation computed with the Castanea model"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The risk of mortality due to carbon starvation refers to the risk that trees will experience a lack of carbon reserves due to the multiple abiotic stresses that the trees may be exposed (frost, high temperature, drought)that progressively, year after year, alter the carbon balance of the trees. These processes are represented in the CASTANEA model which simulate photosynthesis, respiration and carbon allocation on a daily basis. The remaining carbon is allocated to reserves and remobilised in non-vegetative periods or during droughts. When the level of carbon storage decreases below a certain treshold a probability of mortality is estimated."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VulWildFire",
+			"_gid": "chr_VulWildFire",
+			"_aid": [
+				"VulWildFire"
+			],
+			"_pid": [
+				"VulWildFire"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Vulnerability to wild fire"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The simulated GCU's canopy fuel moisture content which is a key driver of fire ignition and spread if there is an ignition source"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Vulnerability to wildfire refers to the probability that a GCU will dry out in such a way that the probability of fire increases, if there is ignition and the wind speed is significant. This vulnerability is approximated by the modelled moisture content (g of water /g of leaf dry matter) of the canopy leaves of the GCU using the SurEau model. When the canopy moisture content reaches values below 66% the risk of flammability drastically increases. Here we provide yearly minimum values of fuel moisture content. These values depend on the physiological characteristics of the trees and the climatic drynesss of the year which are all counted for by the SurEau model."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_unit_name": "g_H2O/g_DryMass",
+					"_unit_symbol": "g_H2O/g_DryMass",
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 300.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvYearDroughtIdx",
+			"_gid": "chr_AvYearDroughtIdx",
+			"_aid": [
+				"AvYearDroughtIdx"
+			],
+			"_pid": [
+				"AvYearDroughtIdx"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Drought index"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The number of days of the year with the soil relative water content below the treshold of 0.4. Indicator of moderate drought with no or low influence on survival"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The relative soil water content in the rooting zone is a key indicator of drought. In particular, when the standardised value falls below the threshold of 0.4, trees have been shown to respond by limiting fluxes and losing turgor. The SurEau and Medfate models were used to calculate the daily water content and extract the annual number of days when the Relative Extractable soil Water (i.e. water available for the trees) was below the threshold of 0.4, then the annual average of the metric was taken to indicate the water deficit."
+			},
+			"_provider": [
+				"Nicolas Martin <nicolas.martin@inrae.fr>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-inclusive": 0,
+						"_max-inclusive": 365
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "GenIndex",
+			"_gid": "chr_GenIndex",
+			"_aid": [
+				"GenIndex"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genetic index"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Genetic index global identifier"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Unique identifier of the genetic index descriptor. This field is used to indicate which descriptors represent genetic indexes."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_term_key_descriptor": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SampleSize",
+			"_gid": "chr_SampleSize",
+			"_aid": [
+				"SampleSize"
+			],
+			"_pid": [
+				"SampleSize",
+				"N"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sample size"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of individuals used to calculate the measurement"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Number of trees measured for a single trait or descriptor."
+			},
+			"_provider": [
+				"Florence Jean <florence.jean@inrae.fr>",
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-exclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SequenceLength",
+			"_gid": "chr_SequenceLength",
+			"_aid": [
+				"SequenceLength"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sequence length"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of base pairs sequenced from a DNA fragment."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit_name": "bp",
+					"_unit_symbol": "bp"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "NumberOfLoci",
+			"_gid": "chr_NumberOfLoci",
+			"_aid": [
+				"NumberOfLoci"
+			],
+			"_pid": [
+				"NumberOfLoci"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Number of loci"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MarkerType",
+			"_gid": "chr_MarkerType",
+			"_aid": [
+				"MarkerType"
+			],
+			"_pid": [
+				"MarkerType"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Type of Marker"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Type of marker (SNP, SSR) used for calculation of genetic indices"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Type of molecular markers used for calculation of genetic indices."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "GenoTech",
+			"_gid": "chr_GenoTech",
+			"_aid": [
+				"GenoTech"
+			],
+			"_pid": [
+				"GenoTech"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Method"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Method and technology used to determine the genetic index"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_string": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "PropPolyLoci",
+			"_gid": "chr_PropPolyLoci",
+			"_aid": [
+				"PropPolyLoci"
+			],
+			"_pid": [
+				"PropPolyLoci",
+				"P"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Proportion polymorphic loci"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of polymorphic loci divided by the total number of loci examined"
+			},
+			"_description": {
+				"ISO_639_3_eng": "A measure used to quantify genetic diversity in a population. It can be used for comparisons of populations when analysing the same loci across all compared populations."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-exclusive": 0.0,
+						"_max-exclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Hs",
+			"_gid": "chr_Hs",
+			"_aid": [
+				"Hs"
+			],
+			"_pid": [
+				"Hs"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genetic diversity - Hs"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Genetic diversity (Hs) measures genetic variation within a single subpopulation. It quantifies the probability that two randomly selected alleles from the subpopulation are different under Hardy-Weinberg equilibrium"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Genetic diversity (Hs) is a measure of the genetic variation within a single subpopulation under random mating. It quantifies the probability that two randomly selected alleles from the subpopulation are different. The value ranges from 0 (no  genetic variability) to 1 (high genetic variability). Hs was calculated in R packege hierfstat."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Hs",
+			"_lid": "marker",
+			"_gid": "chr_Hs_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker expected heterozygosity"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "NucDiv",
+			"_gid": "chr_NucDiv",
+			"_aid": [
+				"NucDiv"
+			],
+			"_pid": [
+				"NucDiv",
+				"pi"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Nucleotide diversity - π"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Mean number of nucleotide substitutions per site between any two randomly selected orthologous DNA sequences (of the same loci) in a population (π)"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Nucleotide diversity (π) measures the degree of polymorphism within a population and is defined as the average number of nucleotide differences per site between any two DNA sequences of the same genomic region, chosen randomly from the selected population. This parameter is a measure of genetic variation, in a similar way to Hs. One commonly used measure of nucleotide diversity was first introduced by: Nei M, Li WH. (1979). Mathematical model for studying genetic variation in terms of restriction endonucleases. Proc. Natl. Acad. Sci. U.S.A.76:5269–5273."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 5,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MolDivPartW",
+			"_gid": "chr_MolDivPartW",
+			"_aid": [
+				"MolDivPartW"
+			],
+			"_pid": [
+				"MolDivPartW"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Population's contribution to molecular diversity within populations"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Contribution of one population to the total diversity due to its own diversity"
+			},
+			"_description": {
+				"ISO_639_3_eng": "A molecular diversity partition of total gene diversity into diversity per se and distinctivness using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This index refers to the population diversity per se (variation within populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MolDivPartB",
+			"_gid": "chr_MolDivPartB",
+			"_aid": [
+				"MolDivPartB"
+			],
+			"_pid": [
+				"MolDivPartB"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Population's contribution to molecular diversity between populations"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Contribution of one population to the total diversity due to its divergence/distinctiveness"
+			},
+			"_description": {
+				"ISO_639_3_eng": "A molecular diversity partition into diversity per se and distinctiness is defined by using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This statistics refers to the population distinctiveness (variation between populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Divergence",
+			"_gid": "chr_Divergence",
+			"_aid": [
+				"Divergence"
+			],
+			"_pid": [
+				"Divergence",
+				"Fst"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU originality - population specific Fst"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Level of genetic differentiation of the target population from an ideal ancestral population from which all populations in the species diverged"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Population-specific Fst values can identify the source/ancestral population and trace the evolutionary history of its derived populations. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Population specific Fst was calculated with BayeScan (Foll & Gagiotti 2008) in R."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Divergence",
+			"_lid": "Pairwise",
+			"_gid": "chr_Divergence_Pairwise",
+			"_aid": [
+				"Pairwise"
+			],
+			"_pid": [
+				"DivergencePairwise",
+				"Fst"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "GCU originality - pairwise Fst"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The current level of genetic differentiation whithin a species"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Pairwise Fst provides insight into the current population genetic structure. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Pairwise Fst was calculated with package hierfstat in R."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Divergence",
+			"_lid": "marker",
+			"_gid": "chr_Divergence_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker population specific Fst"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "PropClones",
+			"_gid": "chr_PropClones",
+			"_aid": [
+				"PropClones"
+			],
+			"_pid": [
+				"PropClones"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Clonality - proportion of clones"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Number of clonal individuals divided by the total number of individuals of the population"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Number of genetically identical individuals, reproducing asexually, divided by the total number of individuals of a specific population."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_PropClones",
+			"_lid": "marker",
+			"_gid": "chr_PropClones_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker population specific Fst"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SizeClones",
+			"_gid": "chr_SizeClones",
+			"_aid": [
+				"SizeClones"
+			],
+			"_pid": [
+				"SizeClones"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Clonality - size of clones"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Surface covered by each single clone"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Area occupied by genetically identical individuals which reproduce asexually by means of vegetative propagation."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit": "_unit_area_m",
+					"_range_valid": {
+						"_min-inclusive": 0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AdmixIndex",
+			"_gid": "chr_AdmixIndex",
+			"_aid": [
+				"AdmixIndex"
+			],
+			"_pid": [
+				"AdmixIndex",
+				"QMain"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Admixture index - proportion of ancestry of detected gene pools"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Proportion of population's ancestry in each gene pool of the target species"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Measurement of the extent of admixture of individuals in a population belonging to different gene pools when individuals from two or more parental (ancestral) populations interbreed. The gene pool is the set of all genes, or genetic information in a group of individuals. The value given is the average population ancestry in each of the gene pools detected in the target tree species and is calculated with the R package LEA using the function sNMF. Depending on the number and distribution of populations in the analysis, the proportion of population's ancestry in each of the detected gene pools may change. The number of gene pools detected may also change."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_number": {
+						"_decimals": 4,
+						"_range_valid": {
+							"_min-inclusive": 0.0,
+							"_max-inclusive": 1.0
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "HybridIndex",
+			"_gid": "chr_HybridIndex",
+			"_aid": [
+				"HybridIndex"
+			],
+			"_pid": [
+				"HybridIndex",
+				"QOther"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hybridisation index - proportion of ancestry of detected species"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Proportion of population's ancestry in each of the two hybridising species"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Measurement of the extent of hybridisation between two species in a population. The value given is the average population ancestry in each of the two hybridising species and is calculated with the R package LEA using the function sNMF."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_number": {
+						"_decimals": 3,
+						"_range_valid": {
+							"_min-inclusive": 0.0,
+							"_max-inclusive": 1.0
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Inbreeding",
+			"_gid": "chr_Inbreeding",
+			"_aid": [
+				"Inbreeding"
+			],
+			"_pid": [
+				"Inbreeding",
+				"F",
+				"Fis"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Inbreeding"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Probability of two alleles in an individual being identical by descent"
+			},
+			"_description": {
+				"ISO_639_3_eng": "This indicator quantifies the deviation relative to Hardy–Weinberg expectations (HWE)—that is, absent other evolutionary forces, non-zero Fis is suggestive of non-random mating between individuals based on their genotype. Because same-genotype individuals are likely to be genetically related, positive Fis values are suggestive of inbreeding (mating among relatives), which can lead to inbreeding depression and compromise population viability. Conversely, negative Fis values are suggestive of preferential mating among non-relatives, which may arise from pre-mating (barriers to self-pollination) or post-mating (low viability of selfed progeny) processes. This population-level statistics thus reflects the mean level of individual adult inbreeding plus other processes that can reduce (or increase) realised ("observed") heterozygosity. Inbreeding is a critical metric in managing small or isolated populations."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0,
+						"_max-inclusive": 1.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Inbreeding",
+			"_lid": "marker",
+			"_gid": "chr_Inbreeding_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker inbreeding"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "GenLoad",
+			"_gid": "chr_GenLoad",
+			"_aid": [
+				"GenLoad"
+			],
+			"_pid": [
+				"GenLoad",
+				"L"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Recessive genetic load"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The reduction of fitness in a population due to the accumulation of deleterious alleles"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Genetic load is a measure of the reduction of fitness caused by genetic erosion. It can be due to the increase in frequency of deleterious mutations due to random genetic drift and/or inbreeding. It is calculated by first identifying deleterious mutations via prediction of their effects, and then deriving deleterious scores that can be summarized to produce a load index, in this case the counts of derived deleterious mutations in homozygosis corrected by the number of synonymous ones.  Reference: Bertorelle, G., Raffini, F., Bosse, M. et al. Genetic load: genomic estimates and applications in non-model animals. Nat Rev Genet 23, 492–503 (2022). https://doi.org/10.1038/s41576-022-00448-x"
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_GenLoad",
+			"_lid": "marker",
+			"_gid": "chr_GenLoad_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker recessive genetic load"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "GenomicOffset",
+			"_gid": "chr_GenomicOffset",
+			"_aid": [
+				"GenomicOffset"
+			],
+			"_pid": [
+				"GenOffset"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Genomic offset"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A population measure of maladaptation under future environmental conditions"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Genomic offset measures population vulnerability to new environmental conditions. It refers to the expected change in allele frequencies that would be required to mantain optimal fitness under future conditions (e.g. changing climate). It assumes equilibrium between current conditions and allele frequencies and it is usually calculated based on a set of genetic markers under natural selection. It is sensitive to the environmental variables used in the analysis. Reference: Capblancq, T., Fitzpatrick, M. C., Bay, R. A., Exposito-Alonso, M., & Keller, S. R. (2020). Genomic prediction of (mal) adaptation across current and future climatic landscapes. Annual Review of Ecology, Evolution, and Systematics, 51, 245-269."
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 3,
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_GenomicOffset",
+			"_lid": "marker",
+			"_gid": "chr_GenomicOffset_marker",
+			"_aid": [
+				"marker"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Marker genomic offset"
+			}
+		},
+		"_data": {
+			"_object": {}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Evolvability",
+			"_gid": "chr_Evolvability",
+			"_aid": [
+				"Evolvability"
+			],
+			"_pid": [
+				"Evol"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Evolvability"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The ability of a population to respond to directional selection"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Evolvability is the ability of a population to produce phenotypic variation that is both heritable and adaptive. References: Houle, 1992. Comparing evolvability and variability of quantitative traits. Genetics. 130(1):195-204. doi: 10.1093/genetics/130.1.195; Payne, J.L., Wagner, A. The causes of evolvability and their evolution. Nat Rev Genet 20, 24–38 (2019). https://doi.org/10.1038/s41576-018-0069-z"
+			},
+			"_provider": [
+				"Santiago C. Gonzalez Martinez"
+			]
+		},
+		"_data": {
+			"_array": {
+				"_scalar": {
+					"_number": {
+						"_decimals": 4,
+						"_range_valid": {
+							"_min-inclusive": 0.0
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Htot",
+			"_gid": "chr_Htot",
+			"_aid": [
+				"Htot"
+			],
+			"_pid": [
+				"Htot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Total tree height"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Vertical tree height from ground level to the upmost tip."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A measure of tree size, tree total height in m is measured with a clinometer (Vertex)."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			],
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_max-exclusive": 100.0,
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvHtot",
+			"_gid": "chr_AvHtot",
+			"_aid": [
+				"AvHtot"
+			],
+			"_pid": [
+				"Mean.Htot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tree height mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the vertical tree height across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of tree height for 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The tree height corresponds to the total vertical tree height from ground level to the upmost tip."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_max-inclusive": 100.0,
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarHtot",
+			"_gid": "chr_VarHtot",
+			"_aid": [
+				"VarHtot"
+			],
+			"_pid": [
+				"Var.Htot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tree height variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the vertical tree height across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Variance  of the values of tree height for 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The tree height corresponds to the total vertical tree height from ground level to the upmost tip."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_max-inclusive": 100.0,
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Htot",
+			"_lid": "CI95",
+			"_gid": "chr_Htot_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.Htot"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Total height 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for total height."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [total height](./chr_Htot.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "TurgorLossPoint",
+			"_gid": "chr_TurgorLossPoint",
+			"_aid": [
+				"TurgorLossPoint"
+			],
+			"_pid": [
+				"TLP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Leaf turgor loss point"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The water potential at which leaves lose turgor."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Turgor loss point is an index of sensitivity of leaves to drought. It always has negative values. High (close to zero) values indicates high sensitivity to loss of turgor in leaves under drought. Smaller (more negative) values indicate greater drought tolerance. It is measured in the leaves taken from apical branches of each tree. The point of turgor loss is measured by osmometry on sap extracted from leaves. It has units of pressure (MegaPascals)."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			],
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_max-exclusive": 0.0,
+						"_min-exclusive": -5.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvTurgorLossPoint",
+			"_gid": "chr_AvTurgorLossPoint",
+			"_aid": [
+				"AvTurgorLossPoint"
+			],
+			"_pid": [
+				"Mean.TLP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Leaf turgor loss point mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the water potential at which leaves lose turgor across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of leaf turgor loss point for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarTurgorLossPoint",
+			"_gid": "chr_VarTurgorLossPoint",
+			"_aid": [
+				"VarTurgorLossPoint"
+			],
+			"_pid": [
+				"Var.TLP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Leaf turgor loss point variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the water potential at which leaves lose turgor across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of leaf turgor loss point for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_TurgorLossPoint",
+			"_lid": "CI95",
+			"_gid": "chr_TurgorLossPoint_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.TLP"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Leaf turgor loss point 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for leaf turgor loss point."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [leaf turgor loss point](./chr_TLP.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "P50",
+			"_gid": "chr_P50",
+			"_aid": [
+				"P50"
+			],
+			"_pid": [
+				"P50"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Xylem vulnerability to embolism"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The water potential at which 50% of the xylem hydraulic conductivity is lost."
+			},
+			"_description": {
+				"ISO_639_3_eng": " When a stem is drought stressed, it begins to form air bubbles inside its conduits, like in the blood of divers. These bubbles prevents the tree from being able to transport water from roots to leaves. If this continues, the tree eventually dessiccates at the top. The easyness by which these bubbles are formed is called vulnerability to embolism. It is an index of drought sensitivity (the inverse of resistance) of the wood of plants. Vulnerability to embolism is always a negative number. High values (close to zero) indicate high sensitivity to drought stress. Low values (more negative) indicate greater drought resistance. Tree level data. It is measured using a rotary instrument called cavitron. It is measured in the apical branches of each tree."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			],
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_max-exclusive": 0.0,
+						"_min-exclusive": -15.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvP50",
+			"_gid": "chr_AvP50",
+			"_aid": [
+				"AvP50"
+			],
+			"_pid": [
+				"Mean.P50"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Xylem vulnerability to embolism mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the water potential at which 50% of the xylem capacity to conduct water to the leaves is lost across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of xylem vulnerability to embolism for the apical branches of 10 measured adult dominant/co-dominant trees sampled either inside or in the vicinity of a representative circular plot with a 15 m radius. When a tree is droughted, its xylem is vulnerable to losing its capacity to conduct water to the leaves, i.e., its hydraulic conductivity, because of the formation of air emboli inside the xylem conduits."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarP50",
+			"_gid": "chr_VarP50",
+			"_aid": [
+				"VarP50"
+			],
+			"_pid": [
+				"Var.P50"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Xylem vulnerability to embolism variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the water potential at which 50% of the xylem capacity to conduct water to the leaves is lost across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of xylem vulnerability to embolism for the apical branches of 10 measured adult dominant/co-dominant trees sampled either inside or in the vicinity of a representative circular plot with a 15 m radius. When a tree is droughted, its xylem is vulnerable to losing its capacity to conduct water to the leaves, i.e., its hydraulic conductivity, because of the formation of air emboli inside the xylem conduits."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit_name": "MPa",
+					"_unit_symbol": "MPa",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_P50",
+			"_lid": "CI95",
+			"_gid": "chr_P50_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.P50"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Xylem vulnerability to embolism 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for xylem vulnerability to embolism."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [xylem vulnerability to embolism](./chr_P50.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "MPa"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Gres",
+			"_gid": "chr_Gres",
+			"_aid": [
+				"Gres"
+			],
+			"_pid": [
+				"Gres"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Residual conductance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The leaf water vapour conductance remaining after stomatal closure."
+			},
+			"_description": {
+				"ISO_639_3_eng": "When a branch is under severe drought stress, it does not have the capacity to entirely stop its water losses. The branch continues to lose water slowly from the surfaces of its leaves and bark. This eventually leads to dessiccation and death of the living cells. Residual (or minimum) leaf conductance is an index of lack of drought resistance (its inverse, i.e., residual resistance, is an index of drought resistance). High values of conductance (low values of resistance) indicate a reduced capacity to minimise these losses. Small values (close to zero) indicate a high capacity to withstand long droughts. The residual conductance is the rate at which this unavoidable evaporation takes place. It is measured by weight loss under standard conditions in the laboratory. It is measured in the apical branches of each tree."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			],
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "mmol m-2 s-1",
+					"_range_valid": {
+						"_max-exclusive": 50.0,
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvGres",
+			"_gid": "chr_AvGres",
+			"_aid": [
+				"AvGres"
+			],
+			"_pid": [
+				"Mean.Gres"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Residual conductance mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the leaf water vapour conductance remaining after stomatal closure across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of leaf residual conductance for the apical leaves of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. During a severe drought, following the closure of the stomata, trees continue slowly to lose water. A high residual conductance implies a high sensitivity to severe droughts because it favours desiccation."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "mmol m-2 s-1",
+					"_unit_symbol": "mmol m-2 s-1",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarGres",
+			"_gid": "chr_VarGres",
+			"_aid": [
+				"VarGres"
+			],
+			"_pid": [
+				"Var.Gres"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Residual conductance variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the leaf water vapour conductance remaining after stomatal closure across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of leaf residual conductance for the apical leaves of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. During a severe drought, following the closure of the stomata, trees continue slowly to lose water. A high residual conductance implies a high sensitivity to severe droughts because it favours desiccation."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "mmol m-2 s-1",
+					"_unit_symbol": "mmol m-2 s-1",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_Gres",
+			"_lid": "CI95",
+			"_gid": "chr_Gres_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.Gres"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Leaf residual conductance 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for leaf residual conductance."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [leaf residual conductance](./chr_Gres.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "mmol m-2 s-1"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvCbranch",
+			"_gid": "chr_AvCbranch",
+			"_aid": [
+				"AvCbranch"
+			],
+			"_pid": [
+				"Mean.Cbranch"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hydraulic capacitance mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the change in the branch relative water content (RWC) per unit change in water potential across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of hydraulic capacitance for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. Capacitance is the change in % relative water content (i.e., water content relative to its maximum value at saturation) per unit change in water potential. During a severe drought, if capacitance is high, the tree is capable of exploiting its own water reserves to delay desiccation."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "%RWC MPa-1",
+					"_unit_symbol": "%RWC MPa-1",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarCbranch",
+			"_gid": "chr_VarCbranch",
+			"_aid": [
+				"VarCbranch"
+			],
+			"_pid": [
+				"Var.Cbranch"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Hydraulic capacitance variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the change in branch relative water content (RWC) per unit change in water potential across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance  of the values of hydraulic capacitance for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. Capacitance is the change in % relative water content (i.e., water content relative to its maximum value at saturation) per unit change in water potential. During a severe drought, if capacitance is high, the tree is capable of exploiting its own water reserves to delay desiccation."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "%RWC MPa-1",
+					"_unit_symbol": "%RWC MPa-1",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "HuberValue",
+			"_gid": "chr_HuberValue",
+			"_aid": [
+				"HuberValue"
+			],
+			"_pid": [
+				"HV"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Huber value"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The ratio of under-bark wood cross-sectional area to subtended leaf area in a branch."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The Huber Value is the ratio of sapwood cross-sectional area to leaf area above the sapwood cross-section. It is an index of investment of dry matter in either leaves or wood. It represents the investment in the production of branch wood required for the conduction of water towards the transpiring leaves subtended by that cross-section. A high Huber value indicate an conservative plant, i.e., a plant that does not develop a large leaf area but rather prefers to build a large supporting wooden structure. A low Huber value indicates an acquisitive plant, with large leaf area, but low water supply capacity. It is measured in the apical branches of each tree. Tree level data."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/m2",
+					"_unit_symbol": "cm^2/m^2",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvHuberValue",
+			"_gid": "chr_AvHuberValue",
+			"_aid": [
+				"AvHuberValue"
+			],
+			"_pid": [
+				"Mean.HV"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Huber value mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the ratio of under-bark sapwood cross-sectional area to the leaf area distal to the cross-section in all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the Huber values for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The ratio of under-bark sapwood cross-sectional area to the leaf area distal to the cross-section is a measure of allocation of assimilates to build either leaf area for photosynthesis or sapwood (i.e., wood capable of conducting water) to supply the leaves with water. A tree with high Huber values is efficient in providing support to the leaves, but may not invest in high leaf areas. The Huber value is determined on one branch for each of the 10 measufred trees."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/m2",
+					"_unit_symbol": "cm^2/m^2",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarHuberValue",
+			"_gid": "chr_VarHuberValue",
+			"_aid": [
+				"VarHuberValue"
+			],
+			"_pid": [
+				"Var.HV"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Huber value variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the ratio of under-bark sapwood cross-sectional area to subtended leaf area in a branch across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the Huber values for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The ratio of under-bark sapwood cross-sectional area to the leaf area distal to the cross-section is a measure of allocation of assimilates to build either leaf area for photosynthesis or sapwood (i.e., wood capable of conducting water) to supply the leaves with water. A tree with high Huber values is efficient in providing support to the leaves, but may not invest in high leaf areas. The Huber value is determined on one branch for each of the 10 measufred trees."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/m2",
+					"_unit_symbol": "cm^2/m^2",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_HuberValue",
+			"_lid": "CI95",
+			"_gid": "chr_HuberValue_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.HV"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Huber value 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for Huber value."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [Huber value](./chr_HV.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "cm2 cm-2"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "BasalCrownHeight",
+			"_gid": "chr_BasalCrownHeight",
+			"_aid": [
+				"BasalCrownHeight"
+			],
+			"_pid": [
+				"Hcrown"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Vertical tree height from ground level to the lowermost live branch on the main stem."
+			},
+			"_description": {
+				"ISO_639_3_eng": "A measure of tree size, tree basal crown height in m is measured with a clinometer. Tree level data."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			],
+			"_notes": {
+				"ISO_639_3_eng": "This tree level property can also be averaged across trees to provide an equivalent GCU-level estimate (with associated variance)."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m",
+					"_range_valid": {
+						"_max-exclusive": 100.0,
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvBasalCrownHeight",
+			"_gid": "chr_AvBasalCrownHeight",
+			"_aid": [
+				"AvBasalCrownHeight"
+			],
+			"_pid": [
+				"AvHcrown"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the vertical tree height from ground level to the lowermost live branch on the main stem across all measured trees."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of [basal crown height](./chr_Hcrown.md) for 10 individual adult dominant/co-dominant trees sampled either inside or outside the circular plot. Stand level data."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarBasalCrownHeight",
+			"_gid": "chr_VarBasalCrownHeight",
+			"_aid": [
+				"VarBasalCrownHeight"
+			],
+			"_pid": [
+				"VarHcrown"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the vertical tree height from ground level to the lowermost live branch on the main stem across all measured trees."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Squared standard deviation across all the values of [basal crown height](./chr_Hcrown.md). Stand level data."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_BasalCrownHeight",
+			"_lid": "CI95",
+			"_gid": "chr_BasalCrownHeight_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.Hcrown"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Basal crown height 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for basal crown height."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [basal crown height](./chr_Hcrown.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_length_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SpecLeafArea",
+			"_gid": "chr_SpecLeafArea",
+			"_aid": [
+				"SpecLeafArea"
+			],
+			"_pid": [
+				"SLA"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Specific leaf area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The ratio between the projected area of a fresh leaf and its dry mass."
+			},
+			"_description": {
+				"ISO_639_3_eng": "SLA is the ratio of investment of dry matter into leaves and the return in terms of area for photosynthesis. The area is projected for broadleaves but accounts for cylindrical geometry for conifer needles."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/kg",
+					"_unit_symbol": "cm^2/kg",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvSpecLeafArea",
+			"_gid": "chr_AvSpecLeafArea",
+			"_aid": [
+				"AvSpecLeafArea"
+			],
+			"_pid": [
+				"Mean.SLA"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Specific leaf area mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the ratio of half of the total area of a fresh leaf to its dry mass across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of specific leaf area for the apical leaves of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a 15 m radius. Specific leaf area (SLA) is a measure of the return of photosynthetic assimilates via leaf surface display per unit leaf biomiass investment. Leaves with high SLA are said to be acquisitive leaves. They are photosynthetically more productive per unit of mass invested and per unit of time, but they generally have a shorter lifespan, which lowers their cumulative return."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/kg",
+					"_unit_symbol": "cm^2/kg",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarSpecLeafArea",
+			"_gid": "chr_VarSpecLeafArea",
+			"_aid": [
+				"VarSpecLeafArea"
+			],
+			"_pid": [
+				"Var.SLA"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Specific leaf area variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the ratio of half of the total area of a fresh leaf to its dry mass across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of specific leaf area for the apical leaves of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a 15 m radius. Specific leaf area (SLA) is a measure of the return of photosynthetic assimilates via leaf surface display per unit leaf biomiass investment. Leaves with high SLA are said to be acquisitive leaves. They are photosynthetically more productive per unit of mass invested and per unit of time, but they generally have a shorter lifespan, which lowers their cumulative return."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "cm2/kg",
+					"_unit_symbol": "cm^2/kg",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_SpecLeafArea",
+			"_lid": "CI95",
+			"_gid": "chr_SpecLeafArea_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.SLA"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Specific leaf area 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for specific leaf area."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [specific leaf area](./chr_SLA.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "mm2 mg-1"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "WoodDensity",
+			"_gid": "chr_WoodDensity",
+			"_aid": [
+				"WoodDensity"
+			],
+			"_pid": [
+				"WD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Wood density"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The ratio of wood dry mass divided by its fresh volume."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Wood density is an index of investments of dry biomass in wood. It represents the biomass invested per unit of wood volume. A plant with high values of wood density is a conservative plant. A plant with high values of wood density is an acquisitive plant. Wood density helps to maintain mechanical support. However, high wood density results in low capacity to transport water and store carbohydrates. It is obtained by weighing and following determination of volume. It is measured at the base of apical branches of each tree."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "g cm-3",
+					"_range_valid": {
+						"_max-exclusive": 1.0,
+						"_min-exclusive": 0.1
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvWoodDensity",
+			"_gid": "chr_AvWoodDensity",
+			"_aid": [
+				"AvWoodDensity"
+			],
+			"_pid": [
+				"Mean.WD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Wood density mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the ratio of dry mass to fresh volume of a branch wood sample across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Mean of the values of branch wood density for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. Wood density is a measure of mass invested per unit of volume. High density wood is generally correlated with long wood lifespan, high resistance to pathogen attacks and mechanical damage. It also relates inversely to volumetric growth, hence trees with high wood density are said to be resource conservative."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "g cm-3",
+					"_unit_symbol": "g cm-3",
+					"_range_valid": {
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarWoodDensity",
+			"_gid": "chr_VarWoodDensity",
+			"_aid": [
+				"VarWoodDensity"
+			],
+			"_pid": [
+				"Var.WD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Wood density variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the ratio of dry mass to fresh volume of a branch wood sample across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Variance of the values of branch wood density for the apical branches of 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. Wood density is a measure of mass invested per unit of volume. High density wood is generally correlated with long wood lifespan, high resistance to pathogen attacks and mechanical damage. It also relates inversely to volumetric growth, hence trees with high wood density are said to be resource conservative."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_unit_name": "g cm-3",
+					"_unit_symbol": "g cm-3",
+					"_range_valid": {
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr_WoodDensity",
+			"_lid": "CI95",
+			"_gid": "chr_WoodDensity_CI95",
+			"_aid": [
+				"CI95"
+			],
+			"_pid": [
+				"CI.WD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Wood density 95% confidence interval"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "95% confidence interval for wood density."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Difference between [wood density](./chr_WD.md) mean and the upper or lower bounds of the 95% confidence interval."
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit_name": "g cm-3"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "Dieback",
+			"_gid": "chr_Dieback",
+			"_aid": [
+				"Dieback"
+			],
+			"_pid": [
+				"Dieback"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dieback"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The dieback index is an estimation of the level of decline for each tree in 4 classes corresponding to a defoliation percentage assessment."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Assessment for each Functional Subset tree.\n\n0 = 0 to 25% of defoliation\n1 = 25 to 50%of defoliation\n2 = 50 to 75 % of defoliation\n3 = 75% to 99% of defoliation (dead = 100 % = not a FS tree).\n\nSee the WP2 protocol for more informations"
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": [
+						"chr_Dieback"
+					]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "MedDieback",
+			"_gid": "chr_MedDieback",
+			"_aid": [
+				"MedDieback"
+			],
+			"_pid": [
+				"MedDieback"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dieback mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The median of the dieback index across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The median of the values of the dieback index across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The dieback index corresponds to the state of health of the trees determined by assessing foliage loss according to four classes:\n0: 0 to 25% of defoliation\n1: 25 to 50% of defoliation\n2: 50 to 75 % of defoliation\n3: 75% to 99% of defoliation\nThe value 100% corresponds to a dead tree."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_max-inclusive": 3.0,
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "IqrDieback",
+			"_gid": "chr_IqrDieback",
+			"_aid": [
+				"IqrDieback"
+			],
+			"_pid": [
+				"IqrDieback"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Dieback InterQuartile Range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The InterQuartile Range of the dieback index across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The InterQuartile Range of the values of the dieback index across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The dieback index corresponds to the state of health of the trees determined by assessing foliage loss according to four classes:\n0: 0 to 25% of defoliation\n1: 25 to 50% of defoliation\n2: 50 to 75 % of defoliation\n3: 75% to 99% of defoliation\nThe value 100% corresponds to a dead tree."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 2,
+					"_range_valid": {
+						"_max-inclusive": 3.0,
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "SapWoodAreaTrunk",
+			"_gid": "chr_SapWoodAreaTrunk",
+			"_aid": [
+				"SapWoodAreaTrunk"
+			],
+			"_pid": [
+				"SapWoodAreaTrunk"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sapwood area trunk"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The sapwood area of the tree at 1.30m height based on the measurement of the length of the sapwood estimated from a wood core."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Sapwood areas is calculated from:\n\n- the under-bark total lenght of the core measured on the tree ring core after collection.\n- the sapwood lenght measured on the tree ring core after collection.\n- the bark lenght measured on the tree ring core after collection.\n\nThe calculation of sapwood area is weighted by the value of the breast height trunk circumference.\nSee the WP2 protocol for more information."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_area_cm",
+					"_range_valid": {
+						"_max-exclusive": 5000.0,
+						"_min-exclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "AvSapWoodAreaTrunk",
+			"_gid": "chr_AvSapWoodAreaTrunk",
+			"_aid": [
+				"AvSapWoodAreaTrunk"
+			],
+			"_pid": [
+				"AvSapWoodAreaTrunk"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sapwood area trunk mean"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The mean of the sapwood area across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The mean of the values of the sapwood area across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The sapwood area is based on the measurement of the length of the sapwood estimated from a wood core collected at breast height (1.3 m). This sapwood area is the calculated (in cm2) using the Trunk circumference."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_area_cm",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "VarSapWoodAreaTrunk",
+			"_gid": "chr_VarSapWoodAreaTrunk",
+			"_aid": [
+				"VarSapWoodAreaTrunk"
+			],
+			"_pid": [
+				"VarSapWoodAreaTrunk"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Sapwood area trunk variance"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The variance of the sapwood area across all measured trees"
+			},
+			"_description": {
+				"ISO_639_3_eng": "The variance of the values of the sapwood area across 10 measured adult dominant or co-dominant trees sampled either inside or in the vicinity of the representative circular plot with a radius of 15 m. The sapwood area is based on the measurement of the length of the sapwood estimated from a wood core collected at breast height (1.3 m). This sapwood area is the calculated (in cm2) using the [Trunk circumference]."
+			},
+			"_provider": [
+				"Florence Jeanflorence.jean@inrae.fr"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_decimals": 1,
+					"_unit": "_unit_area_cm",
+					"_range_valid": {
+						"_min-inclusive": 0.0
+					}
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CrownArea",
+			"_gid": "chr_CrownArea",
+			"_aid": [
+				"CrownArea"
+			],
+			"_pid": [
+				"CrownArea"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Crown area"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Area of the tree crown area estimated by 4 length projected in the 4 directions: North-East-South and West for each Functional Subset tree."
+			},
+			"_provider": [
+				"Maurizio Mencuccini",
+				"Florence JEAN"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number": {
+					"_unit": "_unit_area_m"
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "CoreYear",
+			"_gid": "chr_CoreYear",
+			"_aid": [
+				"CoreYear"
+			],
+			"_pid": [
+				"CoreYear"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Core year"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Year of birth of the tree estimated from the tree core collected at breast height on each FS tree."
+			},
+			"_description": {
+				"ISO_639_3_eng": "year of birth of the tree estimated from the tree core collected at breast height on each FS tree by PHENOBOIS platform (INRAE, Frédéric LAGANE, Bordeaux)."
+			},
+			"_provider": [
+				"Maurizio Mencuccini"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "chr",
+			"_lid": "RootingDepth",
+			"_gid": "chr_RootingDepth",
+			"_aid": [
+				"RootingDepth"
+			],
+			"_pid": [
+				"RD"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Rooting depth"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The depth at which the deepest roots can be found"
+			},
+			"_description": {
+				"ISO_639_3_eng": "Rooting depth is the depth beyond which there are no roots inside the auger or inside the pit. Rooting depth was generally measured by extracting soil samples down to 1 m depth from five cores taken with a soil auger inside the circular plot with a radius of 15 m, which is representative for the GCU. However, in situations when soil petrosity was very high and using the auger proved impossible, a pit was dug."
+			},
+			"_provider": [
+				"Maurizio Mencuccini <m.mencuccini@creaf.uab.cat>"
+			]
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_unit": "_unit_length_cm",
+					"_range_valid": {
+						"_max-exclusive": 100,
+						"_min-exclusive": 0
+					}
+				}
+			}
+		}
+	}
+]

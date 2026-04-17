@@ -48,7 +48,7 @@ At most one shape property may be present. When the section is an **empty object
 The seven inline shapes are:
 
 - [`_scalar`](_scalar.md) — a single indivisible value; the type is expressed as a property key inside the object
-- [`_object`](_object.md) — an object or struct; may be unconstrained (`{}`), open-schema, or closed-schema
+- [`_object`](_object.md) — an object or struct; may be unconstrained (`{}`), open-schema, closed-schema, or a named object type such as [`_object_GeoJSON`](_object_GeoJSON.md)
 - [`_array`](_array.md) — an ordered list of elements of the same type
 - [`_set`](_set.md) — an unordered list of unique comparable elements
 - [`_tuple`](_tuple.md) — an ordered positional array where each position has its own independently defined type

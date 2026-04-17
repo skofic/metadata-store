@@ -1,0 +1,105 @@
+[
+	{
+		"_code": {
+			"_lid": "geo",
+			"_gid": "geo",
+			"_aid": [
+				"geo"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geodesy standards"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Standards regarding geographic locations, measurements and methods."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This namespace groups all terms and descriptors that represent standards in the geodesic domain."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geo",
+			"_lid": "shape",
+			"_gid": "geo_shape",
+			"_aid": [
+				"shape"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geographic shape"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A shape or geometry associated with one or more geographic features."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining geographic features associated with a geographic region, shape or geometry."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geo_shape",
+			"_lid": "rate",
+			"_gid": "geo_shape_rate",
+			"_aid": [
+				"rate"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Geographic shape coverage rate"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "Coverage percentage or ratio of the geographic shape."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining *coverage percentages* of *geographic shapes*."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "geo",
+			"_lid": "box",
+			"_gid": "geo_box",
+			"_aid": [
+				"box"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Bounds properties"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A namespace for properties characterising a bounding box."
+			},
+			"_description": {
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining geographic features or measures expressed in the local coordinate reference system."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_namespace"
+			]
+		}
+	}
+]

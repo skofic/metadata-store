@@ -1,0 +1,92 @@
+[
+	{
+		"_from": "terms/std_date_span_day",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_date_span",
+		"_path": [
+			"terms/std_date_span"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_date_span_week",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_date_span",
+		"_path": [
+			"terms/std_date_span"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_date_span_month",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_date_span",
+		"_path": [
+			"terms/std_date_span"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_date_span_year",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_date_span",
+		"_path": [
+			"terms/std_date_span"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_date_span_range",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_date_span",
+		"_path": [
+			"terms/std_date_span"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_dataset_scope_grid",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_dataset_scope",
+		"_path": [
+			"terms/std_dataset_scope"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_dataset_scope_shape",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_dataset_scope",
+		"_path": [
+			"terms/std_dataset_scope"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_dataset_extent_region",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_dataset_extent",
+		"_path": [
+			"terms/std_dataset_extent"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_dataset_extent_gcu",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_dataset_extent",
+		"_path": [
+			"terms/std_dataset_extent"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/std_dataset_extent_shape",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/std_dataset_extent",
+		"_path": [
+			"terms/std_dataset_extent"
+		],
+		"_path_data": {}
+	}
+]

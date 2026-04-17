@@ -1,0 +1,64 @@
+[
+	{
+		"_from": "std_date_span_day",
+		"_to": "std_date_span",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_date_span"]
+	},
+	{
+		"_from": "std_date_span_week",
+		"_to": "std_date_span",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_date_span"]
+	},
+	{
+		"_from": "std_date_span_month",
+		"_to": "std_date_span",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_date_span"]
+	},
+	{
+		"_from": "std_date_span_year",
+		"_to": "std_date_span",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_date_span"]
+	},
+	{
+		"_from": "std_date_span_range",
+		"_to": "std_date_span",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_date_span"]
+	},
+	
+	{
+		"_from": "std_dataset_scope_grid",
+		"_to": "std_dataset_scope",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_dataset_scope"]
+	},
+	{
+		"_from": "std_dataset_scope_shape",
+		"_to": "std_dataset_scope",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_dataset_scope"]
+	},
+	
+	{
+		"_from": "std_dataset_extent_region",
+		"_to": "std_dataset_extent",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_dataset_extent"]
+	},
+	{
+		"_from": "std_dataset_extent_gcu",
+		"_to": "std_dataset_extent",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_dataset_extent"]
+	},
+	{
+		"_from": "std_dataset_extent_shape",
+		"_to": "std_dataset_extent",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["std_dataset_extent"]
+	}
+]

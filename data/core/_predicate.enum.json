@@ -133,5 +133,32 @@
 			"terms/_predicate"
 		],
 		"_path_data": {}
+	},
+	{
+		"_from": "terms/_predicate_requires",
+		"_predicate": "_predicate_section-of",
+		"_to": "terms/_predicate",
+		"_path": [
+			"terms/_predicate"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_predicate_requires_indicator",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_predicate_requires",
+		"_path": [
+			"terms/_predicate"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_predicate_requires_metadata",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_predicate_requires",
+		"_path": [
+			"terms/_predicate"
+		],
+		"_path_data": {}
 	}
 ]
