@@ -85,21 +85,21 @@ Conversion: SI_value = value × 0.01. SI_factor = 0.01.
 | [QUDT conversion multiplier](QUDT_multiplier.md) | 0.01 |
 | [Multiplicative factor](SI_factor.md) | 0.01 |
 | [UCUM unit code](UCUM_code.md) | `%` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_max-inclusive" : 100,
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L0I0M0H0T0D0",
   "QUDT_multiplier" : 0.01,
   "SI_factor" : 0.01,
-  "UCUM_code" : "%"
+  "UCUM_code" : "%",
+  "unit_range" : {
+    "_max-inclusive" : 100,
+    "_min-inclusive" : 0
+  }
 }
 ```
 

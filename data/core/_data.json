@@ -84,6 +84,7 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_data-shape",
 				"_term_role_descriptor"
 			]
 		}
@@ -144,6 +145,7 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_data-shape",
 				"_term_role_descriptor"
 			]
 		}
@@ -176,6 +178,7 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_data-shape",
 				"_term_role_descriptor"
 			]
 		}
@@ -197,7 +200,7 @@
 				"ISO_639_3_eng": "A reference to an existing typedef term by its global identifier. Delegates the shape definition to the referenced typedef term, making it mutually exclusive with all inline shape properties."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry [`_term_role_typedef`](_term_role_typedef.md) in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.\n\nWhen the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its [`_data`](_data.md) section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.\n\nThe three built-in typedef terms are [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md), which encode the full allowed-type lists for scalar, set-element, and dictionary-key contexts respectively. `_typedef` is mutually exclusive with all seven inline shape properties."
+				"ISO_639_3_eng": "`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry [`_term_role_data-typedef`](_term_role_data-typedef.md) in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.\n\nWhen the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its [`_data`](_data.md) section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.\n\nThe three built-in typedef terms are [`_type_scalar`](_type_scalar.md), [`_type_comparable`](_type_comparable.md), and [`_type_key`](_type_key.md), which encode the full allowed-type lists for scalar, set-element, and dictionary-key contexts respectively. `_typedef` is mutually exclusive with all seven inline shape properties."
 			},
 			"_examples": {
 				"ISO_639_3_eng": "Delegating to the built-in scalar type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_scalar\"\n\t}\n}\n```\n\nThis is how the [`_scalar`](_scalar.md) shape property itself is defined: it delegates to [`_type_scalar`](_type_scalar.md), which encodes the complete list of allowed scalar types.\n\nDelegating to the set-compatible type list:\n\n```json\n{\n\t\"_data\": {\n\t\t\"_typedef\": \"_type_comparable\"\n\t}\n}\n```\n\nThis is how [`_nested`](_nested.md) is defined: it reuses [`_type_comparable`](_type_comparable.md) to enforce comparable leaf types."

@@ -1,0 +1,163 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domn",
+			"_gid": "_domn",
+			"_aid": [
+				"domn"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Domains section"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The optional section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary. `_domn` is omitted from source JSON when there is nothing explicit to declare; the loader writes auto-computed roles at insertion time regardless."
+			},
+			"_description": {
+				"ISO_639_3_eng": "The domains section is a flexible classification container. Unlike the fixed sections of a term ([`_code`](_code.md), [`_info`](_info.md), [`_data`](_data.md), [`_prop`](_prop.md)), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.\n\nThe primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge [`_predicate`](_predicate.md) fields (predicate), and appearance as the [`_nid`](_nid.md) of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.\n\nAuthors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_data-type`](_term_role_data-type.md), [`_term_role_data-typedef`](_term_role_data-typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.\n\nFuture classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A descriptor term classified as both a descriptor and a data type:\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\n\t\t\t\"_term_role_descriptor\",\n\t\t\t\"_term_role_data-type\"\n\t\t]\n\t}\n}\n```\n\nA term classified as a typedef, with an additional subject-domain tag (hypothetical future descriptor):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\"_term_role_data-typedef\"],\n\t\t\"std_domain\": \"std_domain_health\"\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_object": {
+				"_open": {
+					"_computed": [
+						"_term_role"
+					],
+					"_recommended": [
+						"_term_role",
+						"_domain",
+						"_category",
+						"_tag"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domain",
+			"_gid": "_domain",
+			"_aid": [
+				"domain"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Subject domain"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of subject-area or discipline labels classifying the term by the scientific or application domain it belongs to. Each element is drawn from the `_domain` controlled vocabulary, which is user-defined and initially empty."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Subject domains answer the question *what scientific field does this term belong to?* Examples of vocabulary elements that might be added later: `_domain_forestry`, `_domain_climatology`, `_domain_genomics`, `_domain_hydrology`. A term may belong to multiple domains simultaneously.\n\nThe `_domain` enumeration root is currently empty — no domain terms are pre-defined. New domain terms are added by creating enumeration elements under the `_domain` root (via [`_predicate_enum-of`](_predicate_enum-of.md) edges) as the dictionary grows to serve specific use cases.\n\nSubject domain differs from [`_category`](_category.md), which describes the term's functional role within the dictionary (measured vs. modelled, core vs. experimental), and from [`_tag`](_tag.md), which carries free-form keyword labels."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A term classified as belonging to both the forestry and remote-sensing domains (using hypothetical future vocabulary elements):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_domain\": [\"_domain_forestry\", \"_domain_remote-sensing\"]\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": [
+						"_domain"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-source"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "category",
+			"_gid": "_category",
+			"_aid": [
+				"category"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Functional category"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of functional or organisational categories classifying the term by its role within the dictionary or data model. Each element is drawn from the `_category` controlled vocabulary, which is user-defined and initially empty."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Functional categories answer the question *what kind of thing is this term within the system?* Where [`_domain`](_domain.md) classifies by scientific field, `_category` classifies by the nature and role of the data: whether a variable is measured in the field or derived by a model, whether a term is a core building block or experimental, whether a value comes from remote sensing or a laboratory instrument.\n\nExamples of vocabulary elements that might be added: `_category_field-measurement`, `_category_remote-sensing`, `_category_modelled`, `_category_core`, `_category_experimental`, `_category_derived`. A term may carry multiple categories.\n\nThe `_category` enumeration root is currently empty — no category terms are pre-defined. New category terms are added by creating enumeration elements under the `_category` root (via [`_predicate_enum-of`](_predicate_enum-of.md) edges)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A field-measurement variable classified under both its data collection method and its processing status (hypothetical future vocabulary):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_category\": [\"_category_field-measurement\", \"_category_validated\"]\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": [
+						"_category"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-source"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "tag",
+			"_gid": "_tag",
+			"_aid": [
+				"tag"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Tags"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A set of free-form keyword labels associated with the term, used for search, filtering, and cross-cutting grouping. Each element is drawn from the `_tag` controlled vocabulary, which is user-defined and initially empty."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Tags are the most open-ended classifier in the [`_domn`](_domn.md) section. Where [`_domain`](_domain.md) groups by scientific field and [`_category`](_category.md) groups by functional role, tags attach any keyword that aids discovery or grouping — dataset names, measurement protocols, data source identifiers, project-specific flags, or thematic keywords.\n\nExamples of vocabulary elements that might be added: `_tag_FORGENIUS-WP2`, `_tag_CHELSA`, `_tag_time-series`, `_tag_FS-tree`, `_tag_plot-level`. Tags tend to be more granular and project-specific than domains or categories, and the vocabulary grows freely as new labelling needs arise.\n\nThe `_tag` enumeration root is currently empty — no tag terms are pre-defined. New tags are added by creating enumeration elements under the `_tag` root (via [`_predicate_enum-of`](_predicate_enum-of.md) edges)."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "A remote-sensing variable tagged with its data source and temporal resolution (hypothetical future vocabulary):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_tag\": [\"_tag_CHELSA\", \"_tag_monthly\", \"_tag_gridded\"]\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": [
+						"_tag"
+					]
+				}
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor",
+				"_term_role_enum-source"
+			]
+		}
+	}
+]

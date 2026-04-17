@@ -74,20 +74,20 @@ The hectopascal is the standard meteorological unit for surface atmospheric pres
 | [QUDT conversion multiplier](QUDT_multiplier.md) | 100 |
 | [Multiplicative factor](SI_factor.md) | 100 |
 | [UCUM unit code](UCUM_code.md) | `hPa` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L-1I0M1H0T-2D0",
   "QUDT_multiplier" : 100,
   "SI_factor" : 100,
-  "UCUM_code" : "hPa"
+  "UCUM_code" : "hPa",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

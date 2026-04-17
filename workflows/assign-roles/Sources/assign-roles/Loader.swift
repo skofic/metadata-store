@@ -84,13 +84,15 @@ private func parseTermFile(_ url: URL) -> (records: [TermRecord], skipped: Int, 
 			skipped += 1
 			continue
 		}
-		let hasData = obj["_data"] != nil
+		let dataSection = obj["_data"]
+		let hasData = dataSection != nil
 		let domn = obj["_domn"] as? [String: Any] ?? [:]
 		records.append(TermRecord(
 			fileURL: url,
 			arrayIndex: index,
 			code: code,
 			hasData: hasData,
+			dataSection: dataSection,
 			domn: domn
 		))
 	}

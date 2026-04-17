@@ -41,7 +41,7 @@
 
 **[Description](_description.md)**
 
-`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry [`_term_role_typedef`](_term_role_typedef.md) in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.
+`_typedef` allows a descriptor to inherit its data shape from a named typedef term rather than defining it inline. The value is the [`_gid`](_gid.md) of the typedef term to delegate to. The referenced term must carry [`_term_role_data-typedef`](_term_role_data-typedef.md) in its `_domn._term_role` and must define its own shape inline — chaining (a typedef referencing another typedef) is not permitted.
 
 When the validator encounters `_typedef`, it performs a single lookup: finds the typedef term, reads its [`_data`](_data.md) section, and applies that shape as if it were written inline. This mechanism is used to share complex, reusable shapes across many descriptors without duplication.
 

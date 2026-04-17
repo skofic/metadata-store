@@ -74,20 +74,20 @@ The kilopascal is used for vapour pressure deficit (VPD), soil water potential, 
 | [QUDT conversion multiplier](QUDT_multiplier.md) | 1000 |
 | [Multiplicative factor](SI_factor.md) | 1000 |
 | [UCUM unit code](UCUM_code.md) | `kPa` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L-1I0M1H0T-2D0",
   "QUDT_multiplier" : 1000,
   "SI_factor" : 1000,
-  "UCUM_code" : "kPa"
+  "UCUM_code" : "kPa",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

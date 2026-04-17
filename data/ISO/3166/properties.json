@@ -172,6 +172,7 @@
 			"_term_role": [
 				"_term_role_descriptor",
 				"_term_role_enum-root",
+				"_term_role_enum-source",
 				"_term_role_namespace"
 			]
 		}

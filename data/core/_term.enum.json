@@ -1,6 +1,15 @@
 [
 	{
-		"_from": "terms/_term_role_type",
+		"_from": "terms/_term_role_data-type",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_data-shape",
 		"_predicate": "_predicate_enum-of",
 		"_to": "terms/_term_role",
 		"_path": [
@@ -28,6 +37,15 @@
 	},
 	{
 		"_from": "terms/_term_role_enum-root",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/_term_role",
+		"_path": [
+			"terms/_term_role"
+		],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/_term_role_enum-source",
 		"_predicate": "_predicate_enum-of",
 		"_to": "terms/_term_role",
 		"_path": [

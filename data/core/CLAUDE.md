@@ -213,7 +213,8 @@ Group related terms into a single JSON file. Suggested groupings:
 
 | File                | Contents |
 |---------------------|----------|
-| `containers.json`    | Top-level structure terms: `_term`, `_term_descriptor`, `_term_object`, `_edge`, `_code`, `_info`, `_data`, `_rule`, `_prop`, `_domn` |
+| `containers.json`    | Top-level structure terms: `_term`, `_term_descriptor`, `_term_object`, `_edge`, `_code`, `_info`, `_data`, `_rule`, `_prop` |
+| `_domn.json`         | Domains section and classification descriptors: `_domn`, `_domain`, `_category`, `_tag` |
 | `descriptors.json`   | All property descriptor terms: `_gid`, `_lid`, `_nid`, `_aid`, `_pid`, `_name`, `_symbol`, `_regexp`, `_emoji`, `_title`, `_definition`, `_description`, `_examples`, `_notes`, `_url`, `_citation`, `_provider`, and all other named properties of terms and edges |
 | `enumerations.json`  | Controlled vocabulary terms in the default namespace (not ISO standards — those have their own directory under `data/standards/`) |
 | `predicates.json`    | All `_predicate_*` terms |

@@ -74,20 +74,20 @@ The standard atmosphere is a defined constant used as a reference pressure in ga
 | [QUDT conversion multiplier](QUDT_multiplier.md) | 101325 |
 | [Multiplicative factor](SI_factor.md) | 101325 |
 | [UCUM unit code](UCUM_code.md) | `atm` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L-1I0M1H0T-2D0",
   "QUDT_multiplier" : 101325,
   "SI_factor" : 101325,
-  "UCUM_code" : "atm"
+  "UCUM_code" : "atm",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

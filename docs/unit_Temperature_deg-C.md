@@ -81,22 +81,22 @@ In the EUFGIS database, CHELSA and WorldClim temperature data (mean, min, max mo
 | [Multiplicative factor](SI_factor.md) | 1 |
 | [Additive offset](SI_offset.md) | 273.15 |
 | [UCUM unit code](UCUM_code.md) | `Cel` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : -273.14999999999998
-  },
   "QUDT_dimension_vector" : "A0E0L0I0M0H1T0D0",
   "QUDT_multiplier" : 1,
   "QUDT_offset" : 273.14999999999998,
   "SI_factor" : 1,
   "SI_offset" : 273.14999999999998,
-  "UCUM_code" : "Cel"
+  "UCUM_code" : "Cel",
+  "unit_range" : {
+    "_min-inclusive" : -273.14999999999998
+  }
 }
 ```
 

@@ -1,0 +1,34 @@
+[
+	{
+		"_code": {
+			"_nid": "unit",
+			"_lid": "range",
+			"_gid": "unit_range",
+			"_aid": [
+				"range"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Unit physical range"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The physical bounds of the measurement scale for this unit. When present, no value expressed in this unit can legitimately lie outside these bounds, regardless of the quantity being measured."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`unit_range` encodes a constraint intrinsic to the unit's measurement scale itself — a bound that no legitimate measurement in this unit can exceed, by the definition of the scale. It is stored in the [`_prop`](_prop.md) section of unit terms, alongside SI conversion parameters.\n\nThis differs from [`_range_valid`](_range_valid.md) declared in the [`_data`](_data.md) section of a descriptor, which constrains the values accepted for a specific use case. When a descriptor selects a unit that carries `unit_range`, the validator applies the unit's physical bound as an additional hard constraint. The effective range is the **intersection** of both: `effective_min = max(unit_min, descriptor_min)` and `effective_max = min(unit_max, descriptor_max)`. A descriptor may narrow but never widen the unit's physical constraint.\n\nOnly add `unit_range` to a unit term when the *unit definition itself* prohibits certain values — not when the quantity happens to be non-negative in a particular use case (length, mass, and area can all be negative in displacement or anomaly contexts). Current units carrying `unit_range`:\n\n| Unit kind | Constraint | Rationale |\n|-----------|-----------|----------|\n| Temperature (K) | `_min-inclusive: 0` | Absolute zero is the physical floor of the kelvin scale |\n| Temperature (°C) | `_min-inclusive: -273.15` | Equivalent absolute zero in Celsius |\n| Temperature (°F) | `_min-inclusive: -459.67` | Equivalent absolute zero in Fahrenheit |\n| Pressure (all units) | `_min-inclusive: 0` | Absolute pressure cannot be negative |\n| Hydraulic capacitance (all units) | `_min-inclusive: 0` | Capacitance is a non-negative ratio by definition |\n| Percent | `_min-inclusive: 0`, `_max-inclusive: 100` | A percentage is bounded to [0, 100] |"
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Kelvin — cannot be below absolute zero:\n\n```json\n{\n\t\"_prop\": {\n\t\t\"SI_base\": true,\n\t\t\"SI_factor\": 1.0,\n\t\t\"UCUM_code\": \"K\",\n\t\t\"unit_range\": { \"_min-inclusive\": 0 }\n\t}\n}\n```\n\nPercent — bounded to [0, 100]:\n\n```json\n{\n\t\"_prop\": {\n\t\t\"SI_factor\": 0.01,\n\t\t\"UCUM_code\": \"%\",\n\t\t\"unit_range\": { \"_min-inclusive\": 0, \"_max-inclusive\": 100 }\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_typedef": "_range"
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_descriptor"
+			]
+		}
+	}
+]

@@ -33,7 +33,7 @@
 			"SI_factor": 1.0,
 			"SI_offset": 0.0,
 			"UCUM_code": "K",
-			"_range_valid": {
+			"unit_range": {
 				"_min-inclusive": 0
 			}
 		}
@@ -73,7 +73,7 @@
 			"SI_factor": 1.0,
 			"SI_offset": 273.15,
 			"UCUM_code": "Cel",
-			"_range_valid": {
+			"unit_range": {
 				"_min-inclusive": -273.15
 			}
 		}
@@ -113,7 +113,7 @@
 			"SI_factor": 0.55555555555556,
 			"SI_offset": 255.37222222222,
 			"UCUM_code": "[degF]",
-			"_range_valid": {
+			"unit_range": {
 				"_min-inclusive": -459.67
 			}
 		}

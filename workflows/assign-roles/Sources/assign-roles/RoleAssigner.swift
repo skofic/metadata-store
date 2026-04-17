@@ -11,7 +11,9 @@
  *                            (sit.2) term is _from of bridge-of to X, some enum-of edge
  *                                    targets it with X in path but term's handle NOT in path
  *
- * User-assigned roles (_term_role_type, _term_role_typedef) are preserved unchanged.
+ *   _term_role_enum-source : term's _gid appears in any _enums array in any _data section
+ *
+ * User-assigned roles (_term_role_data-type, _term_role_data-shape, _term_role_typedef) are preserved unchanged.
  */
 
 import Foundation
@@ -21,6 +23,9 @@ import Foundation
 private struct Indexes {
 	/// Handles that appear in _path of any enum-of or bridge-of edge → enum-root candidates.
 	var pathRoots: Set<String> = []
+
+	/// GIDs found in any _enums array in any _data section → enum-source role.
+	var enumSourceGids: Set<String> = []
 
 	/// Handles that are _from of any enum-of edge → enum-item (situation 1).
 	var fromEnumOf: Set<String> = []
@@ -74,7 +79,37 @@ private func buildIndexes(terms: [TermRecord], edges: [EdgeRecord]) -> Indexes {
 		}
 	}
 
+	// Scan _data sections for _enums references
+	for term in terms {
+		if let data = term.dataSection {
+			for gid in collectEnumsGids(data) {
+				idx.enumSourceGids.insert(gid)
+			}
+		}
+	}
+
 	return idx
+}
+
+// MARK: - _enums scanner
+
+/// Recursively collects all string values found inside any "_enums" key in the given value.
+private func collectEnumsGids(_ value: Any) -> [String] {
+	var result: [String] = []
+	if let dict = value as? [String: Any] {
+		for (key, val) in dict {
+			if key == "_enums", let arr = val as? [String] {
+				result.append(contentsOf: arr)
+			} else {
+				result.append(contentsOf: collectEnumsGids(val))
+			}
+		}
+	} else if let arr = value as? [Any] {
+		for item in arr {
+			result.append(contentsOf: collectEnumsGids(item))
+		}
+	}
+	return result
 }
 
 // MARK: - Role computation
@@ -111,6 +146,11 @@ private func computeRoles(for term: TermRecord, idx: Indexes) -> [String] {
 	// _term_role_enum-root: handle appears in _path of any enum-of, bridge-of, or section-of edge
 	if idx.pathRoots.contains(handle) {
 		roles.insert(TermRole.enumRoot.rawValue)
+	}
+
+	// _term_role_enum-source: gid appears in any _enums array in any _data section
+	if idx.enumSourceGids.contains(gid) {
+		roles.insert(TermRole.enumSource.rawValue)
 	}
 
 	// _term_role_enum-item — situation 1: _from of any enum-of edge

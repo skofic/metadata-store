@@ -45,7 +45,7 @@ The domains section is a flexible classification container. Unlike the fixed sec
 
 The primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge [`_predicate`](_predicate.md) fields (predicate), and appearance as the [`_nid`](_nid.md) of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.
 
-Authors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_type`](_term_role_type.md), [`_term_role_typedef`](_term_role_typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.
+Authors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_data-type`](_term_role_data-type.md), [`_term_role_data-typedef`](_term_role_data-typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.
 
 Future classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required.
 
@@ -58,7 +58,7 @@ A descriptor term classified as both a descriptor and a data type:
 	"_domn": {
 		"_term_role": [
 			"_term_role_descriptor",
-			"_term_role_type"
+			"_term_role_data-type"
 		]
 	}
 }
@@ -69,7 +69,7 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
 ```json
 {
 	"_domn": {
-		"_term_role": ["_term_role_typedef"],
+		"_term_role": ["_term_role_data-typedef"],
 		"std_domain": "std_domain_health"
 	}
 }
@@ -103,7 +103,7 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
 
 **Shape:** [Object](_object.md) — [Open schema](_open.md)
 
-**[Recommended properties](_recommended.md):** [Term role](_term_role.md)
+**[Recommended properties](_recommended.md):** [Term role](_term_role.md) · [Subject domain](_domain.md) · [Functional category](_category.md) · [Tags](_tag.md)
 
 **[Computed properties](_computed.md):** [Term role](_term_role.md)
 
@@ -118,7 +118,10 @@ A term classified as a typedef, with an additional subject-domain tag (hypotheti
         "_term_role"
       ],
       "_recommended" : [
-        "_term_role"
+        "_term_role",
+        "_domain",
+        "_category",
+        "_tag"
       ]
     }
   }

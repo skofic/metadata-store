@@ -26,6 +26,7 @@
 		"_domn": {
 			"_term_role": [
 				"_term_role_descriptor",
+				"_term_role_enum-source",
 				"_term_role_namespace"
 			]
 		}
@@ -57,6 +58,7 @@
 		"_domn": {
 			"_term_role": [
 				"_term_role_descriptor",
+				"_term_role_enum-source",
 				"_term_role_namespace"
 			]
 		}

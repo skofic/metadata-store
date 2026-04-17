@@ -81,20 +81,20 @@ The SI coherent unit for hydraulic capacitance is Pa⁻¹ ([`unit_HydraulicCapac
 | [QUDT conversion multiplier](QUDT_multiplier.md) | 1e-08 |
 | [Multiplicative factor](SI_factor.md) | 1e-08 |
 | [UCUM unit code](UCUM_code.md) | `%/MPa` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L1I0M-1H0T2D0",
   "QUDT_multiplier" : 1e-08,
   "SI_factor" : 1e-08,
-  "UCUM_code" : "%\/MPa"
+  "UCUM_code" : "%\/MPa",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

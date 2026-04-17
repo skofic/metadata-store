@@ -120,7 +120,7 @@ Ran `assign-roles` (26 role updates, all files normalised) and `term-cards` (106
 **`assign-roles` workflow** (new Swift package at `workflows/assign-roles/`):
 - Automatically computes `_domn._term_role` for all terms by scanning all term and edge files.
 - Five detection rules: `_term_role_descriptor` (has `_data`), `_term_role_namespace` (`_gid` used as `_nid`), `_term_role_predicate` (`_gid` used as `_predicate`), `_term_role_enum-root` (handle in `_path` of enum-of/bridge-of edges), `_term_role_enum-item` (two situations: direct enum-of `_from`, or alias bridge node).
-- Preserves user-assigned `_term_role_type` and `_term_role_typedef`.
+- Preserves user-assigned `_term_role_data-type`, `_term_role_data-shape`, and `_term_role_typedef`.
 - Also normalises all JSON files (term and edge) to canonical key ordering and tab indentation on every run. Key order: term top level (`_code`, `_info`, `_data`, `_domn`, `_prop`), `_code` section, `_info` section, edge top level (`_from`, `_predicate`, `_to`, `_path`, `_path_data`), everything else alphabetical.
 - Added `_term_role_namespace` as a new auto-assigned role with full `_info` and term card.
 - Fixed `_locked: ["_id", "_rev"]` incorrectly present in `_code._data._object._closed` — removed; `_id`/`_rev` are top-level ArangoDB document fields and belong only in `_term._data`.
@@ -239,7 +239,7 @@ A term is a document with top-level **sections**. Which sections a term contains
 
 #### Physical constraints in `_prop` — unit terms
 
-Unit terms may carry a `_range_valid` object in their `_prop` section to express a **physical constraint** imposed by the measurement scale itself — a bound that no value of that unit can ever legitimately exceed, regardless of the quantity being measured.
+Unit terms may carry a `unit_range` object in their `_prop` section to express a **physical constraint** imposed by the measurement scale itself — a bound that no value of that unit can ever legitimately exceed, regardless of the quantity being measured. `unit_range` is a dedicated descriptor (GID `unit_range`, defined in `data/unit/namespace.json`) with `_data._typedef: "_range"`, keeping it semantically distinct from the generic `_range_valid` used in descriptor `_data` sections.
 
 ```json
 {
@@ -247,12 +247,12 @@ Unit terms may carry a `_range_valid` object in their `_prop` section to express
         "SI_factor": 1.0,
         "SI_base": true,
         "UCUM_code": "K",
-        "_range_valid": { "_min-inclusive": 0 }
+        "unit_range": { "_min-inclusive": 0 }
     }
 }
 ```
 
-**Scope**: only add `_range_valid` to a unit term when the *unit definition* prohibits certain values. Do not add it for quantities that happen to be non-negative in a given use case (e.g. mass, length, area — all can be negative in displacement or anomaly contexts). The rule applies to:
+**Scope**: only add `unit_range` to a unit term when the *unit definition* prohibits certain values. Do not add it for quantities that happen to be non-negative in a given use case (e.g. mass, length, area — all can be negative in displacement or anomaly contexts). The rule applies to:
 
 | Unit kind | Constraint | Rationale |
 |-----------|-----------|-----------|
@@ -263,7 +263,7 @@ Unit terms may carry a `_range_valid` object in their `_prop` section to express
 | Hydraulic capacitance (all units) | `_min-inclusive: 0` | Capacitance is a non-negative ratio by definition |
 | Percent | `_min-inclusive: 0`, `_max-inclusive: 100` | A percentage is bounded to [0, 100] |
 
-**Inheritance and validation semantics**: when a descriptor selects a unit via `_unit` and that unit carries `_range_valid` in its `_prop`, the validator applies the unit's constraint as a hard physical bound in addition to any `_range_valid` declared on the descriptor itself. The effective range is the **intersection** of both: `effective_min = max(unit_min, descriptor_min)` and `effective_max = min(unit_max, descriptor_max)`. A descriptor may narrow but never widen the unit's physical constraint.
+**Inheritance and validation semantics**: when a descriptor selects a unit via `_unit` and that unit carries `unit_range` in its `_prop`, the validator applies the unit's constraint as a hard physical bound in addition to any `_range_valid` declared on the descriptor itself. The effective range is the **intersection** of both: `effective_min = max(unit_min, descriptor_min)` and `effective_max = min(unit_max, descriptor_max)`. A descriptor may narrow but never widen the unit's physical constraint.
 
 ### `_code` Section
 

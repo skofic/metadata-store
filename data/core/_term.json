@@ -159,47 +159,6 @@
 	{
 		"_code": {
 			"_nid": "",
-			"_lid": "domn",
-			"_gid": "_domn",
-			"_aid": [
-				"domn"
-			]
-		},
-		"_info": {
-			"_title": {
-				"ISO_639_3_eng": "Domains section"
-			},
-			"_definition": {
-				"ISO_639_3_eng": "The optional section of a term that classifies and categorises the term within the dictionary. It is an open object that may carry any combination of classification properties, each defined by a dictionary descriptor. The recommended property is `_term_role`, which records the roles the term plays in the dictionary. `_domn` is omitted from source JSON when there is nothing explicit to declare; the loader writes auto-computed roles at insertion time regardless."
-			},
-			"_description": {
-				"ISO_639_3_eng": "The domains section is a flexible classification container. Unlike the fixed sections of a term ([`_code`](_code.md), [`_info`](_info.md), [`_data`](_data.md), [`_prop`](_prop.md)), `_domn` is an open object — any descriptor defined in the dictionary may appear as a property, allowing the dictionary itself to define what classification dimensions exist.\n\nThe primary classification property is [`_term_role`](_term_role.md), a set of enumeration values drawn from the `_term_role` controlled vocabulary. The loader computes `_term_role` automatically from the term's structure — presence of `_data` (descriptor), graph membership as enum root or enum item, appearance in edge [`_predicate`](_predicate.md) fields (predicate), and appearance as the [`_nid`](_nid.md) of other terms (namespace). These computed roles are written to the stored document at insertion time and do not need to be declared in the source JSON.\n\nAuthors include `_domn` in source JSON only when they need to explicitly assign a role that cannot be inferred structurally — [`_term_role_type`](_term_role_type.md), [`_term_role_typedef`](_term_role_typedef.md), [`_term_role_namespace`](_term_role_namespace.md), or any future custom classification property. When no such explicit classification is needed, `_domn` is omitted entirely from the source file.\n\nFuture classification dimensions — subject domains, maintenance status, data sensitivity, provenance tags — are added simply by defining new descriptor terms and using them as properties of `_domn`. No schema change to the term structure is required."
-			},
-			"_examples": {
-				"ISO_639_3_eng": "A descriptor term classified as both a descriptor and a data type:\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\n\t\t\t\"_term_role_descriptor\",\n\t\t\t\"_term_role_type\"\n\t\t]\n\t}\n}\n```\n\nA term classified as a typedef, with an additional subject-domain tag (hypothetical future descriptor):\n\n```json\n{\n\t\"_domn\": {\n\t\t\"_term_role\": [\"_term_role_typedef\"],\n\t\t\"std_domain\": \"std_domain_health\"\n\t}\n}\n```"
-			}
-		},
-		"_data": {
-			"_object": {
-				"_open": {
-					"_computed": [
-						"_term_role"
-					],
-					"_recommended": [
-						"_term_role"
-					]
-				}
-			}
-		},
-		"_domn": {
-			"_term_role": [
-				"_term_role_descriptor"
-			]
-		}
-	},
-	{
-		"_code": {
-			"_nid": "",
 			"_lid": "prop",
 			"_gid": "_prop",
 			"_aid": [
@@ -245,10 +204,10 @@
 				"ISO_639_3_eng": "Term role"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_type`](_term_role_type.md) and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned."
+				"ISO_639_3_eng": "A set of enumeration values drawn from the `_term_role` controlled vocabulary, recording the roles a term plays within the dictionary. Stored in the [`_domn`](_domn.md) section. Most roles are assigned automatically by the loader; [`_term_role_data-type`](_term_role_data-type.md), [`_term_role_data-shape`](_term_role_data-shape.md), and [`_term_role_typedef`](_term_role_typedef.md) are user-assigned."
 			},
 			"_description": {
-				"ISO_639_3_eng": "`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both [`_term_role_descriptor`](_term_role_descriptor.md) and [`_term_role_typedef`](_term_role_typedef.md).\n\nThe following roles are **set automatically** by the loader based on structural evidence:\n\n| Role | Set when |\n|---|---|\n| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one [`_predicate_enum-of`](_predicate_enum-of.md) edge |\n| [`_term_role_enum-item`](_term_role_enum-item.md) | The term is the source of at least one `_predicate_enum-of` edge |\n| `_term_role_descriptor` | The term has a [`_data`](_data.md) section |\n| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the [`_predicate`](_predicate.md) value of at least one edge document |\n| [`_term_role_namespace`](_term_role_namespace.md) | The term's [`_gid`](_gid.md) appears as the [`_nid`](_nid.md) of at least one other term |\n\nThe following roles are **user-assigned**:\n\n| Role | Meaning |\n|---|---|\n| [`_term_role_type`](_term_role_type.md) | The term defines a data type in the dictionary's type system |\n| `_term_role_typedef` | The term is intended for use as a reusable type definition via [`_typedef`](_typedef.md) |"
+				"ISO_639_3_eng": "`_term_role` classifies the functional role of a term within the dictionary. A term may carry more than one role simultaneously — for example, a descriptor term that is also intended as a reusable type definition would carry both [`_term_role_descriptor`](_term_role_descriptor.md) and [`_term_role_typedef`](_term_role_typedef.md).\n\nThe following roles are **set automatically** by the loader based on structural evidence:\n\n| Role | Set when |\n|---|---|\n| [`_term_role_enum-root`](_term_role_enum-root.md) | The term is the target of at least one [`_predicate_enum-of`](_predicate_enum-of.md) edge |\n| [`_term_role_enum-item`](_term_role_enum-item.md) | The term is the source of at least one `_predicate_enum-of` edge |\n| `_term_role_descriptor` | The term has a [`_data`](_data.md) section |\n| [`_term_role_predicate`](_term_role_predicate.md) | The term appears as the [`_predicate`](_predicate.md) value of at least one edge document |\n| [`_term_role_namespace`](_term_role_namespace.md) | The term's [`_gid`](_gid.md) appears as the [`_nid`](_nid.md) of at least one other term |\n\nThe following roles are **user-assigned**:\n\n| Role | Meaning |\n|---|---|\n| [`_term_role_data-type`](_term_role_data-type.md) | The term defines a scalar data type in the dictionary's type system |\n| [`_term_role_data-shape`](_term_role_data-shape.md) | The term defines a data shape — a top-level structural form in the [`_data`](_data.md) section |\n| `_term_role_typedef` | The term is intended for use as a reusable type definition via [`_typedef`](_typedef.md) |"
 			}
 		},
 		"_data": {
@@ -264,6 +223,7 @@
 			"_term_role": [
 				"_term_role_descriptor",
 				"_term_role_enum-root",
+				"_term_role_enum-source",
 				"_term_role_namespace"
 			]
 		}
@@ -271,10 +231,10 @@
 	{
 		"_code": {
 			"_nid": "_term_role",
-			"_lid": "type",
-			"_gid": "_term_role_type",
+			"_lid": "data-type",
+			"_gid": "_term_role_data-type",
 			"_aid": [
-				"type"
+				"data-type"
 			]
 		},
 		"_info": {
@@ -282,13 +242,39 @@
 				"ISO_639_3_eng": "Data type"
 			},
 			"_definition": {
-				"ISO_639_3_eng": "A term role indicating that the term defines a data type within the dictionary's type system. User-assigned."
+				"ISO_639_3_eng": "A term role indicating that the term defines a scalar data type within the dictionary's type system. User-assigned."
 			},
 			"_description": {
-				"ISO_639_3_eng": "Terms tagged with `_term_role_type` represent named data types — the type keys that appear inside [`_scalar`](_scalar.md), [`_set`](_set.md), [`_nested`](_nested.md), and [`_dict_key`](_dict_key.md) objects. Examples from the core dictionary include [`_number`](_number.md), [`_string`](_string.md), [`_boolean`](_boolean.md), and [`_enum`](_enum.md).\n\nThis role is assigned by the user, not computed automatically. It signals that the term's primary purpose is to define a type for use in the type-as-key convention, rather than to represent a generic variable or a real-world entity."
+				"ISO_639_3_eng": "Terms tagged with `_term_role_data-type` represent named scalar data types — the type keys that appear inside [`_scalar`](_scalar.md), [`_set`](_set.md), [`_nested`](_nested.md), and [`_dict_key`](_dict_key.md) objects. Examples from the core dictionary include [`_number`](_number.md), [`_string`](_string.md), [`_boolean`](_boolean.md), and [`_enum`](_enum.md).\n\nThis role is assigned by the user, not computed automatically. It signals that the term's primary purpose is to define a type for use in the type-as-key convention, rather than to represent a generic variable or a real-world entity.\n\nThis role differs from [`_term_role_data-shape`](_term_role_data-shape.md), which marks the top-level structural containers in `_data` (such as `_scalar`, `_object`, `_array`). Data-type terms answer *what is the leaf value?*; data-shape terms answer *how is the data organised?*"
 			},
 			"_notes": {
-				"ISO_639_3_eng": "The `_term_role_type` classification can be used by validator implementations to trigger type-specific validation code when processing the [`_data`](_data.md) section of descriptor terms. By querying which terms carry this role, a validator can dynamically load or dispatch the correct validation routine for each type key it encounters."
+				"ISO_639_3_eng": "The `_term_role_data-type` classification can be used by validator implementations to trigger type-specific validation code when processing the [`_data`](_data.md) section of descriptor terms. By querying which terms carry this role, a validator can dynamically load or dispatch the correct validation routine for each type key it encounters."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_term_role",
+			"_lid": "data-shape",
+			"_gid": "_term_role_data-shape",
+			"_aid": [
+				"data-shape"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Data shape"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A term role indicating that the term defines a data shape — a structural form that data values may take. User-assigned."
+			},
+			"_description": {
+				"ISO_639_3_eng": "Terms tagged with `_term_role_data-shape` are the top-level shape keys in the [`_data`](_data.md) section: [`_scalar`](_scalar.md), [`_object`](_object.md), [`_array`](_array.md), [`_set`](_set.md), [`_dict`](_dict.md), [`_tuple`](_tuple.md), and [`_nested`](_nested.md). Each defines a different structural form — a single atomic value, a keyed dictionary, an ordered list, and so on.\n\nThis role differs from [`_term_role_data-type`](_term_role_data-type.md), which marks the scalar type keys that appear *inside* `_scalar`, `_set`, `_nested`, and `_dict_key` objects. Data-shape terms answer *how is the data structured?*; data-type terms answer *what is the leaf value?*\n\nThis role is user-assigned, not computed automatically."
 			}
 		},
 		"_domn": {
@@ -341,6 +327,32 @@
 			},
 			"_description": {
 				"ISO_639_3_eng": "Terms tagged with `_term_role_enum-root` are the entry points of controlled vocabularies. An enumeration root is the target of [`_predicate_enum-of`](_predicate_enum-of.md) edges whose sources are the valid elements of the vocabulary.\n\nThis role is assigned automatically by the loader when it detects that the term is the target ([`_to`](_to.md)) of at least one `_predicate_enum-of` edge. No user action is required."
+			}
+		},
+		"_domn": {
+			"_term_role": [
+				"_term_role_enum-item"
+			]
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_term_role",
+			"_lid": "enum-source",
+			"_gid": "_term_role_enum-source",
+			"_aid": [
+				"enum-source"
+			]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Enumeration source"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "A term role indicating that the term serves as the source of a controlled vocabulary: its `_gid` appears in the `_enums` property of at least one descriptor. Computed automatically."
+			},
+			"_description": {
+				"ISO_639_3_eng": "When a descriptor restricts an [`_enum`](_enum.md) value to a specific set of controlled vocabularies, it lists their root [`_gid`](_gid.md)s in the [`_enums`](_enums.md) array. Any term found in such an array is automatically tagged with `_term_role_enum-source`.\n\nThis role differs from [`_term_role_enum-root`](_term_role_enum-root.md), which is assigned to terms that structurally head an enumeration graph (at least one [`_predicate_enum-of`](_predicate_enum-of.md) member exists). A term may hold both roles, or either one alone:\n\n- **Both roles**: a live vocabulary actively referenced by descriptors.\n- **[`_term_role_enum-root`](_term_role_enum-root.md) only**: a vocabulary with members that no descriptor currently references via `_enums`.\n- **`_term_role_enum-source` only**: a vocabulary declared as available (cited in `_enums`) but not yet populated with elements — for example [`_domain`](_domain.md), [`_category`](_category.md), and [`_tag`](_tag.md).\n\nThis role is computed automatically by the `assign-roles` workflow and cannot be manually set."
 			}
 		},
 		"_domn": {

@@ -78,21 +78,21 @@ Conversion: 1 Pa⁻¹ = 10⁸ %RWC/MPa.
 | [Base unit](SI_base.md) | true |
 | [Multiplicative factor](SI_factor.md) | 1 |
 | [UCUM unit code](UCUM_code.md) | `/Pa` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L1I0M-1H0T2D0",
   "QUDT_multiplier" : 1,
   "SI_base" : true,
   "SI_factor" : 1,
-  "UCUM_code" : "\/Pa"
+  "UCUM_code" : "\/Pa",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

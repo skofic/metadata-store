@@ -78,22 +78,22 @@ In the EUFGIS GeoService, land surface temperature (LST) from MODIS is distribut
 | [Multiplicative factor](SI_factor.md) | 1 |
 | [Additive offset](SI_offset.md) | 0 |
 | [UCUM unit code](UCUM_code.md) | `K` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : 0
-  },
   "QUDT_dimension_vector" : "A0E0L0I0M0H1T0D0",
   "QUDT_multiplier" : 1,
   "SI_base" : true,
   "SI_factor" : 1,
   "SI_offset" : 0,
-  "UCUM_code" : "K"
+  "UCUM_code" : "K",
+  "unit_range" : {
+    "_min-inclusive" : 0
+  }
 }
 ```
 

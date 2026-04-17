@@ -12,6 +12,7 @@ struct TermRecord {
 	let arrayIndex: Int             // position in the source file's JSON array
 	var code: [String: Any]         // _code section
 	var hasData: Bool               // true when the term has a _data section
+	var dataSection: Any?           // full _data value, used for _enums scanning
 	var domn: [String: Any]         // _domn section; empty dict when absent in source
 
 	var gid: String { code["_gid"] as? String ?? "" }
@@ -33,16 +34,19 @@ struct EdgeRecord {
 
 enum TermRole: String, CaseIterable {
 	case enumRoot       = "_term_role_enum-root"
+	case enumSource     = "_term_role_enum-source"   // auto-computed from _enums scanning
 	case enumItem       = "_term_role_enum-item"
 	case descriptor     = "_term_role_descriptor"
 	case predicate      = "_term_role_predicate"
 	case namespace      = "_term_role_namespace"
 	// User-assigned — never removed by this tool
-	case type           = "_term_role_type"
+	case dataType       = "_term_role_data-type"
+	case dataShape      = "_term_role_data-shape"
 	case typedef        = "_term_role_typedef"
 
 	static let userAssigned: Set<String> = [
-		TermRole.type.rawValue,
+		TermRole.dataType.rawValue,
+		TermRole.dataShape.rawValue,
 		TermRole.typedef.rawValue
 	]
 }

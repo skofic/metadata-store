@@ -81,22 +81,22 @@ Included for interoperability with datasets and instruments that report temperat
 | [Multiplicative factor](SI_factor.md) | 0.55555555555556 |
 | [Additive offset](SI_offset.md) | 255.37222222222 |
 | [UCUM unit code](UCUM_code.md) | `[degF]` |
-| [Valid numeric range](_range_valid.md) | *see JSON* |
+| [Unit physical range](unit_range.md) | *see JSON* |
 
 <details>
 <summary>JSON</summary>
 
 ```json
 {
-  "_range_valid" : {
-    "_min-inclusive" : -459.67000000000002
-  },
   "QUDT_dimension_vector" : "A0E0L0I0M0H1T0D0",
   "QUDT_multiplier" : 0.55555555555556002,
   "QUDT_offset" : 255.37222222221999,
   "SI_factor" : 0.55555555555556002,
   "SI_offset" : 255.37222222221999,
-  "UCUM_code" : "[degF]"
+  "UCUM_code" : "[degF]",
+  "unit_range" : {
+    "_min-inclusive" : -459.67000000000002
+  }
 }
 ```
 

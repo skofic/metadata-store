@@ -45,6 +45,7 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_data-shape",
 				"_term_role_descriptor"
 			]
 		}

@@ -27,6 +27,7 @@
 		},
 		"_domn": {
 			"_term_role": [
+				"_term_role_data-shape",
 				"_term_role_descriptor"
 			]
 		}
@@ -73,7 +74,7 @@
 				"_term_role_descriptor",
 				"_term_role_enum-item",
 				"_term_role_namespace",
-				"_term_role_type"
+				"_term_role_data-type"
 			]
 		}
 	},
@@ -116,7 +117,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -160,7 +161,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -208,7 +209,7 @@
 				"_term_role_descriptor",
 				"_term_role_enum-item",
 				"_term_role_namespace",
-				"_term_role_type"
+				"_term_role_data-type"
 			]
 		}
 	},
@@ -242,7 +243,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -278,7 +279,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -314,7 +315,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -350,7 +351,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -386,7 +387,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -427,7 +428,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -468,7 +469,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -509,7 +510,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -550,7 +551,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -586,7 +587,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -628,7 +629,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -664,7 +665,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -703,7 +704,7 @@
 				"_term_role_descriptor",
 				"_term_role_enum-item",
 				"_term_role_namespace",
-				"_term_role_type"
+				"_term_role_data-type"
 			]
 		}
 	},
@@ -737,7 +738,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -773,7 +774,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -809,7 +810,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -848,7 +849,7 @@
 				"_term_role_descriptor",
 				"_term_role_enum-item",
 				"_term_role_namespace",
-				"_term_role_type"
+				"_term_role_data-type"
 			]
 		}
 	},
@@ -882,7 +883,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -918,7 +919,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -954,7 +955,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -995,7 +996,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -1031,7 +1032,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -1067,7 +1068,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -1107,7 +1108,7 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_type",
+				"_term_role_data-type",
 				"_term_role_enum-item",
 				"_term_role_descriptor"
 			]
@@ -1182,6 +1183,7 @@
 		"_domn": {
 			"_term_role": [
 				"_term_role_descriptor",
+				"_term_role_enum-source",
 				"_term_role_namespace"
 			]
 		}
@@ -1313,8 +1315,7 @@
 		"_domn": {
 			"_term_role": [
 				"_term_role_descriptor",
-				"_term_role_namespace",
-				"_term_role_typedef"
+				"_term_role_namespace"
 			]
 		}
 	},
@@ -1376,7 +1377,6 @@
 		},
 		"_domn": {
 			"_term_role": [
-				"_term_role_typedef",
 				"_term_role_descriptor"
 			]
 		}

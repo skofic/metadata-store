@@ -283,7 +283,7 @@
 			"QUDT_multiplier": 1e-08,
 			"SI_factor": 1e-08,
 			"UCUM_code": "%/MPa",
-			"_range_valid": {
+			"unit_range": {
 				"_min-inclusive": 0
 			}
 		}
@@ -322,7 +322,7 @@
 			"SI_base": true,
 			"SI_factor": 1.0,
 			"UCUM_code": "/Pa",
-			"_range_valid": {
+			"unit_range": {
 				"_min-inclusive": 0
 			}
 		}
@@ -432,7 +432,7 @@
 			"QUDT_multiplier": 0.01,
 			"SI_factor": 0.01,
 			"UCUM_code": "%",
-			"_range_valid": {
+			"unit_range": {
 				"_max-inclusive": 100,
 				"_min-inclusive": 0
 			}
