@@ -1,0 +1,97 @@
+[
+	{
+		"_from": "terms/_class_category",
+		"_to": "terms/_class",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},
+	{
+		"_from": "terms/_class_reference",
+		"_to": "terms/_class",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},
+	{
+		"_from": "terms/_class_identifier",
+		"_to": "terms/_class",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},
+	{
+		"_from": "terms/_class_quantity",
+		"_to": "terms/_class",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},
+	{
+		"_from": "terms/_class_quantity_calculated",
+		"_to": "terms/_class_quantity",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},
+	{
+		"_from": "terms/_class_time",
+		"_to": "terms/_class",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_class"]
+	},	
+
+	{
+		"_from": "terms/_usage_indicator",
+		"_to": "terms/_usage",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_usage"]
+	},
+	{
+		"_from": "terms/_usage_metadata",
+		"_to": "terms/_usage",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_usage"]
+	},
+
+
+	{
+		"_from": "terms/_options_level-1",
+		"_to": "terms/_options",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+	{
+		"_from": "terms/_options_level-2",
+		"_to": "terms/_options",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+	
+	{
+		"_from": "terms/_options_graph",
+		"_to": "terms/_options",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+	{
+		"_from": "terms/_options_graph_line",
+		"_to": "terms/_options_graph",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+	{
+		"_from": "terms/_options_graph_bar",
+		"_to": "terms/_options_graph",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+	{
+		"_from": "terms/_options_graph_pie",
+		"_to": "terms/_options_graph",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_options"]
+	},
+
+	{
+		"_from": "terms/_list_templates",
+		"_to": "terms/_list",
+		"_predicate": "_predicate_enum-of",
+		"_path": ["terms/_list"]
+	}
+]

@@ -152,7 +152,7 @@ Two edge predicates carry conditional rules:
 
 ### Presence-triggered rules (`_predicate_property-of`)
 
-Add a rule object to `_path_data` on a `_predicate_property-of` edge when a constraint must apply whenever the property exists, regardless of its value. The primary use case is **mutual exclusion**: when `_unit` is present, `_unit-name` and `_unit-symbol` must not be (and vice versa). This cannot be expressed with `_value-of` because the constraint is not tied to any particular value — it applies to every value the property could hold.
+Add a rule object to `_path_data` on a `_predicate_property-of` edge when a constraint must apply whenever the property exists, regardless of its value. The primary use case is **mutual exclusion**: when `_unit` is present, `_unit_name` and `_unit-symbol` must not be (and vice versa). This cannot be expressed with `_value-of` because the constraint is not tied to any particular value — it applies to every value the property could hold.
 
 Always use `_closed: false` for presence-triggered rules unless the property's presence alone fully determines the allowed set — which is rare.
 

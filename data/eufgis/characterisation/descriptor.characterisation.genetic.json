@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Genetic index"
+				"ISO_639_3_eng": "Genetic index"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Genetic index global identifier"
+				"ISO_639_3_eng": "Genetic index global identifier"
 			},
 			"_description": {
-				"iso_639_3_eng": "Unique identifier of the genetic index descriptor. This field is used to indicate which descriptors represent genetic indexes."
+				"ISO_639_3_eng": "Unique identifier of the genetic index descriptor. This field is used to indicate which descriptors represent genetic indexes."
 			}
 		},
 		"_data": {
@@ -52,13 +52,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sample size"
+				"ISO_639_3_eng": "Sample size"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Number of individuals used to calculate the measurement"
+				"ISO_639_3_eng": "Number of individuals used to calculate the measurement"
 			},
 			"_description": {
-				"iso_639_3_eng": "Number of trees measured for a single trait or descriptor."
+				"ISO_639_3_eng": "Number of trees measured for a single trait or descriptor."
 			},
 			"_provider": [
 				"Florence Jean <florence.jean@inrae.fr>",
@@ -97,10 +97,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sequence length"
+				"ISO_639_3_eng": "Sequence length"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Number of base pairs sequenced from a DNA fragment."
+				"ISO_639_3_eng": "Number of base pairs sequenced from a DNA fragment."
 			}
 		},
 		"_data": {
@@ -110,8 +110,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number_integer",
-				"_unit-name": "bp",
-				"_unit-symbol": "bp"
+				"_unit_name": "bp",
+				"_unit_symbol": "bp"
 			}
 		},
 		"_domn": {
@@ -134,13 +134,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Number of loci"
+				"ISO_639_3_eng": "Number of loci"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
+				"ISO_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
 			},
 			"_description": {
-				"iso_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
+				"ISO_639_3_eng": "Number of loci used in genetic analysis to calculate genetic indices."
 			}
 		},
 		"_data": {
@@ -181,13 +181,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Type of Marker"
+				"ISO_639_3_eng": "Type of Marker"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Type of marker (SNP, SSR) used for calculation of genetic indices"
+				"ISO_639_3_eng": "Type of marker (SNP, SSR) used for calculation of genetic indices"
 			},
 			"_description": {
-				"iso_639_3_eng": "Type of molecular markers used for calculation of genetic indices."
+				"ISO_639_3_eng": "Type of molecular markers used for calculation of genetic indices."
 			}
 		},
 		"_data": {
@@ -226,10 +226,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Method"
+				"ISO_639_3_eng": "Method"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Method and technology used to determine the genetic index"
+				"ISO_639_3_eng": "Method and technology used to determine the genetic index"
 			}
 		},
 		"_data": {
@@ -268,13 +268,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Proportion polymorphic loci"
+				"ISO_639_3_eng": "Proportion polymorphic loci"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Number of polymorphic loci divided by the total number of loci examined"
+				"ISO_639_3_eng": "Number of polymorphic loci divided by the total number of loci examined"
 			},
 			"_description": {
-				"iso_639_3_eng": "A measure used to quantify genetic diversity in a population. It can be used for comparisons of populations when analysing the same loci across all compared populations."
+				"ISO_639_3_eng": "A measure used to quantify genetic diversity in a population. It can be used for comparisons of populations when analysing the same loci across all compared populations."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -325,13 +325,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Genetic diversity - Hs"
+				"ISO_639_3_eng": "Genetic diversity - Hs"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Genetic diversity (Hs) measures genetic variation within a single subpopulation. It quantifies the probability that two randomly selected alleles from the subpopulation are different under Hardy-Weinberg equilibrium"
+				"ISO_639_3_eng": "Genetic diversity (Hs) measures genetic variation within a single subpopulation. It quantifies the probability that two randomly selected alleles from the subpopulation are different under Hardy-Weinberg equilibrium"
 			},
 			"_description": {
-				"iso_639_3_eng": "Genetic diversity (Hs) is a measure of the genetic variation within a single subpopulation under random mating. It quantifies the probability that two randomly selected alleles from the subpopulation are different. The value ranges from 0 (no  genetic variability) to 1 (high genetic variability). Hs was calculated in R packege hierfstat."
+				"ISO_639_3_eng": "Genetic diversity (Hs) is a measure of the genetic variation within a single subpopulation under random mating. It quantifies the probability that two randomly selected alleles from the subpopulation are different. The value ranges from 0 (no  genetic variability) to 1 (high genetic variability). Hs was calculated in R packege hierfstat."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -383,7 +383,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker expected heterozygosity"
+				"ISO_639_3_eng": "Marker expected heterozygosity"
 			}
 		},
 		"_data": {
@@ -430,13 +430,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Nucleotide diversity - π"
+				"ISO_639_3_eng": "Nucleotide diversity - π"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Mean number of nucleotide substitutions per site between any two randomly selected orthologous DNA sequences (of the same loci) in a population (π)"
+				"ISO_639_3_eng": "Mean number of nucleotide substitutions per site between any two randomly selected orthologous DNA sequences (of the same loci) in a population (π)"
 			},
 			"_description": {
-				"iso_639_3_eng": "Nucleotide diversity (π) measures the degree of polymorphism within a population and is defined as the average number of nucleotide differences per site between any two DNA sequences of the same genomic region, chosen randomly from the selected population. This parameter is a measure of genetic variation, in a similar way to Hs. One commonly used measure of nucleotide diversity was first introduced by: Nei M, Li WH. (1979). Mathematical model for studying genetic variation in terms of restriction endonucleases. Proc. Natl. Acad. Sci. U.S.A.76:5269–5273."
+				"ISO_639_3_eng": "Nucleotide diversity (π) measures the degree of polymorphism within a population and is defined as the average number of nucleotide differences per site between any two DNA sequences of the same genomic region, chosen randomly from the selected population. This parameter is a measure of genetic variation, in a similar way to Hs. One commonly used measure of nucleotide diversity was first introduced by: Nei M, Li WH. (1979). Mathematical model for studying genetic variation in terms of restriction endonucleases. Proc. Natl. Acad. Sci. U.S.A.76:5269–5273."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -487,13 +487,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population's contribution to molecular diversity within populations"
+				"ISO_639_3_eng": "Population's contribution to molecular diversity within populations"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Contribution of one population to the total diversity due to its own diversity"
+				"ISO_639_3_eng": "Contribution of one population to the total diversity due to its own diversity"
 			},
 			"_description": {
-				"iso_639_3_eng": "A molecular diversity partition of total gene diversity into diversity per se and distinctivness using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This index refers to the population diversity per se (variation within populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
+				"ISO_639_3_eng": "A molecular diversity partition of total gene diversity into diversity per se and distinctivness using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This index refers to the population diversity per se (variation within populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -544,13 +544,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population's contribution to molecular diversity between populations"
+				"ISO_639_3_eng": "Population's contribution to molecular diversity between populations"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Contribution of one population to the total diversity due to its divergence/distinctiveness"
+				"ISO_639_3_eng": "Contribution of one population to the total diversity due to its divergence/distinctiveness"
 			},
 			"_description": {
-				"iso_639_3_eng": "A molecular diversity partition into diversity per se and distinctiness is defined by using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This statistics refers to the population distinctiveness (variation between populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
+				"ISO_639_3_eng": "A molecular diversity partition into diversity per se and distinctiness is defined by using molecular markers. Then the contribution of each population to the total (global) diversity is computed by removing one population at a time. This statistics refers to the population distinctiveness (variation between populations). The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. The index was calculated with metapop2 (https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13015). Reference: Petit et al. 1998 (https://doi.org/10.1111/j.1523-1739.1998.96489.x)"
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -602,13 +602,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU originality - population specific Fst"
+				"ISO_639_3_eng": "GCU originality - population specific Fst"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Level of genetic differentiation of the target population from an ideal ancestral population from which all populations in the species diverged"
+				"ISO_639_3_eng": "Level of genetic differentiation of the target population from an ideal ancestral population from which all populations in the species diverged"
 			},
 			"_description": {
-				"iso_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Population-specific Fst values can identify the source/ancestral population and trace the evolutionary history of its derived populations. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Population specific Fst was calculated with BayeScan (Foll & Gagiotti 2008) in R."
+				"ISO_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Population-specific Fst values can identify the source/ancestral population and trace the evolutionary history of its derived populations. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Population specific Fst was calculated with BayeScan (Foll & Gagiotti 2008) in R."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -664,13 +664,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU originality - pairwise Fst"
+				"ISO_639_3_eng": "GCU originality - pairwise Fst"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The current level of genetic differentiation whithin a species"
+				"ISO_639_3_eng": "The current level of genetic differentiation whithin a species"
 			},
 			"_description": {
-				"iso_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Pairwise Fst provides insight into the current population genetic structure. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Pairwise Fst was calculated with package hierfstat in R."
+				"ISO_639_3_eng": "Genetic differentiation of a population is determined by the accumulation of independent genetic changes (mutations) or maintenance of unique variants through time. For instance a population living in an ecologically distinct environment can exhibit genetic divergence from the other studied populations. Fst ranges from 0 (complete similarity of alleles/variants) to 1 (no overalp of alleles/variants). Pairwise Fst provides insight into the current population genetic structure. The measure is relative to the dataset analysed simultaneously and changes when new GCUs are added to the dataset. Pairwise Fst was calculated with package hierfstat in R."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -721,7 +721,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker population specific Fst"
+				"ISO_639_3_eng": "Marker population specific Fst"
 			}
 		},
 		"_data": {
@@ -767,13 +767,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clonality - proportion of clones"
+				"ISO_639_3_eng": "Clonality - proportion of clones"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Number of clonal individuals divided by the total number of individuals of the population"
+				"ISO_639_3_eng": "Number of clonal individuals divided by the total number of individuals of the population"
 			},
 			"_description": {
-				"iso_639_3_eng": "Number of genetically identical individuals, reproducing asexually, divided by the total number of individuals of a specific population."
+				"ISO_639_3_eng": "Number of genetically identical individuals, reproducing asexually, divided by the total number of individuals of a specific population."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -825,7 +825,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker population specific Fst"
+				"ISO_639_3_eng": "Marker population specific Fst"
 			}
 		},
 		"_data": {
@@ -871,13 +871,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clonality - size of clones"
+				"ISO_639_3_eng": "Clonality - size of clones"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Surface covered by each single clone"
+				"ISO_639_3_eng": "Surface covered by each single clone"
 			},
 			"_description": {
-				"iso_639_3_eng": "Area occupied by genetically identical individuals which reproduce asexually by means of vegetative propagation."
+				"ISO_639_3_eng": "Area occupied by genetically identical individuals which reproduce asexually by means of vegetative propagation."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -928,13 +928,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Admixture index - proportion of ancestry of detected gene pools"
+				"ISO_639_3_eng": "Admixture index - proportion of ancestry of detected gene pools"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Proportion of population's ancestry in each gene pool of the target species"
+				"ISO_639_3_eng": "Proportion of population's ancestry in each gene pool of the target species"
 			},
 			"_description": {
-				"iso_639_3_eng": "Measurement of the extent of admixture of individuals in a population belonging to different gene pools when individuals from two or more parental (ancestral) populations interbreed. The gene pool is the set of all genes, or genetic information in a group of individuals. The value given is the average population ancestry in each of the gene pools detected in the target tree species and is calculated with the R package LEA using the function sNMF. Depending on the number and distribution of populations in the analysis, the proportion of population's ancestry in each of the detected gene pools may change. The number of gene pools detected may also change."
+				"ISO_639_3_eng": "Measurement of the extent of admixture of individuals in a population belonging to different gene pools when individuals from two or more parental (ancestral) populations interbreed. The gene pool is the set of all genes, or genetic information in a group of individuals. The value given is the average population ancestry in each of the gene pools detected in the target tree species and is calculated with the R package LEA using the function sNMF. Depending on the number and distribution of populations in the analysis, the proportion of population's ancestry in each of the detected gene pools may change. The number of gene pools detected may also change."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -989,13 +989,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Hybridisation index - proportion of ancestry of detected species"
+				"ISO_639_3_eng": "Hybridisation index - proportion of ancestry of detected species"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Proportion of population's ancestry in each of the two hybridising species"
+				"ISO_639_3_eng": "Proportion of population's ancestry in each of the two hybridising species"
 			},
 			"_description": {
-				"iso_639_3_eng": "Measurement of the extent of hybridisation between two species in a population. The value given is the average population ancestry in each of the two hybridising species and is calculated with the R package LEA using the function sNMF."
+				"ISO_639_3_eng": "Measurement of the extent of hybridisation between two species in a population. The value given is the average population ancestry in each of the two hybridising species and is calculated with the R package LEA using the function sNMF."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -1053,13 +1053,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Inbreeding"
+				"ISO_639_3_eng": "Inbreeding"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Probability of two alleles in an individual being identical by descent"
+				"ISO_639_3_eng": "Probability of two alleles in an individual being identical by descent"
 			},
 			"_description": {
-				"iso_639_3_eng": "This indicator quantifies the deviation relative to Hardy–Weinberg expectations (HWE)—that is, absent other evolutionary forces, non-zero Fis is suggestive of non-random mating between individuals based on their genotype. Because same-genotype individuals are likely to be genetically related, positive Fis values are suggestive of inbreeding (mating among relatives), which can lead to inbreeding depression and compromise population viability. Conversely, negative Fis values are suggestive of preferential mating among non-relatives, which may arise from pre-mating (barriers to self-pollination) or post-mating (low viability of selfed progeny) processes. This population-level statistics thus reflects the mean level of individual adult inbreeding plus other processes that can reduce (or increase) realised (”observed”) heterozygosity. Inbreeding is a critical metric in managing small or isolated populations."
+				"ISO_639_3_eng": "This indicator quantifies the deviation relative to Hardy–Weinberg expectations (HWE)—that is, absent other evolutionary forces, non-zero Fis is suggestive of non-random mating between individuals based on their genotype. Because same-genotype individuals are likely to be genetically related, positive Fis values are suggestive of inbreeding (mating among relatives), which can lead to inbreeding depression and compromise population viability. Conversely, negative Fis values are suggestive of preferential mating among non-relatives, which may arise from pre-mating (barriers to self-pollination) or post-mating (low viability of selfed progeny) processes. This population-level statistics thus reflects the mean level of individual adult inbreeding plus other processes that can reduce (or increase) realised (”observed”) heterozygosity. Inbreeding is a critical metric in managing small or isolated populations."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -1112,7 +1112,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker inbreeding"
+				"ISO_639_3_eng": "Marker inbreeding"
 			}
 		},
 		"_data": {
@@ -1159,13 +1159,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Recessive genetic load"
+				"ISO_639_3_eng": "Recessive genetic load"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The reduction of fitness in a population due to the accumulation of deleterious alleles"
+				"ISO_639_3_eng": "The reduction of fitness in a population due to the accumulation of deleterious alleles"
 			},
 			"_description": {
-				"iso_639_3_eng": "Genetic load is a measure of the reduction of fitness caused by genetic erosion. It can be due to the increase in frequency of deleterious mutations due to random genetic drift and/or inbreeding. It is calculated by first identifying deleterious mutations via prediction of their effects, and then deriving deleterious scores that can be summarized to produce a load index, in this case the counts of derived deleterious mutations in homozygosis corrected by the number of synonymous ones.  Reference: Bertorelle, G., Raffini, F., Bosse, M. et al. Genetic load: genomic estimates and applications in non-model animals. Nat Rev Genet 23, 492–503 (2022). https://doi.org/10.1038/s41576-022-00448-x"
+				"ISO_639_3_eng": "Genetic load is a measure of the reduction of fitness caused by genetic erosion. It can be due to the increase in frequency of deleterious mutations due to random genetic drift and/or inbreeding. It is calculated by first identifying deleterious mutations via prediction of their effects, and then deriving deleterious scores that can be summarized to produce a load index, in this case the counts of derived deleterious mutations in homozygosis corrected by the number of synonymous ones.  Reference: Bertorelle, G., Raffini, F., Bosse, M. et al. Genetic load: genomic estimates and applications in non-model animals. Nat Rev Genet 23, 492–503 (2022). https://doi.org/10.1038/s41576-022-00448-x"
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -1213,7 +1213,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker recessive genetic load"
+				"ISO_639_3_eng": "Marker recessive genetic load"
 			}
 		},
 		"_data": {
@@ -1259,13 +1259,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Genomic offset"
+				"ISO_639_3_eng": "Genomic offset"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A population measure of maladaptation under future environmental conditions"
+				"ISO_639_3_eng": "A population measure of maladaptation under future environmental conditions"
 			},
 			"_description": {
-				"iso_639_3_eng": "Genomic offset measures population vulnerability to new environmental conditions. It refers to the expected change in allele frequencies that would be required to mantain optimal fitness under future conditions (e.g. changing climate). It assumes equilibrium between current conditions and allele frequencies and it is usually calculated based on a set of genetic markers under natural selection. It is sensitive to the environmental variables used in the analysis. Reference: Capblancq, T., Fitzpatrick, M. C., Bay, R. A., Exposito-Alonso, M., & Keller, S. R. (2020). Genomic prediction of (mal) adaptation across current and future climatic landscapes. Annual Review of Ecology, Evolution, and Systematics, 51, 245-269."
+				"ISO_639_3_eng": "Genomic offset measures population vulnerability to new environmental conditions. It refers to the expected change in allele frequencies that would be required to mantain optimal fitness under future conditions (e.g. changing climate). It assumes equilibrium between current conditions and allele frequencies and it is usually calculated based on a set of genetic markers under natural selection. It is sensitive to the environmental variables used in the analysis. Reference: Capblancq, T., Fitzpatrick, M. C., Bay, R. A., Exposito-Alonso, M., & Keller, S. R. (2020). Genomic prediction of (mal) adaptation across current and future climatic landscapes. Annual Review of Ecology, Evolution, and Systematics, 51, 245-269."
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"
@@ -1316,7 +1316,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marker genomic offset"
+				"ISO_639_3_eng": "Marker genomic offset"
 			}
 		},
 		"_data": {
@@ -1362,13 +1362,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Evolvability"
+				"ISO_639_3_eng": "Evolvability"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The ability of a population to respond to directional selection"
+				"ISO_639_3_eng": "The ability of a population to respond to directional selection"
 			},
 			"_description": {
-				"iso_639_3_eng": "Evolvability is the ability of a population to produce phenotypic variation that is both heritable and adaptive. References: Houle, 1992. Comparing evolvability and variability of quantitative traits. Genetics. 130(1):195-204. doi: 10.1093/genetics/130.1.195; Payne, J.L., Wagner, A. The causes of evolvability and their evolution. Nat Rev Genet 20, 24–38 (2019). https://doi.org/10.1038/s41576-018-0069-z"
+				"ISO_639_3_eng": "Evolvability is the ability of a population to produce phenotypic variation that is both heritable and adaptive. References: Houle, 1992. Comparing evolvability and variability of quantitative traits. Genetics. 130(1):195-204. doi: 10.1093/genetics/130.1.195; Payne, J.L., Wagner, A. The causes of evolvability and their evolution. Nat Rev Genet 20, 24–38 (2019). https://doi.org/10.1038/s41576-018-0069-z"
 			},
 			"_provider": [
 				"Santiago C. Gonzalez Martinez"

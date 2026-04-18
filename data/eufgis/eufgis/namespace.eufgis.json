@@ -9,13 +9,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "EUFGIS"
+				"ISO_639_3_eng": "EUFGIS"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Information system on forest genetic resources."
+				"ISO_639_3_eng": "Information system on forest genetic resources."
 			},
 			"_description": {
-				"iso_639_3_eng": "The [EUFGIS](http://www.eufgis.org) project (April 2007-March 2011) created an online information system for forest genetic resources (FGR) inventories in Europe to support the countries in their efforts to implement FGR conservation as part of sustainable forest management."
+				"ISO_639_3_eng": "The [EUFGIS](http://www.eufgis.org) project (April 2007-March 2011) created an online information system for forest genetic resources (FGR) inventories in Europe to support the countries in their efforts to implement FGR conservation as part of sustainable forest management."
 			}
 		},
 		"_domn": {
@@ -34,13 +34,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Gene conservation unit"
+				"ISO_639_3_eng": "Gene conservation unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A clearly mapped area of forest or woodland where dynamic gene conservation is one of the main management priorities for one or more tree species."
+				"ISO_639_3_eng": "A clearly mapped area of forest or woodland where dynamic gene conservation is one of the main management priorities for one or more tree species."
 			},
 			"_description": {
-				"iso_639_3_eng": "Namespace grouping all terms and descriptors specific to gene conservation units."
+				"ISO_639_3_eng": "Namespace grouping all terms and descriptors specific to gene conservation units."
 			}
 		},
 		"_domn": {
@@ -60,10 +60,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Identification"
+				"ISO_639_3_eng": "Identification"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit identification properties."
+				"ISO_639_3_eng": "Gene conservation unit identification properties."
 			}
 		},
 		"_domn": {
@@ -83,10 +83,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Location"
+				"ISO_639_3_eng": "Location"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit location properties."
+				"ISO_639_3_eng": "Gene conservation unit location properties."
 			}
 		},
 		"_domn": {
@@ -106,10 +106,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Map"
+				"ISO_639_3_eng": "Map"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit mapping properties."
+				"ISO_639_3_eng": "Gene conservation unit mapping properties."
 			}
 		},
 		"_domn": {
@@ -129,10 +129,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Climate"
+				"ISO_639_3_eng": "Climate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit climatic properties."
+				"ISO_639_3_eng": "Gene conservation unit climatic properties."
 			}
 		},
 		"_domn": {
@@ -152,10 +152,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Remarks"
+				"ISO_639_3_eng": "Remarks"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit remarks and general information properties."
+				"ISO_639_3_eng": "Gene conservation unit remarks and general information properties."
 			}
 		},
 		"_domn": {
@@ -175,10 +175,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Species"
+				"ISO_639_3_eng": "Species"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Tree species population living in a gene conservation unit designated to be monitored and documented."
+				"ISO_639_3_eng": "Tree species population living in a gene conservation unit designated to be monitored and documented."
 			}
 		},
 		"_domn": {
@@ -198,10 +198,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom identification"
+				"ISO_639_3_eng": "Custom identification"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit identification properties."
+				"ISO_639_3_eng": "Custom gene conservation unit identification properties."
 			}
 		}
 	},
@@ -216,10 +216,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom location"
+				"ISO_639_3_eng": "Custom location"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit location properties."
+				"ISO_639_3_eng": "Custom gene conservation unit location properties."
 			}
 		}
 	},
@@ -234,10 +234,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom map"
+				"ISO_639_3_eng": "Custom map"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit mapping properties."
+				"ISO_639_3_eng": "Custom gene conservation unit mapping properties."
 			}
 		}
 	},
@@ -252,10 +252,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom climate"
+				"ISO_639_3_eng": "Custom climate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit climatic properties."
+				"ISO_639_3_eng": "Custom gene conservation unit climatic properties."
 			}
 		}
 	},
@@ -270,10 +270,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom remarks"
+				"ISO_639_3_eng": "Custom remarks"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit remarks and general information properties."
+				"ISO_639_3_eng": "Custom gene conservation unit remarks and general information properties."
 			}
 		}
 	},
@@ -288,10 +288,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Custom species"
+				"ISO_639_3_eng": "Custom species"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Custom gene conservation unit population properties."
+				"ISO_639_3_eng": "Custom gene conservation unit population properties."
 			}
 		}
 	}

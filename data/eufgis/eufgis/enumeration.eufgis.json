@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "EUFGIS countries"
+				"ISO_639_3_eng": "EUFGIS countries"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Countries participating in the EUFGIS project."
+				"ISO_639_3_eng": "Countries participating in the EUFGIS project."
 			},
 			"_description": {
-				"iso_639_3_eng": "Enumeration listing EUFGIS countries using the ISO 3166-3 standard."
+				"ISO_639_3_eng": "Enumeration listing EUFGIS countries using the ISO 3166-3 standard."
 			}
 		}
 	},
@@ -31,13 +31,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU ownership"
+				"ISO_639_3_eng": "GCU ownership"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit ownerships."
+				"ISO_639_3_eng": "Gene conservation unit ownerships."
 			},
 			"_description": {
-				"iso_639_3_eng": "Enumeration listing all ownership types applying to gene conservation units."
+				"ISO_639_3_eng": "Enumeration listing all ownership types applying to gene conservation units."
 			}
 		},
 		"_domn": {
@@ -57,10 +57,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Public ownership"
+				"ISO_639_3_eng": "Public ownership"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The gene conservation unit is publicly owned."
+				"ISO_639_3_eng": "The gene conservation unit is publicly owned."
 			}
 		}
 	},
@@ -75,10 +75,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Private ownership"
+				"ISO_639_3_eng": "Private ownership"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The gene conservation unit is pricately owned."
+				"ISO_639_3_eng": "The gene conservation unit is pricately owned."
 			}
 		}
 	},
@@ -93,10 +93,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Public and private ownership"
+				"ISO_639_3_eng": "Public and private ownership"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The gene conservation unit is both publicly and privately owned."
+				"ISO_639_3_eng": "The gene conservation unit is both publicly and privately owned."
 			}
 		}
 	},
@@ -111,10 +111,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Other type of ownership"
+				"ISO_639_3_eng": "Other type of ownership"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The gene conservation unit ownership is neither public nor private."
+				"ISO_639_3_eng": "The gene conservation unit ownership is neither public nor private."
 			}
 		}
 	},
@@ -129,13 +129,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU types"
+				"ISO_639_3_eng": "GCU types"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Gene conservation unit types."
+				"ISO_639_3_eng": "Gene conservation unit types."
 			},
 			"_description": {
-				"iso_639_3_eng": "Enumeration listing all types of gene conservation units."
+				"ISO_639_3_eng": "Enumeration listing all types of gene conservation units."
 			}
 		},
 		"_domn": {
@@ -155,7 +155,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Gene reserve forest"
+				"ISO_639_3_eng": "Gene reserve forest"
 			}
 		}
 	},
@@ -170,10 +170,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Biodiversity conservation"
+				"ISO_639_3_eng": "Biodiversity conservation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Biodiversity conservation of habitats and/or species."
+				"ISO_639_3_eng": "Biodiversity conservation of habitats and/or species."
 			}
 		}
 	},
@@ -188,7 +188,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Seed stand"
+				"ISO_639_3_eng": "Seed stand"
 			}
 		}
 	},
@@ -203,10 +203,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Protective forest area"
+				"ISO_639_3_eng": "Protective forest area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Soil, water, timber line, etc."
+				"ISO_639_3_eng": "Soil, water, timber line, etc."
 			}
 		}
 	},
@@ -221,10 +221,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Managed forest area"
+				"ISO_639_3_eng": "Managed forest area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Forest area managed for wood production and /or multiple uses and services."
+				"ISO_639_3_eng": "Forest area managed for wood production and /or multiple uses and services."
 			}
 		}
 	},
@@ -239,10 +239,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU population statuses"
+				"ISO_639_3_eng": "GCU population statuses"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Status of the target tree population regarding the EUFORGEN common action plans."
+				"ISO_639_3_eng": "Status of the target tree population regarding the EUFORGEN common action plans."
 			}
 		},
 		"_domn": {
@@ -262,7 +262,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Included"
+				"ISO_639_3_eng": "Included"
 			}
 		}
 	},
@@ -277,7 +277,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Not included"
+				"ISO_639_3_eng": "Not included"
 			}
 		}
 	},
@@ -292,7 +292,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Pending"
+				"ISO_639_3_eng": "Pending"
 			}
 		}
 	},
@@ -307,10 +307,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU population categories"
+				"ISO_639_3_eng": "GCU population categories"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Locality of the population."
+				"ISO_639_3_eng": "Locality of the population."
 			}
 		},
 		"_domn": {
@@ -330,7 +330,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "In situ"
+				"ISO_639_3_eng": "In situ"
 			}
 		}
 	},
@@ -345,7 +345,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ex situ"
+				"ISO_639_3_eng": "Ex situ"
 			}
 		}
 	},
@@ -360,10 +360,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU population origins"
+				"ISO_639_3_eng": "GCU population origins"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Origin of the population."
+				"ISO_639_3_eng": "Origin of the population."
 			}
 		},
 		"_domn": {
@@ -383,7 +383,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Autochthonous"
+				"ISO_639_3_eng": "Autochthonous"
 			}
 		}
 	},
@@ -398,7 +398,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Introduced"
+				"ISO_639_3_eng": "Introduced"
 			}
 		}
 	},
@@ -413,7 +413,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unknown"
+				"ISO_639_3_eng": "Unknown"
 			}
 		}
 	},
@@ -428,7 +428,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Predominant silvicultural systems"
+				"ISO_639_3_eng": "Predominant silvicultural systems"
 			}
 		},
 		"_domn": {
@@ -448,7 +448,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Coppice"
+				"ISO_639_3_eng": "Coppice"
 			}
 		}
 	},
@@ -463,10 +463,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clear-cutting with artificial regeneration"
+				"ISO_639_3_eng": "Clear-cutting with artificial regeneration"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Planting or seeding."
+				"ISO_639_3_eng": "Planting or seeding."
 			}
 		}
 	},
@@ -481,10 +481,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clear-cutting with natural regeneration"
+				"ISO_639_3_eng": "Clear-cutting with natural regeneration"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Seed trees or strips."
+				"ISO_639_3_eng": "Seed trees or strips."
 			}
 		}
 	},
@@ -499,7 +499,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Shelterwood systems"
+				"ISO_639_3_eng": "Shelterwood systems"
 			}
 		}
 	},
@@ -514,10 +514,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Close-to-nature forestry"
+				"ISO_639_3_eng": "Close-to-nature forestry"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Continuous cover forest, selective logging."
+				"ISO_639_3_eng": "Continuous cover forest, selective logging."
 			}
 		}
 	},
@@ -532,7 +532,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "No silviculture"
+				"ISO_639_3_eng": "No silviculture"
 			}
 		}
 	},
@@ -547,7 +547,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Levels of management allowed to favour the target species"
+				"ISO_639_3_eng": "Levels of management allowed to favour the target species"
 			}
 		},
 		"_domn": {
@@ -567,7 +567,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "No intervention allowed"
+				"ISO_639_3_eng": "No intervention allowed"
 			}
 		}
 	},
@@ -582,7 +582,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Minimum intervention allowed"
+				"ISO_639_3_eng": "Minimum intervention allowed"
 			}
 		}
 	},
@@ -597,7 +597,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Conservation through active intervention carried out"
+				"ISO_639_3_eng": "Conservation through active intervention carried out"
 			}
 		}
 	},
@@ -612,7 +612,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Main reasons for carrying out gene conservation"
+				"ISO_639_3_eng": "Main reasons for carrying out gene conservation"
 			}
 		},
 		"_domn": {
@@ -632,7 +632,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "To maintain genetic diversity in large tree populations"
+				"ISO_639_3_eng": "To maintain genetic diversity in large tree populations"
 			}
 		}
 	},
@@ -647,7 +647,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "To conserve specific adaptive and/or phenotypic traits in marginal or scattered tree populations which are often relatively small"
+				"ISO_639_3_eng": "To conserve specific adaptive and/or phenotypic traits in marginal or scattered tree populations which are often relatively small"
 			}
 		}
 	},
@@ -662,7 +662,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "To conserve rare or endangered tree species with populations consisting of a low number of remaining individuals"
+				"ISO_639_3_eng": "To conserve rare or endangered tree species with populations consisting of a low number of remaining individuals"
 			}
 		}
 	},
@@ -677,7 +677,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "To conserve specific adaptive and/or phenotypic traits in populations/and races of introduced species"
+				"ISO_639_3_eng": "To conserve specific adaptive and/or phenotypic traits in populations/and races of introduced species"
 			}
 		}
 	},
@@ -692,7 +692,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Total number of reproducing trees per unit"
+				"ISO_639_3_eng": "Total number of reproducing trees per unit"
 			}
 		},
 		"_domn": {
@@ -712,7 +712,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "1 - 14"
+				"ISO_639_3_eng": "1 - 14"
 			}
 		},
 		"_range": {
@@ -731,7 +731,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "15 - 50"
+				"ISO_639_3_eng": "15 - 50"
 			}
 		},
 		"_range": {
@@ -750,7 +750,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "51 - 500"
+				"ISO_639_3_eng": "51 - 500"
 			}
 		},
 		"_range": {
@@ -769,7 +769,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "501 - 5000"
+				"ISO_639_3_eng": "501 - 5000"
 			}
 		},
 		"_range": {
@@ -788,7 +788,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": ">5001"
+				"ISO_639_3_eng": ">5001"
 			}
 		},
 		"_range": {
@@ -806,7 +806,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Status of reproducing trees number"
+				"ISO_639_3_eng": "Status of reproducing trees number"
 			}
 		},
 		"_domn": {
@@ -826,7 +826,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Counted"
+				"ISO_639_3_eng": "Counted"
 			}
 		}
 	},
@@ -841,7 +841,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Estimated"
+				"ISO_639_3_eng": "Estimated"
 			}
 		}
 	},
@@ -856,7 +856,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Inferred"
+				"ISO_639_3_eng": "Inferred"
 			}
 		}
 	},
@@ -871,7 +871,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population sex ratios"
+				"ISO_639_3_eng": "Population sex ratios"
 			}
 		},
 		"_domn": {
@@ -891,7 +891,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Predominately males"
+				"ISO_639_3_eng": "Predominately males"
 			}
 		}
 	},
@@ -906,7 +906,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Even sex ratio"
+				"ISO_639_3_eng": "Even sex ratio"
 			}
 		}
 	},
@@ -921,7 +921,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Predominately females"
+				"ISO_639_3_eng": "Predominately females"
 			}
 		}
 	},
@@ -936,7 +936,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Status of long-term viable regeneration"
+				"ISO_639_3_eng": "Status of long-term viable regeneration"
 			}
 		},
 		"_domn": {
@@ -956,7 +956,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Continuous"
+				"ISO_639_3_eng": "Continuous"
 			}
 		}
 	},
@@ -971,7 +971,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sporadic"
+				"ISO_639_3_eng": "Sporadic"
 			}
 		}
 	},
@@ -986,7 +986,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Required management intervention"
+				"ISO_639_3_eng": "Required management intervention"
 			}
 		}
 	},
@@ -1001,7 +1001,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Distribution of the reproducing trees in the unit"
+				"ISO_639_3_eng": "Distribution of the reproducing trees in the unit"
 			}
 		},
 		"_domn": {
@@ -1021,7 +1021,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "In stands"
+				"ISO_639_3_eng": "In stands"
 			}
 		}
 	},
@@ -1036,7 +1036,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Scattered"
+				"ISO_639_3_eng": "Scattered"
 			}
 		}
 	},
@@ -1051,7 +1051,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "In groups"
+				"ISO_639_3_eng": "In groups"
 			}
 		}
 	}

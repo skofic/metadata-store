@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geographic coordinates"
+				"ISO_639_3_eng": "Geographic coordinates"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Coordinate longitude and latitude"
+				"ISO_639_3_eng": "Coordinate longitude and latitude"
 			},
 			"_description": {
-				"iso_639_3_eng": "A tuple of two elements: the decimal longitude and the decimal latitude of the geographic location."
+				"ISO_639_3_eng": "A tuple of two elements: the decimal longitude and the decimal latitude of the geographic location."
 			}
 		},
 		"_data": {
@@ -44,10 +44,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Decimal latitude"
+				"ISO_639_3_eng": "Decimal latitude"
 			},
 			"_description": {
-				"iso_639_3_eng": "*Decimal latitude* represents the *latitude* of a *point* in *decimal degrees*. Latitude is defined as the *angle between the plane of the Equator* and *a line that passes through the point* and *the center of the Earth*. it ranges from:\n\n- **+90 degrees** at the North Pole\n- **0 degrees** at the Equator\n- **-90 degrees** at the South Pole\n\nLatitude in degrees, minutes, and seconds (DMS) can be converted to decimal format using the formula:\n\n`Decimal Degrees = Degrees + (Minutes / 60) + (Seconds / 3600)`"
+				"ISO_639_3_eng": "*Decimal latitude* represents the *latitude* of a *point* in *decimal degrees*. Latitude is defined as the *angle between the plane of the Equator* and *a line that passes through the point* and *the center of the Earth*. it ranges from:\n\n- **+90 degrees** at the North Pole\n- **0 degrees** at the Equator\n- **-90 degrees** at the South Pole\n\nLatitude in degrees, minutes, and seconds (DMS) can be converted to decimal format using the formula:\n\n`Decimal Degrees = Degrees + (Minutes / 60) + (Seconds / 3600)`"
 			}
 		},
 		"_data": {
@@ -76,10 +76,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Decimal longitude"
+				"ISO_639_3_eng": "Decimal longitude"
 			},
 			"_description": {
-				"iso_639_3_eng": "*Decimal longitude* represents the *longitude* of a *point* in *decimal degrees*. Longitude is defined as the *angle* between the *Prime Meridian* (which passes through Greenwich, England) and a *line* that *passes through the point and the center of the Earth*. It ranges from:\n\n- **+180 degrees** east of the Prime Meridian\n- **0 degrees** at the Prime Meridian\n- **-180 degrees** west of the Prime Meridian\n\nLongitude in degrees, minutes, and seconds (DMS) can be converted to decimal format using the formula:\n\n`Decimal Degrees = Degrees + (Minutes / 60) + (Seconds / 3600)`"
+				"ISO_639_3_eng": "*Decimal longitude* represents the *longitude* of a *point* in *decimal degrees*. Longitude is defined as the *angle* between the *Prime Meridian* (which passes through Greenwich, England) and a *line* that *passes through the point and the center of the Earth*. It ranges from:\n\n- **+180 degrees** east of the Prime Meridian\n- **0 degrees** at the Prime Meridian\n- **-180 degrees** west of the Prime Meridian\n\nLongitude in degrees, minutes, and seconds (DMS) can be converted to decimal format using the formula:\n\n`Decimal Degrees = Degrees + (Minutes / 60) + (Seconds / 3600)`"
 			}
 		},
 		"_data": {
@@ -108,13 +108,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geodetic datum"
+				"ISO_639_3_eng": "Geodetic datum"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A geodetic datum is an abstract coordinate system with a reference surface (such as sea level) that serves to provide known locations to begin surveys and create maps. "
+				"ISO_639_3_eng": "A geodetic datum is an abstract coordinate system with a reference surface (such as sea level) that serves to provide known locations to begin surveys and create maps. "
 			},
 			"_description": {
-				"iso_639_3_eng": "A *geodetic datum* or *geodetic system* (also: *geodetic reference datum*, *geodetic reference system*, or *geodetic reference frame*) is a global [datum reference](https://en.wikipedia.org/wiki/Datum_reference \"Datum reference\") or [reference frame](https://en.wikipedia.org/wiki/Reference_frame \"Reference frame\") for precisely representing the position of [locations](https://en.wikipedia.org/wiki/Location \"Location\") on [Earth](https://en.wikipedia.org/wiki/Earth \"Earth\") or other planetary bodies by means of *[geodetic coordinates](https://en.wikipedia.org/wiki/Geodetic_coordinates \"Geodetic coordinates\")*."
+				"ISO_639_3_eng": "A *geodetic datum* or *geodetic system* (also: *geodetic reference datum*, *geodetic reference system*, or *geodetic reference frame*) is a global [datum reference](https://en.wikipedia.org/wiki/Datum_reference \"Datum reference\") or [reference frame](https://en.wikipedia.org/wiki/Reference_frame \"Reference frame\") for precisely representing the position of [locations](https://en.wikipedia.org/wiki/Location \"Location\") on [Earth](https://en.wikipedia.org/wiki/Earth \"Earth\") or other planetary bodies by means of *[geodetic coordinates](https://en.wikipedia.org/wiki/Geodetic_coordinates \"Geodetic coordinates\")*."
 			}
 		},
 		"_data": {
@@ -144,13 +144,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ellipsoid"
+				"ISO_639_3_eng": "Ellipsoid"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Reference ellipsoid."
+				"ISO_639_3_eng": "Reference ellipsoid."
 			},
 			"_description": {
-				"iso_639_3_eng": "Because of their relative simplicity, [reference ellipsoids](https://en.wikipedia.org/wiki/Reference_ellipsoid) are used as a preferred surface on which [geodetic network](https://en.wikipedia.org/wiki/Geodetic_network \"Geodetic network\")computations are performed and point coordinates such as [latitude](https://en.wikipedia.org/wiki/Latitude \"Latitude\"), [longitude](https://en.wikipedia.org/wiki/Longitude \"Longitude\"), and [elevation](https://en.wikipedia.org/wiki/Elevation \"Elevation\") are defined.\n\nIn the context of standardization and geographic applications, a *geodesic reference ellipsoid* is the mathematical model used as foundation by [spatial reference system](https://en.wikipedia.org/wiki/Spatial_reference_system \"Spatial reference system\") or [geodetic datum](https://en.wikipedia.org/wiki/Geodetic_datum \"Geodetic datum\") definitions."
+				"ISO_639_3_eng": "Because of their relative simplicity, [reference ellipsoids](https://en.wikipedia.org/wiki/Reference_ellipsoid) are used as a preferred surface on which [geodetic network](https://en.wikipedia.org/wiki/Geodetic_network \"Geodetic network\")computations are performed and point coordinates such as [latitude](https://en.wikipedia.org/wiki/Latitude \"Latitude\"), [longitude](https://en.wikipedia.org/wiki/Longitude \"Longitude\"), and [elevation](https://en.wikipedia.org/wiki/Elevation \"Elevation\") are defined.\n\nIn the context of standardization and geographic applications, a *geodesic reference ellipsoid* is the mathematical model used as foundation by [spatial reference system](https://en.wikipedia.org/wiki/Spatial_reference_system \"Spatial reference system\") or [geodetic datum](https://en.wikipedia.org/wiki/Geodetic_datum \"Geodetic datum\") definitions."
 			}
 		},
 		"_data": {
@@ -179,10 +179,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Parameter Delta A"
+				"ISO_639_3_eng": "Parameter Delta A"
 			},
 			"_definition": {
-				"iso_639_3_eng": "WGS-84 Equatorial radius minus the specified datum Equatorial radius in meters."
+				"ISO_639_3_eng": "WGS-84 Equatorial radius minus the specified datum Equatorial radius in meters."
 			}
 		},
 		"_data": {
@@ -208,10 +208,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Parameter Delta F"
+				"ISO_639_3_eng": "Parameter Delta F"
 			},
 			"_definition": {
-				"iso_639_3_eng": "WGS-84 flattening minus the specified datum flattening multiplied by 10^4."
+				"ISO_639_3_eng": "WGS-84 flattening minus the specified datum flattening multiplied by 10^4."
 			}
 		},
 		"_data": {
@@ -237,13 +237,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Parameter Delta X"
+				"ISO_639_3_eng": "Parameter Delta X"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
+				"ISO_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
 			},
 			"_description": {
-				"iso_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
+				"ISO_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
 			}
 		},
 		"_data": {
@@ -269,13 +269,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Parameter Delta Y"
+				"ISO_639_3_eng": "Parameter Delta Y"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
+				"ISO_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
 			},
 			"_description": {
-				"iso_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
+				"ISO_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
 			}
 		},
 		"_data": {
@@ -301,13 +301,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Parameter Delta Z"
+				"ISO_639_3_eng": "Parameter Delta Z"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
+				"ISO_639_3_eng": "Delta X, Y, Z parameters are WGS-84 X, Y, Z parameters minus the specified datum X, Y, Z in meters."
 			},
 			"_description": {
-				"iso_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
+				"ISO_639_3_eng": "The Delta X, Y, and Z parameters are added to the specified datum X, Y, Z to convert to WGS-84."
 			}
 		},
 		"_data": {
@@ -336,13 +336,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry identifier"
+				"ISO_639_3_eng": "Geometry identifier"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Shape or geometry identifier."
+				"ISO_639_3_eng": "Shape or geometry identifier."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor can be used to store the identifier of a geometry or shape. The value is a string that represents an *attributed* identifier, as opposed to [hashed](geometry_hash.md) identifiers that *uniquely discriminate* the *shape* itself."
+				"ISO_639_3_eng": "This descriptor can be used to store the identifier of a geometry or shape. The value is a string that represents an *attributed* identifier, as opposed to [hashed](geometry_hash.md) identifiers that *uniquely discriminate* the *shape* itself."
 			}
 		},
 		"_data": {
@@ -371,13 +371,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry area"
+				"ISO_639_3_eng": "Geometry area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Total area of shape or geometry."
+				"ISO_639_3_eng": "Total area of shape or geometry."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor represents the total area of a geographic feature, the value is represented in square meters."
+				"ISO_639_3_eng": "This descriptor represents the total area of a geographic feature, the value is represented in square meters."
 			}
 		},
 		"_data": {
@@ -407,13 +407,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry average elevation"
+				"ISO_639_3_eng": "Geometry average elevation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Mean height above sea level of shape or geometry."
+				"ISO_639_3_eng": "Mean height above sea level of shape or geometry."
 			},
 			"_description": {
-				"iso_639_3_eng": "Elevation represents the height above sea level of a geographic feature, it is represented in meters and indicates the average for the whole geographic feature."
+				"ISO_639_3_eng": "Elevation represents the height above sea level of a geographic feature, it is represented in meters and indicates the average for the whole geographic feature."
 			}
 		},
 		"_data": {
@@ -445,10 +445,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry elevation standard deviation"
+				"ISO_639_3_eng": "Geometry elevation standard deviation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Standard deviation of height above sea level for the whole shape or geometry."
+				"ISO_639_3_eng": "Standard deviation of height above sea level for the whole shape or geometry."
 			}
 		},
 		"_data": {
@@ -478,21 +478,21 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry average slope"
+				"ISO_639_3_eng": "Geometry average slope"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Slope generated using the elevation dataset. The average is calculated for the shape or geometry."
+				"ISO_639_3_eng": "Slope generated using the elevation dataset. The average is calculated for the shape or geometry."
 			},
 			"_description": {
-				"iso_639_3_eng": "The slope represents the rate of change of elevation for each digital elevation model (DEM) pixel, measured in degrees of a geographic feature, this descriptor indicates the average for the whole geographic feature."
+				"ISO_639_3_eng": "The slope represents the rate of change of elevation for each digital elevation model (DEM) pixel, measured in degrees of a geographic feature, this descriptor indicates the average for the whole geographic feature."
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Decimal degrees",
-				"_unit-symbol": "DD",
+				"_unit_name": "Decimal degrees",
+				"_unit_symbol": "DD",
 				"_valid-range": {
 					"_max-range-inclusive": 90.0,
 					"_min-range-inclusive": 0.0
@@ -519,21 +519,21 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geometry average aspect"
+				"ISO_639_3_eng": "Geometry average aspect"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Aspect generated using the elevation dataset. The average is calculated for the shape or geometry."
+				"ISO_639_3_eng": "Aspect generated using the elevation dataset. The average is calculated for the shape or geometry."
 			},
 			"_description": {
-				"iso_639_3_eng": "Aspect identifies the downslope direction of the maximum rate of change in value from each pixel to its neighbors, it can be thought of as the slope direction. The value represents the average for the whole geographic feature"
+				"ISO_639_3_eng": "Aspect identifies the downslope direction of the maximum rate of change in value from each pixel to its neighbors, it can be thought of as the slope direction. The value represents the average for the whole geographic feature"
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Decimal degrees",
-				"_unit-symbol": "DD",
+				"_unit_name": "Decimal degrees",
+				"_unit_symbol": "DD",
 				"_valid-range": {
 					"_max-range-inclusive": 360.0,
 					"_min-range-inclusive": 0.0
@@ -560,10 +560,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Broad Leaf Forest (%)"
+				"ISO_639_3_eng": "Broad Leaf Forest (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of broadleaf forest."
+				"ISO_639_3_eng": "Geoometry percentage of broadleaf forest."
 			}
 		},
 		"_data": {
@@ -573,8 +573,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -602,10 +602,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Conifer Forest (%)"
+				"ISO_639_3_eng": "Conifer Forest (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of conifer forest."
+				"ISO_639_3_eng": "Geoometry percentage of conifer forest."
 			}
 		},
 		"_data": {
@@ -615,8 +615,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -644,10 +644,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Mixed Forest (%)"
+				"ISO_639_3_eng": "Mixed Forest (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of mixed forest."
+				"ISO_639_3_eng": "Geoometry percentage of mixed forest."
 			}
 		},
 		"_data": {
@@ -657,8 +657,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -686,10 +686,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sclerophyllous Vegetation (%)"
+				"ISO_639_3_eng": "Sclerophyllous Vegetation (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of sclerophyllous vegetation."
+				"ISO_639_3_eng": "Geoometry percentage of sclerophyllous vegetation."
 			}
 		},
 		"_data": {
@@ -699,8 +699,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -728,10 +728,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Transitional Woodland-shrubland (%)"
+				"ISO_639_3_eng": "Transitional Woodland-shrubland (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of transitional woodland-shrubland vegetation."
+				"ISO_639_3_eng": "Geoometry percentage of transitional woodland-shrubland vegetation."
 			}
 		},
 		"_data": {
@@ -741,8 +741,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -770,10 +770,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Other Natural Areas (%)"
+				"ISO_639_3_eng": "Other Natural Areas (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of other natural areas."
+				"ISO_639_3_eng": "Geoometry percentage of other natural areas."
 			}
 		},
 		"_data": {
@@ -783,8 +783,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -812,10 +812,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Agricultural Areas (%)"
+				"ISO_639_3_eng": "Agricultural Areas (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of agricultural areas."
+				"ISO_639_3_eng": "Geoometry percentage of agricultural areas."
 			}
 		},
 		"_data": {
@@ -825,8 +825,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -854,10 +854,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Artificial Surfaces (%)"
+				"ISO_639_3_eng": "Artificial Surfaces (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of artificial surfaces."
+				"ISO_639_3_eng": "Geoometry percentage of artificial surfaces."
 			}
 		},
 		"_data": {
@@ -867,8 +867,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -896,10 +896,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Other Land Cover (%)"
+				"ISO_639_3_eng": "Other Land Cover (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of other land cover."
+				"ISO_639_3_eng": "Geoometry percentage of other land cover."
 			}
 		},
 		"_data": {
@@ -909,8 +909,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -938,10 +938,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Natura 2K (%)"
+				"ISO_639_3_eng": "Natura 2K (%)"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geoometry percentage of Natura 2K."
+				"ISO_639_3_eng": "Geoometry percentage of Natura 2K."
 			}
 		},
 		"_data": {
@@ -951,8 +951,8 @@
 			],
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Percentage",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-exclusive": 100.0,
 					"_min-range-exclusive": 0.0
@@ -977,20 +977,20 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Width"
+				"ISO_639_3_eng": "Width"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Width in degrees."
+				"ISO_639_3_eng": "Width in degrees."
 			},
 			"_description": {
-				"iso_639_3_eng": "The width is expressed in the current coordinate reference system degrees."
+				"ISO_639_3_eng": "The width is expressed in the current coordinate reference system degrees."
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Degrees"
+				"_unit_name": "Degrees"
 			}
 		},
 		"_domn": {
@@ -1010,20 +1010,20 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Height"
+				"ISO_639_3_eng": "Height"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Height in degrees."
+				"ISO_639_3_eng": "Height in degrees."
 			},
 			"_description": {
-				"iso_639_3_eng": "The height is expressed in the current coordinate reference system degrees."
+				"ISO_639_3_eng": "The height is expressed in the current coordinate reference system degrees."
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Degrees"
+				"_unit_name": "Degrees"
 			}
 		},
 		"_domn": {
@@ -1043,20 +1043,20 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Area"
+				"ISO_639_3_eng": "Area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Area in degrees."
+				"ISO_639_3_eng": "Area in degrees."
 			},
 			"_description": {
-				"iso_639_3_eng": "The area is expressed in the current coordinate reference system squre degrees."
+				"ISO_639_3_eng": "The area is expressed in the current coordinate reference system squre degrees."
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Degrees^2"
+				"_unit_name": "Degrees^2"
 			}
 		},
 		"_domn": {
@@ -1076,20 +1076,20 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Perimeter"
+				"ISO_639_3_eng": "Perimeter"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Perimeter in degrees."
+				"ISO_639_3_eng": "Perimeter in degrees."
 			},
 			"_description": {
-				"iso_639_3_eng": "The perimeter is expressed in the current coordinate reference system degrees."
+				"ISO_639_3_eng": "The perimeter is expressed in the current coordinate reference system degrees."
 			}
 		},
 		"_data": {
 			"_class": "_class_quantity",
 			"_scalar": {
 				"_type": "_type_number",
-				"_unit-name": "Degrees"
+				"_unit_name": "Degrees"
 			}
 		},
 		"_domn": {

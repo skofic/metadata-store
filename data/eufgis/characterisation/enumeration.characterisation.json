@@ -10,10 +10,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Phenotypic"
+				"ISO_639_3_eng": "Phenotypic"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Phenotypic indicator"
+				"ISO_639_3_eng": "Phenotypic indicator"
 			}
 		}
 	},
@@ -28,10 +28,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Modelled"
+				"ISO_639_3_eng": "Modelled"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Modelled indicator"
+				"ISO_639_3_eng": "Modelled indicator"
 			}
 		}
 	},
@@ -46,10 +46,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Genetic"
+				"ISO_639_3_eng": "Genetic"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Genetic indicator"
+				"ISO_639_3_eng": "Genetic indicator"
 			}
 		}
 	},
@@ -64,10 +64,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Environmental"
+				"ISO_639_3_eng": "Environmental"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Environmental indicator"
+				"ISO_639_3_eng": "Environmental indicator"
 			}
 		}
 	},
@@ -82,10 +82,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Multivariate"
+				"ISO_639_3_eng": "Multivariate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Multivariate indicator"
+				"ISO_639_3_eng": "Multivariate indicator"
 			}
 		}
 	},
@@ -100,10 +100,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Forest"
+				"ISO_639_3_eng": "Forest"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Forest indicator"
+				"ISO_639_3_eng": "Forest indicator"
 			}
 		}
 	},
@@ -118,7 +118,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Diversity"
+				"ISO_639_3_eng": "Diversity"
 			}
 		}
 	},
@@ -133,10 +133,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Distinctiveness"
+				"ISO_639_3_eng": "Distinctiveness"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Distinctiveness of target population"
+				"ISO_639_3_eng": "Distinctiveness of target population"
 			}
 		}
 	},
@@ -151,7 +151,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Vulnerability"
+				"ISO_639_3_eng": "Vulnerability"
 			}
 		}
 	},
@@ -166,13 +166,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Tree"
+				"ISO_639_3_eng": "Tree"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data or term refers to tree level trait information."
+				"ISO_639_3_eng": "The data or term refers to tree level trait information."
 			},
 			"_description": {
-				"iso_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to *the tree*. This, however, does *not necessarily mean* that the associated data *refers* to a *single tree*, it *may* be the *average* or *statistical calculation* applied to a *tree population*. Data of this category should either *include* a specific *reference* to a *tree* or a *reference* to a specific *stand*."
+				"ISO_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to *the tree*. This, however, does *not necessarily mean* that the associated data *refers* to a *single tree*, it *may* be the *average* or *statistical calculation* applied to a *tree population*. Data of this category should either *include* a specific *reference* to a *tree* or a *reference* to a specific *stand*."
 			}
 		}
 	},
@@ -187,13 +187,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Stand"
+				"ISO_639_3_eng": "Stand"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data or term refers to stand level trait information."
+				"ISO_639_3_eng": "The data or term refers to stand level trait information."
 			},
 			"_description": {
-				"iso_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to a *stand* or *unit* containing tree populations. This category *excludes traits associated to the tree*, the *trait* must *characterise* the *stand* or *unit*."
+				"ISO_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to a *stand* or *unit* containing tree populations. This category *excludes traits associated to the tree*, the *trait* must *characterise* the *stand* or *unit*."
 			}
 		}
 	},
@@ -208,13 +208,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU"
+				"ISO_639_3_eng": "GCU"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Entire GCU"
+				"ISO_639_3_eng": "Entire GCU"
 			},
 			"_description": {
-				"iso_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to the entire *conservation unit*. This category *excludes traits associated to the tree*, the *trait* must *characterise* *all species residing in the conservation unit*."
+				"ISO_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to the entire *conservation unit*. This category *excludes traits associated to the tree*, the *trait* must *characterise* *all species residing in the conservation unit*."
 			}
 		}
 	},
@@ -229,13 +229,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Target"
+				"ISO_639_3_eng": "Target"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Target species"
+				"ISO_639_3_eng": "Target species"
 			},
 			"_description": {
-				"iso_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to the *target species* residing in the *conservation unit*. This category *excludes traits associated to the tree*, the *trait* must *characterise* *only target species residing in the conservation unit*."
+				"ISO_639_3_eng": "This category indicates that the *descriptor* or *term* describes a *trait* belonging to the *target species* residing in the *conservation unit*. This category *excludes traits associated to the tree*, the *trait* must *characterise* *only target species residing in the conservation unit*."
 			}
 		}
 	},
@@ -250,10 +250,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Broadleaved"
+				"ISO_639_3_eng": "Broadleaved"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Broadleaved dominant forest type."
+				"ISO_639_3_eng": "Broadleaved dominant forest type."
 			}
 		}
 	},
@@ -268,10 +268,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Coniferous"
+				"ISO_639_3_eng": "Coniferous"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Coniferous dominant forest type."
+				"ISO_639_3_eng": "Coniferous dominant forest type."
 			}
 		}
 	},
@@ -286,7 +286,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Convex situation"
+				"ISO_639_3_eng": "Convex situation"
 			}
 		}
 	},
@@ -301,7 +301,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Neutral"
+				"ISO_639_3_eng": "Neutral"
 			}
 		}
 	},
@@ -316,7 +316,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Concave situation"
+				"ISO_639_3_eng": "Concave situation"
 			}
 		}
 	},
@@ -331,7 +331,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Single layer"
+				"ISO_639_3_eng": "Single layer"
 			}
 		}
 	},
@@ -346,7 +346,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Multiple layered"
+				"ISO_639_3_eng": "Multiple layered"
 			}
 		}
 	},
@@ -361,7 +361,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sparsed forest stand"
+				"ISO_639_3_eng": "Sparsed forest stand"
 			}
 		}
 	},
@@ -376,7 +376,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Single species"
+				"ISO_639_3_eng": "Single species"
 			}
 		}
 	},
@@ -391,7 +391,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Mixed forest"
+				"ISO_639_3_eng": "Mixed forest"
 			}
 		}
 	},
@@ -406,10 +406,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "0 to 25% of defoliation"
+				"ISO_639_3_eng": "0 to 25% of defoliation"
 			},
 			"_description": {
-				"iso_639_3_eng": "See the WP2 protocol for more information."
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
 			}
 		}
 	},
@@ -424,10 +424,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "25 to 50%of defoliation"
+				"ISO_639_3_eng": "25 to 50%of defoliation"
 			},
 			"_description": {
-				"iso_639_3_eng": "See the WP2 protocol for more information."
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
 			}
 		}
 	},
@@ -442,10 +442,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "50 to 75 % of defoliation"
+				"ISO_639_3_eng": "50 to 75 % of defoliation"
 			},
 			"_description": {
-				"iso_639_3_eng": "See the WP2 protocol for more information."
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
 			}
 		}
 	},
@@ -460,10 +460,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "75% to 99% of defoliation"
+				"ISO_639_3_eng": "75% to 99% of defoliation"
 			},
 			"_description": {
-				"iso_639_3_eng": "See the WP2 protocol for more information."
+				"ISO_639_3_eng": "See the WP2 protocol for more information."
 			}
 		}
 	},
@@ -478,7 +478,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dominant tree"
+				"ISO_639_3_eng": "Dominant tree"
 			}
 		}
 	},
@@ -493,7 +493,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Co-dominant tree"
+				"ISO_639_3_eng": "Co-dominant tree"
 			}
 		}
 	},
@@ -508,7 +508,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dominated tree"
+				"ISO_639_3_eng": "Dominated tree"
 			}
 		}
 	},
@@ -523,7 +523,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Auger"
+				"ISO_639_3_eng": "Auger"
 			}
 		}
 	},
@@ -538,7 +538,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Pit"
+				"ISO_639_3_eng": "Pit"
 			}
 		}
 	},
@@ -556,7 +556,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Trunks with diameter smaller than 120 mm."
+				"ISO_639_3_eng": "Trunks with diameter smaller than 120 mm."
 			}
 		}
 	},
@@ -574,7 +574,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Trunks with diameter larger than 120 mm."
+				"ISO_639_3_eng": "Trunks with diameter larger than 120 mm."
 			}
 		}
 	},
@@ -592,7 +592,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "National Forest Inventory dataset"
+				"ISO_639_3_eng": "National Forest Inventory dataset"
 			}
 		}
 	},
@@ -610,7 +610,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Forest Focus"
+				"ISO_639_3_eng": "Forest Focus"
 			}
 		}
 	},
@@ -628,7 +628,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Biosoil"
+				"ISO_639_3_eng": "Biosoil"
 			}
 		}
 	}

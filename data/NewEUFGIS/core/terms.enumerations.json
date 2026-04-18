@@ -1,0 +1,197 @@
+[	
+	{
+		"_code": {
+			"_nid": "_class",
+			"_lid": "category",
+			"_gid": "_class_category",
+			"_aid": ["category"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Categorical"},
+			"_definition": {"ISO_639_3_eng": "Categorical, non quantitative value."},
+			"_description": {"ISO_639_3_eng": "This term represents a *category*, does *not represent* a [quantity](_class_quantity) and takes a *finite number of values*, can be *nominal* or *ordinal*."},
+			"_examples": {"ISO_639_3_eng": "Categorical example data could be *months*, *sex*, *countries*. By definition, any value that must be taken from a *controlled vocabulary* is a *categorical value*."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_class",
+			"_lid": "reference",
+			"_gid": "_class_reference",
+			"_aid": ["reference"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Reference"},
+			"_definition": {"ISO_639_3_eng": "Reference to another value."},
+			"_description": {"ISO_639_3_eng": "The value itself is a [string](_type_string), but this string is a *reference* to another item that *holds* a *value* of *indetermined category*."},
+			"_examples": {"ISO_639_3_eng": "Reference example data could be the *identifier* of a *value* stored in *another document*."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_class",
+			"_lid": "identifier",
+			"_gid": "_class_identifier",
+			"_aid": ["identifier"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Identifier"},
+			"_definition": {"ISO_639_3_eng": "A value that represents an identifier."},
+			"_description": {"ISO_639_3_eng": "The value is used to *identify* and *select* an *item* in a *collection* of *elements* of the *same type*."},
+			"_examples": {"ISO_639_3_eng": "Identifier example data could be the *code* assigned to a *country*, or the *social security number* for a *person*."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_class",
+			"_lid": "quantity",
+			"_gid": "_class_quantity",
+			"_aid": ["quantity"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Quantitative"},
+			"_definition": {"ISO_639_3_eng": "Discrete or continuous quantitative value."},
+			"_description": {"ISO_639_3_eng": "This term represents a *quantity*, a *discrete* or *continuous* value, it does not represent a [category](_class_category) and can take an *infinite number of values*, it is by definition *numeric*.\n\nThis specific data type identifies a *single or averaged data point*, not a [calculated](_class_quantity_calculated) coefficient."},
+			"_examples": {"ISO_639_3_eng": "Quantitative example data could be *height*, *weight*, *number of inhabitants*. In general, any value that represents *amounts* or *actual measurements*, would be considered a *quantitative value*."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_class_quantity",
+			"_lid": "calculated",
+			"_gid": "_class_quantity_calculated",
+			"_aid": ["calculated"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Calculated"},
+			"_definition": {"ISO_639_3_eng": "Discrete or continuous quantitative value that is obtained through the processing of a series of other values."},
+			"_description": {"ISO_639_3_eng": "This term represents a *quantity*, a *discrete* or *continuous* value that has been *obtained* by *processing* a set of *other values*.\n\nThis specific data type identifies a coefficient or index, not a [single](_class_quantity) data point, or an average or mean of data points."},
+			"_examples": {"ISO_639_3_eng": "Calculated quantitative data could be a *number* calculated by *aggregating* several *traits* *weighted* by *coefficients* to result in a *single score*."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_class",
+			"_lid": "time",
+			"_gid": "_class_time",
+			"_aid": ["time"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Temporal"},
+			"_definition": {"ISO_639_3_eng": "A value that indicates a moment in time."},
+			"_description": {"ISO_639_3_eng": "This term represents a *date* or *time*, a value that could be used in a *time series* to indicate the *when*."},
+			"_examples": {"ISO_639_3_eng": "Time example data could be a *date*, a *date and time*, a *day* of the *week*."}
+		}
+	},
+	
+	{
+		"_code": {
+			"_nid": "_usage",
+			"_lid": "indicator",
+			"_gid": "_usage_indicator",
+			"_aid": ["indicator"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Indicator"},
+			"_definition": {"ISO_639_3_eng": "The descriptor represents an indicator"}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_usage",
+			"_lid": "metadata",
+			"_gid": "_usage_metadata",
+			"_aid": ["indicator"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Metadata"},
+			"_definition": {"ISO_639_3_eng": "The descriptor represents metadata"}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_options",
+			"_lid": "level-1",
+			"_gid": "_options_level-1",
+			"_aid": ["level-1"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Level 1 display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the term belongs to level 1 display items."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_options",
+			"_lid": "level-2",
+			"_gid": "_options_level-2",
+			"_aid": ["level-1"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Level 2 display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the term belongs to level 2 display items."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_options",
+			"_lid": "graph",
+			"_gid": "_options_graph",
+			"_aid": ["graph"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Graph display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the descriptor term should be displayed as a graph."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_options_graph",
+			"_lid": "line",
+			"_gid": "_options_graph_line",
+			"_aid": ["line"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Line graph display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the descriptor term should be displayed preferably as a line graph."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_options_graph",
+			"_lid": "bar",
+			"_gid": "_options_graph_bar",
+			"_aid": ["bar"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Bar graph display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the descriptor term should be displayed preferably as a bar graph."}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "_options_graph",
+			"_lid": "pie",
+			"_gid": "_options_graph_pie",
+			"_aid": ["pie"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Pie chart display"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the descriptor term should be displayed preferably as a pie chart."}
+		}
+	},
+
+	{
+		"_code": {
+			"_nid": "_list",
+			"_lid": "templates",
+			"_gid": "_list_templates",
+			"_aid": ["templates"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Templates"},
+			"_definition": {"ISO_639_3_eng": "This category indicates that the term belongs to the list of template variables."}
+		}
+	}
+]

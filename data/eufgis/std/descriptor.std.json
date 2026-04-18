@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "IOC code"
+				"ISO_639_3_eng": "IOC code"
 			},
 			"_definition": {
-				"iso_639_3_eng": "International Olympic Committee code."
+				"ISO_639_3_eng": "International Olympic Committee code."
 			},
 			"_description": {
-				"iso_639_3_eng": "The [International Olympic Committee](https://en.wikipedia.org/wiki/International_Olympic_Committee \"International Olympic Committee\") (IOC) uses [three-letter abbreviation](https://en.wikipedia.org/wiki/Three-letter_abbreviation \"Three-letter abbreviation\") [country codes](https://en.wikipedia.org/wiki/Country_codes \"Country codes\") to refer to each group of athletes that participate in the [Olympic Games](https://en.wikipedia.org/wiki/Olympic_Games \"Olympic Games\"). Each [geocode](https://en.wikipedia.org/wiki/Geocode \"Geocode\") usually identifies a [National Olympic Committee](https://en.wikipedia.org/wiki/National_Olympic_Committee \"National Olympic Committee\") (NOC), but there are several codes that have been used for other instances in past Games, such as teams composed of athletes from multiple nations, or groups of athletes not formally representing any nation."
+				"ISO_639_3_eng": "The [International Olympic Committee](https://en.wikipedia.org/wiki/International_Olympic_Committee \"International Olympic Committee\") (IOC) uses [three-letter abbreviation](https://en.wikipedia.org/wiki/Three-letter_abbreviation \"Three-letter abbreviation\") [country codes](https://en.wikipedia.org/wiki/Country_codes \"Country codes\") to refer to each group of athletes that participate in the [Olympic Games](https://en.wikipedia.org/wiki/Olympic_Games \"Olympic Games\"). Each [geocode](https://en.wikipedia.org/wiki/Geocode \"Geocode\") usually identifies a [National Olympic Committee](https://en.wikipedia.org/wiki/National_Olympic_Committee \"National Olympic Committee\") (NOC), but there are several codes that have been used for other instances in past Games, such as teams composed of athletes from multiple nations, or groups of athletes not formally representing any nation."
 			}
 		},
 		"_data": {
@@ -42,10 +42,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Flag"
+				"ISO_639_3_eng": "Flag"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Flag of country."
+				"ISO_639_3_eng": "Flag of country."
 			}
 		},
 		"_data": {
@@ -71,10 +71,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Emoji flag"
+				"ISO_639_3_eng": "Emoji flag"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Flag of country, using Unicode regional indicator symbol letters."
+				"ISO_639_3_eng": "Flag of country, using Unicode regional indicator symbol letters."
 			}
 		},
 		"_data": {
@@ -100,10 +100,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Top-level domains"
+				"ISO_639_3_eng": "Top-level domains"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet after the root domain."
+				"ISO_639_3_eng": "A top-level domain (TLD) is one of the domains at the highest level in the hierarchical Domain Name System of the Internet after the root domain."
 			}
 		},
 		"_data": {
@@ -131,10 +131,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Calling codes"
+				"ISO_639_3_eng": "Calling codes"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Country calling codes or country dial-in codes are telephone number prefixes for reaching telephone subscribers in the networks of the member countries or regions of the International Telecommunication Union (ITU)."
+				"ISO_639_3_eng": "Country calling codes or country dial-in codes are telephone number prefixes for reaching telephone subscribers in the networks of the member countries or regions of the International Telecommunication Union (ITU)."
 			}
 		},
 		"_data": {
@@ -163,10 +163,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Land area"
+				"ISO_639_3_eng": "Land area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Land area in km²."
+				"ISO_639_3_eng": "Land area in km²."
 			}
 		},
 		"_data": {
@@ -193,13 +193,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Official languages"
+				"ISO_639_3_eng": "Official languages"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of official languages."
+				"ISO_639_3_eng": "List of official languages."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *language* and the *destination* node is the *country*; the predicate would mean *is official language in*."
+				"ISO_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *language* and the *destination* node is the *country*; the predicate would mean *is official language in*."
 			}
 		},
 		"_data": {
@@ -230,13 +230,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Currencies"
+				"ISO_639_3_eng": "Currencies"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of currencies."
+				"ISO_639_3_eng": "List of currencies."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *currency* and the *destination* node is the *country*; the predicate would mean *is official currency in in*."
+				"ISO_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *currency* and the *destination* node is the *country*; the predicate would mean *is official currency in in*."
 			}
 		},
 		"_data": {
@@ -267,13 +267,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Borders"
+				"ISO_639_3_eng": "Borders"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of land borders."
+				"ISO_639_3_eng": "List of land borders."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *country of interest* and the *destination* node is the *bordering country*; the predicate would mean *shares border with*."
+				"ISO_639_3_eng": "This descriptor is also used as a *predicate*, in that case, the *source* node is the *country of interest* and the *destination* node is the *bordering country*; the predicate would mean *shares border with*."
 			}
 		},
 		"_data": {
@@ -304,7 +304,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Region"
+				"ISO_639_3_eng": "Region"
 			}
 		},
 		"_data": {
@@ -341,7 +341,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Subregion"
+				"ISO_639_3_eng": "Subregion"
 			}
 		},
 		"_data": {
@@ -378,7 +378,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Country name"
+				"ISO_639_3_eng": "Country name"
 			}
 		},
 		"_data": {
@@ -403,10 +403,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Country names"
+				"ISO_639_3_eng": "Country names"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of country names."
+				"ISO_639_3_eng": "List of country names."
 			}
 		},
 		"_data": {
@@ -433,7 +433,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Province name"
+				"ISO_639_3_eng": "Province name"
 			}
 		},
 		"_data": {
@@ -458,7 +458,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Commune name"
+				"ISO_639_3_eng": "Commune name"
 			}
 		},
 		"_data": {
@@ -483,13 +483,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Location"
+				"ISO_639_3_eng": "Location"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Geographic coordinates or shape."
+				"ISO_639_3_eng": "Geographic coordinates or shape."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field contains the [GeoJSON](https://geojson.org) geometry corresponding to the *geographic location* or *area* related to the information record which contains it. Use it to indicate the location of a tree or the area in which samples have been collected."
+				"ISO_639_3_eng": "This field contains the [GeoJSON](https://geojson.org) geometry corresponding to the *geographic location* or *area* related to the information record which contains it. Use it to indicate the location of a tree or the area in which samples have been collected."
 			}
 		},
 		"_data": {
@@ -517,16 +517,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Project"
+				"ISO_639_3_eng": "Project"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Project to which the experiment, dataset or measurement belongs."
+				"ISO_639_3_eng": "Project to which the experiment, dataset or measurement belongs."
 			},
 			"_description": {
-				"iso_639_3_eng": "The field is not coded, provide the acronym of the project."
+				"ISO_639_3_eng": "The field is not coded, provide the acronym of the project."
 			},
 			"_examples": {
-				"iso_639_3_eng": "GenTree"
+				"ISO_639_3_eng": "GenTree"
 			}
 		},
 		"_data": {
@@ -555,13 +555,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset"
+				"ISO_639_3_eng": "Dataset"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Dataset name or acronym."
+				"ISO_639_3_eng": "Dataset name or acronym."
 			},
 			"_description": {
-				"iso_639_3_eng": "Provide a name or acronym to identify the dataset. This will be used as a group to mark all the measurements or observations that comprise a single dataset. Try not to reuse the same code for other datasets."
+				"ISO_639_3_eng": "Provide a name or acronym to identify the dataset. This will be used as a group to mark all the measurements or observations that comprise a single dataset. Try not to reuse the same code for other datasets."
 			}
 		},
 		"_data": {
@@ -588,13 +588,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset ID"
+				"ISO_639_3_eng": "Dataset ID"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Dataset unique identifier."
+				"ISO_639_3_eng": "Dataset unique identifier."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field represents the `_key` of the dataset record."
+				"ISO_639_3_eng": "This field represents the `_key` of the dataset record."
 			}
 		},
 		"_data": {
@@ -621,13 +621,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset IDs"
+				"ISO_639_3_eng": "Dataset IDs"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of dataset unique identifiers."
+				"ISO_639_3_eng": "List of dataset unique identifiers."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field represents the list of datasets, represented by their `_key` field, use this field to indicate to which datasets the current record belongs."
+				"ISO_639_3_eng": "This field represents the list of datasets, represented by their `_key` field, use this field to indicate to which datasets the current record belongs."
 			}
 		},
 		"_data": {
@@ -656,13 +656,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset group"
+				"ISO_639_3_eng": "Dataset group"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A group of related datasets."
+				"ISO_639_3_eng": "A group of related datasets."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field represents an identifier for a group of related datasets, use it to refer to datasets as a group for datasets that do not belong to a specific project."
+				"ISO_639_3_eng": "This field represents an identifier for a group of related datasets, use it to refer to datasets as a group for datasets that do not belong to a specific project."
 			}
 		},
 		"_data": {
@@ -688,13 +688,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset scope"
+				"ISO_639_3_eng": "Dataset scope"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The scope or shape of the dataset data."
+				"ISO_639_3_eng": "The scope or shape of the dataset data."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field represents the *scope* of the *data* contained in the *dataset*. It describes how the data is *organised*, or how the data is *shaped*. This value is generally coupled with [`std_dataset_extent`](std_dataset_extent.md) that describes the region to which the data scope applies.\n\nHere are the available options:\n\n- [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a geographical grid encompassing the region defined by the [`std_dataset_extent`](std_dataset_extent.md) value. An example can be Chelsa, which is provided as a 1 km. grid covering Europe and extended regions.\n- [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a series of records each containing the average values for a shape or region. Remote sensing data, for instance, provides the average values for each GCU, each data point represents the aggregate of all values for the bounds of the GCU. Remote sensing data may also provide the average value of each polygon contained by the GCU, in that case there will be one record for each polygon.\n\nThere can be only one option among the choices."
+				"ISO_639_3_eng": "This field represents the *scope* of the *data* contained in the *dataset*. It describes how the data is *organised*, or how the data is *shaped*. This value is generally coupled with [`std_dataset_extent`](std_dataset_extent.md) that describes the region to which the data scope applies.\n\nHere are the available options:\n\n- [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a geographical grid encompassing the region defined by the [`std_dataset_extent`](std_dataset_extent.md) value. An example can be Chelsa, which is provided as a 1 km. grid covering Europe and extended regions.\n- [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a series of records each containing the average values for a shape or region. Remote sensing data, for instance, provides the average values for each GCU, each data point represents the aggregate of all values for the bounds of the GCU. Remote sensing data may also provide the average value of each polygon contained by the GCU, in that case there will be one record for each polygon.\n\nThere can be only one option among the choices."
 			}
 		},
 		"_data": {
@@ -724,13 +724,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset extent"
+				"ISO_639_3_eng": "Dataset extent"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The extent or region of the data."
+				"ISO_639_3_eng": "The extent or region of the data."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field represents the *extent* or *coverage* of the *data* contained in the *dataset*. It defines what is the *geometrìic subject* of the data. This value is generally coupled with [`std_dataset_scope`](std_dataset_scope.md) that describes how the data is organised.\n\nHere are the available options:\n\n- [`std_dataset_extent_region`](std_dataset_extent_region.md): This value indicates that the data encompasses the *full region of the project*. In EUFGIS it will be Europe and extended territories. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a *grid of data tiles* covering the *whole region of the project*. There will be *one record per grid tile*, and the data will be *clipped to the region of interest*. The subject of the record is the *tile* within the *region*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for the *shape* of the *region of interest*. In this case the region of interest is the *project region*, so there will be *one record* with *aggregated* values for that *region's bounds*.\n- [`std_dataset_extent_gcu`](std_dataset_extent_gcu.md): This value indicates that the data encompasses the full *shape of the GCU*. In EUFGIS it will be *aggregated bounds* of all the *polygons* *belonging* to the *GCU's shape*. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a set of *shapes* each containing a *grid of data tiles*. There will be *one record per grid tile*, and the data will be *clipped to the bounds of each GCU*. The subject of the record is the *tile* within the *GCU*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for the *shape* of the *GCU*. There will be *one record* with *aggregated* values for *each GCU bounds*. The subject of the record is the *bounds* of the *GCU*.\n- [`std_dataset_extent_shape`](std_dataset_extent_shape.md): This value indicates that the data encompasses the *individual polygons* constituting the *region*. In EUFGIS it will be the *individual polygons* belonging to a *GCU*. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a set of *shapes* each containing a *grid of data tiles*. There will be *one record per grid tile*, and the data will be *clipped to the bounds of each GCU's polygons*. The subject of the record is the *tile* within each *GCU's polygon*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for each *polygon* of the *GCU*. The subject of the record is the *bounds* of the *GCU polygon*.\n\nThere can be only one option among the choices."
+				"ISO_639_3_eng": "This field represents the *extent* or *coverage* of the *data* contained in the *dataset*. It defines what is the *geometrìic subject* of the data. This value is generally coupled with [`std_dataset_scope`](std_dataset_scope.md) that describes how the data is organised.\n\nHere are the available options:\n\n- [`std_dataset_extent_region`](std_dataset_extent_region.md): This value indicates that the data encompasses the *full region of the project*. In EUFGIS it will be Europe and extended territories. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a *grid of data tiles* covering the *whole region of the project*. There will be *one record per grid tile*, and the data will be *clipped to the region of interest*. The subject of the record is the *tile* within the *region*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for the *shape* of the *region of interest*. In this case the region of interest is the *project region*, so there will be *one record* with *aggregated* values for that *region's bounds*.\n- [`std_dataset_extent_gcu`](std_dataset_extent_gcu.md): This value indicates that the data encompasses the full *shape of the GCU*. In EUFGIS it will be *aggregated bounds* of all the *polygons* *belonging* to the *GCU's shape*. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a set of *shapes* each containing a *grid of data tiles*. There will be *one record per grid tile*, and the data will be *clipped to the bounds of each GCU*. The subject of the record is the *tile* within the *GCU*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for the *shape* of the *GCU*. There will be *one record* with *aggregated* values for *each GCU bounds*. The subject of the record is the *bounds* of the *GCU*.\n- [`std_dataset_extent_shape`](std_dataset_extent_shape.md): This value indicates that the data encompasses the *individual polygons* constituting the *region*. In EUFGIS it will be the *individual polygons* belonging to a *GCU*. Depending on the value of the [scope](std_dataset_scope.md):\n  - [`std_dataset_scope_grid`](std_dataset_scope_grid.md): The data is organised as a set of *shapes* each containing a *grid of data tiles*. There will be *one record per grid tile*, and the data will be *clipped to the bounds of each GCU's polygons*. The subject of the record is the *tile* within each *GCU's polygon*.\n  - [`std_dataset_scope_shape`](std_dataset_scope_shape.md): The data is organised as a *set of records* containing the *aggregated value* for each *polygon* of the *GCU*. The subject of the record is the *bounds* of the *GCU polygon*.\n\nThere can be only one option among the choices."
 			}
 		},
 		"_data": {
@@ -760,13 +760,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset markers"
+				"ISO_639_3_eng": "Dataset markers"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of species, genetic index and marker type combinations."
+				"ISO_639_3_eng": "List of species, genetic index and marker type combinations."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field holds a table that contains the list of combinations between species and genetic indexes, in which the marker type, number of loci, sequence length and technology used are provided."
+				"ISO_639_3_eng": "This field holds a table that contains the list of combinations between species and genetic indexes, in which the marker type, number of loci, sequence length and technology used are provided."
 			}
 		},
 		"_data": {
@@ -815,13 +815,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Local dataset"
+				"ISO_639_3_eng": "Local dataset"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Local dataset name or acronym."
+				"ISO_639_3_eng": "Local dataset name or acronym."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field can be used to indicate the identifier of the local dataset."
+				"ISO_639_3_eng": "This field can be used to indicate the identifier of the local dataset."
 			}
 		},
 		"_data": {
@@ -850,13 +850,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Dataset file"
+				"ISO_639_3_eng": "Dataset file"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Filename of the dataset."
+				"ISO_639_3_eng": "Filename of the dataset."
 			},
 			"_description": {
-				"iso_639_3_eng": "This field can be used to indicate the filename from which the dataset has been extracted."
+				"ISO_639_3_eng": "This field can be used to indicate the filename from which the dataset has been extracted."
 			}
 		},
 		"_data": {
@@ -885,13 +885,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Timestamp"
+				"ISO_639_3_eng": "Timestamp"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date and precise time of event, observation, measurement or sampling."
+				"ISO_639_3_eng": "Date and precise time of event, observation, measurement or sampling."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
+				"ISO_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
 			}
 		},
 		"_data": {
@@ -924,13 +924,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Last Update"
+				"ISO_639_3_eng": "Last Update"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date and precise time of last update."
+				"ISO_639_3_eng": "Date and precise time of last update."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
+				"ISO_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
 			}
 		},
 		"_data": {
@@ -962,13 +962,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Fire Date"
+				"ISO_639_3_eng": "Fire Date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date and precise time of fire."
+				"ISO_639_3_eng": "Date and precise time of fire."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
+				"ISO_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
 			}
 		},
 		"_data": {
@@ -1000,13 +1000,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Last Fire Date"
+				"ISO_639_3_eng": "Last Fire Date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date and precise time of last fire."
+				"ISO_639_3_eng": "Date and precise time of last fire."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
+				"ISO_639_3_eng": "The *timestamp* is expressed as an *integer* value representing the [standard UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time). This value is required only if the *time of day* or a *very precise moment* in time is required to be recorded."
 			}
 		},
 		"_data": {
@@ -1038,13 +1038,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date"
+				"ISO_639_3_eng": "Date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date of event, observation, measurement or sampling."
+				"ISO_639_3_eng": "Date of event, observation, measurement or sampling."
 			},
 			"_description": {
-				"iso_639_3_eng": "The date is expressed as an 8 character value as YYYYMMDD: 4 digit year, 2 digit month and 2 digit day. If the day is not known it can be omitted. If the month is not known both the day and month can be omitted."
+				"ISO_639_3_eng": "The date is expressed as an 8 character value as YYYYMMDD: 4 digit year, 2 digit month and 2 digit day. If the day is not known it can be omitted. If the month is not known both the day and month can be omitted."
 			}
 		},
 		"_data": {
@@ -1077,16 +1077,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Month"
+				"ISO_639_3_eng": "Month"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Month as month number: 1 to 12."
+				"ISO_639_3_eng": "Month as month number: 1 to 12."
 			},
 			"_description": {
-				"iso_639_3_eng": "This value indicates a *month*, it is an *integer* value with a range from 1, *January*, to 12, *December*. This descriptor value does not reference a specific point in time, it will most likely be a multi-year average for the referenced month."
+				"ISO_639_3_eng": "This value indicates a *month*, it is an *integer* value with a range from 1, *January*, to 12, *December*. This descriptor value does not reference a specific point in time, it will most likely be a multi-year average for the referenced month."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`1` for *January*, `12` for *December*."
+				"ISO_639_3_eng": "`1` for *January*, `12` for *December*."
 			}
 		},
 		"_data": {
@@ -1116,13 +1116,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Start date"
+				"ISO_639_3_eng": "Start date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date range start, inclusive."
+				"ISO_639_3_eng": "Date range start, inclusive."
 			},
 			"_description": {
-				"iso_639_3_eng": "This property represents the *lower limit* of a *date range* of *time series data*. The value is a *numeric string* that can be expressed as a *year* (`YYYY`), *year* and *month* (`YYYYMM`) or *full date* (`YYYYMMDD`). The date range *includes this value*."
+				"ISO_639_3_eng": "This property represents the *lower limit* of a *date range* of *time series data*. The value is a *numeric string* that can be expressed as a *year* (`YYYY`), *year* and *month* (`YYYYMM`) or *full date* (`YYYYMMDD`). The date range *includes this value*."
 			}
 		},
 		"_data": {
@@ -1148,13 +1148,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "End date"
+				"ISO_639_3_eng": "End date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date range end, inclusive."
+				"ISO_639_3_eng": "Date range end, inclusive."
 			},
 			"_description": {
-				"iso_639_3_eng": "This property represents the *upper limit* of a *date range* of *time series data*. The value is a *numeric string* that can be expressed as a *year* (`YYYY`), *year* and *month* (`YYYYMM`) or *full date* (`YYYYMMDD`). The date range *includes this value*."
+				"ISO_639_3_eng": "This property represents the *upper limit* of a *date range* of *time series data*. The value is a *numeric string* that can be expressed as a *year* (`YYYY`), *year* and *month* (`YYYYMM`) or *full date* (`YYYYMMDD`). The date range *includes this value*."
 			}
 		},
 		"_data": {
@@ -1183,13 +1183,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Submission date"
+				"ISO_639_3_eng": "Submission date"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date in which the data was submitted."
+				"ISO_639_3_eng": "Date in which the data was submitted."
 			},
 			"_description": {
-				"iso_639_3_eng": "The date is expressed as an 8 character value in which the date is expressed as YYYYMMDD, 4 digit year, 2 digit month and 2 digit day. If the day is not known it can be omitted. If the month is not known both the day and month can be omitted."
+				"ISO_639_3_eng": "The date is expressed as an 8 character value in which the date is expressed as YYYYMMDD, 4 digit year, 2 digit month and 2 digit day. If the day is not known it can be omitted. If the month is not known both the day and month can be omitted."
 			}
 		},
 		"_data": {
@@ -1218,16 +1218,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date span"
+				"ISO_639_3_eng": "Date span"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Time span of event, observation, measurement or sampling."
+				"ISO_639_3_eng": "Time span of event, observation, measurement or sampling."
 			},
 			"_description": {
-				"iso_639_3_eng": "This categorical descriptor is used to indicate a standard time interval, such as a day, month or year. It is paired with aggregated values, such as averages, to indicate the time interval of the aggregation."
+				"ISO_639_3_eng": "This categorical descriptor is used to indicate a standard time interval, such as a day, month or year. It is paired with aggregated values, such as averages, to indicate the time interval of the aggregation."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`std_date_span_day` for *daily data*; `std_date_span_week` for *weekly data*; `std_date_span_month` for *monthly data*, `std_date_span_year` for *yearly data* and `std_date_span_range` for *time range data*."
+				"ISO_639_3_eng": "`std_date_span_day` for *daily data*; `std_date_span_week` for *weekly data*; `std_date_span_month` for *monthly data*, `std_date_span_year` for *yearly data* and `std_date_span_range` for *time range data*."
 			}
 		},
 		"_data": {
@@ -1257,16 +1257,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date spans"
+				"ISO_639_3_eng": "Date spans"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of time spans for event, observation, measurement or sampling."
+				"ISO_639_3_eng": "List of time spans for event, observation, measurement or sampling."
 			},
 			"_description": {
-				"iso_639_3_eng": "This categorical descriptor is used to indicate a set of standard time intervals, such as a day, month or year. It is used to record a set of different time ranges."
+				"ISO_639_3_eng": "This categorical descriptor is used to indicate a set of standard time intervals, such as a day, month or year. It is used to record a set of different time ranges."
 			},
 			"_examples": {
-				"iso_639_3_eng": "An array containing `std_date_span_day` for *daily data*; `std_date_span_week` for *weekly data*; `std_date_span_month` for *monthly data*, `std_date_span_year` for *yearly data* and `std_date_span_range` for *time range data*."
+				"ISO_639_3_eng": "An array containing `std_date_span_day` for *daily data*; `std_date_span_week` for *weekly data*; `std_date_span_month` for *monthly data*, `std_date_span_year` for *yearly data* and `std_date_span_range` for *time range data*."
 			}
 		},
 		"_data": {
@@ -1297,13 +1297,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Time series"
+				"ISO_639_3_eng": "Time series"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Time series data."
+				"ISO_639_3_eng": "Time series data."
 			},
 			"_description": {
-				"iso_639_3_eng": "This property is an *array* containing *time series data*. Each *element* is an *object* that should contain *one property* describing the *time or date* and a [properties](properties.md) object element containing the *data* features *related* to that *date*.\n\nThe elements are assumed to be sorted by date in ascending order and no two elements should share the same date or time."
+				"ISO_639_3_eng": "This property is an *array* containing *time series data*. Each *element* is an *object* that should contain *one property* describing the *time or date* and a [properties](properties.md) object element containing the *data* features *related* to that *date*.\n\nThe elements are assumed to be sorted by date in ascending order and no two elements should share the same date or time."
 			}
 		},
 		"_data": {
@@ -1331,13 +1331,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Terms"
+				"ISO_639_3_eng": "Terms"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of related terms."
+				"ISO_639_3_eng": "List of related terms."
 			},
 			"_description": {
-				"iso_639_3_eng": "This is a collection of references to term objects, which may be terms of any kind."
+				"ISO_639_3_eng": "This is a collection of references to term objects, which may be terms of any kind."
 			}
 		},
 		"_data": {
@@ -1369,13 +1369,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Key descriptors"
+				"ISO_639_3_eng": "Key descriptors"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of descriptors whose combination represents the unique key of a record."
+				"ISO_639_3_eng": "List of descriptors whose combination represents the unique key of a record."
 			},
 			"_description": {
-				"iso_639_3_eng": "When considering a list of data records there should be a combination of fields whose combined value will be unique among all elements of the dataset. This field should contain the global identifiers of these fields. Note that this does not include fields such as the reference to the dataset."
+				"ISO_639_3_eng": "When considering a list of data records there should be a combination of fields whose combined value will be unique among all elements of the dataset. This field should contain the global identifiers of these fields. Note that this does not include fields such as the reference to the dataset."
 			}
 		},
 		"_data": {
@@ -1406,13 +1406,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Summary descriptors"
+				"ISO_639_3_eng": "Summary descriptors"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of descriptors that can be used to extract data summaries."
+				"ISO_639_3_eng": "List of descriptors that can be used to extract data summaries."
 			},
 			"_description": {
-				"iso_639_3_eng": "These descriptors represent the fields on which it should be possible to make data summaries. For instance, if you have a dataset featuring tree code, GCU, species and date, the unique identifier of a record would be tree code and date: all the fields listed before could be used to extract data summaries."
+				"ISO_639_3_eng": "These descriptors represent the fields on which it should be possible to make data summaries. For instance, if you have a dataset featuring tree code, GCU, species and date, the unique identifier of a record would be tree code and date: all the fields listed before could be used to extract data summaries."
 			}
 		},
 		"_data": {
@@ -1443,13 +1443,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Quantitative value descriptors"
+				"ISO_639_3_eng": "Quantitative value descriptors"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of descriptors holding quantitative values."
+				"ISO_639_3_eng": "List of descriptors holding quantitative values."
 			},
 			"_description": {
-				"iso_639_3_eng": "This is a collection of references to term objects which represent quantitative values."
+				"ISO_639_3_eng": "This is a collection of references to term objects which represent quantitative values."
 			}
 		},
 		"_data": {
@@ -1480,13 +1480,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Comments and notes"
+				"ISO_639_3_eng": "Comments and notes"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Notes, comments and other additional information."
+				"ISO_639_3_eng": "Notes, comments and other additional information."
 			},
 			"_description": {
-				"iso_639_3_eng": "Use this field as a pasteboard to add relevant information that does not belong to existing descriptors. This field can be associated to any level, from the observation to the GCU. The field does not hold any indication to the language of the comments."
+				"ISO_639_3_eng": "Use this field as a pasteboard to add relevant information that does not belong to existing descriptors. This field can be associated to any level, from the observation to the GCU. The field does not hold any indication to the language of the comments."
 			}
 		},
 		"_data": {

@@ -107,6 +107,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_tag",
@@ -176,6 +177,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_subject",
@@ -239,6 +241,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_DomLeafType",
@@ -275,6 +278,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_MicroTopography",
@@ -320,6 +324,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_ForestStructure",
@@ -365,6 +370,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_ForestComposition",
@@ -395,6 +401,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_Dieback",
@@ -467,6 +474,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_TreeSocialStatus",
@@ -512,6 +520,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_SoilMethod",
@@ -542,6 +551,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_CircBreastHeight",
@@ -578,6 +588,7 @@
 			}
 		}
 	},
+	
 	{
 		"_code": {
 			"_nid": "chr_database",

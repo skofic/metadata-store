@@ -1,0 +1,845 @@
+[
+	{
+		"_from": "terms/terms/env_climate_kg_Af",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Am",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_As",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Aw",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_BWk",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_BWh",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_BSk",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_BSh",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cfa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cfb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cfc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Csa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Csb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Csc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cwa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cwb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Cwc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dfa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dfb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dfc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dfd",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dsa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dsb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dsc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dsd",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dwa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dwb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dwc",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_Dwd",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_ET",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg_EF",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg",
+		"_path": ["terms/terms/env_climate_kg"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/terms/env_climate_kg3_I_A",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_I_F",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_I_T",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_I_S",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_I_D",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_Fa",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_Fb",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_Tw",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_Ts",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_S",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_II_D",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_III_F",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_III_Tw",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_III_Ts",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_III_S",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_III_D",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_IV_F",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_IV_T",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_IV_S",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_IV_D",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_V",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg3_VI",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg3",
+		"_path": ["terms/terms/env_climate_kg3"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/terms/env_climate_kg4_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_6",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_7",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_8",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_9",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_10",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_11",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_12",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_13",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_14",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_15",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_16",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_17",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_18",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_19",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_20",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_21",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_22",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_23",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_24",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_25",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_26",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_27",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_28",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_29",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg4_30",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg4",
+		"_path": ["terms/terms/env_climate_kg4"],
+		"_path_data": {}
+	},
+
+	{
+		"_from": "terms/terms/env_climate_kg5_I_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_I_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_I_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_I_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_II_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_II_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_II_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_6",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_7",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_7a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_8",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_9",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_9a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_10",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_10a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_11",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_12",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_III_12a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_6",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_IV_7",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_1",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_2",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_2a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_3",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_4",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_4a",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	},
+	{
+		"_from": "terms/terms/env_climate_kg5_V_5",
+		"_predicate": "_predicate_enum-of",
+		"_to": "terms/terms/env_climate_kg5",
+		"_path": ["terms/terms/env_climate_kg5"],
+		"_path_data": {}
+	}
+]

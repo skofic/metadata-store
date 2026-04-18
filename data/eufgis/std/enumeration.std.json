@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Daily"
+				"ISO_639_3_eng": "Daily"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The time span of a day."
+				"ISO_639_3_eng": "The time span of a day."
 			},
 			"_description": {
-				"iso_639_3_eng": "The category describes a specific day time span. It may be also used as a container for daily data."
+				"ISO_639_3_eng": "The category describes a specific day time span. It may be also used as a container for daily data."
 			}
 		},
 		"_data": {
@@ -39,13 +39,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Weekly"
+				"ISO_639_3_eng": "Weekly"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The time span of a week."
+				"ISO_639_3_eng": "The time span of a week."
 			},
 			"_description": {
-				"iso_639_3_eng": "The category describes a specific week time span. It may be also used as a container for weekly data."
+				"ISO_639_3_eng": "The category describes a specific week time span. It may be also used as a container for weekly data."
 			}
 		},
 		"_data": {
@@ -68,13 +68,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Monthly"
+				"ISO_639_3_eng": "Monthly"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The time span of a month."
+				"ISO_639_3_eng": "The time span of a month."
 			},
 			"_description": {
-				"iso_639_3_eng": "The category describes a specific month time span. It may be also used as a container for monthly data."
+				"ISO_639_3_eng": "The category describes a specific month time span. It may be also used as a container for monthly data."
 			}
 		},
 		"_data": {
@@ -97,13 +97,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Yearly"
+				"ISO_639_3_eng": "Yearly"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The time span of a year."
+				"ISO_639_3_eng": "The time span of a year."
 			},
 			"_description": {
-				"iso_639_3_eng": "The category describes a specific year time span. It may be also used as a container for yearly data."
+				"ISO_639_3_eng": "The category describes a specific year time span. It may be also used as a container for yearly data."
 			}
 		},
 		"_data": {
@@ -126,13 +126,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Range"
+				"ISO_639_3_eng": "Range"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A range time span."
+				"ISO_639_3_eng": "A range time span."
 			},
 			"_description": {
-				"iso_639_3_eng": "The category describes a time span that represents a range, you should expect both the [start](std_date_start.md) and [end](std_date_end) date of the range."
+				"ISO_639_3_eng": "The category describes a time span that represents a range, you should expect both the [start](std_date_start.md) and [end](std_date_end) date of the range."
 			}
 		},
 		"_data": {
@@ -155,13 +155,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Grid"
+				"ISO_639_3_eng": "Grid"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data is organised as a geographic grid of values."
+				"ISO_639_3_eng": "The data is organised as a geographic grid of values."
 			},
 			"_description": {
-				"iso_639_3_eng": "Each *record* contains *data* describing a *single geographic grid tile* covering a region of interest."
+				"ISO_639_3_eng": "Each *record* contains *data* describing a *single geographic grid tile* covering a region of interest."
 			}
 		}
 	},
@@ -176,13 +176,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Shape"
+				"ISO_639_3_eng": "Shape"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data is aggregated for a geographic shape."
+				"ISO_639_3_eng": "The data is aggregated for a geographic shape."
 			},
 			"_description": {
-				"iso_639_3_eng": "Each *record* contains *data* describing a *single geographic grid tile* covering a *shape* belonging to a region of interest."
+				"ISO_639_3_eng": "Each *record* contains *data* describing a *single geographic grid tile* covering a *shape* belonging to a region of interest."
 			}
 		}
 	},
@@ -197,13 +197,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Region"
+				"ISO_639_3_eng": "Region"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The full region of the project"
+				"ISO_639_3_eng": "The full region of the project"
 			},
 			"_description": {
-				"iso_639_3_eng": "The *subject* of each *record* is the *full region* of the project, all records describe the region."
+				"ISO_639_3_eng": "The *subject* of each *record* is the *full region* of the project, all records describe the region."
 			}
 		}
 	},
@@ -218,13 +218,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Conservation unit"
+				"ISO_639_3_eng": "Conservation unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data is aggregated for the geographic shape of a GCU."
+				"ISO_639_3_eng": "The data is aggregated for the geographic shape of a GCU."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *subject* of each *record* is the *bounds* of the *GCU*."
+				"ISO_639_3_eng": "The *subject* of each *record* is the *bounds* of the *GCU*."
 			}
 		}
 	},
@@ -239,13 +239,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Plot"
+				"ISO_639_3_eng": "Plot"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The data is aggregated for the individual polygons of a GCU."
+				"ISO_639_3_eng": "The data is aggregated for the individual polygons of a GCU."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *subject* of each *record* is the *polygon* belonging to a *GCU*."
+				"ISO_639_3_eng": "The *subject* of each *record* is the *polygon* belonging to a *GCU*."
 			}
 		}
 	}

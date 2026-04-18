@@ -13,13 +13,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Risk of frost damage"
+				"ISO_639_3_eng": "Risk of frost damage"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year"
+				"ISO_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year"
 			},
 			"_description": {
-				"iso_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year. The vulnerability of buds to late frosts depends on the stage of bud development. We use CASTANEA to model the process of breaking dormancy, during which this vulnerability increases. The damage is then calculated by crossing the vulnerability of the buds and the minimum temperatures."
+				"ISO_639_3_eng": "The simulated fraction of leaf buds killed by one or more frost events during the year. The vulnerability of buds to late frosts depends on the stage of bud development. We use CASTANEA to model the process of breaking dormancy, during which this vulnerability increases. The damage is then calculated by crossing the vulnerability of the buds and the minimum temperatures."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"
@@ -74,13 +74,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Risk of desiccation during drought"
+				"ISO_639_3_eng": "Risk of desiccation during drought"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Simulated loss of hydraulic conductance"
+				"ISO_639_3_eng": "Simulated loss of hydraulic conductance"
 			},
 			"_description": {
-				"iso_639_3_eng": "The risk of tree desiccation during drought is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. Here, this risk is taken as the yearly maximum percent loss of hydraulic conductance of the plant (between 0 and 100 %). The closer to 100 the higher the risk. In general we assume that conifers die at 50% loss of hydraulic conductance whereas angioperms die at 90% loss of hydraulic conductance."
+				"ISO_639_3_eng": "The risk of tree desiccation during drought is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. Here, this risk is taken as the yearly maximum percent loss of hydraulic conductance of the plant (between 0 and 100 %). The closer to 100 the higher the risk. In general we assume that conifers die at 50% loss of hydraulic conductance whereas angioperms die at 90% loss of hydraulic conductance."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"
@@ -102,36 +102,36 @@
 					"_max-range-inclusive": 10.0,
 					"_min-range-inclusive": 0.0,
 					"_title": {
-						"iso_639_3_eng": "0-10"
+						"ISO_639_3_eng": "0-10"
 					}
 				},
 				{
 					"_max-range-inclusive": 50.0,
 					"_min-range-inclusive": 11.0,
 					"_title": {
-						"iso_639_3_eng": "11-50"
+						"ISO_639_3_eng": "11-50"
 					}
 				},
 				{
 					"_max-range-inclusive": 90.0,
 					"_min-range-inclusive": 51.0,
 					"_title": {
-						"iso_639_3_eng": "51-90"
+						"ISO_639_3_eng": "51-90"
 					}
 				},
 				{
 					"_max-range-inclusive": 100.0,
 					"_min-range-inclusive": 91.0,
 					"_title": {
-						"iso_639_3_eng": "91-100"
+						"ISO_639_3_eng": "91-100"
 					}
 				}
 			],
 			"_scalar": {
 				"_decimals": 3,
 				"_type": "_type_number",
-				"_unit-name": "Percentage loss of hydraulic conductance",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage loss of hydraulic conductance",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-inclusive": 100.0,
 					"_min-range-inclusive": 0.0
@@ -165,13 +165,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Risk of desiccation during drought - variance"
+				"ISO_639_3_eng": "Risk of desiccation during drought - variance"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Variance of the simulated loss of hydraulic conductance, which represents the risk of mortality"
+				"ISO_639_3_eng": "Variance of the simulated loss of hydraulic conductance, which represents the risk of mortality"
 			},
 			"_description": {
-				"iso_639_3_eng": "Variance of the risk of tree desiccation during drought. Tree desiccation is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. This index can be only calculated for GCUs where the trees have been measured for hydraulic traits in the field and should be always interpreted together with its mean.  If the variance is small, trees of the target population are experiencing similar desiccation risk and if variance is high, this means that some trees are at high risk of mortality, and some are at no risk."
+				"ISO_639_3_eng": "Variance of the risk of tree desiccation during drought. Tree desiccation is related to the hydraulic failure which refers to the trees losing their ability to transport water during extreme drought. This phenomenon occurs during extreme drought due to xylem embolism (obstruction by air due to cavitation) and can trigger the complete death of the tree. This index can be only calculated for GCUs where the trees have been measured for hydraulic traits in the field and should be always interpreted together with its mean.  If the variance is small, trees of the target population are experiencing similar desiccation risk and if variance is high, this means that some trees are at high risk of mortality, and some are at no risk."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"
@@ -192,8 +192,8 @@
 			"_scalar": {
 				"_decimals": 3,
 				"_type": "_type_number",
-				"_unit-name": "Percentage loss of hydraulic conductance",
-				"_unit-symbol": "%",
+				"_unit_name": "Percentage loss of hydraulic conductance",
+				"_unit_symbol": "%",
 				"_valid-range": {
 					"_max-range-inclusive": 100.0,
 					"_min-range-inclusive": 0.0
@@ -229,13 +229,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Risk of carbon starvation"
+				"ISO_639_3_eng": "Risk of carbon starvation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The simulated annual risk of mortality due to carbon starvation computed with the Castanea model"
+				"ISO_639_3_eng": "The simulated annual risk of mortality due to carbon starvation computed with the Castanea model"
 			},
 			"_description": {
-				"iso_639_3_eng": "The risk of mortality due to carbon starvation refers to the risk that trees will experience a lack of carbon reserves due to the multiple abiotic stresses that the trees may be exposed (frost, high temperature, drought)that progressively, year after year, alter the carbon balance of the trees. These processes are represented in the CASTANEA model which simulate photosynthesis, respiration and carbon allocation on a daily basis. The remaining carbon is allocated to reserves and remobilised in non-vegetative periods or during droughts. When the level of carbon storage decreases below a certain treshold a probability of mortality is estimated."
+				"ISO_639_3_eng": "The risk of mortality due to carbon starvation refers to the risk that trees will experience a lack of carbon reserves due to the multiple abiotic stresses that the trees may be exposed (frost, high temperature, drought)that progressively, year after year, alter the carbon balance of the trees. These processes are represented in the CASTANEA model which simulate photosynthesis, respiration and carbon allocation on a daily basis. The remaining carbon is allocated to reserves and remobilised in non-vegetative periods or during droughts. When the level of carbon storage decreases below a certain treshold a probability of mortality is estimated."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"
@@ -286,13 +286,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Vulnerability to wild fire"
+				"ISO_639_3_eng": "Vulnerability to wild fire"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The simulated GCU's canopy fuel moisture content which is a key driver of fire ignition and spread if there is an ignition source"
+				"ISO_639_3_eng": "The simulated GCU's canopy fuel moisture content which is a key driver of fire ignition and spread if there is an ignition source"
 			},
 			"_description": {
-				"iso_639_3_eng": "Vulnerability to wildfire refers to the probability that a GCU will dry out in such a way that the probability of fire increases, if there is ignition and the wind speed is significant. This vulnerability is approximated by the modelled moisture content (g of water /g of leaf dry matter) of the canopy leaves of the GCU using the SurEau model. When the canopy moisture content reaches values below 66% the risk of flammability drastically increases. Here we provide yearly minimum values of fuel moisture content. These values depend on the physiological characteristics of the trees and the climatic drynesss of the year which are all counted for by the SurEau model."
+				"ISO_639_3_eng": "Vulnerability to wildfire refers to the probability that a GCU will dry out in such a way that the probability of fire increases, if there is ignition and the wind speed is significant. This vulnerability is approximated by the modelled moisture content (g of water /g of leaf dry matter) of the canopy leaves of the GCU using the SurEau model. When the canopy moisture content reaches values below 66% the risk of flammability drastically increases. Here we provide yearly minimum values of fuel moisture content. These values depend on the physiological characteristics of the trees and the climatic drynesss of the year which are all counted for by the SurEau model."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"
@@ -314,35 +314,35 @@
 					"_max-range-exclusive": 40.0,
 					"_min-range-inclusive": 0.0,
 					"_title": {
-						"iso_639_3_eng": "0-40 extreme risk"
+						"ISO_639_3_eng": "0-40 extreme risk"
 					}
 				},
 				{
 					"_max-range-exclusive": 60.0,
 					"_min-range-inclusive": 40.0,
 					"_title": {
-						"iso_639_3_eng": "40-60 high risk"
+						"ISO_639_3_eng": "40-60 high risk"
 					}
 				},
 				{
 					"_max-range-exclusive": 80.0,
 					"_min-range-inclusive": 60.0,
 					"_title": {
-						"iso_639_3_eng": "60-80 moderate risk"
+						"ISO_639_3_eng": "60-80 moderate risk"
 					}
 				},
 				{
 					"_min-range-exclusive": 80.0,
 					"_title": {
-						"iso_639_3_eng": ">80 no risk"
+						"ISO_639_3_eng": ">80 no risk"
 					}
 				}
 			],
 			"_scalar": {
 				"_decimals": 3,
 				"_type": "_type_number",
-				"_unit-name": "g_H2O/g_DryMass",
-				"_unit-symbol": "g_H2O/g_DryMass",
+				"_unit_name": "g_H2O/g_DryMass",
+				"_unit_symbol": "g_H2O/g_DryMass",
 				"_valid-range": {
 					"_max-range-inclusive": 300.0,
 					"_min-range-inclusive": 0.0
@@ -376,13 +376,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Drought index"
+				"ISO_639_3_eng": "Drought index"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The number of days of the year with the soil relative water content below the treshold of 0.4. Indicator of moderate drought with no or low influence on survival"
+				"ISO_639_3_eng": "The number of days of the year with the soil relative water content below the treshold of 0.4. Indicator of moderate drought with no or low influence on survival"
 			},
 			"_description": {
-				"iso_639_3_eng": "The relative soil water content in the rooting zone is a key indicator of drought. In particular, when the standardised value falls below the threshold of 0.4, trees have been shown to respond by limiting fluxes and losing turgor. The SurEau and Medfate models were used to calculate the daily water content and extract the annual number of days when the Relative Extractable soil Water (i.e. water available for the trees) was below the threshold of 0.4, then the annual average of the metric was taken to indicate the water deficit."
+				"ISO_639_3_eng": "The relative soil water content in the rooting zone is a key indicator of drought. In particular, when the standardised value falls below the threshold of 0.4, trees have been shown to respond by limiting fluxes and losing turgor. The SurEau and Medfate models were used to calculate the daily water content and extract the annual number of days when the Relative Extractable soil Water (i.e. water available for the trees) was below the threshold of 0.4, then the annual average of the metric was taken to indicate the water deficit."
 			},
 			"_provider": [
 				"Nicolas Martin <nicolas.martin@inrae.fr>"

@@ -1,0 +1,183 @@
+[
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "class",
+			"_gid": "_class",
+			"_aid": ["class"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Data classification"},
+			"_definition": {"ISO_639_3_eng": "This enumerated value indicates to which class or category the descriptor's value belongs."},
+			"_description": {"ISO_639_3_eng": "The class can be selected from the following choices:\n\n- [Category](_class_category.md): The value is *categorical*.\n- [Reference](_class_reference.md): The value is a *reference* to another item.\n- [Identifier](_class_identifier.md): The value is an *identifier*.\n- [Quantity](_class_quantity.md): The value represents an *observed quantity*.\n- [Calculated quantity](_class_quantity_calculated.md): The value represents a quantity *calculated* from a *set of observations*.\n- [Time](_class_time.md): The value represents a point in a time series.\n\nThe property can be used to *group descriptors* according to the *function* of the *value*.\n\n*This classification applies to [scalar](_scalar.md) values*."}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": ["_class"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "classes",
+			"_gid": "_classes",
+			"_aid": ["classes"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Data classifications"},
+			"_definition": {"ISO_639_3_eng": "This list of enumerated values indicate to which classes or categories a collection of descriptor values belong."},
+			"_description": {"ISO_639_3_eng": "See the [data classification](_domain.md) descriptor for information on the list values."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["_class"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "subject",
+			"_gid": "_subject",
+			"_aid": ["subject"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Trait subject"},
+			"_definition": {"ISO_639_3_eng": "Subject to which the trait refers to."},
+			"_description": {"ISO_639_3_eng": "The category should indicate to which *subject* the *trait* applies to and not to what the *measurement refers* to. For instance in *plant height*, the subject is the *plant*, although the *value* of the *trait* may refer to a *population*."}
+		},
+		"_data": {
+			"_scalar": {
+				"_enum": {
+					"_enums": ["chr_subject"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "subjects",
+			"_gid": "_subjects",
+			"_aid": ["subjects"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Trait subjects"},
+			"_definition": {"ISO_639_3_eng": "Subjects to which a collection of traits refer to."},
+			"_description": {"ISO_639_3_eng": "See the [Trait subject](_subject.md) descriptor for information on the list values."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["chr_subject"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "domain",
+			"_gid": "_domain",
+			"_aid": ["domain"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Domains"},
+			"_definition": {"ISO_639_3_eng": "Domains to which the term refers to."},
+			"_description": {"ISO_639_3_eng": "This category should be used to indicate to which *domains* the value or *trait* refers to. The category should list the *domains* to which the *term* or *descriptor* belongs."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["chr_domain"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "list",
+			"_gid": "_list",
+			"_aid": ["list"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "List"},
+			"_definition": {"ISO_639_3_eng": "Lists to which the term refers to."},
+			"_description": {"ISO_639_3_eng": "This category should be used to indicate to which *lists* the *descriptor* belongs to."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["_list"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "tag",
+			"_gid": "_tag",
+			"_aid": ["tag"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Tags"},
+			"_definition": {"ISO_639_3_eng": "Tags to which the term refers to."},
+			"_description": {"ISO_639_3_eng": "This category should be used to attach tags to a term."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["chr_tag"]
+				}
+			}
+		}
+	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "usage",
+			"_gid": "_usage",
+			"_aid": ["usage"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Usage"},
+			"_definition": {"ISO_639_3_eng": "The usage classes of the term."},
+			"_description": {"ISO_639_3_eng": "This value identifies the different *classes* and *functions* the current *term* can *represent*.\n\nFor instance, a descriptor can be an *indicator* when used in a specific context, or it can represent *metadata* in another context. This field contains *all usages* the current term can take in *all contexts*."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["_usage"]
+				}
+			}
+		}
+	},
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "options",
+			"_gid": "_options",
+			"_aid": ["options"]
+		},
+		"_info": {
+			"_title": {"ISO_639_3_eng": "Options"},
+			"_definition": {"ISO_639_3_eng": "The options available for the term."},
+			"_description": {"ISO_639_3_eng": "This value identifies the different *options* available to the term."}
+		},
+		"_data": {
+			"_set": {
+				"_enum": {
+					"_enums": ["_options"]
+				}
+			}
+		}
+	}
+]

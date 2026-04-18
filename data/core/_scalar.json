@@ -1148,6 +1148,40 @@
 			]
 		}
 	},
+	
+	{
+		"_code": {
+			"_nid": "",
+			"_lid": "decimals",
+			"_gid": "_decimals",
+			"_aid": ["decimals"]
+		},
+		"_info": {
+			"_title": {
+				"ISO_639_3_eng": "Display decimal places"
+			},
+			"_definition": {
+				"ISO_639_3_eng": "The number of decimal places to display when rendering a numeric value. A display hint only — it does not constrain the precision at which the value is stored. Accepted by `_number` and `_number_float`; not accepted by `_number_integer`, which by definition has no fractional part. Valid range is 0 to 12 inclusive."
+			},
+			"_description": {
+				"ISO_639_3_eng": "`_decimals` is a companion property for numeric scalar types. It tells the UI and reporting tools how many decimal places to show when formatting a value for display.\n\nKey points:\n- It is a **display hint**, not a storage constraint. A value may be stored with higher or lower precision than `_decimals` indicates; the hint only governs rendering.\n- Accepted by [`_number`](_number.md) and [`_number_float`](_number_float.md). Not accepted by [`_number_integer`](_number_integer.md).\n- `_decimals: 0` means display as a whole number even if the stored value is a float (e.g. `3.7` displayed as `4` if rounding, or `3` if truncating — rounding behaviour is defined by the UI layer).\n- Maximum value is 12, which covers the precision of IEEE 754 double-precision floats."
+			},
+			"_examples": {
+				"ISO_639_3_eng": "Temperature in degrees Celsius, shown to one decimal place:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit\": \"_unit_temperature_C\"\n\t\t}\n\t}\n}\n```\n\nA dimensionless index displayed as a percentage with two decimal places:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 2,\n\t\t\t\"_unit\": \"_unit_percent\"\n\t\t}\n\t}\n}\n```"
+			}
+		},
+		"_data": {
+			"_scalar": {
+				"_number_integer": {
+					"_range_valid": {
+						"_min-inclusive": 0,
+						"_max-inclusive": 12
+					}
+				}
+			}
+		}
+	},
+	
 	{
 		"_code": {
 			"_nid": "",
@@ -1434,7 +1468,7 @@
 				"ISO_639_3_eng": "`_range_normal` is an optional companion property for numeric scalar types. When present, the stored value is compared against the specified boundaries to determine whether it is within the expected distribution; a value outside the normal range is treated as an **outlier warning**, not an error.\n\nThe value is a [`_range`](_range.md) object with the same structure as [`_range_valid`](_range_valid.md). The two properties may both be present on the same scalar: `_range_valid` enforces hard limits, while `_range_normal` marks the subset of valid values considered typical."
 			},
 			"_examples": {
-				"ISO_639_3_eng": "Human body temperature in degrees Celsius — valid up to 45 °C, normal between 35.5 and 38.5 °C:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit\": [\"_unit_temperature_C\"],\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 25.0,\n\t\t\t\t\"_max-inclusive\": 45.0\n\t\t\t},\n\t\t\t\"_range_normal\": {\n\t\t\t\t\"_min-inclusive\": 35.5,\n\t\t\t\t\"_max-inclusive\": 38.5\n\t\t\t}\n\t\t}\n\t}\n}\n```"
+				"ISO_639_3_eng": "Human body temperature in degrees Celsius — valid up to 45 °C, normal between 35.5 and 38.5 °C:\n\n```json\n{\n\t\"_scalar\": {\n\t\t\"_number_float\": {\n\t\t\t\"_decimals\": 1,\n\t\t\t\"_unit\": \"_unit_temperature_C,\n\t\t\t\"_range_valid\": {\n\t\t\t\t\"_min-inclusive\": 25.0,\n\t\t\t\t\"_max-inclusive\": 45.0\n\t\t\t},\n\t\t\t\"_range_normal\": {\n\t\t\t\t\"_min-inclusive\": 35.5,\n\t\t\t\t\"_max-inclusive\": 38.5\n\t\t\t}\n\t\t}\n\t}\n}\n```"
 			}
 		},
 		"_data": {

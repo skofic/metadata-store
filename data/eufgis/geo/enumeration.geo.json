@@ -10,16 +10,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Reference ellipsoids"
+				"ISO_639_3_eng": "Reference ellipsoids"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of geodetic datum reference ellipsoids."
+				"ISO_639_3_eng": "List of geodetic datum reference ellipsoids."
 			},
 			"_description": {
-				"iso_639_3_eng": "In geodesy, a [reference ellipsoid](https://en.wikipedia.org/wiki/Reference_ellipsoid) is a mathematically defined surface that approximates the geoid, which is the truer, imperfect figure of the Earth, or other planetary body, as opposed to a perfect, smooth, and unaltered sphere, which factors in the undulations of the bodies' gravity due to variations in the composition and density of the interior, as well as the subsequent flattening caused by the centrifugal force from the rotation of these massive objects (for planetary bodies that do rotate)."
+				"ISO_639_3_eng": "In geodesy, a [reference ellipsoid](https://en.wikipedia.org/wiki/Reference_ellipsoid) is a mathematically defined surface that approximates the geoid, which is the truer, imperfect figure of the Earth, or other planetary body, as opposed to a perfect, smooth, and unaltered sphere, which factors in the undulations of the bodies' gravity due to variations in the composition and density of the interior, as well as the subsequent flattening caused by the centrifugal force from the rotation of these massive objects (for planetary bodies that do rotate)."
 			},
 			"_notes": {
-				"iso_639_3_eng": "Data source: Defense Mapping Agency Technical Report, Department of Defense World Geodetic System 1984, DMA TR 8350.2 Second Edition, 1 September 1991. Link: http://ncgia.ucsb.edu/units/u015/tables/table03.html"
+				"ISO_639_3_eng": "Data source: Defense Mapping Agency Technical Report, Department of Defense World Geodetic System 1984, DMA TR 8350.2 Second Edition, 1 September 1991. Link: http://ncgia.ucsb.edu/units/u015/tables/table03.html"
 			}
 		},
 		"_domn": {
@@ -39,7 +39,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Airy"
+				"ISO_639_3_eng": "Airy"
 			}
 		}
 	},
@@ -54,7 +54,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Australian National"
+				"ISO_639_3_eng": "Australian National"
 			}
 		}
 	},
@@ -69,7 +69,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bessel 1841"
+				"ISO_639_3_eng": "Bessel 1841"
 			}
 		}
 	},
@@ -84,7 +84,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bessel 1841 (Namibia)"
+				"ISO_639_3_eng": "Bessel 1841 (Namibia)"
 			}
 		}
 	},
@@ -99,7 +99,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clarke 1866"
+				"ISO_639_3_eng": "Clarke 1866"
 			}
 		}
 	},
@@ -114,7 +114,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Clarke 1880"
+				"ISO_639_3_eng": "Clarke 1880"
 			}
 		}
 	},
@@ -129,7 +129,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Everest"
+				"ISO_639_3_eng": "Everest"
 			}
 		}
 	},
@@ -144,7 +144,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GRS 80"
+				"ISO_639_3_eng": "GRS 80"
 			}
 		}
 	},
@@ -159,7 +159,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Helmert 1906"
+				"ISO_639_3_eng": "Helmert 1906"
 			}
 		}
 	},
@@ -174,7 +174,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Hough"
+				"ISO_639_3_eng": "Hough"
 			}
 		}
 	},
@@ -189,7 +189,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "International"
+				"ISO_639_3_eng": "International"
 			}
 		}
 	},
@@ -204,7 +204,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Krassovsky"
+				"ISO_639_3_eng": "Krassovsky"
 			}
 		}
 	},
@@ -219,7 +219,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Modified Airy"
+				"ISO_639_3_eng": "Modified Airy"
 			}
 		}
 	},
@@ -234,7 +234,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Modified Everest"
+				"ISO_639_3_eng": "Modified Everest"
 			}
 		}
 	},
@@ -249,7 +249,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Modified Fischer 1960"
+				"ISO_639_3_eng": "Modified Fischer 1960"
 			}
 		}
 	},
@@ -264,7 +264,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "South American 1969"
+				"ISO_639_3_eng": "South American 1969"
 			}
 		}
 	},
@@ -279,7 +279,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "WGS-72"
+				"ISO_639_3_eng": "WGS-72"
 			}
 		}
 	},
@@ -294,7 +294,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "WGS-84"
+				"ISO_639_3_eng": "WGS-84"
 			}
 		}
 	},
@@ -309,13 +309,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "WGS-84"
+				"ISO_639_3_eng": "WGS-84"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The latest revision is **WGS 84** (also known as  **WGS 1984**, **[EPSG](https://en.wikipedia.org/wiki/EPSG \"EPSG\"):4326**), established and maintained by the United States [National Geospatial-Intelligence Agency](https://en.wikipedia.org/wiki/National_Geospatial-Intelligence_Agency \"National Geospatial-Intelligence Agency\") since 1984, and last revised in 2014."
+				"ISO_639_3_eng": "The latest revision is **WGS 84** (also known as  **WGS 1984**, **[EPSG](https://en.wikipedia.org/wiki/EPSG \"EPSG\"):4326**), established and maintained by the United States [National Geospatial-Intelligence Agency](https://en.wikipedia.org/wiki/National_Geospatial-Intelligence_Agency \"National Geospatial-Intelligence Agency\") since 1984, and last revised in 2014."
 			},
 			"_description": {
-				"iso_639_3_eng": "The *World Geodetic System* ([WGS](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84)) is a standard for use in [cartography](https://en.wikipedia.org/wiki/Cartography \"Cartography\"), [geodesy](https://en.wikipedia.org/wiki/Geodesy \"Geodesy\"), and [satellite navigation](https://en.wikipedia.org/wiki/Satellite_navigation \"Satellite navigation\") including [GPS](https://en.wikipedia.org/wiki/GPS \"GPS\"). This standard includes the definition of the [coordinate system](https://en.wikipedia.org/wiki/Coordinate_system \"Coordinate system\")'s fundamental and derived constants, the [normal gravity](https://en.wikipedia.org/wiki/Normal_gravity \"Normal gravity\") [Earth Gravitational Model](https://en.wikipedia.org/wiki/Earth_Gravitational_Model \"Earth Gravitational Model\") (EGM), a description of the associated [World Magnetic Model (WMM)](https://en.wikipedia.org/wiki/World_Magnetic_Model \"World Magnetic Model\"), and a current list of local datum transformations."
+				"ISO_639_3_eng": "The *World Geodetic System* ([WGS](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84)) is a standard for use in [cartography](https://en.wikipedia.org/wiki/Cartography \"Cartography\"), [geodesy](https://en.wikipedia.org/wiki/Geodesy \"Geodesy\"), and [satellite navigation](https://en.wikipedia.org/wiki/Satellite_navigation \"Satellite navigation\") including [GPS](https://en.wikipedia.org/wiki/GPS \"GPS\"). This standard includes the definition of the [coordinate system](https://en.wikipedia.org/wiki/Coordinate_system \"Coordinate system\")'s fundamental and derived constants, the [normal gravity](https://en.wikipedia.org/wiki/Normal_gravity \"Normal gravity\") [Earth Gravitational Model](https://en.wikipedia.org/wiki/Earth_Gravitational_Model \"Earth Gravitational Model\") (EGM), a description of the associated [World Magnetic Model (WMM)](https://en.wikipedia.org/wiki/World_Magnetic_Model \"World Magnetic Model\"), and a current list of local datum transformations."
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -336,10 +336,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "WGS-72"
+				"ISO_639_3_eng": "WGS-72"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Earlier schemes of WGS-84 included WGS 72, WGS 66, and WGS 60."
+				"ISO_639_3_eng": "Earlier schemes of WGS-84 included WGS 72, WGS 66, and WGS 60."
 			}
 		},
 		"geo_datum_delta-a": 2,
@@ -360,7 +360,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ain El Abd 1970"
+				"ISO_639_3_eng": "Ain El Abd 1970"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -381,7 +381,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Alaska (NAD-27)"
+				"ISO_639_3_eng": "Alaska (NAD-27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -402,7 +402,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Alaska/Canada NAD-27"
+				"ISO_639_3_eng": "Alaska/Canada NAD-27"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -423,7 +423,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Anna 1 Astro 1965"
+				"ISO_639_3_eng": "Anna 1 Astro 1965"
 			}
 		},
 		"geo_datum_delta-a": -23,
@@ -444,7 +444,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "ARC-1950 mean"
+				"ISO_639_3_eng": "ARC-1950 mean"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -465,7 +465,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "ARC-1960 mean"
+				"ISO_639_3_eng": "ARC-1960 mean"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -486,7 +486,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ascension Island '58"
+				"ISO_639_3_eng": "Ascension Island '58"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -507,7 +507,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Astro B4 Sor.Atoll"
+				"ISO_639_3_eng": "Astro B4 Sor.Atoll"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -528,7 +528,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Astro Beacon \"E\""
+				"ISO_639_3_eng": "Astro Beacon \"E\""
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -549,7 +549,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Astro Pos 71/4"
+				"ISO_639_3_eng": "Astro Pos 71/4"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -570,7 +570,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Astronomic Stn. '52"
+				"ISO_639_3_eng": "Astronomic Stn. '52"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -591,7 +591,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Australian Geodetic 1984"
+				"ISO_639_3_eng": "Australian Geodetic 1984"
 			}
 		},
 		"geo_datum_delta-a": -23,
@@ -612,7 +612,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bahamas (NAD-27)"
+				"ISO_639_3_eng": "Bahamas (NAD-27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -633,7 +633,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bellevue (IGN)"
+				"ISO_639_3_eng": "Bellevue (IGN)"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -654,7 +654,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bermuda 1957"
+				"ISO_639_3_eng": "Bermuda 1957"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -675,7 +675,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bogota Observatory"
+				"ISO_639_3_eng": "Bogota Observatory"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -696,7 +696,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bukit Rimpah"
+				"ISO_639_3_eng": "Bukit Rimpah"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -717,7 +717,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Camp Area Astro"
+				"ISO_639_3_eng": "Camp Area Astro"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -738,7 +738,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Campo Inchauspe"
+				"ISO_639_3_eng": "Campo Inchauspe"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -759,7 +759,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Canada Mean (NAD27)"
+				"ISO_639_3_eng": "Canada Mean (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -780,7 +780,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Canal Zone (NAD27)"
+				"ISO_639_3_eng": "Canal Zone (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -801,7 +801,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Canton Island 1966"
+				"ISO_639_3_eng": "Canton Island 1966"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -822,7 +822,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Cape"
+				"ISO_639_3_eng": "Cape"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -843,7 +843,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Cape Canaveral mean"
+				"ISO_639_3_eng": "Cape Canaveral mean"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -864,7 +864,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Carribean (NAD27)"
+				"ISO_639_3_eng": "Carribean (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -885,7 +885,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Carthage"
+				"ISO_639_3_eng": "Carthage"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -906,7 +906,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Central America (NAD27)"
+				"ISO_639_3_eng": "Central America (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -927,7 +927,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Chatham 1971"
+				"ISO_639_3_eng": "Chatham 1971"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -948,7 +948,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Chua Astro"
+				"ISO_639_3_eng": "Chua Astro"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -969,7 +969,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Corrego Alegre"
+				"ISO_639_3_eng": "Corrego Alegre"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -990,7 +990,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Corrego Alegre (Provisional)"
+				"ISO_639_3_eng": "Corrego Alegre (Provisional)"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1011,7 +1011,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Cuba (NAD27)"
+				"ISO_639_3_eng": "Cuba (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1032,7 +1032,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Cyprus"
+				"ISO_639_3_eng": "Cyprus"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1053,7 +1053,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Djakarta(Batavia)"
+				"ISO_639_3_eng": "Djakarta(Batavia)"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -1074,7 +1074,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "DOS 1968"
+				"ISO_639_3_eng": "DOS 1968"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1095,7 +1095,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Easter lsland 1967"
+				"ISO_639_3_eng": "Easter lsland 1967"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1116,7 +1116,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Egypt"
+				"ISO_639_3_eng": "Egypt"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1137,7 +1137,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "European 1950"
+				"ISO_639_3_eng": "European 1950"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1158,7 +1158,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "European 1950 mean"
+				"ISO_639_3_eng": "European 1950 mean"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1179,7 +1179,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "European 1979 mean"
+				"ISO_639_3_eng": "European 1979 mean"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1200,7 +1200,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Finnish Nautical Chart"
+				"ISO_639_3_eng": "Finnish Nautical Chart"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1221,7 +1221,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Gandajika Base"
+				"ISO_639_3_eng": "Gandajika Base"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1242,7 +1242,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geodetic Datum '49"
+				"ISO_639_3_eng": "Geodetic Datum '49"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1263,7 +1263,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ghana"
+				"ISO_639_3_eng": "Ghana"
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -1284,7 +1284,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Greenland (NAD27)"
+				"ISO_639_3_eng": "Greenland (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1305,7 +1305,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Guam 1963"
+				"ISO_639_3_eng": "Guam 1963"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1326,7 +1326,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Gunung Segara"
+				"ISO_639_3_eng": "Gunung Segara"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -1347,7 +1347,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Gunung Serindung 1962"
+				"ISO_639_3_eng": "Gunung Serindung 1962"
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -1368,7 +1368,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GUX 1 Astro"
+				"ISO_639_3_eng": "GUX 1 Astro"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1389,7 +1389,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Herat North"
+				"ISO_639_3_eng": "Herat North"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1410,7 +1410,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Hjorsey 1955"
+				"ISO_639_3_eng": "Hjorsey 1955"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1431,7 +1431,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Hong Kong 1963"
+				"ISO_639_3_eng": "Hong Kong 1963"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1452,7 +1452,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Hu-Tzu-Shan"
+				"ISO_639_3_eng": "Hu-Tzu-Shan"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1473,7 +1473,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Indian"
+				"ISO_639_3_eng": "Indian"
 			}
 		},
 		"geo_datum_delta-a": 860.655,
@@ -1494,7 +1494,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Iran"
+				"ISO_639_3_eng": "Iran"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1515,7 +1515,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ireland 1965"
+				"ISO_639_3_eng": "Ireland 1965"
 			}
 		},
 		"geo_datum_delta-a": 796.811,
@@ -1536,7 +1536,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "ISTS 073 Astro '69"
+				"ISO_639_3_eng": "ISTS 073 Astro '69"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1557,7 +1557,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Johnston Island '61"
+				"ISO_639_3_eng": "Johnston Island '61"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1578,7 +1578,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Kandawala"
+				"ISO_639_3_eng": "Kandawala"
 			}
 		},
 		"geo_datum_delta-a": 860.655,
@@ -1599,7 +1599,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Kerguelen Island"
+				"ISO_639_3_eng": "Kerguelen Island"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1620,7 +1620,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Kertau '48"
+				"ISO_639_3_eng": "Kertau '48"
 			}
 		},
 		"geo_datum_delta-a": 832.937,
@@ -1641,7 +1641,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "L.C. 5 Astro"
+				"ISO_639_3_eng": "L.C. 5 Astro"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1662,7 +1662,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "La Reunion"
+				"ISO_639_3_eng": "La Reunion"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1683,7 +1683,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Liberia 1964"
+				"ISO_639_3_eng": "Liberia 1964"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1704,7 +1704,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Luzon"
+				"ISO_639_3_eng": "Luzon"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1725,7 +1725,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Mahe 1971"
+				"ISO_639_3_eng": "Mahe 1971"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1746,7 +1746,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Marco Astro"
+				"ISO_639_3_eng": "Marco Astro"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1767,7 +1767,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Masirah Is. (Nahrwan)"
+				"ISO_639_3_eng": "Masirah Is. (Nahrwan)"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1788,7 +1788,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Massawa"
+				"ISO_639_3_eng": "Massawa"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -1809,7 +1809,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Merchich"
+				"ISO_639_3_eng": "Merchich"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1830,7 +1830,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Mexico (NAD27)"
+				"ISO_639_3_eng": "Mexico (NAD27)"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1851,7 +1851,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Midway Astro '61"
+				"ISO_639_3_eng": "Midway Astro '61"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1872,7 +1872,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Mindanao"
+				"ISO_639_3_eng": "Mindanao"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -1893,7 +1893,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Minna"
+				"ISO_639_3_eng": "Minna"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1914,7 +1914,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Montjong Lowe"
+				"ISO_639_3_eng": "Montjong Lowe"
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -1935,7 +1935,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Nahrwan"
+				"ISO_639_3_eng": "Nahrwan"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -1956,7 +1956,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Naparima BWI"
+				"ISO_639_3_eng": "Naparima BWI"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -1977,7 +1977,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "North America '83"
+				"ISO_639_3_eng": "North America '83"
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -1998,7 +1998,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "North America 1927 mean"
+				"ISO_639_3_eng": "North America 1927 mean"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2019,7 +2019,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Observatorio 1966"
+				"ISO_639_3_eng": "Observatorio 1966"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2040,7 +2040,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Old Egyptian"
+				"ISO_639_3_eng": "Old Egyptian"
 			}
 		},
 		"geo_datum_delta-a": -63,
@@ -2061,7 +2061,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Old Hawaiian mean"
+				"ISO_639_3_eng": "Old Hawaiian mean"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2082,7 +2082,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Old Hawaiian Kauai"
+				"ISO_639_3_eng": "Old Hawaiian Kauai"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2103,7 +2103,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Old Hawaiian Maui"
+				"ISO_639_3_eng": "Old Hawaiian Maui"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2124,7 +2124,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Old Hawaiian Oahu"
+				"ISO_639_3_eng": "Old Hawaiian Oahu"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2145,7 +2145,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Oman"
+				"ISO_639_3_eng": "Oman"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -2166,7 +2166,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ordnance Survey of Great Britain '36"
+				"ISO_639_3_eng": "Ordnance Survey of Great Britain '36"
 			}
 		},
 		"geo_datum_delta-a": 573.604,
@@ -2187,7 +2187,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Pico De Las Nieves"
+				"ISO_639_3_eng": "Pico De Las Nieves"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2208,7 +2208,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Pitcairn Astro '67"
+				"ISO_639_3_eng": "Pitcairn Astro '67"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2229,7 +2229,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Potsdam Rauenberg DHDN"
+				"ISO_639_3_eng": "Potsdam Rauenberg DHDN"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -2250,7 +2250,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Provisional South American 1956 mean"
+				"ISO_639_3_eng": "Provisional South American 1956 mean"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2271,7 +2271,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Provisional South Chilean 1963"
+				"ISO_639_3_eng": "Provisional South Chilean 1963"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2292,7 +2292,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Puerto Rico"
+				"ISO_639_3_eng": "Puerto Rico"
 			}
 		},
 		"geo_datum_delta-a": -69.4,
@@ -2313,7 +2313,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Pulkovo 1942"
+				"ISO_639_3_eng": "Pulkovo 1942"
 			}
 		},
 		"geo_datum_delta-a": -108,
@@ -2334,7 +2334,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Qornoq"
+				"ISO_639_3_eng": "Qornoq"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2355,7 +2355,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Quatar National"
+				"ISO_639_3_eng": "Quatar National"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2376,7 +2376,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Rome 1940"
+				"ISO_639_3_eng": "Rome 1940"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2397,7 +2397,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "S 42"
+				"ISO_639_3_eng": "S 42"
 			}
 		},
 		"geo_datum_delta-a": -108,
@@ -2418,7 +2418,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "S.E.Asia (Indian)"
+				"ISO_639_3_eng": "S.E.Asia (Indian)"
 			}
 		},
 		"geo_datum_delta-a": 860.655,
@@ -2439,7 +2439,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "SAD-69/Brazil"
+				"ISO_639_3_eng": "SAD-69/Brazil"
 			}
 		},
 		"geo_datum_delta-a": -23,
@@ -2460,7 +2460,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Santa Braz"
+				"ISO_639_3_eng": "Santa Braz"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2481,7 +2481,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Santo (DOS)"
+				"ISO_639_3_eng": "Santo (DOS)"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2502,7 +2502,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sapper Hill '43"
+				"ISO_639_3_eng": "Sapper Hill '43"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2523,7 +2523,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Schwarzeck"
+				"ISO_639_3_eng": "Schwarzeck"
 			}
 		},
 		"geo_datum_delta-a": 653.135,
@@ -2544,7 +2544,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sicily"
+				"ISO_639_3_eng": "Sicily"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2565,7 +2565,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Sierra Leone 1960"
+				"ISO_639_3_eng": "Sierra Leone 1960"
 			}
 		},
 		"geo_datum_delta-a": 0,
@@ -2586,7 +2586,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "South American 1969 mean"
+				"ISO_639_3_eng": "South American 1969 mean"
 			}
 		},
 		"geo_datum_delta-a": -23,
@@ -2607,7 +2607,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "South Asia"
+				"ISO_639_3_eng": "South Asia"
 			}
 		},
 		"geo_datum_delta-a": -18,
@@ -2628,7 +2628,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Southeast Base"
+				"ISO_639_3_eng": "Southeast Base"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2649,7 +2649,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Southwest Base"
+				"ISO_639_3_eng": "Southwest Base"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2670,7 +2670,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Tananarive Observatory '25"
+				"ISO_639_3_eng": "Tananarive Observatory '25"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2691,7 +2691,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Thai/Viet (Indian)"
+				"ISO_639_3_eng": "Thai/Viet (Indian)"
 			}
 		},
 		"geo_datum_delta-a": 860.655,
@@ -2712,7 +2712,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Timbalai 1948"
+				"ISO_639_3_eng": "Timbalai 1948"
 			}
 		},
 		"geo_datum_delta-a": 860.655,
@@ -2733,7 +2733,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Tokyo mean"
+				"ISO_639_3_eng": "Tokyo mean"
 			}
 		},
 		"geo_datum_delta-a": 739.845,
@@ -2754,7 +2754,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Tristan Astro 1968"
+				"ISO_639_3_eng": "Tristan Astro 1968"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2775,7 +2775,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unites Arab Emirates (Nahrwan)"
+				"ISO_639_3_eng": "Unites Arab Emirates (Nahrwan)"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -2796,7 +2796,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Viti Levu 1916"
+				"ISO_639_3_eng": "Viti Levu 1916"
 			}
 		},
 		"geo_datum_delta-a": -112.145,
@@ -2817,7 +2817,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Wake-Eniwetok '60"
+				"ISO_639_3_eng": "Wake-Eniwetok '60"
 			}
 		},
 		"geo_datum_delta-a": -133,
@@ -2838,7 +2838,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Yacare"
+				"ISO_639_3_eng": "Yacare"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2859,7 +2859,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Zanderij"
+				"ISO_639_3_eng": "Zanderij"
 			}
 		},
 		"geo_datum_delta-a": -251,
@@ -2880,10 +2880,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "No drought"
+				"ISO_639_3_eng": "No drought"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Normal conditions"
+				"ISO_639_3_eng": "Normal conditions"
 			}
 		}
 	},
@@ -2898,10 +2898,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Watch"
+				"ISO_639_3_eng": "Watch"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Precipitation deficit"
+				"ISO_639_3_eng": "Precipitation deficit"
 			}
 		}
 	},
@@ -2916,10 +2916,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Warning"
+				"ISO_639_3_eng": "Warning"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Negative soil moisture anomaly, usually linked with precipitation deficit"
+				"ISO_639_3_eng": "Negative soil moisture anomaly, usually linked with precipitation deficit"
 			}
 		}
 	},
@@ -2934,10 +2934,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Alert"
+				"ISO_639_3_eng": "Alert"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Negative anomaly of vegetation growth, usually linked with precipitation deficit and negative soil moisture anomaly"
+				"ISO_639_3_eng": "Negative anomaly of vegetation growth, usually linked with precipitation deficit and negative soil moisture anomaly"
 			}
 		}
 	},
@@ -2952,10 +2952,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Recovery"
+				"ISO_639_3_eng": "Recovery"
 			},
 			"_definition": {
-				"iso_639_3_eng": "After a drought episode, both meteorological conditions and vegetation growth return to normal"
+				"ISO_639_3_eng": "After a drought episode, both meteorological conditions and vegetation growth return to normal"
 			}
 		}
 	},
@@ -2970,10 +2970,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Temporary Soil Moisture recovery"
+				"ISO_639_3_eng": "Temporary Soil Moisture recovery"
 			},
 			"_definition": {
-				"iso_639_3_eng": "After a drought episode, soil moisture conditions are above the drought threshold but not enough to consider the episode closed"
+				"ISO_639_3_eng": "After a drought episode, soil moisture conditions are above the drought threshold but not enough to consider the episode closed"
 			}
 		}
 	},
@@ -2988,10 +2988,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Temporary vegetation recovery"
+				"ISO_639_3_eng": "Temporary vegetation recovery"
 			},
 			"_definition": {
-				"iso_639_3_eng": "After a drought episode, vegetation conditions are above the drought threshold but not enough to consider the episode closed"
+				"ISO_639_3_eng": "After a drought episode, vegetation conditions are above the drought threshold but not enough to consider the episode closed"
 			}
 		}
 	},
@@ -3006,10 +3006,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "No data"
+				"ISO_639_3_eng": "No data"
 			},
 			"_definition": {
-				"iso_639_3_eng": "No data inside LISFLOOD domain"
+				"ISO_639_3_eng": "No data inside LISFLOOD domain"
 			}
 		}
 	}

@@ -10,13 +10,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Database"
+				"ISO_639_3_eng": "Database"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Name of the database to which the occurrences are belonging to"
+				"ISO_639_3_eng": "Name of the database to which the occurrences are belonging to"
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor is used to indicate in which public databases the data is published, a set of selected databases is used for the enumeration."
+				"ISO_639_3_eng": "This descriptor is used to indicate in which public databases the data is published, a set of selected databases is used for the enumeration."
 			}
 		},
 		"_data": {
@@ -46,10 +46,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Extent of Occurrence"
+				"ISO_639_3_eng": "Extent of Occurrence"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The property is a flag that indicates whether the observation falls within the species geographical range, measured as the extent of occurrence (EOO)."
+				"ISO_639_3_eng": "The property is a flag that indicates whether the observation falls within the species geographical range, measured as the extent of occurrence (EOO)."
 			}
 		},
 		"_data": {
@@ -78,13 +78,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Operators"
+				"ISO_639_3_eng": "Operators"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of the people that performed the experiment or measurement."
+				"ISO_639_3_eng": "List of the people that performed the experiment or measurement."
 			},
 			"_description": {
-				"iso_639_3_eng": "This descriptor is relevant to experiments or measurements in the field. Provide the list of names of the personnel that conducted the experiment or measurement."
+				"ISO_639_3_eng": "This descriptor is relevant to experiments or measurements in the field. Provide the list of names of the personnel that conducted the experiment or measurement."
 			}
 		},
 		"_data": {

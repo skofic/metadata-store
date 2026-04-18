@@ -9,13 +9,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Characterisation"
+				"ISO_639_3_eng": "Characterisation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Characterisation data."
+				"ISO_639_3_eng": "Characterisation data."
 			},
 			"_description": {
-				"iso_639_3_eng": "This category is used as the namespace for characterisation data."
+				"ISO_639_3_eng": "This category is used as the namespace for characterisation data."
 			}
 		},
 		"_domn": {
@@ -35,10 +35,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Characterisation domains"
+				"ISO_639_3_eng": "Characterisation domains"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Domains that apply to to characterisation terms."
+				"ISO_639_3_eng": "Domains that apply to to characterisation terms."
 			}
 		}
 	},
@@ -53,10 +53,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Characterisation tags"
+				"ISO_639_3_eng": "Characterisation tags"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Tags that apply to characterisation terms."
+				"ISO_639_3_eng": "Tags that apply to characterisation terms."
 			}
 		},
 		"_domn": {
@@ -76,10 +76,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Characterisation subject"
+				"ISO_639_3_eng": "Characterisation subject"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The subject of the characterisation dataset record."
+				"ISO_639_3_eng": "The subject of the characterisation dataset record."
 			}
 		},
 		"_domn": {
@@ -99,10 +99,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Tree"
+				"ISO_639_3_eng": "Tree"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Individual tree."
+				"ISO_639_3_eng": "Individual tree."
 			}
 		}
 	},
@@ -117,10 +117,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Measured"
+				"ISO_639_3_eng": "Measured"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Directly measured observation, not derived from remote sensing."
+				"ISO_639_3_eng": "Directly measured observation, not derived from remote sensing."
 			}
 		},
 		"_domn": {
@@ -140,10 +140,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Trend"
+				"ISO_639_3_eng": "Trend"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Temporal dynamics trend."
+				"ISO_639_3_eng": "Temporal dynamics trend."
 			}
 		},
 		"_domn": {
@@ -163,10 +163,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Operator"
+				"ISO_639_3_eng": "Operator"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Information about the person that conducted an experiment or measurement."
+				"ISO_639_3_eng": "Information about the person that conducted an experiment or measurement."
 			}
 		},
 		"_domn": {

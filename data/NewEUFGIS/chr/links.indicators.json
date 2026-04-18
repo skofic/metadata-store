@@ -1,0 +1,1479 @@
+[
+	{
+		"_from": "terms/std_dataset",
+		"_to": "terms/std_project",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/geometry_hash",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvElevation",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_StdElevation",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvSlope",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvAspect",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_measured_LatPlot",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_measured_LatPlot",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_measured_LonPlot",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_measured_LonPlot",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_measured_Elevation",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_measured_Elevation",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_measured_Slope",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_measured_Slope",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_measured_Aspect",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_measured_Aspect",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MicroTopography",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MicroTopography",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_LandSurfTemp",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_LandSurfTemp",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_AvLandSurfTemp",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_AvLandSurfTemp",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MaxLandSurfTemp",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MaxLandSurfTemp",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_AvNormDiffVegIdx",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_AvNormDiffVegIdx",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_MaxNormDiffVegIdx",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_MaxNormDiffVegIdx",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_MaxLeafAreaIdx",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_MaxLeafAreaIdx",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_SumGrossPrimProd",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_SumGrossPrimProd",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_MaxGrossPrimProd",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_MaxGrossPrimProd",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_trend_MaxNormDiffWaterIdx",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_trend_MaxNormDiffWaterIdx",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_GCUFootprintArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GCUFootprintArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Dsoil",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Dsoil",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Esoil",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Esoil",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_RootingDepth",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_RootingDepth",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_RootingDepth",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_ForestStructure",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_ForestStructure",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_ForestComposition",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_ForestComposition",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvTreeHeight",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvTreeHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvCanopyHeight",
+		"_to": "terms/geometry_hash",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCanopyHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_CircBreastHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvCircBreastHeight",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCircBreastHeight",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCircBreastHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarCircBreastHeight",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCircBreastHeight",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCircBreastHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvCrownLength",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCrownLength",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCrownLength",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCrownLength",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvCrownHeight",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCrownHeight",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCrownHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarCrownHeight",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCrownHeight",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCrownHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarCrownLength",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCrownLength",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCrownLength",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCrownLength",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvBasalArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvBasalArea",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvBasalArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarBasalArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarBasalArea",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarBasalArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PlotBasalArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PlotBasalArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MedDeadTrees",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedDeadTrees",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedDeadTrees",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MedNaturalRegeneration",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedNaturalRegeneration",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedNaturalRegeneration",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PropRepTrees",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropRepTrees",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PropRepTrees",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_PropPolyLoci",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Hs",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_NucDiv",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_MolDivPartB",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_MolDivPartW",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Divergence",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Divergence_Pairwise",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_PropClones",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_SizeClones",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_AdmixIndex",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_HybridIndex",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Inbreeding",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+		{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+
+	{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_GenLoad",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_GenomicOffset",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/chr_MarkerType",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/chr_SampleSize",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/chr_NumberOfLoci",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	{
+		"_from": "terms/chr_Evolvability",
+		"_to": "terms/chr_GenoTech",
+		"_predicate": "_predicate_requires_metadata"
+	},
+	
+	{
+		"_from": "terms/chr_Htot",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvHtot",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvHtot",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvHtot",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarHtot",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarHtot",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarHtot",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_TurgorLossPoint",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvTurgorLossPoint",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvTurgorLossPoint",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvTurgorLossPoint",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarTurgorLossPoint",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarTurgorLossPoint",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarTurgorLossPoint",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_P50",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvP50",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvP50",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvP50",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarP50",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarP50",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarP50",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Gres",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvGres",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvGres",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvGres",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarGres",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarGres",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarGres",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvCbranch",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCbranch",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvCbranch",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarCbranch",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCbranch",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarCbranch",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_HuberValue",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvHuberValue",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvHuberValue",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvHuberValue",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarHuberValue",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarHuberValue",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarHuberValue",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_CrownLength",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_BasalCrownHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_SpecLeafArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvSpecLeafArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvSpecLeafArea",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvSpecLeafArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarSpecLeafArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarSpecLeafArea",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarSpecLeafArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_WoodDensity",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvWoodDensity",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvWoodDensity",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvWoodDensity",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarWoodDensity",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarWoodDensity",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarWoodDensity",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_Dieback",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_MedDieback",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedDieback",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_MedDieback",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_IqrDieback",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_IqrDieback",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_IqrDieback",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_SapWoodAreaTrunk",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvSapWoodAreaTrunk",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvSapWoodAreaTrunk",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvSapWoodAreaTrunk",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_VarSapWoodAreaTrunk",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarSapWoodAreaTrunk",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_VarSapWoodAreaTrunk",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_PercentCoarseElement",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_PercentCoarseElement",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_SoilMethod",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_SoilMethod",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_SoilMethod",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_CrownHeight",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_CrownHeight",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_CrownArea",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_CrownArea",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_CrownArea",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_CoreYear",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_CoreYear",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_TruePAI",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_TruePAI",
+		"_to": "terms/species",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_TruePAI",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_LatPlotMeasured",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_LatPlotMeasured",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_LonPlotMeasured",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_LonPlotMeasured",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	
+	{
+		"_from": "terms/chr_AvTreeAge",
+		"_to": "terms/gcu_id_number",
+		"_predicate": "_predicate_requires_indicator"
+	},
+	{
+		"_from": "terms/chr_AvTreeAge",
+		"_to": "terms/std_date",
+		"_predicate": "_predicate_requires_indicator"
+	}
+]

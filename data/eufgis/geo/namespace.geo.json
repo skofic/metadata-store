@@ -9,13 +9,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geodesy standards"
+				"ISO_639_3_eng": "Geodesy standards"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Standards regarding geographic locations, measurements and methods."
+				"ISO_639_3_eng": "Standards regarding geographic locations, measurements and methods."
 			},
 			"_description": {
-				"iso_639_3_eng": "This namespace groups all terms and descriptors that represent standards in the geodesic domain."
+				"ISO_639_3_eng": "This namespace groups all terms and descriptors that represent standards in the geodesic domain."
 			}
 		},
 		"_domn": {
@@ -35,13 +35,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geographic shape"
+				"ISO_639_3_eng": "Geographic shape"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A shape or geometry associated with one or more geographic features."
+				"ISO_639_3_eng": "A shape or geometry associated with one or more geographic features."
 			},
 			"_description": {
-				"iso_639_3_eng": "This *namespace* can be used to group terms defining geographic features associated with a geographic region, shape or geometry."
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining geographic features associated with a geographic region, shape or geometry."
 			}
 		},
 		"_domn": {
@@ -61,13 +61,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Geographic shape coverage rate"
+				"ISO_639_3_eng": "Geographic shape coverage rate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Coverage percentage or ratio of the geographic shape."
+				"ISO_639_3_eng": "Coverage percentage or ratio of the geographic shape."
 			},
 			"_description": {
-				"iso_639_3_eng": "This *namespace* can be used to group terms defining *coverage percentages* of *geographic shapes*."
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining *coverage percentages* of *geographic shapes*."
 			}
 		},
 		"_domn": {
@@ -87,13 +87,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Bounds properties"
+				"ISO_639_3_eng": "Bounds properties"
 			},
 			"_definition": {
-				"iso_639_3_eng": "A namespace for properties characterising a bounding box."
+				"ISO_639_3_eng": "A namespace for properties characterising a bounding box."
 			},
 			"_description": {
-				"iso_639_3_eng": "This *namespace* can be used to group terms defining geographic features or measures expressed in the local coordinate reference system."
+				"ISO_639_3_eng": "This *namespace* can be used to group terms defining geographic features or measures expressed in the local coordinate reference system."
 			}
 		},
 		"_domn": {

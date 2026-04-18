@@ -13,10 +13,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit country"
+				"ISO_639_3_eng": "Unit country"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Country in which the gene conservation unit is located."
+				"ISO_639_3_eng": "Country in which the gene conservation unit is located."
 			}
 		},
 		"_data": {
@@ -48,16 +48,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit number"
+				"ISO_639_3_eng": "Unit number"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Unique identifier of the unit"
+				"ISO_639_3_eng": "Unique identifier of the unit"
 			},
 			"_description": {
-				"iso_639_3_eng": "This number is the unique identifier of the unit described.  This number should not be duplicated or reassigned to another unit."
+				"ISO_639_3_eng": "This number is the unique identifier of the unit described.  This number should not be duplicated or reassigned to another unit."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`FIN00001`: A finnish unit's number."
+				"ISO_639_3_eng": "`FIN00001`: A finnish unit's number."
 			}
 		},
 		"_data": {
@@ -86,10 +86,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit numbers list"
+				"ISO_639_3_eng": "Unit numbers list"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of unique unit identifiers."
+				"ISO_639_3_eng": "List of unique unit identifiers."
 			}
 		},
 		"_data": {
@@ -122,13 +122,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unique identifier of the unit during the time. UnitNumber + UnitDataCollectionDate"
+				"ISO_639_3_eng": "Unique identifier of the unit during the time. UnitNumber + UnitDataCollectionDate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "This number is the unique identifier of the unit described + the date of collection of the field data entered."
+				"ISO_639_3_eng": "This number is the unique identifier of the unit described + the date of collection of the field data entered."
 			},
 			"_examples": {
-				"iso_639_3_eng": "FIN0000120211231 Or FIN00001202112 Or FIN000012021"
+				"ISO_639_3_eng": "FIN0000120211231 Or FIN00001202112 Or FIN000012021"
 			}
 		},
 		"_data": {
@@ -156,10 +156,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "List of unique identifiers of the unit during the time. UnitNumber + UnitDataCollectionDate"
+				"ISO_639_3_eng": "List of unique identifiers of the unit during the time. UnitNumber + UnitDataCollectionDate"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The list contains the unique identifiers of the unit described + the date of collection of the field data entered."
+				"ISO_639_3_eng": "The list contains the unique identifiers of the unit described + the date of collection of the field data entered."
 			}
 		},
 		"_data": {
@@ -190,16 +190,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of collection of the field data entered"
+				"ISO_639_3_eng": "Date (or partial of date) of collection of the field data entered"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_description": {
-				"iso_639_3_eng": "Date (or partial of date) of collection of the field data entered*. Date when the data on the unit was collected in the field. This field is needed to link the species table to the unit table, replace of old field No 22."
+				"ISO_639_3_eng": "Date (or partial of date) of collection of the field data entered*. Date when the data on the unit was collected in the field. This field is needed to link the species table to the unit table, replace of old field No 22."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`20211231 Or 202112 Or 2021`: A finnish unit's number."
+				"ISO_639_3_eng": "`20211231 Or 202112 Or 2021`: A finnish unit's number."
 			}
 		},
 		"_data": {
@@ -229,13 +229,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the most recent visit."
+				"ISO_639_3_eng": "Date (or partial of date) of the most recent visit."
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -265,13 +265,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "National gene conservation unit number"
+				"ISO_639_3_eng": "National gene conservation unit number"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Unit number from the national registry."
+				"ISO_639_3_eng": "Unit number from the national registry."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`GR 19`"
+				"ISO_639_3_eng": "`GR 19`"
 			}
 		},
 		"_data": {
@@ -300,10 +300,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit province or state"
+				"ISO_639_3_eng": "Unit province or state"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Name of the primary administrative subdivision of the country where the unit is located."
+				"ISO_639_3_eng": "Name of the primary administrative subdivision of the country where the unit is located."
 			}
 		},
 		"_data": {
@@ -331,10 +331,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit department or county"
+				"ISO_639_3_eng": "Unit department or county"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Name of the secondary administrative subdivision (within a province or state) of the country where the unit is located."
+				"ISO_639_3_eng": "Name of the secondary administrative subdivision (within a province or state) of the country where the unit is located."
 			}
 		},
 		"_data": {
@@ -362,13 +362,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit municipality"
+				"ISO_639_3_eng": "Unit municipality"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Name of the lowest administrative subdivision where the unit is located."
+				"ISO_639_3_eng": "Name of the lowest administrative subdivision where the unit is located."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`Rovaniemi`"
+				"ISO_639_3_eng": "`Rovaniemi`"
 			}
 		},
 		"_data": {
@@ -396,13 +396,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit local name"
+				"ISO_639_3_eng": "Unit local name"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Local name of the area or forest."
+				"ISO_639_3_eng": "Local name of the area or forest."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`Koiravaara`"
+				"ISO_639_3_eng": "`Koiravaara`"
 			}
 		},
 		"_data": {
@@ -430,16 +430,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Latitude"
+				"ISO_639_3_eng": "Latitude"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Latitude of the centre of the unit."
+				"ISO_639_3_eng": "Latitude of the centre of the unit."
 			},
 			"_description": {
-				"iso_639_3_eng": "3 separate numerical fields + 1 field for `N` or `S`.\n\nIf data will be provided in centesimal degrees, the DB will automatically convert to Sexagesimal."
+				"ISO_639_3_eng": "3 separate numerical fields + 1 field for `N` or `S`.\n\nIf data will be provided in centesimal degrees, the DB will automatically convert to Sexagesimal."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`66°31'32.34\"N`, `89°0'59.12\"S`"
+				"ISO_639_3_eng": "`66°31'32.34\"N`, `89°0'59.12\"S`"
 			}
 		},
 		"_data": {
@@ -468,13 +468,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Latitude decimal"
+				"ISO_639_3_eng": "Latitude decimal"
 			},
 			"_description": {
-				"iso_639_3_eng": "The decimal latitude of the centre of the unit."
+				"ISO_639_3_eng": "The decimal latitude of the centre of the unit."
 			},
 			"_examples": {
-				"iso_639_3_eng": "38.123333333333"
+				"ISO_639_3_eng": "38.123333333333"
 			}
 		},
 		"_data": {
@@ -506,16 +506,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Longitude"
+				"ISO_639_3_eng": "Longitude"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Longitude of the centre of the unit."
+				"ISO_639_3_eng": "Longitude of the centre of the unit."
 			},
 			"_description": {
-				"iso_639_3_eng": "3 separate numerical fields + 1 field for `E` or `W`.\n\nIf data will be provided in centesimal degrees, the DB will automatically convert to Sexagesimal."
+				"ISO_639_3_eng": "3 separate numerical fields + 1 field for `E` or `W`.\n\nIf data will be provided in centesimal degrees, the DB will automatically convert to Sexagesimal."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`125°31'32.34\"E`, `12°0'59.12\"W`"
+				"ISO_639_3_eng": "`125°31'32.34\"E`, `12°0'59.12\"W`"
 			}
 		},
 		"_data": {
@@ -544,13 +544,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Longitude decimal"
+				"ISO_639_3_eng": "Longitude decimal"
 			},
 			"_description": {
-				"iso_639_3_eng": "The decimal longitude of the centre of the unit."
+				"ISO_639_3_eng": "The decimal longitude of the centre of the unit."
 			},
 			"_examples": {
-				"iso_639_3_eng": "32.266944444444"
+				"ISO_639_3_eng": "32.266944444444"
 			}
 		},
 		"_data": {
@@ -579,16 +579,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU center coordinates"
+				"ISO_639_3_eng": "GCU center coordinates"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Latitude and longitude of the center of the gene conservation unit."
+				"ISO_639_3_eng": "Latitude and longitude of the center of the gene conservation unit."
 			},
 			"_description": {
-				"iso_639_3_eng": "The field is a GeoJSON geometry structure that records the center of the gene conservation unit. The shape should be a point."
+				"ISO_639_3_eng": "The field is a GeoJSON geometry structure that records the center of the gene conservation unit. The shape should be a point."
 			},
 			"_examples": {
-				"iso_639_3_eng": "```json\n{\n\t\"type\": \"Point\",\n\t\"coordinates\": [11.2179807, 42.415644]\n}\n```\n\nThe location of a monument dedicated to Caravaggio in a pine forest in Italy."
+				"ISO_639_3_eng": "```json\n{\n\t\"type\": \"Point\",\n\t\"coordinates\": [11.2179807, 42.415644]\n}\n```\n\nThe location of a monument dedicated to Caravaggio in a pine forest in Italy."
 			}
 		},
 		"_data": {
@@ -613,16 +613,16 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "GCU polygon"
+				"ISO_639_3_eng": "GCU polygon"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Shape of the gene conservation unit."
+				"ISO_639_3_eng": "Shape of the gene conservation unit."
 			},
 			"_description": {
-				"iso_639_3_eng": "The field is a GeoJSON geometry structure that records the shape of the gene conservation unit. The shape can be a polygon or multipolygon."
+				"ISO_639_3_eng": "The field is a GeoJSON geometry structure that records the shape of the gene conservation unit. The shape can be a polygon or multipolygon."
 			},
 			"_examples": {
-				"iso_639_3_eng": "Here is an example with no holes:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\t\"coordinates\": [\n\t\t[\n\t\t\t[100.0, 0.0],\n\t\t\t[101.0, 0.0],\n\t\t\t[101.0, 1.0],\n\t\t\t[100.0, 1.0],\n\t\t\t[100.0, 0.0]\n\t\t]\n\t]\n}\n```\n\nHere is an example with a hole:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\"coordinates\": [\n\t\t[\n\t\t\t[100.0, 0.0],\n\t\t\t[101.0, 0.0],\n\t\t\t[101.0, 1.0],\n\t\t\t[100.0, 1.0],\n\t\t\t[100.0, 0.0]\n\t\t],\n\t\t[\n\t\t\t[100.8, 0.8],\n\t\t\t[100.8, 0.2],\n\t\t\t[100.2, 0.2],\n\t\t\t[100.2, 0.8],\n\t\t\t[100.8, 0.8]\n\t\t]\n\t]\n}\n```"
+				"ISO_639_3_eng": "Here is an example with no holes:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\t\"coordinates\": [\n\t\t[\n\t\t\t[100.0, 0.0],\n\t\t\t[101.0, 0.0],\n\t\t\t[101.0, 1.0],\n\t\t\t[100.0, 1.0],\n\t\t\t[100.0, 0.0]\n\t\t]\n\t]\n}\n```\n\nHere is an example with a hole:\n\n```json\n{\n\t\"type\": \"Polygon\",\n\t\"coordinates\": [\n\t\t[\n\t\t\t[100.0, 0.0],\n\t\t\t[101.0, 0.0],\n\t\t\t[101.0, 1.0],\n\t\t\t[100.0, 1.0],\n\t\t\t[100.0, 0.0]\n\t\t],\n\t\t[\n\t\t\t[100.8, 0.8],\n\t\t\t[100.8, 0.2],\n\t\t\t[100.2, 0.2],\n\t\t\t[100.2, 0.8],\n\t\t\t[100.8, 0.8]\n\t\t]\n\t]\n}\n```"
 			}
 		},
 		"_data": {
@@ -650,13 +650,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Shapes of the gene conservation unit"
+				"ISO_639_3_eng": "Shapes of the gene conservation unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of keys relative to the collection `geometries`. Each geometry in the collection is a GeoJSON geometry structure that records the shape of the gene conservation unit. The shape is a polygon."
+				"ISO_639_3_eng": "List of keys relative to the collection `geometries`. Each geometry in the collection is a GeoJSON geometry structure that records the shape of the gene conservation unit. The shape is a polygon."
 			},
 			"_examples": {
-				"iso_639_3_eng": "'geometries/f3905f68ec22b982c4d8e3b2530d6bf5','geometries/9a140f41d76e68e68acb889f7354597d','geometries/a9949fb5bba93af6f1b14dce70927bf8'"
+				"ISO_639_3_eng": "'geometries/f3905f68ec22b982c4d8e3b2530d6bf5','geometries/9a140f41d76e68e68acb889f7354597d','geometries/a9949fb5bba93af6f1b14dce70927bf8'"
 			}
 		},
 		"_data": {
@@ -685,13 +685,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit geodetic datum"
+				"ISO_639_3_eng": "Unit geodetic datum"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Datum of the projection used to obtain the coordinates."
+				"ISO_639_3_eng": "Datum of the projection used to obtain the coordinates."
 			},
 			"_description": {
-				"iso_639_3_eng": "A horizontal geodetic datum based on an ellipsoid that has its origin at the earth's center of mass. Examples are the *World Geodetic System of 1984*, the *North American Datum of 1983*, and the *Geodetic Datum of Australia of 1994*. The first uses the WGS84 ellipsoid; the latter two use the GRS80 ellipsoid.\n\nIf not provided `WGS 1984` will be used."
+				"ISO_639_3_eng": "A horizontal geodetic datum based on an ellipsoid that has its origin at the earth's center of mass. Examples are the *World Geodetic System of 1984*, the *North American Datum of 1983*, and the *Geodetic Datum of Australia of 1994*. The first uses the WGS84 ellipsoid; the latter two use the GRS80 ellipsoid.\n\nIf not provided `WGS 1984` will be used."
 			}
 		},
 		"_data": {
@@ -723,13 +723,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Coordinates privacy"
+				"ISO_639_3_eng": "Coordinates privacy"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Restriction in making the geographical coordinates publically available."
+				"ISO_639_3_eng": "Restriction in making the geographical coordinates publically available."
 			},
 			"_description": {
-				"iso_639_3_eng": "If `Yes` the accuracy of the geographic\ndata will be modified when making the\ninformation available."
+				"ISO_639_3_eng": "If `Yes` the accuracy of the geographic\ndata will be modified when making the\ninformation available."
 			}
 		},
 		"_data": {
@@ -758,10 +758,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit minimum elevation"
+				"ISO_639_3_eng": "Unit minimum elevation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The minimum elevation of the unit expressed in meters above mean sea level. Negative values are allowed."
+				"ISO_639_3_eng": "The minimum elevation of the unit expressed in meters above mean sea level. Negative values are allowed."
 			}
 		},
 		"_data": {
@@ -795,10 +795,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit maximum elevation"
+				"ISO_639_3_eng": "Unit maximum elevation"
 			},
 			"_definition": {
-				"iso_639_3_eng": "The maximum elevation of the unit expressed in meters above mean sea level. Negative values are allowed."
+				"ISO_639_3_eng": "The maximum elevation of the unit expressed in meters above mean sea level. Negative values are allowed."
 			}
 		},
 		"_data": {
@@ -832,10 +832,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit surface area"
+				"ISO_639_3_eng": "Unit surface area"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Total surface area of the unit in hectares, accuracy of 0.1 ha."
+				"ISO_639_3_eng": "Total surface area of the unit in hectares, accuracy of 0.1 ha."
 			}
 		},
 		"_data": {
@@ -865,10 +865,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Climate Key relative to the collection `climate` retaled with WorldClim data. Key = md5(UnitLatitudeD:UnitLongitudeD). Old db name ClimateID"
+				"ISO_639_3_eng": "Climate Key relative to the collection `climate` retaled with WorldClim data. Key = md5(UnitLatitudeD:UnitLongitudeD). Old db name ClimateID"
 			},
 			"_examples": {
-				"iso_639_3_eng": "climate/43f221df3a210e1ebd79df6f898ad855"
+				"ISO_639_3_eng": "climate/43f221df3a210e1ebd79df6f898ad855"
 			}
 		},
 		"_data": {
@@ -897,10 +897,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Ownership of the unit"
+				"ISO_639_3_eng": "Ownership of the unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Total surface area of the unit in hectares, accuracy of 0.1 ha."
+				"ISO_639_3_eng": "Total surface area of the unit in hectares, accuracy of 0.1 ha."
 			}
 		},
 		"_data": {
@@ -932,10 +932,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit type"
+				"ISO_639_3_eng": "Unit type"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Type and function of the unit."
+				"ISO_639_3_eng": "Type and function of the unit."
 			}
 		},
 		"_data": {
@@ -969,10 +969,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Year of collection of the field data entered"
+				"ISO_639_3_eng": "Year of collection of the field data entered"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Year when the data on the unit was collected in the field."
+				"ISO_639_3_eng": "Year when the data on the unit was collected in the field."
 			}
 		},
 		"_data": {
@@ -1002,7 +1002,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Year of the most recent visit"
+				"ISO_639_3_eng": "Year of the most recent visit"
 			}
 		},
 		"_data": {
@@ -1032,10 +1032,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Soil remarks"
+				"ISO_639_3_eng": "Soil remarks"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Remarks on specific soil characteristics."
+				"ISO_639_3_eng": "Remarks on specific soil characteristics."
 			}
 		},
 		"_data": {
@@ -1063,10 +1063,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unit remarks"
+				"ISO_639_3_eng": "Unit remarks"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Remarks on other specific characteristics of the unit."
+				"ISO_639_3_eng": "Remarks on other specific characteristics of the unit."
 			}
 		},
 		"_data": {
@@ -1094,13 +1094,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "All tree species growing in the unit"
+				"ISO_639_3_eng": "All tree species growing in the unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of target and non target species growing in the unit, give full Latin name (genus, species, sub-species as appropriate) provided by the collection `taxa`."
+				"ISO_639_3_eng": "List of target and non target species growing in the unit, give full Latin name (genus, species, sub-species as appropriate) provided by the collection `taxa`."
 			},
 			"_examples": {
-				"iso_639_3_eng": "['taxa/fd7c0227067a98723f453b528ce3f9a6','taxa/9dbb2dfcee106f534baef9cfb5a02fdd','taxa/f4134ca27b68d83c1e123a8c05a75920']"
+				"ISO_639_3_eng": "['taxa/fd7c0227067a98723f453b528ce3f9a6','taxa/9dbb2dfcee106f534baef9cfb5a02fdd','taxa/f4134ca27b68d83c1e123a8c05a75920']"
 			}
 		},
 		"_data": {
@@ -1131,13 +1131,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "All target species in the unit"
+				"ISO_639_3_eng": "All target species in the unit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of target species growing in the unit. List of keys relative to the collection `populations`."
+				"ISO_639_3_eng": "List of target species growing in the unit. List of keys relative to the collection `populations`."
 			},
 			"_examples": {
-				"iso_639_3_eng": "['populations/fd7c0227067a98723f453b528ce3f9a6','populations/9dbb2dfcee106f534baef9cfb5a02fdd','populations/f4134ca27b68d83c1e123a8c05a75920']"
+				"ISO_639_3_eng": "['populations/fd7c0227067a98723f453b528ce3f9a6','populations/9dbb2dfcee106f534baef9cfb5a02fdd','populations/f4134ca27b68d83c1e123a8c05a75920']"
 			}
 		},
 		"_data": {
@@ -1168,13 +1168,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "All tree species growing in the unit not in EUFGIS Taxa"
+				"ISO_639_3_eng": "All tree species growing in the unit not in EUFGIS Taxa"
 			},
 			"_definition": {
-				"iso_639_3_eng": "List of upovcodes relative to the collection `upov`."
+				"ISO_639_3_eng": "List of upovcodes relative to the collection `upov`."
 			},
 			"_examples": {
-				"iso_639_3_eng": "['upov/ABIES_FRA',upov/'ACERR_RUB']"
+				"ISO_639_3_eng": "['upov/ABIES_FRA',upov/'ACERR_RUB']"
 			}
 		},
 		"_data": {
@@ -1205,13 +1205,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Unique identifier of the population described."
+				"ISO_639_3_eng": "Unique identifier of the population described."
 			},
 			"_definition": {
-				"iso_639_3_eng": "This key is the unique identifier of the population described. This key should not be duplicated or reassigned to another population (md5 of UnitID+`::`+PopulationTargetSpecies)."
+				"ISO_639_3_eng": "This key is the unique identifier of the population described. This key should not be duplicated or reassigned to another population (md5 of UnitID+`::`+PopulationTargetSpecies)."
 			},
 			"_examples": {
-				"iso_639_3_eng": "db736a4ce54ffe9fb79cd006bbfebbce"
+				"ISO_639_3_eng": "db736a4ce54ffe9fb79cd006bbfebbce"
 			}
 		},
 		"_data": {
@@ -1240,13 +1240,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Target species"
+				"ISO_639_3_eng": "Target species"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Give full Latin name (genus, species, sub species as appropriate) provided by the collection `taxa`"
+				"ISO_639_3_eng": "Give full Latin name (genus, species, sub species as appropriate) provided by the collection `taxa`"
 			},
 			"_examples": {
-				"iso_639_3_eng": "taxa/fd7c0227067a98723f453b528ce3f9a6"
+				"ISO_639_3_eng": "taxa/fd7c0227067a98723f453b528ce3f9a6"
 			}
 		},
 		"_data": {
@@ -1275,13 +1275,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population number"
+				"ISO_639_3_eng": "Population number"
 			},
 			"_definition": {
-				"iso_639_3_eng": "National population unit number."
+				"ISO_639_3_eng": "National population unit number."
 			},
 			"_examples": {
-				"iso_639_3_eng": "`GR 19 Unit 3334TTT6-2`"
+				"ISO_639_3_eng": "`GR 19 Unit 3334TTT6-2`"
 			}
 		},
 		"_data": {
@@ -1310,10 +1310,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Year of Establishment of the GCU for the species"
+				"ISO_639_3_eng": "Year of Establishment of the GCU for the species"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Year when the gene conservation activities for the given species have started in the unit."
+				"ISO_639_3_eng": "Year when the gene conservation activities for the given species have started in the unit."
 			}
 		},
 		"_data": {
@@ -1343,7 +1343,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Year of the most recent visit"
+				"ISO_639_3_eng": "Year of the most recent visit"
 			}
 		},
 		"_data": {
@@ -1373,13 +1373,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the most recent visit"
+				"ISO_639_3_eng": "Date (or partial of date) of the most recent visit"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1409,10 +1409,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population status"
+				"ISO_639_3_eng": "Population status"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Status of the target tree population regarding the EUFORGEN common action plans."
+				"ISO_639_3_eng": "Status of the target tree population regarding the EUFORGEN common action plans."
 			}
 		},
 		"_data": {
@@ -1444,13 +1444,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 42 PopulationDistribution"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 42 PopulationDistribution"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1480,13 +1480,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 41 PopulationRegeneration"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 41 PopulationRegeneration"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1516,13 +1516,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 39 PopulationReproducingTrees"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 39 PopulationReproducingTrees"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1552,13 +1552,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 45 PopulationReproducingTreesNumber"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 45 PopulationReproducingTreesNumber"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1588,10 +1588,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population category"
+				"ISO_639_3_eng": "Population category"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Status of the target tree population regarding its locality."
+				"ISO_639_3_eng": "Status of the target tree population regarding its locality."
 			}
 		},
 		"_data": {
@@ -1623,10 +1623,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population origin"
+				"ISO_639_3_eng": "Population origin"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Origin of the material."
+				"ISO_639_3_eng": "Origin of the material."
 			}
 		},
 		"_data": {
@@ -1658,7 +1658,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Predominant silvicultural system"
+				"ISO_639_3_eng": "Predominant silvicultural system"
 			}
 		},
 		"_data": {
@@ -1690,10 +1690,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population management"
+				"ISO_639_3_eng": "Population management"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Level of management allowed to favour the target species."
+				"ISO_639_3_eng": "Level of management allowed to favour the target species."
 			}
 		},
 		"_data": {
@@ -1725,10 +1725,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population justification"
+				"ISO_639_3_eng": "Population justification"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Main reason for carrying out gene conservation for this species."
+				"ISO_639_3_eng": "Main reason for carrying out gene conservation for this species."
 			}
 		},
 		"_data": {
@@ -1760,10 +1760,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population reproducing trees"
+				"ISO_639_3_eng": "Population reproducing trees"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Total number of reproducing trees per unit."
+				"ISO_639_3_eng": "Total number of reproducing trees per unit."
 			}
 		},
 		"_data": {
@@ -1795,7 +1795,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Number of reproducing trees"
+				"ISO_639_3_eng": "Number of reproducing trees"
 			}
 		},
 		"_data": {
@@ -1824,7 +1824,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Status of reproducing trees number"
+				"ISO_639_3_eng": "Status of reproducing trees number"
 			}
 		},
 		"_data": {
@@ -1856,13 +1856,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 46 PopulationReproducingTreesNumberStatus"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 46 PopulationReproducingTreesNumberStatus"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1892,7 +1892,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population sex ratio"
+				"ISO_639_3_eng": "Population sex ratio"
 			}
 		},
 		"_data": {
@@ -1924,13 +1924,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 40 PopulationSexRatio"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 40 PopulationSexRatio"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -1960,7 +1960,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Status of long-term viable regeneration"
+				"ISO_639_3_eng": "Status of long-term viable regeneration"
 			}
 		},
 		"_data": {
@@ -1992,7 +1992,7 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Distribution of the reproducing trees in the unit"
+				"ISO_639_3_eng": "Distribution of the reproducing trees in the unit"
 			}
 		},
 		"_data": {
@@ -2026,10 +2026,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population share"
+				"ISO_639_3_eng": "Population share"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Estimated share of the total area within the unit in which the species is occurring (%)."
+				"ISO_639_3_eng": "Estimated share of the total area within the unit in which the species is occurring (%)."
 			}
 		},
 		"_data": {
@@ -2062,13 +2062,13 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Date (or partial of date) of the last update for the field 43 PopulationShare"
+				"ISO_639_3_eng": "Date (or partial of date) of the last update for the field 43 PopulationShare"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
+				"ISO_639_3_eng": "Date or partial of date. Format: YYYY, YYYYmm or YYYYmmdd."
 			},
 			"_examples": {
-				"iso_639_3_eng": "20211231 Or 202112 Or 2021"
+				"ISO_639_3_eng": "20211231 Or 202112 Or 2021"
 			}
 		},
 		"_data": {
@@ -2098,10 +2098,10 @@
 		},
 		"_info": {
 			"_title": {
-				"iso_639_3_eng": "Population remarks"
+				"ISO_639_3_eng": "Population remarks"
 			},
 			"_definition": {
-				"iso_639_3_eng": "Remarks on the population."
+				"ISO_639_3_eng": "Remarks on the population."
 			}
 		},
 		"_data": {
